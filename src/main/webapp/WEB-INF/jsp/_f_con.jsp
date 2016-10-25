@@ -73,7 +73,7 @@ $(function(){
 		  <div class="news-list">
 			<ul>
 				<c:forEach items="${news}" var="news">
-					<li><a href="<s:url value='/news/getUserNewsById.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">${news.title}</a></li>
+					<li><a href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">${news.title}</a></li>
 				</c:forEach>
 			</ul>
 			<div><a href="<s:url value='/news/newsList.html'/>">更多</a></div>
