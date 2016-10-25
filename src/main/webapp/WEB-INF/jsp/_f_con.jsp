@@ -57,13 +57,13 @@ $(function(){
 		  <div id="slideNews" class="slide-news">
 				<!-- Demo -->
 				<div id="owl-demo" class="owl-carousel">
-					<a class="item" href="http://sc.chinaz.com/" target="_blank"><img src="<s:url value='/img/1.jpg'/>" alt=""><b></b><span>巴西训练内马尔受伤 吓坏队友</span></a>
-					<a class="item" href="http://sc.chinaz.com/" target="_blank"><img src="<s:url value='/img/2.jpg'/>" alt=""><b></b><span>搜狐直击德国训练 众星拼抢激烈</span></a>
-					<a class="item" href="http://sc.chinaz.com/" target="_blank"><img src="<s:url value='/img/3.jpg'/>" alt=""><b></b><span>西班牙备战演功夫足球 哈维蝎子摆尾</span></a>
-					<a class="item" href="http://sc.chinaz.com/" target="_blank"><img src="<s:url value='/img/4.jpg'/>" alt=""><b></b><span>印第安美女追捧德国 特色服饰助威抢镜</span></a>
-					<a class="item" href="http://sc.chinaz.com/" target="_blank"><img src="<s:url value='/img/5.jpg'/>" alt=""><b></b><span>锐体育：回望1958年世界杯</span></a>
-					<a class="item" href="http://sc.chinaz.com/" target="_blank"><img src="<s:url value='/img/6.jpg'/>" alt=""><b></b><span>搜狐视频《世界杯特别报道》 发布会众星云集</span></a>
-					<a class="item" href="http://sc.chinaz.com/" target="_blank"><img src="<s:url value='/img/7.jpg'/>" alt=""><b></b><span>梅西vs罗谁能笑傲巴西世界杯</span></a>
+					<a class="item" href="" target="_blank"><img src="<s:url value='/img/1.jpg'/>" alt=""><b></b><span>巴西训练内马尔受伤 吓坏队友</span></a>
+					<a class="item" href="" target="_blank"><img src="<s:url value='/img/2.jpg'/>" alt=""><b></b><span>搜狐直击德国训练 众星拼抢激烈</span></a>
+					<a class="item" href="" target="_blank"><img src="<s:url value='/img/3.jpg'/>" alt=""><b></b><span>西班牙备战演功夫足球 哈维蝎子摆尾</span></a>
+					<a class="item" href="" target="_blank"><img src="<s:url value='/img/4.jpg'/>" alt=""><b></b><span>印第安美女追捧德国 特色服饰助威抢镜</span></a>
+					<a class="item" href="" target="_blank"><img src="<s:url value='/img/5.jpg'/>" alt=""><b></b><span>锐体育：回望1958年世界杯</span></a>
+					<a class="item" href="" target="_blank"><img src="<s:url value='/img/6.jpg'/>" alt=""><b></b><span>搜狐视频《世界杯特别报道》 发布会众星云集</span></a>
+					<a class="item" href="=" target="_blank"><img src="<s:url value='/img/7.jpg'/>" alt=""><b></b><span>梅西vs罗谁能笑傲巴西世界杯</span></a>
 				</div>
 				<!-- Demo end -->	
 			
@@ -72,10 +72,23 @@ $(function(){
 		  
 		  <div class="news-list">
 			<ul>
+<<<<<<< HEAD
+				<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
+			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
+			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
+			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
+			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
+			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
+			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
+			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
+			  	</ul>
+			  	<div><a href="<s:url value='/news/newsList.html'/>">更多</a></div>
+=======
 				<c:forEach items="${news}" var="news">
 					<li><a href="<s:url value='/news/getUserNewsById.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">${news.title}</a></li>
 				</c:forEach>
 			</ul>
+>>>>>>> 063b71b22c6cc9a9c5b78eaf37f7e78115905288
 			</div>
 		</div>
 	
