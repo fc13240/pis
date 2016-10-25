@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true"/>
+		<setting name="useGeneratedKeys" value="true"/>
+	</settings>
+	
+		<typeAliases>
+			<typeAlias alias="Patent" type="zhuanli.domain.Patent"/>
+			<typeAlias alias="FirstColumn" type="zhuanli.domain.FirstColumn"/>
+			<typeAlias alias="SecondColumn" type="zhuanli.domain.SecondColumn"/>
+			<typeAlias alias="Page" type="zhuanli.domain.Page"/>
+			<typeAlias alias="PatentSearchCondition" type="zhuanli.domain.PatentSearchCondition"/>
+			<typeAlias alias="ColumnCount" type="zhuanli.domain.ColumnCount"/>	
+			<typeAlias alias="Notice" type="zhuanli.domain.Notice"/>		
+<!-- 		<typeAlias alias="PatentColumn" type="zhuanli.domain.PatentColumn"/> -->
+		</typeAliases>
+		
+
+</configuration>
