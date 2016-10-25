@@ -97,10 +97,10 @@ font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
 		<div class="h_about_mod5"> 
 			<div class="mod1_cont" id="mod1_cont" runat="server">
 					
-				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;font-family: simsun;text-align: center;">新闻标题</h2>
+				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;font-family: simsun;text-align: center;">${news.title}</h2>
 				<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
 					<p>
-						实用新型是指对产品的形状、构造或者其结合所提出的适于实用的新的技术方案，保护时间10年，从申请日起算，授权之后每年缴纳年费，实用新型保护产品结构，要求具有：新颖性、创造性、实用性					
+						${news.content}					
 					</p>
 				</div>
 			</div> 
