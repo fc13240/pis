@@ -10,5 +10,11 @@ import zhuanli.domain.Page;
 
 
 public interface NewsDao {
-
+	List<News> getNewsShow();
+	
+	News getUserNewsById(int userId);
+	
+	List<News> getAllNews();
+	
+	List<NewsType> getAllNewsTypes();
 }
