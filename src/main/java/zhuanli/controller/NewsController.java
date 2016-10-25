@@ -33,7 +33,7 @@ public class NewsController {
 		return "";
 	}
 	
-	@RequestMapping(path="/getUserNewsById", method=RequestMethod.GET)
+	@RequestMapping(path="/getAllNews", method=RequestMethod.GET)
 	public String getAllNews(Model model) {
 		List<News> news=newsService.getAllNews();
 		model.addAttribute("news", news);

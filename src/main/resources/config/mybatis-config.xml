@@ -19,7 +19,8 @@
 			<typeAlias alias="News" type="zhuanli.domain.News"/>
 			<typeAlias alias="NewsType" type="zhuanli.domain.NewsType"/>
 			<typeAlias alias="NewsImg" type="zhuanli.domain.NewsImg"/>
-			<typeAlias alias="NewsSearchCondition" type="zhuanli.domain.NewsSearchCondition"/>		
+			<typeAlias alias="NewsSearchCondition" type="zhuanli.domain.NewsSearchCondition"/>
+			<typeAlias alias="User" type="zhuanli.domain.User"/>		
 		</typeAliases>
 		
 
