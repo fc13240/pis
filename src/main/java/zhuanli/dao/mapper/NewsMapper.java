@@ -17,7 +17,9 @@ public interface NewsMapper {
 	
 	News getUserNewsById(int userId);
 	
-	List<News> getAllNews();
+	List<News> getAllNews(Page page);
 	
 	List<NewsType> getAllNewsTypes();
+	
+	int getAllNewsCount();
 }

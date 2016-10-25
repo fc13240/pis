@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import zhuanli.domain.News;
+import zhuanli.domain.Page;
 import zhuanli.service.NewsService;
 
 
@@ -25,9 +26,15 @@ public class NewsController {
 	}
 
 	@RequestMapping(path="/newsList",method=RequestMethod.GET)
-	public String newsList( Model model) {
-		List<News> news=newsService.getAllNews();
+	public String newsList(Page page,Model model) {
+		if(page.getCurrentPage()<1){
+			page.setCurrentPage(1);
+		}
+		List<News> news=newsService.getAllNews(page);
+		int totalCount=newsService.getAllNewsCount();
+		page.setTotalRecords(totalCount);
 		model.addAttribute("news", news);
+		model.addAttribute("page", page);
 		return "news_list";
 	}	
 	@RequestMapping(path="/newsPreview")

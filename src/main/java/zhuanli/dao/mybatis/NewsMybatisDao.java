@@ -30,13 +30,18 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 	}
 
 	@Override
-	public List<News> getAllNews() {
-		return newsMapper.getAllNews();
+	public List<News> getAllNews(Page page) {
+		return newsMapper.getAllNews(page);
 	}
 
 	@Override
 	public List<NewsType> getAllNewsTypes() {
 		return newsMapper.getAllNewsTypes();
+	}
+
+	@Override
+	public int getAllNewsCount() {
+		return newsMapper.getAllNewsCount();
 	}
 
 	

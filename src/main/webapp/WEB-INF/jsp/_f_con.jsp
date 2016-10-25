@@ -66,8 +66,6 @@ $(function(){
 					<a class="item" href="=" target="_blank"><img src="<s:url value='/img/7.jpg'/>" alt=""><b></b><span>梅西vs罗谁能笑傲巴西世界杯</span></a>
 				</div>
 				<!-- Demo end -->	
-			
-
 		  </div>
 		  
 		  <div class="news-list">

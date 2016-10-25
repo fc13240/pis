@@ -5,6 +5,7 @@ import java.util.List;
 import zhuanli.dao.NewsDao;
 import zhuanli.domain.News;
 import zhuanli.domain.NewsType;
+import zhuanli.domain.Page;
 import zhuanli.service.NewsService;
 
 
@@ -27,13 +28,18 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
-	public List<News> getAllNews() {
-		return newsDao.getAllNews();
+	public List<News> getAllNews(Page page) {
+		return newsDao.getAllNews(page);
 	}
 
 	@Override
 	public List<NewsType> getAllNewsTypes() {
 		return newsDao.getAllNewsTypes();
+	}
+
+	@Override
+	public int getAllNewsCount() {
+		return newsDao.getAllNewsCount();
 	}
 
 	

@@ -57,9 +57,16 @@
 		WHERE n.id=#{newsId}
 	</select>
 	
-	<select id="getAllNews" resultMap="NewsResultMap">
+	<select id="getAllNews" parameterType="Page" resultMap="NewsResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username
+		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+		ORDER BY n.create_time desc ,n.update_time limit #{startIndex}, #{pageSize}
+	</select>
+	
+	
+	<select id="getAllNewsCount"  resultType="int">
+		SELECT count(*)
 		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
 		ORDER BY n.create_time desc ,n.update_time
 	</select>
