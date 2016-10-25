@@ -100,10 +100,28 @@ p{text-indent:2em}
 			<div class="mod1_cont" id="mod1_cont" runat="server">
 					
 				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;font-family: simsun;text-align: center;">${news.title}</h2>
-				<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
+				<br/>
+				<div>
+				<div style="float:left;margin-left: 60px;" >作者：${news.author}</div>
+				<div style="float:left;margin-left: 550px;" >创建时间：${news.createTime}</div>
+				</div>
+				<br/>
+				<div>
+					<HR width="90%" SIZE=3>
+				</div>
+				<br/>
+				<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;margin-left: 80px;margin-right: 80px;">
 					<p>
 						${news.content}					
 					</p>
+				</div>
+				<br/>
+				<div>
+				<HR  width="90%" SIZE=3>
+				</div>
+				
+				<div>
+					<div style="float:left;margin-left: 60px;" >来源：${news.source}</div>
 				</div>
 			</div> 
 		</div>
