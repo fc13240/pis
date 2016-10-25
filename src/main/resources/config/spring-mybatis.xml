@@ -39,5 +39,15 @@
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>	
-			
+		
+	
+	<bean id="newsMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="zhuanli.dao.mapper.NewsMapper"/>
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean name="newsDao" class="zhuanli.dao.mybatis.NewsMybatisDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+		<property name="newsMapper" ref="newsMapper" />
+	</bean>	
 </beans>							

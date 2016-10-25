@@ -15,8 +15,11 @@
 			<typeAlias alias="Page" type="zhuanli.domain.Page"/>
 			<typeAlias alias="PatentSearchCondition" type="zhuanli.domain.PatentSearchCondition"/>
 			<typeAlias alias="ColumnCount" type="zhuanli.domain.ColumnCount"/>	
-			<typeAlias alias="Notice" type="zhuanli.domain.Notice"/>		
-<!-- 		<typeAlias alias="PatentColumn" type="zhuanli.domain.PatentColumn"/> -->
+			<typeAlias alias="Notice" type="zhuanli.domain.Notice"/>
+			<typeAlias alias="News" type="zhuanli.domain.News"/>
+			<typeAlias alias="NewsType" type="zhuanli.domain.NewsType"/>
+			<typeAlias alias="NewsImg" type="zhuanli.domain.NewsImg"/>
+			<typeAlias alias="NewsSearchCondition" type="zhuanli.domain.NewsSearchCondition"/>		
 		</typeAliases>
 		
 
