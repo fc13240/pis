@@ -16,7 +16,7 @@
 		<result property="publishTime" column="publish_time"/>
 		<result property="updateTime" column="update_time"/>
 		<association property="newsType" resultMap="NewsTypeResultMap"/>
-		<association property="user" resultMap="com.lotut.pms.dao.mapper.UserMapper.UserResultMap"/>
+		<association property="user" resultMap="UserResultMap"/>
 	</resultMap>
 	
 	<resultMap type="NewsImg" id="NewImgMap">
@@ -26,8 +26,18 @@
 			<result property="caption" column="caption"/>
 	</resultMap>
 	
+	<resultMap type="User" id="UserResultMap">
+		<id property="userId" column="user_id"/>
+		<result property="username" column="username"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="phone" column="phone"/>
+		<result property="qq" column="qq"/>
+		<result property="weChat" column="weChat"/>
+		<result property="avatarUrl" column="avatar_url"/>
+	</resultMap>
 	
-	<resultMap type="newsType" id="NewsTypeResultMap">
+	<resultMap type="NewsType" id="NewsTypeResultMap">
 		<id property="typeId" column="type_id"/>
 		<result property="typeName" column="type_name"/>
 	</resultMap>
@@ -36,7 +46,7 @@
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username
 		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		ORDER BY n.create_time desc ,n.update_time limit 1, 8
+		ORDER BY n.create_time desc ,n.update_time limit 0, 8
 	</select>
 
 	

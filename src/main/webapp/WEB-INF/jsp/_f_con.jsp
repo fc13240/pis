@@ -72,23 +72,11 @@ $(function(){
 		  
 		  <div class="news-list">
 			<ul>
-<<<<<<< HEAD
-				<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
-			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
-			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
-			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
-			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
-			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
-			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
-			  	<li><a href="" title="专访钱光鑑:举重不是竞技专利 人人都需要练力量！" target="_blank">专访:举重不是竞技专利 人人都需要练力量！</a></li>
-			  	</ul>
-			  	<div><a href="<s:url value='/news/newsList.html'/>">更多</a></div>
-=======
 				<c:forEach items="${news}" var="news">
-					<li><a href="<s:url value='/news/getUserNewsById.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">${news.title}</a></li>
+					<li><a href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">${news.title}</a></li>
 				</c:forEach>
 			</ul>
->>>>>>> 063b71b22c6cc9a9c5b78eaf37f7e78115905288
+			<div><a href="<s:url value='/news/newsList.html'/>">更多</a></div>
 			</div>
 		</div>
 	
