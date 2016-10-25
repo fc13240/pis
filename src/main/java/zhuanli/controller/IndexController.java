@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import zhuanli.domain.ColumnCount;
 import zhuanli.domain.FirstColumn;
+import zhuanli.domain.News;
 import zhuanli.domain.Page;
 import zhuanli.domain.Patent;
+import zhuanli.service.NewsService;
 import zhuanli.service.PatentService;
 
 
@@ -26,10 +28,12 @@ import zhuanli.service.PatentService;
 @Controller
 public class IndexController {
 	private PatentService patentService;
-
+	private NewsService newsService;
+	
 	@Autowired
-	public IndexController(PatentService patentService) {
+	public IndexController(PatentService patentService,NewsService newsService) {
 		this.patentService = patentService;
+		this.newsService=newsService;
 	}
 	@RequestMapping(path="/index")
 	public String getPatents(Model model) {
@@ -49,9 +53,10 @@ public class IndexController {
 		//List<Patent> patent_list11=patentService.getSecoundColumn(11);
 		
 		List<Patent> patent_list=patentService.getPatents();
+		List<News> news=newsService.getNewsShow();
 		model.addAttribute("patent_list", patent_list);
-	
 		model.addAttribute("AllColumns", AllColumns);
+		model.addAttribute("news", news);
 		return "index";
 	}
 

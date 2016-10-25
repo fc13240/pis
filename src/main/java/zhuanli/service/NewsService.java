@@ -9,5 +9,11 @@ import zhuanli.domain.Page;
 
 
 public interface NewsService {
+	List<News> getNewsShow();
 	
+	News getUserNewsById(int userId);
+	
+	List<News> getAllNews();
+	
+	List<NewsType> getAllNewsTypes();
 }

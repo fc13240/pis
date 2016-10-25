@@ -13,5 +13,11 @@ import zhuanli.domain.Page;
 
 public interface NewsMapper {
 	
-
+	List<News> getNewsShow();
+	
+	News getUserNewsById(int userId);
+	
+	List<News> getAllNews();
+	
+	List<NewsType> getAllNewsTypes();
 }
