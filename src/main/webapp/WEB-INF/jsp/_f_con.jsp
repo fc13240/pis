@@ -62,7 +62,7 @@ $(function(){
 				<!-- Demo -->
 				<div id="owl-demo" class="owl-carousel">
 					<c:forEach items="${newShows}" var="newShows">
-						<a class="item" href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${newShows.id}'/>" target="_blank"><img src="<s:url value='${newShows.smallImgUrl}'/>" alt=""><b></b><span>${newShows.title}</span></a>
+						<a class="item" href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${newShows.id}'/>" target="_blank"><img src="<s:url value='${newShows.smallImgUrl}'/>" alt="${newShows.keywords}"><b></b><span>${newShows.title}</span></a>
 					</c:forEach>
 				</div>
 				<!-- Demo end -->	
@@ -71,7 +71,7 @@ $(function(){
 		  <div class="news-list">
 			<ul>
 				<c:forEach items="${news}" var="news">
-					<li><a href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">${news.title}</a></li>
+					<li><a href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.keywords}" target="_blank">${news.title}</a></li>
 				</c:forEach>
 			</ul>
 			<div><a href="<s:url value='/news/newsList.html'/>">更多专利新闻</a></div>
