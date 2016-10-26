@@ -43,11 +43,48 @@ public class PatentSearchDaoImpl implements PatentSearchDao{
 		patent.setPatent_name(doc.getString("patentName"));
 		return patent;
 	}
-	
-	public static void main(String[] args) {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("config/spring-dao.xml");
-		PatentSearchDao dao = ctx.getBean("patentSearchDao", PatentSearchDao.class);
+
+	@Override
+	public List<Patent> searchByAbstractsPatent() {
+		MongoDatabase db = mongoClient.getDatabase("sopatent");
+		MongoCollection<Document> collection = db.getCollection("patent");
+		List<Document> docs = collection.find(new BasicDBObject("patentType", "发明公布")).sort(new BasicDBObject("_id",-1)).limit(10).into(new ArrayList<Document>());
+		List<Patent> patents = new ArrayList<>(docs.size());
+		for (Document doc: docs) {
+			Patent patent = convertDocToPatent(doc);
+			patents.add(patent);
+		}
 		
-		
+		return patents;
 	}
+
+	@Override
+	public List<Patent> searchByUtilityModelPatent() {
+		MongoDatabase db = mongoClient.getDatabase("sopatent");
+		MongoCollection<Document> collection = db.getCollection("patent");
+		List<Document> docs = collection.find(new BasicDBObject("patentType", "实用新型")).sort(new BasicDBObject("_id",-1)).limit(10).into(new ArrayList<Document>());
+		List<Patent> patents = new ArrayList<>(docs.size());
+		for (Document doc: docs) {
+			Patent patent = convertDocToPatent(doc);
+			patents.add(patent);
+		}
+		
+		return patents;
+	}
+
+	@Override
+	public List<Patent> searchByAppearanceDesignPatent() {
+		MongoDatabase db = mongoClient.getDatabase("sopatent");
+		MongoCollection<Document> collection = db.getCollection("patent");
+		List<Document> docs = collection.find(new BasicDBObject("patentType", "外观设计")).sort(new BasicDBObject("_id",-1)).limit(10).into(new ArrayList<Document>());
+		List<Patent> patents = new ArrayList<>(docs.size());
+		for (Document doc: docs) {
+			Patent patent = convertDocToPatent(doc);
+			patents.add(patent);
+		}
+		
+		return patents;
+	}
+	
+
 }

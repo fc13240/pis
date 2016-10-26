@@ -46,11 +46,17 @@ public class IndexController {
 		List<News> news=newsService.getNewsShow();
 		List<News> newShows=newsService.newsShow();
 		List<Patent> InventionPatentGrant=patentSearchService.searchByInventionPatentGrant();
+		List<Patent> abstractsPatent=patentSearchService.searchByAbstractsPatent();
+		List<Patent> utilityModelPatent=patentSearchService.searchByUtilityModelPatent();
+		List<Patent> appearanceDesignPatent=patentSearchService.searchByAppearanceDesignPatent();
 		model.addAttribute("patent_list", patent_list);
 		model.addAttribute("AllColumns", AllColumns);
 		model.addAttribute("news", news);
 		model.addAttribute("newShows", newShows);
 		model.addAttribute("IPG", InventionPatentGrant);
+		model.addAttribute("AP", abstractsPatent);
+		model.addAttribute("UMP", utilityModelPatent);
+		model.addAttribute("ADP", appearanceDesignPatent);
 		return "index";
 	}
 

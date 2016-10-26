@@ -26,6 +26,24 @@ public class PatentSearchServiceImpl implements PatentSearchService {
 		return patentSearchDao.searchByInventionPatentGrant();
 	}
 
+
+	@Override
+	public List<Patent> searchByAbstractsPatent() {
+		return patentSearchDao.searchByAbstractsPatent();
+	}
+
+
+	@Override
+	public List<Patent> searchByUtilityModelPatent() {
+		return patentSearchDao.searchByUtilityModelPatent();
+	}
+
+
+	@Override
+	public List<Patent> searchByAppearanceDesignPatent() {
+		return patentSearchDao.searchByAppearanceDesignPatent();
+	}
+
 	
 
 }
