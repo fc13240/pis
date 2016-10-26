@@ -21,6 +21,7 @@ import zhuanli.domain.News;
 import zhuanli.domain.Page;
 import zhuanli.domain.Patent;
 import zhuanli.service.NewsService;
+import zhuanli.service.PatentSearchService;
 import zhuanli.service.PatentService;
 
 
@@ -29,36 +30,33 @@ import zhuanli.service.PatentService;
 public class IndexController {
 	private PatentService patentService;
 	private NewsService newsService;
+	private PatentSearchService patentSearchService;
 	
 	@Autowired
-	public IndexController(PatentService patentService,NewsService newsService) {
+	public IndexController(PatentService patentService,NewsService newsService,PatentSearchService patentSearchService) {
 		this.patentService = patentService;
 		this.newsService=newsService;
+		this.patentSearchService=patentSearchService;
 	}
 	@RequestMapping(path="/index")
 	public String getPatents(Model model) {
 
 		List<FirstColumn>  AllColumns=patentService.selectAllColumns();
-
-		//List<Patent> patent_list1=patentService.getSecoundColumn(1);
-		//List<Patent> patent_list2=patentService.getSecoundColumn(2);
-		//List<Patent> patent_list3=patentService.getSecoundColumn(3);
-		//List<Patent> patent_list4=patentService.getSecoundColumn(4);
-		//List<Patent> patent_list5=patentService.getSecoundColumn(5);
-		//List<Patent> patent_list6=patentService.getSecoundColumn(6);
-		//List<Patent> patent_list7=patentService.getSecoundColumn(7);
-		//List<Patent> patent_list8=patentService.getSecoundColumn(8);
-		//List<Patent> patent_list9=patentService.getSecoundColumn(9);
-		//List<Patent> patent_list10=patentService.getSecoundColumn(10);
-		//List<Patent> patent_list11=patentService.getSecoundColumn(11);
-		
 		List<Patent> patent_list=patentService.getPatents();
 		List<News> news=newsService.getNewsShow();
 		List<News> newShows=newsService.newsShow();
+		List<Patent> InventionPatentGrant=patentSearchService.searchByInventionPatentGrant();
+		List<Patent> abstractsPatent=patentSearchService.searchByAbstractsPatent();
+		List<Patent> utilityModelPatent=patentSearchService.searchByUtilityModelPatent();
+		List<Patent> appearanceDesignPatent=patentSearchService.searchByAppearanceDesignPatent();
 		model.addAttribute("patent_list", patent_list);
 		model.addAttribute("AllColumns", AllColumns);
 		model.addAttribute("news", news);
 		model.addAttribute("newShows", newShows);
+		model.addAttribute("IPG", InventionPatentGrant);
+		model.addAttribute("AP", abstractsPatent);
+		model.addAttribute("UMP", utilityModelPatent);
+		model.addAttribute("ADP", appearanceDesignPatent);
 		return "index";
 	}
 

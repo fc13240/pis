@@ -6,6 +6,7 @@ public class Page {
 	private int currentPage;//
 	private int pageSize = 20;//
 	private int userId;
+	private int pageSize = 10;//
 	
 	
 	

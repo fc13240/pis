@@ -19,4 +19,7 @@
 	<bean id="articleService" class="zhuanli.service.impl.ArticleServiceImpl">
 		<constructor-arg ref="articleDao"/>
 	</bean>
+	<bean id="patentSearchService" class="zhuanli.service.impl.PatentSearchServiceImpl">
+		<constructor-arg ref="patentSearchDao"/>
+	</bean>
 </beans>
