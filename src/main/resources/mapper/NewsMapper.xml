@@ -15,6 +15,7 @@
 		<result property="createTime" column="create_time"/>
 		<result property="publishTime" column="publish_time"/>
 		<result property="updateTime" column="update_time"/>
+		<result property="smallImgUrl" column="small_img_url"/>
 		<association property="newsType" resultMap="NewsTypeResultMap"/>
 		<association property="user" resultMap="UserResultMap"/>
 	</resultMap>
@@ -81,4 +82,12 @@
 	<delete id="deleteNewsById" parameterType="int">
 		delete from news where id=#{newsId}
 	</delete>
+	
+	<select id="newsShow" resultMap="NewsResultMap">
+		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
+		n.small_img_url,nt.type_id ,nt.type_name,u.user_id,u.username
+		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+		WHERE  n.small_img_url IS NOT NULL ORDER BY n.create_time DESC ,n.update_time;
+	</select>
+	
 </mapper>

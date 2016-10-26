@@ -18,4 +18,6 @@ public interface NewsService {
 	List<NewsType> getAllNewsTypes();
 	
 	int getAllNewsCount();
+	
+	List<News> newsShow();
 }

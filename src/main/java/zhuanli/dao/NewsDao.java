@@ -19,4 +19,6 @@ public interface NewsDao {
 	List<NewsType> getAllNewsTypes();
 	
 	int getAllNewsCount();
+	
+	List<News> newsShow();
 }

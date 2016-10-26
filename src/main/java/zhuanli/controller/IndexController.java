@@ -54,9 +54,11 @@ public class IndexController {
 		
 		List<Patent> patent_list=patentService.getPatents();
 		List<News> news=newsService.getNewsShow();
+		List<News> newShows=newsService.newsShow();
 		model.addAttribute("patent_list", patent_list);
 		model.addAttribute("AllColumns", AllColumns);
 		model.addAttribute("news", news);
+		model.addAttribute("newShows", newShows);
 		return "index";
 	}
 

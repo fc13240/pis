@@ -42,5 +42,10 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.getAllNewsCount();
 	}
 
+	@Override
+	public List<News> newsShow() {
+		return newsDao.newsShow();
+	}
+	
 	
 }

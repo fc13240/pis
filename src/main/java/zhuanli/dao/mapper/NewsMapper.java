@@ -22,4 +22,6 @@ public interface NewsMapper {
 	List<NewsType> getAllNewsTypes();
 	
 	int getAllNewsCount();
+	
+	List<News> newsShow();
 }
