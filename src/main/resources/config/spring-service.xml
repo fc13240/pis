@@ -15,4 +15,8 @@
 	<bean id="newsService" class="zhuanli.service.impl.NewsServiceImpl">
 		<constructor-arg ref="newsDao"/>
 	</bean>	
+	
+	<bean id="articleService" class="zhuanli.service.impl.ArticleServiceImpl">
+		<constructor-arg ref="articleDao"/>
+	</bean>
 </beans>

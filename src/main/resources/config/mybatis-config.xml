@@ -20,7 +20,13 @@
 			<typeAlias alias="NewsType" type="zhuanli.domain.NewsType"/>
 			<typeAlias alias="NewsImg" type="zhuanli.domain.NewsImg"/>
 			<typeAlias alias="NewsSearchCondition" type="zhuanli.domain.NewsSearchCondition"/>
-			<typeAlias alias="User" type="zhuanli.domain.User"/>		
+			<typeAlias alias="User" type="zhuanli.domain.User"/>
+			<typeAlias alias="Article" type="zhuanli.domain.Article"/>
+			<typeAlias alias="ArticleType" type="zhuanli.domain.ArticleType"/>
+			<typeAlias alias="ArticleImg" type="zhuanli.domain.ArticleImg"/>
+			<typeAlias alias="ArticleSearchCondition" type="zhuanli.domain.ArticleSearchCondition"/>
+			<typeAlias alias="ArticleType" type="zhuanli.domain.ArticleType"/>
+			<typeAlias alias="Vote" type="zhuanli.domain.Vote"/>		
 		</typeAliases>
 		
 

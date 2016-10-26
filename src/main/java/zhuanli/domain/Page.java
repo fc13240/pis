@@ -5,9 +5,18 @@ public class Page {
 	private int totalRecords;//
 	private int currentPage;//
 	private int pageSize = 20;//
+	private int userId;
 	
 	
 	
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	public int getTotalRecords() {
 		return totalRecords;
 	}
