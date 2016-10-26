@@ -139,10 +139,12 @@ $(function(){
 	     </div>
 	     <div class="tempWrap">
 	     	<div style="margin: 10px 15px 0;">
+	     	<form class="form-4" action='http://so.lotut.com/patent/search/basicSearch.html' name="site_search" target="_blank" method="get" id="site_search">
 			<div class="mc-field-group">
                 <input type="text" placeholder="永久免费的专利搜索引擎" name="q" class="text" id="mce-EMAIL">
                 <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
 			</div>
+			</form>
 			</div>
 	      <div class="tempWrap" style="overflow:hidden; position:relative; width:300px"><div class="bd" style="width: 600px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
 	      	<!--活动专题-->
@@ -151,16 +153,9 @@ $(function(){
 			  <div class="news-side">
 	            <div class="new-baike news-list">
 	                <ul>
-		                  <li><a href="" title="商标名称通用化的悲剧" target="_blank">商标名称通用化的悲剧</a></li>
-		                   <li><a href="" title="论知识产权法相对于民法典的独立性" target="_blank">论知识产权法相对于民法典的独立性</a></li>
-		                   <li><a href="" title="商标到期之后被人抢注了该怎么办呢？" target="_blank">商标到期之后被人抢注了该怎么办呢？</a></li>
-		                   <li><a href="" title="怎样选择最合适的专利代理人？" target="_blank">怎样选择最合适的专利代理人？</a></li>
-		                   <li><a href="" title="论知识产权事业发展新常态" target="_blank">论知识产权事业发展新常态</a></li>
-		                   <li><a href="" title="如何认定侵犯版权罪" target="_blank">如何认定侵犯版权罪</a></li>
-		                   <li><a href="" title="知识产权侵权赔偿的范围" target="_blank">知识产权侵权赔偿的范围</a></li>
-		                   <li><a href="" title="域名被盗怎么办，申诉找回教程来帮忙" target="_blank">域名被盗怎么办，申诉找回教程来帮忙</a></li>
-		                   <li><a href="" title="中国企业如何应对美国NPE发起的专利诉讼？" target="_blank">中国企业如何应对美国NPE发起的专利诉讼...</a></li>
-		                   <li><a href="" title="什么样的专利技术最值得投资人掏钱" target="_blank">什么样的专利技术最值得投资人掏钱</a></li>
+	                	<c:forEach items="${IPG}" var="IPG">
+	                		 <li><a href="http://so.lotut.com/patent/search/article.html?patent_id=${IPG.id}" title="商标专利交易" target="_blank">${IPG.patent_name}</a></li>
+	                	</c:forEach>
 		                   </ul>
 	                 </div>
 	          </div>

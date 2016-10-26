@@ -39,6 +39,10 @@
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>	
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 		
 	
 	<bean id="newsMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
@@ -49,5 +53,9 @@
 	<bean name="newsDao" class="zhuanli.dao.mybatis.NewsMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="newsMapper" ref="newsMapper" />
-	</bean>	
+	</bean>
+	
+	<bean name="databaseAuthDao" class="zhuanli.dao.DatabaseAuthProvider">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 </beans>							
