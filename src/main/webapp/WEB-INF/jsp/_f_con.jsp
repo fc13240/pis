@@ -67,7 +67,6 @@ $(function(){
 				</div>
 				<!-- Demo end -->	
 		  </div>
-		  <br/>
 		  <div class="mod-intro-new">
 		  </div> <!-- 虚线 -->
 		  <div class="news-list">
@@ -76,7 +75,7 @@ $(function(){
 					<li><a href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.keywords}" target="_blank">${news.title}</a></li>
 				</c:forEach>
 			</ul>
-			<div><a href="<s:url value='/news/newsList.html'/>">更多专利新闻</a></div>
+			<div><a href="<s:url value='/news/newsList.html'/>">更多新闻</a></div>
 			</div>
 		</div>
 	
