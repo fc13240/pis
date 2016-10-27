@@ -12,9 +12,13 @@
 <meta name="description" content="龙图腾网（www.lotut.com）是全球领先的知识产权交易平台。为企业提供专业的商标转让、专利交易等服务。拥有国内知识产权资源，全面覆盖了商标、专利、版权等领域的交易平台，让知识产权在流通中创造财富，引领知识产权的创新。" />
 <meta itemprop="name" content="" />
 <meta http-equiv="cache-control" content="no-transform">
+<script type="text/javascript" src="<s:url value='/js/jquery_from.js'/>"></script>
+<script src="<s:url value='/js/jquery.min.js'/>"></script>
+<script src="<s:url value='/js/jquery-ui.min.js'/>" type="text/javascript"></script>
 <link rel="shortcut icon" href="http://www.lotut.com/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="<s:url value='/css/mll.common.min.css?20160311'/>" />
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
+<link rel="stylesheet" href="<s:url value='/css/praise.css'/>">
 
 </head>
 
@@ -136,50 +140,6 @@ p{text-indent:2em}
 <%@ include file="_footer.jsp"%>
 
 <script>
-	/* @author:Romey
-	 * 动态点赞
-	 * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
-	*/
-	/* $(function(){
-		$("#praise${article.id}").click(function(){
-			var praise_img = $("#praise-img");
-			var text_box = $("#add-num");
-			var praise_txt = $("#praise-txt");
-			var num=parseInt(praise_txt.text());
-			$.ajax({
-				type:"get",
-				url: "<s:url value='/article/praise.html'/>?upVote=", 
-			    success: function (data) {
-			    	$(this).html("<img src='<s:url value='/temp/images/zan.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
-					praise_txt.addClass("hover");
-					text_box.show().html("<em class='add-animation'>+1</em>");
-					$(".add-animation").addClass("hover");
-					num +=1;
-					praise_txt.text(num)
-			    }
-				
-			})
-		});
-		
-		$("#slander"+articleId).click(function(){
-			$.ajax({
-				type:"post",
-				url: "<s:url value='/article/praise.html'/>", 
-			    data: obj, 
-			    success: function (data) {
-			    	$(this).html("<img src='<s:url value='/temp/images/zan.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
-					praise_txt.removeClass("hover");
-					text_box.show().html("<em class='add-animation'>-1</em>");
-					$(".add-animation").removeClass("hover");
-					num -=1;
-					praise_txt.text(num)
-			    }
-				
-			})
-			
-		});
-	}) */
-	
 	function praise(id,number){
 		var praise_img = $("#praise-img");
 		var text_box = $("#add-num");
@@ -187,15 +147,36 @@ p{text-indent:2em}
 		var num=parseInt(praise_txt.text());
 		$.ajax({
 			type:"get",
-			url: "<s:url value='/article/praise.html'/>?upVote="+number+"&&id="+id, 
-		    success: function (data) {
-		    	$("#praise"+id).html("<img src='<s:url value='/temp/images/zan.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
+			url: "<s:url value='/article/praise.html'/>?upVote="+number+"&id="+id, 
+		    success: function () {
+		    	$("#praise"+id).html("<img src='<s:url value='/images/zan.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
 				praise_txt.addClass("hover");
 				text_box.show().html("<em class='add-animation'>+1</em>");
 				$(".add-animation").addClass("hover");
 				num +=1;
 				praise_txt.text(num);
-				$("#praise"+id).find("*").attr("disabled", "disabled");
+				$("#praise"+id).attr("onclick", "null");
+		    }
+			
+		})
+	}
+	
+	function slander(id,number){
+		var praise_img = $("#slander-img");
+		var text_box = $("#delete-num");
+		var praise_txt = $("#slander-txt");
+		var num=parseInt(praise_txt.text());
+		$.ajax({
+			type:"get",
+			url: "<s:url value='/article/slander.html'/>?upVote="+number+"&id="+id, 
+		    success: function () {
+		    	$("#slander"+id).html("<img src='<s:url value='/images/cai.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
+				praise_txt.addClass("hover");
+				text_box.show().html("<em class='add-animation'>+1</em>");
+				$(".add-animation").addClass("hover");
+				num +=1;
+				praise_txt.text(num);
+				$("#slander"+id).attr("onclick", "null");
 		    }
 			
 		})
