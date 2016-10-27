@@ -124,6 +124,10 @@ $('.patent_type a').bind('click', function(){
 	//alert(box_id);
 	$("."+box_id).show().siblings().hide();
 });
+$('.patent_type li').bind('click', function(){
+
+    $(this).addClass('on').siblings().removeClass('on');
+});
 </script>
 </body>
 </html>
