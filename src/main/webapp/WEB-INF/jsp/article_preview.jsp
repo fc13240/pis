@@ -103,11 +103,14 @@ p{text-indent:2em}
 				<br/>
 				<div>
 				<div style="float:left;margin-left: 60px;" >作者：${article.author}</div>
+<<<<<<< HEAD
 				<span class="praisebtn">
   				<img src="/Content/images/ico_praise.png" class="praisenum" data-bd-imgshare-binded="1">
   					（<a href="#" praise-flag="0" data-id="7">2</a>）
   					<!-- praise-flag="0" 记录点赞标识（是否已赞过）,data-id记录文章id -->
 				</span>
+=======
+>>>>>>> 208fcdbcfd92d359ee853b7eafb3fef26104c4bb
 				<div style="float:left;margin-left: 550px;" >创建时间：${article.createTime}</div>
 				</div>
 				<br/>
@@ -128,11 +131,83 @@ p{text-indent:2em}
 				<div>
 					<div style="float:left;margin-left: 60px;" >来源：${article.source}</div>
 				</div>
+				
+				<div class="praise">
+					<span id="praise${article.id}" onclick="praise('${article.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
+					<span id="praise-txt">{article.upVote}</span>
+					<span id="add-num"><em>+1</em></span>
+				</div>
 			</div> 
 		</div>
 	</div>	
 </div>
 <%@ include file="_footer.jsp"%>
 
+<script>
+	/* @author:Romey
+	 * 动态点赞
+	 * 此效果包含css3，部分浏览器不兼容（如：IE10以下的版本）
+	*/
+	/* $(function(){
+		$("#praise${article.id}").click(function(){
+			var praise_img = $("#praise-img");
+			var text_box = $("#add-num");
+			var praise_txt = $("#praise-txt");
+			var num=parseInt(praise_txt.text());
+			$.ajax({
+				type:"get",
+				url: "<s:url value='/article/praise.html'/>?upVote=", 
+			    success: function (data) {
+			    	$(this).html("<img src='<s:url value='/temp/images/zan.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
+					praise_txt.addClass("hover");
+					text_box.show().html("<em class='add-animation'>+1</em>");
+					$(".add-animation").addClass("hover");
+					num +=1;
+					praise_txt.text(num)
+			    }
+				
+			})
+		});
+		
+		$("#slander"+articleId).click(function(){
+			$.ajax({
+				type:"post",
+				url: "<s:url value='/article/praise.html'/>", 
+			    data: obj, 
+			    success: function (data) {
+			    	$(this).html("<img src='<s:url value='/temp/images/zan.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
+					praise_txt.removeClass("hover");
+					text_box.show().html("<em class='add-animation'>-1</em>");
+					$(".add-animation").removeClass("hover");
+					num -=1;
+					praise_txt.text(num)
+			    }
+				
+			})
+			
+		});
+	}) */
+	
+	function praise(id,number){
+		var praise_img = $("#praise-img");
+		var text_box = $("#add-num");
+		var praise_txt = $("#praise-txt");
+		var num=parseInt(praise_txt.text());
+		$.ajax({
+			type:"get",
+			url: "<s:url value='/article/praise.html'/>?upVote="+number+"&&id="+id, 
+		    success: function (data) {
+		    	$("#praise"+id).html("<img src='<s:url value='/temp/images/zan.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
+				praise_txt.addClass("hover");
+				text_box.show().html("<em class='add-animation'>+1</em>");
+				$(".add-animation").addClass("hover");
+				num +=1;
+				praise_txt.text(num);
+				$("#praise"+id).find("*").attr("disabled", "disabled");
+		    }
+			
+		})
+	}
+</script>
 </body>
 </html>
