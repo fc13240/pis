@@ -67,7 +67,9 @@ $(function(){
 				</div>
 				<!-- Demo end -->	
 		  </div>
-		  
+		  <br/>
+		  <div class="mod-intro-new">
+		  </div> <!-- 虚线 -->
 		  <div class="news-list">
 			<ul>
 				<c:forEach items="${news}" var="news">
