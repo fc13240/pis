@@ -107,6 +107,14 @@ p{text-indent:2em}
 				<br/>
 				<div>
 				<div style="float:left;margin-left: 60px;" >作者：${article.author}</div>
+<<<<<<< HEAD
+				<span class="praisebtn">
+  				<img src="/Content/images/ico_praise.png" class="praisenum" data-bd-imgshare-binded="1">
+  					（<a href="#" praise-flag="0" data-id="7">2</a>）
+  					<!-- praise-flag="0" 记录点赞标识（是否已赞过）,data-id记录文章id -->
+				</span>
+=======
+>>>>>>> 208fcdbcfd92d359ee853b7eafb3fef26104c4bb
 				<div style="float:left;margin-left: 550px;" >创建时间：${article.createTime}</div>
 				</div>
 				<br/>
