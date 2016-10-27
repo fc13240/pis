@@ -22,8 +22,8 @@ public class Article {
 	private String content;
 	private String articleAbstract;
 	private String smallImgUrl;
-	private String upVote;
-	private String downVote;
+	private int upVote;
+	private int downVote;
 	
 	
 	
@@ -81,16 +81,16 @@ public class Article {
 	public void setArticleAbstract(String articleAbstract) {
 		this.articleAbstract = articleAbstract;
 	}
-	public String getUpVote() {
+	public int getUpVote() {
 		return upVote;
 	}
-	public void setUpVote(String upVote) {
+	public void setUpVote(int upVote) {
 		this.upVote = upVote;
 	}
-	public String getDownVote() {
+	public int getDownVote() {
 		return downVote;
 	}
-	public void setDownVote(String downVote) {
+	public void setDownVote(int downVote) {
 		this.downVote = downVote;
 	}
 	public String getSmallImgUrl() {

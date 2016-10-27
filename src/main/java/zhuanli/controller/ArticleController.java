@@ -1,5 +1,6 @@
 package zhuanli.controller;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -72,5 +73,21 @@ public class ArticleController {
 		
 	}
 	
+	@RequestMapping(path="/praise", method=RequestMethod.GET)
+	public void praise(Article article,PrintWriter out){
+		int oldUpVote=article.getUpVote();
+		article.setUpVote(oldUpVote+1);
+		articleService.praise(article);
+		out.write(1);
+		
+	}
 	
+	@RequestMapping(path="/slander", method=RequestMethod.GET)
+	public void slander(Article article,PrintWriter out){
+		int oldUpVote=article.getUpVote();
+		article.setUpVote(oldUpVote+1);
+		articleService.praise(article);
+		out.write(1);
+		
+	}
 }

@@ -43,7 +43,7 @@ public class NewsController {
 		model.addAttribute("news", news);
 		return "news_preview";
 	}		
-
-
+	
+	
 	
 }
