@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -17,15 +16,10 @@
 		<result property="publishTime" column="publish_time"/>
 		<result property="updateTime" column="update_time"/>
 		<result property="smallImgUrl" column="small_img_url"/>
+		<result property="upVote" column="up_vote"/>
+		<result property="downVote" column="down_vote"/>
 		<association property="articleType" resultMap="ArticleTypeResultMap"/>
 		<association property="user" resultMap="UserResultMap"/>
-	</resultMap>
-	
-	<resultMap type="ArticleImg" id="ArticleImgMap">
-			<id property="imgId" column="img_id"/>
-			<result property="imgUrl" column="img_url"/>
-			<result property="articleId" column="article_id"/>
-			<result property="caption" column="caption"/>
 	</resultMap>
 	
 	<resultMap type="User" id="UserResultMap">
@@ -37,40 +31,13 @@
 		<result property="qq" column="qq"/>
 		<result property="weChat" column="weChat"/>
 		<result property="avatarUrl" column="avatar_url"/>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  	<mapper namespace="com.lotut.pms.dao.mapper.ArticleMapper">
-  	<resultMap type="Article" id="ArticleResultMap">
-  		<id property="id" column="id"/>
-		<result property="keywords" column="keywords"/>
-		<result property="author" column="author"/>
-		<result property="title" column="title"/>
-		<result property="createTime" column="create_time"/>
-		<result property="publishTime" column="publish_time"/>
-		<result property="updateTime" column="update_time"/>
-		<result property="source" column="source"/>
-		<result property="articleAbstract" column="abstract"/>
-		<result property="checkStatus" column="check_status"/>
-		<result property="content" column="content"/>
-		<result property="upVote" column="up_vote"/>
-		<result property="downVote" column="down_vote"/>
-		<association property="articleType" javaType="ArticleType">
-			<id property="typeId" column="type_id"/>
-			<result property="typeName" column="type_name"/>
-		</association>
-		<association property="user" resultMap="com.lotut.pms.dao.mapper.UserMapper.UserResultMap"/>
-	  </resultMap>
-		  
+	</resultMap>	  
+	
 	<resultMap type="ArticleImg" id="ArticleImgMap">
 		<id property="imgId" column="img_id"/>
 		<result property="imgUrl" column="img_url"/>
 		<result property="articleId" column="article_id"/>
 		<result property="caption" column="caption"/>
->>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 	</resultMap>
 	
 	<resultMap type="ArticleType" id="ArticleTypeResultMap">
@@ -78,7 +45,6 @@
 		<result property="typeName" column="type_name"/>
 	</resultMap>
 	
-<<<<<<< HEAD
 	<select id="getArticleShow" resultMap="ArticleResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username
@@ -90,7 +56,10 @@
 	<select id="getUserArticleById"  parameterType="int" resultMap="ArticleResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.content,n.abstract,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username
-=======
+		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+		WHERE n.id=#{articleId}
+	</select>
+		
 	<resultMap type="Vote" id="VoteResultMap">
 		<result property="upVote" column="up_vote"/>
 		<result property="downVote" column="down_vote"/>
@@ -109,15 +78,6 @@
 		WHERE n.user_id=#{userId} 
 	</select>	
 	
-	<select id="getUserArticleById"  resultMap="ArticleResultMap">
-		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.create_time,n.publish_time,n.update_time,n.check_status,
-		n.content,nt.type_id ,nt.type_name,u.user_id,u.username
->>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
-		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		WHERE n.id=#{articleId}
-	</select>
-	
-<<<<<<< HEAD
 	<select id="getAllArticle" parameterType="Page" resultMap="ArticleResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username
@@ -133,94 +93,23 @@
 	</select>
 	
 	
-=======
-	<select id="searchUserArticleByPage" parameterType="ArticleSearchCondition" resultMap="ArticleResultMap" >
-		<if test="keyword != null">
-			<bind name="keyword_pattern" value="'%' + keyword + '%'" />
-		</if>
-		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.create_time,n.publish_time,n.update_time,n.check_status,
-		n.content,nt.type_id ,nt.type_name,u.user_id,u.username
-		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		WHERE n.user_id=#{userId}
-		<if test="keyword != null">
-					and ( n.keywords like #{keyword_pattern} or n.author like #{keyword_pattern} or n.title like #{keyword_pattern}
-					or n.source like #{keyword_pattern} or n.abstract like #{keyword_pattern})
-		</if>
-		<if test="articleType != null and articleType !=''">
-					and  (n.article_type = #{articleType})
-		</if>
-		limit #{page.startIndex}, #{page.pageSize}
-	</select>
 	
-	<select id="searchUserArticleCount" parameterType="ArticleSearchCondition" resultType="int" >
-		<if test="keyword != null">
-			<bind name="keyword_pattern" value="'%' + keyword + '%'" />
-		</if>
-		SELECT count(*)
-		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		WHERE n.user_id=#{userId}
-		<if test="keyword != null">
-					and ( n.keywords like #{keyword_pattern} or n.author like #{keyword_pattern} or n.title like #{keyword_pattern}
-					or n.source like #{keyword_pattern} or n.abstract like #{keyword_pattern})
-		</if>
-		<if test="articleType != null and articleType !=''">
-					and  (n.article_type = #{articleType})
-		</if>
-	</select>
-	
->>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 	<select id="getAllArticleTypes" resultMap="ArticleTypeResultMap">
 		select type_id, type_name
 		  from article_type
 		 order by type_id asc;	
 	</select>
 	
-<<<<<<< HEAD
 	<delete id="deleteArticleById" parameterType="int">
 		delete from article where id=#{articleId}
 	</delete>
 	
-	<select id="articleShow" resultMap="articleResultMap">
+	<select id="articleShow" resultMap="ArticleResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		n.small_img_url,nt.type_id ,nt.type_name,u.user_id,u.username
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
 		WHERE  n.small_img_url IS NOT NULL ORDER BY n.create_time DESC ,n.update_time;
 	</select>
-	
-</mapper>
-=======
-	<update id="auditPass" >
-		update article set check_status =#{checkStatus} where id=#{id}
-	</update>
-	
-<!-- 	<update id="auditNoPass" parameterType="int">
-		update article set check_status =2 where id=#{id}
-	</update> -->
-	
-	<insert id="addArticleType" parameterType="String">
-		insert into article_type(type_name) values(#{keyword})
-		
-	</insert>
-	
-	<delete id="deleteArticleType" parameterType="int">
-		delete from article_type where type_id = #{typeId}
-	</delete>
-	
-	<update id="updateArticleType" >
-		update article_type set type_name = #{typeName} where type_id = #{typeId}
-	</update>
-	
-	<delete id="deleteArticle" parameterType="int">
-		delete from article where id = #{articleId}
-	</delete>
-	
-	<insert id="insertArticle" parameterType="Article" useGeneratedKeys="true" keyProperty="id" >
-		insert into article(user_id) values(#{user.userId})
-	</insert>
-	
-	<update id="updateArticle" parameterType="Article">
-		update article set article_type=#{articleType.typeId},keywords=#{keywords},author=#{author},title=#{title},source=#{source},content=#{content,javaType=string,jdbcType=CLOB},abstract=#{articleAbstract}  where id=#{id}
-	</update>
 	
 	<select id="getUpVoteAndDownVote" parameterType="int" resultMap="VoteResultMap">
 		select up_vote,down_vote from article where id=#{id}
@@ -235,4 +124,3 @@
 	</update>
   </mapper>
   
->>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727

@@ -111,6 +111,7 @@ $(function(){
 		              <li><span>10-17</span><a href="" title="" target="_blank">外观设计电子申请视图及简要说明制作与提交规范</a></li>
 		              <li><span>10-17</span><a href="" title="" target="_blank">外观设计电子申请视图及简要说明制作与提交规范</a></li>
 		              </ul>
+		              <div><a href="<s:url value='/article/articleList.html'/>">更多</a></div>	
 	             </div>
 	        </div>
 	      

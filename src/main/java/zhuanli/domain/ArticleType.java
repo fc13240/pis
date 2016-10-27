@@ -16,9 +16,4 @@ public class ArticleType {
 		this.typeName = typeName;
 	}
 	
-	
-<<<<<<< HEAD
-	
-=======
->>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 }
