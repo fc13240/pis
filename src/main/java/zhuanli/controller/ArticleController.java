@@ -85,7 +85,7 @@ public class ArticleController {
 	@RequestMapping(path="/slander", method=RequestMethod.GET)
 	public void slander(Article article,PrintWriter out){
 		int oldUpVote=article.getUpVote();
-		article.setUpVote(oldUpVote+1);
+		article.setUpVote(oldUpVote-1);
 		articleService.praise(article);
 		out.write(1);
 		
