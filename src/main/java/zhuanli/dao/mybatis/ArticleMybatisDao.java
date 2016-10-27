@@ -56,19 +56,18 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 
 	@Override
 	public List<ArticleType> getAllArticleTypes() {
-		articleMapper.getAllArticleTypes();
-		return null;
+		return articleMapper.getAllArticleTypes();
+		
 	}
 
 	@Override
 	public int getAllArticleCount() {
-		articleMapper.getAllArticleCount();
-		return 0;
+		return articleMapper.getAllArticleCount();
+		 
 	}
 
 	@Override
 	public List<Article> articleShow() {
-		articleMapper.articleShow();
-		return null;
+		return articleMapper.articleShow();
 	}
 }

@@ -26,8 +26,6 @@ public interface ArticleMapper {
 	
 	List<Article> articleShow();
 
-
-	
 	Vote getUpVoteAndDownVote(int id);
 	
 	void praise(Article article);

@@ -20,7 +20,6 @@ public interface ArticleService {
 	int getAllArticleCount();
 	
 	List<Article> articleShow();
-
 	
 	Vote getUpVoteAndDownVote(int id);
 	
