@@ -3,6 +3,26 @@ package zhuanli.dao;
 import java.util.List;
 
 import zhuanli.domain.Article;
+<<<<<<< HEAD
+
+import zhuanli.domain.ArticleType;
+import zhuanli.domain.Page;
+
+
+
+public interface ArticleDao {
+	List<Article> getArticleShow();
+	
+	Article getUserArticleById(int userId);
+	
+	List<Article> getAllArticle(Page page);
+	
+	List<ArticleType> getAllArticleTypes();
+	
+	int getAllArticleCount();
+	
+	List<Article> articleShow();
+=======
 import zhuanli.domain.ArticleImg;
 import zhuanli.domain.ArticleSearchCondition;
 import zhuanli.domain.ArticleType;
@@ -43,4 +63,5 @@ public interface ArticleDao {
 	void praise(Article article);
 	
 	void slander(Article article);
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 }

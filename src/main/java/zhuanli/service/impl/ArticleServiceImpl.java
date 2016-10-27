@@ -2,6 +2,15 @@ package zhuanli.service.impl;
 
 import java.util.List;
 
+<<<<<<< HEAD
+import zhuanli.dao.ArticleDao;
+import zhuanli.domain.Article;
+import zhuanli.domain.ArticleType;
+import zhuanli.domain.Page;
+import zhuanli.service.ArticleService;
+
+
+=======
 import javax.servlet.http.HttpSession;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +28,7 @@ import zhuanli.domain.UserArticle;
 import zhuanli.domain.Vote;
 import zhuanli.service.ArticleService;
 import zhuanli.util.PrincipalUtils;
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 
 public class ArticleServiceImpl implements ArticleService {
 	private ArticleDao articleDao;
@@ -28,6 +38,20 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
+<<<<<<< HEAD
+	public List<Article> getArticleShow() {
+		return articleDao.getArticleShow();
+	}
+
+	@Override
+	public Article getUserArticleById(int userId) {
+		return articleDao.getUserArticleById(userId);
+	}
+
+	@Override
+	public List<Article> getAllArticle(Page page) {
+		return articleDao.getAllArticle(page);
+=======
 	public UserArticle getUserArticleByPage(Page page, HttpSession session) {
 		int userId = PrincipalUtils.getCurrentUserId();
 		page.setUserId(userId);
@@ -64,6 +88,7 @@ public class ArticleServiceImpl implements ArticleService {
 		userArticle.setArticles(articles);
 		userArticle.setArticleTypes(articleTypes);
 		return userArticle;
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 	}
 
 	@Override
@@ -72,6 +97,17 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
+<<<<<<< HEAD
+	public int getAllArticleCount() {
+		return articleDao.getAllArticleCount();
+	}
+
+	@Override
+	public List<Article> articleShow() {
+		return articleDao.articleShow();
+	}
+	
+=======
 	public void auditArticle(Article article) {
 		articleDao.auditPass(article);
 	}
@@ -143,5 +179,6 @@ public class ArticleServiceImpl implements ArticleService {
 		articleDao.slander(article);
 	}
 
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 	
 }

@@ -2,6 +2,25 @@ package zhuanli.service;
 
 import java.util.List;
 
+<<<<<<< HEAD
+import zhuanli.domain.Article;
+import zhuanli.domain.ArticleType;
+import zhuanli.domain.Page;
+
+
+public interface ArticleService {
+	List<Article> getArticleShow();
+	
+	Article getUserArticleById(int userId);
+	
+	List<Article> getAllArticle(Page page);
+	
+	List<ArticleType> getAllArticleTypes();
+	
+	int getAllArticleCount();
+	
+	List<Article> articleShow();
+=======
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -46,4 +65,5 @@ public interface ArticleService {
 	void praise(Article article);
 	
 	void slander(Article article);
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 }

@@ -124,11 +124,18 @@ $('.patent_type a').bind('click', function(){
 	//alert(box_id);
 	$("."+box_id).show().siblings().hide();
 });
+<<<<<<< HEAD
+$('.patent_type li').bind('click', function(){
+
+    $(this).addClass('on').siblings().removeClass('on');
+});
+=======
 
  $('.patent_type li').bind('click', function(){
 
     $(this).addClass('on').siblings().removeClass('on');
 }); 
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 </script>
 </body>
 </html>

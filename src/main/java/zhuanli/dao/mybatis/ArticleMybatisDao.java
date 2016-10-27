@@ -8,12 +8,17 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import zhuanli.dao.ArticleDao;
 import zhuanli.dao.mapper.ArticleMapper;
 import zhuanli.domain.Article;
+<<<<<<< HEAD
+import zhuanli.domain.ArticleType;
+import zhuanli.domain.Page;
+=======
 import zhuanli.domain.ArticleImg;
 import zhuanli.domain.ArticleSearchCondition;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
 import zhuanli.domain.Vote;
 
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 
 
 public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDao{
@@ -24,6 +29,20 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 	}
 
 	@Override
+<<<<<<< HEAD
+	public List<Article> getArticleShow() {
+		return articleMapper.getArticleShow();
+	}
+
+	@Override
+	public Article getUserArticleById(int userId) {
+		return articleMapper.getUserArticleById(userId);
+	}
+
+	@Override
+	public List<Article> getAllArticle(Page page) {
+		return articleMapper.getAllArticle(page);
+=======
 	public List<Article> getUserArticleByPage(Page page) {
 		return articleMapper.getUserArticleByPage(page);
 	}
@@ -62,6 +81,7 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 	@Override
 	public List<Article> searchUserArticleByPage(ArticleSearchCondition searchCondition) {
 		return articleMapper.searchUserArticleByPage(searchCondition);
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 	}
 
 	@Override
@@ -70,6 +90,17 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 	}
 
 	@Override
+<<<<<<< HEAD
+	public int getAllArticleCount() {
+		return articleMapper.getAllArticleCount();
+	}
+
+	@Override
+	public List<Article> articleShow() {
+		return articleMapper.articleShow();
+	}
+
+=======
 	public int searchUserArticleCount(ArticleSearchCondition searchCondition) {
 		return articleMapper.searchUserArticleCount(searchCondition);
 	}
@@ -120,5 +151,6 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 
 
 
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 	
 }

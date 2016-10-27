@@ -69,4 +69,15 @@
 	<bean name="databaseAuthDao" class="zhuanli.dao.DatabaseAuthProvider">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
+	
+	<bean id="articleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="zhuanli.dao.mapper.ArticleMapper"/>
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean name="articleDao" class="zhuanli.dao.mybatis.ArticleMybatisDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+		<property name="articleMapper" ref="articleMapper" />
+	</bean>
 </beans>							

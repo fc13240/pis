@@ -1,6 +1,30 @@
 package zhuanli.dao.mapper;
 
 import java.util.List;
+<<<<<<< HEAD
+
+import org.apache.ibatis.annotations.Param;
+
+import zhuanli.domain.Article;
+import zhuanli.domain.ArticleType;
+import zhuanli.domain.Page;
+
+
+
+public interface ArticleMapper {
+	
+	List<Article> getArticleShow();
+	
+	Article getUserArticleById(int userId);
+	
+	List<Article> getAllArticle(Page page);
+	
+	List<ArticleType> getAllArticleTypes();
+	
+	int getAllArticleCount();
+	
+	List<Article> articleShow();
+=======
 import org.apache.ibatis.annotations.Param;
 
 import zhuanli.domain.Article;
@@ -46,4 +70,5 @@ public interface ArticleMapper {
 	
 	void slander(Article article);
 	
+>>>>>>> c14abe23adcc89d40c5718721c4aa2cb5fa03727
 }
