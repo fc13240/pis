@@ -106,7 +106,7 @@ p{text-indent:2em}
 				<span class="praisebtn">
   				<img src="/Content/images/ico_praise.png" class="praisenum" data-bd-imgshare-binded="1">
   					（<a href="#" praise-flag="0" data-id="7">2</a>）
-  					//praise-flag="0" 记录点赞标识（是否已赞过）,data-id记录文章id
+  					<!-- praise-flag="0" 记录点赞标识（是否已赞过）,data-id记录文章id -->
 				</span>
 				<div style="float:left;margin-left: 550px;" >创建时间：${article.createTime}</div>
 				</div>
