@@ -67,7 +67,9 @@ $(function(){
 				</div>
 				<!-- Demo end -->	
 		  </div>
-		  
+		  <br/>
+		  <div class="mod-intro-new">
+		  </div> <!-- 虚线 -->
 		  <div class="news-list">
 			<ul>
 				<c:forEach items="${news}" var="news">
@@ -148,7 +150,7 @@ $(function(){
 			</div>
 	      <div class="tempWrap" style="overflow:hidden; position:relative; width:300px"><div class="bd" style="width: 600px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
 	      	<!--活动专题-->
-	      	<!--知产百科-->
+	      	<!--发明授权-->
 	        <div class="special-bd box_1" style="float: left; width: 300px;">
 			  <div class="news-side">
 	            <div class="new-baike news-list">
@@ -161,8 +163,8 @@ $(function(){
 	          </div>
 	        </div>
 			
-	      	<!--知产百科-->
-	        <div class="special-bd box_2" style="float: left; width: 300px;">
+	      	<!--发明公布-->
+	        <div class="special-bd box_2" style="float: left; width: 300px; display:none;">
 			  <div class="news-side">
 	            <div class="new-baike news-list">
 	               <!-- <img class="lazy" src="/images/shangbiao.jpg" alt="知产百科" width="300" height="110"> -->
@@ -174,8 +176,8 @@ $(function(){
 	                 </div>
 	          </div>
 	        </div>
-	        <!--知产百科-->
-	        <div class="special-bd box_3" style="float: left; width: 300px;">
+	        <!--实用新型-->
+	        <div class="special-bd box_3" style="float: left; width: 300px;display:none;">
 			  <div class="news-side">
 	            <div class="new-baike news-list">
 	               <!-- <img class="lazy" src="/images/shangbiao.jpg" alt="知产百科" width="300" height="110"> -->
@@ -187,8 +189,8 @@ $(function(){
 	                 </div>
 	          </div>
 	        </div>
-	        <!--知产百科-->
-	        <div class="special-bd box_4" style="float: left; width: 300px;">
+	        <!--外观设计-->
+	        <div class="special-bd box_4" style="float: left; width: 300px;display:none;">
 			  <div class="news-side">
 	            <div class="new-baike news-list">
 	               <!-- <img class="lazy" src="/images/shangbiao.jpg" alt="知产百科" width="300" height="110"> -->

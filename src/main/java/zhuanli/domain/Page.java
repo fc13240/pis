@@ -4,10 +4,19 @@ public class Page {
 	private int id;
 	private int totalRecords;//
 	private int currentPage;//
+	private int userId;
 	private int pageSize = 10;//
 	
 	
 	
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	public int getTotalRecords() {
 		return totalRecords;
 	}

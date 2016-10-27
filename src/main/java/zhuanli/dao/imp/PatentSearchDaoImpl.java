@@ -27,7 +27,7 @@ public class PatentSearchDaoImpl implements PatentSearchDao{
 	public  List<Patent> searchByInventionPatentGrant() {
 		MongoDatabase db = mongoClient.getDatabase("sopatent");
 		MongoCollection<Document> collection = db.getCollection("patent");
-		List<Document> docs = collection.find(new BasicDBObject("patentType", "实用新型")).sort(new BasicDBObject("_id",-1)).limit(10).into(new ArrayList<Document>());
+		List<Document> docs = collection.find(new BasicDBObject("patentType", "发明授权")).sort(new BasicDBObject("_id",-1)).limit(10).into(new ArrayList<Document>());
 		List<Patent> patents = new ArrayList<>(docs.size());
 		for (Document doc: docs) {
 			Patent patent = convertDocToPatent(doc);
