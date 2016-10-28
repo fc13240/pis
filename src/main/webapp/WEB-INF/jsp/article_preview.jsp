@@ -100,6 +100,11 @@ p{text-indent:2em}
 
 
 /*评论代码start*/
+.comment-div {
+	position: relative;
+	margin:60px auto;
+	width:70%;
+}
 .textarea-div {
 	position: relative;
 	transition: height 0.3s;
@@ -242,10 +247,8 @@ p{text-indent:2em}
 					<span id="add-num"><em>+1</em></span>
 				</div> 
 				
-			</div> 
-			
-			<!-- 评论代码start-->
-			<div style="float:left;margin:60px 0 0 50px;">
+				<!-- 评论代码start-->
+				<div style="" class="comment-div">
 					<div class="textarea-div" >
 						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/article/addArticleComment.html'/>">
 							<textarea id="contentArea" class="textarea" name="content"
@@ -269,6 +272,9 @@ p{text-indent:2em}
 					<div class="new-comment">最新评论</div>
 					<div class="comment-list">
 						<table id="simple-table" style="word-break: break-all; width: 800px;">
+							<c:if test="${empty comments}">
+				                	暂无新评论。
+				            </c:if>
 							<c:forEach items="${comments}" var="comment">
 								<tr style="border-bottom:1px dashed #ccc;height:20px;"></tr>
 								<tr style="height:40px;">
@@ -291,10 +297,9 @@ p{text-indent:2em}
 
 				</div>  
             <!-- 评论代码over-->
-			
-		</div>
-
-		
+				
+			</div> 			
+		</div>		
 	</div>	
 </div>
 
@@ -457,8 +462,7 @@ p{text-indent:2em}
 	function resetUserForm(){
 		$("#commentLoginModalCloseBtn").trigger("click");
 		resetDefaultValue();
-	}	
-	
+	}
 	
 	/*评论代码over*/
 	
