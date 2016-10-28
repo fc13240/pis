@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
 <style type="text/css">
 #owl-demo{position:relative;width:280px;height:228px;margin:10px auto 0 auto;}
 #owl-demo .item{ position:relative;display:block;}
@@ -91,24 +90,18 @@ $(function(){
 	      	<!--热点资讯-->
 	        <div class="intro-right" style="float: left; width: 474px;">
 	          <div class="mod-intro-new">
-	          <div class="top-news">
-			              <h2 class="f-fwb"><a href="" title="" target="_blank">如何快速办费减，简单3步走起...</a></h2>
-			              <p>如何快速办费减，简单3步走起，龙图腾教你如何办费减，首先准备好相关的文件资料，然后走流程，按照指示去做，最后坐等费减成功...<a href="" title="查看详情" target="_blank">[详情]</a></p>
-			            </div>
-		            <div class="top-news">
-			              <h2 class="f-fwb"><a href="" title="" target="_blank">如何快速办费减，简单3步走起...</a></h2>
-			              <p>如何快速办费减，简单3步走起，龙图腾教你如何办费减，首先准备好相关的文件资料，然后走流程，按照指示去做，最后坐等费减成功...<a href="" title="查看详情" target="_blank">[详情]</a></p>
-			            </div>
+	          			<c:forEach items="${articleShows}" begin="0" end="1" var="articleShow" >
+	          			<div class="top-news">
+			              <h2 class="f-fwb"><a href="<s:url value='/article/articlePreview.html'/>?articleId=<c:out value='${articleShow.id}'/>"  target="_blank">${articleShow.title}...</a></h2>
+			              <p>${articleShow.articleAbstract}...<a href="<s:url value='/article/articlePreview.html'/>?articleId=<c:out value='${articleShow.id}'/>" title="查看详情" target="_blank">[详情]</a></p>
+			            </div>						
+						</c:forEach>
 		            </div>
 	          <div class="news-list">
 				<ul>
-		              <li><span>10-17</span><a href="" title="" target="_blank">外观设计电子申请视图及简要说明制作与提交规范</a></li>
-		              <li><span>10-17</span><a href="" title="" target="_blank">外观设计电子申请视图及简要说明制作与提交规范</a></li>
-		              <li><span>10-17</span><a href="" title="" target="_blank">外观设计电子申请视图及简要说明制作与提交规范</a></li>
-		              <li><span>10-17</span><a href="" title="" target="_blank">外观设计电子申请视图及简要说明制作与提交规范</a></li>
-		              <li><span>10-17</span><a href="" title="" target="_blank">外观设计电子申请视图及简要说明制作与提交规范</a></li>
-		              <li><span>10-17</span><a href="" title="" target="_blank">外观设计电子申请视图及简要说明制作与提交规范</a></li>
-		              <li><span>10-17</span><a href="" title="" target="_blank">外观设计电子申请视图及简要说明制作与提交规范</a></li>
+						 <c:forEach items="${articleShows}" begin="2" var="articleShow" >
+							<li><a href="<s:url value='/article/articlePreview.html'/>?articleId=<c:out value='${articleShow.id}'/>" title="${articleShow.keywords}" target="_blank">${articleShow.title}</a></li>
+						</c:forEach>	 			
 		              </ul>
 		              <div><a href="<s:url value='/article/articleList.html'/>">更多</a></div>	
 	             </div>

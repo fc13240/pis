@@ -99,7 +99,7 @@ p{text-indent:2em}
 </style>
 <div style="width:1200px;margin:0 auto;">
 	<div class="r_detail_about"> 
-		<span>当前位置：</span><a href="http://www.esheji.top/">主页</a> &gt; <a href="/a/zuixingonggao/">最新公告</a> &gt;  
+		<span>当前位置：</span><a href="http://www.lotut.com/">主页</a> &gt; <a href="/news/newsList.html">最新公告</a> &gt;  
 	</div>
 	<div class="article-con">
 		<div class="h_about_mod5"> 

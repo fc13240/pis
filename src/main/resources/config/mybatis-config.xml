@@ -24,7 +24,8 @@
 			<typeAlias alias="Article" type="zhuanli.domain.Article"/>
 			<typeAlias alias="ArticleImg" type="zhuanli.domain.ArticleImg"/>
 			<typeAlias alias="ArticleType" type="zhuanli.domain.ArticleType"/>
-			<typeAlias alias="Vote" type="zhuanli.domain.Vote"/>		
+			<typeAlias alias="Vote" type="zhuanli.domain.Vote"/>
+			<typeAlias alias="ArticleComment" type="zhuanli.domain.ArticleComment"/>		
 		</typeAliases>
 		
 
