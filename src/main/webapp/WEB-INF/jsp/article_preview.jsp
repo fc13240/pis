@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="<s:url value='/css/mll.common.min.css?20160311'/>" />
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
 <link rel="stylesheet" href="<s:url value='/css/praise.css'/>">
+<link rel="stylesheet" href="<s:url value='/css/slander.css'/>">
 
 </head>
 
@@ -107,14 +108,6 @@ p{text-indent:2em}
 				<br/>
 				<div>
 				<div style="float:left;margin-left: 60px;" >作者：${article.author}</div>
-<<<<<<< HEAD
-				<span class="praisebtn">
-  				<img src="/Content/images/ico_praise.png" class="praisenum" data-bd-imgshare-binded="1">
-  					（<a href="#" praise-flag="0" data-id="7">2</a>）
-  					<!-- praise-flag="0" 记录点赞标识（是否已赞过）,data-id记录文章id -->
-				</span>
-=======
->>>>>>> 208fcdbcfd92d359ee853b7eafb3fef26104c4bb
 				<div style="float:left;margin-left: 550px;" >创建时间：${article.createTime}</div>
 				</div>
 				<br/>
@@ -138,9 +131,16 @@ p{text-indent:2em}
 				
 				<div class="praise">
 					<span id="praise${article.id}" onclick="praise('${article.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
-					<span id="praise-txt">{article.upVote}</span>
+					<span id="praise-txt">${article.upVote}</span>
 					<span id="add-num"><em>+1</em></span>
-				</div>
+				</div> 
+				
+				<div class="slander">
+					<span id="slander${article.id}" onclick="slander('${article.id}',${article.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
+					<span id="slander-txt">${article.downVote}</span>
+					<span id="add-num"><em>+1</em></span>
+				</div> 
+				
 			</div> 
 		</div>
 	</div>	
@@ -171,14 +171,14 @@ p{text-indent:2em}
 	
 	function slander(id,number){
 		var praise_img = $("#slander-img");
-		var text_box = $("#delete-num");
+		var text_box = $("#add-num");
 		var praise_txt = $("#slander-txt");
 		var num=parseInt(praise_txt.text());
 		$.ajax({
 			type:"get",
-			url: "<s:url value='/article/slander.html'/>?upVote="+number+"&id="+id, 
+			url: "<s:url value='/article/slander.html'/>?downVote="+number+"&id="+id, 
 		    success: function () {
-		    	$("#slander"+id).html("<img src='<s:url value='/images/cai.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
+		    	$("#slander"+id).html("<img src='<s:url value='/images/cai.png'/>' width='20px;' height='20px;' id='slander-img' class='animation' style='margin-top:-90px;'/>");
 				praise_txt.addClass("hover");
 				text_box.show().html("<em class='add-animation'>+1</em>");
 				$(".add-animation").addClass("hover");

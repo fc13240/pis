@@ -25,7 +25,7 @@
     word-wrap: break-word;
 }
 /*动态点赞开始*/
-.praise{
+.slander{
     width:40px;
     height:40px;
     margin: 50px auto;
@@ -34,27 +34,27 @@
     text-align:center;
     position: relative;
 }
-#praise{
+#slander{
     display:block;
     width:40px;
     height:40px;
     margin:0 auto;
 }
-#praise-txt{
+
+#slander-txt{
     height:25px;
     line-height:25px;
     display: block;
-    margin-left: -100px;
+	margin-left: 65px;
 }
 
-.praise img{
-    width:40px;
+.slander img{
+	width:40px;
     height:40px;
     display:block;
-    margin-left: -50px;
+    margin-left: 50px;
 }
-
-.praise img.animation{
+.slander img.animation{
     animation: myfirst 0.5s;
     -moz-animation: myfirst 0.5s;	/* Firefox */
     -webkit-animation: myfirst 0.5s;	/* Safari 和 Chrome */
@@ -72,13 +72,13 @@
     opacity: 0;
     filter: Alpha(opacity=0);
     -moz-opacity:0;
-    animation: mypraise 0.5s ;
-    -moz-animation: mypraise 0.5s ;	/* Firefox */
-    -webkit-animation: mypraise 0.5s ;	/* Safari 和 Chrome */
-    -o-animation: mypraise 0.5s ;	/* Opera */
+    animation: myslander 0.5s ;
+    -moz-animation: myslander 0.5s ;	/* Firefox */
+    -webkit-animation: myslander 0.5s ;	/* Safari 和 Chrome */
+    -o-animation: myslander 0.5s ;	/* Opera */
     font-style:normal;
 }
-.praise .hover , #add-num .add-animation.hover , #praise-txt.hover{
+.slander .hover , #add-num .add-animation.hover , #slander-txt.hover{
     color: #EB4F38;
 }
 
@@ -148,7 +148,7 @@
 }
 /*点赞图标放大动画结束*/
 /*点赞数量加减动画开始*/
-@keyframes mypraise
+@keyframes myslander
 {
     0%{
         top:-15px;
@@ -182,7 +182,7 @@
     }
 }
 
-@-moz-keyframes mypraise /* Firefox */
+@-moz-keyframes myslander /* Firefox */
 {
     0%{
         top:-15px;
@@ -216,7 +216,7 @@
     }
 }
 
-@-webkit-keyframes mypraise /* Safari 和 Chrome */
+@-webkit-keyframes myslander /* Safari 和 Chrome */
 {
     0%{
         top:-15px;
@@ -250,7 +250,7 @@
     }
 }
 
-@-o-keyframes mypraise /* Opera */
+@-o-keyframes myslander /* Opera */
 {
     0%{
         top:-15px;
