@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import zhuanli.domain.Article;
+import zhuanli.domain.ArticleComment;
 import zhuanli.domain.Page;
 import zhuanli.service.ArticleService;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -57,6 +58,8 @@ public class ArticleController {
 	@RequestMapping(path="/articlePreview")
 	public String articlePreview(@RequestParam("articleId") int articleId,Model model) {
 		Article article=articleService.getUserArticleById(articleId);
+		List<ArticleComment> comments = articleService.getArticleCommentsById(articleId);
+		model.addAttribute("comments", comments);
 		model.addAttribute("article", article);
 		return "article_preview";
 	}		
@@ -96,8 +99,8 @@ public class ArticleController {
 	
 	@RequestMapping(path="/addArticleComment", method=RequestMethod.GET)
 	public void addArticleComment(String content,int articleId){
-		//int userId = PrincipalUtils.getCurrentUserId();
-		articleService.addArticleComment(content,articleId,27);
+		int userId = PrincipalUtils.getCurrentUserId();
+		articleService.addArticleComment(content,articleId,userId);
 		
 	}
 	

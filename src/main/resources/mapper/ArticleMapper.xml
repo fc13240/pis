@@ -138,8 +138,8 @@
 		INSERT INTO article_comments(create_time,content,article_id,user_id) VALUES (NOW(),#{content},#{articleId},#{userId})
 	</insert>
 	
-	<select id="checkUser"  resultType="User">
-		select * from users where username = #{username} and visible_password = #{password}
+	<select id="checkUser"  resultMap="UserResultMap">
+		select user_id,username,name from users where username = #{username} and password = #{password}
 	</select>
 	
 	<select id="getArticleCommentsById" parameterType="int" resultMap="ArticleCommentMap">
@@ -147,6 +147,7 @@
 		FROM article_comments ac
 		LEFT JOIN users u ON u.user_id = ac.user_id
 		WHERE article_id = #{articleId}
+		order by create_time desc
 	</select>
   </mapper>
   
