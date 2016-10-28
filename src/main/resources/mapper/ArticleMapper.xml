@@ -45,6 +45,17 @@
 		<result property="typeName" column="type_name"/>
 	</resultMap>
 	
+	<resultMap type="ArticleComment" id="ArticleCommentMap">
+		<id property="commentId" column="comment_id"/>
+		<result property="createTime" column="create_time"/>
+		<result property="content" column="content"/>
+		<result property="articleId" column="article_id"/>
+		<association property="user" javaType="User">
+				<id property="userId" column="user_id"/>
+				<result property="username" column="username"/>
+			</association>
+	</resultMap>
+	
 	<select id="getArticleShow" resultMap="ArticleResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username
@@ -122,5 +133,20 @@
 	<update id="slander">
 		update article set down_vote=#{downVote} where id=#{id}
 	</update>
+	
+	<insert id="addArticleComment">
+		INSERT INTO article_comments(create_time,content,article_id,user_id) VALUES (NOW(),#{content},#{articleId},#{userId})
+	</insert>
+	
+	<select id="checkUser"  resultType="User">
+		select * from users where username = #{username} and visible_password = #{password}
+	</select>
+	
+	<select id="getArticleCommentsById" parameterType="int" resultMap="ArticleCommentMap">
+		SELECT comment_id,create_time,content,u.user_id,u.username 
+		FROM article_comments ac
+		LEFT JOIN users u ON u.user_id = ac.user_id
+		WHERE article_id = #{articleId}
+	</select>
   </mapper>
   

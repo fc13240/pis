@@ -4,8 +4,10 @@ import java.util.List;
 
 import zhuanli.dao.ArticleDao;
 import zhuanli.domain.Article;
+import zhuanli.domain.ArticleComment;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
+import zhuanli.domain.User;
 import zhuanli.service.ArticleService;
 
 
@@ -82,6 +84,23 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public void slander(Article article) {
 		articleDao.slander(article);
+	}
+	
+	@Override
+	public void addArticleComment(String content, int articleId, int userId) {
+		articleDao.addArticleComment(content, articleId, userId);
+		
+	}
+
+	@Override
+	public User checkUser(String username, String password) {
+		
+		return articleDao.checkUser(username, password);
+	}
+	
+	@Override
+	public List<ArticleComment> getArticleCommentsById(int articleId) {
+		return articleDao.getArticleCommentsById(articleId);
 	}
 
 	
