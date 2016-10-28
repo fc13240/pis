@@ -6,8 +6,10 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import zhuanli.domain.Article;
+import zhuanli.domain.ArticleComment;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
+import zhuanli.domain.User;
 import zhuanli.domain.Vote;
 
 
@@ -31,6 +33,12 @@ public interface ArticleMapper {
 	void praise(Article article);
 	
 	void slander(Article article);
+	
+	void addArticleComment(@Param("content")String content, @Param("articleId") int articleId,@Param("userId") int userId);
+
+	User checkUser(@Param("username")String username, @Param("password")String password);
+	
+	List<ArticleComment> getArticleCommentsById(int articleId);
 	
 
 }

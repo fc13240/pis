@@ -1,8 +1,10 @@
 package zhuanli.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,7 @@ import zhuanli.domain.User;
 import zhuanli.domain.UserArticle;
 import zhuanli.service.ArticleService;
 import zhuanli.util.PrincipalUtils;
+import zhuanli.util.WebUtils;
 
 
 
@@ -89,5 +92,18 @@ public class ArticleController {
 		articleService.praise(article);
 		out.write(1);
 		
+	}
+	
+	@RequestMapping(path="/addArticleComment", method=RequestMethod.GET)
+	public void addArticleComment(String content,int articleId){
+		//int userId = PrincipalUtils.getCurrentUserId();
+		articleService.addArticleComment(content,articleId,27);
+		
+	}
+	
+	@RequestMapping(path="/checkUser", method=RequestMethod.GET)
+	public void checkUser(String username,String password,HttpServletResponse response) throws IOException{
+		User user = articleService.checkUser(username,password);
+		WebUtils.writeJsonStrToResponse(response, user.getUserId());
 	}
 }
