@@ -46,6 +46,4 @@ public class NewsServiceImpl implements NewsService {
 	public List<News> newsShow() {
 		return newsDao.newsShow();
 	}
-	
-	
 }

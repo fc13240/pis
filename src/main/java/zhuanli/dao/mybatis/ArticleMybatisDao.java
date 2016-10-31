@@ -8,8 +8,10 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import zhuanli.dao.ArticleDao;
 import zhuanli.dao.mapper.ArticleMapper;
 import zhuanli.domain.Article;
+import zhuanli.domain.ArticleComment;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
+import zhuanli.domain.User;
 import zhuanli.domain.ArticleImg;
 import zhuanli.domain.ArticleSearchCondition;
 import zhuanli.domain.ArticleType;
@@ -69,5 +71,22 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 	@Override
 	public List<Article> articleShow() {
 		return articleMapper.articleShow();
+	}
+	
+	@Override
+	public void addArticleComment(String content, int articleId, int userId) {
+		articleMapper.addArticleComment(content, articleId, userId);
+		
+	}
+
+	@Override
+	public User checkUser(String username, String password) {
+		return articleMapper.checkUser(username, password);
+		
+	}
+	
+	@Override
+	public List<ArticleComment> getArticleCommentsById(int articleId) {
+		return articleMapper.getArticleCommentsById(articleId);
 	}
 }

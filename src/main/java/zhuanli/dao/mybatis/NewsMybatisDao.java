@@ -49,5 +49,4 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 		return newsMapper.newsShow();
 	}
 
-	
 }
