@@ -92,5 +92,4 @@
 		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
 		WHERE  n.small_img_url IS NOT NULL ORDER BY n.create_time DESC ,n.update_time;
 	</select>
-	
 </mapper>
