@@ -20,6 +20,7 @@ public class Article {
 	private Date updateTime;
 	private String source;
 	private String content;
+	private String checkStatus;
 	private String articleAbstract;
 	private String smallImgUrl;
 	private int upVote;
@@ -116,6 +117,12 @@ public class Article {
 	}
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+	public String getCheckStatus() {
+		return checkStatus;
+	}
+	public void setCheckStatus(String checkStatus) {
+		this.checkStatus = checkStatus;
 	}
 	
 	
