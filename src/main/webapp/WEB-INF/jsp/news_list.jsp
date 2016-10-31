@@ -92,7 +92,11 @@ font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
 </style>
 <div style="width:1200px;margin:0 auto;">
 	<div class="r_detail_about"> 
+<<<<<<< HEAD
+		<span>当前位置：</span><a href="http://www.lotut.com/">主页</a> &gt; <a href="/a/zuixingonggao/">最新公告</a> &gt;  
+=======
 		<span>当前位置：</span><a href="http://www.lotut.com/">主页</a> &gt; <a href="<s:url value='/news/newsList.html'/>">最新公告</a> &gt;  
+>>>>>>> 929e7a3029efabfebd323ed5bff1ce73f12aae61
 	</div>
 	<div class="article-con">
 		<div class="h_about_mod5"> 
