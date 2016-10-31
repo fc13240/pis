@@ -60,10 +60,10 @@
     -webkit-animation: myfirst 0.5s;	/* Safari ºÍ Chrome */
     -o-animation: myfirst 0.5s;	/* Opera */
 }
-#add-num{
+#del-num{
     display:none;
 }
-#add-num .add-animation{
+#del-num .del-animation{
     color: #000;
     position:absolute;
     top:-15px;
@@ -77,8 +77,9 @@
     -webkit-animation: myslander 0.5s ;	/* Safari ºÍ Chrome */
     -o-animation: myslander 0.5s ;	/* Opera */
     font-style:normal;
+    margin-left: 50px;
 }
-.slander .hover , #add-num .add-animation.hover , #slander-txt.hover{
+.slander .hover , #del-num .del-animation.hover , #slander-txt.hover{
     color: #EB4F38;
 }
 
