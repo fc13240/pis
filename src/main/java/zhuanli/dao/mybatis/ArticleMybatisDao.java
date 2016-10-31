@@ -78,12 +78,6 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 		articleMapper.addArticleComment(content, articleId, userId);
 		
 	}
-
-	@Override
-	public User checkUser(String username, String password) {
-		return articleMapper.checkUser(username, password);
-		
-	}
 	
 	@Override
 	public List<ArticleComment> getArticleCommentsById(int articleId) {

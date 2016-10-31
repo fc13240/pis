@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhuanli.dao.mapper.UserMapper">
+	<resultMap type="User" id="UserResultMap">
+		<id property="userId" column="user_id"/>
+		<result property="username" column="username"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="phone" column="phone"/>
+		<result property="qq" column="qq"/>
+		<result property="weChat" column="weChat"/>
+		<result property="avatarUrl" column="avatar_url"/>
+	</resultMap>
+	
+	<!-- 查找用户 -->
+	<select id="findByName" parameterType="string" resultType="User">
+		select user_id userId,username,name,email,password,phone from users where username=#{username}
+	</select>
+	<!-- 注册方法 -->
+	<insert id="save" parameterType="User">
+		insert into users(username,name,password,visible_password,email) values(#{username},#{name},#{password},#{visiblePassword},#{email});
+		insert into group_members(username, group_id) values(#{username}, 1)
+	</insert>
+	
+	<select id="getById" resultMap="UserResultMap">
+		select username, name, email, phone,qq,weChat,avatar_url
+		  from users
+		 where user_id = #{userId}
+	</select>
+	
+	<select id="getByUsername" resultMap="UserResultMap">
+		select user_id, name, email, phone
+		  from users
+		 where  username= #{username}
+	</select>	
+	
+	<select id="getAllUser" resultMap="UserResultMap">
+		SELECT * FROM users
+		WHERE EXISTS (SELECT 1 FROM orders WHERE orders.user = users.user_id);
+	</select>
+</mapper>

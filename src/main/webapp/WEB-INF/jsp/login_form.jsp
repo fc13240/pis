@@ -157,10 +157,10 @@
 												我要注册
 												<i class="ace-icon fa fa-arrow-right"></i>
 											</a>
-											<a href="<s:url value='/user/user_forget_password.html'/>"  class="user-signup-link" >
+											<%-- <a href="<s:url value='/user/user_forget_password.html'/>"  class="user-signup-link" >
 												忘记密码
 												<i class="ace-icon fa fa-arrow-right"></i>
-											</a>											
+											</a> --%>											
 										</div>
 									</div>
 								</div><!-- /.widget-body -->

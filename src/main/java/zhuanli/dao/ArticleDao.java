@@ -32,7 +32,5 @@ public interface ArticleDao {
 	
 	void addArticleComment(String content, int articleId, int userId);
 
-	User checkUser(String username, String password);
-	
 	List<ArticleComment> getArticleCommentsById(int articleId);
 }
