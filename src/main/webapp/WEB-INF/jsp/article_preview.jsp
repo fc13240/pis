@@ -251,7 +251,7 @@ p{text-indent:2em}
 				<!-- 评论代码start-->
 				<div style="" class="comment-div">
 					<div class="textarea-div" >
-						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/article/addArticleComment.html'/>">
+						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/article/comment/addArticleComment.html'/>">
 							<textarea id="contentArea" class="textarea" name="content"
 								placeholder="我来说两句..." >
 							

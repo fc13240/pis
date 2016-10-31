@@ -10,9 +10,9 @@
 	<http pattern="/static/**" security="none" />
 
 	<http use-expressions="true">
-		<!-- <intercept-url pattern="/loginForm.html" access="isAuthenticated()"/>
-		<intercept-url pattern="/user/registerForm.html" access="isAuthenticated()"/>
-		<intercept-url pattern="/user/register.html" access="isAuthenticated()"/> -->
+		<intercept-url pattern="/loginForm.html" access="isAnonymous()"/>
+		<intercept-url pattern="/user/registerForm.html" access="isAnonymous()"/>
+		<intercept-url pattern="/user/register.html" access="isAnonymous()"/>
 		<intercept-url pattern="/article/comment/**" access="isAuthenticated()"/>
 		<form-login login-page="/loginForm.html" default-target-url="/index.html" />
 		<csrf disabled="true"/>
