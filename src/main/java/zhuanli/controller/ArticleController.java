@@ -88,7 +88,7 @@ public class ArticleController {
 		
 	}
 	
-	@RequestMapping(path="/addArticleComment", method=RequestMethod.GET)
+	@RequestMapping(path="/comment/addArticleComment", method=RequestMethod.GET)
 	public void addArticleComment(String content,int articleId){
 		int userId = PrincipalUtils.getCurrentUserId();
 		articleService.addArticleComment(content,articleId,userId);

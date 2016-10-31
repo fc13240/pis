@@ -69,4 +69,14 @@
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="articleMapper" ref="articleMapper" />
 	</bean>
+	
+	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="zhuanli.dao.mapper.UserMapper"/>
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean name="userDao" class="zhuanli.dao.mybatis.UserMybatisDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+		<property name="userMapper" ref="userMapper" />
+	</bean>
 </beans>							

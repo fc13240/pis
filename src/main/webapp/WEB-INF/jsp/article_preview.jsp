@@ -7,7 +7,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
 <title>调用新闻标题-龙图腾商标专利交易网 </title>
 <meta name="keywords" content="知识产权,专利交易,商标转让,龙图腾,中外知识产权网" />
 <meta name="description" content="龙图腾网（www.lotut.com）是全球领先的知识产权交易平台。为企业提供专业的商标转让、专利交易等服务。拥有国内知识产权资源，全面覆盖了商标、专利、版权等领域的交易平台，让知识产权在流通中创造财富，引领知识产权的创新。" />
@@ -244,7 +245,7 @@ p{text-indent:2em}
 				<div class="slander">
 					<span id="slander${article.id}" onclick="slander('${article.id}',${article.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
 					<span id="slander-txt">${article.downVote}</span>
-					<span id="add-num"><em>+1</em></span>
+					<span id="del-num"><em>+1</em></span>
 				</div> 
 				
 				<!-- 评论代码start-->
@@ -394,7 +395,7 @@ p{text-indent:2em}
 	
 	function slander(id,number){
 		var praise_img = $("#slander-img");
-		var text_box = $("#add-num");
+		var text_box = $("#del-num");
 		var praise_txt = $("#slander-txt");
 		var num=parseInt(praise_txt.text());
 		$.ajax({
@@ -403,8 +404,8 @@ p{text-indent:2em}
 		    success: function () {
 		    	$("#slander"+id).html("<img src='<s:url value='/images/cai.png'/>' width='20px;' height='20px;' id='slander-img' class='animation' style='margin-top:-90px;'/>");
 				praise_txt.addClass("hover");
-				text_box.show().html("<em class='add-animation'>+1</em>");
-				$(".add-animation").addClass("hover");
+				text_box.show().html("<em class='del-animation'>+1</em>");
+				$(".del-animation").addClass("hover");
 				num +=1;
 				praise_txt.text(num);
 				$("#slander"+id).attr("onclick", "null");
