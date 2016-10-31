@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
 <link rel="stylesheet" href="<s:url value='/css/praise.css'/>">
 <link rel="stylesheet" href="<s:url value='/css/slander.css'/>">
-<%-- <c:import url="common/kindEditor3.jsp"></c:import> --%>
 
 </head>
 
@@ -138,24 +137,6 @@ p{text-indent:2em}
 	overflow: hidden;
 }
 
-.input-account{
-	border: 1px solid #fff;
-	width: 120px;
-	height: 28px;
-	margin: 7px 5px 7px 10px;
-	border-radius: 3px;
-	padding-left: 15px;
-}
-
-.input-key{
-	border-radius: 3px;
-	border: 1px solid #fff;
-	width: 120px;
-	height: 28px;
-	margin: 7px 0;
-	padding-left: 15px;
-}
-
 .submit-btn {
 	font-size: 14px;
 	font-family: "Microsoft YaHei";
@@ -251,18 +232,14 @@ p{text-indent:2em}
 				<!-- 评论代码start-->
 				<div style="" class="comment-div">
 					<div class="textarea-div" >
-						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/article/comment/addArticleComment.html'/>">
+						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/article/comment/addArticleComment.html'/>" onsubmit="return validateComment();">
 							<textarea id="contentArea" class="textarea" name="content"
 								placeholder="我来说两句..." >
 							
 							</textarea>
 							<div class="submit-row" style="position: relative;">
-								<input id="articleId" type="hidden" name="articleId" value="${article.id}"/>
-								<!-- <a class="submit-btn" href="javascript:;" style="text-decoration: none;color:white;" data-toggle = "modal" data-target = "#commentLoginModal">
-
-                               		 发表</a> -->
-                               		 
-                               	<button class="submit-btn" type="submit">发表</button>
+								<input id="articleId" type="hidden" name="articleId" value="${article.id}"/>            		 
+                               	<button class="submit-btn" type="submit">发表评论</button>
 								
 							
 							</div>
@@ -303,71 +280,6 @@ p{text-indent:2em}
 		</div>		
 	</div>	
 </div>
-
-<%-- 
-<!-- 登录 -->
-<div class = "modal fade" id = "commentLoginModal" tabindex = "-1" role = "dialog" 
-   aria-labelledby = "myModalLabel" aria-hidden = "true" >
-   
-   <div class = "modal-dialog" >
-      <div class = "modal-content">
-         
-         <div class = "modal-header">
-            <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true" id="commentLoginModalCloseBtn">
-               ×
-            </button>
-            
-            <h4 class = "modal-title" id = "myModalLabel">
-            	登录
-            </h4>
-         </div>
-	         <div class = "modal-body" id="modal-body">
-					<h5>用户名:</h5>
-					<input class="selectPointOfInterest form-control" style="width:460px;" type="text" id="modalUsername"/>
-					<br>
-					<h5>密码:</h5>
-					<input class="selectPointOfInterest form-control" type="password" style="width:460px;" id="modalPassword" type="text"/>
-					<br>		  
-					
-					<button type="button" style="width:90px;" class="button button-primary  button-rounded" onclick="submitUserForm()">登录</button>
-					<button type="button" style="width:90px;margin-left:280px" class="button button-primary  button-rounded" onclick="resetUserForm()"
-						data-toggle = "modal" data-target = "#commentRegisterModal">注册</button>
-	         </div>
-      </div>
-   </div>
-</div>
-
-<!-- 注册 -->
-<div class = "modal fade" id = "commentRegisterModal" tabindex = "-1" role = "dialog" 
-   aria-labelledby = "myModalLabel" aria-hidden = "true" >
-   
-   <div class = "modal-dialog" >
-      <div class = "modal-content">
-         
-         <div class = "modal-header">
-            <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true" id="commentRegisterModalCloseBtn">
-               ×
-            </button>
-            
-            <h4 class = "modal-title" id = "myModalLabel">
-            	注册
-            </h4>
-         </div>
-	         <div class = "modal-body" id="modal-body">
-					<h5><span style="color:red;font-size:18px;">* </span>用户名:</h5>
-					<input class="selectPointOfInterest form-control" style="width:460px;" type="text" id="modalUsername"/>
-					<span style="color: red; display: none;" id=appPersonNameError>请输入正确的证件号码</span>
-					<br>
-					<h5><span style="color:red;font-size:18px;">* </span>密码:</h5>
-					<input class="selectPointOfInterest form-control" type="password" style="width:460px;" id="modalPassword" type="text"/>
-					<span style="color: red; display: none;" id=appPersonPhoneError>请输入正确的证件号码</span>
-					<br> 					
-					<button type="button" style="width:90px;margin-left:280px" class="button button-primary  button-rounded" onclick="resetAppPersonForm()">注册</button>
-	         </div>
-      </div>
-   </div>
-</div> 
- --%>
 
 <%@ include file="_footer.jsp"%>
 
@@ -415,57 +327,20 @@ p{text-indent:2em}
 	}
 	
 	
-	
-	/*评论代码start*/
 	$(function() {
-		docment.getElementById("contentArea").value="";
+		$("#contentArea").val('');
 	});
 	
-	function submitUserForm() {
-		var username = $("#modalUsername").val();
-		var password = $("#modalPassword").val();		
-		$.ajax({
-			url : "<s:url value='/article/checkUser.html'/>?username="+ username + "&password=" + password,
-			type : "get",
-			success : function(data) {
-				resetUserForm();
-				var content = $("#contentArea").val();
-				var articleId = $("#articleId").val();
-				if(typeof(content) != "undefined"){
-					alert("添加评论");
-					$.ajax({
-						url:"<s:url value='/article/addArticleComment.html'/>",
-						data:{"content":content,"articleId":articleId},
-						async:false,
-						success:function (){
-							docment.getElementById("contentArea").value="";
-							alert("添加评论成功");
-							location.reload();
-						}
-					})
-				} else {
-					alert("评论的内容为空。");
-				}
-				
-			},
-			error :function(){
-				alert("输入的账户和密码不正确。");
-			}
-		});
-		
+	function validateComment() {
+		if($("#contentArea").val()==""){
+			alert("评论不能为空。")
+			return false;
+		} else {
+			return true;
+		}
 	}
 	
-	function resetDefaultValue(){
-		$("#modalUsername").val("");
-		$("#modalPassword").val("");
-		
-	}
-	function resetUserForm(){
-		$("#commentLoginModalCloseBtn").trigger("click");
-		resetDefaultValue();
-	}
 	
-	/*评论代码over*/
 	
 </script>
 </body>
