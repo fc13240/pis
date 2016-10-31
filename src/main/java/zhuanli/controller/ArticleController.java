@@ -89,15 +89,10 @@ public class ArticleController {
 	}
 	
 	@RequestMapping(path="/comment/addArticleComment", method=RequestMethod.GET)
-	public void addArticleComment(String content,int articleId){
+	public String addArticleComment(String content,int articleId){
 		int userId = PrincipalUtils.getCurrentUserId();
 		articleService.addArticleComment(content,articleId,userId);
-		
+		return "redirect:/article/articlePreview.html?articleId="+articleId;
 	}
 	
-	@RequestMapping(path="/checkUser", method=RequestMethod.GET)
-	public void checkUser(String username,String password,HttpServletResponse response) throws IOException{
-		User user = articleService.checkUser(username,password);
-		WebUtils.writeJsonStrToResponse(response, user.getUserId());
-	}
 }

@@ -36,8 +36,6 @@ public interface ArticleMapper {
 	
 	void addArticleComment(@Param("content")String content, @Param("articleId") int articleId,@Param("userId") int userId);
 
-	User checkUser(@Param("username")String username, @Param("password")String password);
-	
 	List<ArticleComment> getArticleCommentsById(int articleId);
 	
 

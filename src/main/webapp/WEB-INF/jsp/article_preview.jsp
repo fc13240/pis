@@ -109,7 +109,7 @@ p{text-indent:2em}
 	position: relative;
 	transition: height 0.3s;
 	height: 158px;
-	border: solid 1px #000;
+	border: solid 1px #ccc;
 	border-radius: 5px;
 	overflow: hidden;
 	margin: 0;
@@ -141,7 +141,7 @@ p{text-indent:2em}
 	font-size: 14px;
 	font-family: "Microsoft YaHei";
 	color: #fff;
-	background-color: #666;
+	background-color: red;
 	width: 130px;
 	height: 44px;
 	line-height: 44px;
@@ -164,12 +164,11 @@ p{text-indent:2em}
 	color:#999;
 }
 
-.time-td {
-	float:right;
+.time-td {	
 	font-size: 12px;
 	font-family: "SimSun";
 	color:#999;
-	valign:"middle";
+	valign:middle;
 }
 
 .comment-td {
@@ -254,16 +253,16 @@ p{text-indent:2em}
 				                	暂无新评论。
 				            </c:if>
 							<c:forEach items="${comments}" var="comment">
-								<tr style="border-bottom:1px dashed #ccc;height:20px;"></tr>
+								<tr style="border-bottom:1px dashed #ccc;"></tr>
 								<tr style="height:40px;">
-									<td class="account-td">${comment.user.username}</td>
-									<td class="time-td" style="height:40px;">
-									<fmt:formatDate  value="${comment.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
-										
-									</td>
+									<td class="account-td">${comment.user.username}</td>									
 								</tr>
 								<tr>
 									<td colspan="2" class="comment-td">${comment.content}</td>
+								</tr>
+								<tr><td class="time-td" style="height:40px;">
+										<fmt:formatDate  value="${comment.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+									</td>
 								</tr>
 								
 							</c:forEach>

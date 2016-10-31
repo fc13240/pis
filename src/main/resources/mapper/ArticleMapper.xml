@@ -138,10 +138,6 @@
 		INSERT INTO article_comments(create_time,content,article_id,user_id) VALUES (NOW(),#{content},#{articleId},#{userId})
 	</insert>
 	
-	<select id="checkUser"  resultMap="UserResultMap">
-		select user_id,username,name from users where username = #{username} and password = #{password}
-	</select>
-	
 	<select id="getArticleCommentsById" parameterType="int" resultMap="ArticleCommentMap">
 		SELECT comment_id,create_time,content,u.user_id,u.username 
 		FROM article_comments ac
