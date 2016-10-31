@@ -77,6 +77,7 @@
     -webkit-animation: mypraise 0.5s ;	/* Safari ºÍ Chrome */
     -o-animation: mypraise 0.5s ;	/* Opera */
     font-style:normal;
+    margin-left: -50px;
 }
 .praise .hover , #add-num .add-animation.hover , #praise-txt.hover{
     color: #EB4F38;
