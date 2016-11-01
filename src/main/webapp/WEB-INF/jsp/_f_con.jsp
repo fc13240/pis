@@ -211,9 +211,9 @@ $(function(){
 
 <!-- 1Fend -->
 <div class="floor_1F">
-	<div class="news-info-hd" style="clear:both;height: 50px;">
-	        <div class="floor_num">2F</div>
-	        <h2>专利推荐</h2>
+	<div class="news-info-hd" style="clear:both;height: 50px;border-bottom: 2px solid #f99885;">
+	        <div class="floor_num" style="background: url(<s:url value='/images/icon_floorNav_02.png'/>) no-repeat 0 -25px;">2F</div>
+	        <h2>专利推荐</h2>                            
 	</div>
 	<div class="news-info-con" style="height: 340px;">
 		<div class="news-info-bd clear">
