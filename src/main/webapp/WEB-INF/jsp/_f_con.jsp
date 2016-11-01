@@ -260,7 +260,51 @@ $(function(){
 				  </div>     
 		        </div>
 		      </div> 	
-			</div>	 		
+			</div>	 
+	
+			<div class="left-item">
+		      <div class="g-item">
+		        <div class="g-dtl"> 
+		          <a href="<s:url value='/business/patent_article.html?shopType=3'/>" target="_blank"> 
+		          	<img class="d-img" src="<s:url value='/images/patent_type_03.jpg'/>"> 
+		          </a>
+		          <a href="<s:url value='/business/patent_article.html?shopType=3'/>" target="_blank" title="交通/包装/建筑" class="d-name">
+		          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">交通/包装/建筑</span>
+		          </a>
+	        
+				  <div>
+					  <div style="float:left;width:100px;">
+					  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
+					  </div>
+					  <div style="float:right;width:100px;" class="box_buy">
+					  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_article.html?shopType=3'/>" class="btn_buy">立即抢购</a>
+					  </div>
+				  </div>     
+		        </div>
+		      </div> 	
+			</div>	 
+	
+			<div class="left-item">
+		      <div class="g-item">
+		        <div class="g-dtl"> 
+		          <a href="<s:url value='/business/patent_article.html?shopType=4'/>" target="_blank"> 
+		          	<img class="d-img" src="<s:url value='/images/patent_type_04.jpg'/>"> 
+		          </a>
+		          <a href="<s:url value='/business/patent_article.html?shopType=4'/>" target="_blank" title="电力/环保/通讯" class="d-name">
+		          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">电力/环保/通讯</span>
+		          </a>
+	        
+				  <div>
+					  <div style="float:left;width:100px;">
+					  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
+					  </div>
+					  <div style="float:right;width:100px;" class="box_buy">
+					  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_article.html?shopType=4'/>" class="btn_buy">立即抢购</a>
+					  </div>
+				  </div>     
+		        </div>
+		      </div> 	
+			</div>	 			
 		
 		</div>
 	</div>
