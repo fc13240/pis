@@ -90,6 +90,9 @@ font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
     padding-right: 10px;
 }
 </style>
+<div class="top_bg" style="width:100%;height:150px;background:background: url(<s:url value='/images/article_top.png'/>) repeat;">
+&nbsp;
+</div>
 <div style="width:1200px;margin:0 auto;">
 	<div class="r_detail_about"> 
 
