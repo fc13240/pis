@@ -363,11 +363,20 @@ margin: 0 auto;
 
 <div class="floor_1F" style="height:1020px;">
 	<div class="floor_top clearfix">
-		<div class="news-info-hd" style="clear:both;height: 50px;">
-		        <div class="floor_num">3F</div>
+		<div class="news-info-hd" style="clear:both;height: 50px;border-bottom: 2px solid #f7f408;">
+		        <div class="floor_num" style="background: url(<s:url value='/images/icon_floorNav_03.png'/>) no-repeat 0 -25px;">3F</div>
 		        <h2>商标推荐</h2>
 		        <div style="clear:both;"></div>
 		</div>
+<!-- 
+	<div class="news-info-hd" style="clear:both;height: 50px;border-bottom: 2px solid #f99885;">
+	        <div class="floor_num" style="background: url(<s:url value='/images/icon_floorNav_02.png'/>) no-repeat 0 -25px;">2F</div>
+	        <h2>专利推荐</h2>                            
+	</div>	
+	 -->	
+		
+		
+		
 
 		<div  style="width:1188px;height:905px;margin-left:10px; overflow:hidden;position:relative;">
 		<iframe width="1180" height="1600" frameborder="0" style="position:relative; top:-740px; float:left; left:-10px;" scrolling="no" src="http://r.lotut.com">
