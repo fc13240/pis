@@ -211,11 +211,11 @@ $(function(){
 
 <!-- 1Fend -->
 <div class="floor_1F">
-	<div class="news-info-hd" style="clear:both;">
+	<div class="news-info-hd" style="clear:both;height: 50px;">
 	        <div class="floor_num">2F</div>
 	        <h2>专利推荐</h2>
 	</div>
-	<div class="news-info-con">
+	<div class="news-info-con" style="height: 340px;">
 		<div class="news-info-bd clear">
 			<div class="left-item">
 		      <div class="g-item">

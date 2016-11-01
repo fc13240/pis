@@ -13,7 +13,7 @@
 			<li class="sncq-item" style="width:225px">
 				<span>
 				<%if(session.getAttribute("user")==null) {%>
-				<a href="http://g.lotut.com/loginForm.html" target="_black">登录</a>
+				<a href="<s:url value='/loginForm.html'/>" target="_black">登录</a>
 					&nbsp;&nbsp;&nbsp;&nbsp; 
 					<a href="http://g.lotut.com/user/registerForm.html" target="_black">注册</a>
 				<% } else {%>
