@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="spring" prefix="s" %>
 <%@ taglib uri="c" prefix="c" %>
+<%@ taglib uri="fmt" prefix="fmt"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -109,11 +110,14 @@ p{text-indent:2em}
 				<br/>
 				<div>
 				<div style="float:left;margin-left: 60px;" >作者：${news.author}</div>
-				<div style="float:left;margin-left: 550px;" >创建时间：${news.createTime}</div>
+				<div style="float:left;margin-left: 550px;" >发表时间：
+				<fmt:formatDate  value="${news.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+				
+				</div>
 				</div>
 				<br/>
 				<div>
-					<HR width="90%" SIZE=3>
+					<HR width="90%" SIZE=1>
 				</div>
 				<br/>
 				<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;margin-left: 80px;margin-right: 80px;">
@@ -123,7 +127,7 @@ p{text-indent:2em}
 				</div>
 				<br/>
 				<div>
-				<HR  width="90%" SIZE=3>
+				<HR  width="90%" SIZE=1>
 				</div>
 				
 				<div>

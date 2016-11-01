@@ -15,6 +15,7 @@
 		<intercept-url pattern="/user/register.html" access="isAnonymous()"/>
 		<intercept-url pattern="/article/comment/**" access="isAuthenticated()"/>
 		<form-login login-page="/loginForm.html" default-target-url="/index.html" />
+		<logout logout-url="/user/logout.html" />
 		<csrf disabled="true"/>
 	</http>
 	
