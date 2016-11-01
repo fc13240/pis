@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>培训列表-龙图腾商标专利交易网 </title>
+<title>专利培训-龙图腾商标专利交易网 </title>
 <meta name="keywords" content="知识产权,专利交易,商标转让,龙图腾,中外知识产权网" />
 <meta name="description" content="龙图腾网（www.lotut.com）是全球领先的知识产权交易平台。为企业提供专业的商标转让、专利交易等服务。拥有国内知识产权资源，全面覆盖了商标、专利、版权等领域的交易平台，让知识产权在流通中创造财富，引领知识产权的创新。" />
 <meta itemprop="name" content="" />
@@ -93,7 +93,7 @@ font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
 </style>
 <div style="width:1200px;margin:0 auto;">
 	<div class="r_detail_about"> 
-		<span>当前位置：</span><a href="http://www.lotut.com/">主页</a> &gt; <a href="">专利培训</a> &gt;  
+		<span>当前位置：</span><a href="http://www.lotut.com/">主页</a> &gt; <a href="<s:url value='/article/articleList.html'/>">专利培训</a> &gt;  
 	</div>
 	<div class="article-con">
 		<div class="h_about_mod5"> 
