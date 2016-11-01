@@ -361,9 +361,9 @@ margin: 0 auto;
     </style>  
 
 
-<div class="w mt29 default_floor_show default_floor_3F" style="height:1020px;">
+<div class="floor_1F" style="height:1020px;">
 	<div class="floor_top clearfix">
-		<div class="news-info-hd">
+		<div class="news-info-hd" style="clear:both;height: 50px;">
 		        <div class="floor_num">3F</div>
 		        <h2>商标推荐</h2>
 		        <div style="clear:both;"></div>
