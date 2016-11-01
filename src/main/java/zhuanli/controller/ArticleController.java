@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -89,8 +90,10 @@ public class ArticleController {
 	}
 	
 	@RequestMapping(path="/comment/addArticleComment", method=RequestMethod.GET)
-	public String addArticleComment(String content,int articleId){
+	public String addArticleComment(String content,int articleId,HttpSession session){
 		int userId = PrincipalUtils.getCurrentUserId();
+		session.setAttribute("user",PrincipalUtils.getCurrentPrincipal());
+		session.setAttribute("username",PrincipalUtils.getCurrentPrincipal().getUsername());
 		articleService.addArticleComment(content,articleId,userId);
 		return "redirect:/article/articlePreview.html?articleId="+articleId;
 	}

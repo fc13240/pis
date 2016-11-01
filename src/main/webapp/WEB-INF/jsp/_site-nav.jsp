@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-	<div class="w sn-container">
+<div class="w sn-container">
 		<div class="snc-wraper Left clearfix">&nbsp;<span id="JS_head_login">您好，欢迎光临龙图腾！</span>
 		</div>
 		<ul class="snc-qmenu" id="JS_quick_memu">
@@ -12,10 +12,25 @@
 			</li>
 			<li class="sncq-item" style="width:225px">
 				<span>
-					<a href="http://g.lotut.com/loginForm.html" target="_black">登录</a>
+				<%if(session.getAttribute("user")==null) {%>
+				<a href="http://g.lotut.com/loginForm.html" target="_black">登录</a>
 					&nbsp;&nbsp;&nbsp;&nbsp; 
 					<a href="http://g.lotut.com/user/registerForm.html" target="_black">注册</a>
-				</span>
+				<% } else {%>
+				
+				<%=session.getAttribute("username")%>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			  <a href="javascript:$('#logoutForm').submit();" style="color:#666;">退出</a>
+		
+			  <form action="<s:url value='/user/logout.html'/>" method="post" id="logoutForm">
+			  
+			 	<input type="submit" style="display:none;" />
+			 </form>
+			
+			<% }%>
+				
+				
+			</span>
 			</li>			
 		</ul>
 	</div>

@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import zhuanli.domain.User;
 import zhuanli.service.UserService;
+import zhuanli.util.PrincipalUtils;
 
 
 @Controller
@@ -43,7 +44,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/login", method=RequestMethod.POST)
-	public ModelAndView login() {
+	public ModelAndView login(HttpSession httpSession) {
+		User user = PrincipalUtils.getCurrentPrincipal();
+		httpSession.setAttribute("user",user);
 		return null;
 	}
 	
