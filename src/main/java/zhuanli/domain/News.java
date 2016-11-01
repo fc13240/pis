@@ -1,10 +1,8 @@
 package zhuanli.domain;
 
-import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class News {
 	private int id;
@@ -14,9 +12,7 @@ public class News {
 	private String author;
 	private String title;
 	private Timestamp createTime;
-	@DateTimeFormat(iso=ISO.DATE_TIME,pattern="yyyy-MM-dd HH:mm:ss")
 	private Date publishTime;
-	@DateTimeFormat(iso=ISO.DATE_TIME,pattern="yyyy-MM-dd HH:mm:ss")
 	private Date updateTime;
 	private String source;
 	private String content;
