@@ -310,123 +310,7 @@ $(function(){
 	
 </div>
 <!-- 2Fend -->
-<div class="w mt29 default_floor_show default_floor_2F" style="height:354px;">
-	<div class="floor_top clearfix">
-		<div class="floor_nav Left JS_floor_nav" style="width:236px;">
-			<a href="" target="_blank" title="专利推荐" class="title-bg title JS_title title-2F"><span class="item Left">2F 专利推荐</span><span class="sign Right"></span></a>
-			<b class="title-shadow"></b>
-			<ul>
-			<li style="margin-top:20px;margin-left:5px;">
-				<a href="<s:url value='/business/patent_article.html?shopType=1'/>" target="_blank" class="selected" title="农业/食品/医疗">农业/食品/医疗</a>
-			</li>
-			
-			<li style="margin-top:20px;margin-left:5px;">
-				<a href="<s:url value='/business/patent_article.html?shopType=2'/>" target="_blank" class="selected" title="化工/冶金/生物">化工/冶金/生物</a>
-			</li>
-		
-			<li style="margin-top:20px;margin-left:5px;">
-				<a href="<s:url value='/business/patent_article.html?shopType=3'/>" target="_blank" class="selected" title="交通/包装/建筑">交通/包装/建筑</a>
-			</li>
-										
-			<li style="margin-top:20px;margin-left:5px;">
-				<a href="<s:url value='/business/patent_article.html?shopType=4'/>" target="_blank" class="selected" title="电力/环保/通讯">电力/环保/通讯</a>
-			</li>	
-						
-			</ul>
-			<a href="" target="_blank" class="img"></a>
-		</div>       
 
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/patent_article.html?shopType=1'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/patent_type_01.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/patent_article.html?shopType=1'/>" target="_blank" title="农业/食品/医疗" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">农业/食品/医疗</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_article.html?shopType=1'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	  
-
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/patent_article.html?shopType=2'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/patent_type_02.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/patent_article.html?shopType=2'/>" target="_blank" title="化工/冶金/生物" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">化工/冶金/生物</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_article.html?shopType=2'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	 
-
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/patent_article.html?shopType=3'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/patent_type_03.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/patent_article.html?shopType=3'/>" target="_blank" title="交通/包装/建筑" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">交通/包装/建筑</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_article.html?shopType=3'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	 
-
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/patent_article.html?shopType=4'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/patent_type_04.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/patent_article.html?shopType=4'/>" target="_blank" title="电力/环保/通讯" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">电力/环保/通讯</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_article.html?shopType=4'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	 						
-		
-	</div>
-		
-</div>
 
 	<style>
 	.content_type .content_type_left{ color:#fff; text-decoration:none; font-size:12px;}
@@ -479,14 +363,10 @@ margin: 0 auto;
 
 <div class="w mt29 default_floor_show default_floor_3F" style="height:1020px;">
 	<div class="floor_top clearfix">
-		<div class="floor_nav Left JS_floor_nav" style="height:45px;">
-			<a href="" target="_blank" title="商标转让" class="title-bg title JS_title title-3F">
-				<span class="item Left">3F 商标转让</span>
-				<span class="sign Right"></span>
-			</a>
-			<div style="width: 50px;font-size:16px;position: absolute;left: 250px;top: 15px;">
-			<a href="http://r.lotut.com" target="_blank" style="color:red  !important;">更多</a>
-			</div>
+		<div class="news-info-hd">
+		        <div class="floor_num">3F</div>
+		        <h2>商标推荐</h2>
+		        <div style="clear:both;"></div>
 		</div>
 
 		<div  style="width:1188px;height:905px;margin-left:10px; overflow:hidden;position:relative;">
