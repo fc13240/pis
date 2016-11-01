@@ -110,14 +110,7 @@ p{text-indent:2em}
 				<br/>
 				<div>
 				<div style="float:left;margin-left: 60px;" >作者：${news.author}</div>
-<<<<<<< HEAD
 				<div style="float:left;margin-left: 550px;" ><fmt:formatDate value="${news.publishTime}" pattern="yyyy年MM月dd日 HH:mm"/></div>
-=======
-				<div style="float:left;margin-left: 550px;" >发表时间：
-				<fmt:formatDate  value="${news.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
-				
-				</div>
->>>>>>> 5840e4975f6eef38abb32549a516444dba588a93
 				</div>
 				<br/>
 				<div>
