@@ -92,8 +92,6 @@ public class ArticleController {
 	@RequestMapping(path="/comment/addArticleComment", method=RequestMethod.GET)
 	public String addArticleComment(String content,int articleId,HttpSession session){
 		int userId = PrincipalUtils.getCurrentUserId();
-		session.setAttribute("user",PrincipalUtils.getCurrentPrincipal());
-		session.setAttribute("username",PrincipalUtils.getCurrentPrincipal().getUsername());
 		articleService.addArticleComment(content,articleId,userId);
 		return "redirect:/article/articlePreview.html?articleId="+articleId;
 	}

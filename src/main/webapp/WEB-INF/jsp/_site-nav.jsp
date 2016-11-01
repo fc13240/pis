@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="zhuanli.domain.User" %>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <div class="w sn-container">
-		<div class="snc-wraper Left clearfix">&nbsp;<span id="JS_head_login">您好，欢迎光临龙图腾！</span>
+		<div class="snc-wraper Left clearfix">&nbsp;<span id="JS_head_login">您好
+		<se:authorize access="isAuthenticated()">
+			<se:authentication property="principal.username" />
+		</se:authorize>
+		，欢迎光临龙图腾！</span>
 		</div>
 		<ul class="snc-qmenu" id="JS_quick_memu">
 			
@@ -12,23 +18,18 @@
 			</li>
 			<li class="sncq-item" style="width:225px">
 				<span>
-				<%if(session.getAttribute("user")==null) {%>
+				<se:authorize access="isAnonymous()">
 				<a href="<s:url value='/loginForm.html'/>" target="_black">登录</a>
 					&nbsp;&nbsp;&nbsp;&nbsp; 
-					<a href="http://g.lotut.com/user/registerForm.html" target="_black">注册</a>
-				<% } else {%>
+					<a href="<s:url value='/user/registerForm.html'/>" target="_black">注册</a>
+				</se:authorize>
 				
-				<%=session.getAttribute("username")%>&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			  <a href="javascript:$('#logoutForm').submit();" style="color:#666;">退出</a>
-		
-			  <form action="<s:url value='/user/logout.html'/>" method="post" id="logoutForm">
-			  
-			 	<input type="submit" style="display:none;" />
+			  <se:authorize access="isAuthenticated()">
+			  <a href="javascript:$('#logoutForm').submit();" style="color:#666;"><font color="red">退出</font></a>
+				</se:authorize > 
+			 <form action="<s:url value='/user/logout.html'/>" method="post" id="logoutForm">
+			 <input type="submit" style="display:none;" />
 			 </form>
-			
-			<% }%>
-				
 				
 			</span>
 			</li>			
