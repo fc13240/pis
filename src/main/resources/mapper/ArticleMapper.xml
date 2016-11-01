@@ -61,7 +61,7 @@
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		where n.title is not null and n.content is not null and n.check_status=1 ORDER BY n.create_time desc ,n.update_time limit 0, 8
+		where n.title is not null and n.content is not null and n.check_status=1 ORDER BY n.publish_time desc ,n.update_time limit 0, 8
 	</select>
 
 	
@@ -94,14 +94,14 @@
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		where n.check_status=1 ORDER BY n.create_time desc ,n.update_time limit #{startIndex}, #{pageSize}
+		where n.check_status=1 ORDER BY n.publish_time desc ,n.update_time limit #{startIndex}, #{pageSize}
 	</select>
 	
 	
 	<select id="getAllArticleCount"  resultType="int">
 		SELECT count(*)
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		where n.check_status=1 ORDER BY n.create_time desc ,n.update_time
+		where n.check_status=1 
 	</select>
 	
 	
@@ -120,7 +120,7 @@
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		n.small_img_url,nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote,n.check_status
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		where n.title is not null and n.content is not null and n.check_status=1 ORDER BY n.create_time DESC ,n.update_time limit 0,9;
+		where n.title is not null and n.content is not null and n.check_status=1 ORDER BY n.publish_time DESC ,n.update_time limit 0,9;
 	</select>
 	
 	<select id="getUpVoteAndDownVote" parameterType="int" resultMap="VoteResultMap">

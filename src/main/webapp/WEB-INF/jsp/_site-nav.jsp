@@ -35,35 +35,6 @@
 			 </form>
 			 <%} %>
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				<%-- <%if(session.getAttribute("user")==null) {%>
-				<a href="http://g.lotut.com/loginForm.html" target="_black">登录</a>
-					&nbsp;&nbsp;&nbsp;&nbsp; 
-					<a href="http://g.lotut.com/user/registerForm.html" target="_black">注册</a>
-				<% } else {%>
-				
-				<%=session.getAttribute("username")%>&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			  <a href="javascript:$('#logoutForm').submit();" style="color:#666;">退出</a>
-		
-			  <form action="<s:url value='/user/logout.html'/>" method="post" id="logoutForm">
-			  
-			 	<input type="submit" style="display:none;" />
-			 </form>
-			
-			<% }%> --%>
-				
-				
 			</span>
 			</li>			
 		</ul>
