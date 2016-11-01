@@ -113,7 +113,7 @@ p{text-indent:2em}
 				</div>
 				<br/>
 				<div>
-					<HR width="90%" SIZE=3>
+					<HR width="90%" SIZE=1>
 				</div>
 				<br/>
 				<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;margin-left: 80px;margin-right: 80px;">
@@ -123,7 +123,7 @@ p{text-indent:2em}
 				</div>
 				<br/>
 				<div>
-				<HR  width="90%" SIZE=3>
+				<HR  width="90%" SIZE=1>
 				</div>
 				
 				<div>
