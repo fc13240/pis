@@ -78,30 +78,30 @@
 	</resultMap>
 	
 	<select id="getUserArticleByPage" parameterType="Page"  resultMap="ArticleResultMap">
-		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.create_time,n.publish_time,n.update_time,n.check_status,
+		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.create_time,n.publish_time,n.update_time,
 		n.content,nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		WHERE n.user_id=#{userId} limit #{startIndex}, #{pageSize}
+		WHERE n.user_id=#{userId} and n.check_status=1 limit #{startIndex}, #{pageSize}
 	</select>
 	
 	<select id="getUserArticleCount" parameterType="int" resultType="int">
 		SELECT count(*)
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		WHERE n.user_id=#{userId} 
+		WHERE n.user_id=#{userId} and n.check_status=1
 	</select>	
 	
 	<select id="getAllArticle" parameterType="Page" resultMap="ArticleResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		ORDER BY n.create_time desc ,n.update_time limit #{startIndex}, #{pageSize}
+		and n.check_status=1 ORDER BY n.create_time desc ,n.update_time limit #{startIndex}, #{pageSize}
 	</select>
 	
 	
 	<select id="getAllArticleCount"  resultType="int">
 		SELECT count(*)
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		ORDER BY n.create_time desc ,n.update_time
+		where n.check_status=1 ORDER BY n.create_time desc ,n.update_time
 	</select>
 	
 	
