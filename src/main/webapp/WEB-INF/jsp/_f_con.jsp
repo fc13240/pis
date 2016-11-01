@@ -211,10 +211,9 @@ $(function(){
 
 <!-- 1Fend -->
 <div class="floor_1F">
-	<div class="news-info-hd">
+	<div class="news-info-hd" style="clear:both;">
 	        <div class="floor_num">2F</div>
 	        <h2>专利推荐</h2>
-	        <div style="clear:both;"></div>
 	</div>
 	<div class="news-info-con">
 		<div class="news-info-bd clear">
