@@ -45,13 +45,12 @@ public class UserController {
 	
 	@RequestMapping(path="/login", method=RequestMethod.POST)
 	public ModelAndView login(HttpSession httpSession) {
-		User user = PrincipalUtils.getCurrentPrincipal();
-		httpSession.setAttribute("user",user);
 		return null;
 	}
 	
     @RequestMapping(path = "/logout",method = RequestMethod.POST)  
     public String logout(HttpSession httpSession){  
+    	httpSession.invalidate();
         return "login_form";
     }  	
 	 

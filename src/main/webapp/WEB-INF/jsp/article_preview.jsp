@@ -194,7 +194,9 @@ p{text-indent:2em}
 				<br/>
 				<div>
 				<div style="float:left;margin-left: 60px;" >作者：${article.author}</div>
-				<div style="float:left;margin-left: 550px;" >创建时间：${article.createTime}</div>
+				<div style="float:left;margin-left: 550px;" >发表时间：
+					<fmt:formatDate  value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+				</div>
 				</div>
 				<br/>
 				<div>
