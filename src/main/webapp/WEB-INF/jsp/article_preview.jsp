@@ -144,14 +144,13 @@ p{text-indent:2em}
 	background-color: red;
 	width: 130px;
 	height: 44px;
-	line-height: 44px;
 	float: right;
 	text-align: center;
-	cursor: pointer;
 }
 
 .new-comment {
 	margin-top:40px;
+	margin-bottom:20px;
 	font-size: 20px;
 	font-family: "Microsoft YaHei";
 	font-weight:700;
@@ -233,14 +232,13 @@ p{text-indent:2em}
 					<div class="textarea-div" >
 						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/article/comment/addArticleComment.html'/>" onsubmit="return validateComment();">
 							<textarea id="contentArea" class="textarea" name="content"
-								placeholder="我来说两句..." >
+								placeholder="我来说两句...">
 							
 							</textarea>
 							<div class="submit-row" style="position: relative;">
 								<input id="articleId" type="hidden" name="articleId" value="${article.id}"/>            		 
                                	<button class="submit-btn" type="submit">发表评论</button>
 								
-							
 							</div>
 						</form>
 						
@@ -248,7 +246,7 @@ p{text-indent:2em}
 					</div>
 					<div class="new-comment">最新评论</div>
 					<div class="comment-list">
-						<table id="simple-table" style="word-break: break-all; width: 800px;">
+						<table id="simple-table" style="word-break: break-all; width: 100%;">
 							<c:if test="${empty comments}">
 				                	暂无新评论。
 				            </c:if>
