@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="security" prefix="se" %>
 <%@ page import="zhuanli.domain.User" %>
 <%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <div class="w sn-container">
