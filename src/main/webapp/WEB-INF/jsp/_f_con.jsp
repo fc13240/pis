@@ -210,247 +210,65 @@ $(function(){
 </div>
 
 <!-- 1Fend -->
-<div class="w mt29 default_floor_show default_floor_1F" style="">
-
-	<div class="floor_top clearfix">
-		<div style="width:1190px;height:46px;">
-			<div class="floor_nav Left JS_floor_nav" style="height:45px;">
-			<a href="" target="_blank" title="服务推荐" class="title-bg title JS_title title-1F">
-				<span class="item Left">1F 服务推荐</span>
-				<span class="sign Right"></span>
-			</a>
-			</div>	
-		</div>
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/patent_registration.html?type=1'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/patent_1.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/patent_registration.html?type=1'/>" target="_blank" title="发明专利(" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">发明专利</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1900</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_registration.html?type=1'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/patent_registration.html?type=2'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/patent_2.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/patent_registration.html?type=2'/>" target="_blank" title="实用专利(" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">实用专利</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">900</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_registration.html?type=2'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>											
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/patent_registration.html?type=3'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/patent_3.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/patent_registration.html?type=3'/>" target="_blank" title="外观设计(" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">外观设计</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">400</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_registration.html?type=3'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/trademark_registration.html?type=1'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/registration_1.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/trademark_registration.html?type=1'/>" target="_blank" title="国内普通商标" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">国内普通商标</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">800</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/trademark_registration.html?type=1'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/trademark_registration.html?type=2'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/registration_2.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/trademark_registration.html?type=2'/>" target="_blank" title="风险代理注册商标" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">风险代理注册商标</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/trademark_registration.html?type=2'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>			
-
-
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/trademark_registration.html?type=3'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/registration_3.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/trademark_registration.html?type=3'/>" target="_blank" title="商标注册包过服务" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">商标注册包过服务</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1500</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/trademark_registration.html?type=3'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	
-
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/trademark_registration.html?type=4'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/registration_4.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/trademark_registration.html?type=4'/>" target="_blank" title="商标注册包过服务+设计logo+版权登记" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:20px;">商标注册包过服务+设计logo+版权登记</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">3500</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/trademark_registration.html?type=4'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	
-				
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/copyright_registration.html?type=1'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/copyright_registration_1.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/copyright_registration.html?type=1'/>" target="_blank" title="普通版权" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">普通版权</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">600</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/copyright_registration.html?type=1'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	
-
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/copyright_registration.html?type=2'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/copyright_registration_2.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/copyright_registration.html?type=2'/>" target="_blank" title="计算机版权" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">计算机版权</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/copyright_registration.html?type=2'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	
-		
-	
-		
-		<div class="left-item">
-	      <div class="g-item">
-	        <div class="g-dtl"> 
-	          <a href="<s:url value='/business/business_registration.html'/>" target="_blank"> 
-	          	<img class="d-img" src="<s:url value='/images/business.jpg'/>"> 
-	          </a>
-	          <a href="<s:url value='/business/business_registration.html'/>" target="_blank" title="工商注册(" class="d-name">
-	          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">工商注册</span>
-	          </a>
-        
-			  <div>
-				  <div style="float:left;width:100px;">
-				  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">0</span></strong>
-				  </div>
-				  <div style="float:right;width:100px;" class="box_buy">
-				  <a target="_blank" title="立即抢购" href="<s:url value='/business/business_registration.html'/>" class="btn_buy">立即抢购</a>
-				  </div>
-			  </div>     
-	        </div>
-	      </div> 	
-		</div>	
-				
+<div class="floor_1F">
+	<div class="news-info-hd">
+	        <div class="floor_num">2F</div>
+	        <h2>专利推荐</h2>
+	        <div style="clear:both;"></div>
 	</div>
-
-
+	<div class="news-info-con">
+		<div class="news-info-bd clear">
+			<div class="left-item">
+		      <div class="g-item">
+		        <div class="g-dtl"> 
+		          <a href="<s:url value='/business/patent_article.html?shopType=1'/>" target="_blank"> 
+		          	<img class="d-img" src="<s:url value='/images/patent_type_01.jpg'/>"> 
+		          </a>
+		          <a href="<s:url value='/business/patent_article.html?shopType=1'/>" target="_blank" title="农业/食品/医疗" class="d-name">
+		          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">农业/食品/医疗</span>
+		          </a>
+	        
+				  <div>
+					  <div style="float:left;width:100px;">
+					  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
+					  </div>
+					  <div style="float:right;width:100px;" class="box_buy">
+					  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_article.html?shopType=1'/>" class="btn_buy">立即抢购</a>
+					  </div>
+				  </div>     
+		        </div>
+		      </div> 	
+			</div>	  
+	
+			<div class="left-item">
+		      <div class="g-item">
+		        <div class="g-dtl"> 
+		          <a href="<s:url value='/business/patent_article.html?shopType=2'/>" target="_blank"> 
+		          	<img class="d-img" src="<s:url value='/images/patent_type_02.jpg'/>"> 
+		          </a>
+		          <a href="<s:url value='/business/patent_article.html?shopType=2'/>" target="_blank" title="化工/冶金/生物" class="d-name">
+		          	<span style="margin-left:20px;font-size:14px;font-weight:700;line-height:45px;">化工/冶金/生物</span>
+		          </a>
+	        
+				  <div>
+					  <div style="float:left;width:100px;">
+					  	<strong class="p-money"><sub class="m-mark">¥</sub><span class="m-count JS_async_price">1200</span></strong>
+					  </div>
+					  <div style="float:right;width:100px;" class="box_buy">
+					  <a target="_blank" title="立即抢购" href="<s:url value='/business/patent_article.html?shopType=2'/>" class="btn_buy">立即抢购</a>
+					  </div>
+				  </div>     
+		        </div>
+		      </div> 	
+			</div>	 		
+		
+		</div>
+	</div>
+	
 </div>
-
+<!-- 2Fend -->
 <div class="w mt29 default_floor_show default_floor_2F" style="height:354px;">
 	<div class="floor_top clearfix">
-
-
-
-
 		<div class="floor_nav Left JS_floor_nav" style="width:236px;">
 			<a href="" target="_blank" title="专利推荐" class="title-bg title JS_title title-2F"><span class="item Left">2F 专利推荐</span><span class="sign Right"></span></a>
 			<b class="title-shadow"></b>
