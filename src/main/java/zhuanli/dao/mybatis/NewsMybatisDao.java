@@ -7,6 +7,7 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import zhuanli.dao.NewsDao;
 import zhuanli.dao.mapper.NewsMapper;
+import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.NewsType;
 import zhuanli.domain.Page;
@@ -48,5 +49,17 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 	public List<News> newsShow() {
 		return newsMapper.newsShow();
 	}
+
+	@Override
+	public void praise(News news) {
+		newsMapper.praise(news);
+	}
+
+	@Override
+	public void slander(News news) {
+		newsMapper.slander(news);
+	}
+
+
 
 }

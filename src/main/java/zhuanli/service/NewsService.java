@@ -20,4 +20,8 @@ public interface NewsService {
 	int getAllNewsCount();
 	
 	List<News> newsShow();
+	
+	void praise(News news);
+	
+	void slander(News news);
 }

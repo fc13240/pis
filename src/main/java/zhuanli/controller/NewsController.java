@@ -1,5 +1,6 @@
 package zhuanli.controller;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 
@@ -9,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.Page;
 import zhuanli.service.NewsService;
@@ -44,6 +47,23 @@ public class NewsController {
 		return "news_preview";
 	}		
 	
+	@RequestMapping(path="/praise", method=RequestMethod.GET)
+	public void praise(News news,PrintWriter out){
+		int oldUpVote=news.getUpVote();
+		news.setUpVote(oldUpVote+1);
+		newsService.praise(news);
+		out.write(1);
+		
+	}
+	
+	@RequestMapping(path="/slander", method=RequestMethod.GET)
+	public void slander(News news,PrintWriter out){
+		int oldDownVote=news.getDownVote();
+		news.setDownVote(oldDownVote+1);
+		newsService.slander(news);
+		out.write(1);
+		
+	}
 	
 	
 }

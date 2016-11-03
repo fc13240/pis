@@ -46,4 +46,14 @@ public class NewsServiceImpl implements NewsService {
 	public List<News> newsShow() {
 		return newsDao.newsShow();
 	}
+
+	@Override
+	public void praise(News news) {
+		newsDao.praise(news);
+	}
+
+	@Override
+	public void slander(News news) {
+		newsDao.slander(news);
+	}
 }

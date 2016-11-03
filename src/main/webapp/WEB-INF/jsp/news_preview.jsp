@@ -20,7 +20,8 @@
 <link rel="shortcut icon" href="http://www.lotut.com/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="<s:url value='/css/mll.common.min.css?20160311'/>" />
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
-<link rel="stylesheet" href="<s:url value='/css/praise.css'/>" />
+<link rel="stylesheet" href="<s:url value='/css/praise.css'/>">
+<link rel="stylesheet" href="<s:url value='/css/slander.css'/>">
 
 
 </head>

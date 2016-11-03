@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.NewsSearchCondition;
 import zhuanli.domain.NewsType;
@@ -24,4 +25,8 @@ public interface NewsMapper {
 	int getAllNewsCount();
 	
 	List<News> newsShow();
+	
+	void praise(News news);
+	
+	void slander(News news);
 }

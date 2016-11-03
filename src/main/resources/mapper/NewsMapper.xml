@@ -16,6 +16,8 @@
 		<result property="publishTime" column="publish_time"/>
 		<result property="updateTime" column="update_time"/>
 		<result property="smallImgUrl" column="small_img_url"/>
+		<result property="upVote" column="up_vote"/>
+		<result property="downVote" column="down_vote"/>
 		<association property="newsType" resultMap="NewsTypeResultMap"/>
 		<association property="user" resultMap="UserResultMap"/>
 	</resultMap>
@@ -91,4 +93,12 @@
 		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
 		WHERE  n.small_img_url IS NOT NULL and n.check_status=1 ORDER BY n.publish_time DESC ,n.update_time;
 	</select>
+	
+	<update id="praise">
+		update article set up_vote=#{upVote} where id=#{id}
+	</update>
+	
+	<update id="slander">
+		update article set down_vote=#{downVote} where id=#{id}
+	</update>
 </mapper>
