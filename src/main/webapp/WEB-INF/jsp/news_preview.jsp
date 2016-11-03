@@ -112,8 +112,16 @@ p{text-indent:2em}
 				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;font-family: simsun;text-align: center;">${news.title}</h2>
 				<br/>
 				<div>
-				<div style="float:left;margin-left: 60px;" >作者：${news.author}</div>
-				<div style="float:left;margin-left: 550px;" ><fmt:formatDate value="${news.publishTime}" pattern="yyyy年MM月dd日 HH:mm"/></div>
+				<div style="margin-left: 60px;" >作者：${news.author}</div>
+				<br/>
+				<div style="margin-left: 60px;" >来源：
+					<c:if test="${news.source != null}">
+					${news.source}
+					</c:if>
+					<c:if test="${news.source == null}">
+					龙图腾信息科技
+					</c:if>
+				</div>
 				</div>
 				<br/>
 				<div>
@@ -131,7 +139,7 @@ p{text-indent:2em}
 				</div>
 				
 				<div>
-					<div style="float:left;margin-left: 60px;" >来源：${news.source}</div>
+					<div style="float:left;margin-left: 60px;" ><fmt:formatDate value="${news.publishTime}" pattern="yyyy年MM月dd日 HH:mm"/></div>
 				</div>
 				
 				<div class="praise">
