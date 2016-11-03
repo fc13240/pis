@@ -1,5 +1,6 @@
 package zhuanli.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import zhuanli.dao.ArticleDao;
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.mysql.fabric.xmlrpc.base.Array;
 
 import zhuanli.controller.util.FileOption;
 import zhuanli.controller.util.WebUtils;
@@ -66,7 +69,14 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public List<Article> articleShow() {
-		return articleDao.articleShow();
+		List<Article> timeArticles=articleDao.articleOrderByTimeShow();
+		List<Article> commentsArticles=articleDao.articleOrderByCommentsShow();
+		if(timeArticles.size()<10){
+			for (int i = 0; i < 10-timeArticles.size()-1; i++) {
+			timeArticles.add(commentsArticles.get(i));
+			}
+		}	
+		return timeArticles;
 	}
 	
 

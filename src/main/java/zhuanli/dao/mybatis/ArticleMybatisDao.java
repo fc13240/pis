@@ -83,4 +83,14 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 	public List<ArticleComment> getArticleCommentsById(int articleId) {
 		return articleMapper.getArticleCommentsById(articleId);
 	}
+
+	@Override
+	public List<Article> articleOrderByTimeShow() {
+		return articleMapper.articleOrderByTimeShow();
+	}
+
+	@Override
+	public List<Article> articleOrderByCommentsShow() {
+		return articleMapper.articleOrderByCommentsShow();
+	}
 }
