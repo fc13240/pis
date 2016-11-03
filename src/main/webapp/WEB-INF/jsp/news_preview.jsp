@@ -130,11 +130,66 @@ p{text-indent:2em}
 				<div>
 					<div style="float:left;margin-left: 60px;" >来源：${news.source}</div>
 				</div>
-			
+				
+				<div class="praise">
+					<span id="praise${news.id}" onclick="praise('${news.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
+					<span id="praise-txt">${news.upVote}</span>
+					<span id="add-num"><em>+1</em></span>
+				</div> 
+				
+				<div class="slander">
+					<span id="slander${news.id}" onclick="slander('${news.id}',${news.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
+					<span id="slander-txt">${news.downVote}</span>
+					<span id="del-num"><em>+1</em></span>
+				</div> 
 			</div> 
 		</div>
 	</div>	
 </div>
 <%@ include file="_footer.jsp"%>
+<script type="text/javascript">
+function praise(id,number){
+	var praise_img = $("#praise-img");
+	var text_box = $("#add-num");
+	var praise_txt = $("#praise-txt");
+	var num=parseInt(praise_txt.text());
+	$.ajax({
+		type:"get",
+		url: "<s:url value='/news/praise.html'/>?upVote="+number+"&id="+id, 
+	    success: function () {
+	    	$("#praise"+id).html("<img src='<s:url value='/images/zan.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
+			praise_txt.addClass("hover");
+			text_box.show().html("<em class='add-animation'>+1</em>");
+			$(".add-animation").addClass("hover");
+			num +=1;
+			praise_txt.text(num);
+			$("#praise"+id).attr("onclick", "null");
+	    }
+		
+	})
+}
+
+function slander(id,number){
+	var praise_img = $("#slander-img");
+	var text_box = $("#del-num");
+	var praise_txt = $("#slander-txt");
+	var num=parseInt(praise_txt.text());
+	$.ajax({
+		type:"get",
+		url: "<s:url value='/news/slander.html'/>?downVote="+number+"&id="+id, 
+	    success: function () {
+	    	$("#slander"+id).html("<img src='<s:url value='/images/cai.png'/>' width='20px;' height='20px;' id='slander-img' class='animation' style='margin-top:-90px;'/>");
+			praise_txt.addClass("hover");
+			text_box.show().html("<em class='del-animation'>+1</em>");
+			$(".del-animation").addClass("hover");
+			num +=1;
+			praise_txt.text(num);
+			$("#slander"+id).attr("onclick", "null");
+	    }
+		
+	})
+}
+
+</script>
 </body>
 </html>
