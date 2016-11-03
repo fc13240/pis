@@ -192,17 +192,39 @@ p{text-indent:2em}
 					
 				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;font-family: simsun;text-align: center;">${news.title}</h2>
 				<br/>
-				<div>
-				<div style="margin-left: 60px;" >作者：${news.author}</div>
-				<br/>
-				<div style="margin-left: 60px;" >来源：
-					<c:if test="${news.source != null}">
-					${news.source}
-					</c:if>
-					<c:if test="${news.source == null}">
-					龙图腾信息科技
-					</c:if>
+				<div style="float:left">
+					<div style="margin-left: 60px;" >作者：
+					<c:if test="${news.author != null}">
+						${news.author}
+						</c:if>
+						<c:if test="${news.author == null}">
+						智慧龙图腾知识产权有限公司
+						</c:if>
+					</div>
+					<br/>
+					<div style="margin-left: 60px;" >来源：
+						<c:if test="${news.source != null}">
+						${news.source}
+						</c:if>
+						<c:if test="${news.source == null}">
+						龙图腾信息科技
+						</c:if>
+					</div>
 				</div>
+				<div style="float:left;;margin-top: 19px;margin-left: 66%;">
+					<span id="bdshare" style=" float:right;" class="bdshare_t bds_tools get-codes-bdshare" data="{'text':'${news.title}'}">
+						<a class="bds_qzone" style="height:25px;"> </a>
+						<a class="bds_tsina" style="height:25px;"></a>    
+						<a class="bds_baidu" style="height:25px;"> </a>
+						<a class="bds_tqq" style="height:25px;"></a>
+						<a class="bds_renren" style="height:25px;"></a>
+						<span class="bds_more" style="height:25px;">更多</span>
+					</span>
+					<script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
+					<script type="text/javascript" id="bdshell_js"></script>
+					<script type="text/javascript">
+					document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+					</script>
 				</div>
 				<br/>
 				<div>
