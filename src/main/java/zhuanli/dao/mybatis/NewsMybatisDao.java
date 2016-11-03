@@ -9,6 +9,7 @@ import zhuanli.dao.NewsDao;
 import zhuanli.dao.mapper.NewsMapper;
 import zhuanli.domain.Article;
 import zhuanli.domain.News;
+import zhuanli.domain.NewsComment;
 import zhuanli.domain.NewsType;
 import zhuanli.domain.Page;
 
@@ -58,6 +59,17 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 	@Override
 	public void slander(News news) {
 		newsMapper.slander(news);
+	}
+	
+	@Override
+	public void addNewsComment(String content, int newsId, int userId) {
+		newsMapper.addNewsComment(content, newsId,userId);
+		
+	}
+
+	@Override
+	public List<NewsComment> getNewsCommentsById(int newsId) {
+		return newsMapper.getNewsCommentsById(newsId);
 	}
 
 

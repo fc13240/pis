@@ -100,6 +100,87 @@ font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
     max-width: 900px;
 }
 p{text-indent:2em}
+
+/*评论代码start*/
+.comment-div {
+	position: relative;
+	margin:60px auto;
+	width:70%;
+}
+.textarea-div {
+	position: relative;
+	transition: height 0.3s;
+	height: 158px;
+	border: solid 1px #ccc;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	font: 12px/1.5 "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "Helvetica Neue", Helvetica, tahoma, Arial;
+	color: #404040;
+	text-align: left;
+	font-family: "\5B8B\4F53", sans-serif;
+}
+
+.textarea {
+	height: 114px;
+	resize: none;
+	border: none;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 4px 14px;
+}
+
+.submit-row {
+	background-color: #f6f6f6;
+	height: 44px;
+	overflow: hidden;
+}
+
+.submit-btn {
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	color: #fff;
+	background-color: red;
+	width: 130px;
+	height: 44px;
+	float: right;
+	text-align: center;
+}
+
+.new-comment {
+	margin-top:40px;
+	margin-bottom:20px;
+	font-size: 20px;
+	font-family: "Microsoft YaHei";
+	font-weight:700;
+	color:#000;
+}
+
+.account-td {
+	font-size: 12px;
+	font-family: "SimSun";
+	color:#999;
+}
+
+.time-td {	
+	font-size: 12px;
+	font-family: "SimSun";
+	color:#999;
+	valign:middle;
+}
+
+.comment-td {
+	font-size: 14px;
+	font-family: "SimSun";
+	color:black;
+	text-indent:2em;
+}
+
+
+/*评论代码over*/
 </style>
 <div style="width:1200px;margin:0 auto;">
 	<div class="r_detail_about"> 
@@ -154,6 +235,52 @@ p{text-indent:2em}
 					<span id="del-num"><em>+1</em></span>
 				</div> 
 				
+				<!-- 评论代码start-->
+				<div style="" class="comment-div">
+					<div class="textarea-div" >
+						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/news/comment/addNewsComment.html'/>" onsubmit="return validateComment();">
+							<textarea id="contentArea" class="textarea" name="content"
+								placeholder="我来说两句...">
+							
+							</textarea>
+							<div class="submit-row" style="position: relative;">
+								<input id="articleId" type="hidden" name="newsId" value="${news.id}"/>            		 
+                               	<button class="submit-btn" type="submit">发表评论</button>
+								
+							</div>
+						</form>
+						
+						
+					</div>
+					<div class="new-comment">最新评论</div>
+					<div class="comment-list">
+						<table id="simple-table" style="word-break: break-all; width: 100%;">
+							<c:if test="${empty comments}">
+				                	暂无新评论。
+				            </c:if>
+							<c:forEach items="${comments}" var="comment">
+								<tr style="border-bottom:1px dashed #ccc;"></tr>
+								<tr style="height:40px;">
+									<td class="account-td">${comment.user.username}</td>									
+								</tr>
+								<tr>
+									<td colspan="2" class="comment-td">${comment.content}</td>
+								</tr>
+								<tr><td class="time-td" style="height:40px;">
+										<fmt:formatDate  value="${comment.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+									</td>
+								</tr>
+								
+							</c:forEach>
+						</table>
+
+					</div>
+
+
+
+				</div>  
+            <!-- 评论代码over-->
+				
 			</div> 
 		</div>
 	</div>	
@@ -200,6 +327,19 @@ function slander(id,number){
 	    }
 		
 	})
+}
+
+$(function() {
+	$("#contentArea").val('');
+});
+
+function validateComment() {
+	if($("#contentArea").val()==""){
+		alert("评论不能为空。")
+		return false;
+	} else {
+		return true;
+	}
 }
 
 </script>

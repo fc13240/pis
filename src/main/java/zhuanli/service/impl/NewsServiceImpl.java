@@ -4,6 +4,7 @@ import java.util.List;
 
 import zhuanli.dao.NewsDao;
 import zhuanli.domain.News;
+import zhuanli.domain.NewsComment;
 import zhuanli.domain.NewsType;
 import zhuanli.domain.Page;
 import zhuanli.service.NewsService;
@@ -55,5 +56,16 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public void slander(News news) {
 		newsDao.slander(news);
+	}
+	
+	@Override
+	public void addNewsComment(String content, int newsId, int userId) {
+		newsDao.addNewsComment(content, newsId,userId);
+		
+	}
+
+	@Override
+	public List<NewsComment> getNewsCommentsById(int newsId) {
+		return newsDao.getNewsCommentsById(newsId);
 	}
 }

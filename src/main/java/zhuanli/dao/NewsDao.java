@@ -4,6 +4,7 @@ import java.util.List;
 
 import zhuanli.domain.Article;
 import zhuanli.domain.News;
+import zhuanli.domain.NewsComment;
 import zhuanli.domain.NewsType;
 import zhuanli.domain.Page;
 
@@ -25,4 +26,8 @@ public interface NewsDao {
 	void praise(News news);
 	
 	void slander(News news);
+	
+	void addNewsComment(String content, int newsId, int userId);
+
+	List<NewsComment> getNewsCommentsById(int newsId);
 }
