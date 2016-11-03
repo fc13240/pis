@@ -133,7 +133,7 @@ p{text-indent:2em}
 				</div>
 				
 				<div class="praise">
-					<span id="praise${news.id}" onclick="praise('${news.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
+					<span id="praise${news.id}" onclick="praise('${news.id}',${news.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
 					<span id="praise-txt">${news.upVote}</span>
 					<span id="add-num"><em>+1</em></span>
 				</div> 
@@ -143,6 +143,7 @@ p{text-indent:2em}
 					<span id="slander-txt">${news.downVote}</span>
 					<span id="del-num"><em>+1</em></span>
 				</div> 
+				
 			</div> 
 		</div>
 	</div>	
