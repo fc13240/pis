@@ -3,6 +3,7 @@ package zhuanli.controller;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,8 @@ import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.Page;
 import zhuanli.service.NewsService;
+import zhuanli.util.PrincipalUtils;
+import zhuanli.domain.NewsComment;
 
 
 
@@ -43,6 +46,8 @@ public class NewsController {
 	@RequestMapping(path="/newsPreview")
 	public String newsPreview(@RequestParam("newsId") int newsId,Model model) {
 		News news=newsService.getUserNewsById(newsId);
+		List<NewsComment> comments = newsService.getNewsCommentsById(newsId);
+		model.addAttribute("comments", comments);
 		model.addAttribute("news", news);
 		return "news_preview";
 	}		
@@ -63,6 +68,13 @@ public class NewsController {
 		newsService.slander(news);
 		out.write(1);
 		
+	}
+	
+	@RequestMapping(path="/comment/addNewsComment", method=RequestMethod.GET)
+	public String addNewsComment(String content,int newsId,HttpSession session){
+		int userId = PrincipalUtils.getCurrentUserId();
+		newsService.addNewsComment(content,newsId,userId);
+		return "redirect:/news/newsPreview.html?newsId="+newsId;
 	}
 	
 	

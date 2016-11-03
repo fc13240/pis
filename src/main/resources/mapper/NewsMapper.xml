@@ -45,6 +45,17 @@
 		<result property="typeName" column="type_name"/>
 	</resultMap>
 	
+	<resultMap type="NewsComment" id="NewsCommentMap">
+		<id property="commentId" column="comment_id"/>
+		<result property="createTime" column="create_time"/>
+		<result property="content" column="content"/>
+		<result property="newsId" column="news_id"/>
+		<association property="user" javaType="User">
+				<id property="userId" column="user_id"/>
+				<result property="username" column="username"/>
+			</association>
+	</resultMap>
+	
 	<select id="getNewsShow" resultMap="NewsResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 		nt.type_id ,nt.type_name,u.user_id,u.username
@@ -101,4 +112,16 @@
 	<update id="slander">
 		update article set down_vote=#{downVote} where id=#{id}
 	</update>
+	
+	<insert id="addNewsComment">
+		INSERT INTO news_comments(create_time,content,news_id,user_id) VALUES (NOW(),#{content},#{newsId},#{userId})
+	</insert>
+	
+	<select id="getNewsCommentsById" parameterType="int" resultMap="NewsCommentMap">
+		SELECT comment_id,create_time,content,u.user_id,u.username 
+		FROM news_comments ac
+		LEFT JOIN users u ON u.user_id = ac.user_id
+		WHERE news_id = #{newsId}
+		order by create_time desc
+	</select>
 </mapper>
