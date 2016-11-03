@@ -96,7 +96,9 @@ font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
     float: right;
     padding-right: 10px;
 }
-
+.article-con img {
+    max-width: 900px;
+}
 p{text-indent:2em}
 </style>
 <div style="width:1200px;margin:0 auto;">
