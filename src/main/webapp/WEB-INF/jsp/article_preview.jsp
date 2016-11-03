@@ -178,7 +178,9 @@ p{text-indent:2em}
 	text-indent:2em;
 }
 
-
+.article-con img {
+    max-width: 900px;
+}
 /*评论代码over*/
 
 
