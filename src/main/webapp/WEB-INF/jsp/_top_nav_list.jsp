@@ -23,75 +23,7 @@
           <i class="arrow"></i> 
          </li>
           
-<!-- 服务 -->
-			<li class="top-item">
-				<em class="flag flag1"></em>
-				<a title="专利申请" target="_blank" class="txt" href="javascript:;">专利申请</a>				
-				<div class="sub">
-					<div class="title clearfix">
-						<h4 class="Left"><a target="_blank" href="javascript:;" class="red">专利申请<span class="darrow">&gt;&gt;</span></a></h4>
-					</div>
-					<div class="list clearfix">
-	                  <a href="<s:url value='/business/patent_registration.html?type=1'/>" class="sub-item" target="_blank">发明专利</a>
-	                  <a href="<s:url value='/business/patent_registration.html?type=2'/>" class="sub-item" target="_blank">实用专利</a>
-					  <a href="<s:url value='/business/patent_registration.html?type=3'/>" class="sub-item" target="_blank">外观设计</a>
-					
-					</div>
-				
-				</div>
-				<i class="arrow"></i>
-			</li>	
-			<li class="top-item">
-				<em class="flag flag1"></em>
-				<a title="商标注册" target="_blank" class="txt" href="javascript:;">商标注册</a>				
-				<div class="sub">
-					<div class="title clearfix">
-						<h4 class="Left"><a target="_blank" href="javascript:;" class="red">商标注册<span class="darrow">&gt;&gt;</span></a></h4>
-					</div>
-					<div class="list clearfix">
-	                  <a href="<s:url value='/business/trademark_registration.html?type=1'/>" class="sub-item" target="_blank" style="width:172px;float:none;">国内普通商标(800元)</a><br>
-	                  <a href="<s:url value='/business/trademark_registration.html?type=2'/>" class="sub-item" target="_blank" style="width:172px;float:none;">风险代理注册商标(1200元)</a><br>
-	        		  <a href="<s:url value='/business/trademark_registration.html?type=3'/>" class="sub-item" target="_blank" style="width:172px;float:none;">商标注册包过服务(1500元)</a><br>
-	        		  <a href="<s:url value='/business/trademark_registration.html?type=4'/>" class="sub-item" target="_blank" style="width:300px;float:none;">商标注册包过服务+设计logo+版权登记(3500元)</a>
-					</div>
-				
-				</div>
-				<i class="arrow"></i>	
-			</li>	
-			<li class="top-item">
-				<em class="flag flag1"></em>
-				<a title="版权登记" target="_blank" class="txt" href="javascript:;">版权登记</a>				
-				<div class="sub">
-					<div class="title clearfix">
-						<h4 class="Left"><a target="_blank" href="javascript:;" class="red">版权登记<span class="darrow">&gt;&gt;</span></a></h4>
-					</div>
-					<div class="list clearfix">
-	                  <a href="<s:url value='/business/copyright_registration.html?type=1'/>" class="sub-item" target="_blank">普通版权(600元)</a>
-	                  <a href="<s:url value='/business/copyright_registration.html?type=2'/>" class="sub-item" target="_blank" style="width:172px;">计算机版权(1200元)</a>
-					</div>
-				
-				</div>
-				<i class="arrow"></i>
-			</li>
-		
-			<li class="top-item">
-				<em class="flag flag1"></em>
-				<a title="工商注册" target="_blank" class="txt" href="<s:url value='/business/business_registration.html'/>">工商注册</a>				
-				<!-- 
-				<div class="sub">
-					<div class="title clearfix">
-						<h4 class="Left"><a target="_blank" href="javascript:;" class="red">工商注册<span class="darrow">&gt;&gt;</span></a></h4>
-					</div>
-					<div class="list clearfix">
-	                  <a href="<s:url value='/business/business_registration.html?type=1'/>" class="sub-item" target="_blank">工商管理(1600元)</a>
-	                  <a href="<s:url value='/business/business_registration.html?type=2'/>" class="sub-item" target="_blank">税务管理(1200元)</a>
-					
-					</div>
-				
-				</div>
-				 -->
-				<i class="arrow"></i>
-			</li>	
+
 						
 			<li class="top-item">
 				<em class="flag flag1"></em>
@@ -222,12 +154,11 @@
     </div>
     <ul class="navigator">
       <li><a href="<s:url value='/'/>" title="龙图腾专利交易">首页</a></li>
-      <li><a href="<s:url value='/business/trademark_list.html'/>" title="商标注册">商标注册</a></li>
-      <li><a  id="JS_mll_head_menu_expr" href="<s:url value='/business/copyright_list.html'/>" title="版权登记">版权登记<img src="<s:url value='/images/hot2015.gif'/>" style="position:absolute;background:none;right:0px;top:-5px;" /></a></li>
-      <li><a href="<s:url value='/business/patent_list.html?type=1'/>" title="专利申请">专利申请</a></li>
-      <li><a  href="<s:url value='/business/business_registration.html'/>" title="工商财务">工商财务</a></li>
-      <li><a target="_blank" href="http://g.lotut.com" title="专利管家">专利管家</a></li>
-	   	      
+      <li><a href="<s:url value='/business/patent_article.html?shopType=1'/>" title="农业/食品/医疗">农业/食品/医疗</a></li>
+      <li><a  id="JS_mll_head_menu_expr" href="<s:url value='/business/patent_article.html?shopType=2'/>" title="化工/冶金/生物">化工/冶金/生物</a></li>
+      <li><a href="<s:url value='/business/patent_article.html?shopType=3'/>" title="专利申请">交通/包装/建筑</a></li>
+      <li><a  href="<s:url value='/business/patent_article.html?shopType=4'/>" title="工商财务">电力/环保/通讯</a></li>
+      <li><a target="_blank" href="http://g.lotut.com" title="专利管家">专利管家</a></li>     
     </ul>
   </div>
   
