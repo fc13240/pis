@@ -253,7 +253,8 @@ p{text-indent:2em}
 }
 .txt_share_box {
     position: relative;
-    width: 640px;
+    width: 700px;
+    margin:0 auto;
 }
 .txt_share {
     margin-top: 20px;
@@ -266,19 +267,19 @@ p{text-indent:2em}
 .share_bar_pop_wxq {
     left: 233px;
 }
-.txt_share a.yc_sina {
+.yc_sina {
     background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/sina_ed3b5529.png);
     border: 1px solid #f56467;
 }
-.txt_share a.yc_wx {
+.yc_wx {
     background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wx_0868d839.png);
     border: 1px solid #8dc81b;
 }
-.txt_share a.yc_wxq {
+.yc_wxq {
     background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wxq_d0336192.png);
     border: 1px solid #71c8d6;
 }
-.txt_share a.yc_qzone {
+.yc_qzone {
     background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/qq_581694f4.png);
     border: 1px solid #f5be3f;
 }
@@ -312,6 +313,23 @@ p{text-indent:2em}
     display: block;
     float: left;
 }
+.txt_share a {
+    width: 140px;
+    height: 40px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 26px center;
+    font: 14px/40px Microsoft YaHei;
+    color: #222;
+    float: left;
+    margin: 0 8px;
+    text-indent: 64px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline;
+}
 </style>
 <div style="width:1200px;margin:0 auto;">
 	<div class="r_detail_about"> 
@@ -324,13 +342,23 @@ p{text-indent:2em}
 					
 				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;font-family: simsun;text-align: center;">${article.title}</h2>
 				<br/>
-				<div>
+				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
 					发表时间：<fmt:formatDate  value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
 					</span>
 					<span class="font-article" style="margin-left:50px;">来源：${article.author}</span>
 
 				</div>
+				<div style="width:200px;float:right;">
+					<div class="bdsharebuttonbox">
+						<a href="#" class="bds_more" data-cmd="more"></a>
+						<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+						<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+						<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+						<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+					</div>
+				</div>
+				<div style="clear:both;"></div>
 				<br/>
 				<div class="line01"></div>
 				<br/>
@@ -341,32 +369,24 @@ p{text-indent:2em}
 				</div>
 				<br/>
 				<div class="box02" style="height:214px;text-align:center;margin-bottom:25px;">
-				    <img style="height:100%;" src="http://p3.ifengimg.com/a/2016_25/13ec2434e156b5e_size32_w160_h214.jpg">
+				    <img style="height:100%;" src="<s:url value='/images/gongzhong.png'/>">
 				</div>
-			
+				
 				<div class="txt_share_box">
-                    <div class="txt_share clearfix">
-                        <a class="yc_sina js_swShare">微博</a>
-                        <a class="yc_wx js_wx" data-pop="share_bar_pop_wx">微信好友</a>
-                        <a class="yc_wxq js_wx" data-pop="share_bar_pop_wxq">朋友圈</a>
-                        <a class="yc_qzone js_qzShare">QQ空间</a>
-                    </div>
-                    <div class="share_bar_pop share_bar_pop_wx" style="display: none;">
-                        <div class="share_bar_popin clearfix">
-                            <img src="http://qrcode.ifeng.com/2016/11/03/5bc3b33a044642eafb638972baecb01a.png" width="78" height="78" class="js_qrcode">
-                            <p>用微信扫描二维码
-                                <br>分享至好友</p>
-                            <div class="share_bar_close"></div>
-                        </div>
-                    </div>
-                    <div class="share_bar_pop share_bar_pop_wxq">
-                        <div class="share_bar_popin clearfix">
-                            <img src="http://qrcode.ifeng.com/2016/11/03/5bc3b33a044642eafb638972baecb01a.png" width="78" height="78" class="js_qrcode">
-                            <p>用微信扫描二维码
-                                <br>分享至朋友圈</p>
-                            <div class="share_bar_close"></div>
-                        </div>
-                    </div>
+					<div class="bdsharebuttonbox">
+						<a href="#" class="bds_more" data-cmd="more"></a>
+						<a href="#" class="bds_qzone yc_qzone" style="background-image: url(<s:url value='/images/qq_581694f4.png'/>);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="qzone" title="分享到QQ空间">
+						QQ空间
+						</a>
+						<a href="#" class="bds_tsina yc_sina" style="background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/sina_ed3b5529.png);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="tsina" title="分享到新浪微博">
+						微博
+						</a>
+						<a href="#" class="bds_weixin yc_wx" style="background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wx_0868d839.png);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="weixin" title="分享到微信">微信</a>
+						<a href="#" class="bds_weixin yc_wxq" style="background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wxq_d0336192.png);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="weixin" title="分享到微信">朋友圈</a>
+					
+					</div>
+					<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"32"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>				
+
                 </div>
 
 
