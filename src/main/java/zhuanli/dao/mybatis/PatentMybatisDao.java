@@ -117,10 +117,14 @@ public class PatentMybatisDao extends SqlSessionDaoSupport implements PatentDao 
 	}
 
 	@Override
-	public List<Patent> getPatentsByShopType(int shopType) {
-		return patentMapper.getPatentsByShopType(shopType);
+	public List<Patent> getPatentsByShopType(int shopType,Page page) {
+		return patentMapper.getPatentsByShopType(shopType,page);
 	}
 
+	@Override
+	public int getPatentsByShopTypeCount(int shopType) {
+		return patentMapper.getPatentsByShopTypeCount(shopType);
+	}
 	
 	
 }

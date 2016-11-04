@@ -178,7 +178,7 @@
 	</resultMap>		
 		
 		
-	<select id="getPatentsByShopType" parameterType="int" resultMap="TransactionPatent">
+	<select id="getPatentsByShopType" resultMap="TransactionPatent">
 		SELECT p.patent_id, p.app_no,p.patent_name,pt.patent_type_desc as patent_type_name,s.price ,ss.patent_first_column_id,sf.patent_first_column_name
 		FROM sell_patent_goods s 
 		JOIN patents p ON s.patent_id=p.patent_id
@@ -186,9 +186,18 @@
 		JOIN sell_second_column ss ON s.patent_second_column=ss.patent_second_column_id
 		JOIN sell_first_column sf ON ss.patent_first_column_id=sf.patent_first_column_id
 		WHERE sf.patent_first_column_id=#{shopType}
+		limit #{page.startIndex}, #{page.pageSize}
 	</select>	
 	
-	
+	<select id="getPatentsByShopTypeCount" parameterType="int" resultType="int">
+		SELECT count(*)
+		FROM sell_patent_goods s 
+		JOIN patents p ON s.patent_id=p.patent_id
+		JOIN patent_types pt ON p.patent_type = pt.patent_type_id
+		JOIN sell_second_column ss ON s.patent_second_column=ss.patent_second_column_id
+		JOIN sell_first_column sf ON ss.patent_first_column_id=sf.patent_first_column_id
+		WHERE sf.patent_first_column_id=#{shopType}
+	</select>
 	
 				
 		
