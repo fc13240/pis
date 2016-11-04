@@ -359,7 +359,7 @@ p{text-indent:2em}
 				</div>
 				<br/>
 				<div class="box02" style="height:214px;text-align:center;margin-bottom:25px;">
-				    <img style="height:100%;" src="http://p3.ifengimg.com/a/2016_25/13ec2434e156b5e_size32_w160_h214.jpg">
+				    <img style="height:100%;" src="<s:url value='/images/gongzhong.png'/>">
 				</div>
 				
 				<div class="txt_share_box">
