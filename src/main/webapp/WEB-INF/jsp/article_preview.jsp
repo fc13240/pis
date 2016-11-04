@@ -342,13 +342,23 @@ p{text-indent:2em}
 					
 				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;font-family: simsun;text-align: center;">${article.title}</h2>
 				<br/>
-				<div>
+				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
 					发表时间：<fmt:formatDate  value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
 					</span>
 					<span class="font-article" style="margin-left:50px;">来源：${article.author}</span>
 
 				</div>
+				<div style="width:200px;float:right;">
+					<div class="bdsharebuttonbox">
+						<a href="#" class="bds_more" data-cmd="more"></a>
+						<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+						<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+						<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+						<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+					</div>
+				</div>
+				<div style="clear:both;"></div>
 				<br/>
 				<div class="line01"></div>
 				<br/>
@@ -365,7 +375,7 @@ p{text-indent:2em}
 				<div class="txt_share_box">
 					<div class="bdsharebuttonbox">
 						<a href="#" class="bds_more" data-cmd="more"></a>
-						<a href="#" class="bds_qzone yc_qzone" style="background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/qq_581694f4.png);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="qzone" title="分享到QQ空间">
+						<a href="#" class="bds_qzone yc_qzone" style="background-image: url(<s:url value='/images/qq_581694f4.png'/>);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="qzone" title="分享到QQ空间">
 						QQ空间
 						</a>
 						<a href="#" class="bds_tsina yc_sina" style="background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/sina_ed3b5529.png);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="tsina" title="分享到新浪微博">
@@ -375,7 +385,7 @@ p{text-indent:2em}
 						<a href="#" class="bds_weixin yc_wxq" style="background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wxq_d0336192.png);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="weixin" title="分享到微信">朋友圈</a>
 					
 					</div>
-					<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"32"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>				
+					<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"32"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>				
 
                 </div>
 
