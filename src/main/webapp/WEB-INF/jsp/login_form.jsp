@@ -88,7 +88,7 @@
           	<tr>
             	<td height="45" align="center" class="wel_user" valign="middle">
 欢迎您！请&nbsp;<a href="<s:url value='/loginForm.html'/>">登录</a>&nbsp;或&nbsp;<a href="<s:url value='/user/registerForm.html'/>">免费注册</a>              
-   
+            	
             	</td>
           	</tr>
         	</tbody>
@@ -172,6 +172,7 @@
 					</div>
 					
 				</div><!-- /.col -->
+				<!-- <div id="login_container"></div> -->
 				<div class="lt-flash col-sm-5" style="margin-top:200px;">
 				
 					<!-- 代码 开始 -->
@@ -314,6 +315,17 @@
 	</div>
 		
 </body>
-
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script>
+var obj = new WxLogin({
+                              id:"login_container", 
+                              appid: "wx7f435f9a93844c0d", 
+                              scope: "snsapi_login", 
+                              redirect_uri: encodeURI("www.lotut.com/pts2"),
+                              state: "1",
+                              style: "black",
+                              href: ".impowerBox .title {display: none;}"
+                            });
+</script>
 
 </html>
