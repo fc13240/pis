@@ -16,7 +16,7 @@ public interface ArticleDao {
 	
 	Article getUserArticleById(int userId);
 	
-	List<Article> getAllArticle();
+	List<Article> getAllArticle(Page page);
 	
 	List<ArticleType> getAllArticleTypes();
 	
@@ -34,7 +34,4 @@ public interface ArticleDao {
 
 	List<ArticleComment> getArticleCommentsById(int articleId);
 	
-	List<Article> articleOrderByTimeShow();
-	
-	List<Article> articleOrderByCommentsShow();
 }

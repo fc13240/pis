@@ -37,20 +37,11 @@ public class NewsController {
 		if(page.getCurrentPage()<1){
 			page.setCurrentPage(1);
 		}
-		List<News> newss=newsService.getAllNews();
-		List<News> newssByComments=newsService.newsOrderByCommentsShow();
-		for (int i = 0; i < newssByComments.size(); i++) {
-			newss.add(newssByComments.get(i));
-		}
-		int totalCount=newss.size();
-		List<News> sortNews= new ArrayList<>();
-		if(page.getCurrentPage() == 1){  
-			sortNews = newss.subList(page.getStartIndex(),totalCount);  
-		}else{  
-			sortNews=newss.subList(page.getStartIndex(), page.getPageSize());  
-		}  
+		List<News> news=newsService.getAllNews(page);
+		
+		int totalCount=newsService.getAllNewsCount();
 		page.setTotalRecords(totalCount);
-		model.addAttribute("news", sortNews);
+		model.addAttribute("news", news);
 		model.addAttribute("page", page);
 		return "news_list";
 	}	

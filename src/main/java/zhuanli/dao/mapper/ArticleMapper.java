@@ -20,7 +20,7 @@ public interface ArticleMapper {
 	
 	Article getUserArticleById(int userId);
 	
-	List<Article> getAllArticle();
+	List<Article> getAllArticle(Page page);
 	
 	List<ArticleType> getAllArticleTypes();
 	
@@ -38,7 +38,4 @@ public interface ArticleMapper {
 
 	List<ArticleComment> getArticleCommentsById(int articleId);
 	
-	List<Article> articleOrderByTimeShow();
-	
-	List<Article> articleOrderByCommentsShow();
 }

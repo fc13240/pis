@@ -36,8 +36,8 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 	}
 
 	@Override
-	public List<Article> getAllArticle() {
-		return articleMapper.getAllArticle();
+	public List<Article> getAllArticle(Page page) {
+		return articleMapper.getAllArticle(page);
 	}	
 	
 
@@ -84,13 +84,4 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 		return articleMapper.getArticleCommentsById(articleId);
 	}
 
-	@Override
-	public List<Article> articleOrderByTimeShow() {
-		return articleMapper.articleOrderByTimeShow();
-	}
-
-	@Override
-	public List<Article> articleOrderByCommentsShow() {
-		return articleMapper.articleOrderByCommentsShow();
-	}
 }
