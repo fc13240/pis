@@ -251,10 +251,71 @@ p{text-indent:2em}
 .adContent2 li a {
     color: #666;
 }
+.txt_share_box {
+    position: relative;
+    width: 640px;
+}
+.txt_share {
+    margin-top: 20px;
+    padding-left: 16px;
+    width: 632px;
+}
+.share_bar_pop_wx {
+    left: 75px;
+}
+.share_bar_pop_wxq {
+    left: 233px;
+}
+.txt_share a.yc_sina {
+    background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/sina_ed3b5529.png);
+    border: 1px solid #f56467;
+}
+.txt_share a.yc_wx {
+    background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wx_0868d839.png);
+    border: 1px solid #8dc81b;
+}
+.txt_share a.yc_wxq {
+    background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wxq_d0336192.png);
+    border: 1px solid #71c8d6;
+}
+.txt_share a.yc_qzone {
+    background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/qq_581694f4.png);
+    border: 1px solid #f5be3f;
+}
+.share_bar_popin {
+    position: relative;
+    padding: 10px 20px 22px 10px;
+}
+.share_bar_popin img {
+    display: block;
+    float: left;
+}
+.share_bar_popin p {
+    color: #666;
+    line-height: 24px;
+    margin-top: 15px;
+    float: right;
+}
+.share_bar_popin .share_bar_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.share_bar_popin {
+    position: relative;
+    padding: 10px 20px 22px 10px;
+}
+.share_bar_popin img {
+    display: block;
+    float: left;
+}
 </style>
 <div style="width:1200px;margin:0 auto;">
 	<div class="r_detail_about"> 
-		<span>当前位置：</span><a href="http://www.esheji.top/">主页</a> &gt; <a href="">专利培训</a> &gt;  
+		<span>当前位置：</span><a href="http://www.lotut.com.top/">主页</a> &gt; <a href="<s:url value='/article/articleList.html'/>">专利培训</a> &gt;  
 	</div>
 
 	<div class="article-con">
@@ -279,9 +340,35 @@ p{text-indent:2em}
 					</p>
 				</div>
 				<br/>
-				<div>
-				<HR  width="90%" SIZE=1>
+				<div class="box02" style="height:214px;text-align:center;margin-bottom:25px;">
+				    <img style="height:100%;" src="http://p3.ifengimg.com/a/2016_25/13ec2434e156b5e_size32_w160_h214.jpg">
 				</div>
+			
+				<div class="txt_share_box">
+                    <div class="txt_share clearfix">
+                        <a class="yc_sina js_swShare">微博</a>
+                        <a class="yc_wx js_wx" data-pop="share_bar_pop_wx">微信好友</a>
+                        <a class="yc_wxq js_wx" data-pop="share_bar_pop_wxq">朋友圈</a>
+                        <a class="yc_qzone js_qzShare">QQ空间</a>
+                    </div>
+                    <div class="share_bar_pop share_bar_pop_wx" style="display: none;">
+                        <div class="share_bar_popin clearfix">
+                            <img src="http://qrcode.ifeng.com/2016/11/03/5bc3b33a044642eafb638972baecb01a.png" width="78" height="78" class="js_qrcode">
+                            <p>用微信扫描二维码
+                                <br>分享至好友</p>
+                            <div class="share_bar_close"></div>
+                        </div>
+                    </div>
+                    <div class="share_bar_pop share_bar_pop_wxq">
+                        <div class="share_bar_popin clearfix">
+                            <img src="http://qrcode.ifeng.com/2016/11/03/5bc3b33a044642eafb638972baecb01a.png" width="78" height="78" class="js_qrcode">
+                            <p>用微信扫描二维码
+                                <br>分享至朋友圈</p>
+                            <div class="share_bar_close"></div>
+                        </div>
+                    </div>
+                </div>
+
 
 				<div class="praise">
 					<span id="praise${article.id}" onclick="praise('${article.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>

@@ -2,10 +2,15 @@ package zhuanli.controller;
 
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import zhuanli.service.PatentService;
+import zhuanli.domain.Patent;
+import java.util.List;
 
 
 
@@ -13,7 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(path="/business")
 @Controller
 public class BusinessController {
-
+	private PatentService patentService;
+	@Autowired
+	public BusinessController(PatentService patentService) {
+		this.patentService = patentService;
+	}
 
 //商标  shangbiao
 	@RequestMapping(path="/trademark_registration", method=RequestMethod.GET)
@@ -83,9 +92,10 @@ public class BusinessController {
 	}	
 	@RequestMapping(path="/patent_article", method=RequestMethod.GET)
 	public String patentArticle(Model model,int shopType) {
-
-			model.addAttribute("shopType", shopType);
-			return "service_patent_article";
+		List<Patent> patents = patentService.getPatentsByShopType(shopType);
+		model.addAttribute("patents", patents);
+		model.addAttribute("shopType", shopType);
+		return "service_patent_article";
 		
 
 	}		

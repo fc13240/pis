@@ -54,4 +54,6 @@ public interface PatentDao {
 	List<Patent> getAllPatents();
 
 	List<Patent> getPatents();
+	
+	List<Patent> getPatentsByShopType(int shopType);
 }
