@@ -37,4 +37,6 @@ public interface ArticleDao {
 	List<Article> articleOrderByTimeShow();
 	
 	List<Article> articleOrderByCommentsShow();
+
+	List<Article> getArticleByRand();
 }

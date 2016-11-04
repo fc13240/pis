@@ -15,7 +15,7 @@ import zhuanli.domain.PatentSearchCondition;
 
 public interface PatentService {
 	
-//	List<Patent> getPatents();
+
 	
 	List<Patent> getPatentsByColumn(List<Patent> patent_second_columns);
 	

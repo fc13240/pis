@@ -475,28 +475,34 @@ p{text-indent:2em}
 			
 				<div id="padhide_1720">
 					<ul class="ul_list01">
-					<li> 
-					<a href="" target="_blank">
-					一种新型的节能环保电磁炉
-					</a> </li>
-					<li> 
-					<a href="" target="_blank">
-					一种新型的节能环保电磁炉
-					</a> </li>
-					<li> 
-					<a href="" target="_blank">
-					一种新型的节能环保电磁炉
-					</a> </li>
-					<li> 
-					<a href="" target="_blank">安徽临泉一五旬大妈经营“爱情买卖”获刑三年
-					</a> </li>
-					<li> 
-					<a href="" target="_blank">
-					一种新型的节能环保电磁炉
-					</a> </li>
+					<c:forEach items="${patents}" var="patent">
+						<li>
+						<a href="" target="_blank">${patent.patent_name}</a>
+						</li>			
+					</c:forEach>					
 					</ul>
 				</div>
 			</div>
+			
+			<div class="adListNew" style="margin-top:20px;">
+			
+				<div id="padhide_2086">
+					<h3>文章推荐</h3>
+			
+				</div>
+			
+				<div id="padhide_1720">
+					<ul class="ul_list01">
+					<c:forEach items="${articles}" var="article">
+						<li>
+						<a href="<s:url value='/article/articlePreview.html?articleId=${article.id}'/>" target="_blank">${article.title}</a>
+						</li>			
+					</c:forEach>					
+					</ul>
+				</div>
+			</div>			
+			
+			
 			<div class="adListNew" style="margin-top:20px;">
 			
 				<div id="padhide_2086">
