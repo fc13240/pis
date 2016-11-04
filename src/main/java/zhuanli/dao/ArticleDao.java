@@ -33,4 +33,5 @@ public interface ArticleDao {
 	void addArticleComment(String content, int articleId, int userId);
 
 	List<ArticleComment> getArticleCommentsById(int articleId);
+	
 }

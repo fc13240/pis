@@ -3,6 +3,7 @@ package zhuanli.service.impl;
 import java.util.List;
 
 import zhuanli.dao.NewsDao;
+import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.NewsComment;
 import zhuanli.domain.NewsType;
@@ -45,7 +46,9 @@ public class NewsServiceImpl implements NewsService {
 
 	@Override
 	public List<News> newsShow() {
+	
 		return newsDao.newsShow();
+		
 	}
 
 	@Override
@@ -68,4 +71,5 @@ public class NewsServiceImpl implements NewsService {
 	public List<NewsComment> getNewsCommentsById(int newsId) {
 		return newsDao.getNewsCommentsById(newsId);
 	}
+
 }

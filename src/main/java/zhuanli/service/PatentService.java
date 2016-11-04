@@ -57,4 +57,6 @@ public interface PatentService {
 	String PatentExportExcel(String excelName)  throws IOException;
 
 	List<Patent> getPatents();
+	
+	List<Patent> getPatentsByShopType(int shopType);
 }

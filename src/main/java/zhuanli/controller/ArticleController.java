@@ -1,10 +1,8 @@
 package zhuanli.controller;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +16,8 @@ import zhuanli.domain.Article;
 import zhuanli.domain.ArticleComment;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
-import zhuanli.domain.User;
 import zhuanli.service.ArticleService;
 import zhuanli.util.PrincipalUtils;
-import zhuanli.util.WebUtils;
 
 
 
@@ -40,10 +36,10 @@ public class ArticleController {
 		if(page.getCurrentPage()<1){
 			page.setCurrentPage(1);
 		}
-		List<Article> article=articleService.getAllArticle(page);
+		List<Article> articles=articleService.getAllArticle(page);
 		int totalCount=articleService.getAllArticleCount();
 		page.setTotalRecords(totalCount);
-		model.addAttribute("article", article);
+		model.addAttribute("article", articles);
 		model.addAttribute("page", page);
 		return "article_list";
 	}	

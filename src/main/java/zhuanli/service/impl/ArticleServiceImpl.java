@@ -1,5 +1,6 @@
 package zhuanli.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import zhuanli.dao.ArticleDao;
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.mysql.fabric.xmlrpc.base.Array;
 
 import zhuanli.controller.util.FileOption;
 import zhuanli.controller.util.WebUtils;
@@ -52,8 +55,6 @@ public class ArticleServiceImpl implements ArticleService {
 		
 	}
 	
-
-
 	@Override
 	public List<ArticleType> getAllArticleTypes() {
 		return articleDao.getAllArticleTypes();
@@ -96,6 +97,8 @@ public class ArticleServiceImpl implements ArticleService {
 	public List<ArticleComment> getArticleCommentsById(int articleId) {
 		return articleDao.getArticleCommentsById(articleId);
 	}
+
+
 
 	
 }

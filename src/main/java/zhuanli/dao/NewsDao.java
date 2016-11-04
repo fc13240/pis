@@ -30,4 +30,5 @@ public interface NewsDao {
 	void addNewsComment(String content, int newsId, int userId);
 
 	List<NewsComment> getNewsCommentsById(int newsId);
+	
 }

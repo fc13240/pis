@@ -1,6 +1,7 @@
 package zhuanli.controller;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import zhuanli.domain.Article;
+import zhuanli.domain.News;
 import zhuanli.domain.News;
 import zhuanli.domain.Page;
 import zhuanli.service.NewsService;
@@ -37,6 +38,7 @@ public class NewsController {
 			page.setCurrentPage(1);
 		}
 		List<News> news=newsService.getAllNews(page);
+		
 		int totalCount=newsService.getAllNewsCount();
 		page.setTotalRecords(totalCount);
 		model.addAttribute("news", news);

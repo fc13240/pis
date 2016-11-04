@@ -83,4 +83,5 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 	public List<ArticleComment> getArticleCommentsById(int articleId) {
 		return articleMapper.getArticleCommentsById(articleId);
 	}
+
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.NewsComment;
 import zhuanli.domain.NewsSearchCondition;
@@ -33,4 +34,5 @@ public interface NewsMapper {
 	void addNewsComment(@Param("content") String content, @Param("newsId")int newsId, @Param("userId")int userId);
 
 	List<NewsComment> getNewsCommentsById(int newsId);
+	
 }

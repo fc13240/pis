@@ -38,5 +38,4 @@ public interface ArticleMapper {
 
 	List<ArticleComment> getArticleCommentsById(int articleId);
 	
-
 }

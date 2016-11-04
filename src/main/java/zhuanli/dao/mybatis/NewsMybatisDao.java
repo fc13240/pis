@@ -32,7 +32,7 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 	}
 
 	@Override
-	public List<News> getAllNews(Page page) {
+	public List<News> getAllNews(Page page){
 		return newsMapper.getAllNews(page);
 	}
 
@@ -71,6 +71,7 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 	public List<NewsComment> getNewsCommentsById(int newsId) {
 		return newsMapper.getNewsCommentsById(newsId);
 	}
+
 
 
 
