@@ -78,13 +78,13 @@
 	
 	<select id="getAllNews" parameterType="Page" resultMap="NewsResultMap">
 		(SELECT * FROM (SELECT id AS news_id ,title,publish_time FROM news n WHERE DATE(publish_time) = CURDATE() 
-			and n.small_img_url IS NOT NULL and n.small_img_url!='' and n.check_status=1
+			 and n.check_status=1
 		ORDER BY publish_time DESC) AS n1)
 		UNION ALL
 		(SELECT * FROM (SELECT c.news_id,n.title,n.publish_time
   			FROM news_comments c JOIN news  n ON c.news_id = n.id   
  			WHERE news_id NOT IN (SELECT id FROM news WHERE DATE(publish_time) = CURDATE()
- 			and n.small_img_url IS NOT NULL and n.small_img_url!='' and n.check_status=1)
+ 			 and n.check_status=1)
  			GROUP BY news_id ORDER BY COUNT(1) DESC) AS n2) limit #{startIndex},#{pageSize}
 	</select>
 	

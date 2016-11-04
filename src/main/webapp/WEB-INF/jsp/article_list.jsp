@@ -105,7 +105,7 @@ font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
 					<span class="h_list_tit">
 						<a href="<s:url value='/article/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" target="_blank" title="${article.title}">${article.title}</a>
 					</span> 
-					<span class="h_list_deta"><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd"/></span> 
+					<span class="h_list_deta"><fmt:formatDate value="${article.publishTime}" pattern="yyyy-MM-dd"/></span> 
 					</li>			
 				</c:forEach>
 				
