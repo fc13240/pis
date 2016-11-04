@@ -36,8 +36,8 @@ public class ArticleMybatisDao extends SqlSessionDaoSupport implements ArticleDa
 	}
 
 	@Override
-	public List<Article> getAllArticle(Page page) {
-		return articleMapper.getAllArticle(page);
+	public List<Article> getAllArticle() {
+		return articleMapper.getAllArticle();
 	}	
 	
 

@@ -148,10 +148,14 @@
 	</select>	
 	
 	<resultMap type="Patent" id="TransactionPatent">
-		<id property="patentId" column="patent_id"/>
-		<result property="appNo" column="app_no"/>
+		<id property="patent_id" column="patent_id"/>
+		<result property="app_no" column="app_no"/>
 		<result property="patent_name" column="patent_name"/>
+		<result property="patent_type_name" column="patent_type_name"/>
 		<result property="price" column="price"/>
+		<result property="patent_first_column_id" column="patent_first_column_id"/>
+		<result property="patent_first_column_name" column="patent_first_column_name"/>
+		
 	</resultMap>	
 	
 	
@@ -173,7 +177,16 @@
 		
 	</resultMap>		
 		
-
+		
+	<select id="getPatentsByShopType" parameterType="int" resultMap="TransactionPatent">
+		SELECT p.patent_id, p.app_no,p.patent_name,pt.patent_type_desc as patent_type_name,s.price ,ss.patent_first_column_id,sf.patent_first_column_name
+		FROM sell_patent_goods s 
+		JOIN patents p ON s.patent_id=p.patent_id
+		JOIN patent_types pt ON p.patent_type = pt.patent_type_id
+		JOIN sell_second_column ss ON s.patent_second_column=ss.patent_second_column_id
+		JOIN sell_first_column sf ON ss.patent_first_column_id=sf.patent_first_column_id
+		WHERE sf.patent_first_column_id=#{shopType}
+	</select>	
 	
 	
 	

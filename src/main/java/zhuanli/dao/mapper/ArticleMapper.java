@@ -20,7 +20,7 @@ public interface ArticleMapper {
 	
 	Article getUserArticleById(int userId);
 	
-	List<Article> getAllArticle(Page page);
+	List<Article> getAllArticle();
 	
 	List<ArticleType> getAllArticleTypes();
 	

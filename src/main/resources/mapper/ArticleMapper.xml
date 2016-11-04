@@ -90,11 +90,12 @@
 		WHERE n.user_id=#{userId} and n.check_status=1
 	</select>	
 	
-	<select id="getAllArticle" parameterType="Page" resultMap="ArticleResultMap">
+	<select id="getAllArticle"  resultMap="ArticleResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
-		nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote
+		n.small_img_url,nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote,n.check_status
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
-		where n.check_status=1 ORDER BY n.publish_time desc ,n.update_time limit #{startIndex}, #{pageSize}
+		LEFT JOIN article_comments d ON n.id = d.article_id
+		where DATE(publish_time) = CURDATE() and n.title is not null and n.content is not null and n.check_status=1 ORDER BY n.publish_time DESC ,n.update_time 
 	</select>
 	
 	
@@ -121,7 +122,7 @@
 		n.small_img_url,nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote,n.check_status
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
 		LEFT JOIN article_comments d ON n.id = d.article_id
-		where DATE(publish_time) = CURDATE() and n.title is not null and n.content is not null and n.check_status=1 ORDER BY n.publish_time DESC ,n.update_time limit 0,9;
+		where DATE(publish_time) = CURDATE() and n.title is not null and n.content is not null and n.check_status=1 ORDER BY n.publish_time DESC ,n.update_time limit 0,9
 	</select>
 	
 	<select id="articleOrderByCommentsShow" resultMap="ArticleResultMap">
@@ -129,7 +130,7 @@
 		n.small_img_url,nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote,n.check_status,count(1) cnt
 		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
 		LEFT JOIN article_comments d ON n.id = d.article_id
-		where DATE(publish_time) != CURDATE() and n.title is not null and n.content is not null and n.check_status=1 GROUP BY id ORDER BY cnt DESC ,n.update_time desc limit 0,9;
+		where DATE(publish_time) != CURDATE() and n.title is not null and n.content is not null and n.check_status=1 GROUP BY id ORDER BY cnt DESC ,n.publish_time desc
 	</select>
 	
 	<select id="getUpVoteAndDownVote" parameterType="int" resultMap="VoteResultMap">

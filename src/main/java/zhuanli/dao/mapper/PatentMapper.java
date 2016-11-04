@@ -53,4 +53,6 @@ public interface PatentMapper {
 	List<Patent> getAllPatents();
 
 	List<Patent> getPatents();
+	
+	List<Patent> getPatentsByShopType(int shopType);
 }

@@ -2,6 +2,7 @@ package zhuanli.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -40,10 +41,20 @@ public class ArticleController {
 		if(page.getCurrentPage()<1){
 			page.setCurrentPage(1);
 		}
-		List<Article> article=articleService.getAllArticle(page);
-		int totalCount=articleService.getAllArticleCount();
+		List<Article> articles=articleService.getAllArticle();
+		List<Article> articlesByComments=articleService.articleOrderByCommentsShow();
+		for (int i = 0; i < articlesByComments.size(); i++) {
+			articles.add(articlesByComments.get(i));
+		}
+		int totalCount=articles.size();
+		List<Article> sortArticle= new ArrayList<>();
+		if(page.getCurrentPage() == 1){  
+			sortArticle = articles.subList(page.getStartIndex(),totalCount);  
+		}else{  
+			sortArticle=articles.subList(page.getStartIndex(), page.getPageSize());  
+		}  
 		page.setTotalRecords(totalCount);
-		model.addAttribute("article", article);
+		model.addAttribute("article", sortArticle);
 		model.addAttribute("page", page);
 		return "article_list";
 	}	
