@@ -3,6 +3,7 @@ package zhuanli.service.impl;
 import java.util.List;
 
 import zhuanli.dao.NewsDao;
+import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.NewsComment;
 import zhuanli.domain.NewsType;
@@ -29,8 +30,8 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
-	public List<News> getAllNews(Page page) {
-		return newsDao.getAllNews(page);
+	public List<News> getAllNews() {
+		return newsDao.getAllNews();
 	}
 
 	@Override
@@ -45,7 +46,19 @@ public class NewsServiceImpl implements NewsService {
 
 	@Override
 	public List<News> newsShow() {
-		return newsDao.newsShow();
+		List<News> timeNews=newsDao.newsOrderByTimeShow();
+		List<News> commentsNews=newsDao.newsOrderByCommentsShow();
+		if(timeNews.isEmpty()){
+			return timeNews;
+		}else{
+		if(timeNews.size()<10){
+			for (int i = 0; i < 10-timeNews.size()-1; i++) {
+				timeNews.add(commentsNews.get(i));
+			}
+		}	
+		}
+		return timeNews;
+		
 	}
 
 	@Override
@@ -67,5 +80,15 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public List<NewsComment> getNewsCommentsById(int newsId) {
 		return newsDao.getNewsCommentsById(newsId);
+	}
+
+	@Override
+	public List<News> newsOrderByTimeShow() {
+		return null;
+	}
+
+	@Override
+	public List<News> newsOrderByCommentsShow() {
+		return null;
 	}
 }

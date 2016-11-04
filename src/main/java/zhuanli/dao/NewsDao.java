@@ -15,7 +15,7 @@ public interface NewsDao {
 	
 	News getUserNewsById(int userId);
 	
-	List<News> getAllNews(Page page);
+	List<News> getAllNews();
 	
 	List<NewsType> getAllNewsTypes();
 	
@@ -30,4 +30,8 @@ public interface NewsDao {
 	void addNewsComment(String content, int newsId, int userId);
 
 	List<NewsComment> getNewsCommentsById(int newsId);
+	
+	List<News> newsOrderByTimeShow();
+	
+	List<News> newsOrderByCommentsShow();
 }

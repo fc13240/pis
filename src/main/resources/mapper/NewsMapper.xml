@@ -72,12 +72,12 @@
 		WHERE n.id=#{newsId}
 	</select>
 	
-	<select id="getAllNews" parameterType="Page" resultMap="NewsResultMap">
+	<select id="getAllNews"  resultMap="NewsResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
-		nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote
-		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id
-		where n.title is not null and n.check_status=1
-		ORDER BY n.publish_time desc ,n.update_time limit #{startIndex}, #{pageSize}
+		n.small_img_url,nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote,n.check_status
+		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+		LEFT JOIN news_comments d ON n.id = d.news_id
+		where DATE(publish_time) = CURDATE() and n.title is not null and n.content is not null and n.check_status=1 ORDER BY n.publish_time DESC ,n.update_time
 	</select>
 	
 	
@@ -106,11 +106,11 @@
 	</select>
 	
 	<update id="praise">
-		update article set up_vote=#{upVote} where id=#{id}
+		update news set up_vote=#{upVote} where id=#{id}
 	</update>
 	
 	<update id="slander">
-		update article set down_vote=#{downVote} where id=#{id}
+		update news set down_vote=#{downVote} where id=#{id}
 	</update>
 	
 	<insert id="addNewsComment">
@@ -123,5 +123,21 @@
 		LEFT JOIN users u ON u.user_id = ac.user_id
 		WHERE news_id = #{newsId}
 		order by create_time desc
+	</select>
+	
+	<select id="newsOrderByTimeShow" resultMap="NewsResultMap">
+		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
+		n.small_img_url,nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote,n.check_status
+		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+		LEFT JOIN news_comments d ON n.id = d.news_id
+		where DATE(publish_time) = CURDATE() and n.title is not null and n.content is not null and n.check_status=1 ORDER BY n.publish_time DESC ,n.update_time limit 0,9
+	</select>
+	
+	<select id="newsOrderByCommentsShow" resultMap="NewsResultMap">
+		SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
+		n.small_img_url,nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote,n.check_status,count(1) cnt
+		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+		LEFT JOIN news_comments d ON n.id = d.news_id
+		where DATE(publish_time) != CURDATE() and n.title is not null and n.content is not null and n.check_status=1 GROUP BY id ORDER BY cnt DESC ,n.publish_time desc
 	</select>
 </mapper>

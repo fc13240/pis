@@ -1,6 +1,7 @@
 package zhuanli.controller;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import zhuanli.domain.Article;
+import zhuanli.domain.News;
 import zhuanli.domain.News;
 import zhuanli.domain.Page;
 import zhuanli.service.NewsService;
@@ -36,10 +37,20 @@ public class NewsController {
 		if(page.getCurrentPage()<1){
 			page.setCurrentPage(1);
 		}
-		List<News> news=newsService.getAllNews(page);
-		int totalCount=newsService.getAllNewsCount();
+		List<News> newss=newsService.getAllNews();
+		List<News> newssByComments=newsService.newsOrderByCommentsShow();
+		for (int i = 0; i < newssByComments.size(); i++) {
+			newss.add(newssByComments.get(i));
+		}
+		int totalCount=newss.size();
+		List<News> sortNews= new ArrayList<>();
+		if(page.getCurrentPage() == 1){  
+			sortNews = newss.subList(page.getStartIndex(),totalCount);  
+		}else{  
+			sortNews=newss.subList(page.getStartIndex(), page.getPageSize());  
+		}  
 		page.setTotalRecords(totalCount);
-		model.addAttribute("news", news);
+		model.addAttribute("news", sortNews);
 		model.addAttribute("page", page);
 		return "news_list";
 	}	

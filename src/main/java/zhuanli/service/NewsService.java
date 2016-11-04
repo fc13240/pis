@@ -14,7 +14,7 @@ public interface NewsService {
 	
 	News getUserNewsById(int userId);
 	
-	List<News> getAllNews(Page page);
+	List<News> getAllNews();
 	
 	List<NewsType> getAllNewsTypes();
 	
@@ -29,4 +29,8 @@ public interface NewsService {
 	void addNewsComment(String content, int newsId, int userId);
 
 	List<NewsComment> getNewsCommentsById(int newsId);
+	
+	List<News> newsOrderByTimeShow();
+	
+	List<News> newsOrderByCommentsShow();
 }

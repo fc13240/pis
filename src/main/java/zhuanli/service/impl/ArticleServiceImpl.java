@@ -71,11 +71,15 @@ public class ArticleServiceImpl implements ArticleService {
 	public List<Article> articleShow() {
 		List<Article> timeArticles=articleDao.articleOrderByTimeShow();
 		List<Article> commentsArticles=articleDao.articleOrderByCommentsShow();
+		if(timeArticles.isEmpty()){
+			return timeArticles;
+		}else{
 		if(timeArticles.size()<10){
 			for (int i = 0; i < 10-timeArticles.size()-1; i++) {
 			timeArticles.add(commentsArticles.get(i));
 			}
 		}	
+		}
 		return timeArticles;
 	}
 	
