@@ -122,6 +122,8 @@ p{text-indent:2em}
 .font-article{
 	font: 12px/1.5 "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "Helvetica Neue", Helvetica, tahoma, Arial;
 	color: #404040;
+	font-size: 14px;
+    line-height: 50px;
 }
 .textarea {
 	height: 114px;
@@ -351,15 +353,15 @@ p{text-indent:2em}
 				</div>
 				<div style="width:200px;float:right;">
 					<div class="bdsharebuttonbox">
-						<a href="#" class="bds_more" data-cmd="more"></a>
+						
 						<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
 						<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
 						<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
 						<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+						<a href="#" class="bds_more" data-cmd="more"></a>
 					</div>
 				</div>
 				<div style="clear:both;"></div>
-				<br/>
 				<div class="line01"></div>
 				<br/>
 				<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
@@ -378,15 +380,14 @@ p{text-indent:2em}
 						<a href="#" class="bds_qzone yc_qzone" style="background-image: url(<s:url value='/images/qq_581694f4.png'/>);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="qzone" title="分享到QQ空间">
 						QQ空间
 						</a>
-						<a href="#" class="bds_tsina yc_sina" style="background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/sina_ed3b5529.png);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="tsina" title="分享到新浪微博">
+						<a href="#" class="bds_tsina yc_sina" style="background-image: url(<s:url value='/images/sina_ed3b5529.png'/>);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="tsina" title="分享到新浪微博">
 						微博
 						</a>
-						<a href="#" class="bds_weixin yc_wx" style="background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wx_0868d839.png);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="weixin" title="分享到微信">微信</a>
-						<a href="#" class="bds_weixin yc_wxq" style="background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wxq_d0336192.png);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="weixin" title="分享到微信">朋友圈</a>
+						<a href="#" class="bds_weixin yc_wx" style="background-image: url(<s:url value='/images/wx_0868d839.png'/>);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="weixin" title="分享到微信">微信</a>
+						<a href="#" class="bds_weixin yc_wxq" style="background-image: url(<s:url value='/images/wxq_d0336192.png'/>);width: 140px;height: 40px;display: block;background-repeat: no-repeat;background-position: 26px center;font: 14px/40px Microsoft YaHei;color: #222;float: left;margin: 0 8px;text-indent: 64px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;cursor: pointer;display: inline;}" data-cmd="weixin" title="分享到微信">朋友圈</a>
 					
 					</div>
-					<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"32"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>				
-
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"24"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
                 </div>
 
 

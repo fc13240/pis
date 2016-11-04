@@ -214,7 +214,8 @@ $('.s-new-01 a').bind('click', function(){
             class="arrow arrowT"></i></li>
         <li><a href="javascript:void(0);">所需材料</a><i
             class="arrow arrowT"></i></li>
-            
+        <li><a href="javascript:void(0);">专利列表</a><i
+            class="arrow arrowT"></i></li>            
             
         <li class="title"><a href="#">&uarr;&nbsp;专利交易</a><i
             class="arrow arrowT"></i></li>
@@ -235,7 +236,60 @@ $('.s-new-01 a').bind('click', function(){
 
     </div>
 
+    <div class="list-item">
+      <h3 style="font-size:18px;">专利列表</h3>
+		<ul class="h_second_list">
+		<c:forEach items="${patents}" var="patent">
+			<li>
+			<span class="h_list_tit">
+				[${patent.patent_type_name}]${patent.patent_name}.${patent.app_no}
+			</span> 
+			</li>			
+		</c:forEach>
+		</ul>
+    </div>
+ <style type="text/css">
+.r_detail_about {
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    position: relative;
+}
 
+.r_detail_about span{
+font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
+    color: #333;font-size:16px;
+}
+.r_detail_about a{
+font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
+    color: #333;font-size:16px;
+}
+.article-con {
+    border: 1px solid #ececec;
+    padding: 15px;
+}
+.h_second_list {
+    padding: 20px 10px 80px 25px;
+}
+.h_second_list li {
+    height: 46px;
+    font-size:16px;
+    font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
+    color: #333;
+    line-height: 46px;
+    border-bottom: 1px solid #cdd5d8;
+    background: url(../images/second_hui.png) no-repeat left;
+    padding-left: 15px;
+    overflow: hidden;
+}
+.h_second_list li .h_list_deta {
+    font-size:16px;
+    font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
+    color: #333;
+    float: right;
+    padding-right: 10px;
+}
+</style>   
     </div>     
   </div>
 
