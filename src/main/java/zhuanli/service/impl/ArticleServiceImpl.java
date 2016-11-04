@@ -50,8 +50,8 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public List<Article> getAllArticle(Page page) {
-		return articleDao.getAllArticle(page);
+	public List<Article> getAllArticle() {
+		return articleDao.getAllArticle();
 		
 	}
 	
@@ -105,6 +105,11 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public List<ArticleComment> getArticleCommentsById(int articleId) {
 		return articleDao.getArticleCommentsById(articleId);
+	}
+
+	@Override
+	public List<Article> articleOrderByCommentsShow() {
+		return articleDao.articleOrderByCommentsShow();
 	}
 
 	

@@ -15,7 +15,7 @@ public interface ArticleService {
 	
 	Article getUserArticleById(int userId);
 	
-	List<Article> getAllArticle(Page page);
+	List<Article> getAllArticle();
 	
 	List<ArticleType> getAllArticleTypes();
 	
@@ -32,4 +32,6 @@ public interface ArticleService {
 	void addArticleComment(String content, int articleId, int userId);
 
 	List<ArticleComment> getArticleCommentsById(int articleId);
+	
+	List<Article> articleOrderByCommentsShow();
 }
