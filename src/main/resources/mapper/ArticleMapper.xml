@@ -152,13 +152,13 @@
 	
 	<select id="articleShow" resultMap="ArticleResultMap">
 		(SELECT * FROM (SELECT id AS article_id ,title,publish_time FROM article n WHERE DATE(publish_time) = CURDATE() 
-			and n.small_img_url IS NOT NULL and n.small_img_url!='' and n.check_status=1
+			 and n.check_status=1
 		ORDER BY publish_time DESC) AS n1)
 		UNION ALL
 		(SELECT * FROM (SELECT c.article_id,n.title,n.publish_time
   			FROM article_comments c JOIN article  n ON c.article_id = n.id   
  			WHERE article_id NOT IN (SELECT id FROM article WHERE DATE(publish_time) = CURDATE()
- 			and n.small_img_url IS NOT NULL and n.small_img_url!='' and n.check_status=1)
+ 			and n.check_status=1)
  			GROUP BY article_id ORDER BY COUNT(1) DESC) AS n2) limit 0,9
 	</select>
   </mapper>
