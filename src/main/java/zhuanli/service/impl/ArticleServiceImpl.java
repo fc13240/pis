@@ -105,5 +105,10 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleDao.getArticleByRand();
 	}
 
+	@Override
+	public List<Article> articleOrderByCommentsShow() {
+		return articleDao.articleOrderByCommentsShow();
+	}
+
 	
 }
