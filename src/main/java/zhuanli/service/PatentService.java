@@ -15,7 +15,7 @@ import zhuanli.domain.PatentSearchCondition;
 
 public interface PatentService {
 	
-//	List<Patent> getPatents();
+
 	
 	List<Patent> getPatentsByColumn(List<Patent> patent_second_columns);
 	
@@ -58,5 +58,7 @@ public interface PatentService {
 
 	List<Patent> getPatents();
 	
-	List<Patent> getPatentsByShopType(int shopType);
+	List<Patent> getPatentsByShopType(int shopType,Page page);
+	
+	int getPatentsByShopTypeCount(int shopType);
 }

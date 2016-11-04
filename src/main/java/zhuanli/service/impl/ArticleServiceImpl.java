@@ -100,5 +100,10 @@ public class ArticleServiceImpl implements ArticleService {
 
 
 
+	@Override
+	public List<Article> getArticleByRand() {
+		return articleDao.getArticleByRand();
+	}
+
 	
 }

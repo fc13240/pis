@@ -68,7 +68,12 @@
  			and n.small_img_url IS NOT NULL and n.small_img_url!='' and n.check_status=1)
  			GROUP BY article_id ORDER BY COUNT(1) DESC) AS n2) limit 0,9
 	</select>
-
+	
+	<select id="getArticleByRand" resultMap="ArticleResultMap">
+		SELECT id,title
+		FROM article 
+		where  check_status=1 ORDER BY RAND() limit 10
+	</select>
 	
 	<select id="getUserArticleById"  parameterType="int" resultMap="ArticleResultMap">
 		SELECT n.id,n.keywords,n.author,n.title,n.source,n.content,n.abstract,n.create_time,n.publish_time,n.update_time,

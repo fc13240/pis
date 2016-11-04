@@ -8,9 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import zhuanli.util.WebUtils;
+
 import zhuanli.service.PatentService;
+import zhuanli.domain.Page;
 import zhuanli.domain.Patent;
+
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 
 
@@ -91,9 +98,16 @@ public class BusinessController {
 
 	}	
 	@RequestMapping(path="/patent_article", method=RequestMethod.GET)
-	public String patentArticle(Model model,int shopType) {
-		List<Patent> patents = patentService.getPatentsByShopType(shopType);
+	public String patentArticle(Model model,int shopType,Page page, HttpSession session) {
+		page.setPageSize(WebUtils.getPageSize(session));
+		if(page.getCurrentPage()<1){
+			page.setCurrentPage(1);
+		}
+		int totalCount=(int)patentService.getPatentsByShopTypeCount(shopType);
+		page.setTotalRecords(totalCount);
+		List<Patent> patents = patentService.getPatentsByShopType(shopType,page); 
 		model.addAttribute("patents", patents);
+		model.addAttribute("page", page);
 		model.addAttribute("shopType", shopType);
 		return "service_patent_article";
 		

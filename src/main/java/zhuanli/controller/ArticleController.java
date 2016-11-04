@@ -16,7 +16,13 @@ import zhuanli.domain.Article;
 import zhuanli.domain.ArticleComment;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
+<<<<<<< HEAD
+import zhuanli.domain.Patent;
+import zhuanli.domain.User;
+=======
+>>>>>>> 9750c636d383c397045055237a8ae94d974ae463
 import zhuanli.service.ArticleService;
+import zhuanli.service.PatentService;
 import zhuanli.util.PrincipalUtils;
 
 
@@ -25,10 +31,11 @@ import zhuanli.util.PrincipalUtils;
 @RequestMapping(path="/article")
 public class ArticleController {
 	private ArticleService articleService;
-	
+	private PatentService patentService;
 	@Autowired
-	public ArticleController(ArticleService articleService) {
+	public ArticleController(ArticleService articleService,PatentService patentService) {
 		this.articleService = articleService;
+		this.patentService = patentService;
 	}
 
 	@RequestMapping(path="/articleList",method=RequestMethod.GET)
@@ -47,8 +54,13 @@ public class ArticleController {
 	public String articlePreview(@RequestParam("articleId") int articleId,Model model) {
 		Article article=articleService.getUserArticleById(articleId);
 		List<ArticleComment> comments = articleService.getArticleCommentsById(articleId);
+		
+		List<Patent> patents=patentService.getPatents();
+		List<Article> articles=articleService.getArticleByRand();
 		model.addAttribute("comments", comments);
 		model.addAttribute("article", article);
+		model.addAttribute("articles", articles);
+		model.addAttribute("patents", patents);
 		return "article_preview";
 	}		
 	

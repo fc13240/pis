@@ -140,8 +140,13 @@ public class PatentServiceImpl implements PatentService {
 	}
 
 	@Override
-	public List<Patent> getPatentsByShopType(int shopType) {
-		return patentDao.getPatentsByShopType(shopType);
+	public List<Patent> getPatentsByShopType(int shopType,Page page) {
+		return patentDao.getPatentsByShopType(shopType,page);
+	}
+	
+	@Override
+	public int getPatentsByShopTypeCount(int shopType) {
+		return patentDao.getPatentsByShopTypeCount(shopType);
 	}
 	
 }

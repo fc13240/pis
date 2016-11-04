@@ -247,6 +247,29 @@ $('.s-new-01 a').bind('click', function(){
 			</li>			
 		</c:forEach>
 		</ul>
+		<div class="i_m qs_clear"> 
+		            <li>
+			            <div class="col-lg-12"> 共 ${page.totalPages}页${page.totalRecords}条记录    第${page.currentPage} 页 <a href="?shopType=${shopType}&currentPage=1">首页</a>
+			              <c:choose>
+			                <c:when test="${page.currentPage - 1 > 0}"> <a href="?shopType=${shopType}&currentPage=${page.currentPage - 1}">上一页</a> </c:when>
+			                <c:when test="${page.currentPage - 1 <= 0}"> <a href="?shopType=${shopType}&currentPage=1">上一页</a> </c:when>
+			              </c:choose>
+			              <c:choose>
+			                <c:when test="${page.totalPages==0}"> <a href="?shopType=${shopType}&currentPage=${page.currentPage}">下一页</a> </c:when>
+			                <c:when test="${page.currentPage + 1 < page.totalPages}"> <a href="?shopType=${shopType}&currentPage=${page.currentPage+1}">下一页</a> </c:when>
+			                <c:when test="${page.currentPage + 1 >= page.totalPages}"> <a href="?shopType=${shopType}&currentPage=${page.totalPages}">下一页</a> </c:when>
+			              </c:choose>
+			              <c:choose>
+			                <c:when test="${page.totalPages==0}"> <a href="?shopType=${shopType}&currentPage=${page.currentPage}">尾页</a> </c:when>
+			                <c:otherwise> <a href="?shopType=${shopType}&currentPage=${page.totalPages}">尾页</a> </c:otherwise>
+			              </c:choose>
+			              <!-- 分页功能 End -->
+			              <input type="text" id="page.pageNo" style="width:50px;height:18px" name="currentPage" onKeyDown="gotoPageForEnter(event)"/>
+			              <a href="javascript:void;" onClick="javascript:gotoPage()">跳转</a> 
+			            </div>
+					</li>
+					<!-- 分页用原来的 -->	
+				</div> 
     </div>
  <style type="text/css">
 .r_detail_about {
@@ -337,6 +360,45 @@ font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
           .appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
           + ~(-new Date() / 36e5)];
   </script>
+  
+
+<script type="text/javascript">
+
+function gotoPage() {
+	var pageNo = document.getElementById("page.pageNo").value;
+	
+	if (isNaN(pageNo)) {
+		alert("请输入数值");
+		return;
+	}
+	
+	if(pageNo==""){
+		alert("请输入数值")
+		return;
+	}
+	
+	pageNo = parseInt(pageNo);
+	
+	if (pageNo < 1 || pageNo > parseInt("${page.totalPages}")) {
+		alert("只能输入1-${page.totalPages}之间的数值");
+		return;
+	}
+	
+	var url = "<s:url value='/business/patent_article.html'/>?currentPage=" + pageNo + "&shopType=" + ${shopType};
+	
+	
+	location.href = url
+	
+}
+
+function gotoPageForEnter(event) {
+	var e = event ? event : window.event;
+			
+	if(event.keyCode == 13) {
+		gotoPage();
+	}
+}
+</script>
   
 
 <!--footer-->
