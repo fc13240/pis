@@ -54,5 +54,7 @@ public interface PatentMapper {
 
 	List<Patent> getPatents();
 	
-	List<Patent> getPatentsByShopType(int shopType);
+	List<Patent> getPatentsByShopType(@Param("shopType")int shopType,@Param("page")Page page);
+	
+	int getPatentsByShopTypeCount(int shopType);
 }

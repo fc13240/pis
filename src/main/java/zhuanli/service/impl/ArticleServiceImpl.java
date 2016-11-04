@@ -50,13 +50,11 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public List<Article> getAllArticle() {
-		return articleDao.getAllArticle();
+	public List<Article> getAllArticle(Page page) {
+		return articleDao.getAllArticle(page);
 		
 	}
 	
-
-
 	@Override
 	public List<ArticleType> getAllArticleTypes() {
 		return articleDao.getAllArticleTypes();
@@ -69,18 +67,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public List<Article> articleShow() {
-		List<Article> timeArticles=articleDao.articleOrderByTimeShow();
-		List<Article> commentsArticles=articleDao.articleOrderByCommentsShow();
-		if(timeArticles.isEmpty()){
-			return timeArticles;
-		}else{
-		if(timeArticles.size()<10){
-			for (int i = 0; i < 10-timeArticles.size()-1; i++) {
-			timeArticles.add(commentsArticles.get(i));
-			}
-		}	
-		}
-		return timeArticles;
+		return articleDao.articleShow();
 	}
 	
 
@@ -111,10 +98,7 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleDao.getArticleCommentsById(articleId);
 	}
 
-	@Override
-	public List<Article> articleOrderByCommentsShow() {
-		return articleDao.articleOrderByCommentsShow();
-	}
+
 
 	@Override
 	public List<Article> getArticleByRand() {

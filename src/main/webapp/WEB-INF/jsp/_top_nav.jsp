@@ -28,28 +28,28 @@
 										
 			<li class="top-item">
 				<em class="flag flag1"></em>
-				<a title="农业/食品/医疗" target="_blank" class="txt" href="<s:url value='/business/patent_article.html?shopType=1'/>">农业/食品/医疗</a>				
+				<a title="农业/食品/医疗" target="_blank" class="txt" href="<s:url value='/business/patent_article.html?shopType=1&currentPage=1'/>">农业/食品/医疗</a>				
 	
 				<i class="arrow"></i>
 			</li>
 						
 			<li class="top-item">
 				<em class="flag flag1"></em>
-				<a title="化工/冶金/生物" target="_blank" class="txt" href="<s:url value='/business/patent_article.html?shopType=2'/>">化工/冶金/生物</a>				
+				<a title="化工/冶金/生物" target="_blank" class="txt" href="<s:url value='/business/patent_article.html?shopType=2&currentPage=1'/>">化工/冶金/生物</a>				
 	
 				<i class="arrow"></i>
 			</li>
 						
 			<li class="top-item">
 				<em class="flag flag1"></em>
-				<a title="交通/包装/建筑" target="_blank" class="txt" href="<s:url value='/business/patent_article.html?shopType=3'/>">交通/包装/建筑</a>				
+				<a title="交通/包装/建筑" target="_blank" class="txt" href="<s:url value='/business/patent_article.html?shopType=3&currentPage=1'/>">交通/包装/建筑</a>				
 	
 				<i class="arrow"></i>
 			</li>
 						
 			<li class="top-item">
 				<em class="flag flag1"></em>
-				<a title="电力/环保/通讯" target="_blank" class="txt" href="<s:url value='/business/patent_article.html?shopType=4'/>">电力/环保/通讯</a>				
+				<a title="电力/环保/通讯" target="_blank" class="txt" href="<s:url value='/business/patent_article.html?shopType=4&currentPage=1'/>">电力/环保/通讯</a>				
 	
 				<i class="arrow"></i>
 			</li>

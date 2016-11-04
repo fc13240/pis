@@ -30,8 +30,8 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
-	public List<News> getAllNews() {
-		return newsDao.getAllNews();
+	public List<News> getAllNews(Page page) {
+		return newsDao.getAllNews(page);
 	}
 
 	@Override
@@ -46,18 +46,8 @@ public class NewsServiceImpl implements NewsService {
 
 	@Override
 	public List<News> newsShow() {
-		List<News> timeNews=newsDao.newsOrderByTimeShow();
-		List<News> commentsNews=newsDao.newsOrderByCommentsShow();
-		if(timeNews.isEmpty()){
-			return timeNews;
-		}else{
-		if(timeNews.size()<10){
-			for (int i = 0; i < 10-timeNews.size()-1; i++) {
-				timeNews.add(commentsNews.get(i));
-			}
-		}	
-		}
-		return timeNews;
+	
+		return newsDao.newsShow();
 		
 	}
 
@@ -82,13 +72,4 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.getNewsCommentsById(newsId);
 	}
 
-	@Override
-	public List<News> newsOrderByTimeShow() {
-		return null;
-	}
-
-	@Override
-	public List<News> newsOrderByCommentsShow() {
-		return null;
-	}
 }

@@ -1,6 +1,11 @@
 package zhuanli.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +20,7 @@ import zhuanli.service.ArticleService;
 import zhuanli.service.NewsService;
 import zhuanli.service.PatentSearchService;
 import zhuanli.service.PatentService;
+import zhuanli.util.WeixinMessageDigest;
 
 
 
@@ -33,7 +39,7 @@ public class IndexController {
 		this.patentSearchService=patentSearchService;
 	}
 	@RequestMapping(path="/index")
-	public String getPatents(Model model) {
+	public String getPatents(HttpServletRequest req, HttpServletResponse resp,Model model) {
 
 		List<FirstColumn>  AllColumns=patentService.selectAllColumns();
 		List<Patent> patent_list=patentService.getPatents();
@@ -57,6 +63,41 @@ public class IndexController {
 		model.addAttribute("ADP", appearanceDesignPatent);
 		return "index";
 	}
-
+	
+	@RequestMapping(path="/token")
+	public void weiXin(HttpServletRequest req, HttpServletResponse resp){
+		PrintWriter pw = null;
+		try{
+			 pw = resp.getWriter();
+			System.out.println("请求到来");
+		       resp.setCharacterEncoding("GBK");
+		       // 微信加密签名 
+		        String signature = req.getParameter("signature"); 
+		        System.out.println(signature);
+		        // 时间戳 
+		        String timestamp = req.getParameter("timestamp");
+		        System.out.println(timestamp);
+		        // 随机数 
+		        String nonce = req.getParameter("nonce"); 
+		        System.out.println(nonce);
+		        // 随机字符串  
+		        String echostr = req.getParameter("echostr");
+		        WeixinMessageDigest wxDigest = WeixinMessageDigest.getInstance();  
+		        boolean bValid = wxDigest.validate(signature, timestamp, nonce);
+		       
+		        if(bValid){
+		 	        pw.write(echostr);  //这里 echostr 的值必须返回，否则微信认为请求失败
+		        }else{
+		        	 pw.write("token 验证失败!");
+		        }
+		       
+		}catch(IOException e){
+			e.printStackTrace();
+		}finally{
+			 pw.flush();
+	 	     pw.close();
+		}
+			
+	}
 
 }

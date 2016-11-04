@@ -1,11 +1,8 @@
 package zhuanli.controller;
 
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +16,14 @@ import zhuanli.domain.Article;
 import zhuanli.domain.ArticleComment;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
+<<<<<<< HEAD
 import zhuanli.domain.Patent;
 import zhuanli.domain.User;
+=======
+>>>>>>> 9750c636d383c397045055237a8ae94d974ae463
 import zhuanli.service.ArticleService;
 import zhuanli.service.PatentService;
 import zhuanli.util.PrincipalUtils;
-import zhuanli.util.WebUtils;
 
 
 
@@ -44,20 +43,10 @@ public class ArticleController {
 		if(page.getCurrentPage()<1){
 			page.setCurrentPage(1);
 		}
-		List<Article> articles=articleService.getAllArticle();
-		List<Article> articlesByComments=articleService.articleOrderByCommentsShow();
-		for (int i = 0; i < articlesByComments.size(); i++) {
-			articles.add(articlesByComments.get(i));
-		}
-		int totalCount=articles.size();
-		List<Article> sortArticle= new ArrayList<>();
-		if(page.getCurrentPage() == 1){  
-			sortArticle = articles.subList(page.getStartIndex(),totalCount);  
-		}else{  
-			sortArticle=articles.subList(page.getStartIndex(), page.getPageSize());  
-		}  
+		List<Article> articles=articleService.getAllArticle(page);
+		int totalCount=articleService.getAllArticleCount();
 		page.setTotalRecords(totalCount);
-		model.addAttribute("article", sortArticle);
+		model.addAttribute("article", articles);
 		model.addAttribute("page", page);
 		return "article_list";
 	}	
