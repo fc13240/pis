@@ -254,7 +254,7 @@ p{text-indent:2em}
 </style>
 <div style="width:1200px;margin:0 auto;">
 	<div class="r_detail_about"> 
-		<span>当前位置：</span><a href="http://www.esheji.top/">主页</a> &gt; <a href="">专利培训</a> &gt;  
+		<span>当前位置：</span><a href="http://www.lotut.com.top/">主页</a> &gt; <a href="<s:url value='/article/articleList.html'/>">专利培训</a> &gt;  
 	</div>
 
 	<div class="article-con">
@@ -279,9 +279,10 @@ p{text-indent:2em}
 					</p>
 				</div>
 				<br/>
-				<div>
-				<HR  width="90%" SIZE=1>
+				<div class="box02" style="height:214px;text-align:center;margin-bottom:25px;">
+				    <img style="height:100%;" src="http://p3.ifengimg.com/a/2016_25/13ec2434e156b5e_size32_w160_h214.jpg">
 				</div>
+			
 
 				<div class="praise">
 					<span id="praise${article.id}" onclick="praise('${article.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
