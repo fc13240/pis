@@ -489,7 +489,7 @@ p{text-indent:2em}
 					<ul class="ul_list01">
 					<c:forEach items="${patents}" var="patent">
 						<li>
-						<a href="" target="_blank">${patent.patent_name}</a>
+						<a href="<s:url value='/patent/detail.html?patentno=${patent.patent_id}'/>" target="_blank">${patent.patent_name}</a>
 						</li>			
 					</c:forEach>					
 					</ul>
