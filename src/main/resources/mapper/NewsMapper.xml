@@ -64,7 +64,7 @@
 			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
 			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
 			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 
-			GROUP BY id ORDER BY COUNT(1) DESC) AS n2) limit 0,7
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2) limit 0,7
 	</select>
 
 	
@@ -83,7 +83,7 @@
 			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
 			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
 			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 
-			GROUP BY id ORDER BY COUNT(1) DESC) AS n2) limit #{startIndex},#{pageSize}
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2) limit #{startIndex},#{pageSize}
 	</select>
 	
 	
@@ -113,7 +113,7 @@
 			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
 			WHERE  DATE(e.publish_time) != CURDATE() and e.small_img_url IS NOT NULL and e.small_img_url!=''
 				AND e.check_status=1 
-			GROUP BY id ORDER BY COUNT(1) DESC) AS n2)  LIMIT 0,7;
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2)  LIMIT 0,7;
 	</select>
 	
 	<update id="praise">
