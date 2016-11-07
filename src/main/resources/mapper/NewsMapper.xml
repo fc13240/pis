@@ -57,15 +57,14 @@
 	</resultMap>
 	
 	<select id="getNewsShow" resultMap="NewsResultMap">
-		(SELECT * FROM (SELECT id AS news_id ,title,small_img_url,keywords,publish_time FROM news n WHERE DATE(publish_time) = CURDATE() 
-			 and n.check_status=1
-		ORDER BY publish_time DESC) AS n1)
-		UNION ALL
-		(SELECT * FROM (SELECT c.news_id,n.title,n.small_img_url,n.keywords,n.publish_time
-  			FROM news_comments c JOIN news  n ON c.news_id = n.id   
- 			WHERE news_id NOT IN (SELECT id FROM news WHERE DATE(publish_time) = CURDATE()
- 			 and n.check_status=1)
- 			GROUP BY news_id ORDER BY COUNT(1) DESC) AS n2) limit 0,7
+		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM news n  WHERE DATE(publish_time) = CURDATE() 
+			AND n.check_status=1
+			ORDER BY publish_time DESC) AS n1 )
+			UNION ALL
+			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
+			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
+			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2) limit 0,7
 	</select>
 
 	
@@ -77,15 +76,14 @@
 	</select>
 	
 	<select id="getAllNews" parameterType="Page" resultMap="NewsResultMap">
-		(SELECT * FROM (SELECT id AS news_id ,title,publish_time FROM news n WHERE DATE(publish_time) = CURDATE() 
-			 and n.check_status=1
-		ORDER BY publish_time DESC) AS n1)
-		UNION ALL
-		(SELECT * FROM (SELECT c.news_id,n.title,n.publish_time
-  			FROM news_comments c JOIN news  n ON c.news_id = n.id   
- 			WHERE news_id NOT IN (SELECT id FROM news WHERE DATE(publish_time) = CURDATE()
- 			 and n.check_status=1)
- 			GROUP BY news_id ORDER BY COUNT(1) DESC) AS n2) limit #{startIndex},#{pageSize}
+		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM news n  WHERE DATE(publish_time) = CURDATE() 
+			AND n.check_status=1
+			ORDER BY publish_time DESC) AS n1 )
+			UNION ALL
+			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
+			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
+			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2) limit #{startIndex},#{pageSize}
 	</select>
 	
 	
@@ -107,15 +105,15 @@
 	</delete>
 	
 	<select id="newsShow" resultMap="NewsResultMap">
-		(SELECT * FROM (SELECT id AS news_id ,title,small_img_url,keywords FROM news n WHERE DATE(publish_time) = CURDATE() 
-			and n.small_img_url IS NOT NULL and n.small_img_url!='' and n.check_status=1
-		ORDER BY publish_time DESC) AS n1)
-		UNION ALL
-		(SELECT * FROM (SELECT c.news_id,n.title,n.small_img_url,n.keywords
-  			FROM news_comments c JOIN news  n ON c.news_id = n.id   
- 			WHERE news_id NOT IN (SELECT id FROM news WHERE DATE(publish_time) = CURDATE()
- 			and n.small_img_url IS NOT NULL and n.small_img_url!='' and n.check_status=1)
- 			GROUP BY news_id ORDER BY COUNT(1) DESC) AS n2) limit 0,7
+		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM news n  WHERE DATE(publish_time) = CURDATE() 
+			and n.small_img_url IS NOT NULL and n.small_img_url!='' AND n.check_status=1
+			ORDER BY publish_time DESC) AS n1 )
+			UNION ALL
+			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
+			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
+			WHERE  DATE(e.publish_time) != CURDATE() and e.small_img_url IS NOT NULL and e.small_img_url!=''
+				AND e.check_status=1 
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2)  LIMIT 0,7;
 	</select>
 	
 	<update id="praise">
