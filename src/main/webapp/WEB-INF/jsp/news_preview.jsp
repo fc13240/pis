@@ -9,7 +9,7 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
-<title>调用新闻标题-龙图腾商标专利交易网 </title>
+<title>新闻详情-龙图腾商标专利交易网 </title>
 <meta name="keywords" content="知识产权,专利交易,商标转让,龙图腾,中外知识产权网" />
 <meta name="description" content="龙图腾网（www.lotut.com）是全球领先的知识产权交易平台。为企业提供专业的商标转让、专利交易等服务。拥有国内知识产权资源，全面覆盖了商标、专利、版权等领域的交易平台，让知识产权在流通中创造财富，引领知识产权的创新。" />
 <meta itemprop="name" content="" />
