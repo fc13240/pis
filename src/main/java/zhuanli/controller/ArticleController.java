@@ -17,10 +17,7 @@ import zhuanli.domain.ArticleComment;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
 import zhuanli.domain.Patent;
-<<<<<<< HEAD
 import zhuanli.domain.User;
-=======
->>>>>>> 3b01efee65a754fb392326cbef05f29fe2a4e9bd
 import zhuanli.service.ArticleService;
 import zhuanli.service.PatentService;
 import zhuanli.util.PrincipalUtils;
