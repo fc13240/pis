@@ -61,7 +61,7 @@
 		(SELECT * FROM (SELECT id AS article_id ,title,small_img_url,keywords FROM article n WHERE DATE(publish_time) = CURDATE() 
 			and n.small_img_url IS NOT NULL and n.small_img_url!='' and n.check_status=1
 		ORDER BY publish_time DESC) AS n1)
-		UNION ALL
+		UNION 
 		(SELECT * FROM (SELECT c.article_id,n.title,n.small_img_url,n.keywords
   			FROM article_comments c JOIN article  n ON c.article_id = n.id   
  			WHERE article_id NOT IN (SELECT id FROM article WHERE DATE(publish_time) = CURDATE()
@@ -104,7 +104,7 @@
 		(SELECT * FROM (SELECT id AS article_id ,title,small_img_url,keywords FROM article n WHERE DATE(publish_time) = CURDATE() 
 			  and n.check_status=1
 		ORDER BY publish_time DESC) AS n1)
-		UNION ALL
+		UNION 
 		(SELECT * FROM (SELECT c.article_id,n.title,n.small_img_url,n.keywords
   			FROM article_comments c JOIN article  n ON c.article_id = n.id   
  			WHERE article_id NOT IN (SELECT id FROM article WHERE DATE(publish_time) = CURDATE()
@@ -159,7 +159,7 @@
 		(SELECT * FROM (SELECT id AS article_id ,title,publish_time,keywords FROM article n WHERE DATE(publish_time) = CURDATE() 
 			 and n.check_status=1
 		ORDER BY publish_time DESC) AS n1)
-		UNION ALL
+		UNION 
 		(SELECT * FROM (SELECT c.article_id,n.title,n.publish_time,n.keywords
   			FROM article_comments c JOIN article  n ON c.article_id = n.id   
  			WHERE article_id NOT IN (SELECT id FROM article WHERE DATE(publish_time) = CURDATE()
