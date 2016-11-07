@@ -493,7 +493,7 @@ p{text-indent:2em}
 			<div class="adListNew" style="margin-top:20px;">
 			
 				<div id="padhide_2086">
-					<h3>文章推荐</h3>
+					<h3>相关推荐</h3>
 			
 				</div>
 			
