@@ -2,6 +2,7 @@ package zhuanli.service;
 
 import java.util.List;
 
+import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.NewsComment;
 import zhuanli.domain.NewsSearchCondition;
@@ -29,5 +30,7 @@ public interface NewsService {
 	void addNewsComment(String content, int newsId, int userId);
 
 	List<NewsComment> getNewsCommentsById(int newsId);
+
+	List<News> getNewsByRand();
 	
 }

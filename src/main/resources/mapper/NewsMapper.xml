@@ -57,11 +57,11 @@
 	</resultMap>
 	
 	<select id="getNewsShow" resultMap="NewsResultMap">
-		(SELECT * FROM (SELECT id AS news_id ,title,small_img_url,keywords,publish_time FROM news n WHERE DATE(publish_time) = CURDATE() 
+		(SELECT * FROM (SELECT id ,title,small_img_url,keywords,publish_time FROM news n WHERE DATE(publish_time) = CURDATE() 
 			 and n.check_status=1
 		ORDER BY publish_time DESC) AS n1)
 		UNION ALL
-		(SELECT * FROM (SELECT c.news_id,n.title,n.small_img_url,n.keywords,n.publish_time
+		(SELECT * FROM (SELECT c.news_id as id,n.title,n.small_img_url,n.keywords,n.publish_time
   			FROM news_comments c JOIN news  n ON c.news_id = n.id   
  			WHERE news_id NOT IN (SELECT id FROM news WHERE DATE(publish_time) = CURDATE()
  			 and n.check_status=1)
@@ -137,4 +137,9 @@
 		WHERE news_id = #{newsId}
 		order by create_time desc
 	</select>
+	<select id="getNewsByRand" resultMap="NewsResultMap">
+		SELECT id,title
+		FROM news 
+		where  check_status=1 ORDER BY RAND() limit 10
+	</select>	
 </mapper>
