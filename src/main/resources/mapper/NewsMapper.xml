@@ -135,4 +135,9 @@
 		WHERE news_id = #{newsId}
 		order by create_time desc
 	</select>
+	<select id="getNewsByRand" resultMap="NewsResultMap">
+		SELECT id,title
+		FROM news 
+		where  check_status=1 ORDER BY RAND() limit 10
+	</select>	
 </mapper>

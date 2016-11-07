@@ -13,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.News;
 import zhuanli.domain.Page;
+import zhuanli.domain.Patent;
 import zhuanli.service.NewsService;
+import zhuanli.service.PatentService;
 import zhuanli.util.PrincipalUtils;
 import zhuanli.domain.NewsComment;
 
@@ -26,10 +29,11 @@ import zhuanli.domain.NewsComment;
 @RequestMapping(path="/news")
 public class NewsController {
 	private NewsService newsService;
-	
+	private PatentService patentService;
 	@Autowired
-	public NewsController(NewsService newsService) {
+	public NewsController(NewsService newsService,PatentService patentService) {
 		this.newsService = newsService;
+		this.patentService = patentService;
 	}
 
 	@RequestMapping(path="/newsList",method=RequestMethod.GET)
@@ -49,8 +53,14 @@ public class NewsController {
 	public String newsPreview(@RequestParam("newsId") int newsId,Model model) {
 		News news=newsService.getUserNewsById(newsId);
 		List<NewsComment> comments = newsService.getNewsCommentsById(newsId);
+		
+		List<Patent> patents=patentService.getPatents();
+		
+		List<News> newsRand=newsService.getNewsByRand();
+		model.addAttribute("patents", patents);
 		model.addAttribute("comments", comments);
 		model.addAttribute("news", news);
+		model.addAttribute("newsRand", newsRand);
 		return "news_preview";
 	}		
 	

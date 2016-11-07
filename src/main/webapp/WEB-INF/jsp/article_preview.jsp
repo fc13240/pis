@@ -10,7 +10,11 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
 <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<<<<<<< HEAD
+<title>${article.title}-龙图腾商标专利交易网 </title>
+=======
 <title>文章详情-龙图腾商标专利交易网 </title>
+>>>>>>> 9e855404a5c3bab01d2b3190a68349b22b3ca53d
 <meta name="keywords" content="知识产权,专利交易,商标转让,龙图腾,中外知识产权网" />
 <meta name="description" content="龙图腾网（www.lotut.com）是全球领先的知识产权交易平台。为企业提供专业的商标转让、专利交易等服务。拥有国内知识产权资源，全面覆盖了商标、专利、版权等领域的交易平台，让知识产权在流通中创造财富，引领知识产权的创新。" />
 <meta itemprop="name" content="" />
@@ -270,19 +274,15 @@ p{text-indent:2em}
     left: 233px;
 }
 .yc_sina {
-    background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/sina_ed3b5529.png);
     border: 1px solid #f56467;
 }
 .yc_wx {
-    background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wx_0868d839.png);
     border: 1px solid #8dc81b;
 }
 .yc_wxq {
-    background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/wxq_d0336192.png);
     border: 1px solid #71c8d6;
 }
 .yc_qzone {
-    background-image: url(http://p0.ifengimg.com/fe/zxyc-article/images/qq_581694f4.png);
     border: 1px solid #f5be3f;
 }
 .share_bar_popin {
@@ -342,13 +342,21 @@ p{text-indent:2em}
 		<div class="con-left"> 
 			<div class="mod1_cont" id="mod1_cont" runat="server">
 					
-				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;font-family: simsun;text-align: center;">${article.title}</h2>
+				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 24px;text-indent: 28px;font-family: simsun;text-align: center;">${article.title}</h2>
 				<br/>
 				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
 					发表时间：<fmt:formatDate  value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
 					</span>
-					<span class="font-article" style="margin-left:50px;">来源：${article.author}</span>
+					<span class="font-article" style="margin-left:50px;">
+					来源：
+						<c:if test="${article.source != null}">
+						${article.source}
+						</c:if>
+						<c:if test="${article.source == null}">
+						龙图腾
+						</c:if>
+					</span>
 
 				</div>
 				<div style="width:200px;float:right;">
@@ -479,8 +487,8 @@ p{text-indent:2em}
 					<ul class="ul_list01">
 					<c:forEach items="${patents}" var="patent">
 						<li>
-						<a href="" target="_blank">${patent.patent_name}</a>
-						</li>			
+						<a href="<s:url value='/patent/detail.html?patentno=${patent.patent_id}'/>" target="_blank">${patent.patent_name}</a>
+						</li>		
 					</c:forEach>					
 					</ul>
 				</div>

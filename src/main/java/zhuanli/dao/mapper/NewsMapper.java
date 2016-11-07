@@ -34,5 +34,7 @@ public interface NewsMapper {
 	void addNewsComment(@Param("content") String content, @Param("newsId")int newsId, @Param("userId")int userId);
 
 	List<NewsComment> getNewsCommentsById(int newsId);
+
+	List<News> getNewsByRand();
 	
 }

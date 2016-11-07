@@ -72,4 +72,9 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.getNewsCommentsById(newsId);
 	}
 
+	@Override
+	public List<News> getNewsByRand() {
+		return newsDao.getNewsByRand();
+	}
+
 }
