@@ -74,6 +74,7 @@ public class UserController {
     public String weChat(HttpServletRequest request, HttpServletResponse response){
 		User user =weChatReturnUserInfo(request,response);
 		boolean success=userService.register(user);
+		
 		User userInDB = (User) databaseAuthDao.loadUserByUsername(user.getUsername());
 		UsernamePasswordAuthenticationToken authenticationToken = 
 					new UsernamePasswordAuthenticationToken(userInDB, user.getPassword(), user.getAuthorities());
