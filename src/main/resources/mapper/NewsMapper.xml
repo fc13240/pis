@@ -62,7 +62,7 @@
 		ORDER BY publish_time DESC) AS n1)
 		UNION ALL
 		(SELECT * FROM (SELECT c.news_id,n.title,n.small_img_url,n.keywords,n.publish_time
-  			FROM news_comments c JOIN news  n ON c.news_id = n.id   
+  			FROM news_comments c right JOIN news  n ON c.news_id = n.id   
  			WHERE news_id NOT IN (SELECT id FROM news WHERE DATE(publish_time) = CURDATE()
  			 and n.check_status=1)
  			GROUP BY news_id ORDER BY COUNT(1) DESC) AS n2) limit 0,7
@@ -82,7 +82,7 @@
 		ORDER BY publish_time DESC) AS n1)
 		UNION ALL
 		(SELECT * FROM (SELECT c.news_id,n.title,n.publish_time
-  			FROM news_comments c JOIN news  n ON c.news_id = n.id   
+  			FROM news_comments c right JOIN news  n ON c.news_id = n.id   
  			WHERE news_id NOT IN (SELECT id FROM news WHERE DATE(publish_time) = CURDATE()
  			 and n.check_status=1)
  			GROUP BY news_id ORDER BY COUNT(1) DESC) AS n2) limit #{startIndex},#{pageSize}
@@ -112,7 +112,7 @@
 		ORDER BY publish_time DESC) AS n1)
 		UNION ALL
 		(SELECT * FROM (SELECT c.news_id,n.title,n.small_img_url,n.keywords
-  			FROM news_comments c JOIN news  n ON c.news_id = n.id   
+  			FROM news_comments c right JOIN news  n ON c.news_id = n.id   
  			WHERE news_id NOT IN (SELECT id FROM news WHERE DATE(publish_time) = CURDATE()
  			and n.small_img_url IS NOT NULL and n.small_img_url!='' and n.check_status=1)
  			GROUP BY news_id ORDER BY COUNT(1) DESC) AS n2) limit 0,7
