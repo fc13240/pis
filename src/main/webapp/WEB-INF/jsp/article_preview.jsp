@@ -427,7 +427,9 @@ p{text-indent:2em}
 				                	暂无新评论。
 				            </c:if>
 							<c:forEach items="${comments}" var="comment">
-								<tr style="border-bottom:1px dashed #ccc;"></tr>
+								<tr>
+									<td style="border-bottom:1px dashed #ccc;"></td>
+								</tr>
 								<tr style="height:40px;">
 									<td class="account-td">${comment.user.username}</td>									
 								</tr>

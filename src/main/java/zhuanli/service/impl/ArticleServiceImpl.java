@@ -1,6 +1,5 @@
 package zhuanli.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import zhuanli.dao.ArticleDao;
@@ -8,29 +7,8 @@ import zhuanli.domain.Article;
 import zhuanli.domain.ArticleComment;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
-import zhuanli.domain.User;
-import zhuanli.service.ArticleService;
-
-
-import javax.servlet.http.HttpSession;
-
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
-
-import com.mysql.fabric.xmlrpc.base.Array;
-
-import zhuanli.controller.util.FileOption;
-import zhuanli.controller.util.WebUtils;
-import zhuanli.dao.ArticleDao;
-import zhuanli.domain.Article;
-import zhuanli.domain.ArticleImg;
-import zhuanli.domain.ArticleSearchCondition;
-import zhuanli.domain.ArticleType;
-import zhuanli.domain.Page;
-import zhuanli.domain.UserArticle;
 import zhuanli.domain.Vote;
 import zhuanli.service.ArticleService;
-import zhuanli.util.PrincipalUtils;
 
 public class ArticleServiceImpl implements ArticleService {
 	private ArticleDao articleDao;

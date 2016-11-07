@@ -33,5 +33,9 @@ public interface ArticleService {
 
 	List<ArticleComment> getArticleCommentsById(int articleId);
 	
+<<<<<<< HEAD
+=======
+	List<Article> articleOrderByCommentsShow();
+>>>>>>> 3b01efee65a754fb392326cbef05f29fe2a4e9bd
 	List<Article> getArticleByRand();
 }
