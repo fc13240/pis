@@ -100,4 +100,9 @@ public class IndexController {
 			
 	}
 
+	@RequestMapping(path="/weChat")
+	public String weChat(){
+		return "weChat_from";
+	}
+	
 }

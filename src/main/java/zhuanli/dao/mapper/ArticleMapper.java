@@ -38,8 +38,5 @@ public interface ArticleMapper {
 
 	List<ArticleComment> getArticleCommentsById(int articleId);
 	
-	List<Article> articleOrderByTimeShow();
-	
-	List<Article> articleOrderByCommentsShow();
 	List<Article> getArticleByRand();
 }

@@ -142,6 +142,7 @@
 												<div class="space"></div>
 
 												<div class="clearfix">
+													<a href="javascript:void(0);" onclick="weChat()">微信登录</a>
 													<input type="submit" class="width-35 pull-right btn btn-sm btn-primary" style="font-size:16px;"  value="登录">
 												</div>
 
@@ -315,17 +316,26 @@
 	</div>
 		
 </body>
-<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
-<script>
-var obj = new WxLogin({
-                              id:"login_container", 
-                              appid: "wx7f435f9a93844c0d", 
-                              scope: "snsapi_login", 
-                              redirect_uri: encodeURI("www.lotut.com/pts2"),
-                              state: "1",
-                              style: "black",
-                              href: ".impowerBox .title {display: none;}"
-                            });
-</script>
 
+<%-- <script type="text/javascript">
+function weChat(){
+	 var url = "<s:url value='/weChat.html'/>";
+	 location.href = url
+	 
+ }
+ 
+
+</script> --%>
+<script>
+ function weChat(){
+	var appid = "wx7f435f9a93844c0d";
+    var redirect_uri = encodeURIComponent("http://www.lotut.com/pts");
+    var scope = "snsapi_login";
+
+    var url = "https://open.weixin.qq.com/connect/qrconnect?appid=" + appid + "&redirect_uri=" + redirect_uri + "&response_type=code&scope=" + scope + "&state=1#wechat_redirect";
+    window.location.href = url;
+}
+
+	
+</script>
 </html>

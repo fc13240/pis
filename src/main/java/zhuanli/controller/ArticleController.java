@@ -17,6 +17,7 @@ import zhuanli.domain.ArticleComment;
 import zhuanli.domain.ArticleType;
 import zhuanli.domain.Page;
 import zhuanli.domain.Patent;
+import zhuanli.domain.User;
 import zhuanli.service.ArticleService;
 import zhuanli.service.PatentService;
 import zhuanli.util.PrincipalUtils;
