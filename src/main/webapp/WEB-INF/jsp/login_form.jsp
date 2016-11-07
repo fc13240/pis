@@ -317,16 +317,8 @@
 		
 </body>
 
-<%-- <script type="text/javascript">
-function weChat(){
-	 var url = "<s:url value='/weChat.html'/>";
-	 location.href = url
-	 
- }
- 
 
-</script> --%>
-<script>
+<script type="text/javascript">
  function weChat(){
 	var appid = "wx7f435f9a93844c0d";
     var redirect_uri = encodeURIComponent("http://www.lotut.com/pts/user/weChat.html");
