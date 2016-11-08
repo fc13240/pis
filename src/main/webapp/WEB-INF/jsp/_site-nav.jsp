@@ -19,12 +19,12 @@
 			</li>
 			<li class="sncq-item" style="width:225px">
 				<span>
+				<a href="<s:url value='/user/QQLogin.html'/>" target="_black">QQ登陆</a>
 				<se:authorize access="isAnonymous()">
 				<a href="<s:url value='/loginForm.html'/>" target="_black">登录</a>
 					&nbsp;&nbsp;&nbsp;&nbsp; 
 					<a href="<s:url value='/user/registerForm.html'/>" target="_black">注册</a>
 				</se:authorize>
-				
 			  <se:authorize access="isAuthenticated()">
 			  <a href="javascript:$('#logoutForm').submit();" style="color:#666;"><font color="red">退出</font></a>
 				</se:authorize > 

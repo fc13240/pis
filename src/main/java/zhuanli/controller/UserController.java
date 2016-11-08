@@ -17,12 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import zhuanli.controller.util.WebUtils;
 import zhuanli.dao.DatabaseAuthProvider;
 import zhuanli.domain.User;
 import zhuanli.service.UserService;
-import zhuanli.util.PrincipalUtils;
 
 
 @Controller
@@ -113,7 +111,11 @@ public class UserController {
 	        return user;
 	    }
 	
-	
+	 @RequestMapping(path="/QQLogin")
+	 public String QQLoginForm(){
+		 
+		 return "QQ_login";
+	 }
 	
 	
 	
