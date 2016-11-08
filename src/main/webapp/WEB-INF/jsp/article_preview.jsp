@@ -659,10 +659,31 @@ p{text-indent:2em}
 			</div> 			
 		</div>		
 		<div class="con-right">
+		
 			<div class="adListNew">
 			
 				<div id="padhide_2086">
+					<h3>相关推荐</h3>
+				</div>
+			
+				<div id="padhide_1720">
+					<ul class="ul_list01">
+					<c:forEach items="${articles}" var="article">
+						<li class="right_list">
+						<a href="<s:url value='/article/articlePreview.html?articleId=${article.id}'/>" target="_blank">${article.title}</a>
+						</li>			
+					</c:forEach>					
+					</ul>
+				</div>
+			</div>			
+		
+			<div class="adListNew"  style="margin-top:20px;">
+			
+				<div id="padhide_2086">
 				<style type="text/css">
+				.right_list{
+　　				display:block;overflow:hidden;word-break:keep-all;white-space:nowrap;text-overflow:ellipsis;
+　　				} 
 				.adContent2{width:300px; padding-bottom:10px;}
 				.adContent2 li{float:left;width:130px; padding-right:10px;padding-top:10px; line-height: 24px; text-align: center;}
 				.adContent2 li span{ display:block; text-align: center; line-height:22px;}
@@ -691,22 +712,7 @@ p{text-indent:2em}
 				</div>
 			</div>
 			
-			<div class="adListNew" style="margin-top:20px;">
-			
-				<div id="padhide_2086">
-					<h3>相关推荐</h3>
-				</div>
-			
-				<div id="padhide_1720">
-					<ul class="ul_list01">
-					<c:forEach items="${articles}" var="article">
-						<li>
-						<a href="<s:url value='/article/articlePreview.html?articleId=${article.id}'/>" target="_blank">${article.title}</a>
-						</li>			
-					</c:forEach>					
-					</ul>
-				</div>
-			</div>			
+		
 			
 			
 			<div class="adListNew" style="margin-top:20px;">

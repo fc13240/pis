@@ -658,7 +658,26 @@ p{text-indent:2em}
 			</div> 			
 		</div>		
 		<div class="con-right">
-			<div class="adListNew">
+		
+			<div class="adListNew" >
+			
+				<div id="padhide_2086">
+					<h3>相关推荐</h3>
+			
+				</div>
+			
+				<div id="padhide_1720">
+					<ul class="ul_list01">
+					<c:forEach items="${newsRand}" var="newsRand">
+						<li>
+						<a href="<s:url value='/news/newsPreview.html?newsId=${newsRand.id}'/>" target="_blank">${newsRand.title}</a>
+						</li>			
+					</c:forEach>					
+					</ul>
+				</div>
+			</div>		
+		
+			<div class="adListNew" style="margin-top:20px;">
 			
 				<div id="padhide_2086">
 				<style type="text/css">
@@ -690,23 +709,7 @@ p{text-indent:2em}
 				</div>
 			</div>
 			
-			<div class="adListNew" style="margin-top:20px;">
 			
-				<div id="padhide_2086">
-					<h3>相关推荐</h3>
-			
-				</div>
-			
-				<div id="padhide_1720">
-					<ul class="ul_list01">
-					<c:forEach items="${newsRand}" var="newsRand">
-						<li>
-						<a href="<s:url value='/news/newsPreview.html?newsId=${newsRand.id}'/>" target="_blank">${newsRand.title}</a>
-						</li>			
-					</c:forEach>					
-					</ul>
-				</div>
-			</div>			
 			
 			
 			<div class="adListNew" style="margin-top:20px;">
