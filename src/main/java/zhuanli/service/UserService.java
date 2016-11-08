@@ -16,6 +16,6 @@ public interface UserService {
 	 */
 	User findByName(String username);	
 	
-	
+	String findPassword(User user);
 	
 }

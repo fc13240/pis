@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import zhuanli.dao.UserDao;
 import zhuanli.domain.User;
 import zhuanli.service.UserService;
+import zhuanli.util.EmailUtils;
 
 
 
@@ -40,6 +41,38 @@ public class UserServiceImpl implements UserService {
 		return userDao.findByName(username);
 	}
 
+	@Override
+	public String findPassword(User user) {
+    	String toEmail=user.getEmail();
+    	String statusType="";
+    	if(toEmail.length() != 0){
+    		String newPassword=EmailUtils.roundPassword(5);//得到随机密码
+    		boolean success = resetPassword(user, newPassword);
+    		
+    		if(success){
+    			EmailUtils.sendResetPasswordEmail(toEmail,newPassword);
+    			statusType="1";//重置密码成功
+    		}else{
+    			
+    			statusType="3";//修改密码失败
+    		}
+    		
+    	}else{
+    		statusType="6";//邮箱不存在
+    		
+    	}
+
+		return statusType;
+	}
 	
+	//随机密码
+		@Transactional
+		public boolean resetPassword(User user ,String newPassword){
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+				user.setVisiblePassword(newPassword);
+				user.setPassword(encoder.encode(newPassword));
+				userDao.updatePassword(user);
+				return true;
+		}
 
 }

@@ -40,4 +40,9 @@
 		SELECT * FROM users
 		WHERE EXISTS (SELECT 1 FROM orders WHERE orders.user = users.user_id);
 	</select>
+	
+	<!-- 修改方法 -->
+	<update id="updatePassword" parameterType="User">
+		update users set password=#{password},visible_password=#{visiblePassword} where user_id=#{userId}
+	</update>
 </mapper>
