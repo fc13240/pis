@@ -669,7 +669,7 @@ p{text-indent:2em}
 				<div id="padhide_1720">
 					<ul class="ul_list01">
 					<c:forEach items="${newsRand}" var="newsRand">
-						<li>
+						<li class="right_list">
 						<a href="<s:url value='/news/newsPreview.html?newsId=${newsRand.id}'/>" target="_blank">${newsRand.title}</a>
 						</li>			
 					</c:forEach>					
@@ -681,6 +681,9 @@ p{text-indent:2em}
 			
 				<div id="padhide_2086">
 				<style type="text/css">
+				.right_list{
+　　					display:block;overflow:hidden;word-break:keep-all;white-space:nowrap;text-overflow:ellipsis;
+　　				} 
 				.adContent2{width:300px; padding-bottom:10px;}
 				.adContent2 li{float:left;width:130px; padding-right:10px;padding-top:10px; line-height: 24px; text-align: center;}
 				.adContent2 li span{ display:block; text-align: center; line-height:22px;}

@@ -99,7 +99,9 @@
 	</select>	
 	
 	<select id="getAllArticle"  parameterType="Page"  resultMap="ArticleResultMap">
-		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM article n  WHERE DATE(publish_time) = CURDATE() 
+		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM article n  
+						WHERE DATE(publish_time) = CURDATE()
+						  and check_status=1 
 			ORDER BY publish_time DESC) AS n1 )
 			UNION ALL
 			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
