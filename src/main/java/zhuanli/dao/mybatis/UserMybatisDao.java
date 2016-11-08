@@ -43,6 +43,10 @@ public class UserMybatisDao extends SqlSessionDaoSupport implements UserDao {
 		return userMapper.getByUsername(username);
 	}
 	
-	
+	@Override
+	public void updatePassword(User user) {
+		userMapper.updatePassword(user);
+		
+	}
 
 }

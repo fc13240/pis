@@ -10,6 +10,9 @@ public interface UserDao {
 	void save(User user);
 		
 	User getById(int userId);
+	
 	User getByUsername(String username);
+	
+	void updatePassword(User user);
 
 }

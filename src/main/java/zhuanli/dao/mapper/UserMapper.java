@@ -15,7 +15,7 @@ public interface UserMapper {
 	
 	List<User> getAllUser();
 
-
+	void updatePassword(User user);
 	
 
 }

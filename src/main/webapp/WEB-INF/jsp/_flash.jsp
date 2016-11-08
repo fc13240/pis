@@ -10,7 +10,7 @@
     </table>
   </div>
 </div>
-<div  class="banner-panel clearfix" id="JS_banner_panel" style="background-color:#eee;background-image:url(<s:url value='/images/1460886289437583051.jpg'/>);">
+<div  class="banner-panel clearfix" id="JS_banner_panel" style="background-color:#eee;background-image:url(<s:url value='/images/1460886289437583051.jpg'/>);margin-top: 10px;">
 
 
 

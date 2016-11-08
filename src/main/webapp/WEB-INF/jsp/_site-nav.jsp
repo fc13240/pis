@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="security" prefix="se" %>
-<%@ page import="zhuanli.domain.User" %>
-<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <div class="w sn-container">
 		<div class="snc-wraper Left clearfix">&nbsp;<span id="JS_head_login">您好
 		<se:authorize access="isAuthenticated()">
@@ -21,7 +19,7 @@
 				<span>
 				<a href="<s:url value='/user/QQLogin.html'/>" target="_black">QQ登陆</a>
 				<se:authorize access="isAnonymous()">
-				<a href="<s:url value='/loginForm.html'/>" target="_black">登录</a>
+				<a href="javascript:void(0);" data-toggle = "modal" data-target = "#commentLoginModal">登录</a>
 					&nbsp;&nbsp;&nbsp;&nbsp; 
 					<a href="<s:url value='/user/registerForm.html'/>" target="_black">注册</a>
 				</se:authorize>
@@ -41,7 +39,8 @@
 <div style="position:absolute;left:20px;top:0px;width:100px;height:100px;">
 	<img src="<s:url value='/images/logo_long.png'/>" width="80px;">
 </div>	
-	
+
+
 	
 <style>
 .sncq-item .hotLine {
