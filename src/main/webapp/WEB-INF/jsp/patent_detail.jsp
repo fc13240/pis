@@ -145,8 +145,8 @@
             class="arrow arrowT"></i></li>
         <li><a href="javascript:void(0);">过户材料</a><i
             class="arrow arrowT"></i></li>
-        <li><a href="javascript:void(0);">通知书</a><i
-            class="arrow arrowT"></i></li>
+     <!--  <li><a href="javascript:void(0);">通知书</a><i
+            class="arrow arrowT"></i></li> -->  
         <li class="title"><a href="#">&uarr;&nbsp;${patent.patent_name}</a><i
             class="arrow arrowT"></i></li>
       </ul>
@@ -202,6 +202,7 @@
              </table>
 
     </div>
+    <!-- 
     <div class="list-item">
       <h3>通知书 </h3>
 
@@ -213,6 +214,7 @@
    
       </ul>
     </div>
+     -->
   </div>
 
 </div>

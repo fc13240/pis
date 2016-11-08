@@ -64,7 +64,7 @@
 			from sell_patent_goods s join patents p on s.patent_id=p.patent_id  
 				join patent_types pt on p.patent_type=pt.patent_type_id
 				join sell_second_column sc on s.patent_second_column=sc.patent_second_column_id
-				join patent_status ps on p.patent_status=ps.patent_status_id
+				left join patent_status ps on p.patent_status=ps.patent_status_id
 				join sell_first_column sf on sc.patent_first_column_id=sf.patent_first_column_id
 					where s.patent_id= #{patent_id}
 						
