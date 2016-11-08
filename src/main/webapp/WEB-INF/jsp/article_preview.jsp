@@ -528,7 +528,7 @@ p{text-indent:2em}
 		<div class="con-left"> 
 			<div class="mod1_cont" id="mod1_cont" runat="server">
 					
-				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 24px;text-indent: 28px;font-family: simsun;text-align: center;">${article.title}</h2>
+				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 24px;text-indent: 28px;text-align: center;">${article.title}</h2>
 				<br/>
 				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
@@ -659,10 +659,31 @@ p{text-indent:2em}
 			</div> 			
 		</div>		
 		<div class="con-right">
+		
 			<div class="adListNew">
 			
 				<div id="padhide_2086">
+					<h3>相关推荐</h3>
+				</div>
+			
+				<div id="padhide_1720">
+					<ul class="ul_list01">
+					<c:forEach items="${articles}" var="article">
+						<li class="right_list">
+						<a href="<s:url value='/article/articlePreview.html?articleId=${article.id}'/>" target="_blank">${article.title}</a>
+						</li>			
+					</c:forEach>					
+					</ul>
+				</div>
+			</div>			
+		
+			<div class="adListNew"  style="margin-top:20px;">
+			
+				<div id="padhide_2086">
 				<style type="text/css">
+				.right_list{
+　　				display:block;overflow:hidden;word-break:keep-all;white-space:nowrap;text-overflow:ellipsis;
+　　				} 
 				.adContent2{width:300px; padding-bottom:10px;}
 				.adContent2 li{float:left;width:130px; padding-right:10px;padding-top:10px; line-height: 24px; text-align: center;}
 				.adContent2 li span{ display:block; text-align: center; line-height:22px;}
@@ -691,22 +712,7 @@ p{text-indent:2em}
 				</div>
 			</div>
 			
-			<div class="adListNew" style="margin-top:20px;">
-			
-				<div id="padhide_2086">
-					<h3>相关推荐</h3>
-				</div>
-			
-				<div id="padhide_1720">
-					<ul class="ul_list01">
-					<c:forEach items="${articles}" var="article">
-						<li>
-						<a href="<s:url value='/article/articlePreview.html?articleId=${article.id}'/>" target="_blank">${article.title}</a>
-						</li>			
-					</c:forEach>					
-					</ul>
-				</div>
-			</div>			
+		
 			
 			
 			<div class="adListNew" style="margin-top:20px;">
