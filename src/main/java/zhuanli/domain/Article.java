@@ -25,6 +25,7 @@ public class Article {
 	private String smallImgUrl;
 	private int upVote;
 	private int downVote;
+
 	
 	
 	

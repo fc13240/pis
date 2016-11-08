@@ -73,18 +73,18 @@ $(function(){
 		  </div> <!-- 虚线 -->
 		  <div class="news-list">
 			<ul>
-				<c:forEach items="${news}" var="news">
-					<li><a href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.keywords}" target="_blank">${news.title}</a></li>
+				<c:forEach items="${news}" begin="0" end="4" var="news">
+					<li style="font-family: Microsoft YaHei;font-size:14px;"><a href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.keywords}" target="_blank">${news.title}</a></li>
 				</c:forEach>
 			</ul>
-			<div><a href="<s:url value='/news/newsList.html'/>">更多新闻</a></div>
+			<div style="font-family: Microsoft YaHei;font-size:14px;"><a href="<s:url value='/news/newsList.html'/>">更多</a></div>
 			</div>
 		</div>
 	
 	    <div class="side-r-tab info1">
 	     <div class="hd">
 	      <ul>
-	        <li class="on">专利培训</li>
+	        <li class="on" style="font-family: Microsoft YaHei;font-size:16px;font-weight:700;">专利培训</li>
 	      
 	      </ul>
 	     </div>
@@ -92,21 +92,16 @@ $(function(){
 	      <div class="tempWrap" style="overflow:hidden; position:relative; width:474px"><div class="bd" style="width: 948px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
 	      	<!--热点资讯-->
 	        <div class="intro-right" style="float: left; width: 474px;">
-	          <div class="mod-intro-new">
-	          			<c:forEach items="${articleShows}" begin="0" end="1" var="articleShow" >
-	          			<div class="top-news">
-			              <h2 class="f-fwb"><a href="<s:url value='/article/articlePreview.html'/>?articleId=<c:out value='${articleShow.id}'/>"  target="_blank">${articleShow.title}...</a></h2>
-			              <p>${articleShow.articleAbstract}...<a href="<s:url value='/article/articlePreview.html'/>?articleId=<c:out value='${articleShow.id}'/>" title="查看详情" target="_blank">[详情]</a></p>
-			            </div>						
-						</c:forEach>
-		            </div>
 	          <div class="news-list">
 				<ul>
-						 <c:forEach items="${articleShows}" begin="2" var="articleShow" >
-							<li><a href="<s:url value='/article/articlePreview.html'/>?articleId=<c:out value='${articleShow.id}'/>" title="${articleShow.keywords}" target="_blank">${articleShow.title}</a></li>
+						 <c:forEach items="${articleShows}" begin="0" end="0" var="articleShow" >
+							<li style="font-family: Microsoft YaHei;font-size:15px;font-weight:700;"><a href="<s:url value='/article/articlePreview.html'/>?articleId=<c:out value='${articleShow.id}'/>" title="${articleShow.title}" target="_blank">${articleShow.title}</a></li>
+						</c:forEach>					
+						 <c:forEach items="${articleShows}" begin="1" var="articleShow" >
+							<li style="font-family: Microsoft YaHei;font-size:14px;"><a href="<s:url value='/article/articlePreview.html'/>?articleId=<c:out value='${articleShow.id}'/>" title="${articleShow.title}" target="_blank">${articleShow.title}</a></li>
 						</c:forEach>	 			
 		              </ul>
-		              <div><a href="<s:url value='/article/articleList.html'/>">更多</a></div>	
+		              <div style="font-family: Microsoft YaHei;font-size:14px;"><a href="<s:url value='/article/articleList.html'/>">更多</a></div>	
 	             </div>
 	        </div>
 	      
@@ -116,21 +111,21 @@ $(function(){
 	
 	
 
-	
+
 	
 	   <div class="side-r-tab info1 info2">
 	     <div class="hd patent_type">
 	      <ul>
-	        <li class="on" style="width:70px;">
+	        <li class="on" style="width:70px;font-family: Microsoft YaHei;font-size:14px;font-weight:700;">
 	        	<a href="javascript:;"  data="1" class="s-class s-hover">发明授权</a>
 	        </li>
-	        <li class="" style="width:70px;">
+	        <li class="" style="width:70px;font-family: Microsoft YaHei;font-size:14px;font-weight:700;">
 	        	<a href="javascript:;"  data="2" class="s-class s-hover">发明公布</a>
 	        </li>
-	        <li class="" style="width:70px;">
+	        <li class="" style="width:70px;font-family: Microsoft YaHei;font-size:14px;font-weight:700;">
 	        	<a href="javascript:;"  data="3" class="s-class s-hover">实用新型</a>
 	        </li>
-	        <li class="" style="width:70px;">
+	        <li class="" style="width:70px;font-family: Microsoft YaHei;font-size:14px;font-weight:700;">
 	        	<a href="javascript:;"  data="4" class="s-class s-hover">外观设计</a>
 	        </li>
 	      </ul>
@@ -152,7 +147,7 @@ $(function(){
 	            <div class="new-baike news-list">
 	                <ul>
 	                	<c:forEach items="${IPG}" var="IPG">
-	                		 <li><a href="http://so.lotut.com/patent/search/article.html?patent_id=${IPG.id}" title="商标专利交易" target="_blank">${IPG.patent_name}</a></li>
+	                		 <li style="font-family: Microsoft YaHei;font-size:14px;"><a href="http://so.lotut.com/patent/search/article.html?patent_id=${IPG.id}" title="商标专利交易" target="_blank">${IPG.patent_name}</a></li>
 	                	</c:forEach>
 		                   </ul>
 	                 </div>
@@ -166,7 +161,7 @@ $(function(){
 	               <!-- <img class="lazy" src="/images/shangbiao.jpg" alt="知产百科" width="300" height="110"> -->
 	                <ul>
 		                 <c:forEach items="${AP}" var="AP">
-	                		 <li><a href="http://so.lotut.com/patent/search/article.html?patent_id=${AP.id}" title="商标专利交易" target="_blank">${AP.patent_name}</a></li>
+	                		 <li style="font-family: Microsoft YaHei;font-size:14px;"><a href="http://so.lotut.com/patent/search/article.html?patent_id=${AP.id}" title="商标专利交易" target="_blank">${AP.patent_name}</a></li>
 	                	</c:forEach>
 		                   </ul>
 	                 </div>
@@ -179,7 +174,7 @@ $(function(){
 	               <!-- <img class="lazy" src="/images/shangbiao.jpg" alt="知产百科" width="300" height="110"> -->
 	                <ul>
 		                 <c:forEach items="${UMP}" var="UMP">
-	                		 <li><a href="http://so.lotut.com/patent/search/article.html?patent_id=${UMP.id}" title="商标专利交易" target="_blank">${UMP.patent_name}</a></li>
+	                		 <li style="font-family: Microsoft YaHei;font-size:14px;"><a href="http://so.lotut.com/patent/search/article.html?patent_id=${UMP.id}" title="商标专利交易" target="_blank">${UMP.patent_name}</a></li>
 	                	</c:forEach>
 		                   </ul>
 	                 </div>
@@ -192,7 +187,7 @@ $(function(){
 	               <!-- <img class="lazy" src="/images/shangbiao.jpg" alt="知产百科" width="300" height="110"> -->
 	                <ul>
 		                 <c:forEach items="${ADP}" var="ADP">
-	                		 <li><a href="http://so.lotut.com/patent/search/article.html?patent_id=${ADP.id}" title="商标专利交易" target="_blank">${ADP.patent_name}</a></li>
+	                		 <li style="font-family: Microsoft YaHei;font-size:14px;"><a href="http://so.lotut.com/patent/search/article.html?patent_id=${ADP.id}" title="商标专利交易" target="_blank">${ADP.patent_name}</a></li>
 	                	</c:forEach>
 		                   </ul>
 	                 </div>

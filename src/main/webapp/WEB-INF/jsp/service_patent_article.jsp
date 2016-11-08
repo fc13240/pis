@@ -237,12 +237,12 @@ $('.s-new-01 a').bind('click', function(){
     </div>
 
     <div class="list-item">
-      <h3 style="font-size:18px;">专利列表</h3>
+      <h3 style="font-size:16px;">专利列表</h3>
 		<ul class="h_second_list">
 		<c:forEach items="${patents}" var="patent">
 			<li>
-			<span class="h_list_tit">
-				[${patent.patent_type_name}]${patent.patent_name}.${patent.app_no}
+			<span class="h_list_tit" style="font-size:14px;">
+				<a href="<s:url value='/patent/detail.html?patentno=${patent.patent_id}'/>" target="_blank">[${patent.patent_type_name}]${patent.patent_name} - ${patent.app_no}</a>
 			</span> 
 			</li>			
 		</c:forEach>
