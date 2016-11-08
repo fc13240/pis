@@ -113,7 +113,10 @@ background: url("<s:url value='/images/111.png'/>") no-repeat right 12px;
       </tr>
       <tr>
         <td>
-        	<div class="box_1" >简介：专利交易，各种专利任你选。
+        	<div class="box_1" style="line-height:40px;" >简介：专利交易，各种专利任你选。
+        	<a href="#patent_list">
+        	<img alt="" style="width:150px;margin-left:80px;" src="<s:url value='/images/lijixuangou.png'/>">
+			</a>
 			</div>
 
 			        	        	        	        	
@@ -227,7 +230,7 @@ $('.s-new-01 a').bind('click', function(){
         <p>检索专利能否申请→签订保密协议→-整理技术交底书→签订代理委托协议→撰写申请材料并确认→提交受理→专利审查→专利授权缴费→领取证书</p>
       </div>      
  	</div>
-    <div class="list-item">
+    <div class="list-item" id="patent_list">
       <h3>所需材料</h3>
       <div class="list-item-main">
         <p>1、全权代理----客户仅需提供资料，其它由龙图腾代理公司全权负责处理</p>
@@ -236,7 +239,7 @@ $('.s-new-01 a').bind('click', function(){
 
     </div>
 
-    <div class="list-item">
+    <div class="list-item" >
       <h3 style="font-size:16px;">专利列表</h3>
 		<ul class="h_second_list">
 		<c:forEach items="${patents}" var="patent">
