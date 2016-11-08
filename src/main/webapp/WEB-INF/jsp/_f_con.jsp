@@ -135,7 +135,7 @@ $(function(){
 	     	<form class="form-4" action='http://so.lotut.com/patent/search/basicSearch.html' name="site_search" target="_blank" method="get" id="site_search">
 			<div class="mc-field-group">
                 <input type="text" placeholder="永久免费的专利搜索引擎" name="q" class="text" id="mce-EMAIL">
-                <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
+                <input type="submit" value="搜索" style="font-family: Microsoft YaHei;" id="mc-embedded-subscribe" class="button">
 			</div>
 			</form>
 			</div>

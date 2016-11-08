@@ -533,16 +533,20 @@ p{text-indent:2em}
 				<br/>
 				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
-					发表时间：<fmt:formatDate  value="${news.createTime}" pattern="yyyy-MM-dd" />
+					发表时间：<fmt:formatDate  value="${news.createTime}" pattern="yyyy年MM月dd日" />
 					</span>
 					<span class="font-article" style="margin-left:50px;">
-					来源：
-						<c:if test="${news.source != null}">
-						${news.source}
-						</c:if>
-						<c:if test="${news.source == null}">
-						龙图腾
-						</c:if>
+					<c:choose>
+						<c:when test="${not empty news.source}">
+							来源：${news.source}
+						</c:when>
+						<c:when test="${not empty news.author}">
+							作者：${news.author}
+						</c:when>
+						<c:otherwise>
+							来源：互联网
+						</c:otherwise>
+					</c:choose>
 					</span>
 
 				</div>
@@ -586,7 +590,7 @@ p{text-indent:2em}
                 </div>
 
 
-				<div class="praise">
+				<%-- <div class="praise">
 					<span id="praise${news.id}" onclick="praise('${news.id}',${news.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
 					<span id="praise-txt">${news.upVote}</span>
 					<span id="add-num"><em>+1</em></span>
@@ -596,7 +600,7 @@ p{text-indent:2em}
 					<span id="slander${news.id}" onclick="slander('${news.id}',${news.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
 					<span id="slander-txt">${news.downVote}</span>
 					<span id="del-num"><em>+1</em></span>
-				</div> 
+				</div>  --%>
 				
 				<!-- 评论代码start-->
 				<div style="" class="comment-div">

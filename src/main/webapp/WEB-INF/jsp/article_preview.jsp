@@ -535,13 +535,17 @@ p{text-indent:2em}
 					发表时间：<fmt:formatDate  value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
 					</span>
 					<span class="font-article" style="margin-left:50px;">
-					来源：
-						<c:if test="${article.source != null}">
-						${article.source}
-						</c:if>
-						<c:if test="${article.source == null}">
-						龙图腾
-						</c:if>
+						<c:choose>
+							<c:when test="${not empty article.source}">
+								来源：${article.source}
+							</c:when>
+							<c:when test="${not empty article.author}">
+								作者：${article.author}
+							</c:when>
+							<c:otherwise>
+								来源：互联网
+							</c:otherwise>
+						</c:choose>					
 					</span>
 
 				</div>
@@ -584,8 +588,12 @@ p{text-indent:2em}
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"24"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
                 </div>
 
-
+<<<<<<< HEAD
 				<div class="praise">
+=======
+
+			<%-- 	<div class="praise">
+>>>>>>> 5b6ad1da09a670c7d1d4d853d95f203e3c044d53
 					<span id="praise${article.id}" onclick="praise('${article.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
 					<span id="praise-txt">${article.upVote}</span>
 					<span id="add-num"><em>+1</em></span>
@@ -595,7 +603,7 @@ p{text-indent:2em}
 					<span id="slander${article.id}" onclick="slander('${article.id}',${article.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
 					<span id="slander-txt">${article.downVote}</span>
 					<span id="del-num"><em>+1</em></span>
-				</div> 
+				</div>  --%>
 				
 				<!-- 评论代码start-->
 				<div style="" class="comment-div">

@@ -37,8 +37,8 @@
 <link rel="stylesheet" href="http://r.lotut.com/public/css/details.css" />
 <input type="hidden" id="J_val_title">
 <!--当前位置-->
-<div class="container">
-  <div class="current-location"> <a href="/">首页</a> > ${patent.patent_first_column_name} > ${patent.patent_second_column_name}</div>
+<div class="container">                                                       
+  <div class="current-location"> <a href="/">首页</a> > <a href="<s:url value='/business/patent_article.html?shopType=${patent.patent_first_column_id}'/>" >${patent.patent_first_column_name}</a></div>
 </div>
 <!--当前位置 end--> 
 
@@ -145,8 +145,8 @@
             class="arrow arrowT"></i></li>
         <li><a href="javascript:void(0);">过户材料</a><i
             class="arrow arrowT"></i></li>
-        <li><a href="javascript:void(0);">通知书</a><i
-            class="arrow arrowT"></i></li>
+     <!--  <li><a href="javascript:void(0);">通知书</a><i
+            class="arrow arrowT"></i></li> -->  
         <li class="title"><a href="#">&uarr;&nbsp;${patent.patent_name}</a><i
             class="arrow arrowT"></i></li>
       </ul>
@@ -202,6 +202,7 @@
              </table>
 
     </div>
+    <!-- 
     <div class="list-item">
       <h3>通知书 </h3>
 
@@ -213,6 +214,7 @@
    
       </ul>
     </div>
+     -->
   </div>
 
 </div>

@@ -63,7 +63,7 @@
 			UNION ALL
 			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
 			FROM article  e  LEFT JOIN article_comments c  ON c.article_id = e.id   
-			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 
+				AND e.check_status=1 
 			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC ) AS n2)  LIMIT 0,7;
 	</select>
 	
@@ -158,7 +158,7 @@
 			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
 			FROM article  e  LEFT JOIN article_comments c  ON c.article_id = e.id   
 			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 
-			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2 ) limit 11
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2 ) limit 12
 	</select>
   </mapper>
   
