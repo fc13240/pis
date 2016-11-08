@@ -395,7 +395,7 @@ p{text-indent:2em}
                 </div>
 
 
-				<div class="praise">
+			<%-- 	<div class="praise">
 					<span id="praise${article.id}" onclick="praise('${article.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
 					<span id="praise-txt">${article.upVote}</span>
 					<span id="add-num"><em>+1</em></span>
@@ -405,7 +405,7 @@ p{text-indent:2em}
 					<span id="slander${article.id}" onclick="slander('${article.id}',${article.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
 					<span id="slander-txt">${article.downVote}</span>
 					<span id="del-num"><em>+1</em></span>
-				</div> 
+				</div>  --%>
 				
 				<!-- 评论代码start-->
 				<div style="" class="comment-div">
