@@ -45,6 +45,15 @@
 				    color:#F00;
 				    font-weight:bold;
 			}
+	 #weChatLogo{
+			    display: inline-block;
+			    width: 30px;
+			    height: 30px;
+			    margin-right: 5px;
+			    background-image: url(<s:url value='/img/weixin.png'/>);
+			    background-repeat: no-repeat;
+			    vertical-align: middle;
+	}
 	</style>
 	
 	<link href="<s:url value='/static/css/lrtk.css'/>" rel="stylesheet" type="text/css" />
@@ -142,7 +151,8 @@
 												<div class="space"></div>
 
 												<div class="clearfix">
-													<a href="javascript:void(0);" onclick="weChat()">微信登录</a>
+													<span id="weChatLogo"></span>
+													<a id="weChat" href="javascript:void(0);" onclick="weChat()">使用微信登录</a>
 													<input type="submit" class="width-35 pull-right btn btn-sm btn-primary" style="font-size:16px;"  value="登录">
 												</div>
 
