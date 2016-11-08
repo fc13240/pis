@@ -37,8 +37,8 @@
 <link rel="stylesheet" href="http://r.lotut.com/public/css/details.css" />
 <input type="hidden" id="J_val_title">
 <!--当前位置-->
-<div class="container">
-  <div class="current-location"> <a href="/">首页</a> > ${patent.patent_first_column_name} > ${patent.patent_second_column_name}</div>
+<div class="container">                                                       
+  <div class="current-location"> <a href="/">首页</a> > <a href="<s:url value='/business/patent_article.html?shopType=${patent.patent_first_column_id}'/>" >${patent.patent_first_column_name}</a></div>
 </div>
 <!--当前位置 end--> 
 

@@ -345,13 +345,17 @@ p{text-indent:2em}
 					发表时间：<fmt:formatDate  value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
 					</span>
 					<span class="font-article" style="margin-left:50px;">
-					来源：
-						<c:if test="${article.source != null}">
-						${article.source}
-						</c:if>
-						<c:if test="${article.source == null}">
-						龙图腾
-						</c:if>
+						<c:choose>
+							<c:when test="${not empty article.source}">
+								来源：${article.source}
+							</c:when>
+							<c:when test="${not empty article.author}">
+								作者：${article.author}
+							</c:when>
+							<c:otherwise>
+								来源：互联网
+							</c:otherwise>
+						</c:choose>					
 					</span>
 
 				</div>

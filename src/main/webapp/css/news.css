@@ -152,7 +152,7 @@ width:1190px;margin:0 auto;
     border-left: 1px solid #fff;
 }
 .side-r-tab.info1 .tempWrap {
-    margin-top: 20px;
+
 }
 
 .mod-intro-new {
@@ -203,9 +203,9 @@ width:1190px;margin:0 auto;
     line-height: 30px;
     margin: 0;
     padding: 3;
-    max-width: 215px;
-    min-width: 215px;
-    width: 215px;
+    max-width: 210px;
+    min-width: 210px;
+    width: 210px;
     display: inline-block;
     outline: 0;
 }

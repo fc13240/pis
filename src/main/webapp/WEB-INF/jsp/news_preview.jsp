@@ -342,16 +342,20 @@ p{text-indent:2em}
 				<br/>
 				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
-					发表时间：<fmt:formatDate  value="${news.createTime}" pattern="yyyy-MM-dd" />
+					发表时间：<fmt:formatDate  value="${news.createTime}" pattern="yyyy年MM月dd日" />
 					</span>
 					<span class="font-article" style="margin-left:50px;">
-					来源：
-						<c:if test="${news.source != null}">
-						${news.source}
-						</c:if>
-						<c:if test="${news.source == null}">
-						龙图腾
-						</c:if>
+					<c:choose>
+						<c:when test="${not empty news.source}">
+							来源：${news.source}
+						</c:when>
+						<c:when test="${not empty news.author}">
+							作者：${news.author}
+						</c:when>
+						<c:otherwise>
+							来源：互联网
+						</c:otherwise>
+					</c:choose>
 					</span>
 
 				</div>
