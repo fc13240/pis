@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="w clearfix">
 	<div id="JS_mll_header_menu_panel" class="menu-panel forbid">
-		<h2><span>全部商品分类</span></h2>
+		<h2 style="margin-top: 0px;"><span>全部商品分类</span></h2>
 		<ul id="JS_mll_menu_map" class="top" >
 			
 			<li class="top-item recommend">
 				<em class="flag flag0"></em>
 				<span class="txt">精选推荐</span>
-				<ul id="JS_sub_recommend" data-show="show">
+				<ul id="JS_sub_recommend" data-show="show" style="width: 120px;">
 										<li><a title="发明专利" target="_blank" href="<s:url value='/business/patent_registration.html?type=1'/>">发明专利</a></li>
 										<li><a title="实用新型" target="_blank" href="<s:url value='/business/patent_registration.html?type=2'/>">实用新型</a></li>
 										<li><a title="外观设计" target="_blank" href="<s:url value='/business/patent_registration.html?type=3'/>">外观设计<i class="hot" title="外观设计"></i></a></li>
@@ -56,7 +56,7 @@
 			<li class="top-item">
 				<em class="flag flag1"></em>
 				<a title="商标01-15类" target="_blank" class="txt" href="http://r.lotut.com/">商标01-15类</a>				
-				<div class="sub">
+				<div class="sub" style="width:450px">
 					<div class="title clearfix">
 						<h4 class="Left"><a target="_blank" href="http://r.lotut.com/" class="red">商标01-15类<span class="darrow">&gt;&gt;</span></a></h4>
 					</div>
@@ -88,7 +88,7 @@
 			<li class="top-item">
 				<em class="flag flag1"></em>
 				<a title="商标16-30类" target="_blank" class="txt" href="http://r.lotut.com/">商标16-30类</a>				
-				<div class="sub">
+				<div class="sub" style="width:450px">
 					<div class="title clearfix">
 						<h4 class="Left"><a target="_blank" href="http://r.lotut.com/" class="red">商标16-30类<span class="darrow">&gt;&gt;</span></a></h4>
 					</div>
@@ -118,7 +118,7 @@
 			<li class="top-item">
 				<em class="flag flag1"></em>
 				<a title="商标31-45类" target="_blank" class="txt" href="http://r.lotut.com/">商标31-45类</a>				
-				<div class="sub">
+				<div class="sub" style="width:450px">
 					<div class="title clearfix">
 						<h4 class="Left"><a target="_blank" href="http://r.lotut.com/" class="red">商标31-45类<span class="darrow">&gt;&gt;</span></a></h4>
 					</div>

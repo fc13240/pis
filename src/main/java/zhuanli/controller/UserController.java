@@ -1,6 +1,7 @@
 package zhuanli.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,10 +12,12 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -132,4 +135,42 @@ public class UserController {
 			System.out.println(userInfo);
 		}
 	}
+	
+	@RequestMapping(path = "/user_forget_password", method=RequestMethod.GET)  
+    public String userForgetPassword(HttpSession httpSession){  
+        return "user_forget_password";
+    }
+	
+	@RequestMapping(path = "/user_find_password_form",method = RequestMethod.POST)  
+    public void userFindPasswordForm(HttpServletResponse response,PrintWriter out,@RequestParam String username,@RequestParam String email) throws IOException{  
+    	User user = userService.findByName(username);
+    	String processStatus="";
+    	if (user == null) {
+    		processStatus="2";
+    	}else{
+    		if(email.equals(user.getEmail())){
+    			processStatus=userService.findPassword(user);
+        	}else{
+        		processStatus="4";
+        	}
+    			
+    	}
+    	out.write(processStatus);
+    }
+	
+	@RequestMapping(path = "/userLogin",method = RequestMethod.POST)  
+    public void userLogin(String username,String password,PrintWriter out) {  
+    	User user = userService.findByName(username);
+    	BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    	User userInDB = null;
+    	if (user != null) {
+    		if(encoder.matches(password, user.getPassword())) {
+        		userInDB = (User) databaseAuthDao.loadUserByUsername(user.getUsername());
+        		UsernamePasswordAuthenticationToken authenticationToken = 
+        					new UsernamePasswordAuthenticationToken(userInDB, user.getPassword(), user.getAuthorities());
+        		SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+        	}
+    	}
+    	out.write(userInDB.getUserId());
+    }
 }
