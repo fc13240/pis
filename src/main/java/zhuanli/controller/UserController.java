@@ -62,10 +62,11 @@ public class UserController {
 		return null;
 	}
 	
-    @RequestMapping(path = "/logout",method = RequestMethod.POST)  
+	@RequestMapping(path = "/logout")  
     public String logout(HttpSession httpSession){  
     	httpSession.invalidate();
-        return "login_form";
+    	SecurityContextHolder.clearContext();
+        return "redirect:/index.html";
     }  	
 	 
 	public UserController() {
