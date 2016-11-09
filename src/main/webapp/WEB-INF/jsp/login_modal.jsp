@@ -259,7 +259,7 @@
 	         <div class="vlogboxMore" id="">
                 <p>一键登录</p>
                 <span id="qqLoginBtn" style="display:none;"></span>
-                <a class="linkqzone" href="javascript:void(0);" title="使用QQ号登录" data-fid="f296fc4cfce" onclick="$('#qqLoginBtn a').click();"></a>
+                <a class="linkqzone" href="javascript:void(0);" title="使用QQ号登录" data-fid="f296fc4cfce" onclick="javascript:$('#qqLoginBtn a').click();"></a>
                 <a class="linksina" href="javascript:void(0);" title="使用微信登录"  onclick="weChat()" data-fid="f5798def9af"></a>
                 
             </div>
