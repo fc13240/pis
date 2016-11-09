@@ -26,7 +26,7 @@
 	select s.price ,p.patent_name,s.patent_id,ss.patent_first_column_id
 			from sell_patent_goods s join patents p on s.patent_id=p.patent_id
 			join sell_second_column ss on s.patent_second_column=ss.patent_second_column_id
-				where status=1  limit 0,9;
+				where status=1 AND s.recommend_status=1 limit 0,9;
 
 	</select>	
 	<select id="getNoticeById" parameterType="int" resultMap="TransactionNotice">
@@ -193,10 +193,10 @@
 		SELECT count(*)
 		FROM sell_patent_goods s 
 		JOIN patents p ON s.patent_id=p.patent_id
-		JOIN patent_types pt ON p.patent_type = pt.patent_type_id
+		left JOIN patent_types pt ON p.patent_type = pt.patent_type_id
 		JOIN sell_second_column ss ON s.patent_second_column=ss.patent_second_column_id
 		JOIN sell_first_column sf ON ss.patent_first_column_id=sf.patent_first_column_id
-		WHERE sf.patent_first_column_id=#{shopType}
+		WHERE sf.patent_first_column_id=#{shopType} and s.status=1
 	</select>
 	
 				
