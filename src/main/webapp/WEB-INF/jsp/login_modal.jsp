@@ -127,7 +127,7 @@
     width: 110px;
     height: 36px;
     overflow: hidden;
-    background: url(http://y1.ifengimg.com/global_login_newedtion/login_new_20150828.png) no-repeat 0 -100px;
+    background: url(<s:url value='/img/submit_btn.png'/>) no-repeat;
     text-indent: -99999px;
 }
 .login_pwd a {

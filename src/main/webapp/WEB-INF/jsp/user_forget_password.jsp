@@ -71,7 +71,7 @@
     </tbody>
 </table>
 
-<div class="maincenter" style="width:400px;margin:30px auto;padding: 30px 0;font:'Microsoft YaHei';">
+<div class="maincenter" style="width:410px;margin:30px auto;padding: 30px 0;font:'Microsoft YaHei';">
    	<div class="maincenter-box-tip" style="margin-bottom:40px;">
        	<p style="color: #6c6c6c;font-weight:700;font-size:18px;font:'Microsoft YaHei';">
            输入用户名及注册邮箱找回密码,登录邮箱查看密码
