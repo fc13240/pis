@@ -484,25 +484,27 @@ QC.api("get_user_info", paras)
 if(QC.Login.check()){//如果已登录
 	QC.Login.getMe(function(openId, accessToken){
 		alert(["当前登录用户的", "openId为："+openId, "accessToken为："+accessToken].join("\n"));
-		//saveQQUser();
+		saveQQUser(openId);
 	});
 	//这里可以调用自己的保存接口
-	//...
+	//saveQQUser
+	
 }
 
 
 
-/* function saveQQUser(openId){
+ function saveQQUser(openId){
 	$.ajax({
 		type:"POST",
 		url:"<s:url value='/user/saveQQUser.html'/>",
 		data:{"openId":openId},
+		async:false,
 		success:function(){
 			
 		}
-		
-	})
-} */
+	});
+	location.reload();
+} 
 </script>
 
 </body>
