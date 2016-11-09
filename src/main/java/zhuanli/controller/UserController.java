@@ -20,12 +20,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import zhuanli.controller.util.WebUtils;
 import zhuanli.dao.DatabaseAuthProvider;
 import zhuanli.domain.User;
 import zhuanli.service.UserService;
-import zhuanli.util.PrincipalUtils;
 
 
 @Controller
@@ -116,7 +114,11 @@ public class UserController {
 	        return user;
 	    }
 	
-	
+	 @RequestMapping(path="/QQLogin")
+	 public String QQLoginForm(){
+		 
+		 return "QQ_login";
+	 }
 	
 	
 	
@@ -173,4 +175,17 @@ public class UserController {
     	}
     	out.write(userInDB.getUserId());
     }
+	
+	
+	@RequestMapping(path="/saveQQUser")
+	public void saveQQUser(String openId){
+		 User user =new User();
+		 user.setUsername(openId);
+		 user.setName("qq_"+openId);
+		 userService.register(user);
+		User userInDB = (User) databaseAuthDao.loadUserByUsername(user.getUsername());
+		UsernamePasswordAuthenticationToken authenticationToken = 
+					new UsernamePasswordAuthenticationToken(userInDB, user.getPassword(), user.getAuthorities());
+		SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+	}
 }

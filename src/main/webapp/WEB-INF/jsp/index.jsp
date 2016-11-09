@@ -21,6 +21,7 @@
 <script src="<s:url value='/js/jquery-ui.min.js'/>" type="text/javascript"></script>
 <link rel="stylesheet" href="<s:url value='/temp/css/bootstrap.min.css'/>" />
 <script src="<s:url value='/plugins/kindeditor/bootstrap.min.js'/>" type="text/javascript"></script>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101359853" data-redirecturi="http://www.lotut.com" charset="utf-8" data-callback="true"></script>
 <style type="text/css">
 /*登录*/ 
 .vlogintitle {
@@ -346,6 +347,7 @@
 	         </div>
 	         <div class="vlogboxMore" id="">
                 <p>一键登录</p>
+                <span id="qqLoginBtn"></span>
                 <a class="linkqzone" href="javascript:void(0);" title="使用QQ号登录" data-fid="f296fc4cfce"></a>
                 <a class="linksina" href="javascript:void(0);" title="使用微信登录"  onclick="weChat()" data-fid="f5798def9af"></a>
                 
@@ -423,8 +425,87 @@ function loginValidate() {
     var url = "https://open.weixin.qq.com/connect/qrconnect?appid=" + appid + "&redirect_uri=" + redirect_uri + "&response_type=code&scope=" + scope + "&state=1#wechat_redirect";
     window.location.href = url;
 }
-
-	
 </script>
+
+
+<script type="text/javascript">  
+     //调用QC.Login方法，指定btnId参数将按钮绑定在容器节点中  
+       QC.Login({  
+            //btnId：插入按钮的节点id，必选  
+            btnId: "qqLoginBtn",  
+            //用户需要确认的scope授权项，可选，默认all  
+            scope: "all",  
+            //按钮尺寸，可用值[A_XL| A_L| A_M| A_S|  B_M| B_S| C_S]，可选，默认B_S  
+            size: "A_M"  
+        }, function (reqData, opts) {//登录成功  
+            //根据返回数据，更换按钮显示状态方法  
+            var dom = document.getElementById(opts['btnId']),  
+       _logoutTemplate = [  
+            //头像  
+            '<span><img src="{figureurl}" class="{size_key}"/></span>',  
+            //昵称  
+            '<span>{nickname}</span>',  
+            //退出  
+            '<span><a href="javascript:QC.Login.signOut();">退出</a></span>'  
+       ].join("");  
+            dom && (dom.innerHTML = QC.String.format(_logoutTemplate, {  
+                nickname: QC.String.escHTML(reqData.nickname), //做xss过滤  
+                figureurl: reqData.figureurl  
+            }));  
+        }, function (opts) {//注销成功  
+            alert('QQ登录 注销成功');  
+        }  
+	);
+     
+</script>
+<script type="text/javascript">
+//从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
+var paras = {};
+
+//用JS SDK调用OpenAPI
+QC.api("get_user_info", paras)
+	//指定接口访问成功的接收函数，s为成功返回Response对象
+	.success(function(s){
+		//成功回调，通过s.data获取OpenAPI的返回数据
+		alert("获取用户信息成功！当前用户昵称为："+s.data.nickname);
+	})
+	//指定接口访问失败的接收函数，f为失败返回Response对象
+	.error(function(f){
+		//失败回调
+		alert("获取用户信息失败！");
+	})
+	//指定接口完成请求后的接收函数，c为完成请求返回Response对象
+	.complete(function(c){
+		//完成请求回调
+		alert("获取用户信息完成！");
+	});
+</script>
+<script type="text/javascript">
+if(QC.Login.check()){//如果已登录
+	QC.Login.getMe(function(openId, accessToken){
+		alert(["当前登录用户的", "openId为："+openId, "accessToken为："+accessToken].join("\n"));
+		saveQQUser(openId);
+	});
+	//这里可以调用自己的保存接口
+	//saveQQUser
+	
+}
+
+
+
+ function saveQQUser(openId){
+	$.ajax({
+		type:"POST",
+		url:"<s:url value='/user/saveQQUser.html'/>",
+		data:{"openId":openId},
+		async:false,
+		success:function(){
+			
+		}
+	});
+	location.reload();
+} 
+</script>
+
 </body>
 </html>
