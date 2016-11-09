@@ -347,8 +347,8 @@
 	         </div>
 	         <div class="vlogboxMore" id="">
                 <p>一键登录</p>
-                <span id="qqLoginBtn"></span>
-                <a class="linkqzone" href="javascript:void(0);" title="使用QQ号登录" data-fid="f296fc4cfce"></a>
+                <span id="qqLoginBtn" style="display:none;"></span>
+                <a class="linkqzone" href="javascript:void(0);" title="使用QQ号登录" data-fid="f296fc4cfce" onclick="$('#qqLoginBtn a').click();"></a>
                 <a class="linksina" href="javascript:void(0);" title="使用微信登录"  onclick="weChat()" data-fid="f5798def9af"></a>
                 
             </div>
@@ -459,7 +459,7 @@ function loginValidate() {
      
 </script>
 <script type="text/javascript">
-//从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
+/* //从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
 var paras = {};
 
 //用JS SDK调用OpenAPI
@@ -478,29 +478,46 @@ QC.api("get_user_info", paras)
 	.complete(function(c){
 		//完成请求回调
 		alert("获取用户信息完成！");
-	});
+	}); */
 </script>
 <script type="text/javascript">
-if(QC.Login.check()){//如果已登录
+/* if(QC.Login.check()){//如果已登录
 	QC.Login.getMe(function(openId, accessToken){
 		alert(["当前登录用户的", "openId为："+openId, "accessToken为："+accessToken].join("\n"));
 		saveQQUser(openId);
 	});
-	//这里可以调用自己的保存接口
 	//saveQQUser
 	
+} */
+
+
+
+if(QC.Login.check()){
+    QC.api("get_user_info")
+        .success(function(s){//成功回调
+            QC.Login.getMe(function(openId, accessToken){
+            	var nickname= s.data.nickname;
+            	alert("恭喜QQ用户："+nickname+" 登陆成功");
+            	saveQQUser(openId,s.data.nickname);
+            })
+        })
+        .error(function(f){//失败回调
+            alert("QQ登录失败！,请重新登陆！");
+        })
+        .complete(function(c){//完成请求回调
+        });
 }
 
-
-
- function saveQQUser(openId){
+function saveQQUser(openId,nickname){
 	$.ajax({
 		type:"POST",
 		url:"<s:url value='/user/saveQQUser.html'/>",
-		data:{"openId":openId},
+		data:{"openId":openId,"nickname":nickname},
 		async:false,
 		success:function(){
 			
+		},error:function (){
+			alert("QQ登陆失败，请重新登陆！");
 		}
 	});
 	location.reload();
