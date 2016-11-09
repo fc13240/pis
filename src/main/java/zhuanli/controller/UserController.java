@@ -20,12 +20,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import zhuanli.controller.util.WebUtils;
 import zhuanli.dao.DatabaseAuthProvider;
 import zhuanli.domain.User;
 import zhuanli.service.UserService;
-import zhuanli.util.PrincipalUtils;
 
 
 @Controller
@@ -106,7 +104,7 @@ public class UserController {
 					JSONObject userInfo = WebUtils.readJsonFromUrl(infoUrl);
 					user.setUsername(userInfo.getString("unionid"));
 					user.setName(userInfo.getString("nickname"));
-					user.setPassword(userInfo.getString("nickname"));
+					user.setPassword(userInfo.getString("unionid"));
 					System.out.println(userInfo);
 				}
 	
@@ -116,12 +114,16 @@ public class UserController {
 	        return user;
 	    }
 	
-	
+	 @RequestMapping(path="/QQLogin")
+	 public String QQLoginForm(){
+		 
+		 return "QQ_login";
+	 }
 	
 	
 	
 	public static void main(String[] args) throws JSONException, IOException {
-		String code = "031WW9nj00Wa6l1qeAnj0OG9nj0WW9nN";
+		String code = "021OPeMa0dLrnu13pcKa0TBiMa0OPeMc";
 		//通过授权后根据code获取access_token、openid
 		String url = String.format("https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code",
 				WebUtils.APPID,WebUtils.APPSECRET,code);
@@ -173,4 +175,17 @@ public class UserController {
     	}
     	out.write(userInDB.getUserId());
     }
+	
+	
+	@RequestMapping(path="/saveQQUser")
+	public void saveQQUser(String openId){
+		 User user =new User();
+		 user.setUsername(openId);
+		 user.setName("qq_"+openId);
+		 userService.register(user);
+		User userInDB = (User) databaseAuthDao.loadUserByUsername(user.getUsername());
+		UsernamePasswordAuthenticationToken authenticationToken = 
+					new UsernamePasswordAuthenticationToken(userInDB, user.getPassword(), user.getAuthorities());
+		SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+	}
 }
