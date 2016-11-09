@@ -17,7 +17,7 @@
 			</li>
 			<li class="sncq-item" style="width:225px">
 				<span>
-				<%-- <a href="<s:url value='/user/QQLogin.html'/>" target="_black">QQ登陆</a> --%>
+				<a href="<s:url value='/user/QQLogin.html'/>" target="_black">QQ登陆</a>
 				<se:authorize access="isAnonymous()">
 				<a href="javascript:void(0);" data-toggle = "modal" data-target = "#commentLoginModal">登录</a>
 					&nbsp;&nbsp;&nbsp;&nbsp; 
