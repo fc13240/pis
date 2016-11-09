@@ -106,7 +106,7 @@ public class UserController {
 					JSONObject userInfo = WebUtils.readJsonFromUrl(infoUrl);
 					user.setUsername(userInfo.getString("unionid"));
 					user.setName(userInfo.getString("nickname"));
-					user.setPassword(userInfo.getString("nickname"));
+					user.setPassword(userInfo.getString("unionid"));
 					System.out.println(userInfo);
 				}
 	
@@ -121,7 +121,7 @@ public class UserController {
 	
 	
 	public static void main(String[] args) throws JSONException, IOException {
-		String code = "031WW9nj00Wa6l1qeAnj0OG9nj0WW9nN";
+		String code = "021OPeMa0dLrnu13pcKa0TBiMa0OPeMc";
 		//通过授权后根据code获取access_token、openid
 		String url = String.format("https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code",
 				WebUtils.APPID,WebUtils.APPSECRET,code);

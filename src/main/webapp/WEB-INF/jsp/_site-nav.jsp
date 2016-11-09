@@ -3,7 +3,7 @@
 <div class="w sn-container">
 		<div class="snc-wraper Left clearfix">&nbsp;<span id="JS_head_login">您好
 		<se:authorize access="isAuthenticated()">
-			<se:authentication property="principal.username" />
+			<se:authentication property="principal.name" />
 		</se:authorize>
 		，欢迎光临龙图腾！</span>
 		</div>
