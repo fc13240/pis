@@ -347,7 +347,8 @@
 	         </div>
 	         <div class="vlogboxMore" id="">
                 <p>一键登录</p>
-                <span id="qqLoginBtn" style="display:none;"></span>
+                
+                <span id="qqLoginBtn"></span>
                 <a class="linkqzone" href="javascript:void(0);" title="使用QQ号登录" data-fid="f296fc4cfce" onclick="$('#qqLoginBtn a').click();"></a>
                 <a class="linksina" href="javascript:void(0);" title="使用微信登录"  onclick="weChat()" data-fid="f5798def9af"></a>
                 
@@ -359,7 +360,7 @@
 </div>
 <!-- 登录代码over-->	
 
-<%@ include file="_footer.jsp"%>
+<%-- <%@ include file="_footer.jsp"%> --%>
 
 <script src="<s:url value='/js/mll/jq.js?0405'/>"></script> 
 
@@ -459,7 +460,7 @@ function loginValidate() {
      
 </script>
 <script type="text/javascript">
-/* //从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
+/*  //从页面收集OpenAPI必要的参数。get_user_info不需要输入参数，因此paras中没有参数
 var paras = {};
 
 //用JS SDK调用OpenAPI
@@ -492,7 +493,7 @@ QC.api("get_user_info", paras)
 
 
 
-if(QC.Login.check()){
+ if(QC.Login.check()){
     QC.api("get_user_info")
         .success(function(s){//成功回调
             QC.Login.getMe(function(openId, accessToken){

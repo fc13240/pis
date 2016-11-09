@@ -2,7 +2,6 @@ package zhuanli.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,16 +21,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.qq.connect.QQConnectException;
-import com.qq.connect.api.OpenID;
-import com.qq.connect.api.qzone.PageFans;
-import com.qq.connect.api.qzone.UserInfo;
-import com.qq.connect.javabeans.AccessToken;
-import com.qq.connect.javabeans.qzone.PageFansBean;
-import com.qq.connect.javabeans.qzone.UserInfoBean;
-import com.qq.connect.javabeans.weibo.Company;
-import com.qq.connect.oauth.Oauth;
-
 import zhuanli.controller.util.WebUtils;
 import zhuanli.dao.DatabaseAuthProvider;
 import zhuanli.domain.User;
@@ -44,7 +33,7 @@ public class UserController {
 	private UserService userService;
 	private DatabaseAuthProvider databaseAuthDao;
 	
-    private Oauth qqOauth;
+    //private Oauth qqOauth;
 	
 	@Autowired
 	public UserController(UserService userService, DatabaseAuthProvider databaseAuthDao) {
@@ -202,7 +191,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(path="/QQLogin")
+	/*@RequestMapping(path="/QQLogin")
 	public void QQLoginForm(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		response.setContentType("text/html;charset=utf-8");
 		try {
@@ -210,10 +199,10 @@ public class UserController {
 		} catch (QQConnectException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	
-	@RequestMapping(value = "/afterQQLogin")
+	/*@RequestMapping(value = "/afterQQLogin")
     protected void afterQQLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html; charset=utf-8");
         PrintWriter out = response.getWriter();
@@ -271,7 +260,7 @@ public class UserController {
             }
         } catch (QQConnectException e) {
         }
-    }
+    }*/
 }
 
 

@@ -23,7 +23,7 @@ public class ZipUtils {
 	public static void unzip(String zipPath, String destDir) throws IOException, ZipException {
 		ZipFile zipFile = new ZipFile(zipPath);
 		if (!zipFile.isValidZipFile()) {
-			throw new ZipException("不是合法的zip包");
+			throw new ZipException("涓嶆槸zip鏍煎紡鐨勫帇缂╁寘");
 		}
 		
 		File destFile = new File(destDir);
