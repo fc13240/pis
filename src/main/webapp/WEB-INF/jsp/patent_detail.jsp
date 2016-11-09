@@ -101,15 +101,17 @@
         <td></td>
       </tr>
       <tr style="">
-        <td><div style="float:left;">客&nbsp;&nbsp;服：</div>
-        <div style="float:left;margin-left:15px;">  马环静：</div>
-<div style="float:left;">
-<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2851238686&site=qq&menu=yes"><img src="http://r.lotut.com/Themes/Home/default/Public/image/zx_qq.gif" border="0" style="" href="http://wpa.qq.com/pa?p=2:2851238686:51" alt="与客服小马进行交谈" title="与客服小马进行交谈"/></a>
-</div> 
-         <div style="float:left;margin-left:15px;">肖莹莹：</div>
-<div style="float:left;">
-<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2851238688&site=qq&menu=yes"><img src="http://r.lotut.com/Themes/Home/default/Public/image/zx_qq.gif" border="0" href="http://wpa.qq.com/pa?p=2:2851238688:51" alt="与客服莹莹进行交谈" title="与客服莹莹进行交谈"/></a>
-</div>
+		<td>
+			<div style="float:left;">客&nbsp;&nbsp;服：</div>
+			        <div style="float:left;margin-left:15px;">  马环静：</div>
+			<div style="float:left;">
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2851238686&amp;site=qq&amp;menu=yes"><img src="http://r.lotut.com/Themes/Home/default/Public/image/zx_qq.gif" border="0" style="" href="http://wpa.qq.com/pa?p=2:2851238686:51" alt="与客服小马进行交谈" title="与客服小马进行交谈"></a>
+			</div> 
+			         <div style="float:left;margin-left:15px;">肖莹莹：</div>
+			<div style="float:left;">
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2851238688&amp;site=qq&amp;menu=yes"><img src="http://r.lotut.com/Themes/Home/default/Public/image/zx_qq.gif" border="0" href="http://wpa.qq.com/pa?p=2:2851238688:51" alt="与客服莹莹进行交谈" title="与客服莹莹进行交谈"></a>
+			</div>
+		</td>
       </tr>
     </table>
   </div>
@@ -138,7 +140,6 @@
   <div class="left-sec">
     <div class="content-top1">
       <ul>
-        <!--<li><a href="">竞价记录</a><i class="arrow arrowT"></i></li>-->
         <li class="on"><a href="javascript:void(0);">专利详情</a><i
             class="arrow arrowT"></i></li>
         <li><a href="javascript:void(0);">交易流程</a><i
