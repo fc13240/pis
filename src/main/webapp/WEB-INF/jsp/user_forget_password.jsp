@@ -60,7 +60,7 @@
           	<tbody>
           	<tr>
             	<td height="45" align="center" class="wel_user" valign="middle">
-欢迎您！请&nbsp;<a href="<s:url value='/loginForm.html'/>">登录</a>&nbsp;或&nbsp;<a href="<s:url value='/registerForm.html'/>">免费注册</a>              
+欢迎您！请&nbsp;<a href="<s:url value='/loginForm.html'/>">登录</a>&nbsp;或&nbsp;<a href="<s:url value='/user/registerForm.html'/>">免费注册</a>              
    
             	</td>
           	</tr>
@@ -71,7 +71,7 @@
     </tbody>
 </table>
 
-<div class="maincenter" style="width:400px;margin:30px auto;padding: 30px 0;font:'Microsoft YaHei';">
+<div class="maincenter" style="width:410px;margin:30px auto;padding: 30px 0;font:'Microsoft YaHei';">
    	<div class="maincenter-box-tip" style="margin-bottom:40px;">
        	<p style="color: #6c6c6c;font-weight:700;font-size:18px;font:'Microsoft YaHei';">
            输入用户名及注册邮箱找回密码,登录邮箱查看密码

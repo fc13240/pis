@@ -23,9 +23,9 @@
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
 <link rel="stylesheet" href="<s:url value='/css/praise.css'/>">
 <link rel="stylesheet" href="<s:url value='/css/slander.css'/>">
-<link rel="stylesheet" href="<s:url value='/temp/css/bootstrap.min.css'/>" />
+<%-- <link rel="stylesheet" href="<s:url value='/temp/css/bootstrap.min.css'/>" />
 <script src="<s:url value='/plugins/kindeditor/bootstrap.min.js'/>" type="text/javascript"></script>
-
+ --%>
 </head>
 
 <body class="">
@@ -56,7 +56,7 @@
 		</div>
 	</div>
 </div>
-<div style="height:10px;border-top:1px solid red;margin-top: 15px">&nbsp;</div>
+<div style="height:10px;border-top:1px solid red;">&nbsp;</div>
 <style type="text/css">
 .r_detail_about {
     padding: 15px 0;
@@ -186,7 +186,7 @@ p{text-indent:2em}
     max-width: 800px;
 }
 /*登录*/ 
-.vlogintitle {
+/* .vlogintitle {
     width: 100%;
     height: 75px;
     overflow: hidden;
@@ -374,7 +374,7 @@ p{text-indent:2em}
     text-indent: -99999px;
     margin-top: 20px;
 }
-
+ */
 /*评论代码over*/
 
 
@@ -737,7 +737,7 @@ p{text-indent:2em}
 </div>
 
 <!-- 登录代码start-->
-<div class = "modal fade" id = "commentLoginModal" tabindex = "-1" role = "dialog" 
+<%-- <div class = "modal fade" id = "commentLoginModal" tabindex = "-1" role = "dialog" 
    aria-labelledby = "myModalLabel" aria-hidden = "true" >
    
    <div class = "modal-dialog" >
@@ -795,7 +795,7 @@ p{text-indent:2em}
 	        </div>
       </div>
    </div>
-</div>
+</div> --%>
 <!-- 登录代码over-->
 
 <%@ include file="_footer.jsp"%>
@@ -846,9 +846,9 @@ p{text-indent:2em}
 	
 	$(function() {
 		$("#contentArea").val('');
-		$("#modalUsername").val("");
+		/* $("#modalUsername").val("");
     	$("#modalPassword").val("");
-		$("#loginError").css("display","none");
+		$("#loginError").css("display","none"); */
 	});
 	
 	function validateComment() {
@@ -860,7 +860,7 @@ p{text-indent:2em}
 		}
 	}
 	
-	function loginValidate() {
+	/* function loginValidate() {
 		var username = $("#modalUsername").val();
 		var password = $("#modalPassword").val();
 		$.ajax({
@@ -877,12 +877,12 @@ p{text-indent:2em}
 		    }
 			
 		})		
-	}
+	} */
 	
 	
 	
 </script>
-<script type="text/javascript">
+<%-- <script type="text/javascript">
  function weChat(){
 	var appid = "wx7f435f9a93844c0d";
     var redirect_uri = encodeURIComponent("http://www.lotut.com/pts/user/weChat.html");
@@ -893,6 +893,6 @@ p{text-indent:2em}
 }
 
 	
-</script>
+</script> --%>
 </body>
 </html>

@@ -8,7 +8,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=9" />
-	<title>龙图腾专利管家－让专利管理更轻松！</title>
+	<title>龙图腾商标专利交易网－让专利管理更轻松！</title>
 <meta name="keywords" content="龙图腾，龙图腾专利，专利管理，知识产权管理，专利管理软件，专利管家，专利监控，专利年费，专利官费，年费代缴，如何缴纳专利年费，通知书，通知书监控，专利费用查询，专利分析，专利代理管理系统，企业专利，高校专利"/>
 <meta name="description" content="龙图腾专利管家，最简单的专利全流程管理系统，全程为专利代理机构、专利申请人或专利权人以及发明人的专利申请保驾护航，有效解决通知书答复过期失效，以及专利官费年费多缴、少缴、忘缴的问题。">
 
@@ -119,7 +119,7 @@
 									<div class="widget-main">
 										<h4 class="header blue lighter bigger">
 											<i class="ace-icon fa fa-coffee green"></i>
-											LOTUT专利管家
+											LOTUT商标专利交易网
 										</h4>
 
 										<div class="space-6"></div>
@@ -168,10 +168,10 @@
 												我要注册
 												<i class="ace-icon fa fa-arrow-right"></i>
 											</a>
-											<%-- <a href="<s:url value='/user/user_forget_password.html'/>"  class="user-signup-link" >
+											<a href="<s:url value='/user/user_forget_password.html'/>"  class="user-signup-link" >
 												忘记密码
 												<i class="ace-icon fa fa-arrow-right"></i>
-											</a> --%>											
+											</a>										
 										</div>
 									</div>
 								</div><!-- /.widget-body -->
