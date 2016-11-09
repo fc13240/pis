@@ -23,11 +23,7 @@ public class ZipUtils {
 	public static void unzip(String zipPath, String destDir) throws IOException, ZipException {
 		ZipFile zipFile = new ZipFile(zipPath);
 		if (!zipFile.isValidZipFile()) {
-<<<<<<< HEAD
-			throw new ZipException("不是zip格式的压缩包");
-=======
 			throw new ZipException("不是正常的压缩包");
->>>>>>> e42e95a938ea2fd19ceceef903617adc233aa122
 		}
 		
 		File destFile = new File(destDir);
