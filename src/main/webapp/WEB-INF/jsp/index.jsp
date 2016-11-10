@@ -106,7 +106,7 @@
 </div>
 	
 
-<%-- <%@ include file="_footer.jsp"%> --%>
+<%@ include file="_footer.jsp"%>
 
 <script src="<s:url value='/js/mll/jq.js?0405'/>"></script> 
 
