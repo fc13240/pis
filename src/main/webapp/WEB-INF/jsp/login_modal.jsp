@@ -294,7 +294,7 @@
 
 	function weChat(){
 		var appid = "wx7f435f9a93844c0d";
-	    var redirect_uri = encodeURIComponent("http://www.lotut.com/pts/user/weChat.html");
+	    var redirect_uri = encodeURIComponent("http://www.lotut.com/user/weChat.html");
 	    var scope = "snsapi_login";
 	
 	    var url = "https://open.weixin.qq.com/connect/qrconnect?appid=" + appid + "&redirect_uri=" + redirect_uri + "&response_type=code&scope=" + scope + "&state=1#wechat_redirect";
