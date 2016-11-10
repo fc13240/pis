@@ -22,10 +22,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qq.connect.QQConnectException;
-import com.qq.connect.api.OpenID;
-import com.qq.connect.api.qzone.UserInfo;
-import com.qq.connect.javabeans.AccessToken;
-import com.qq.connect.javabeans.qzone.UserInfoBean;
 import com.qq.connect.oauth.Oauth;
 
 import zhuanli.controller.util.WebUtils;
