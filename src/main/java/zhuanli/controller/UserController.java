@@ -188,53 +188,7 @@ public class UserController {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	@RequestMapping(value = "/afterQQLogin")
-    public String afterQQLogin(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		response.setContentType("text/html; charset=utf-8");
-		String accessToken = null, openID = null;
-        try {
-	            AccessToken accessTokenObj = (new Oauth()).getAccessTokenByRequest(request);
-	
-	            long tokenExpireIn = 0L;
-	
-	            if (accessTokenObj.getAccessToken().equals("")) {
-	            	
-	                System.out.print("没有获取到响应参数");
-	            } else {
-	                accessToken = accessTokenObj.getAccessToken();
-	                tokenExpireIn = accessTokenObj.getExpireIn();
-	                OpenID openIDObj = new OpenID(accessToken);
-	                openID = openIDObj.getUserOpenID();
-	                
-	                UserInfo qzoneUserInfo = new UserInfo(accessToken, openID);
-	                UserInfoBean userInfoBean = qzoneUserInfo.getUserInfo();
-	                if (userInfoBean.getRet() == 0) {
-	                	
-	                	User qqUser = new User();
-	                	System.out.println(userInfoBean.getNickname());
-	                	System.out.println("<image src=" + userInfoBean.getAvatar().getAvatarURL30());
-	                	System.out.println("<image src=" + userInfoBean.getAvatar().getAvatarURL50());
-	                	System.out.println("<image src=" + userInfoBean.getAvatar().getAvatarURL100());
-	                	
-	                	qqUser.setUsername(openID);
-	                	qqUser.setName(userInfoBean.getNickname());
-	                	qqUser.setPassword(openID);
-	                	 userService.register(qqUser);
-	             		User userInDB = (User) databaseAuthDao.loadUserByUsername(qqUser.getUsername());
-	             		UsernamePasswordAuthenticationToken authenticationToken = 
-	             					new UsernamePasswordAuthenticationToken(userInDB, qqUser.getPassword(), qqUser.getAuthorities());
-	             		SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-	                } else {
-	                	System.out.println("很抱歉，我们没能正确获取到您的信息，原因是： " + userInfoBean.getMsg());
-	                }
-	            }
-	        } catch (QQConnectException e) {
-	        	e.printStackTrace();
-	        }
-        return "rediredt:/index.html";
-    }
+
 }
 
 

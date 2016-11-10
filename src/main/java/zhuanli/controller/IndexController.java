@@ -8,18 +8,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.qq.connect.QQConnectException;
+import com.qq.connect.api.OpenID;
+import com.qq.connect.api.qzone.UserInfo;
+import com.qq.connect.javabeans.AccessToken;
+import com.qq.connect.javabeans.qzone.UserInfoBean;
+import com.qq.connect.oauth.Oauth;
+
+import zhuanli.dao.DatabaseAuthProvider;
 import zhuanli.domain.Article;
 import zhuanli.domain.FirstColumn;
 import zhuanli.domain.News;
 import zhuanli.domain.Patent;
+import zhuanli.domain.User;
 import zhuanli.service.ArticleService;
 import zhuanli.service.NewsService;
 import zhuanli.service.PatentSearchService;
 import zhuanli.service.PatentService;
+import zhuanli.service.UserService;
 import zhuanli.util.WeixinMessageDigest;
 
 
@@ -30,13 +42,18 @@ public class IndexController {
 	private NewsService newsService;
 	private ArticleService articleService;
 	private PatentSearchService patentSearchService;
+	private UserService userService;
+	private DatabaseAuthProvider databaseAuthDao;
 	
 	@Autowired
-	public IndexController(PatentService patentService,NewsService newsService,PatentSearchService patentSearchService,ArticleService articleService) {
+	public IndexController(PatentService patentService,NewsService newsService,PatentSearchService patentSearchService,
+						   ArticleService articleService,UserService userService,DatabaseAuthProvider databaseAuthDao) {
 		this.patentService = patentService;
 		this.newsService=newsService;
 		this.articleService=articleService;
 		this.patentSearchService=patentSearchService;
+		this.userService=userService;
+		this.databaseAuthDao=databaseAuthDao;
 	}
 	@RequestMapping(path="/index")
 	public String getPatents(HttpServletRequest req, HttpServletResponse resp,Model model) {
@@ -104,5 +121,54 @@ public class IndexController {
 	public String weChat(){
 		return "weChat_from";
 	}
+	
+	@RequestMapping(value = "/afterQQLogin")
+    public String afterQQLogin(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		response.setContentType("text/html; charset=utf-8");
+		String accessToken = null, openID = null;
+        try {
+	            AccessToken accessTokenObj = (new Oauth()).getAccessTokenByRequest(request);
+	
+	            long tokenExpireIn = 0L;
+	
+	            if (accessTokenObj.getAccessToken().equals("")) {
+	            	
+	                System.out.print("没有获取到响应参数");
+	            } else {
+	                accessToken = accessTokenObj.getAccessToken();
+	                tokenExpireIn = accessTokenObj.getExpireIn();
+	                OpenID openIDObj = new OpenID(accessToken);
+	                openID = openIDObj.getUserOpenID();
+	                
+	                UserInfo qzoneUserInfo = new UserInfo(accessToken, openID);
+	                UserInfoBean userInfoBean = qzoneUserInfo.getUserInfo();
+	                if (userInfoBean.getRet() == 0) {
+	                	
+	                	User qqUser = new User();
+	                	System.out.println(userInfoBean.getNickname());
+	                	System.out.println("<image src=" + userInfoBean.getAvatar().getAvatarURL30());
+	                	System.out.println("<image src=" + userInfoBean.getAvatar().getAvatarURL50());
+	                	System.out.println("<image src=" + userInfoBean.getAvatar().getAvatarURL100());
+	                	
+	                	qqUser.setUsername(openID);
+	                	qqUser.setName(userInfoBean.getNickname());
+	                	qqUser.setPassword(openID);
+	                	 userService.register(qqUser);
+	             		User userInDB = (User) databaseAuthDao.loadUserByUsername(qqUser.getUsername());
+	             		UsernamePasswordAuthenticationToken authenticationToken = 
+	             					new UsernamePasswordAuthenticationToken(userInDB, qqUser.getPassword(), qqUser.getAuthorities());
+	             		SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+	                } else {
+	                	System.out.println("很抱歉，我们没能正确获取到您的信息，原因是： " + userInfoBean.getMsg());
+	                }
+	            }
+	        } catch (QQConnectException e) {
+	        	e.printStackTrace();
+	        }
+        return "rediredt:/index.html";
+    }
+	
+	
+	
 	
 }
