@@ -276,6 +276,14 @@
 	function loginValidate() {
 		var username = $("#modalUsername").val();
 		var password = $("#modalPassword").val();
+		if(username==""||username==null){
+			$("#loginError").css("display","block");
+			return;
+		}
+		if(password==""||password==null){
+			$("#loginError").css("display","block");
+			return;
+		}
 		$.ajax({
 			type:"post",
 			url: "<s:url value='/user/userLogin.html'/>?username=" + username + "&password=" + password, 

@@ -17,7 +17,9 @@
 		<intercept-url pattern="/article/comment/**" access="isAuthenticated()"/>
 		<intercept-url pattern="/news/comment/**" access="isAuthenticated()"/>
 		<form-login login-page="/loginForm.html" default-target-url="/index.html" />
-		<logout logout-success-url="/index.html" />
+		<logout 
+		logout-url="/user/logout.html"
+		logout-success-url="/index.html" />
 		<csrf disabled="true"/>
 	</http>
 	
