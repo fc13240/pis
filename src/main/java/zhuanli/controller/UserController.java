@@ -164,7 +164,10 @@ public class UserController {
     }
 	
 	@RequestMapping(path = "/userLogin",method = RequestMethod.POST)  
-    public void userLogin(String username,String password,PrintWriter out) {  
+    public void userLogin(String username,String password,PrintWriter out) throws Exception { 
+		if(StringUtils.isEmpty(username)||StringUtils.isEmpty(password)){
+			throw new Exception("用户名或者密码为空!");
+		 }
     	User user = userService.findByName(username);
     	BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
     	User userInDB = null;
