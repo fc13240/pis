@@ -72,7 +72,7 @@ public class UserController {
     public String logout(HttpSession httpSession){  
     	httpSession.invalidate();
     	SecurityContextHolder.clearContext();
-        return "redirect:/index.html";
+        return "redirect:http://www.lotut.com";
     }  	
 	 
 	public UserController() {
@@ -163,19 +163,22 @@ public class UserController {
     public void userLogin(String username,String password,PrintWriter out) throws Exception { 
 		if(StringUtils.isEmpty(username)||StringUtils.isEmpty(password)){
 			throw new Exception("用户名或者密码为空!");
-		 }
+		}
     	User user = userService.findByName(username);
-    	BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-    	User userInDB = null;
-    	if (user != null) {
-    		if(encoder.matches(password, user.getPassword())) {
-        		userInDB = (User) databaseAuthDao.loadUserByUsername(user.getUsername());
-        		UsernamePasswordAuthenticationToken authenticationToken = 
-        					new UsernamePasswordAuthenticationToken(userInDB, user.getPassword(), user.getAuthorities());
-        		SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-        	}
-    	}
-    	out.write(userInDB.getUserId());
+    	if(user == null) {
+    		throw new Exception("用户不存在!");
+    	} 
+		User userInDB = null;
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		if(encoder.matches(password, user.getPassword())) {
+    		userInDB = (User) databaseAuthDao.loadUserByUsername(user.getUsername());
+    		UsernamePasswordAuthenticationToken authenticationToken = 
+    					new UsernamePasswordAuthenticationToken(userInDB, user.getPassword(), user.getAuthorities());
+    		SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+    		out.write(1);
+    	} else {
+    		throw new Exception("密码不正确!");
+    	}    	
     }
 	
 	@RequestMapping(path="/QQLogin")
