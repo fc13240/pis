@@ -76,7 +76,7 @@ public class UserController {
     public String logout(HttpSession httpSession){  
     	httpSession.invalidate();
     	SecurityContextHolder.clearContext();
-        return "redirect:/index.html";
+        return "redirect:http://www.lotut.com";
     }  	
 	 
 	public UserController() {
