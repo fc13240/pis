@@ -106,7 +106,7 @@
 </div>
 	
 
-<%-- <%@ include file="_footer.jsp"%> --%>
+<%@ include file="_footer.jsp"%>
 
 <script src="<s:url value='/js/mll/jq.js?0405'/>"></script> 
 
@@ -139,17 +139,6 @@ $('.patent_type li').bind('click', function(){
 
 
 </script>
-<script type="text/javascript">
- function weChat(){
-	var appid = "wx7f435f9a93844c0d";
-    var redirect_uri = encodeURIComponent("http://www.lotut.com/user/weChat.html");
-    var scope = "snsapi_login";
-
-    var url = "https://open.weixin.qq.com/connect/qrconnect?appid=" + appid + "&redirect_uri=" + redirect_uri + "&response_type=code&scope=" + scope + "&state=1#wechat_redirect";
-    window.location.href = url;
-}
-</script>
-
 
 <%-- <script type="text/javascript">  
      //调用QC.Login方法，指定btnId参数将按钮绑定在容器节点中  
