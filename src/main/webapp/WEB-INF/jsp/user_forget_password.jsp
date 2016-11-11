@@ -51,7 +51,7 @@
         <td width="10%" align="left" bgcolor="#FF0000"></td>
         <td width="60%" height="45" align="left" bgcolor="#FF0000">
         	<div class="nav">
-        	<img src="<s:url value='/temp/images/login_top.jpg'/>">
+        	<a href="http://www.lotut.com/" target="_blank"><img src="<s:url value='/temp/images/login_top.jpg'/>"></a>
 
 			</div>
 		</td>
@@ -71,7 +71,7 @@
     </tbody>
 </table>
 
-<div class="maincenter" style="width:410px;margin:30px auto;padding: 30px 0;font:'Microsoft YaHei';">
+<div class="maincenter" style="width:430px;margin:30px auto;padding: 30px 0;font:'Microsoft YaHei';">
    	<div class="maincenter-box-tip" style="margin-bottom:40px;">
        	<p style="color: #6c6c6c;font-weight:700;font-size:18px;font:'Microsoft YaHei';">
            输入用户名及注册邮箱找回密码,登录邮箱查看密码
@@ -79,14 +79,14 @@
     </div>
        
 		<div class="ui-form-item     ">
-        	<label class="input-remark">用户名:</label>
-        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="username" id="username" style="width:300px;" type="text" placeholder="请输入会员名" value="">
+        	<label class="input-remark" style="width:65px;">用户名:</label>
+        	<input name="username" id="username" style="width:300px;" type="text" placeholder="请输入用户名" value="">
         </div>
 		<div class="ui-form-item     ">
-        	<label class="input-remark">邮箱地址:</label>
-        	&nbsp;<input name="email" id="email" style="width:300px;" type="text" placeholder="请输入邮箱" value="">
+        	<label class="input-remark" style="width:65px;">邮箱地址:</label>
+        	<input name="email" id="email" style="width:300px;" type="text" placeholder="请输入邮箱" value="">
         </div>
-		<div style="width:340px;margin-top:50px;">
+		<div style="width:340px;margin-top:50px;margin-left:69px;">
 		    <input type="button" onclick="forgetName()" value="确定" class="width-35  btn btn-sm btn-primary" style="background-color:#C43330 !important;border-color: #C43330;">
 		</div>
 
@@ -94,7 +94,7 @@
 				
 	
 	<!-- 页脚 -->
-	<br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br>
 	<div id="footer">
 	  <div class="container clear">
 	    <div class="footer_r">
