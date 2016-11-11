@@ -165,7 +165,7 @@ public class IndexController {
 	        } catch (QQConnectException e) {
 	        	e.printStackTrace();
 	        }
-        return "rediredt:/index.html";
+        return "redirect:/index.html";
     }
 	
 	
