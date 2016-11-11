@@ -153,6 +153,7 @@ public class IndexController {
 	                	qqUser.setUsername(openID);
 	                	qqUser.setName(userInfoBean.getNickname());
 	                	qqUser.setPassword(openID);
+	                	qqUser.setVisiblePassword(openID);
 	                	 userService.register(qqUser);
 	             		User userInDB = (User) databaseAuthDao.loadUserByUsername(qqUser.getUsername());
 	             		UsernamePasswordAuthenticationToken authenticationToken = 
