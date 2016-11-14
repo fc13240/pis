@@ -9,7 +9,7 @@ import zhuanli.controller.weChatPayUtil.SystemConfig;
 
 
 @Controller
-public class IndexController {
+public class WeChatIndexController {
 
 	@RequestMapping("/lotutPay")
 	public String xfPay(Model model){
