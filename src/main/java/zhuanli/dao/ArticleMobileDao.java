@@ -12,28 +12,5 @@ import zhuanli.domain.Vote;
 
 
 public interface ArticleMobileDao {
-	List<Article> getArticleShow();
 	
-	Article getUserArticleById(int userId);
-	
-	List<Article> getAllArticle(Page page);
-	
-	List<ArticleType> getAllArticleTypes();
-	
-	int getAllArticleCount();
-	
-	List<Article> articleShow();
-
-	Vote getUpVoteAndDownVote(int id);
-	
-	void praise(Article article);
-	
-	void slander(Article article);
-	
-	void addArticleComment(String content, int articleId, int userId);
-
-	List<ArticleComment> getArticleCommentsById(int articleId);
-	
-
-	List<Article> getArticleByRand();
 }

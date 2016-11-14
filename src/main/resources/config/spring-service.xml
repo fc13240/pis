@@ -31,4 +31,8 @@
 	<bean name="patentMobileService" class="zhuanli.service.impl.PatentMobileServiceImpl">
 		<constructor-arg ref="patentMobileDao"/>
 	</bean>	
+	
+		<bean name="articleMobileService" class="zhuanli.service.impl.ArticleMobileServiceImpl">
+		<constructor-arg ref="articleMobileDao"/>
+	</bean>	
 </beans>

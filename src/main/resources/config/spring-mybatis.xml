@@ -94,4 +94,14 @@
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="patentMobileMapper" ref="patentMobileMapper" />
 	</bean>
+	
+	<bean id="articleMobileMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="zhuanli.dao.mapper.ArticleMobileMapper"/>
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean name="articleMobileDao" class="zhuanli.dao.mybatis.ArticleMobileMybatisDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+		<property name="articleMobileMapper" ref="articleMobileMapper" />
+	</bean>
 </beans>							
