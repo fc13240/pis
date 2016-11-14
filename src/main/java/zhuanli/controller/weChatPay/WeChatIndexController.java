@@ -9,6 +9,7 @@ import zhuanli.controller.weChatPayUtil.SystemConfig;
 
 
 @Controller
+@RequestMapping("/wx")
 public class WeChatIndexController {
 
 	@RequestMapping("/lotutPay")

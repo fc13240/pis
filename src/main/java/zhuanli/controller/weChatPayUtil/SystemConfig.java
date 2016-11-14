@@ -12,7 +12,7 @@ private static Properties properties = null;
 	
 	static{
 		try {
-			properties = PropertiesLoaderUtils.loadProperties(new ClassPathResource("systemConfig.properties"));
+			properties = PropertiesLoaderUtils.loadProperties(new ClassPathResource("config/systemConfig.properties"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -25,5 +25,9 @@ private static Properties properties = null;
 	public static String getRateKey(){
 		return properties.getProperty("rate");
 	}	
+	
+	public static void main(String[] args) {
+		System.out.println(SystemConfig.getRateKey());
+	}
 
 }

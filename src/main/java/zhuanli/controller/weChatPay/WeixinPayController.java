@@ -53,7 +53,7 @@ public class WeixinPayController {
 			System.out.println("in userAuth,orderId:" + orderId);
 			
 			//授权后要跳转的链接
-			String backUri = baseUrl + "/wx/toPay";
+			String backUri = baseUrl + "/wx/toPay.html";
 			backUri = backUri + "?orderId=" + orderId+"&totalFee="+totalFee;
 			//URLEncoder.encode 后可以在backUri 的url里面获取传递的所有参数
 			backUri = URLEncoder.encode(backUri);
@@ -135,7 +135,7 @@ public class WeixinPayController {
 			//String product_id = "";
 					
 			//这里notify_url是 支付完成后微信发给该链接信息，可以判断会员是否支付成功，改变订单状态等。
-			String notify_url = baseUrl + "/wx/notifyUrl";
+			String notify_url = baseUrl + "/wx/notifyUrl.html";
 			
 			SortedMap<String, String> packageParams = new TreeMap<String, String>();
 			packageParams.put("appid", WxPayConfig.appid);
@@ -263,7 +263,7 @@ public class WeixinPayController {
 					System.out.println("weixin receive check Sign fail");
                     String checkXml = "<xml><return_code><![CDATA[FAIL]]></return_code>"+
                     					"<return_msg><![CDATA[check sign fail]]></return_msg></xml>";
-                    WeixinPayUtil.getTradeOrder("http://weixin.xinfor.com/wx/notifyUrl", checkXml);
+                    WeixinPayUtil.getTradeOrder("http://www.lotut.com/wx/notifyUrl.html", checkXml);
 				}
 			}
 		} catch (Exception e) {
