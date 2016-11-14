@@ -1,7 +1,6 @@
 package zhuanli.service;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 import net.lingala.zip4j.core.ZipFile;
@@ -19,12 +18,10 @@ public interface PatentService {
 	
 	List<Patent> getPatentsByColumn(List<Patent> patent_second_columns);
 	
-	//��ȡ������Ŀ
 	List<Patent> getSecoundColumn(int  patent_column_id);
 	
 	List<Patent> getSecoundColumnPage(Page  page);
 	
-	//��ר��id��ȡר����ϸ��Ϣ
 	Patent getPatentById(long patent_id);
 
 	List<Patent> getSonList(int i);

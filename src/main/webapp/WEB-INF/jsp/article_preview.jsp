@@ -341,7 +341,7 @@ p{text-indent:2em}
 				<br/>
 				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
-					发表时间：<fmt:formatDate  value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+					发表时间：<fmt:formatDate  value="${article.pulishTime}" pattern="yyyy-MM-dd HH:mm:ss" />
 					</span>
 					<span class="font-article" style="margin-left:50px;">
 						<c:choose>

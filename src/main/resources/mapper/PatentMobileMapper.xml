@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhuanli.dao.mapper.PatentMobileMapper">
+	
+	<resultMap type="PatentStatus" id="PatentStatusResultMap">
+		<id property="patentStatusId" column="patent_status_id"/>
+		<result property="statusDescription" column="patent_status_desc"/>
+	</resultMap>		
+	
+	<resultMap type="PatentType" id="PatentTypeResultMap">
+		<id property="patentTypeId" column="patent_type_id"/>
+		<result property="typeDescription" column="patent_type_desc"/>
+	</resultMap>	
+
+	<resultMap type="Patent" id="PatentWithShareUsers">
+		<id property="patentId" column="patent_id"/>
+		<result property="appNo" column="app_no"/>
+		<result property="name" column="patent_name"/>
+		<result property="appDate" column="app_date"/>
+		<result property="appPerson" column="app_person"/>
+		<result property="patentStatusText" column="patent_status_text"/>
+		<result property="inventPerson" column="invent_person"/>
+		<result property="internalCode" column="internal_code"/>
+		<result property="ownerId" column="patent_owner"/>
+		<result property="transactionStatus" column="transaction_status"/>
+		<result property="createTime" column="create_time"/>
+		<association property="patentStatus" resultMap="PatentStatusResultMap"/>
+		<association property="patentType" resultMap="PatentTypeResultMap"/>
+		<collection property="shareUsers" resultMap="com.lotut.pms.dao.mapper.UserMapper.UserResultMap"/>
+	</resultMap>
+	
+	<select id="getUserPatentCount" resultType="int">
+		select count(*) from user_patents where user = #{userId} and trash_status=1
+	</select>
+	
+	<select id="getUserPatentIdsByPage" parameterType="int" resultType="int">
+		select patent_id 
+		  from patents p
+		 where p.patent_id in (select patent from user_patents where user = #{userId})
+		 order by p.app_date, p.app_person, p.patent_name
+		 limit #{startIndex}, #{pageSize}
+	</select>
+
+	<sql id="userPatents">
+		select p.patent_id, p.app_no, p.patent_owner, p.patent_name, p.app_person, p.app_date, pt.patent_type_id, 
+					 pt.patent_type_desc, ps.patent_status_id, ps.patent_status_desc, p.internal_code, u.user_id, u.username
+		  from patents p left join patent_types pt on p.patent_type = pt.patent_type_id left join patent_status ps on p.patent_status = ps.patent_status_id 
+			     join user_patents up on up.patent = p.patent_id join users u on u.user_id = up.user
+		 where up.patent in (select patent from user_patents where user = #{userId} and trash_status=1)	order by p.app_date desc
+	</sql>
+	
+	<select id="getUserPatents" parameterType="Page" resultMap="PatentWithShareUsers">
+		select sp.patent_id, sp.app_no, sp.patent_owner, sp.patent_name, sp.app_person, sp.app_date, sp.patent_status_text,sp.transaction_status,sp.create_time,pt.patent_type_id, 
+							 pt.patent_type_desc, sp.patent_status_id, sp.patent_status_desc, sp.internal_code, u.user_id, u.username
+		from (select p.patent_id, p.app_no, p.patent_owner, p.patent_name, p.app_person, p.app_date,  p.internal_code, p.patent_type,p.transaction_status,p.create_time,
+				ps.patent_status_id, ps.patent_status_desc, p.patent_status_text
+			from patents p left join patent_status ps on p.patent_status = ps.patent_status_id join user_patents up on p.patent_id = up.patent
+		 where up.user = #{userId} and up.trash_status=1
+		 order by p.app_date desc, p.app_person, p.patent_name
+		 limit #{startIndex}, #{pageSize}) as sp left join patent_types pt on sp.patent_type = pt.patent_type_id join user_patents up on up.patent = sp.patent_id
+		    join users u on u.user_id = up.user	
+		 order by sp.app_date desc, sp.app_person, sp.patent_name
+	</select>	
+	
+	<select id="getPatentById" parameterType="long" resultMap="PatentWithShareUsers">
+		select p.patent_id, p.app_no, p.patent_name, pt.patent_type_desc, p.app_date,p.patent_status_text, p.app_person,p.patent_owner, ps.patent_status_desc, u.user_id, u.username
+		  from patents p left join patent_status ps on p.patent_status = ps.patent_status_id left join patent_types pt on p.patent_type = pt.patent_type_id
+					join user_patents up on p.patent_id = up.patent join users u on u.user_id = up.user 
+		 where up.patent = #{patentId};	
+	</select>	
+	
+	<resultMap type="Patent" id="PatentByIdsResultMap">
+		<id property="patentId" column="patent_id"/>
+		<result property="appNo" column="app_no"/>
+		<result property="name" column="patent_name"/>
+		<result property="appDate" column="app_date"/>
+		<result property="patentStatusText" column="patent_status_text"/>
+		<result property="appPerson" column="app_person"/>
+		<result property="internalCode" column="internal_code"/>
+		<result property="transactionStatus" column="transaction_status"/>	
+		<association property="patentStatus" resultMap="PatentStatusResultMap"/>
+		<association property="patentType" resultMap="PatentTypeResultMap"/>
+		
+	</resultMap>
+
+	<select id="getPatentsByIds" parameterType="list" resultMap="PatentByIdsResultMap">
+		select p.patent_id, p.app_no, p.app_person, p.patent_name, p.app_date,p.patent_status_text, ps.patent_status_id, ps.patent_status_desc,p.internal_code
+		  ,pt.patent_type_id,pt.patent_type_desc from patents p left join patent_status ps on p.patent_status = ps.patent_status_id left join patent_types pt ON p.patent_type = pt.patent_type_id
+		 where p.patent_id in 
+			<foreach item="patentId" collection="patentIds"
+			     open="(" separator="," close=")">
+			   #{patentId}
+			</foreach>		 
+	</select>	
+	
+	<resultMap type="Patent" id="PatentByAppNoAndOwnerResultMap">
+		<id property="patentId" column="patent_id"/>
+		<result property="appNo" column="app_no"/>
+		<result property="patentStatusText" column="patent_status_text"/>
+		<association property="patentStatus" resultMap="PatentStatusResultMap"/>
+	</resultMap>
+	
+	<select id="getPatentByAppNoAndOwner" resultMap="PatentByAppNoAndOwnerResultMap">
+		select patent_id, app_no,patent_status,patent_status_text
+		  from patents
+		 where app_no = #{appNo} and patent_owner = #{ownerId}
+	</select>
+	
+	<select id="getUserPatentsByType" resultMap="PatentWithShareUsers">
+		<include refid="userPatents" />		
+				and p.patent_type = #{patentType}
+		 limit 100;			
+	</select>
+	
+	<select id="getUserPatentsByStatus" resultMap="PatentWithShareUsers">
+		<include refid="userPatents" />			
+				and p.patent_status = #{patentStatus}
+		 limit 100;			
+	</select>
+	
+	<select id="searchUserPatentsByPage" parameterType="PatentSearchCondition" resultMap="PatentWithShareUsers">
+		<if test="keyword != null">
+			<bind name="keyword_pattern" value="'%' + keyword + '%'" />
+		</if>	
+		select sp.patent_id, sp.app_no, sp.patent_owner, sp.patent_name, sp.app_person, sp.app_date,sp.patent_status_text,sp.transaction_status,sp.create_time, pt.patent_type_id, 
+							 pt.patent_type_desc, sp.patent_status_id, sp.patent_status_desc, sp.internal_code, u.user_id, u.username
+		from (select p.patent_id, p.app_no, p.patent_owner, p.patent_name, p.app_person, p.app_date, p.internal_code, p.patent_type,p.transaction_status,p.create_time,
+				ps.patent_status_id, ps.patent_status_desc, p.patent_status_text
+				from patents p left join patent_status ps on p.patent_status = ps.patent_status_id join user_patents up on p.patent_id = up.patent
+		 		where up.user = #{userId} and up.trash_status=1
+		 		<if test="patentType != null">
+		 			and p.patent_type = #{patentType}
+		 		</if>	
+			 	<if test="patentStatus != null">
+			 		and p.patent_status = #{patentStatus}
+			 	</if>	
+			 	<if test="startAppDate != null">
+			 		and p.app_date >= #{startAppDate}
+			 	</if>	
+			 	<if test="endAppDate != null">
+			 		<![CDATA[ and p.app_date <= #{endAppDate} ]]>
+			 	</if>	
+			 	<if test="keyword != null">
+					and (p.app_no like #{keyword_pattern} or p.patent_name like #{keyword_pattern} 
+						 or p.app_person like #{keyword_pattern} or p.internal_code like #{keyword_pattern} 
+						 or ps.patent_status_desc like #{keyword_pattern} or p.patent_status_text like #{keyword_pattern})
+				</if>		 		 	
+				 order by p.app_date desc, p.app_person, p.patent_name
+				 limit #{page.startIndex}, #{page.pageSize}) as sp 
+			left join patent_types pt on sp.patent_type = pt.patent_type_id join user_patents up on up.patent = sp.patent_id
+		    join users u on u.user_id = up.user		
+		 order by sp.app_date desc, sp.app_person, sp.patent_name
+	</select>	
+	<!-- 查询分页 -->
+	<select id="searchUserPatentsCount" resultType="int">
+		<if test="keyword != null">
+			<bind name="keyword_pattern" value="'%' + keyword + '%'" />
+		</if>	
+		 select Count(*)
+		 from patents p left join patent_status ps on p.patent_status = ps.patent_status_id join user_patents up on p.patent_id = up.patent
+		 where up.user = #{userId} and up.trash_status=1
+		 		<if test="patentType != null">
+		 			and p.patent_type = #{patentType}
+		 		</if>	
+			 	<if test="patentStatus != null">
+			 		and p.patent_status = #{patentStatus}
+			 	</if>
+			 	<if test="startAppDate != null">
+			 		and p.app_date >= #{startAppDate}
+			 	</if>	
+			 	<if test="endAppDate != null">
+			 		<![CDATA[ and p.app_date <= #{endAppDate} ]]>
+			 	</if>	
+			 	<if test="keyword != null">
+					and (p.app_no like #{keyword_pattern} or p.patent_name like #{keyword_pattern} 
+						 or p.app_person like #{keyword_pattern} or p.internal_code like #{keyword_pattern} 
+						 or ps.patent_status_desc like #{keyword_pattern} or p.patent_status_text like #{keyword_pattern})
+				</if>		 		 	
+	</select>
+	
+	<select id="searchUserPatents" parameterType="PatentSearchCondition" resultMap="PatentWithShareUsers">
+		<if test="keyword != null">
+			<bind name="keyword_pattern" value="'%' + keyword + '%'" />
+		</if>
+		<include refid="userPatents" />		
+		 	<if test="patentType != null">
+		 		and p.patent_type = #{patentType}
+		 	</if>	
+		 	<if test="patentStatus != null">
+		 		and p.patent_status = #{patentStatus}
+		 	</if>		
+		 	<if test="startAppDate != null">
+		 		and p.app_date >= #{startAppDate}
+		 	</if>	
+		 	<if test="endAppDate != null">
+		 		<![CDATA[ and p.app_date <= #{endAppDate} ]]>
+		 	</if>	
+		 	<if test="keyword != null">
+				<choose>
+					<when test="keywordType=='appNo'">
+						and p.app_no like #{keyword_pattern}
+					</when>
+					<when test="keywordType=='appName'">
+						and p.patent_name like #{keyword_pattern}
+					</when>	
+					<when test="keywordType=='appPerson'">
+						and p.app_person like #{keyword_pattern}
+					</when>		
+					<when test="keywordType=='internalCode'">
+						and p.internal_code like #{keyword_pattern}
+					</when>		
+					<when test="keywordType=='patentStatus'">
+						and ps.patent_status_desc like #{keyword_pattern}
+					</when>	
+					<otherwise>
+						and (p.app_no like #{keyword_pattern} or p.patent_name like #{keyword_pattern} 
+							 or p.app_person like #{keyword_pattern} or p.internal_code like #{keyword_pattern} 
+							 or ps.patent_status_desc like #{keyword_pattern})
+					</otherwise>																		
+				</choose>
+			</if>		 		 			 			 	 			 	 			 	
+		 limit 100;	
+	</select>
+	
+	<update id="updateInternalCode">
+		update patents set internal_code = #{internalCode}
+		 where patent_id = #{patentId}
+	</update>
+	
+	<select id="getAllPatentTypes" resultMap="PatentTypeResultMap">
+		select patent_type_id, patent_type_desc
+		  from patent_types
+		 order by patent_type_id asc;	
+	</select>	
+	
+	<select id="getAllPatentStatus" resultMap="PatentStatusResultMap">
+		select patent_status_id, patent_status_desc
+		  from patent_status
+		 order by patent_status_id asc;
+	</select>	
+	
+	<insert id="insertOrUpdatePatent" parameterType="Patent" useGeneratedKeys="true" keyProperty="patentId">
+		insert into patents(app_no, patent_name, app_person, app_date,patent_status_text, patent_type, patent_status, patent_owner, proxy_Org, publish_date, publish_no,create_time)
+		values(#{appNo}, #{name,javaType=string,jdbcType=VARCHAR}, #{appPerson,javaType=string,jdbcType=VARCHAR}, #{appDate,javaType=date,jdbcType=DATE},
+		 #{patentStatusText,javaType=string,jdbcType=VARCHAR}, 
+			   #{patentType.patentTypeId,jdbcType=INTEGER}, #{patentStatus.patentStatusId,javaType=int,jdbcType=INTEGER}, #{ownerId},#{proxyOrg,javaType=string,jdbcType=VARCHAR},#{publishDate,javaType=date,jdbcType=DATE},#{publishNo,javaType=string,jdbcType=VARCHAR},now())
+		on duplicate key update 
+			patent_name = #{name,javaType=string,jdbcType=VARCHAR}, app_person = #{appPerson,javaType=string,jdbcType=VARCHAR},
+			app_date = #{appDate,javaType=date,jdbcType=DATE},
+			patent_status_text = #{patentStatusText,javaType=string,jdbcType=VARCHAR}, patent_type = #{patentType.patentTypeId},
+			patent_status = #{patentStatus.patentStatusId,javaType=int,jdbcType=INTEGER},
+			proxy_Org=#{proxyOrg,javaType=string,jdbcType=VARCHAR},
+			publish_date=#{publishDate,javaType=date,jdbcType=DATE},
+			publish_no=#{publishNo,javaType=string,jdbcType=VARCHAR},create_time=now()
+	</insert>
+	
+	<insert id="insertPatent" parameterType="Patent" useGeneratedKeys="true" keyProperty="patentId">
+		insert into patents(app_no, patent_name, app_date, patent_type, patent_owner,internal_code)
+		values(#{appNo}, #{name,javaType=string,jdbcType=VARCHAR}, #{appDate,javaType=date,jdbcType=DATE},
+			   #{patentType.patentTypeId,jdbcType=INTEGER}, #{ownerId},#{internalCode,javaType=string,jdbcType=VARCHAR})
+	</insert>
+	
+	<update id="updatePatent" parameterType="Patent">
+		update patents 
+		    <set>
+		      <if test="appNo != null">app_no=#{appNo},</if>
+		      <if test="name != null">patent_name=#{name},</if>
+		      <if test="appDate != null">app_date=#{appDate},</if>
+		      <if test="internalCode != null">internal_code=#{internalCode},</if>
+		      <if test="patentType != null">patent_type=#{patentType.patentTypeId,jdbcType=INTEGER}</if>
+		    </set> 
+		 where app_no = #{appNo} and patent_owner = #{ownerId}
+	</update>
+
+	<select id="getUserPatentCountByType" resultType="map">
+		 SELECT  p.patent_type patentType, COUNT(*) patentCount
+ 		FROM patents p LEFT JOIN patent_status ps ON p.patent_status = ps.patent_status_id JOIN user_patents up ON p.patent_id = up.patent
+		WHERE up.user = #{userId} and up.trash_status=1 GROUP BY p.patent_type;	 		 	
+	</select>
+	
+	<select id="searchUserPatentsByPatentStatus" resultType="map">
+		 SELECT  p.patent_status patentStatus,COUNT(*) patentCount
+ 		FROM patents p LEFT JOIN patent_status ps ON p.patent_status = ps.patent_status_id JOIN user_patents up ON p.patent_id = up.patent
+		WHERE up.user = #{userId} and up.trash_status=1 GROUP BY p.patent_status;	 		 	
+	</select>
+	
+	<select id="getUserPatentsWithFee" resultMap="PatentWithShareUsers">
+		SELECT p.patent_id, p.app_no
+		  FROM patents p JOIN user_patents up ON up.patent = p.patent_id 
+		 WHERE up.patent IN (SELECT patent FROM user_patents WHERE USER = #{userId})
+	</select>
+	
+	<select id="getPatentsByAppNo" resultMap="PatentByIdsResultMap">
+		 (select p.patent_id, p.app_no, p.patent_owner, p.patent_name, p.app_person, p.app_date, p.internal_code, pt.patent_type_id,pt.patent_type_desc,
+	                ps.patent_status_id, ps.patent_status_desc, p.patent_status_text
+	                from patents p 
+	                left join patent_status ps on p.patent_status = ps.patent_status_id	                
+	                LEFT JOIN patent_types pt ON p.patent_type = pt.patent_type_id
+	                where p.app_no = #{appNo} and p.patent_owner = #{userId})
+	     union all
+		 (select p.patent_id, p.app_no, p.patent_owner, p.patent_name, p.app_person, p.app_date, p.internal_code, pt.patent_type_id,pt.patent_type_desc,
+	                ps.patent_status_id, ps.patent_status_desc, p.patent_status_text 
+	                from patents p 
+	                left join patent_status ps on p.patent_status = ps.patent_status_id	                
+	                LEFT JOIN patent_types pt ON p.patent_type = pt.patent_type_id 
+	                join user_patents up on p.patent_id = up.patent
+				where up.user = #{userId} and p.app_no= #{appNo})
+		 limit 1
+	</select>
+	
+	<select id="getPatentIdByAppNo"  resultType="Long">
+		(select p.patent_id from patents p where p.app_no = #{appNo} and p.patent_owner = #{userId})
+		union all
+		(SELECT p.patent_id
+				FROM patents p LEFT JOIN patent_status ps ON p.patent_status = ps.patent_status_id JOIN user_patents up ON p.patent_id = up.patent
+				WHERE up.user = #{userId} AND p.app_no= #{appNo}) 
+		limit 1
+	</select>
+	
+	<select id="getUserTransactionPatentsCount" resultType="int">
+		SELECT COUNT(*) FROM sell_patent_goods WHERE OWNER = #{userId};
+	</select>
+
+	<update id="downTransactionPatent">
+		update sell_patent_goods set status =2,transaction_date=now(),recommend_status=0
+		 where patent_id = #{patentId};
+		 
+		 update  patents set transaction_status='已出售' where patent_id=#{patentId}	
+	</update>
+	<update id="upTransactionPatent">
+		update sell_patent_goods set status =1
+		 where patent_id = #{patentId};
+		 
+		 update  patents set transaction_status='出售中' where patent_id=#{patentId}	
+	</update>	
+	<delete id="deleteTransactionPatent">
+		delete from sell_patent_goods where patent_id = #{patentId};
+		
+		update  patents set transaction_status=null where patent_id=#{patentId}
+	</delete>	
+	
+	
+	<update id="patentsTrash"  >
+		update user_patents up set up.trash_status=2
+		 where up.user=#{userId} and up.patent in 
+			<foreach item="patentId" collection="patentIds"
+			     open="(" separator="," close=")">
+			   #{patentId}
+			</foreach>		 
+	</update>	
+	
+	<select id="getPatentsRecycled" parameterType="Page" resultMap="PatentWithShareUsers">
+		select sp.patent_id, sp.app_no, sp.patent_owner, sp.patent_name, sp.app_person, sp.app_date, sp.patent_status_text,sp.transaction_status,pt.patent_type_id, 
+							 pt.patent_type_desc, sp.patent_status_id, sp.patent_status_desc, sp.internal_code, u.user_id, u.username
+		from (select p.patent_id, p.app_no, p.patent_owner, p.patent_name, p.app_person, p.app_date,  p.internal_code, p.patent_type,p.transaction_status,
+				ps.patent_status_id, ps.patent_status_desc, p.patent_status_text
+			from patents p left join patent_status ps on p.patent_status = ps.patent_status_id join user_patents up on p.patent_id = up.patent
+		 where up.user = #{userId} and up.trash_status=2
+		 order by p.app_date desc, p.app_person, p.patent_name
+		 limit #{startIndex}, #{pageSize}) as sp left join patent_types pt on sp.patent_type = pt.patent_type_id join user_patents up on up.patent = sp.patent_id
+		    join users u on u.user_id = up.user	
+		 order by sp.app_date desc, sp.app_person, sp.patent_name
+	</select>
+	
+	<select id="getPatentsRecycledCount" resultType="int">
+		select count(*) from user_patents where user = #{userId} and trash_status=2
+	</select>
+	
+	<update id="recoverPatents"  >
+		update user_patents up set up.trash_status=1
+		 where up.user=#{userId} and up.patent in 
+			<foreach item="patentId" collection="patentIds"
+			     open="(" separator="," close=")">
+			   #{patentId}
+			</foreach>		 
+	</update>
+	<delete id="deleteForeverPatents">
+		delete from user_patents  where user = #{userId} and patent in 
+			<foreach item="patentId" collection="patentIds"
+			     open="(" separator="," close=")">
+			   #{patentId}
+			</foreach>		 
+	</delete>
+	
+	
+	<select id="getUserPatentsByCreateTime" parameterType="Page" resultMap="PatentWithShareUsers">
+		select sp.patent_id, sp.app_no, sp.patent_owner, sp.patent_name, sp.app_person, sp.app_date, sp.patent_status_text,sp.transaction_status,sp.create_time,pt.patent_type_id, 
+							 pt.patent_type_desc, sp.patent_status_id, sp.patent_status_desc, sp.internal_code, u.user_id, u.username
+		from (select p.patent_id, p.app_no, p.patent_owner, p.patent_name, p.app_person, p.app_date,  p.internal_code, p.patent_type,p.transaction_status,p.create_time,
+				ps.patent_status_id, ps.patent_status_desc, p.patent_status_text
+			from patents p left join patent_status ps on p.patent_status = ps.patent_status_id join user_patents up on p.patent_id = up.patent
+		 where up.user = #{userId} and up.trash_status=1
+		 order by p.create_time desc
+		 limit #{startIndex}, #{pageSize}) as sp left join patent_types pt on sp.patent_type = pt.patent_type_id join user_patents up on up.patent = sp.patent_id
+		    join users u on u.user_id = up.user	
+		 order by sp.create_time desc
+	</select>
+	
+	
+ 	<insert id="batchSaveGoods"  >
+		insert into sell_patent_goods(patent_id, transaction_date, add_date, status, transaction_type, price, patent_second_column,owner)
+		values 
+		<foreach item="patentId" collection="patentIds"
+			      separator="," >
+		(#{patentId}, null,curdate(), 1, 1, null, 96,#{userId})
+		</foreach>
+	</insert>
+	 
+	<update id="updatePatentsGoodsStatus"  >
+		update  patents set transaction_status='出售中' where patent_id in
+			<foreach item="patentId" collection="patentIds"
+			     open="(" separator="," close=")">
+			   #{patentId}
+			</foreach>		 
+	</update>	
+	
+	<update id="updateGoodPatents">
+		update sell_patent_goods  set price=#{price},patent_second_column =#{SecondColumn} where patent_id=#{patentId}
+	</update>
+	
+
+	<update id="changePrice">
+		update sell_patent_goods  set price=#{price} where patent_id=#{patentId}
+	</update>
+	
+	<update id="changSecondColume">
+		update sell_patent_goods  set patent_second_column =#{SecondColumn} where patent_id=#{patentId}
+	</update>
+	
+	
+	<update id="batchChangePrice">
+		update sell_patent_goods  set price=#{price} where patent_id in
+		<foreach item="patentId" collection="patentIds"
+			     open="(" separator="," close=")">
+			   #{patentId}
+			</foreach>		 
+	</update>	
+	<select id="bacthsaveGoodsCheckOut" resultType="int">
+		select count(*) from sell_patent_goods WHERE patent_id in
+		<foreach collection="patentIds" item="patentId" open="(" separator="," close=")">
+			#{patentId}
+		</foreach>
+	
+	</select>
+	
+	<resultMap type="PatentRemark" id="patentRemarkResultMap">
+		<id property="remarkId" column="remark_id" />		
+		<result property="createTime" column="create_time"/>
+		<result property="content" column="content"/>
+		<result property="patentId" column="patent_id"/>
+		<association property="user"  javaType="User">
+			<id property="userId" column="user_id"/>
+			<result property="username" column="username"/>
+		</association>
+			
+	</resultMap>
+	
+	<select id="getPatentRemarks" parameterType="long" resultMap="patentRemarkResultMap">
+		SELECT  remark_id, patent_id , create_time, content,u.username as username FROM patent_remarks pr
+		join users u on u.user_id = pr.user_id
+		WHERE patent_id=#{patentId}	order by create_time desc
+	</select>
+	
+		
+	<insert id="addPatentRemark">
+		INSERT INTO patent_remarks(create_time,content,patent_id,user_id)
+		values(now(),#{content},#{patentId},#{userId})				
+	</insert>
+	
+	<resultMap type="Patent" id="patentDetailMap">
+		<id property="patentId" column="patent_id"/>
+		<result property="name" column="patent_name"/>
+		<result property="appDate" column="app_date"/>
+		<result property="appPerson" column="app_person"/>
+		<result property="internalCode" column="internal_code"/>
+		<result property="ownerId" column="patent_owner"/>
+		<association property="patentType" resultMap="PatentTypeResultMap"/>
+		<association property="patentStatus" resultMap="PatentStatusResultMap"/>
+		<collection property="shareUsers" resultMap="com.lotut.pms.dao.mapper.UserMapper.UserResultMap"/>
+	</resultMap>
+	
+	<select id="showPatentDetail" parameterType="long" resultMap="patentDetailMap">
+		SELECT p.patent_id , p.patent_name, pt.patent_type_desc, p.app_date, p.app_person, p.internal_code, 
+			ps.patent_status_desc,pt.patent_type_id,ps.patent_status_id,
+			p.patent_owner,u.user_id, u.username
+		FROM patents p
+		LEFT JOIN patent_status ps ON p.patent_status = ps.patent_status_id
+		LEFT JOIN patent_types pt ON p.patent_type = pt.patent_type_id
+		JOIN user_patents up ON p.patent_id = up.patent 
+		JOIN users u ON u.user_id = up.user
+		WHERE p.patent_id=#{patentId} 
+	</select>	
+
+	<update id="savePatentDetail">
+		UPDATE patents  SET  patent_name=#{name}, patent_type=#{patentType.patentTypeId},app_date=#{appDate},app_person=#{appPerson},
+			patent_status=#{patentStatus.patentStatusId},internal_code=#{internalCode},
+			patent_status_text=(select patent_status_desc from patent_status where patent_status_id = #{patentStatus.patentStatusId})
+		WHERE patent_id=#{patentId}
+	</update>
+	
+	<delete id="deleteShareUser">
+		delete  from share_patents  where patent = #{patentId} and share_by=#{ownerId} and share_to=#{shareUserId};
+		delete from user_patents where patent = #{patentId} and user=#{shareUserId}	   
+	</delete>	
+	
+	<select id="getPatentDocShareUesrs" parameterType="String" resultType="int">
+		select user_id from user_patent_docs where patent_doc =( select patent_doc_id from patent_documents where internal_code=#{internalCode})
+	
+	</select>
+	<select id="getPatentIdByInternalCode"  resultType="java.lang.Long">
+		select patent_id from patents where internal_code=#{internalCode} and patent_owner=#{currentUserId} limit 0,1
+	</select>
+	
+	<insert id="savePatentShareUser">
+		insert into user_patents(user,patent) 
+		values(#{userId},#{patentId})
+		on duplicate key update user=#{userId},patent=#{patentId}
+		<!-- <foreach collection="userIds" item="userId" separator=",">
+		(#{userId},#{patentId})
+		</foreach> -->
+	</insert>
+
+	<select id="getUserPatentsByIds" resultMap="PatentWithShareUsers">
+		select sp.patent_id, sp.app_no, sp.patent_owner, sp.patent_name, sp.app_person, sp.app_date, sp.patent_status_text,sp.transaction_status,sp.create_time,pt.patent_type_id, 
+							 pt.patent_type_desc, sp.patent_status_id, sp.patent_status_desc, sp.internal_code, u.user_id, u.username
+		from (select p.patent_id, p.app_no, p.patent_owner, p.patent_name, p.app_person, p.app_date,  p.internal_code, p.patent_type,p.transaction_status,p.create_time,
+				ps.patent_status_id, ps.patent_status_desc, p.patent_status_text
+			from patents p left join patent_status ps on p.patent_status = ps.patent_status_id join user_patents up on p.patent_id = up.patent
+		 where p.patent_id in 
+		 		<foreach item="patentId" collection="patentIds"
+			     open="(" separator="," close=")">
+			   #{patentId}
+			</foreach>
+		 ) as sp left join patent_types pt on sp.patent_type = pt.patent_type_id join user_patents up on up.patent = sp.patent_id
+		    join users u on u.user_id = up.user	
+	</select>	
+	
+	
+	<update id="updateDocumentStatusText">
+		update patent_documents set patent_doc_status_text=#{patentStatusText} where internal_code=#{internalCode}
+	</update>
+	
+	<update id="updateDocumentStatus">
+		update patent_documents set patent_doc_status=#{patentStatus} where internal_code=#{internalCode}
+	</update>
+	
+	<update id="cancelRecommendPatent">
+		update sell_patent_goods set recommend_status = 0 where patent_id=#{patentId}
+	</update>
+	
+	<update id="recommendPatent">
+		update sell_patent_goods set recommend_status = 1 where patent_id=#{patentId}
+	</update>
+	
+	<!-- <resultMap type="GoodsDetail" id="TransactionPatent">
+		<id property="patentId" column="patent_id"/>
+		<result property="appNo" column="app_no"/>
+		<result property="patentName" column="patent_name"/>
+		<result property="addDate" column="add_date"/>
+		<result property="transactionDate" column="transaction_date"/>
+		<result property="price" column="price"/>
+		<result property="transactionType" column="transaction_type"/>
+		<result property="status" column="status"/>
+		<result property="owner" column="owner"/>
+		<result property="FirstColumn" column="patent_first_column_id"/>
+		<result property="SecondColumn" column="patent_second_column"/>	
+		<result property="recommendStatus" column="recommend_status"/>	
+	</resultMap> -->
+	
+	<!-- <insert id="saveGoods" parameterType="GoodsDetail" >
+		insert into sell_patent_goods(patent_id, transaction_date, add_date, status, transaction_type, price, patent_second_column,owner)
+		values(#{id}, null,curdate(), '1', #{transactionType}, #{price}, #{SecondColumn},#{userId});
+		
+		update  patents set transaction_status='出售中' where patent_id=#{id}			
+	</insert> -->
+	
+	<!-- <select id="getUserTransactionPatents" parameterType="page" resultMap="TransactionPatent">
+		
+		SELECT  sg.patent_id,sg.price,sg.status,sg.transaction_type,sg.add_date,sg.transaction_date,p.patent_name,p.app_no,sg.recommend_status,ss.patent_first_column_id,sg.patent_second_column
+		FROM  sell_patent_goods sg LEFT JOIN patents p ON sg.patent_id = p.patent_id left JOIN sell_second_column  ss ON ss.patent_second_column_id=sg.patent_second_column
+		WHERE  owner=#{userId}  limit #{startIndex}, #{pageSize};
+	
+	</select> -->
+	
+	<!-- <select id="searchTransactionPatentsByPage" parameterType="TransactionPatentSearchCondition" resultMap="TransactionPatent">
+		<if test="keyword != null">
+			<bind name="keyword_pattern" value="'%' + keyword + '%'" />
+		</if>	
+		SELECT up.patent_id,up.price,up.status,up.transaction_type,up.add_date,up.transaction_date,up.owner,up.patent_name,up.app_no,up.patent_first_column_id,up.patent_second_column 
+		FROM
+		(SELECT  sg.patent_id,sg.price,sg.status,sg.transaction_type,sg.add_date,sg.owner,sg.transaction_date,p.patent_name,p.app_no,ss.patent_first_column_id,sg.patent_second_column
+		FROM  sell_patent_goods sg LEFT JOIN patents p ON sg.patent_id = p.patent_id left JOIN sell_second_column  ss ON ss.patent_second_column_id=sg.patent_second_column limit #{page.startIndex}, #{page.pageSize}) up
+		WHERE up.owner=#{userId}
+		 		<if test="status != null">
+		 			and up.status = #{status}
+		 		</if>	
+			 	<if test="transactionType != null">
+			 		and up.transaction_type = #{transactionType}
+			 	</if>	
+			 	<if test="startAddDate != null">
+			 		and up.add_date >= #{startAddDate}
+			 	</if>	
+			 	<if test="endAddDate != null">
+			 		<![CDATA[ and up.add_date <= #{endAddDate} ]]>
+			 	</if>	
+			 	<if test="keyword != null">
+					and (up.app_no like #{keyword_pattern} or up.patent_name like #{keyword_pattern})
+				</if>
+	</select> -->
+	
+	<!-- <select id="getFirstColumn"  resultType="GoodsFirstColumn">
+		select patent_first_column_id id,patent_first_column_name  name
+		  from sell_first_column
+	</select> -->	
+	<!-- <select id="getSecondColumn" parameterType="int" resultType="GoodsSecondColumn">
+		select patent_second_column_id id,patent_second_column_name  name
+		  from sell_second_column where patent_first_column_id=#{firstColumnId}
+	</select> -->
+	
+	
+	<!-- <select id="searchTransactionPatentsCount" parameterType="TransactionPatentSearchCondition" resultType="int">
+		<if test="keyword != null">
+			<bind name="keyword_pattern" value="'%' + keyword + '%'" />
+		</if>	
+		SELECT count(*)
+		FROM
+		(SELECT  sg.patent_id,sg.price,sg.status,sg.transaction_type,sg.add_date,sg.owner,p.patent_name,p.app_no
+		FROM  sell_patent_goods sg LEFT JOIN patents p ON sg.patent_id = p.patent_id ) up
+		WHERE up.owner=#{userId}
+	 		<if test="status != null">
+	 			and up.status = #{status}
+	 		</if>	
+		 	<if test="transactionType != null">
+		 		and up.transaction_type = #{transactionType}
+		 	</if>	
+		 	<if test="startAddDate != null">
+		 		and up.add_date >= #{startAddDate}
+		 	</if>	
+		 	<if test="endAddDate != null">
+		 		<![CDATA[ and up.add_date <= #{endAddDate} ]]>
+		 	</if>	
+		 	<if test="keyword != null">
+				and (up.app_no like #{keyword_pattern} or up.patent_name like #{keyword_pattern} )
+			</if>
+	</select> -->	
+</mapper>

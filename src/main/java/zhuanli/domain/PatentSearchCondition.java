@@ -6,8 +6,15 @@ public class PatentSearchCondition {
 
 	private String keyword;
 	private Page page;
+	private int userId;
 	
 	
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 	public String getKeyword() {
 		return keyword;
 	}
