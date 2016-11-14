@@ -1,4 +1,4 @@
-package zhuanli.controller.mobile;
+package zhuanli.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
