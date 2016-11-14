@@ -33,7 +33,12 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
-		<property name="mapperLocations" value="classpath:mapper/*Mapper.xml" />
+		<property name="mapperLocations">
+			<array>
+				<value>classpath:mapper/*Mapper.xml</value>
+				<value>classpath:mapper/mobileMapper/*Mapper.xml</value>
+			</array>
+		</property>  
 	</bean>	
 	
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
@@ -78,5 +83,15 @@
 	<bean name="userDao" class="zhuanli.dao.mybatis.UserMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="userMapper" ref="userMapper" />
+	</bean>
+	
+	<bean id="patentMobileMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="zhuanli.dao.mapper.PatentMobileMapper"/>
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean name="patentMobileDao" class="zhuanli.dao.mybatis.PatentMobileMybatisDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+		<property name="patentMobileMapper" ref="patentMobileMapper" />
 	</bean>
 </beans>							

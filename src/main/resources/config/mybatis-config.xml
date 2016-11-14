@@ -27,6 +27,9 @@
 			<typeAlias alias="Vote" type="zhuanli.domain.Vote"/>
 			<typeAlias alias="ArticleComment" type="zhuanli.domain.ArticleComment"/>
 			<typeAlias alias="NewsComment" type="zhuanli.domain.NewsComment"/>		
+			<typeAlias alias="PatentStatus" type="zhuanli.domain.PatentStatus"/>		
+			<typeAlias alias="PatentRemark" type="zhuanli.domain.PatentRemark"/>		
+			<typeAlias alias="PatentType" type="zhuanli.domain.PatentType"/>		
 		</typeAliases>
 		
 
