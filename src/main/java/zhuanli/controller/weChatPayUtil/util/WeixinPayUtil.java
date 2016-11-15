@@ -291,7 +291,7 @@ public class WeixinPayUtil {
 		storeMap.put("nonce_str", nonce_str); // 随机数
 		sign = createSign(storeMap);
 		
-		String xml = "<xml><appid>wx5e45586116813f60</appid><mch_id>1251135401</mch_id>"+
+		String xml = "<xml><appid>wx0171fe30df64f653</appid><mch_id>1251135401</mch_id>"+
 					"<nonce_str>" + nonce_str + "</nonce_str>"+
                     "<out_trade_no>"+orderId+"</out_trade_no>"+
                     "<sign>"+sign+"</sign></xml>";
@@ -374,7 +374,7 @@ public class WeixinPayUtil {
 		storeMap.put("nonce_str", "1add1a30ac87aa2db72f57a2375d8fec"); // 随机数
 		sign = createSign(storeMap);
 		
-		String xml = "<xml><appid>wx5e45586116813f60</appid><mch_id>1251135401</mch_id>"+
+		String xml = "<xml><appid>wx0171fe30df64f653</appid><mch_id>1251135401</mch_id>"+
 					"<nonce_str>1add1a30ac87aa2db72f57a2375d8fec</nonce_str>"+
                     "<out_trade_no>px20150904041703250</out_trade_no>"+
                     "<sign>"+sign+"</sign></xml>";
