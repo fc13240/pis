@@ -35,4 +35,8 @@
 		<bean name="articleMobileService" class="zhuanli.service.impl.ArticleMobileServiceImpl">
 		<constructor-arg ref="articleMobileDao"/>
 	</bean>	
+	
+	<bean name="newsMobileService" class="zhuanli.service.impl.NewsMobileServiceImpl">
+		<constructor-arg ref="newsMobileDao"/>
+	</bean>	
 </beans>
