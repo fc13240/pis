@@ -35,7 +35,7 @@
 	<!-- spring配置文件目录 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:/config/*.xml</param-value>
+		<param-value>classpath:/config/spring-*.xml</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
