@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.jdom.JDOMException;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
+import java.util.Hashtable;
 
 
 /**

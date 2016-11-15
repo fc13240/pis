@@ -190,7 +190,7 @@ public class WeixinPayController {
 			finalpackage.put("package", packages);
 			finalpackage.put("signType", WxPayConfig.signType);
 			String finalsign = reqHandler.createSign(finalpackage);
-			System.out.println("/jsapi?appid="+WxPayConfig.appid+"&timeStamp="+timestamp+"&nonceStr="+nonce_str+"&package="+packages+"&sign="+finalsign);
+			System.out.println("/jsapi.html?appid="+WxPayConfig.appid+"&timeStamp="+timestamp+"&nonceStr="+nonce_str+"&package="+packages+"&sign="+finalsign);
 			
 			model.addAttribute("appid", WxPayConfig.appid);
 			model.addAttribute("timeStamp", timestamp);
