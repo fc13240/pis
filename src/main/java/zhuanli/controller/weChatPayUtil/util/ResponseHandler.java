@@ -3,6 +3,7 @@ package zhuanli.controller.weChatPayUtil.util;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -14,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.jdom.JDOMException;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 
 
 /**

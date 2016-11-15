@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhuanli.dao.mapper.NewsMobileMapper">
+	
+	<resultMap type="News" id="NewsResultMap">
+		<id property="id" column="id"/>
+		<result property="keywords" column="keywords"/>
+		<result property="author" column="author"/>
+		<result property="title" column="title"/>
+		<result property="source" column="source"/>
+		<result property="content" column="content"/>
+		<result property="newsAbstract" column="abstract"/>
+		<result property="createTime" column="create_time"/>
+		<result property="publishTime" column="publish_time"/>
+		<result property="updateTime" column="update_time"/>
+		<result property="smallImgUrl" column="small_img_url"/>
+		<result property="upVote" column="up_vote"/>
+		<result property="downVote" column="down_vote"/>
+		<association property="newsType" resultMap="NewsTypeResultMap"/>
+		<association property="user" resultMap="UserResultMap"/>
+	</resultMap>
+	
+	<resultMap type="NewsImg" id="NewImgMap">
+			<id property="imgId" column="img_id"/>
+			<result property="imgUrl" column="img_url"/>
+			<result property="newsId" column="news_id"/>
+			<result property="caption" column="caption"/>
+	</resultMap>
+	
+	<resultMap type="User" id="UserResultMap">
+		<id property="userId" column="user_id"/>
+		<result property="username" column="username"/>
+		<result property="name" column="name"/>
+		<result property="email" column="email"/>
+		<result property="phone" column="phone"/>
+		<result property="qq" column="qq"/>
+		<result property="weChat" column="weChat"/>
+		<result property="avatarUrl" column="avatar_url"/>
+	</resultMap>
+	
+	<resultMap type="NewsType" id="NewsTypeResultMap">
+		<id property="typeId" column="type_id"/>
+		<result property="typeName" column="type_name"/>
+	</resultMap>
+	
+	<resultMap type="NewsComment" id="NewsCommentMap">
+		<id property="commentId" column="comment_id"/>
+		<result property="createTime" column="create_time"/>
+		<result property="content" column="content"/>
+		<result property="newsId" column="news_id"/>
+		<association property="user" javaType="User">
+				<id property="userId" column="user_id"/>
+				<result property="username" column="username"/>
+			</association>
+	</resultMap>
+	
+	<select id="getNewsShow" resultMap="NewsResultMap">
+		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM news n  WHERE DATE(publish_time) = CURDATE() 
+			AND n.check_status=1
+			ORDER BY publish_time DESC) AS n1 )
+			UNION ALL
+			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
+			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
+			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2) limit 0,7
+	</select>
+
+	
+	<select id="getUserNewsById"  parameterType="int" resultMap="NewsResultMap">
+		SELECT n.id,n.keywords,n.author,n.title,n.source,n.content,n.abstract,n.create_time,n.publish_time,n.update_time,
+		nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote
+		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+		WHERE n.id=#{newsId}
+	</select>
+	
+	<select id="getAllNews" parameterType="Page" resultMap="NewsResultMap">
+		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM news n  WHERE DATE(publish_time) = CURDATE() 
+			AND n.check_status=1
+			ORDER BY publish_time DESC) AS n1 )
+			UNION ALL
+			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
+			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
+			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2) limit #{startIndex},#{pageSize}
+	</select>
+	
+	
+	<select id="getAllNewsCount"  resultType="int">
+		SELECT count(*)
+		FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id
+		where n.title is not null and n.check_status=1
+	</select>
+	
+	
+	<select id="getAllNewsTypes" resultMap="NewsTypeResultMap">
+		select type_id, type_name
+		  from news_type
+		 order by type_id asc;	
+	</select>
+	
+	<delete id="deleteNewsById" parameterType="int">
+		delete from news where id=#{newsId}
+	</delete>
+	
+	<select id="newsShow" resultMap="NewsResultMap">
+		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM news n  WHERE DATE(publish_time) = CURDATE() 
+			and n.small_img_url IS NOT NULL and n.small_img_url!='' AND n.check_status=1
+			ORDER BY publish_time DESC) AS n1 )
+			UNION ALL
+			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
+			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
+			WHERE  DATE(e.publish_time) != CURDATE() and e.small_img_url IS NOT NULL and e.small_img_url!=''
+				AND e.check_status=1 
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2)  LIMIT 0,7
+	</select>
+	
+	<update id="praise">
+		update news set up_vote=#{upVote} where id=#{id}
+	</update>
+	
+	<update id="slander">
+		update news set down_vote=#{downVote} where id=#{id}
+	</update>
+	
+	<insert id="addNewsComment">
+		INSERT INTO news_comments(create_time,content,news_id,user_id) VALUES (NOW(),#{content},#{newsId},#{userId})
+	</insert>
+	
+	<select id="getNewsCommentsById" parameterType="int" resultMap="NewsCommentMap">
+		SELECT comment_id,create_time,content,u.user_id,u.username 
+		FROM news_comments ac
+		LEFT JOIN users u ON u.user_id = ac.user_id
+		WHERE news_id = #{newsId}
+		order by create_time desc
+	</select>
+	<select id="getNewsByRand" resultMap="NewsResultMap">
+		SELECT id,title
+		FROM news 
+		where  check_status=1 ORDER BY RAND() limit 10
+	</select>	
+</mapper>

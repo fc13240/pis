@@ -99,4 +99,14 @@
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="articleMobileMapper" ref="articleMobileMapper" />
 	</bean>
+	
+	<bean id="newsMobileMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="zhuanli.dao.mapper.NewsMobileMapper"/>
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean name="newsMobileDao" class="zhuanli.dao.mybatis.NewsMobileMybatisDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+		<property name="newsMobileMapper" ref="newsMobileMapper" />
+	</bean>
 </beans>							
