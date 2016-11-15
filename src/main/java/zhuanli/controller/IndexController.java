@@ -129,7 +129,8 @@ public class IndexController {
         try {
 	            AccessToken accessTokenObj = (new Oauth()).getAccessTokenByRequest(request);
 	
-	            long tokenExpireIn = 0L;
+	            @SuppressWarnings("unused")
+				long tokenExpireIn = 0L;
 	
 	            if (accessTokenObj.getAccessToken().equals("")) {
 	            	
