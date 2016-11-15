@@ -167,7 +167,7 @@ public class IndexController {
 	        } catch (QQConnectException e) {
 	        	e.printStackTrace();
 	        }
-        return "redirect:/index.html";
+        return "redirect:http://www.lotut.com";
     }
 	
 	
