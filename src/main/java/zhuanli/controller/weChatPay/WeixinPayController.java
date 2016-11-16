@@ -96,6 +96,7 @@ public class WeixinPayController {
 					+ WxPayConfig.appid + "&secret=" + WxPayConfig.appsecret + "&code=" + code + "&grant_type=authorization_code";
 			System.out.println("URL:"+URL);
 			JSONObject jsonObject = CommonUtil.httpsRequest(URL, "GET", null);
+			System.out.println(jsonObject);
 			if (null != jsonObject) {
 				openId = jsonObject.getString("openid");
 				System.out.println("openId:" + openId);
