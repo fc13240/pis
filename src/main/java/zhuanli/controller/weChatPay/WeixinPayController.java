@@ -203,7 +203,7 @@ public class WeixinPayController {
 			model.addAttribute("orderId", orderId);
 			model.addAttribute("payPrice", total_fee);
 			return "jsapi";
-		} catch (NumberFormatException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;

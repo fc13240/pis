@@ -3,13 +3,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-System.out.println("in jsapi.jsp");
-%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	    <title>订单-支付</title>
+	</head>
+<body>
 		<script type="text/javascript">
 		
 		function onBridgeReady(){
@@ -49,9 +49,6 @@ System.out.println("in jsapi.jsp");
 			   onBridgeReady();
 			}	  	
 		</script>	
-	    <title>订单-支付</title>
-	</head>
-<body>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			onBridgeReady();

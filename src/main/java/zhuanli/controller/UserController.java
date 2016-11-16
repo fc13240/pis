@@ -122,7 +122,7 @@ public class UserController {
 	    }
 	
 	public static void main(String[] args) throws JSONException, IOException {
-		String code = "041mRYZk2bbfZI0tLr2l2eKTZk2mRYZu";
+		String code = "031U3AYd0g3TOx1TvFYd0AjBYd0U3AYF";
 		//通过授权后根据code获取access_token、openid
 		String url = String.format("https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code",
 				WebUtils.APPID,WebUtils.APPSECRET,code);
