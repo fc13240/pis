@@ -42,7 +42,7 @@
 			</div>
 			<div style="float:right;">
 				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">
-				<img src="${news.smallImgUrl}" width="50" height="50" />
+				<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
 				</a>
 			</div>
 			<div style="clear:both;"></div>

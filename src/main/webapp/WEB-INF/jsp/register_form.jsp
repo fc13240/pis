@@ -158,7 +158,7 @@
 									</div>
 
 									<div class="toolbar center">
-										<a href="<s:url value='/loginForm.html'/>"  style="color:yellow">
+										<a href="<s:url value='/'/>"  style="color:yellow">
 											<i class="ace-icon fa fa-arrow-left"></i>
 											返回登录
 										</a>

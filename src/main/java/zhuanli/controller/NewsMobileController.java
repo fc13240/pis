@@ -24,11 +24,9 @@ import zhuanli.util.PrincipalUtils;
 @RequestMapping(path="/mobileNews")
 public class NewsMobileController {
 	private NewsMobileService newsMobileService;
-	private PatentService patentService;
 	@Autowired
-	public NewsMobileController(NewsMobileService newsMobileService,PatentService patentService) {
+	public NewsMobileController(NewsMobileService newsMobileService) {
 		this.newsMobileService = newsMobileService;
-		this.patentService = patentService;
 	}
 	
 	@RequestMapping(path="/newsList",method=RequestMethod.GET)
@@ -36,25 +34,18 @@ public class NewsMobileController {
 		if(page.getCurrentPage()<1){
 			page.setCurrentPage(1);
 		}
-		List<News> news=newsMobileService.getAllNews(page);
-		List<News> newShows=newsMobileService.newsShow();		
-		
+		List<News> news=newsMobileService.getAllNews(page);		
 		int totalCount=newsMobileService.getAllNewsCount();
 		page.setTotalRecords(totalCount);
 		model.addAttribute("news", news);
 		model.addAttribute("page", page);
-		model.addAttribute("newShows", newShows);
 		return "mobile_news_list";
 	}	
 	@RequestMapping(path="/newsPreview")
 	public String newsPreview(@RequestParam("newsId") int newsId,Model model) {
 		News news=newsMobileService.getUserNewsById(newsId);
 		List<NewsComment> comments = newsMobileService.getNewsCommentsById(newsId);
-		
-		List<Patent> patents=patentService.getPatents();
-		
 		List<News> newsRand=newsMobileService.getNewsByRand();
-		model.addAttribute("patents", patents);
 		model.addAttribute("comments", comments);
 		model.addAttribute("news", news);
 		model.addAttribute("newsRand", newsRand);
