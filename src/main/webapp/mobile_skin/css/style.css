@@ -1,6 +1,5 @@
 .Layout_style {
-	min-width: 320px;
-	max-width: 640px;
+
 	margin: 0 auto;
 }
 .clearfix:after, ul:after, li:after {
@@ -12,7 +11,7 @@
 	font-size: 0;
 	line-height: 0;
 }
-/**************标题样式属性***************/
+/**************鏍囬鏍峰紡灞炴��***************/
 .floor {
 	background: #fff;
 	margin-bottom: 12px;
@@ -44,10 +43,10 @@
 	margin-right: 5px;
 }
 .floor .title a i, .Group_buy .title_name a i {font-size: 0.82rem}
-/**********************顶部样式属性********************/
+/**********************椤堕儴鏍峰紡灞炴��********************/
 .header_l .icon-closefill {font-size: 1.6rem;color: #FFF;margin-left: 10px;}
 .header_r a {font-size: 1rem;line-height: 2.5rem;color: #FFF;}
-/******************搜索样式属性************************/
+/******************鎼滅储鏍峰紡灞炴��************************/
 .fixToTop {
 	background: #c91523;
 	opacity: 0.85;
@@ -221,7 +220,7 @@ em.search-form-icon {
 .search-login .search-icon-login {font-size: 15px;color: #fff;}
 .login-ing .search-icon-login {display: inline-block;}
 #scwrapper {margin-top: 50px;}
-/**************************幻灯片样式属性******************************/
+/**************************骞荤伅鐗囨牱寮忓睘鎬�******************************/
 .swiper_wrapper {margin-top: 50px;}
 .main_visual {
 	position: relative;
@@ -289,7 +288,7 @@ div.flicking_con li {
 	font-size: 0px;
 }
 div.flicking_con li.on {background: #F60}
-/**********************栏目样式***************************/
+/**********************鏍忕洰鏍峰紡***************************/
 #quick {background: #FFF;border-top: 1px solid #ddd;box-shadow: 0px 3px 2px #ccc}
 .fz12 {font-size: 1.2rem;display: inline-block;}
 .quick-entry-link {
@@ -305,7 +304,7 @@ div.flicking_con li.on {background: #F60}
 .quick-entry-link img {display: block;width: 50px;height: 50px;margin: 0 auto 6px auto;
 }
 .AD_link img {width: 100%}
-/***********************新品发布样式属性****************************/
+/***********************鏂板搧鍙戝竷鏍峰紡灞炴��****************************/
 .Hot_product .product_list {
 	border-bottom: 1px solid #ddd;
 	border-top: 1px solid #ddd;
@@ -338,7 +337,7 @@ div.flicking_con li.on {background: #F60}
 	color: #333;
 	margin-top: 3px;
 }
-/**********************限时特卖样式属性******************/
+/**********************闄愭椂鐗瑰崠鏍峰紡灞炴��******************/
 .tm_c {overflow: hidden;border-top: 1px solid #dddddd}
 .sell_1 {
 	width: 49.6%;
@@ -393,7 +392,7 @@ div.flicking_con li.on {background: #F60}
 	margin: 0px 10px;
 	font-size: 1.2rem;
 }
-/*******************版块样式属性********************/
+/*******************鐗堝潡鏍峰紡灞炴��********************/
 .discount {
 	border-width: 1px 0 0 0;
 	border-color: #ddd;
@@ -409,7 +408,7 @@ div.flicking_con li.on {background: #F60}
 .up-floor, .down-floor, .brand-up-floor {width: 50%;float: right;}
 .up-floor {font-size: 0;border-top: 1px solid #ddd;}
 .brand-up-floor {border-top: 1px solid #ddd;}
-/*************************猜没你喜欢样式属性*****************************/
+/*************************鐚滄病浣犲枩娆㈡牱寮忓睘鎬�*****************************/
 .list_Insured {border-top: 1px solid #ddd;margin-bottom: 10px;}
 .list_Insured ul {width: 50%;float: left;line-height: 24px;border-bottom: 1px dashed #ddd;}
 .list_Insured ul .Spacing {padding: 10px;}
@@ -433,7 +432,7 @@ div.flicking_con li.on {background: #F60}
 	margin: 5px 0px;
 }
 .hot_Insured .hot_more {text-align: center;margin: 10px;}
-.list_Insured ul .p_Profile {color: #999999;font-family: "新宋体";}
+.list_Insured ul .p_Profile {color: #999999;font-family: "鏂板畫浣�";}
 .list_Insured ul li .View_details {float: left;color: #FF0000;font-size: 1rem}
 .list_Insured ul li .View_details a {border: 1px solid #FF6600;color: #FF6633;padding: 3px 5px;}
 .list_Insured ul li .Sales {float: right;}
@@ -468,7 +467,7 @@ div.flicking_con li.on {background: #F60}
 .footer .Copyright a {position: absolute;font-size: 1.82rem;top: 0;}
 .footer .Copyright a.icon-home1 {left: 0px;}
 .footer .Copyright a.icon-top1 {right: 0px;}
-/********************底部固定菜单栏*************************/
+/********************搴曢儴鍥哄畾鑿滃崟鏍�*************************/
 .global-nav {
 	position: fixed;
 	left: -100%;
@@ -571,7 +570,7 @@ div.flicking_con li.on {background: #F60}
 .global-nav--current .global-nav__operate-cart-num {opacity: 0;}
 .global-nav--current .global-nav__operate-wrap:before {display: block;}
 .global-nav--current .global-nav__operate-wrap:after {display: none;}
-/***************************分辨率兼容样式属性**************************/
+/***************************鍒嗚鲸鐜囧吋瀹规牱寮忓睘鎬�**************************/
 @media screen and (min-width:500px) and (max-width:640px) {
 .list_Insured ul {width: 33%;}
 .list_Insured ul .Spacing .hot_img img {width: 187px;height: 187px;}
@@ -598,7 +597,7 @@ div.flicking_con li.on {background: #F60}
 }
 .s_name span {color: #ff4e00;font-size: 0.82rem;line-height: 20px;}
 }
-/****************************************注册登录样式属性********************************************/
+/****************************************娉ㄥ唽鐧诲綍鏍峰紡灞炴��********************************************/
 .reg_log_style {background: #FFF}
 .reg_log_style .reg_log_com .logo {text-align: center;padding: 20px;border-bottom: 1px solid #ddd;}
 .reg_log_style .reg_log_com .reg_log_ADD, .reg_log_style .submit_op {padding: 20px;}
@@ -649,7 +648,7 @@ div.flicking_con li.on {background: #F60}
 .reg_log_style .reg_log_com .reg_log_ADD .l_u {height: 40px;margin-bottom: 20px;border-bottom: 1px solid #ddd;}
 .reg_log_style .reg_log_com .reg_log_ADD .l_u label {float: left;padding-right: 10px;height: 36px;line-height: 36px;font-size: 1.1rem;}
 .reg_log_style .login_operating a {float: right;color: #F30;font-size: 1rem;}
-/*************************用户中心样式属性*************************/
+/*************************鐢ㄦ埛涓績鏍峰紡灞炴��*************************/
 #header .header_return a {
 	font-size: 1.2rem;
 	color: #FFF;
@@ -673,9 +672,9 @@ div.flicking_con li.on {background: #F60}
 	background: #FFF;
 	padding: 5px 10px;
 }
-/******************************************************************会员中心样式属性*******************************************************************/
+/******************************************************************浼氬憳涓績鏍峰紡灞炴��*******************************************************************/
 .user_style{ background-color:#FFF; padding:0.5rem;}
-/***********************用户个人信息样式属性***********************/
+/***********************鐢ㄦ埛涓汉淇℃伅鏍峰紡灞炴��***********************/
 .user_info_style{}
 .user_info_style .Head_portrait{ text-align:center; padding:0.5rem 0;}
 .user_info_style .Head_portrait a{ display:block; width:80px; height:80px; margin:0 auto;border-radius:50%; padding:5px; box-shadow:0px 3px 2px #ededed}
@@ -693,7 +692,7 @@ div.flicking_con li.on {background: #F60}
 .user_info_style .bottom input.confirm{ background-color:#F90}
 .user_info_style .Note{ background-color:#F8F4D3; margin:0.5rem; padding:0.5rem 0; color:#F60} 
 .password_style .table_box dl{ border-bottom:1px solid #ededed}
-/**********用户红包（购物卷）样式属性***********/
+/**********鐢ㄦ埛绾㈠寘锛堣喘鐗╁嵎锛夋牱寮忓睘鎬�***********/
 .Shop_Volume .honbao{ background-color: #F66; color:#FFF; border-radius:10px; padding:0.5rem; position:relative; height:130px; margin-bottom:0.5rem}
 .Shop_Volume .honbao .serial_number{ border-bottom:1px dashed #F33; height:2rem; line-height:2rem; font-size:1rem}
 .Shop_Volume .honbao .Money{ font-size:3rem; font-weight:bold; float:left}
@@ -702,7 +701,7 @@ div.flicking_con li.on {background: #F60}
 .Shop_Volume .honbao  .name{ font-size:3rem; float:right}
 .Shop_Volume .honbao .time{ margin-top:0.5rem; text-align:center}
 .Shop_Volume .honbao .status{ position:absolute; right:10px; top:10px; font-size:1rem;}
-/****************帮助中心样式属性*************/
+/****************甯姪涓績鏍峰紡灞炴��*************/
 .help_list li{ height:2rem; line-height:2rem; border-bottom:1px dashed #ddd; position:relative}
 .help_list li i{ float:right; color:#999}
 /************************/
@@ -778,7 +777,7 @@ div.flicking_con li.on {background: #F60}
 	float: left
 }
 .Shortcut_link a:last-child {box-shadow: 0px 0px 0px 0px}
-/***************************品牌样式属性****************************/
+/***************************鍝佺墝鏍峰紡灞炴��****************************/
 .brands_list {padding: 10px;}
 .brands_list ul li {margin-bottom: 15px;background: #FFF;box-shadow: 0px 3px 2px #ddd;position: relative}
 .brands_list ul li .title_name {
@@ -791,7 +790,7 @@ div.flicking_con li.on {background: #F60}
 	bottom: 0px
 }
 .brands_list ul li .title_name span {margin: 0px 10px;}
-/*****************************团购样式属性*******************************/
+/*****************************鍥㈣喘鏍峰紡灞炴��*******************************/
 .group_style .main_visual {margin-top: 0px;}
 .group_style .title {height: 40px;line-height: 40px;font-size: 18px;position: relative;}
 .group_style .title em {background: #a15bbb;display: block;float: left;width: 5px;height: 20px;margin-top: 10px;margin-left: 10px;margin-right: 5px;}
@@ -818,7 +817,7 @@ div.flicking_con li.on {background: #F60}
 .group_list .group_time .icon-time {color: #F60;margin-right: 3px;font-size: 1.5rem}
 .continue {text-align: center;margin: 10px;}
 .main_visual {position: relative;background: #FFF;z-index: 23;min-width: 320px;max-width: 640px;}
-/****************************************购物车样式属性***************************************/
+/****************************************璐墿杞︽牱寮忓睘鎬�***************************************/
 .shop_cart {}
 .shop_cart .schedule {}
 .shop_cart .schedule ul {display: -moz-box;display: -webkit-box;height: 2.5rem;line-height: 2.5rem;}
@@ -884,7 +883,7 @@ div.flicking_con li.on {background: #F60}
 	color: #FFF;
 	background: #ec5151
 }
-/*******************产品列表样式属性***********************/
+/*******************浜у搧鍒楄〃鏍峰紡灞炴��***********************/
 .Paging{ margin:10px 0px; text-align:center;line-height:2rem;}
 .Paging a{ background:#FFF;border:1px solid #ddd; padding:10px;}
 .Paging span{ display:block; text-align: left}
@@ -914,7 +913,7 @@ div.flicking_con li.on {background: #F60}
 .p_list .list .Operation .p_btn_cart{ float:right; }
 .p_list .list .Operation .p_btn_cart a{ padding:5px 5px; background:#DE1456; color:#ffffff; /*box-shadow:inset 0px 0px 3px 1px #CCCCCC*/}
 .p_list_one{-moz-box-flex: 1;-webkit-box-flex: 1;box-flex: 1;}
-/************************地址管理样式属性***************************/
+/************************鍦板潃绠＄悊鏍峰紡灞炴��***************************/
 .order_box .title_name{ background:#ededed; height:1.5rem; line-height:1.5rem; padding:5px;}
 .order_box .title_name  a{ float:right; display:block; padding:0px 5px; background: #F90; margin-left:5px; border-radius:3px; color:#FFF;}
 .order_box{border-radius: 0px 0px 3rem 0px; }
@@ -941,7 +940,7 @@ div.flicking_con li.on {background: #F60}
 .order_box li .lable{width:7rem; margin-right:5px; border-right:1px solid #ededed;}
 .order_box li .name{ width:100%}
 .order_box li .name select{ border:1px solid #ddd; line-height:1.5rem; height:1.5rem;border-radius:3px; width:30%; margin-bottom:5px;}
-/***************收藏样式属性************/
+/***************鏀惰棌鏍峰紡灞炴��************/
 .collect {
 	background: #FFF;
     font-size: 0.8rem;
@@ -965,7 +964,7 @@ div.flicking_con li.on {background: #F60}
 .collect ul li.name .Quantity{ display:block; font-size:1rem; position:absolute; bottom:0px; color:#F33; right:10px;}
 .collect ul li.name h4{ color:#F33; font-size:1.2rem; font-weight:normal}
 .collect ul li.name h4 i{ font-size:0.75rem}
-/******************************产品详细页样式属性****************************/
+/******************************浜у搧璇︾粏椤垫牱寮忓睘鎬�****************************/
 .product_picture{ height:250px; margin-bottom:10px; position:relative; border-bottom:1px dashed #ddd}
 .product_picture  .hd{
     overflow: hidden;
@@ -1028,7 +1027,7 @@ div.flicking_con li.on {background: #F60}
 .buy_info li .prduct_Size a{ display:block; width:60px; float:left; margin-right:10px; border:1px solid #ddd; height:2rem; line-height:2rem; text-align:center}
 .buy_info li .prduct_Size a.on{ border:1px  solid #F33; color:#F33}
 .buy_info li span{ color:#999; text-decoration:line-through; margin-left:10px;}
-/******************切换样式属性*******************/
+/******************鍒囨崲鏍峰紡灞炴��*******************/
 .s-detail{ margin-top:10px; background:#FFF;}
 #leftTabBox{}
 #leftTabBox .hd{ height:2.5rem; position:relative;}
@@ -1060,9 +1059,9 @@ div.flicking_con li.on {background: #F60}
 #leftTabBox .bd ul table.p_detailed_content td{ border:1px solid #ddd;padding:0px 0.5rem;}
 #leftTabBox .bd ul table.p_detailed_content td.label{ width:60px;  text-align:right; background-color:#ededed;}
 #leftTabBox .bd ul table.p_detailed_content td.content{ line-height:1.5rem}
-/***********评论样式属性**********/
+/***********璇勮鏍峰紡灞炴��**********/
 .comment_style{}
-.comment_style .radius{ font-family:"新宋体"; margin-bottom:10px;}
+.comment_style .radius{ font-family:"鏂板畫浣�"; margin-bottom:10px;}
 .comment_style .radius .title{ height:2.2rem; background-color:#ededed; padding:0px 0.5rem; line-height:2.2rem; border-bottom:1px dashed #ddd; position:relative}
 .comment_style .radius .title a{ display:block; float:left; padding-left:40px;}
 .comment_style .radius .title .time{ float:right;}
@@ -1086,7 +1085,7 @@ div.flicking_con li.on {background: #F60}
 .hot_style li .por_hot{ margin:0.5rem;border:1px solid #ddd; padding:0.5rem; text-align:center}
 .hot_style li .por_hot h3{ height:2.5rem; line-height:1.2rem; overflow:hidden; font-weight:normal}
 .hot_style li .por_hot h4{ color:#F33; font-weight:normal; font-size:1rem; text-align:left}
-/**********购样式属性**********/
+/**********璐牱寮忓睘鎬�**********/
 .buy_style{ position:fixed; bottom:0px; height:3rem; line-height:3rem; border-top:1px solid #ddd; background-color:#FFF; z-index:11111; width:100%}
 .buy_style ul,
 #Order_Manage .hd ul{
@@ -1109,7 +1108,7 @@ div.flicking_con li.on {background: #F60}
 .buy_style ul .operating .btn{ color:#FFF; display:block; text-align:center; font-size:1rem}
 .buy_style ul .operating .buy_btn{ background-color:#F33; border-right:1px dashed #fff;}
 .buy_style ul .operating .Join_btn{ background-color:#F90}
-/****************************订单样式属性*****************************/
+/****************************璁㈠崟鏍峰紡灞炴��*****************************/
 .order_style{ background-color:#FFF}
 #Order_Manage{}
 #Order_Manage .hd{ height:2.2rem; line-height:2rem;}
@@ -1136,7 +1135,7 @@ div.flicking_con li.on {background: #F60}
 	line-height:1.5rem;
 	float:right;
 }
-/*******************订单详细页样式属性********************/
+/*******************璁㈠崟璇︾粏椤垫牱寮忓睘鎬�********************/
 .detailed_style,
 .user_comment,
 .Guestbook_style{ background-color:#FFF; padding:0.5rem;}
