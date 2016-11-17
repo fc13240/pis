@@ -27,10 +27,10 @@ import zhuanli.util.PrincipalUtils;
 
 @Controller
 @RequestMapping(path="/articleMobile")
-public class ArticleMobileController {
+public class MobileArticleController {
 	private ArticleMobileService articleMobileService;
 	@Autowired
-	public ArticleMobileController(ArticleMobileService articleMobileService) {
+	public MobileArticleController(ArticleMobileService articleMobileService) {
 		this.articleMobileService = articleMobileService;
 	}
 
