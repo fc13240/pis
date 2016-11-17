@@ -22,10 +22,10 @@ import zhuanli.util.PrincipalUtils;
 
 @Controller
 @RequestMapping(path="/mobileNews")
-public class NewsMobileController {
+public class MobileNewsController {
 	private NewsMobileService newsMobileService;
 	@Autowired
-	public NewsMobileController(NewsMobileService newsMobileService) {
+	public MobileNewsController(NewsMobileService newsMobileService) {
 		this.newsMobileService = newsMobileService;
 	}
 	

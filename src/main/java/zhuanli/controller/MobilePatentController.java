@@ -28,12 +28,12 @@ import zhuanli.util.WebUtils;
 
 @Controller
 @RequestMapping(path="/mobilePatent")
-public class PatentMobileController {
+public class MobilePatentController {
 	private PatentMobileService patentMobileService;
 	//private FriendService friendService;
 	
 	@Autowired
-	public PatentMobileController(PatentMobileService patentMobileService) {
+	public MobilePatentController(PatentMobileService patentMobileService) {
 	//public PatentMobileController(PatentMobileService patentMobileService, FriendService friendService) {
 		this.patentMobileService = patentMobileService;
 		//this.friendService = friendService;
