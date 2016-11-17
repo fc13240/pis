@@ -61,7 +61,7 @@
 										</h4>
 									</div><!-- /.widget-main -->
 									<div class="toolbar center">
-										<a href="<s:url value='/loginForm.html'/>"  >
+										<a href="<s:url value='/'/>"  >
 											<i class="ace-icon fa fa-arrow-left"></i>
 											返回登录
 										</a>
