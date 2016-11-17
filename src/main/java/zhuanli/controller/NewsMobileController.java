@@ -37,12 +37,14 @@ public class NewsMobileController {
 			page.setCurrentPage(1);
 		}
 		List<News> news=newsMobileService.getAllNews(page);
+		List<News> newShows=newsMobileService.newsShow();		
 		
 		int totalCount=newsMobileService.getAllNewsCount();
 		page.setTotalRecords(totalCount);
 		model.addAttribute("news", news);
 		model.addAttribute("page", page);
-		return "news_list";
+		model.addAttribute("newShows", newShows);
+		return "mobile_news_list";
 	}	
 	@RequestMapping(path="/newsPreview")
 	public String newsPreview(@RequestParam("newsId") int newsId,Model model) {
@@ -56,7 +58,7 @@ public class NewsMobileController {
 		model.addAttribute("comments", comments);
 		model.addAttribute("news", news);
 		model.addAttribute("newsRand", newsRand);
-		return "news_preview";
+		return "mobile_news_preview";
 	}	
 	
 	@RequestMapping(path="/praise", method=RequestMethod.GET)
