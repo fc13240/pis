@@ -43,13 +43,12 @@
 
 		<div class="w clearfix">	
 			<ul class="navigator">
-		      <li><a href="<s:url value='/'/>" title="龙图腾专利交易">首页</a></li>
-		      <li><a href="<s:url value='/business/trademark_list.html'/>" title="商标注册">商标注册</a></li>
-		      <li><a  id="JS_mll_head_menu_expr" href="<s:url value='/business/copyright_list.html'/>" title="版权登记">版权登记<img src="<s:url value='/images/hot2015.gif'/>" style="position:absolute;background:none;right:0px;top:-5px;" /></a></li>
-		      <li><a href="<s:url value='/business/patent_list.html?type=1'/>" title="专利申请">专利申请</a></li>
-		      <li><a  href="<s:url value='/business/business_registration.html'/>" title="工商财务">工商财务</a></li>
-		      <li><a target="_blank" href="http://g.lotut.com" title="专利管家">专利管家</a></li>
-			   	   
+      <li><a href="<s:url value='/'/>" title="龙图腾专利交易">首页</a></li>
+      <li><a href="<s:url value='/business/patent_article.html?shopType=1'/>" title="农业/食品/医疗">农业/食品/医疗</a></li>
+      <li><a  id="JS_mll_head_menu_expr" href="<s:url value='/business/patent_article.html?shopType=2'/>" title="化工/冶金/生物">化工/冶金/生物</a></li>
+      <li><a href="<s:url value='/business/patent_article.html?shopType=3'/>" title="专利申请">交通/包装/建筑</a></li>
+      <li><a  href="<s:url value='/business/patent_article.html?shopType=4'/>" title="工商财务">电力/环保/通讯</a></li>
+      <li><a target="_blank" href="http://g.lotut.com" title="专利管家">专利管家</a></li>  
 			</ul>
 		</div>
 	</div>
