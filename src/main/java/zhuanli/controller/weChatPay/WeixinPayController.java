@@ -62,7 +62,7 @@ public class WeixinPayController {
 					"appid=" + WxPayConfig.appid +
 					"&redirect_uri=" +
 					 backUri+
-					"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
+					"&response_type=code&scope=snsapi_userinfo&state=123&connect_redirect=1#wechat_redirect";
 			System.out.println("url:" + url);
 			response.sendRedirect(url);
 		} catch (IOException e) {
@@ -177,7 +177,7 @@ public class WeixinPayController {
 				System.out.println("prepay_id:" + prepay_id);
 				if(prepay_id.equals("")){
 					request.setAttribute("ErrorMsg", "统一支付接口获取预支付订单出错");
-					response.sendRedirect("error.jsp");
+					response.sendRedirect("error.html");
 				}
 			} catch (Exception e1) {
 				e1.printStackTrace();

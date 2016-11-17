@@ -2,17 +2,15 @@
 
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="spring" prefix="s" %>
 
 <!DOCTYPE html>
 <html>
 	<head>
+		<script type="text/javascript" src="<s:url value='/js/jquery-1.8.3.min.js'/>"></script>
 		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-	    <title>订单-支付</title>
-	</head>
-<body>
 		<script type="text/javascript">
-		
-		function onBridgeReady(){
+		function jsApiCall(){
 			   WeixinJSBridge.invoke(
 			       'getBrandWCPayRequest', {
 			           "appId":"${appid}",     //公众号名称，由商户传入     
@@ -38,22 +36,25 @@
 			   ); 
 			}
 		
-		if (typeof('WeixinJSBridge') == "undefined"){
-			   if( document.addEventListener ){
-			       document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-			   }else if (document.attachEvent){
-			       document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
-			       document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-			   }
-			}else{ 
-			   onBridgeReady();
-			}	  	
-		</script>	
-	<script type="text/javascript">
-		$(document).ready(function () {
-			onBridgeReady();
-	    });
-		
+		function callpay()
+		{
+			if (typeof WeixinJSBridge == "undefined"){
+			    if( document.addEventListener ){
+			        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+			    }else if (document.attachEvent){
+			        document.attachEvent('WeixinJSBridgeReady', jsApiCall); 
+			        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+			    }
+			}else{
+			    jsApiCall();
+			}
+		}  	
+		</script>			
+	    <title>订单-支付</title>
+	</head>
+<body>
+    <script type="text/javascript">
+    	$(function(){callpay();})
 	</script>
 </body>
 </html>

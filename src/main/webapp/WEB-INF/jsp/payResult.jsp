@@ -8,6 +8,6 @@
 <title>微信支付成功页面</title>
 </head>
 <body>
-   你已经支付成功，订单号为:${orderId }.
+   你已经支付成功，请关闭本窗口!.
 </body>
 </html>
