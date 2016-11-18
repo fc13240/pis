@@ -102,13 +102,8 @@
 					<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
 			    </div>
 			</c:if>
-			
-			
-			
-			
 			<div style="clear:both;"></div>
-		</div>
-		
+		</div>	
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
     	</c:forEach>			
    </div>
@@ -122,9 +117,7 @@
 				${articles.title}
 				</a>
 			</div>
-			<div style="clear:both;"></div>
-		</div>
-		
+		</div>	
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
     	</c:forEach>			
    </div>   
