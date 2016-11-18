@@ -31,7 +31,14 @@ public class MobileIndexController {
 	
 	@RequestMapping(path="/index",method=RequestMethod.GET)
 	public String newsList(Model model) {
-
+		List<News> imageNews = newsMobileService.mobileIndexImageNewsShow();
+		List<News> news = newsMobileService.mobileIndexNewsShow();
+		model.addAttribute("imageNews",imageNews);
+		model.addAttribute("news",news);
+		
+		
+		
+		
 		return "mobile_index";
 	}	
 	@RequestMapping(path="/newsPreview")
@@ -69,6 +76,4 @@ public class MobileIndexController {
 		newsMobileService.addNewsComment(content,newsId,userId);
 		return "redirect:/news/newsPreview.html?newsId="+newsId;
 	}
-	
-	
 }
