@@ -2,7 +2,7 @@
 <%@ taglib uri="spring" prefix="s" %>
 <%@ taglib uri="security" prefix="se" %>
 <%@ taglib uri="c" prefix="c" %>
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html>
 <head>
 <meta charset="utf-8">
@@ -13,13 +13,13 @@
 <meta itemprop="name" content="" />
 <meta http-equiv="cache-control" content="no-transform">
 
-<link href="<s:url value='/mobil_skin/css/ectouch.css'/>" rel="stylesheet" type="text/css" />
-<link href="<s:url value='/mobil_skin/css/style.css'/>" rel="stylesheet" type="text/css" />
-<link href="<s:url value='/mobil_skin/fonts/iconfont.css'/>" rel="stylesheet" type="text/css" />
-<script src="<s:url value='/mobil_skin/js/TouchSlide.1.1.source.js'/>" type="text/javascript"></script>
-<script src="<s:url value='/mobil_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
-<script src="<s:url value='/mobil_skin/js/common_js.js'/>" type="text/javascript"></script>
-<script src="<s:url value='/mobil_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
+<link href="<s:url value='/mobile_skin/css/ectouch.css'/>" rel="stylesheet" type="text/css" />
+<link href="<s:url value='/mobile_skin/css/style.css'/>" rel="stylesheet" type="text/css" />
+<link href="<s:url value='/mobile_skin/fonts/iconfont.css'/>" rel="stylesheet" type="text/css" />
+<script src="<s:url value='/mobile_skin/js/TouchSlide.1.1.source.js'/>" type="text/javascript"></script>
+<script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
+<script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
+<script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
 <title>龙图腾专利商标交易网</title>
 </head>
 <body class="">
@@ -28,7 +28,7 @@
  <div class="search-container on-blur" id="index_search_head">
    <div class="search-box ">
    <div class="search-tb">
-     <div class="header_logo flex"><img src="<s:url value='/mobil_skin/images/wap_logo.png'/>">
+     <div class="header_logo flex"><img src="<s:url value='/mobile_skin/images/wap_logo.png'/>">
      <span id="index_search_bar_cancel" class="search-icon-cancel"><i class="sprite-icon"></i></span>
      </div>
      <div class="flex">
@@ -46,9 +46,9 @@
             </div>
 			<div class="main_image bd">
 				<ul >					
-					<li><a class=""><img src="<s:url value='/mobil_skin/images/ad01.jpg'/>" /></a></li>
-					<li><a class=""><img src="<s:url value='/mobil_skin/images/ad02.jpg'/>" /></a></li>
-					<li><a class=""><img src="<s:url value='/mobil_skin/images/ad03.jpg'/>" /></a></li>
+					<li><a class=""><img src="<s:url value='/mobile_skin/images/ad01.jpg'/>" /></a></li>
+					<li><a class=""><img src="<s:url value='/mobile_skin/images/ad02.jpg'/>" /></a></li>
+					<li><a class=""><img src="<s:url value='/mobile_skin/images/ad03.jpg'/>" /></a></li>
 				</ul>
 				<a href="javascript:;" id="btn_prev" ></a>
 				<a href="javascript:;" id="btn_next" ></a>
@@ -69,57 +69,57 @@
 <div id="quick" class="clearfix">
  <nav class="quick-entry-nav clearfix">
 	<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="全部商品" page_name="index" href="product_list.html">
-    <img width="50" height="50" src="<s:url value='/mobil_skin/images/i_1.png'/>"><span>全部商标</span></a>
+    <img width="50" height="50" src="<s:url value='/mobile_skin/images/i_1.png'/>"><span>全部商标</span></a>
 	<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="品牌介绍" page_name="index" href="#">
-    <img width="50" height="50" src="<s:url value='/mobil_skin/images/i_2.png'/>"><span>专利列表</span></a>
+    <img width="50" height="50" src="<s:url value='/mobile_skin/images/i_2.png'/>"><span>专利列表</span></a>
 	<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="限时特卖" page_name="index" href="#">
-    <img width="50" height="50" src="<s:url value='/mobil_skin/images/i_3.png'/>"><span>知产新闻</span></a>
+    <img width="50" height="50" src="<s:url value='/mobile_skin/images/i_3.png'/>"><span>知产新闻</span></a>
 	<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="购物车" page_name="index" href="#">
-    <img width="50" height="50" src="<s:url value='/mobil_skin/images/i_4.png'/>"><span>专利培训</span></a>
+    <img width="50" height="50" src="<s:url value='/mobile_skin/images/i_4.png'/>"><span>专利培训</span></a>
   </nav>
  </div>
-  <div class="AD_link"><img src="<s:url value='/mobil_skin/images/AD_10.png'/>" /></div>
+  <div class="AD_link"><img src="<s:url value='/mobile_skin/images/AD_10.png'/>" /></div>
  <!--新品发布-->
   <div class=" floor Hot_product clearfix">
     <div class="title"> 知产新闻<a href="#">更多<i class="iconfont icon-right"></i></a></div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
@@ -132,41 +132,41 @@
     <div class="title"> 专利培训<a href="#">更多<i class="iconfont icon-right"></i></a></div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobil_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>		
    </div>
