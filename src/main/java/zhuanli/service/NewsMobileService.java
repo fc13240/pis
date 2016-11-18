@@ -13,7 +13,7 @@ public interface NewsMobileService {
 	
 	News getUserNewsById(int userId);
 	
-	List<News> getAllNews(Page page);
+	List<News> getAllNews();
 	
 	List<NewsType> getAllNewsTypes();
 	
@@ -30,5 +30,9 @@ public interface NewsMobileService {
 	List<NewsComment> getNewsCommentsById(int newsId);
 
 	List<News> getNewsByRand();
+	
+	List<News> mobileIndexNewsShow();
+	
+	List<News> mobileIndexImageNewsShow();
 	
 }
