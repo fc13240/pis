@@ -132,10 +132,10 @@
     <div class="title"> 专利培训<a href="<s:url value='/mobileArticle/articleList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
     	<c:forEach items="${mobileArticles}" begin="0" end="4" var="mobileArticle">
     		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank">${mobileArticle.title}</a></div>
-			<div style="float:right;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></a></div>
-			<div style="clear:both;"></div>
-		</div>
+				<div style="float:left;line-height:50px;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank">${mobileArticle.title}</a></div>
+				<div style="float:right;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></a></div>
+				<div style="clear:both;"></div>
+			</div>
 		<div style="border-top:1px solid #dcdcdc ">&nbsp;</div>
     	</c:forEach>
    </div>
