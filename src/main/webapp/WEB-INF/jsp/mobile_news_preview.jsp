@@ -22,11 +22,12 @@
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
 <title>${news.title}_龙图腾</title>
 </head>
-<body class="">
+<body>
 <div class="Layout_style">
  <header id="header">
   <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
-  <h1> ${news.title} </h1>
+  <h1> 知产资讯 </h1>
+  <div class="header_r"> <a class="iconfont icon-unie668" href="login.html"> </a> </div>
 </header>
 <!--产品列表样式-->
 
@@ -34,11 +35,11 @@
 <div class="p_list" style="background:#ffffff;padding:5px;">
 	<div class="mod1_cont" id="mod1_cont" runat="server">
 		
-	<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;text-align: center;">${news.title}</h2>
+	<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;text-align: center;">专利代理人必读：对涉及公知常识的审查意见应该这样答复</h2>
 	<br>
-	<div style="width:400px;float:left;">
+	<div style="float:left;">
 		<span class="font-article" style="">
-			发表时间：<fmt:formatDate  value="${news.createTime}" pattern="yyyy年MM月dd日" />
+		发表时间：<fmt:formatDate  value="${news.publishTime}" pattern="yyyy年MM月dd日" /> 
 		</span>
 		<span class="font-article" style="margin-left:50px;">			
 			<c:choose>
@@ -60,7 +61,7 @@
 	<div class="line01"></div>
 	<br>
 	<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
-		${news.content}
+${news.content}
 <div>
 <br>
 </div>					
@@ -84,10 +85,7 @@
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">
   
-    <div class="global-nav__operate-wrap">
-        <span class="global-nav__yhd-logo"></span>
-        <span class="global-nav__operate-cart-num" id="globalId">0</span>
-    </div>
+
    </div>
    <script type="text/javascript">
 Zepto(function($){
@@ -117,4 +115,5 @@ function get_search_box(){
 }
 </script>
 </div>
+</body>
 </html>

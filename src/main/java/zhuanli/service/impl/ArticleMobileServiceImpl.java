@@ -19,6 +19,24 @@ public class ArticleMobileServiceImpl implements ArticleMobileService{
 		this.articleMobileDao = articleMobileDao;
 	}
 
+	@Override
+	public List<Article> getArticleShow() {
+		
+		return articleMobileDao.getArticleShow();
+	}
+
+	@Override
+	public Article getUserArticleById(int userId) {
+		
+		return articleMobileDao.getUserArticleById(userId);
+	}
+
+	@Override
+	public List<Article> getAllArticle() {
+		
+		return articleMobileDao.getAllArticle();
+	}
+
 
 	
 }

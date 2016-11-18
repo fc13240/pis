@@ -16,23 +16,6 @@ public interface ArticleMobileMapper {
 	
 	Article getUserArticleById(int userId);
 	
-	List<Article> getAllArticle(Page page);
+	List<Article> getAllArticle();
 	
-	List<ArticleType> getAllArticleTypes();
-	
-	int getAllArticleCount();
-	
-	List<Article> articleShow();
-
-	Vote getUpVoteAndDownVote(int id);
-	
-	void praise(Article article);
-	
-	void slander(Article article);
-	
-	void addArticleComment(@Param("content")String content, @Param("articleId") int articleId,@Param("userId") int userId);
-
-	List<ArticleComment> getArticleCommentsById(int articleId);
-	
-	List<Article> getArticleByRand();
 }

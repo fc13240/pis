@@ -26,23 +26,23 @@
 <div class="Layout_style">
  <header id="header">
   <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
-  <h1> 新闻列表 </h1>
+  <h1> 专利培训 </h1>
 </header>
 
 <div class="p_list" style="background:#ffffff;">
 
 
-		<c:forEach items="${news}" var="news">
+		<c:forEach items="${mobileArticles}" var="article">
 			
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">
-				${news.title}
+				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" target="_blank" title="${article.title}">
+				${article.title}
 				</a>
 			</div>
 			<div style="float:right;">
-				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">
-				<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
+				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" target="_blank" title="${article.title}">
+				<img src="<s:url value='${article.smallImgUrl}'/>" width="50" height="50" />
 				</a>
 			</div>
 			<div style="clear:both;"></div>
