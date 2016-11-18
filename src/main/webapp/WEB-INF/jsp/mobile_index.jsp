@@ -129,7 +129,7 @@
    </div>
    <!--限时团购样式-->
     <div class=" floor Hot_product clearfix">
-    <div class="title"> 专利培训<a href="#">更多<i class="iconfont icon-right"></i></a></div>
+    <div class="title"> 专利培训<a href="<s:url value='/mobileArticle/articleList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
     	<c:forEach items="${mobileArticles}" begin="0" end="4" var="mobileArticle">
     		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank">${mobileArticle.title}</a></div>
