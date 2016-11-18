@@ -11,4 +11,9 @@ import zhuanli.domain.Vote;
 
 
 public interface ArticleMobileService {
+	List<Article> getArticleShow();
+	
+	Article getUserArticleById(int userId);
+	
+	List<Article> getAllArticle();
 }

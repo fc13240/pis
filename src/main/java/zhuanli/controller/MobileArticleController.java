@@ -1,9 +1,6 @@
 package zhuanli.controller;
 
-import java.io.PrintWriter;
 import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,27 +10,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import zhuanli.domain.Article;
-import zhuanli.domain.ArticleComment;
-import zhuanli.domain.ArticleType;
-import zhuanli.domain.Page;
-import zhuanli.domain.Patent;
-import zhuanli.domain.User;
 import zhuanli.service.ArticleMobileService;
-import zhuanli.service.ArticleService;
-import zhuanli.service.PatentService;
-import zhuanli.util.PrincipalUtils;
 
 
 
 @Controller
-@RequestMapping(path="/articleMobile")
+@RequestMapping(path="/mobileArticle")
 public class MobileArticleController {
 	private ArticleMobileService articleMobileService;
 	@Autowired
 	public MobileArticleController(ArticleMobileService articleMobileService) {
 		this.articleMobileService = articleMobileService;
 	}
-
+	
+	@RequestMapping(path="/articleList",method=RequestMethod.GET)
+	public String articleList(Model model) {
+		List<Article> articles=articleMobileService.getAllArticle();
+		model.addAttribute("mobileArticles", articles);
+		return "mobile_article_list";
+	}	
+	
+	@RequestMapping(path="/articlePreview")
+	public String articlePreview(@RequestParam("articleId") int articleId,Model model) {
+		Article article=articleMobileService.getUserArticleById(articleId);
+		model.addAttribute("article", article);
+		return "mobile_article_preview";
+	}		
 	
 	
 }

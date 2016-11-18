@@ -27,5 +27,21 @@ public class ArticleMobileMybatisDao extends SqlSessionDaoSupport implements Art
 		this.articleMobileMapper = articleMobileMapper;
 	}
 
+	@Override
+	public List<Article> getArticleShow() {
+		
+		return articleMobileMapper.getArticleShow();
+	}
+
+	@Override
+	public Article getUserArticleById(int userId) {
+		
+		return articleMobileMapper.getUserArticleById(userId);
+	}
+
+	@Override
+	public List<Article> getAllArticle() {
+		return articleMobileMapper.getAllArticle();
+	}
 
 }

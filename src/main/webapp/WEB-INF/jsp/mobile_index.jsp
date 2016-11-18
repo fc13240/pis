@@ -130,45 +130,14 @@
    <!--限时团购样式-->
     <div class=" floor Hot_product clearfix">
     <div class="title"> 专利培训<a href="#">更多<i class="iconfont icon-right"></i></a></div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
+    	<c:forEach items="${mobileArticles}" begin="0" end="4" var="mobileArticle">
+    		<div style="padding:5px;">
+			<div style="float:left;line-height:50px;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank">${mobileArticle.title}</a></div>
 			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
 			<div style="clear:both;"></div>
 		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>		
+		<div style="border-top:1px solid #dcdcdc ">&nbsp;</div>
+    	</c:forEach>
    </div>
   
 

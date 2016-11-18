@@ -12,5 +12,10 @@ import zhuanli.domain.Vote;
 
 
 public interface ArticleMobileDao {
+	List<Article> getArticleShow();
+	
+	Article getUserArticleById(int userId);
+	
+	List<Article> getAllArticle();
 	
 }

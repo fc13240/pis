@@ -20,13 +20,13 @@
 <script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
-<title>${news.title}_龙图腾</title>
+<title>${article.title}_龙图腾</title>
 </head>
 <body class="">
 <div class="Layout_style">
  <header id="header">
   <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
-  <h1> ${news.title} </h1>
+  <h1> ${article.title} </h1>
 </header>
 <!--产品列表样式-->
 
@@ -34,19 +34,19 @@
 <div class="p_list" style="background:#ffffff;padding:5px;">
 	<div class="mod1_cont" id="mod1_cont" runat="server">
 		
-	<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;text-align: center;">${news.title}</h2>
+	<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;text-align: center;">${article.title}</h2>
 	<br>
 	<div style="width:400px;float:left;">
 		<span class="font-article" style="">
-			发表时间：<fmt:formatDate  value="${news.createTime}" pattern="yyyy年MM月dd日" />
+			发表时间：<fmt:formatDate  value="${article.publishTime}" pattern="yyyy年MM月dd日" />
 		</span>
 		<span class="font-article" style="margin-left:50px;">			
 			<c:choose>
-				<c:when test="${not empty news.source}">
-					来源：${news.source}
+				<c:when test="${not empty article.source}">
+					来源：${article.source}
 				</c:when>
-				<c:when test="${not empty news.author}">
-					作者：${news.author}
+				<c:when test="${not empty article.author}">
+					作者：${article.author}
 				</c:when>
 				<c:otherwise>
 					来源：互联网
@@ -60,7 +60,7 @@
 	<div class="line01"></div>
 	<br>
 	<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
-		${news.content}
+		${article.content}
 <div>
 <br>
 </div>					

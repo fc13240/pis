@@ -56,4 +56,36 @@
 				<result property="username" column="username"/>
 			</association>
 	</resultMap>
+	
+	<select id="getArticleShow" resultMap="ArticleResultMap">
+		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM article n  WHERE DATE(publish_time) = CURDATE() 
+			AND check_status=1
+			ORDER BY publish_time DESC) AS n1 )
+			UNION ALL
+			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
+			FROM article  e  LEFT JOIN article_comments c  ON c.article_id = e.id   
+				AND e.check_status=1 
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC ) AS n2)  LIMIT 0,9
+	</select>
+	
+	
+	<select id="getAllArticle"   resultMap="ArticleResultMap">
+		(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM article n  
+						WHERE DATE(publish_time) = CURDATE()
+						  and check_status=1 
+			ORDER BY publish_time DESC) AS n1 )
+			UNION ALL
+			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
+			FROM article  e  LEFT JOIN article_comments c  ON c.article_id = e.id   
+				WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 
+			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2) limit 50 
+	</select>
+	
+	<select id="getUserArticleById"  parameterType="int" resultMap="ArticleResultMap">
+		SELECT n.id,n.keywords,n.author,n.title,n.source,n.content,n.abstract,n.create_time,n.publish_time,n.update_time,
+		nt.type_id ,nt.type_name,u.user_id,u.username,n.up_vote,n.down_vote
+		FROM article n LEFT JOIN article_type nt ON  n.article_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+		WHERE n.id=#{articleId}
+	</select>
+	
 	</mapper>
