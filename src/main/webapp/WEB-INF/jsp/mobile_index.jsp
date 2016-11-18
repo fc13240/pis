@@ -98,15 +98,16 @@
 			</div>
 			
 			<c:if test="${not empty news.smallImgUrl}">
-				<div style="float:right;">
-					<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
-			    </div>
+			<div style="float:right;">
+				<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
+		    </div>
 			</c:if>
 			<div style="clear:both;"></div>
 		</div>	
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
     	</c:forEach>			
    </div>
+   
    
   <div class=" floor Hot_product clearfix">
     <div class="title"> 专利培训<a href="<s:url value='/mobileArticle/articleList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
@@ -117,6 +118,7 @@
 				${articles.title}
 				</a>
 			</div>
+			<div style="clear:both;"></div>
 		</div>	
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
     	</c:forEach>			
