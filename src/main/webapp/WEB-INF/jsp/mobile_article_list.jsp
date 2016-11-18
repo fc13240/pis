@@ -26,7 +26,7 @@
 <div class="Layout_style">
  <header id="header">
   <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
-  <h1> 新闻列表 </h1>
+  <h1> 专利培训 </h1>
 </header>
 
 <div class="p_list" style="background:#ffffff;">

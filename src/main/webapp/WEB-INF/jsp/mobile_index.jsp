@@ -45,8 +45,13 @@
                     <ul></ul>
             </div>
 			<div class="main_image bd">
-				<ul >					
-					<li><a class=""><img src="<s:url value='/mobile_skin/images/ad01.jpg'/>" /></a></li>
+				<ul >			
+				
+       <c:forEach items="${imageNews}" var="imageNews" varStatus="status">     
+      <li><a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=${imageNews.id}"><img src="<s:url value='${imageNews.smallImgUrl}'/>" /></a></li>
+      </c:forEach>				
+						
+					
 					<li><a class=""><img src="<s:url value='/mobile_skin/images/ad02.jpg'/>" /></a></li>
 					<li><a class=""><img src="<s:url value='/mobile_skin/images/ad03.jpg'/>" /></a></li>
 				</ul>
@@ -66,6 +71,7 @@
 });
 </script>
 <!--栏目菜单-->
+<!-- 
 <div id="quick" class="clearfix">
  <nav class="quick-entry-nav clearfix">
 	<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="全部商品" page_name="index" href="product_list.html">
@@ -78,67 +84,45 @@
     <img width="50" height="50" src="<s:url value='/mobile_skin/images/i_4.png'/>"><span>专利培训</span></a>
   </nav>
  </div>
-  <div class="AD_link"><img src="<s:url value='/mobile_skin/images/AD_10.png'/>" /></div>
+ -->
+<!-- <div class="AD_link"><img src="<s:url value='/mobile_skin/images/AD_10.png'/>" /></div>-->
  <!--新品发布-->
   <div class=" floor Hot_product clearfix">
-    <div class="title"> 知产新闻<a href="#">更多<i class="iconfont icon-right"></i></a></div>
+    <div class="title"> 知产新闻<a href="<s:url value='/mobileNews/newsList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
+    	<c:forEach items="${news}" begin="0" end="4" var="news">		
 		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">百度搜狗再次开撕 互诉对方输入法专利侵权</div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
-			<div style="clear:both;"></div>
-		</div>
-		
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
-
-    </ul>
-   </div>
-   <!--限时团购样式-->
-    <div class=" floor Hot_product clearfix">
-    <div class="title"> 专利培训<a href="<s:url value='/mobileArticle/articleList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
-    	<c:forEach items="${mobileArticles}" begin="0" end="4" var="mobileArticle">
-    		<div style="padding:5px;">
-				<div style="float:left;line-height:50px;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank">${mobileArticle.title}</a></div>
-				<div style="float:right;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></a></div>
-				<div style="clear:both;"></div>
+			<div style="float:left;line-height:50px;">
+				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">
+				${news.title}
+				</a>
 			</div>
-		<div style="border-top:1px solid #dcdcdc ">&nbsp;</div>
-    	</c:forEach>
+			
+			<c:if test="${not empty news.smallImgUrl}">
+			<div style="float:right;">
+				<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
+		    </div>
+			</c:if>
+			<div style="clear:both;"></div>
+		</div>	
+		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
+    	</c:forEach>			
    </div>
+   
+   
+  <div class=" floor Hot_product clearfix">
+    <div class="title"> 专利培训<a href="<s:url value='/mobileArticle/articleList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
+    	<c:forEach items="${articles}" begin="0" end="4" var="articles">		
+		<div style="padding:5px;">
+			<div style="float:left;line-height:50px;">
+				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
+				${articles.title}
+				</a>
+			</div>
+			<div style="clear:both;"></div>
+		</div>	
+		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
+    	</c:forEach>			
+   </div>   
   
 
 
@@ -157,11 +141,12 @@
 </div>
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">
- 
+ <!-- 
     <div class="global-nav__operate-wrap">
         <span class="global-nav__yhd-logo"></span>
         <span class="global-nav__operate-cart-num" id="globalId">0</span>
     </div>
+     -->
    </div>
    <script src="js/zepto.min.js" type="text/javascript"></script>
    <script type="text/javascript">

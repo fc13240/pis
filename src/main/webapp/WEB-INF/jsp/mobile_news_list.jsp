@@ -40,11 +40,15 @@
 				${news.title}
 				</a>
 			</div>
-			<div style="float:right;">
-				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">
-				<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
-				</a>
-			</div>
+			<c:if test="${not empty news.smallImgUrl}">
+				<div style="float:right;">
+					<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">		
+					<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
+					</a>
+			    </div>
+			</c:if>			
+			
+
 			<div style="clear:both;"></div>
 		</div>
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
@@ -68,10 +72,7 @@
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">
   
-    <div class="global-nav__operate-wrap">
-        <span class="global-nav__yhd-logo"></span>
-        <span class="global-nav__operate-cart-num" id="globalId">0</span>
-    </div>
+
    </div>
    <script type="text/javascript">
 Zepto(function($){

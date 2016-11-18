@@ -25,7 +25,7 @@
 	.w30{ width:30%}
 	.w20{ width:20%}
 	.w10{ width:10%}
-	a{color:#8d8d8d;text-decoration:none}
+	a{color:#000000;text-decoration:none}
 	
 	.c-btn1 {font-family:"Microsoft YaHei"; border:none;display: inline-block;height: 2rem;line-height: 2rem;font-size:0.8rem;color: #fff;padding: 0 2rem; width:5rem; border-radius: 5px;background:#ec5151;;border-radius:0.25rem;}
 	.c-btn2 {font-family:"Microsoft YaHei";color:#fff;border:0;height:2.5rem; line-height:2.5rem; width:40%;-webkit-box-flex:1;display:block;-webkit-user-select:none; font-size:0.9rem;background:#e12222; text-align: center;border-radius:0.25rem;}
