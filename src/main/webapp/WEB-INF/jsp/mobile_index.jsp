@@ -133,7 +133,7 @@
     	<c:forEach items="${mobileArticles}" begin="0" end="4" var="mobileArticle">
     		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank">${mobileArticle.title}</a></div>
-			<div style="float:right;"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></div>
+			<div style="float:right;"><a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${mobileArticle.id}'/>" title="${mobileArticle.title}" target="_blank"><img src="<s:url value='/mobile_skin/images/i_1.png'/>" width="50" height="50" /></a></div>
 			<div style="clear:both;"></div>
 		</div>
 		<div style="border-top:1px solid #dcdcdc ">&nbsp;</div>
