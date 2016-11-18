@@ -31,8 +31,8 @@ public class NewsMobileMybatisDao extends SqlSessionDaoSupport implements NewsMo
 	}
 
 	@Override
-	public List<News> getAllNews(Page page){
-		return newsMobileMapper.getAllNews(page);
+	public List<News> getAllNews(){
+		return newsMobileMapper.getAllNews();
 	}
 
 	@Override
@@ -74,6 +74,16 @@ public class NewsMobileMybatisDao extends SqlSessionDaoSupport implements NewsMo
 	@Override
 	public List<News> getNewsByRand() {
 		return newsMobileMapper.getNewsByRand();
+	}
+
+	@Override
+	public List<News> mobileIndexNewsShow() {
+		return newsMobileMapper.mobileIndexNewsShow();
+	}
+
+	@Override
+	public List<News> mobileIndexImageNewsShow() {
+		return newsMobileMapper.mobileIndexImageNewsShow();
 	}
 
 

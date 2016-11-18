@@ -29,8 +29,8 @@ public class NewsMobileServiceImpl implements NewsMobileService {
 	}
 
 	@Override
-	public List<News> getAllNews(Page page) {
-		return newsMobileDao.getAllNews(page);
+	public List<News> getAllNews() {
+		return newsMobileDao.getAllNews();
 	}
 
 	@Override
@@ -74,6 +74,16 @@ public class NewsMobileServiceImpl implements NewsMobileService {
 	@Override
 	public List<News> getNewsByRand() {
 		return newsMobileDao.getNewsByRand();
+	}
+
+	@Override
+	public List<News> mobileIndexNewsShow() {
+		return newsMobileDao.mobileIndexNewsShow();
+	}
+
+	@Override
+	public List<News> mobileIndexImageNewsShow() {
+		return newsMobileDao.mobileIndexImageNewsShow();
 	}
 
 }
