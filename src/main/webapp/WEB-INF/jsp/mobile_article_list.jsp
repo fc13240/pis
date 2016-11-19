@@ -30,11 +30,11 @@
 
 <div class="p_list" style="background:#ffffff;">
 	
-    	<c:forEach items="${mobileArticles}" begin="0" end="4" var="articles">		
+    	<c:forEach items="${articles}" var="article">		
 		<div style="padding:5px;">
 			<div style="float:left;line-height:25px;">
-				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
-				${articles.title}
+				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" title="${article.title}" target="_blank">
+				${article.title}
 
 				</a>
 			</div>
