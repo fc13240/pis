@@ -27,7 +27,7 @@
  <header id="header">
   <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
   <h1> 专利培训 </h1>
-  <div class="header_r"> <a class="iconfont icon-unie668" href="login.html"> </a> </div>
+  
 </header>
 <!--产品列表样式-->
 
