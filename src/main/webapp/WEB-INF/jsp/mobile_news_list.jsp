@@ -25,29 +25,27 @@
 <body class="">
 <div class="Layout_style">
  <header id="header">
-  <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
   <h1> 新闻列表 </h1>
 </header>
 
-<div class="p_list" style="background:#ffffff;">
+<div class="p_list" style="background:#ffffff;margin-bottom:70px;">
 
 
 		<c:forEach items="${news}" var="news">
 			
 		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">
+		
+			<c:if test="${not empty news.smallImgUrl}">
+			<div style="float:left;">
+				<img style="overflow: hidden;" src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
+		    </div>
+			</c:if>		
+		
+			<div style="line-height:25px;overflow: hidden;padding:5px;">
+				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">
 				${news.title}
 				</a>
-			</div>
-			<c:if test="${not empty news.smallImgUrl}">
-				<div style="float:right;">
-					<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">		
-					<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
-					</a>
-			    </div>
-			</c:if>			
-			
+			</div>		
 
 			<div style="clear:both;"></div>
 		</div>
@@ -59,15 +57,7 @@
 	
 </div>
  <!--底部样式-->
-<div class="footer">
-
-  <div class="Copyright">
-    <a href="#" class="iconfont icon-home1"></a>
-   Copyright © 2010-2016  All Rights Reserved.
-龙图腾版权所有
-<a  href="./index.html" class="iconfont icon-top1"></a>
-  </div>
-</div>
+<%@ include file="mobile_menu.jsp"%>
 </div>
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">
