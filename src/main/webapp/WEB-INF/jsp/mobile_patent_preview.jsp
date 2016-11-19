@@ -46,14 +46,20 @@
       </tr>
       <tr>
         <td >专利号：${mobilePatent.appNo}</td>
+      </tr>
+      <tr>
         <td>第一申请人：<span>${mobilePatent.appPerson}</span>
       </tr>
       <tr>
       	<td width="50%">申请日期：<fmt:formatDate value="${mobilePatent.appDate}" pattern="yyyy-MM-dd"/></td>
+      </tr>
+      <tr>
         <td width="50%">案件状态：<span>${mobilePatent.patentStatus.statusDescription}</span>
       </tr>
       <tr>
         <td width="50%">客服：<span>林小三(QQ:2850130083)</span>
+      </tr>
+      <tr>
         <td width="50%">客服：<span>代丽曼(QQ:2853237834)</span>
       </tr>
       <tr style="border-bottom:1px dashed #ececec">
