@@ -15,11 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import zhuanli.domain.Article;
 import zhuanli.domain.News;
 import zhuanli.domain.NewsComment;
-import zhuanli.domain.Page;
-import zhuanli.domain.Patent;
 import zhuanli.service.ArticleMobileService;
 import zhuanli.service.NewsMobileService;
-import zhuanli.service.PatentService;
 import zhuanli.util.PrincipalUtils;
 
 @Controller
@@ -39,7 +36,6 @@ public class MobileIndexController {
 		List<News> news = newsMobileService.mobileIndexNewsShow();
 		model.addAttribute("imageNews",imageNews);
 		model.addAttribute("news",news);
-		
 		List<Article> articles=articleMobileService.getArticleShow();
 		model.addAttribute("articles", articles);
 		return "mobile_index";

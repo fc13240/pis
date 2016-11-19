@@ -35,7 +35,7 @@
 <div class="p_list" style="background:#ffffff;padding:5px;">
 	<div class="mod1_cont" id="mod1_cont" runat="server">
 		
-	<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;text-align: center;">专利代理人必读：对涉及公知常识的审查意见应该这样答复</h2>
+	<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;text-align: center;">${news.title}</h2>
 	<br>
 	<div style="float:left;">
 		<span class="font-article" style="">
@@ -60,7 +60,7 @@
 	<div style="clear:both;"></div>
 	<div class="line01"></div>
 	<br>
-	<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
+	<div class="content" style="margin-bottom:100px;line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
 ${news.content}
 <div>
 <br>
@@ -72,15 +72,7 @@ ${news.content}
 
 </div>
  <!--底部样式-->
-<div class="footer">
-
-  <div class="Copyright">
-    <a href="#" class="iconfont icon-home1"></a>
-   Copyright © 2010-2016  All Rights Reserved.
-龙图腾版权所有
-<a  href="./index.html" class="iconfont icon-top1"></a>
-  </div>
-</div>
+<%@ include file="mobile_menu.jsp"%>
 </div>
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">

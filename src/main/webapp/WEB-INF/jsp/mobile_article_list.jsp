@@ -25,48 +25,35 @@
 <body class="">
 <div class="Layout_style">
  <header id="header">
-  <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
   <h1> 专利培训 </h1>
 </header>
 
 <div class="p_list" style="background:#ffffff;">
-
-
-		<c:forEach items="${mobileArticles}" var="article">
-			
+	
+    	<c:forEach items="${mobileArticles}" begin="0" end="4" var="articles">		
 		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" target="_blank" title="${article.title}">
-				${article.title}
+			<div style="float:left;line-height:25px;">
+				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
+				${articles.title}
+
 				</a>
 			</div>
 			<div style="clear:both;"></div>
-		</div>
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
-			
-		</c:forEach>
+		</div>	
+		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
+    	</c:forEach>			
+		
 
 		
 	
 </div>
  <!--底部样式-->
-<div class="footer">
-
-  <div class="Copyright">
-    <a href="#" class="iconfont icon-home1"></a>
-   Copyright © 2010-2016  All Rights Reserved.
-龙图腾版权所有
-<a  href="./index.html" class="iconfont icon-top1"></a>
-  </div>
-</div>
+<%@ include file="mobile_menu.jsp"%>
 </div>
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">
   
-    <div class="global-nav__operate-wrap">
-        <span class="global-nav__yhd-logo"></span>
-        <span class="global-nav__operate-cart-num" id="globalId">0</span>
-    </div>
+
    </div>
    <script type="text/javascript">
 Zepto(function($){

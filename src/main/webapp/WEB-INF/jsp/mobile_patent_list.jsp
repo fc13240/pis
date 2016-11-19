@@ -20,31 +20,27 @@
 <script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
-<title>龙图腾_新闻列表</title>
+<title>龙图腾_专利列表</title>
 </head>
 <body class="">
 <div class="Layout_style">
  <header id="header">
-  <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
-  <h1> 新闻列表 </h1>
+  <h1>专利列表 </h1>
 </header>
 
-<div class="p_list" style="background:#ffffff;">
+<div class="p_list" style="background:#ffffff;margin-bottom:70px;">
 
 
-		<c:forEach items="${news}" var="news">
+		<c:forEach items="${patents}" var="patent">
 			
 		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">
-				${news.title}
+		
+			<div style="line-height:25px;overflow: hidden;padding:5px;">
+				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobilePatent/patentPreview.html'/>?patentId=<c:out value='${patent.patentId}'/>" target="_blank" title="${patent.name}">
+				${patent.name}
 				</a>
-			</div>
-			<div style="float:right;">
-				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">
-				<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
-				</a>
-			</div>
+			</div>		
+
 			<div style="clear:both;"></div>
 		</div>
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
@@ -55,23 +51,12 @@
 	
 </div>
  <!--底部样式-->
-<div class="footer">
-
-  <div class="Copyright">
-    <a href="#" class="iconfont icon-home1"></a>
-   Copyright © 2010-2016  All Rights Reserved.
-龙图腾版权所有
-<a  href="./index.html" class="iconfont icon-top1"></a>
-  </div>
-</div>
+<%@ include file="mobile_menu.jsp"%>
 </div>
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">
   
-    <div class="global-nav__operate-wrap">
-        <span class="global-nav__yhd-logo"></span>
-        <span class="global-nav__operate-cart-num" id="globalId">0</span>
-    </div>
+
    </div>
    <script type="text/javascript">
 Zepto(function($){

@@ -30,6 +30,7 @@
 			<typeAlias alias="PatentStatus" type="zhuanli.domain.PatentStatus"/>		
 			<typeAlias alias="PatentRemark" type="zhuanli.domain.PatentRemark"/>		
 			<typeAlias alias="PatentType" type="zhuanli.domain.PatentType"/>		
+			<typeAlias alias="MobilePatent" type="zhuanli.domain.MobilePatent"/>		
 		</typeAliases>
 		
 

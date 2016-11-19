@@ -20,47 +20,58 @@
 <script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
-<title>${news.title}_龙图腾</title>
+<title>${mobilePatent.name}_龙图腾</title>
 </head>
-<body class="">
+<body>
 <div class="Layout_style">
  <header id="header">
   <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
-  <h1> ${news.title} </h1>
+  <h1>专利详情 </h1>
+  
 </header>
 <!--产品列表样式-->
 
 <!--产品列表-->
 <div class="p_list" style="background:#ffffff;padding:5px;">
 	<div class="mod1_cont" id="mod1_cont" runat="server">
-		
-	<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;text-align: center;">${news.title}</h2>
-	<br>
-	<div style="width:400px;float:left;">
-		<span class="font-article" style="">
-			发表时间：<fmt:formatDate  value="${news.createTime}" pattern="yyyy年MM月dd日" />
-		</span>
-		<span class="font-article" style="margin-left:50px;">			
-			<c:choose>
-				<c:when test="${not empty news.source}">
-					来源：${news.source}
-				</c:when>
-				<c:when test="${not empty news.author}">
-					作者：${news.author}
-				</c:when>
-				<c:otherwise>
-					来源：互联网
-				</c:otherwise>
-			</c:choose>					
-		</span>
+	<div style="float:left;">
+		<table class="goods-tb pos-rlt" width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+       <td colspan="2">
+       <span style="line-height: 44px;font-size:20px;collor:#000000;">[${mobilePatent.patentType.typeDescription}]${mobilePatent.name}</span> 
+      <caption id="J_detail_title">
+            <div id="J_activity_title"></div>
+      </caption>
+      </td>
+      </tr>
+      <tr>
+        <td width="250px;">专利号：${mobilePatent.appNo}</td>
+        <td>第一申请人：<span>${mobilePatent.appPerson}</span>
+      </tr>
+      <tr>
+      	<td>申请日期：<fmt:formatDate value="${mobilePatent.appDate}" pattern="yyyy-MM-dd"/></td>
+        
+      </tr>
+      <tr>
+        <td>案件状态：<span>${mobilePatent.patentStatus.statusDescription}</span>
+      </tr>
+
+      <tr style="border-bottom:1px dashed #ececec">
+        <td height="15"></span>
+        <td></td>
+      </tr>
+      <tr style="border-top:1px dashed #ececec">
+        <td>价&nbsp;&nbsp;格：<span style="color:red;font-size:20px;">1200</span>
+      </tr>
+      </table>
 
 	</div>
 
 	<div style="clear:both;"></div>
 	<div class="line01"></div>
 	<br>
-	<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
-		${news.content}
+	<div class="content" style="margin-bottom:100px;line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
+${news.content}
 <div>
 <br>
 </div>					
@@ -71,23 +82,12 @@
 
 </div>
  <!--底部样式-->
-<div class="footer">
-
-  <div class="Copyright">
-    <a href="#" class="iconfont icon-home1"></a>
-   Copyright © 2010-2016  All Rights Reserved.
-龙图腾版权所有
-<a  href="./index.html" class="iconfont icon-top1"></a>
-  </div>
-</div>
+<%@ include file="mobile_menu.jsp"%>
 </div>
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">
   
-    <div class="global-nav__operate-wrap">
-        <span class="global-nav__yhd-logo"></span>
-        <span class="global-nav__operate-cart-num" id="globalId">0</span>
-    </div>
+
    </div>
    <script type="text/javascript">
 Zepto(function($){
@@ -117,4 +117,5 @@ function get_search_box(){
 }
 </script>
 </div>
+</body>
 </html>
