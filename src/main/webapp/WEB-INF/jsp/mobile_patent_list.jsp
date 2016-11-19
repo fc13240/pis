@@ -20,7 +20,7 @@
 <script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
-<title>龙图腾_新闻列表</title>
+<title>龙图腾_专利列表</title>
 </head>
 <body class="">
 <div class="Layout_style">
