@@ -7,6 +7,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="keywords" content="知识产权,专利交易,商标转让,龙图腾,中外知识产权网" />
 <meta name="description" content="龙图腾网（www.lotut.com）是全球领先的知识产权交易平台。为企业提供专业的商标转让、专利交易等服务。拥有国内知识产权资源，全面覆盖了商标、专利、版权等领域的交易平台，让知识产权在流通中创造财富，引领知识产权的创新。" />
@@ -24,19 +25,6 @@
 </head>
 <body class="">
 <div class="Layout_style">
-  <div class="header_home_wrapper" id="index_search_main">
- <div class="search-container on-blur" id="index_search_head">
-   <div class="search-box ">
-   <div class="search-tb">
-     <div class="header_logo flex"><img src="<s:url value='/mobile_skin/images/wap_logo.png'/>">
-     <span id="index_search_bar_cancel" class="search-icon-cancel"><i class="sprite-icon"></i></span>
-     </div>
-     <div class="flex">
-        </div>
-    </div>
-   </div>
- </div>
- </div>
  <!--幻灯片样式-->
  <div id="scwrapper" class="scroll-wrapper">
   <div class="floor new-slider-floor"> 
@@ -50,10 +38,6 @@
        <c:forEach items="${imageNews}" var="imageNews" varStatus="status">     
       <li><a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=${imageNews.id}"><img src="<s:url value='${imageNews.smallImgUrl}'/>" /></a></li>
       </c:forEach>				
-						
-					
-					<li><a class=""><img src="<s:url value='/mobile_skin/images/ad02.jpg'/>" /></a></li>
-					<li><a class=""><img src="<s:url value='/mobile_skin/images/ad03.jpg'/>" /></a></li>
 				</ul>
 				<a href="javascript:;" id="btn_prev" ></a>
 				<a href="javascript:;" id="btn_next" ></a>
@@ -71,20 +55,9 @@
 });
 </script>
 <!--栏目菜单-->
-<!-- 
-<div id="quick" class="clearfix">
- <nav class="quick-entry-nav clearfix">
-	<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="全部商品" page_name="index" href="product_list.html">
-    <img width="50" height="50" src="<s:url value='/mobile_skin/images/i_1.png'/>"><span>全部商标</span></a>
-	<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="品牌介绍" page_name="index" href="#">
-    <img width="50" height="50" src="<s:url value='/mobile_skin/images/i_2.png'/>"><span>专利列表</span></a>
-	<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="限时特卖" page_name="index" href="#">
-    <img width="50" height="50" src="<s:url value='/mobile_skin/images/i_3.png'/>"><span>知产新闻</span></a>
-	<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="购物车" page_name="index" href="#">
-    <img width="50" height="50" src="<s:url value='/mobile_skin/images/i_4.png'/>"><span>专利培训</span></a>
-  </nav>
- </div>
- -->
+ 
+
+
 <!-- <div class="AD_link"><img src="<s:url value='/mobile_skin/images/AD_10.png'/>" /></div>-->
  <!--新品发布-->
  <div class=" floor Hot_product clearfix">
@@ -106,17 +79,19 @@
     <div class="title"> 知产新闻<a href="<s:url value='/mobileNews/newsList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
     	<c:forEach items="${news}" begin="0" end="4" var="news">		
 		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">
+			<c:if test="${not empty news.smallImgUrl}">
+			<div style="float:left;">
+				<img style="overflow: hidden;" src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
+		    </div>
+			</c:if>		
+		
+			<div style="line-height:25px;overflow: hidden;padding:5px;">
+				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">
 				${news.title}
 				</a>
 			</div>
 			
-			<c:if test="${not empty news.smallImgUrl}">
-			<div style="float:right;">
-				<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
-		    </div>
-			</c:if>
+
 			<div style="clear:both;"></div>
 		</div>	
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
@@ -124,12 +99,12 @@
    </div>
    
    
-  <div class=" floor Hot_product clearfix">
+  <div class=" floor Hot_product clearfix" style="margin-bottom:80px;" >
     <div class="title"> 专利培训<a href="<s:url value='/mobileArticle/articleList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
     	<c:forEach items="${articles}" begin="0" end="4" var="articles">		
 		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
+			<div style="float:left;line-height:25px;">
+				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
 				${articles.title}
 				</a>
 			</div>
@@ -144,15 +119,8 @@
   </div> 
  </div>
  <!--底部样式-->
-<div class="footer">
+<%@ include file="mobile_menu.jsp"%>
 
-  <div class="Copyright">
-    <a href="#" class="iconfont icon-home1"></a>
-   Copyright © 2010-2016  All Rights Reserved.
-龙图腾版权所有
-<a  href="./index.html" class="iconfont icon-top1"></a>
-  </div>
-</div>
 </div>
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">

@@ -60,7 +60,7 @@
 	<div style="clear:both;"></div>
 	<div class="line01"></div>
 	<br>
-	<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
+	<div class="content" style="style="margin-bottom:100px;line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
 ${article.content}
 <div>
 <br>
@@ -72,15 +72,7 @@ ${article.content}
 
 </div>
  <!--底部样式-->
-<div class="footer">
-
-  <div class="Copyright">
-    <a href="#" class="iconfont icon-home1"></a>
-   Copyright © 2010-2016  All Rights Reserved.
-龙图腾版权所有
-<a  href="./index.html" class="iconfont icon-top1"></a>
-  </div>
-</div>
+<%@ include file="mobile_menu.jsp"%>
 </div>
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">
