@@ -20,7 +20,7 @@
 <script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
-<title>专利详情_龙图腾</title>
+<title>${mobilePatent.name}_龙图腾</title>
 </head>
 <body>
 <div class="Layout_style">
