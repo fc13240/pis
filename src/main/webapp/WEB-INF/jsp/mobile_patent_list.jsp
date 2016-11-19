@@ -32,17 +32,12 @@
 <div class="p_list" style="background:#ffffff;">
 
 
-		<c:forEach items="${news}" var="news">
+		<c:forEach items="${patents}" var="patent">
 			
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">
-				${news.title}
-				</a>
-			</div>
-			<div style="float:right;">
-				<a href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">
-				<img src="<s:url value='${news.smallImgUrl}'/>" width="50" height="50" />
+				<a href="<s:url value='/mobilePatent/patentPreview.html'/>?patentId=<c:out value='${patent.patentId}'/>" target="_blank" title="${patent.name}">
+				${patent.name}
 				</a>
 			</div>
 			<div style="clear:both;"></div>

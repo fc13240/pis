@@ -33,40 +33,40 @@
 <!--产品列表-->
 <div class="p_list" style="background:#ffffff;padding:5px;">
 	<div class="mod1_cont" id="mod1_cont" runat="server">
-		
-	<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 18px;text-indent: 28px;text-align: center;">${news.title}</h2>
-	<br>
-	<div style="width:400px;float:left;">
-		<span class="font-article" style="">
-			发表时间：<fmt:formatDate  value="${news.createTime}" pattern="yyyy年MM月dd日" />
-		</span>
-		<span class="font-article" style="margin-left:50px;">			
-			<c:choose>
-				<c:when test="${not empty news.source}">
-					来源：${news.source}
-				</c:when>
-				<c:when test="${not empty news.author}">
-					作者：${news.author}
-				</c:when>
-				<c:otherwise>
-					来源：互联网
-				</c:otherwise>
-			</c:choose>					
-		</span>
+		<table class="goods-tb pos-rlt" width="580" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+       <td colspan="2">
+       <span style="line-height: 44px;font-size:20px;collor:#000000;">[${mobilePatent.patentType.typeDescription}]${mobilePatent.name}</span> 
+      <caption id="J_detail_title">
+            <div id="J_activity_title"></div>
+      </caption>
+      </td>
+      </tr>
+      <tr>
+        <td width="250px;">专利号：${mobilePatent.appNo}</td>
+        <td>第一申请人：<span>${mobilePatent.appPerson}</span>
+      </tr>
+      <tr>
+      	<td>申请日期：<fmt:formatDate value="${mobilePatent.appDate}" pattern="yyyy-MM-dd"/></td>
+        
+      </tr>
+      <tr>
+        <td>案件状态：<span>${mobilePatent.patentStatus.statusDescription}</span>
+      </tr>
 
-	</div>
+      <tr style="border-bottom:1px dashed #ececec">
+        <td height="15"></span>
+        <td></td>
+      </tr>
+      <tr style="border-top:1px dashed #ececec">
+        <td>价&nbsp;&nbsp;格：<span style="color:red;font-size:20px;">1200</span>
+      </tr>
+      </table>
 
-	<div style="clear:both;"></div>
-	<div class="line01"></div>
-	<br>
-	<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
-		${news.content}
-<div>
-<br>
-</div>					
+	</div>					
 		<p></p>
-	</div>
-	<br>
+</div>
+<br>
 </div>
 
 </div>
