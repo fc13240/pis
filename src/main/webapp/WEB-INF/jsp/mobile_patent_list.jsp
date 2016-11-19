@@ -25,21 +25,22 @@
 <body class="">
 <div class="Layout_style">
  <header id="header">
-  <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
   <h1>专利列表 </h1>
 </header>
 
-<div class="p_list" style="background:#ffffff;">
+<div class="p_list" style="background:#ffffff;margin-bottom:70px;">
 
 
 		<c:forEach items="${patents}" var="patent">
 			
 		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobilePatent/patentPreview.html'/>?patentId=<c:out value='${patent.patentId}'/>" target="_blank" title="${patent.name}">
+		
+			<div style="line-height:25px;overflow: hidden;padding:5px;">
+				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobilePatent/patentPreview.html'/>?patentId=<c:out value='${patent.patentId}'/>" target="_blank" title="${patent.name}">
 				${patent.name}
 				</a>
-			</div>
+			</div>		
+
 			<div style="clear:both;"></div>
 		</div>
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
@@ -49,7 +50,7 @@
 		
 	
 </div>
-  <!--底部样式-->
+ <!--底部样式-->
 <%@ include file="mobile_menu.jsp"%>
 </div>
  <!--固定栏目样式-->

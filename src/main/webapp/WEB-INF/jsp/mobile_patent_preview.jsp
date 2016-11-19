@@ -20,20 +20,22 @@
 <script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
-<title>龙图腾_ 专利列表</title>
+<title>专利详情_龙图腾</title>
 </head>
-<body class="">
+<body>
 <div class="Layout_style">
  <header id="header">
   <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
   <h1>专利详情 </h1>
+  
 </header>
 <!--产品列表样式-->
 
 <!--产品列表-->
 <div class="p_list" style="background:#ffffff;padding:5px;">
 	<div class="mod1_cont" id="mod1_cont" runat="server">
-		<table class="goods-tb pos-rlt" width="580" border="0" cellspacing="0" cellpadding="0">
+	<div style="float:left;">
+		<table class="goods-tb pos-rlt" width="100%" border="0" cellspacing="0" cellpadding="0">
        <tr>
        <td colspan="2">
        <span style="line-height: 44px;font-size:20px;collor:#000000;">[${mobilePatent.patentType.typeDescription}]${mobilePatent.name}</span> 
@@ -63,14 +65,23 @@
       </tr>
       </table>
 
-	</div>					
-		<p></p>
-</div>
+	</div>
+
+	<div style="clear:both;"></div>
+	<div class="line01"></div>
+	<br>
+	<div class="content" style="margin-bottom:100px;line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
+${news.content}
+<div>
 <br>
+</div>					
+		<p></p>
+	</div>
+	<br>
 </div>
 
 </div>
-  <!--底部样式-->
+ <!--底部样式-->
 <%@ include file="mobile_menu.jsp"%>
 </div>
  <!--固定栏目样式-->
