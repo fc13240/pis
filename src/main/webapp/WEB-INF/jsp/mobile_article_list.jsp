@@ -40,11 +40,6 @@
 				${article.title}
 				</a>
 			</div>
-			<%-- <div style="float:right;">
-				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" target="_blank" title="${article.title}">
-				<img src="<s:url value='${article.smallImgUrl}'/>" width="50" height="50" />
-				</a>
-			</div> --%>
 			<div style="clear:both;"></div>
 		</div>
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>
