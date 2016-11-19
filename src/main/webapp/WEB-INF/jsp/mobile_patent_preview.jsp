@@ -25,7 +25,7 @@
 <body>
 <div class="Layout_style">
  <header id="header">
-  <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
+  <!-- <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div> -->
   <h1>专利详情 </h1>
   
 </header>
