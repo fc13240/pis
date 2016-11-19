@@ -88,7 +88,7 @@
 <!-- <div class="AD_link"><img src="<s:url value='/mobile_skin/images/AD_10.png'/>" /></div>-->
  <!--新品发布-->
  <div class=" floor Hot_product clearfix">
-    <div class="title"> 知产专利<a href="<s:url value='/mobilePatent/list.html'/>">更多<i class="iconfont icon-right"></i></a></div>
+    <%-- <div class="title"> 知产专利<a href="<s:url value='/mobilePatent/list.html'/>">更多<i class="iconfont icon-right"></i></a></div>
     	<c:forEach items="${patents}" begin="0" end="4" var="patent">		
 		<div style="padding:5px;">
 			<div style="float:left;line-height:50px;">
@@ -100,7 +100,7 @@
 		</div>	
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
     	</c:forEach>			
-   </div>
+   </div> --%>
  
   <div class=" floor Hot_product clearfix">
     <div class="title"> 知产新闻<a href="<s:url value='/mobileNews/newsList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
