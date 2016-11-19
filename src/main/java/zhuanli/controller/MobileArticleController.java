@@ -26,7 +26,7 @@ public class MobileArticleController {
 	@RequestMapping(path="/articleList",method=RequestMethod.GET)
 	public String articleList(Model model) {
 		List<Article> articles=articleMobileService.getAllArticle();
-		model.addAttribute("mobileArticles", articles);
+		model.addAttribute("articles", articles);
 		return "mobile_article_list";
 	}	
 	
