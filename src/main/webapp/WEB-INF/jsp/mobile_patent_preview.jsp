@@ -34,7 +34,7 @@
 <!--产品列表-->
 <div class="p_list" style="background:#ffffff;padding:5px;">
 	<div class="mod1_cont" id="mod1_cont" runat="server">
-	<div style="float:left;">
+	<div>
 		<table class="goods-tb pos-rlt" width="100%" border="0" cellspacing="0" cellpadding="0">
        <tr>
        <td colspan="2">
@@ -45,17 +45,23 @@
       </td>
       </tr>
       <tr>
-        <td width="250px;">专利号：${mobilePatent.appNo}</td>
+        <td >专利号：${mobilePatent.appNo}</td>
+      </tr>
+      <tr>
         <td>第一申请人：<span>${mobilePatent.appPerson}</span>
       </tr>
       <tr>
-      	<td>申请日期：<fmt:formatDate value="${mobilePatent.appDate}" pattern="yyyy-MM-dd"/></td>
-        
+      	<td width="50%">申请日期：<fmt:formatDate value="${mobilePatent.appDate}" pattern="yyyy-MM-dd"/></td>
       </tr>
       <tr>
-        <td>案件状态：<span>${mobilePatent.patentStatus.statusDescription}</span>
+        <td width="50%">案件状态：<span>${mobilePatent.patentStatus.statusDescription}</span>
       </tr>
-
+      <tr>
+        <td width="50%">客服：<span>林小三(QQ:2850130083)</span>
+      </tr>
+      <tr>
+        <td width="50%">客服：<span>代丽曼(QQ:2853237834)</span>
+      </tr>
       <tr style="border-bottom:1px dashed #ececec">
         <td height="15"></span>
         <td></td>
