@@ -33,7 +33,7 @@ public class MobilePatentController {
 		return "mobile_patent_list";
 	}
 	*/
-	@RequestMapping(path="/list", method=RequestMethod.GET)
+	@RequestMapping(path="/index", method=RequestMethod.GET)
 	public String getUserPatents(Page page,Model model) {
 		page.setPageSize(50);
 		if (page.getCurrentPage() <= 0) {

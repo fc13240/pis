@@ -20,13 +20,13 @@
 <script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
-<title>${news.title}_龙图腾</title>
+<title>龙图腾_ 专利列表</title>
 </head>
 <body class="">
 <div class="Layout_style">
  <header id="header">
   <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
-  <h1> ${news.title} </h1>
+  <h1>专利详情 </h1>
 </header>
 <!--产品列表样式-->
 
