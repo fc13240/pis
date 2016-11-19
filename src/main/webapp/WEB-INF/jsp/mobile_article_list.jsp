@@ -32,11 +32,22 @@
 	
     	<c:forEach items="${mobileArticles}" begin="0" end="4" var="articles">		
 		<div style="padding:5px;">
+<<<<<<< HEAD
 			<div style="float:left;line-height:25px;">
 				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
 				${articles.title}
+=======
+			<div style="float:left;line-height:50px;">
+				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" target="_blank" title="${article.title}">
+				${article.title}
 				</a>
 			</div>
+			<%-- <div style="float:right;">
+				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" target="_blank" title="${article.title}">
+				<img src="<s:url value='${article.smallImgUrl}'/>" width="50" height="50" />
+>>>>>>> c708ba15a24cef024593f57b229d8d8a6d1ecb86
+				</a>
+			</div> --%>
 			<div style="clear:both;"></div>
 		</div>	
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
