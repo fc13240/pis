@@ -26,24 +26,23 @@
 </head>
 <body class="">
 <div class="Layout_style">
- <header id="header">
-  <h1>业务付款 </h1>
-</header>
+	<header id="header">
+	 <h1>业务付款 </h1>
+	</header>
+	<div style="height:150px;"></div>
 
-<div class="p_list" style="background:#ffffff;margin-bottom:70px;">
-
-<div data-role="page">
-  <div data-role="content" style="padding-top: 75px;">
-    <form method="post">
-      <div data-role="fieldcontain">
-        <label for="paymoney">支付金额：</label>
-        <input type="text" name="paymoney" id="paymoney" placeholder="请输入支付金额..">       
-       <!--  <p id="p1">你输入的金额为：</p> -->
-        <a data-role="button" href="javascript:doWeixinPay()" style="background-image: linear-gradient(#de1456, #de1456);color:#ffffff;border: 1px solid #de1456;font-weight:normal;" data-theme="e">提交</a>
-      </div>
-    </form>
-  </div>
-</div>
+	<div data-role="page" style="margin-top:50px;">
+	  <div data-role="content" style="">
+	    <form method="post">
+	      <div data-role="fieldcontain">
+	        <label for="paymoney">支付金额：</label>
+	        <input type="number" name="paymoney" id="paymoney"   placeholder="请输入支付金额.." required>       
+	       <!--  <p id="p1">你输入的金额为：</p> -->
+	        <a data-role="button" href="javascript:doWeixinPay()" style="background-image: linear-gradient(#de1456, #de1456);color:#ffffff;border: 1px solid #de1456;font-weight:normal;" data-theme="e">提交</a>
+	      </div>
+	    </form>
+	  </div>
+	</div>
 
      <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.js"></script>
      <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.mobile-1.3.0.min.js"></script>
@@ -61,42 +60,9 @@
 	    }
 	 </script>		
 	
-</div>
- <!--底部样式-->
-<%@ include file="mobile_menu.jsp"%>
-</div>
- <!--固定栏目样式-->
-<div class="global-nav global-nav--current">
-  
 
-   </div>
-   <script type="text/javascript">
-Zepto(function($){
-   var $nav = $('.global-nav'), $btnLogo = $('.global-nav__operate-wrap');
-   //点击箭头，显示隐藏导航
-   $btnLogo.on('click',function(){
-     if($btnLogo.parent().hasClass('global-nav--current')){
-       navHide();
-     }else{
-       navShow();
-     }
-   });
-   var navShow = function(){
-     $nav.addClass('global-nav--current');
-   }
-   var navHide = function(){
-     $nav.removeClass('global-nav--current');
-   }
-   
-})
-function get_search_box(){
-	try{
-		document.getElementById('get_search_box').click();
-	}catch(err){
-		document.getElementById('keywordfoot').focus();
- 	}
-}
-</script>
+ <!--底部样式-->
 </div>
+
 </body>
 </html>
