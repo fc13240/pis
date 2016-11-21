@@ -20,7 +20,7 @@
 <script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
-<title>龙图腾_新闻列表</title>
+<title>龙图腾_专利培训</title>
 </head>
 <body class="">
 <div class="Layout_style">
@@ -30,24 +30,13 @@
 
 <div class="p_list" style="background:#ffffff;">
 	
-    	<c:forEach items="${mobileArticles}" begin="0" end="4" var="articles">		
+    	<c:forEach items="${articles}" var="article">		
 		<div style="padding:5px;">
-<<<<<<< HEAD
-			<div style="float:left;line-height:25px;">
-				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
-				${articles.title}
-=======
-			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" target="_blank" title="${article.title}">
+			<div style="float:left;overflow: hidden;line-height:25px;">
+				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" title="${article.title}" target="_blank">
 				${article.title}
 				</a>
 			</div>
-			<%-- <div style="float:right;">
-				<a href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" target="_blank" title="${article.title}">
-				<img src="<s:url value='${article.smallImgUrl}'/>" width="50" height="50" />
->>>>>>> c708ba15a24cef024593f57b229d8d8a6d1ecb86
-				</a>
-			</div> --%>
 			<div style="clear:both;"></div>
 		</div>	
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
