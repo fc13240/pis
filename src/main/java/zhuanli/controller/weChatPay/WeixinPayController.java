@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONObject;
 import zhuanli.controller.weChatPayUtil.OrderUtils;
+import zhuanli.controller.weChatPayUtil.SystemConfig;
 import zhuanli.controller.weChatPayUtil.TxtUtil;
 import zhuanli.controller.weChatPayUtil.config.WxPayConfig;
 import zhuanli.controller.weChatPayUtil.util.CommonUtil;
@@ -316,4 +317,9 @@ public class WeixinPayController {
 		return "payResult";
 	}
 
+	
+	@RequestMapping("/error")
+	public String xfPay(Model model){
+		return "error";
+	}
 }
