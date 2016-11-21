@@ -314,12 +314,12 @@ public class WeixinPayController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "payResult";
+		return "mobile_payResult";
 	}
 
 	
 	@RequestMapping("/error")
 	public String xfPay(Model model){
-		return "error";
+		return "mobile_error";
 	}
 }
