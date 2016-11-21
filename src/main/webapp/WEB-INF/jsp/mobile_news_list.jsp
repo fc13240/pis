@@ -65,31 +65,7 @@
 
    </div>
    <script type="text/javascript">
-Zepto(function($){
-   var $nav = $('.global-nav'), $btnLogo = $('.global-nav__operate-wrap');
-   //点击箭头，显示隐藏导航
-   $btnLogo.on('click',function(){
-     if($btnLogo.parent().hasClass('global-nav--current')){
-       navHide();
-     }else{
-       navShow();
-     }
-   });
-   var navShow = function(){
-     $nav.addClass('global-nav--current');
-   }
-   var navHide = function(){
-     $nav.removeClass('global-nav--current');
-   }
-   
-})
-function get_search_box(){
-	try{
-		document.getElementById('get_search_box').click();
-	}catch(err){
-		document.getElementById('keywordfoot').focus();
- 	}
-}
+
 </script>
 </div>
 </body>

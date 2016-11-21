@@ -2,15 +2,15 @@
 <div class="footer_home_wrapper" style="z-index:999">
 	<div id="quick" class="clearfix">
 	 <nav class="quick-entry-nav clearfix">
-<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="主页" page_name="index" href="http://192.168.1.103:8080/pts/mobile/index.html">
+		<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="主页" page_name="index" href="<s:url value='/mobile/index.html?from=wechat'/>">
 	    <img width="40" height="40" src="<s:url value='/mobile_skin/images/i_1-1.png'/>"><span>主页</span></a>	 
-		<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="专利列表" page_name="index" href="<s:url value='/mobilePatent/index.html'/>">
+		<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="专利列表" page_name="index" href="<s:url value='/mobilePatent/index.html?from=wechat'/>">
 	    <img width="40" height="40" src="<s:url value='/mobile_skin/images/i_1.png'/>"><span>专利列表</span></a>
 		<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="知产新闻" page_name="index" href="<s:url value='/mobileNews/newsList.html'/>">
 	    <img width="40" height="40" src="<s:url value='/mobile_skin/images/i_2.png'/>"><span>知产新闻</span></a>
 		<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="专利培训" page_name="index" href="<s:url value='/mobileArticle/articleList.html'/>">
 	    <img width="40" height="40" src="<s:url value='/mobile_skin/images/i_3.png'/>"><span>专利培训</span></a>
-		<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="商标列表" page_name="index" href="http://r.lotut.com/mobile/">
+		<a class="quick-entry-link fz12 J_ping" report-eventid="MHome_Icons" report-eventparam="商标列表" page_name="index" href="http://r.lotut.com/mobile?from=wechat">
 	    <img width="40" height="40" src="<s:url value='/mobile_skin/images/i_4.png'/>"><span>商标列表</span>
 	    </a>
 	  </nav>
