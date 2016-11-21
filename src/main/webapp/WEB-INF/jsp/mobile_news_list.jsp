@@ -28,7 +28,7 @@
   <h1> 新闻列表 </h1>
 </header>
 
-<div class="p_list" style="background:#ffffff;margin-bottom:70px;">
+<div class="p_list" style="background:#ffffff;margin-bottom:150px;">
 
 
 		<c:forEach items="${news}" var="news">
@@ -53,7 +53,7 @@
 			
 		</c:forEach>
 
-		
+		<div style="height:100px;"></div>
 	
 </div>
  <!--底部样式-->

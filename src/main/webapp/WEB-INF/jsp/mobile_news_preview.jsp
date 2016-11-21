@@ -25,7 +25,7 @@
 <body>
 <div class="Layout_style">
  <header id="header">
-  <div class="header_l header_return"><a href="#" class="iconfont icon-back"></a></div>
+  <div class="header_l header_return"></div>
   <h1> 知产资讯 </h1>
   
 </header>
@@ -63,6 +63,7 @@
 	<div class="content" style="margin-bottom:200px;line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
 ${news.content}
 <div>
+<div style="height:100px;"></div>
 <br>
 </div>					
 		<p></p>

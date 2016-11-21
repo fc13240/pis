@@ -28,7 +28,7 @@
   <h1>专利列表 </h1>
 </header>
 
-<div class="p_list" style="background:#ffffff;margin-bottom:70px;">
+<div class="p_list" style="background:#ffffff;">
 
 
 		<c:forEach items="${patents}" var="patent">
@@ -50,6 +50,7 @@
 		
 	
 </div>
+<div style="height:100px;"></div>
  <!--底部样式-->
 <%@ include file="mobile_menu.jsp"%>
 </div>

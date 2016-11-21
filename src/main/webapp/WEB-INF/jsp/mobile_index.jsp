@@ -131,7 +131,9 @@
     </div>
      -->
    </div>
-   <script src="js/zepto.min.js" type="text/javascript"></script>
+   
+   
+   
    <script type="text/javascript">
    Zepto(function($){
    var $nav = $('.global-nav'), $btnLogo = $('.global-nav__operate-wrap');

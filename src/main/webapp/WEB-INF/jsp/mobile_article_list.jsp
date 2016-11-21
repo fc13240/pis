@@ -42,10 +42,11 @@
 		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
     	</c:forEach>			
 		
-
+		
 		
 	
 </div>
+<div style="height:100px;"></div>
  <!--底部样式-->
 <%@ include file="mobile_menu.jsp"%>
 </div>
