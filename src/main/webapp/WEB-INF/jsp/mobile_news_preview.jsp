@@ -60,7 +60,7 @@
 	<div style="clear:both;"></div>
 	<div class="line01"></div>
 	<br>
-	<div class="content" style="margin-bottom:100px;line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
+	<div class="content" style="margin-bottom:200px;line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
 ${news.content}
 <div>
 <br>
