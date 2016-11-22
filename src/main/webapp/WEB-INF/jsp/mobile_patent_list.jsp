@@ -36,7 +36,7 @@
 		<div style="padding:5px;">
 		
 			<div style="line-height:25px;overflow: hidden;padding:5px;">
-				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobilePatent/patentPreview.html'/>?patentId=<c:out value='${patent.patentId}'/>" target="_blank" title="${patent.name}">
+				<a style="display:block;font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobilePatent/patentPreview.html'/>?patentId=<c:out value='${patent.patentId}'/>" target="_blank" title="${patent.name}">
 				${patent.name}
 				</a>
 			</div>		

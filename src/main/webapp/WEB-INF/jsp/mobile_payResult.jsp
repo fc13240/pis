@@ -28,7 +28,7 @@
   <h1>微信支付成功页面 </h1>
 </header>
 
-<div class="p_list" style="background:#ffffff;margin-bottom:70px;">
+<div class="p_list" style="background:#ffffff;margin-bottom:70px;font-size: 16px;font-weight: 500;">
 
 你已经支付成功，请关闭本窗口!
 		

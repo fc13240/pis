@@ -28,13 +28,16 @@
 	  <h1>微信支付失败页面 </h1>
 	</header>
 	
-	<div class="p_list" style="background:#ffffff;margin-bottom:70px;">
-	
-	
-		服务器繁忙，请重试！<br /><br />注意：转账最小金额为0.1元！	
-		
+	<div class="p_list" style="background:#ffffff;margin-bottom:70px;font-size: 16px;font-weight: 500;">
+		服务器繁忙，请重试！
+		<br />
+		注意：转账最小金额为0.1元！
+		<br/>
+		<div class="copyrights" style="font-size: 24px;font-weight: 500;margin-left: 35%; margin-top:60px;"> 
+			<a href="http://www.lotut.com/wx/lotutPay.html" >点击返回</a>
+		</div>
 	</div>
-	<div class="copyrights">点击 <a href="http://www.lotut.com/wx/lotutPay.html" >返回</a></div>
+	
 </div>
  <!--固定栏目样式-->
 <div class="global-nav global-nav--current">

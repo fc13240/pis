@@ -86,7 +86,7 @@
 			</c:if>		
 		
 			<div style="line-height:25px;overflow: hidden;padding:5px;">
-				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">
+				<a style="display:block;font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobileNews/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" title="${news.title}" target="_blank">
 				${news.title}
 				</a>
 			</div>
@@ -104,7 +104,7 @@
     	<c:forEach items="${articles}" begin="0" end="4" var="articles">		
 		<div style="padding:5px;">
 			<div style="float:left;line-height:25px;">
-				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
+				<a style="display:block;font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
 				${articles.title}
 				</a>
 			</div>

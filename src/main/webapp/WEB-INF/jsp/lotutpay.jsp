@@ -18,7 +18,6 @@
 <link href="<s:url value='/mobile_skin/fonts/iconfont.css'/>" rel="stylesheet" type="text/css" />
 <script src="<s:url value='/mobile_skin/js/TouchSlide.1.1.source.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery-1.8.2.min.js'/>" type="text/javascript"></script>
-<script src="<s:url value='/mobile_skin/js/common_js.js'/>" type="text/javascript"></script>
 <script src="<s:url value='/mobile_skin/js/jquery.reveal.js'/>" type="text/javascript"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/jquery.mobile-1.3.0.min.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/jquery.mobile-new.css" />
@@ -36,7 +35,7 @@
 	    <form method="post">
 	      <div data-role="fieldcontain">
 	        <label for="paymoney">支付金额：</label>
-	        <input type="number" name="paymoney" id="paymoney"   placeholder="请输入支付金额.." required>       
+	        <input type="number" name="paymoney" id="paymoney" autofocus placeholder="请输入支付金额.." required>       
 	       <!--  <p id="p1">你输入的金额为：</p> -->
 	        <a data-role="button" href="javascript:doWeixinPay()" style="background-image: linear-gradient(#de1456, #de1456);color:#ffffff;border: 1px solid #de1456;font-weight:normal;" data-theme="e">提交</a>
 	      </div>
@@ -58,6 +57,8 @@
 	    		window.location.href="${pageContext.request.contextPath}/wx/userAuth.html?totalFee="+pay;
 	    	}
 	    }
+	    
+	    
 	 </script>		
 	
 
