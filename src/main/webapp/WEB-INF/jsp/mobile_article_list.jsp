@@ -33,7 +33,7 @@
     	<c:forEach items="${articles}" var="article">		
 		<div style="padding:5px;">
 			<div style="float:left;overflow: hidden;line-height:25px;">
-				<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" title="${article.title}" target="_blank">
+				<a style="display:block;font-size: 15px;color: #000;font-family: 'Microsoft YaHei';overflow: hidden;text-overflow: ellipsis;" href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${article.id}'/>" title="${article.title}" target="_blank">
 				${article.title}
 				</a>
 			</div>
