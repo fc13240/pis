@@ -76,7 +76,7 @@ public class WeixinPayController {
 	@RequestMapping("/toPay")
 	public String toPay(HttpServletRequest request, HttpServletResponse response, Model model){
 		try {
-			String attach="这是来测试透传信息的";
+			String attach="";
 			String orderId = request.getParameter("orderId");
 			System.out.println("in toPay,orderId:" + orderId);
 			
@@ -110,7 +110,7 @@ public class WeixinPayController {
 			//String nonce_str = "1add1a30ac87aa2db72f57a2375d8fec";
 			String nonce_str = UUID.randomUUID().toString().replaceAll("-", "");
 			//商品描述
-			String body = orderId;
+			String body = orderId+"-"+attach;
 			//商户订单号
 			String out_trade_no = orderId;
 			//订单生成的机器 IP
@@ -144,6 +144,7 @@ public class WeixinPayController {
 			SortedMap<String, String> packageParams = new TreeMap<String, String>();
 			packageParams.put("appid", WxPayConfig.appid);
 			packageParams.put("mch_id", WxPayConfig.partner);
+			packageParams.put("attach", attach);
 			packageParams.put("nonce_str", nonce_str);
 			packageParams.put("body", body);
 			packageParams.put("out_trade_no", out_trade_no);
@@ -161,6 +162,7 @@ public class WeixinPayController {
 			String xml="<xml>"+
 					"<appid>"+WxPayConfig.appid+"</appid>"+
 					"<mch_id>"+WxPayConfig.partner+"</mch_id>"+
+					"<attach>"+attach+"</attach>"+
 					"<nonce_str>"+nonce_str+"</nonce_str>"+
 					"<sign>"+sign+"</sign>"+
 					"<body><![CDATA["+body+"]]></body>"+
