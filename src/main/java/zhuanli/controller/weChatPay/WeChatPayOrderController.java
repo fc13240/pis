@@ -34,9 +34,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-@RequestMapping("/wx")
+@RequestMapping("/wxorder")
 @SuppressWarnings("rawtypes")
-public class WeixinPayController {
+public class WeChatPayOrderController {
 	
 	private static String baseUrl = "http://www.lotut.com";
 	
@@ -51,12 +51,13 @@ public class WeixinPayController {
 		try {
 			String orderId = OrderUtils.genOrderNo();
 			String totalFee = request.getParameter("totalFee");
-			System.out.println("测试附加数据");
+			String brandId = request.getParameter("brandId");
+			String brandName = request.getParameter("brandName");
 			System.out.println("in userAuth,orderId:" + orderId);
 			
 			//授权后要跳转的链接
 			String backUri = baseUrl + "/wx/toPay.html";
-			backUri = backUri + "?orderId=" + orderId+"&totalFee="+totalFee;
+			backUri = backUri + "?orderId=" + orderId+"&totalFee="+totalFee+"&brandId="+brandId+"&brandName="+brandName;
 			//URLEncoder.encode 后可以在backUri 的url里面获取传递的所有参数
 			backUri = URLEncoder.encode(backUri);
 			//scope 参数视各自需求而定，这里用scope=snsapi_base 不弹出授权页面直接授权目的只获取统一支付接口的openid
@@ -78,6 +79,8 @@ public class WeixinPayController {
 		try {
 			String attach="这是来测试透传信息的";
 			String orderId = request.getParameter("orderId");
+			String brandId = request.getParameter("brandId");
+			String brandName = request.getParameter("brandName");
 			System.out.println("in toPay,orderId:" + orderId);
 			
 			String totalFeeStr = request.getParameter("totalFee");
@@ -95,15 +98,29 @@ public class WeixinPayController {
 			
 			//获取统一下单需要的openid
 			String openId ="";
+			String accessToken="";
+			String nickname="";
 			String URL = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="
 					+ WxPayConfig.appid + "&secret=" + WxPayConfig.appsecret + "&code=" + code + "&grant_type=authorization_code";
 			System.out.println("URL:"+URL);
 			JSONObject jsonObject = CommonUtil.httpsRequest(URL, "GET", null);
 			System.out.println(jsonObject);
 			if (null != jsonObject) {
+				accessToken = jsonObject.getString("access_token");
 				openId = jsonObject.getString("openid");
 				System.out.println("openId:" + openId);
+				System.out.println("accessToken:" + accessToken);
 			}
+			
+			String userInfoURL = "https://api.weixin.qq.com/sns/userinfo?access_token="
+					+ accessToken + "&openid=" + openId + "&lang=zh_CN";
+			JSONObject userInfoJsonObject = CommonUtil.httpsRequest(userInfoURL, "GET", null);
+			
+			if (null != userInfoJsonObject) {
+				nickname = userInfoJsonObject.getString("nickname");
+				System.out.println("nickname:" + nickname);
+			}
+			
 			
 			//获取openId后调用统一支付接口https://api.mch.weixin.qq.com/pay/unifiedorder
 			//随机数 
@@ -161,6 +178,7 @@ public class WeixinPayController {
 			String xml="<xml>"+
 					"<appid>"+WxPayConfig.appid+"</appid>"+
 					"<mch_id>"+WxPayConfig.partner+"</mch_id>"+
+					"<attach>"+attach+"</attach>"+
 					"<nonce_str>"+nonce_str+"</nonce_str>"+
 					"<sign>"+sign+"</sign>"+
 					"<body><![CDATA["+body+"]]></body>"+
@@ -205,7 +223,10 @@ public class WeixinPayController {
 			model.addAttribute("bizOrderId", orderId);
 			model.addAttribute("orderId", orderId);
 			model.addAttribute("payPrice", total_fee);
-			return "jsapi";
+			
+			model.addAttribute("nickname", nickname);
+			model.addAttribute("brandId", brandId);
+			return "jsapi_order";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

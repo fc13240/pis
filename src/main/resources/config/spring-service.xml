@@ -39,4 +39,8 @@
 	<bean name="newsMobileService" class="zhuanli.service.impl.NewsMobileServiceImpl">
 		<constructor-arg ref="newsMobileDao"/>
 	</bean>	
+	
+	<bean name="weChatOrderService" class="zhuanli.service.impl.WeChatOrderServiceImpl">
+		<constructor-arg ref="weChatOrderDao"/>
+	</bean>
 </beans>

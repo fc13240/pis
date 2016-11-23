@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zhuanli.dao.mapper.WeChatOrderMapper">
+	
+	<resultMap type="WeChatOrder" id="WeChatOrderMap">
+		<id property="id" column="id"/>
+		<result property="wechatOrderId" column="wechat_order_id"/>
+		<result property="wechatName" column="wechat_name"/>
+		<result property="brandId" column="brand_id"/>
+		<result property="totalFee" column="total_fee"/>
+		<result property="payTime" column="pay_time"/>
+	</resultMap>
+	
+	<insert id="saveWeChatOrder" parameterType="WeChatOrder">
+		insert into wechat_orders(wechat_order_id,wechat_name,brand_id,total_fee,pay_time)
+		values(#{wechatOrderId,javaType=string,jdbcType=VARCHAR},#{wechatName,javaType=string,jdbcType=VARCHAR},#{brandId},#{totalFee},now())
+	</insert>
+	
+  </mapper>
+  

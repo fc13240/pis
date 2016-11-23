@@ -109,4 +109,15 @@
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="newsMobileMapper" ref="newsMobileMapper" />
 	</bean>
+	
+	
+	<bean id="weChatOrderMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="zhuanli.dao.mapper.WeChatOrderMapper"/>
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean name="weChatOrderDao" class="zhuanli.dao.mybatis.WeChatOrderMybatisDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+		<property name="weChatOrderMapper" ref="weChatOrderMapper" />
+	</bean>
 </beans>							
