@@ -55,25 +55,10 @@
 });
 </script>
 <!--栏目菜单-->
- 
 
-
-<!-- <div class="AD_link"><img src="<s:url value='/mobile_skin/images/AD_10.png'/>" /></div>-->
  <!--新品发布-->
  <div class=" floor Hot_product clearfix">
-    <%-- <div class="title"> 知产专利<a href="<s:url value='/mobilePatent/list.html'/>">更多<i class="iconfont icon-right"></i></a></div>
-    	<c:forEach items="${patents}" begin="0" end="4" var="patent">		
-		<div style="padding:5px;">
-			<div style="float:left;line-height:50px;">
-				<a href="<s:url value='/mobilePatent/patentPreview.html'/>?patentId=<c:out value='${patent.patentId}'/>" title="${patent.name}" target="_blank">
-				${patent.name}
-				</a>
-			</div>
-			<div style="clear:both;"></div>
-		</div>	
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
-    	</c:forEach>			
-   </div> --%>
+
  
   <div class=" floor Hot_product clearfix">
     <div class="title"> 知产新闻<a href="<s:url value='/mobileNews/newsList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
@@ -99,45 +84,31 @@
    </div>
    
    
-  <div class=" floor Hot_product clearfix" style="margin-bottom:80px;" >
-    <div class="title"> 专利培训<a href="<s:url value='/mobileArticle/articleList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
-    	<c:forEach items="${articles}" begin="0" end="4" var="articles">		
-		<div style="padding:5px;">
-			<div style="float:left;line-height:25px;">
-				<a style="display:block;font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
-				${articles.title}
-				</a>
-			</div>
-			<div style="clear:both;"></div>
-		</div>	
-		<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
-    	</c:forEach>			
-   </div>   
-  
-
-
-  </div> 
+	  <div class=" floor Hot_product clearfix" style="" >
+	    <div class="title"> 专利培训<a href="<s:url value='/mobileArticle/articleList.html'/>">更多<i class="iconfont icon-right"></i></a></div>
+	    	<c:forEach items="${articles}" begin="0" end="4" var="articles">		
+			<div style="padding:5px;">
+				<div style="float:left;line-height:25px;">
+					<a style="font-size: 15px;color: #000;font-family: 'Microsoft YaHei';"  href="<s:url value='/mobileArticle/articlePreview.html'/>?articleId=<c:out value='${articles.id}'/>" title="${articles.title}" target="_blank">
+					${articles.title}
+					</a>
+				</div>
+				<div style="clear:both;"></div>
+			</div>	
+			<div style="border-top:1px solid #dcdcdc  ">&nbsp;</div>		
+	    	</c:forEach>			
+	   </div>   
+	  
+	
+		
+	  </div> 
  </div>
+ <div style="height:100px;"></div>
  <!--底部样式-->
 <%@ include file="mobile_menu.jsp"%>
 
 </div>
  <!--固定栏目样式-->
-<div class="global-nav global-nav--current">
- <!-- 
-    <div class="global-nav__operate-wrap">
-        <span class="global-nav__yhd-logo"></span>
-        <span class="global-nav__operate-cart-num" id="globalId">0</span>
-    </div>
-     -->
-   </div>
-   
-   
-   
-   <script type="text/javascript">
-
-</script>
-</div>
 
 </body>
 </html>
