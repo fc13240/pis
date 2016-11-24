@@ -22,8 +22,11 @@ import zhuanli.controller.weChatPayUtil.util.CommonUtil;
 import zhuanli.controller.weChatPayUtil.util.RequestHandler;
 import zhuanli.controller.weChatPayUtil.util.Sha1Util;
 import zhuanli.controller.weChatPayUtil.util.WeixinPayUtil;
+import zhuanli.domain.WeChatOrder;
+import zhuanli.service.WeChatOrderService;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +40,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/wxorder")
 @SuppressWarnings("rawtypes")
 public class WeChatPayOrderController {
+	private  WeChatOrderService weChatOrderService;
 	
+	@Autowired
+	public WeChatPayOrderController(WeChatOrderService weChatOrderService) {
+		this.weChatOrderService = weChatOrderService;
+	}
+
+
 	private static String baseUrl = "http://www.lotut.com";
 	
 	/**
@@ -127,7 +137,7 @@ public class WeChatPayOrderController {
 			//String nonce_str = "1add1a30ac87aa2db72f57a2375d8fec";
 			String nonce_str = UUID.randomUUID().toString().replaceAll("-", "");
 			//商品描述
-			String body = orderId;
+			String body = "订单号:"+orderId+";商标名称:"+brandName;
 			//商户订单号
 			String out_trade_no = orderId;
 			//订单生成的机器 IP
@@ -309,9 +319,19 @@ public class WeChatPayOrderController {
 	@RequestMapping("/success")
 	public String toWXPaySuccess(HttpServletRequest request,
 			HttpServletResponse response, Model model) throws IOException{
+		
+		WeChatOrder weChatOrder=new WeChatOrder();
 		String id = request.getParameter("orderId");
 		String attach = request.getParameter("attach");
+		String nickname = request.getParameter("nickname");
+		String brandId = request.getParameter("brandId");
+		String totalFee = request.getParameter("totalFee");
+		
 		System.out.println("toWXPaySuccess, orderId: " + id);
+		weChatOrder.setWechatOrderId(id);
+		weChatOrder.setWechatName(nickname);
+		weChatOrder.setBrandId(Integer.parseInt(brandId));
+		weChatOrder.setTotalFee(Integer.parseInt(totalFee));
 		try {
 			Map resultMap = WeixinPayUtil.checkWxOrderPay(id);
 			System.out.println("resultMap:" + resultMap);
@@ -320,6 +340,7 @@ public class WeChatPayOrderController {
         	System.out.println("return_code:" + return_code + ",result_code:" + result_code);
         	if("SUCCESS".equals(return_code)){
         		if("SUCCESS".equals(result_code)){
+        			weChatOrderService.saveWeChatOrder(weChatOrder);
             	    model.addAttribute("orderId", id);
             	    model.addAttribute("attach", attach);
             	    System.out.println(attach);
