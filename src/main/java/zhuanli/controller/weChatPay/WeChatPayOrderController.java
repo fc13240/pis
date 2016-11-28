@@ -137,7 +137,7 @@ public class WeChatPayOrderController {
 			//String nonce_str = "1add1a30ac87aa2db72f57a2375d8fec";
 			String nonce_str = UUID.randomUUID().toString().replaceAll("-", "");
 			//商品描述
-			String body = "订单号:"+orderId+";商标名称:"+brandName;
+			String body = "订单号:"+orderId+";商标名称:"+brandId+brandName;
 			//商户订单号
 			String out_trade_no = orderId;
 			//订单生成的机器 IP
