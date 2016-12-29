@@ -18,7 +18,7 @@
   <div class="focus-box" id="JS_focus_box">
     <div>
       <div style="width:100%;height:400px;position:absolute;left:0;top:0;opacity:0;filter:alpha(opacity=0);background:url(<s:url value='/images/flash_01.jpg'/>) left top repeat-x;opacity:1;z-index:1;filter:alpha(opacity:100)" img-bg="<s:url value='/images/flash_01.jpg'/>">
-        <div style="background-image:url(<s:url value='/images/flash_01.jpg'/>);" class="banner-img" img-src="<s:url value='/images/flash_01.jpg'/>"></div>
+        <div style="background-image:url(<s:url value='/images/flash_02.jpg'/>);" class="banner-img" img-src="<s:url value='/images/flash_01.jpg'/>"></div>
       </div>
     </div>
     <div>
