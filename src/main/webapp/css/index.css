@@ -188,7 +188,7 @@ strong, b {
     height: 36px;
     overflow: hidden;
     margin-left: 2px;
-    background: url(http://img3.91.com/uploads/images/news/v2/zx_sprite_01.png) #ccc no-repeat;
+    background: url(../images/zx_sprite_01.png) #ccc no-repeat;
 }
 .tFocus_btn .next {
     background-position: -40px 0;
@@ -200,7 +200,7 @@ strong, b {
     height: 36px;
     overflow: hidden;
     margin-left: 2px;
-    background: url(http://img3.91.com/uploads/images/news/v2/zx_sprite_01.png) #ccc no-repeat;
+    background: url(../images/zx_sprite_01.png) #ccc no-repeat;
 }
 .tFocus-pic {
     position: relative;
@@ -250,7 +250,7 @@ strong, b {
     width: 16px;
     height: 30px;
     overflow: hidden;
-    background: url(http://img3.91.com/uploads/images/news/v2/zx_sprite_01.png) -55px -50px no-repeat;
+    background: url(../images/zx_sprite_01.png) -55px -50px no-repeat;
 }
 .slide_num b {
     position: absolute;
@@ -353,7 +353,7 @@ strong, b {
 .col_mod .col_tit_wrap {
     height: 24px;
     padding-left: 10px;
-    background: url(http://img3.91.com/uploads/images/news/v2/zx_sprite_01.png) -80px -50px no-repeat;
+    background: url(../images/zx_sprite_01.png) -80px -50px no-repeat;
 }
 .col_mod .col_tit {
     font-size: 20px;
@@ -389,7 +389,7 @@ strong, b {
     line-height: 30px;
     overflow: hidden;
     padding-left: 10px;
-    background: url(http://img3.91.com/uploads/images/news/v2/zx_sprite_01.png) -80px -156px no-repeat;
+    background: url(../images/zx_sprite_01.png) -80px -156px no-repeat;
 }
 .title strong {
     display: block;
@@ -528,7 +528,7 @@ em, b, i, strong {
     height: 35px;
     background: #666;
     vertical-align: bottom;
-    background: url(/skin/images/dian.jpg) no-repeat left 9px;
+    background: url(../images/dian.jpg) no-repeat left 9px;
     padding-left: 10px;
 }
 
@@ -602,16 +602,16 @@ em, b, i, strong {
     float: right;
 }
 .hq_hqqq .shenghuo {
-    background: url(/skin/images/shenghuo.jpg) no-repeat;
+    background: url(../images/shenghuo.jpg) no-repeat;
 }
 .hq_ylbg .paihang {
-    background: url(/skin/images/sh_paihang.jpg) no-repeat;
+    background: url(../images/sh_paihang.jpg) no-repeat;
 }
 .hq_ylbg .cy_paihang {
-    background: url(/skin/images/cy_paihang.jpg) no-repeat;
+    background: url(../images/cy_paihang.jpg) no-repeat;
 }
 .hq_hqqq .zhengce {
-    background: url(/skin/images/zhengce.jpg) no-repeat;
+    background: url(../images/zhengce.jpg) no-repeat;
 }
 .com_titlebg {
     height: 30px;
@@ -675,7 +675,7 @@ em, b, i, strong {
     height: 34px;
     overflow: hidden;
     background: #666;
-    background: url(/skin/images/dian.jpg) no-repeat left 7px;
+    background: url(../images/dian.jpg) no-repeat left 7px;
     padding-left: 10px;
     vertical-align: bottom;
 }
@@ -688,7 +688,7 @@ em, b, i, strong {
 }
 
 .hq_ylbg .com_paihangbg {
-    background: url(/skin/images/sh_paihang.jpg) no-repeat;
+    background: url(../images/sh_paihang.jpg) no-repeat;
     margin-top: 14px;
 }
 .com_paihangbg {
@@ -757,7 +757,7 @@ em, b, i, strong {
     height: 120px;
     line-height: 165px;
     position: absolute;
-    background: url(/skin/images/bg_hei.png) repeat-x bottom;
+    background: url(../images/bg_hei.png) repeat-x bottom;
     bottom: -5px;
     left: 0;
     width: 100%;
