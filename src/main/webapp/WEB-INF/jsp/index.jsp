@@ -8,18 +8,14 @@
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>龙图腾商标专利交易网--中国商标专利交易专业服务平台 </title>
-<meta name="keywords" content="知识产权,专利交易,商标转让,龙图腾,中外知识产权网" />
-<meta name="description" content="龙图腾网（www.lotut.com）是全球领先的知识产权交易平台。为企业提供专业的商标转让、专利交易等服务。拥有国内知识产权资源，全面覆盖了商标、专利、版权等领域的交易平台，让知识产权在流通中创造财富，引领知识产权的创新。" />
+<title>创意街——龙图腾 </title>
+<meta name="keywords" content="科技门户" />
+<meta name="description" content="科技门户" />
 <meta itemprop="name" content="" />
 <meta http-equiv="cache-control" content="no-transform">
 <link rel="shortcut icon" href="http://www.lotut.com/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="<s:url value='/css/mll.common.min.css?20160311'/>" />
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
-<script type="text/javascript" src="<s:url value='/js/jquery_from.js'/>"></script>
-<script src="<s:url value='/js/jquery.min.js'/>"></script>
-<script src="<s:url value='/js/jquery-ui.min.js'/>" type="text/javascript"></script>
-<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101359853" data-redirecturi="http://www.lotut.com" charset="utf-8" data-callback="true"></script>
+
 <style type="text/css">
 
 </style>
@@ -27,118 +23,741 @@
 
 
 <body class="">
-<script type="text/javascript">(function(){var screenWidth=window.screen.width;if(screenWidth>=1280){document.body.className=document.body.className+" root_body";;window.LOAD=true;}else{window.LOAD=false;}})()</script>
+<div class="fx_top">
+	<div class="wrap">
+    		<div class="left">
+				<span class="co">科技迷们的网络聚集地 -- 创意街</span>
+            </div>
 
-
-<div class="header-box">
-	<div class="site-nav">
-	<%@ include file="_site-nav.jsp"%>
-	</div>
-	
-	<div class="page-header">
-	<%@ include file="_page-header.jsp"%>
-	</div>
-	
-	<div class="mll-navigator navigator-index">
-	<%@ include file="_top_nav.jsp"%>
-	</div>
-</div>
-
- <%@ include file="_flash.jsp"%>
-
- <%@ include file="_f_con.jsp"%>
-
-
-
-
-
-<div class="w mt20 expr-wrap">
-	<div class="expr-floor city-exprs">
-		
-		
-	</div>
+    </div>
 </div>
 
 
-<div class="default_stairs_w">
-	<div class="w clearfix" style="position:relative">
-		<div class="default_stairs none" id="JS_default_stairs">
-			<a href="javascript:;" class="stairs_nav floor1">
-				<span class="icon"></span>
-				<em class="name">精品<br>服务</em>
-				<i class="stairs_line"></i>
-			</a>
-			<a href="javascript:;" class="stairs_nav floor2">
-				<span class="icon"></span>
-				<em class="name">专利<br>推荐</em>
-				<i class="stairs_line"></i>
-			</a>
-			<a href="javascript:;" class="stairs_nav floor3">
-				<span class="icon"></span>
-				<em class="name">商标<br>推荐</em>
-				<i class="stairs_line"></i>
-			</a>
-			<!-- 
-			<a href="javascript:;" class="stairs_nav floor4">
-				<span class="icon"></span>
-				<em class="name">纺织<br>造纸</em>
-				<i class="stairs_line"></i>
-			</a>
-			<a href="javascript:;" class="stairs_nav floor5">
-				<span class="icon"></span>
-				<em class="name">建材<br>照明</em>
-				<i class="stairs_line"></i>
-			</a>
-			<a href="javascript:;" class="stairs_nav floor6">
-				<span class="icon"></span>
-				<em class="name">机械<br>加工</em>
-				<i class="stairs_line"></i>
-			</a>
-						<a id="JS_floor_expr" href="javascript:;" class="stairs_nav floor_expr">
-				<span class="icon"></span>
-				<em class="name">体验馆</em>
-				<i class="stairs_line"></i>
-			</a>
-			 -->
-						<div class="stairs-cover"></div>
+<div class="fx_logo clearfix">
+	<div class="logo">
+    	<a href=""><img src="/skin/images/logo.png" alt="创意街"></a>
+    </div>
+</div>
+
+<div class="fx_nav">
+   <div class="wrap clearfix">
+   
+ 
+   
+        <div class="lf1">
+          <p>
+            <a href="/" target="_blank"><b>首页</b></a>
+            </p>
+
+        </div>
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
+        </div>	
+        <div class="lf3" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>创意街</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>创业服务</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>漫画西游</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>爆笑西游</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>专利商标</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>商标交易</b></a>
+        </div>			
+		
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>专利管理</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>专利检索</b></a>
+        </div>			
+				
+		
+	
+    </div>
+</div> 
+<div class="container w1200 ma">
+	<div class="main_wrap mt40 clearfix">
+		<div class="fl tFocus clearfix" id="tFocus">
+			<div class="tFocus_btn">
+				<a href="javascript:void(0);" id="prev" class="prev"></a>
+				<a href="javascript:void(0);" id="next" class="next"></a>
+			</div>
+			<ul class="tFocus-pic zoom" id="tFocus-pic">
+										<li style="opacity: 0; z-index: 0;">
+					<div class="s_tit_wrap">
+						<a class="s_pic_tit" href="" target="_blank">摩拜/ofo等共享单车真的可以替代汽车吗？</a>
+					</div>
+					<span class="slide_num"><em></em><b>1</b><i>5</i></span>
+					<p class="s_info">
+						<!--<a class="tp_block tb_5	" href="http://news.91.com/it/" target="_blank">行业</a>-->从接受腾讯、滴滴等巨资“押注”被媒体轮番报道，到北上广深街头的“橙黄大战”，共享单车这一火热的创新项目，已成为“分享经济”和“互联网＋”便利市民生活、服务城市交通“痛点”的鲜活案例。……
+					</p>
+					<a class="s_pic" target="_blank" title="摩拜/ofo等共享单车真的可以替代汽车吗？" href=""><img src="http://img.qt.baidu.com/91/news/201612/16/58535d5cc527b.jpg" data-original="http://img.qt.baidu.com/91/news/201612/16/58535d5cc527b.jpg" width="580" height="267" alt="摩拜/ofo等共享单车真的可以替代汽车吗？"></a>
+				</li>
+										<li style="z-index: 0; opacity: 0;">
+					<div class="s_tit_wrap">
+						<a class="s_pic_tit" href="" target="_blank">AirPods 简单开箱：苹果可穿戴设备的未来</a>
+					</div>
+					<span class="slide_num"><em></em><b>2</b><i>5</i></span>
+					<p class="s_info">
+						<!--<a class="tp_block 	" href="" target="_blank"></a>-->除了 7.9寸 iPad Pro 、iPhone 7 和 iPhone 7 Plus、Apple Watch Series 2 和全新 Touch Bar 版 MacBook Pro 外，苹果 AirPods 同样是一款非常经典的“电脑”，这款可穿戴设备采用高级音频波束成形技术，同时界面的设计也非常简单易用。……
+					</p>
+					<a class="s_pic" target="_blank" title="AirPods 简单开箱：苹果可穿戴设备的未来" href=""><img src="http://img.qt.baidu.com/91/news/201612/15/58520cc89f06b.jpg" data-original="http://img.qt.baidu.com/91/news/201612/15/58520cc89f06b.jpg" width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
+				</li>
+										<li style="z-index: 5; opacity: 1;">
+					<div class="s_tit_wrap">
+						<a class="s_pic_tit" href="" target="_blank">百度手机助手城市联盟厦门站全程直播</a>
+					</div>
+					<span class="slide_num"><em></em><b>3</b><i>5</i></span>
+					<p class="s_info">
+						<!--<a class="tp_block tb_5	" href="http://news.91.com/it/" target="_blank">行业</a>-->2016年12月15日，百度手机助手城市联盟厦门站成功举办。……
+					</p>
+					<a class="s_pic" target="_blank" title="百度手机助手城市联盟厦门站全程直播" href=""><img src="http://img.qt.baidu.com/91/news/201612/15/585206772c7f3.jpg"  width="580" height="267" alt="百度手机助手城市联盟厦门站全程直播"></a>
+				</li>
+										<li style="z-index: 0; opacity: 0;">
+					<div class="s_tit_wrap">
+						<a class="s_pic_tit" href="" target="_blank">2017年我们将看到一个什么样的苹果？</a>
+					</div>
+					<span class="slide_num"><em></em><b>4</b><i>5</i></span>
+					<p class="s_info">
+						<!--<a class="tp_block 	" href="" target="_blank"></a>-->对于苹果来说，过去这几年变化的似乎只有时间，而不是这个市场。但是2017年将会是一个万全不一样的故事。如果iPhone 8的传闻是真的，那么2017年将会成为苹果历史上的又一个里程碑。……
+					</p>
+					<a class="s_pic" target="_blank" title="2017年我们将看到一个什么样的苹果？" href="http://news.91.com/apple/s5850ae6b0c0e.html"><img src="http://img.qt.baidu.com/91/news/201612/14/5850bd2db5730.jpg"  width="580" height="267" alt="2017年我们将看到一个什么样的苹果？"></a>
+				</li>
+										<li style="z-index: 0; opacity: 0;">
+					<div class="s_tit_wrap">
+						<a class="s_pic_tit" href="" target="_blank">诺基亚现在做手机只能卖1000元？</a>
+					</div>
+					<span class="slide_num"><em></em><b>5</b><i>5</i></span>
+					<p class="s_info">
+						<!--<a class="tp_block 	" href="" target="_blank"></a>-->简单来说，微软从诺基亚手中收购相关业务，并剥离核心资产后决定套现走人，今后10年HMD的手机将贴上诺基亚的品牌。……
+					</p>
+					<a class="s_pic" target="_blank" title="诺基亚现在做手机只能卖1000元？" href=""><img src="http://img.qt.baidu.com/91/news/201612/13/584f68851f492.jpg"  width="580" height="267" alt="诺基亚现在做手机只能卖1000元？"></a>
+				</li>
+									</ul>
+			<div class="tFocusBtn nodisplay" id="tFocusBtn">
+				<a class="tFocus-leftbtn nodisplay" id="tFocus-leftbtn" href="javascript:void(0);">‹</a>
+				<div class="tFocus-btn clearfix" id="tFocus-btn">
+					<ul>
+						<li class=""></li>
+						<li class=""></li>
+						<li class="active"></li>
+						<li class=""></li>
+						<li class=""></li>
+					</ul>
+				</div>
+				<a class="tFocus-rightbtn fr nodisplay" id="tFocus-rightbtn" href="javascript:void(0);">›</a>
+			</div>
+		</div>
+
+		<div class="fl col_mod_0 ml30 w280">
+			<div class="col_tit_wrap">
+				<h3 class="col_tit">今日热点</h3>
+			</div>
+			<div class="col_con mt10">
+				<div class="news_mod">
+												<div class="news_tit">
+						<a class="tp_block tb_1	" href="" target="_blank">苹果</a><a href="" target="_blank">iOS 10.1.1越狱工具或将在不久后发布</a>
+					</div>
+					<p class="news_dis">谷歌Project Zero项目中安全研究者Ian Beer选择公开了iOS 10.1.1的内核和root漏洞，...</p>
+											</div>
+				<div class="news_mod mt20">
+												<div class="news_tit">
+						<a class="tp_block tb_4	" href="" target="_blank">安卓</a><a href="" target="_blank">三星移动总裁：严禁泄密Galaxy S8</a>
+					</div>
+					<p class="news_dis">据韩国媒体报道，三星移动总裁高东真已经下达“封杀令”，严禁三星员工...</p>
+											</div>
+				<ul class="t_n_list mt15">
+												<li><a href="" target="_blank">谷歌发布2016年全球热搜排行榜</a></li>
+												<li><a href="" target="_blank">百度手机助手城市联盟厦门站直播回顾</a></li>
+												<li><a href="" target="_blank">春运火车票今起开售 四大攻略看这里</a></li>
+											</ul>
+			</div>
+		</div>
+		<div class="fr col_mod w280">
+			<div class="col_tit_wrap clearfix">
+				<h3 class="fl col_tit"><a href="" target="_blank">科技前沿</a></h3>
+			</div>
+			<div class="col_con">
+				<div class="n_p_mod_0 clearfix">
+												<a class="n_pic fl" href="" target="_blank"><img src="http://img.qt.baidu.com/91/news/201612/16/focus_58535664ccba9.jpg"  width="125" height="94" alt=""></a>
+												<a class="n_tit" href="" target="_blank">三星招聘S8相机生产线员工：一万五月薪</a>                         </div>
+				<ul class="news_list_dot mt25 clearfix">
+												<li>
+						<a href="" target="_blank">3万！华为Mate 9保时捷款国内首销飙涨</a>
+					</li>
+												<li>
+						<a href="" target="_blank">三星今年真不好过 Galaxy S7 Edge也爆炸了 </a>
+					</li>
+												<li>
+						<a href="" target="_blank">iOS 10.1.1越狱工具或将在不久后发布</a>
+					</li>
+												<li>
+						<a href="" target="_blank">任天堂Super Mario Run初步上手体验</a>
+					</li>
+												<li>
+						<a href="" target="_blank">三星移动总裁：严禁泄密Galaxy S8</a>
+					</li>
+												<li>
+						<a href="" target="_blank">美国Verizon同意推送 三星Note 7死亡固件</a>
+					</li>
+												<li>
+						<a href="" target="_blank">TCL获黑莓全球授权：首款手机是这样的</a>
+					</li>
+											</ul>
+			</div>
 		</div>
 	</div>
-</div>
+
+	<div class="main_1 mt25 clearfix">
 	
+		<div class="title">
+			<a href="" title="男人娱乐" target="_blank"><img src="/skin/images/t_1.jpg" alt="创意"></a>
+			<strong>
+			<a href="/a/yingshi/" target="_blank">创意生活</a>|
+			<a href="/a/yule/yinle/" target="_blank">创意产品</a>|
+			<a href="/a/yule/youxi/" target="_blank">创意设计</a>
+			</strong>
+		</div>	
+		
+		<div class="images_box">
+			<div class="z_box">
+				 <a href="" target="_blank">
+				<img alt="漫画西游之唐三藏" src="/skin/images/xiyou_01.jpg" width="280" height="280">
+				<h4>漫画西游之唐三藏</h4>
+				</a>
+			</div>
+			<div class="z_box">
+				 <a href="" target="_blank">
+				<img alt="漫画西游之白龙马" src="/skin/images/xiyou_02.jpg" width="280" height="280">
+				<h4>漫画西游之白龙马</h4>
+				</a>
+			</div>			
+			<div class="z_box">
+				 <a href="" target="_blank">
+				<img alt="漫画西游之白龙马" src="/skin/images/xiyou_03.jpg" width="280" height="280">
+				<h4>漫画西游之白龙马</h4>
+				</a>
+			</div>			
+			<div class="z_box">
+				 <a href="" target="_blank">
+				<img alt="漫画西游之白龙马" src="/skin/images/xiyou_04.jpg" width="280" height="280">
+				<h4>漫画西游之白龙马</h4>
+				</a>
+			</div>	
+			<div style="clear:both;"></div>		
+		</div>
+		
+		<div class="c_box4 clearfix mt25">
+			<div class="left">
+				<div class="c4_datu">
+					<!---->
+					<a href="/n/201612/197015.html" target="_blank">
+						<img src="/skin/images/ba9568233ff211cdde3acf281664aecf.jpg" width="360" height="260">
+						<b></b>
+						<span>哪位开国元帅是林彪伯乐：发现其军事才能</span>
+					</a>
+					<!---->
+				</div>
+				
+				<div class="c4_zgjq">
+					<h4 class="com_ltred">创意设计</h4>
+					<ul class="list_com_tw">
+						<!---->
+						<li>
+							<span class="p"><a href="/n/201612/197020.html" target="_blank"><img src="/skin/images/da35f6928bcaf2f74afd92ac3d1d2f0c.jpg" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="/n/201612/197020.html" target="_blank">开国大将罗瑞卿为何死在德国</a></h5>
+								<p><a href="/n/201612/197020.html" target="_blank">罗瑞卿，这位深受毛泽东信任的开国大将，曾担任第一任公，..[详细]</a></p>
+						  </span>
+						</li>
+						<!---->
+						<li>
+							<span class="p"><a href="/n/201612/196850.html" target="_blank"><img src="/skin/images/1608d08bd8997f2e1ea45d969f997fb8.jpg" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="/n/201612/196850.html" target="_blank">哪件突发事件让邓小平想退休</a></h5>
+								<p><a href="/n/201612/196850.html" target="_blank">小平同志是举世瞩目的伟人，常常会有一些境外新闻媒体谎，..[详细]</a></p>
+						  </span>
+						</li>
+						<!---->
+						<li>
+							<span class="p"><a href="/n/201612/196747.html" target="_blank"><img src="/skin/images/b1215b98777670aa30f1fff2861921a9.jpg" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="/n/201612/196747.html" target="_blank">刘伯承临终前重托华国锋何事</a></h5>
+								<p><a href="/n/201612/196747.html" target="_blank">在抗日战争和解放战争长达10多年间，刘伯承和邓小平曾并，..[详细]</a></p>
+						  </span>
+						</li>
+						<!---->
 
-<%@ include file="_footer.jsp"%>
 
-<script src="<s:url value='/js/mll/jq.js?0405'/>"></script> 
+					</ul>
+				</div>				
+			</div>
+			<div class="mid">
+				<div class="m4_first">
+					<!---->
+					<h2><a href="/n/201612/196961.html" target="_blank">美女街头假醉测试男人:结果令人愤怒</a></h2>
+					<p>10月28日报道，Europeo Neurosalus进行了一项实验。学...<a href="/n/201612/196961.html" target="_blank">[详细]</a></p>
+					<!---->
+					<ul class="list_com">
+						<!---->
+						<li><a href="/n/201612/197012.html" target="_blank">码头捡怪鱼：外形四方长相呆萌能毒死自己</a></li>
+						<!---->
+						<li><a href="/n/201612/197009.html" target="_blank">小夫妻住诡异出租房：入住后不停掉头发</a></li>
+						<!---->
+						<li><a href="/n/201612/197007.html" target="_blank">女子到破房子去冒险：却意外看到了这个</a></li>
+						<!---->
+						<li><a href="/n/201612/197002.html" target="_blank">男子发现一巨碟状"石头"：近看后乐疯了</a></li>
+						<!---->
+						<li><a href="/n/201612/196996.html" target="_blank">建筑工地施工：挖地时竟挖出了个大怪物</a></li>
+						<!---->
+						<li><a href="/n/201612/196993.html" target="_blank">水牛目睹雄狮羞羞画面：反应让人看傻眼</a></li>
+						<!---->
+					</ul>
+				</div>
+				<div class="m4_bx2">
+					<h4 class="com_ltred">创意产品</h4>
+					<dl class="list_com_3">
 
-<script>window.M = window.M || {};if($.addToCart)M.addToCart = $.addToCart</script>
-<script type="text/javascript">
-(function(c,b){var a=b("#JS_head_login");a.on("click","#JS_login_out",function(){jQuery.ajax({url:"/user/?act=logout",type:"get",cache:false,dataType:"json",success:function(d){if(d.error==0){window.location.reload();return false;}else{jQuery.alert("注销失败，请重试！");}},error:function(){jQuery.alert("网络异常，请重试！");}});});})(document,jQuery);function _INIT_HEAD_SEARCH(data){var json;try{json=eval(data.html_content);}catch(e){}if(json&&json.length){var url=location.pathname;var wordIndex=-1;var tmpFilter;window.__HEAD_SEARCH_WORDS_ARR=[];window.__HEAD_SEARCH_WORDS_OBJ={};if(/\/jiaju\//.test(url)){wordIndex=0;}else{if(/\/jiancai\//.test(url)){wordIndex=1;}else{if(/\/shipin\//.test(url)){wordIndex=2;}}}for(var k=0,kk=json.length;k<kk;k++){tmpFilter=json[k].type.split("");if(wordIndex==-1||tmpFilter[wordIndex]==1){__HEAD_SEARCH_WORDS_ARR.push(json[k]);__HEAD_SEARCH_WORDS_OBJ[json[k].text]=json[k];}}var inpt=$("#JS_MLL_search_header_input")[0];if(__HEAD_SEARCH_WORDS_ARR.length&&inpt&&inpt.value==""){inpt.value=MLL_Header_search_words();inpt.onfocus=function(){this.value="";this.onfocus=function(){};};inpt.onblur=function(){if(this.value==""){this.value=MLL_Header_search_words();this.onfocus=function(){this.value="";this.onfocus=function(){};};}};}}}function MLL_Header_search_words(){var b=__HEAD_SEARCH_WORDS_ARR,a=Math.floor(Math.random()*b.length);return b[a].text;}function MLL_header_search_submit(){var a=$("#JS_MLL_search_header_input")[0];var b=$("#JS_search_form")[0];var c=a.value+"";c=$.trim(c||"");if(!c){return false;}if(window.__HEAD_SEARCH_WORDS_OBJ&&__HEAD_SEARCH_WORDS_OBJ[c]){location.href=__HEAD_SEARCH_WORDS_OBJ[c].href+(__HEAD_SEARCH_WORDS_OBJ[c].href.indexOf("#")>=0?"&":"#")+"kw="+encodeURIComponent(c);return false;}else{a.value=c;return true;}}function _show_(j,d){if(!j){return;}if(d&&d.source&&d.target){var b=typeof d.source==="string"?$("#"+d.source):$(d.source);var l=typeof d.target==="string"?$("#"+d.target):$(d.target);var f=typeof d.data==="string"?$("#"+d.data):$(d.data);if(b.length&&l.length&&!l.isDone){var h=$(b.val()||sourse.html());if(f.length&&typeof d.templateFunction=="function"){var i=f.val()||f.html();i=$.parseJSON(i);h=d.templateFunction(h,i);f.remove();}l.empty().append(h);b.remove();if(typeof d.callback=="function"){d.callback();}l.isDone=true;}}$(j).addClass("hover");if(d&&d.isLazyLoad&&j.isDone){var g=j.find("img");for(var e=0,c=g.length;e<c;e++){var a=g[e].getAttribute("data-src_index_menu");if(a){g[e].setAttribute("src",a);g[e].removeAttribute("data-src_index_menu");}}j.isDone=true;}}function _hide_(b){if(!b){return;}var a=$(b);if(a.hasClass("hover")){a.removeClass("hover");}}function shoucang(){window._gaq=window._gaq||[];_gaq.push(["_trackEvent","headerAddFavorite",location.href]);var b=window.location.href;var a=document.title;try{window.external.addFavorite(b,a);}catch(c){try{window.sidebar.addPanel(a,b,"");}catch(c){alert("对不起，您的浏览器不支持此操作！\n请您使用菜单栏或Ctrl+D收藏本站。");}}}var car_number=0;function DY_cart_detail_nav_cb(b){Cart.goodsList=1;Cart.saleLimit=b.saleLimit||100;var a=b.goods_list.length;if(a>0){Cart.formatData(b)||{};Cart.info.goodsData=b.goods_list;}Cart.update();}var Cart={};Cart.init=function(){Cart.handdler=$("#JS_cart");Cart.Dom=Cart.handdler.find("#JS_cart_list");Cart.number=Cart.handdler.find("#JS_cart_num");Cart.countArea=Cart.handdler.find("#JS_count_area");Cart.countNum=Cart.handdler.find("#JS_cart_count");Cart.sum=Cart.handdler.find("#JS_count_total");Cart._isIE=!-[1,];Cart.info={goodsData:[],sum:0,goodsNumber:0,giftsNumber:0,kindsNumber:0};Cart.number.html($.cookie("cart_number")||0);};Cart.isLogin=function(){return($.cookie("meilele_login")=="1"||$.cookie("ECS[username]"));};Cart.show=function(){if(Cart.isLogin()&&!Cart.moveToCollect.moved){Cart.moveToCollect(a);}else{a();}function a(b){if(!Cart.goodsList){Cart.Dom.html("")[0].className="cart-list";Cart.countArea.addClass("none");Cart.getCartInfo(null,b);}}Cart.handdler.addClass("hover");if(Cart._isIE){Cart.handdler.find(".cart-arrow").addClass("cart-arrow-ie");}};Cart.getCartInfo=function(b,a){Cart.info={goodsData:[],sum:0,goodsNumber:0,giftsNumber:0,kindsNumber:0};var c={};if(a&&a.length){c.filterGoodsIds=a.join("!");}jQuery.ajax({url:"/mll_api/api/cart_info",dataType:"json",cache:false,data:c,success:function(d){DY_cart_detail_nav_cb(d);b&&b(d);}});};Cart.setCartNum=function(a){jQuery.cookie("cart_number",a||0);};Cart.hide=function(){Cart.handdler.removeClass("hover");if(Cart._isIE){Cart.handdler.find(".cart-arrow").removeClass("cart-arrow-ie");}};Cart.del=function(l,d){var o=l||window.event,m=o.target||o.srcElement;if(d){m=d;}var a=$(m);if(!a.hasClass("Cart_del")){return false;}var j=a.attr("data-index"),b=a.attr("data-rec_id"),h=a.attr("data-num"),i=a.attr("data-goods_price"),n=a.attr("data-act_id");var g=[];var f={};if(n>0){var k=Cart.Dom.find(".JS_cart_list_act_"+n);k.each(function(r,s){var t=$(this);var q=t.data("rec_id");var p=t.data("index");var e=t.data("num");g.push(q);f[q]={index:p,num:e,price:0};});}else{g.push(b);f[b]={index:j,num:h,price:i};}if(!Cart.inDelAjax&&g.length>0){Cart.inDelAjax=true;$.ajax({url:"/add_cart/?step=dropGoods&ajax=1&goods="+g.join("|"),type:"GET",dataType:"json",success:function(e){if(e.error==0){c(g,f);}else{this.error();}},error:function(){alert("删除失败，请稍后再试！");},complete:function(){Cart.inDelAjax=false;}});}function c(q,p){var e=Cart.info;for(var r=0;r<q.length;r++){var t=q[r];var v=p[t].index;var s=p[t].num||0;var u=p[t].price||0;var x=s*u;var w=$(".JS_cart_list_gift_"+t);w.each(function(y){var z=parseInt(w.eq(y).attr("data-num"));e.giftsNumber-=z;});$("#JS_cart_list_index_"+v).remove();w.remove();e.goodsNumber-=s;e.kindsNumber--;e.sum-=x;}Cart.update();}};Cart.formatData=function(c){var b=Cart.info;var f=c.goods_list;var h=0;var d=0;var g=[];for(var i=0,a=f.length;i<a;i++){var e=(f[i].goods_thumb_1)?f[i].goods_thumb_1:f[i].goods_thumb;g.push('<li id="JS_cart_list_index_'+i+'" class="'+(f[i].goods_activity_type!="newgift"?"":"JS_cart_list_gift_"+f[i].activity_par_id)+(f[i].price_activity_id>0?" JS_cart_list_act_"+f[i].price_activity_id:"")+' cart-item" data-num="'+f[i].goods_number+'" data-rec_id="'+f[i].rec_id+'" data-index="'+i+'">');g.push('<a target="_blank" class="cart-link" title="'+f[i].goods_name+'" href="'+f[i].url+'">'+f[i].goods_name+"</a>");if(f[i].goods_activity_type!="newgift"){g.push('<p class="cart-cal"><a data-goods_id="'+f[i].goods_id+'" class="cart-del Right Cart_del" href="javascript:void(0)" data-index="'+i+'" data-rec_id="'+f[i].rec_id+'" data-num="'+f[i].goods_number+'" data-goods_price="'+f[i].goods_price+'" data-act_id="'+(f[i].price_activity_id||0)+'">删除</a><strong class="cart-price red" id="JS_danjia'+i+'">&yen;'+f[i].goods_price+'</strong>×<strong class="black">'+f[i].goods_number+"</strong></p>");b.goodsNumber+=f[i].goods_number-0;b.kindsNumber++;b.sum+=(f[i].goods_number||0)*(f[i].goods_price||0);}else{g.push('<p class="cart-cal"><strong style="margin-left:12px"><span class="cl red">赠品</span>&times;'+f[i].goods_number+"</strong></p>");d+=parseInt(f[i].goods_number)||0;b.giftsNumber+=f[i].goods_number-0;}g.push("</li>");h+=parseInt(f[i].goods_number)||0;}Cart.Dom.html(g.join(""));Cart.update();return b;};Cart.goPreCheckOut=function(){jQuery.showLoginBox(function(){location.href="/flow/?step=pre_checkout&rel=header";});};Cart.moveToCollect=function(a){Cart.countArea.find(".cart-tip").remove();jQuery.ajax({url:"/add_cart/?step=insertCollect",type:"GET",dataType:"JSON",cache:false,success:function(g){if(g&&g.error=="0"&&g.moveToCollect&&g.moveToCollect.length){var c=g.moveToCollect;var d=[];var f=[];f.push('<div class="cart-tip"><span class="red"><b>提示：</b>购物车里有'+c.length+'件商品被移入收藏夹</span><p class="tip-content">');for(var e=0,b=c.length;e<b;e++){if(e<3){f.push('<a target="_blank" class="tip-link" href="'+c[e].goodsLink+'">'+c[e].goodsName+"</a>");}d.push(c[e].goodsId);}f.push('</p><a href="/user/?act=collection_list" target="_blank" class="red">查看收藏夹&gt;&gt;</a></div>');Cart.countArea.append(f.join(""));a&&a(d);}else{this.error();}Cart.moveToCollect.moved=true;},error:function(){a&&a([]);Cart.moveToCollect.moved=false;}});};Cart.update=function(b){var b=b||Cart.info;var a=Number(b.goodsNumber||0)+Number(b.giftsNumber||0);if(a==0){Cart.setCartNum(0);Cart.number.html(0);Cart.Dom.html('<li class="nothing"><b class="common-bg nothing-icon"></b>&nbsp;购物车中还没有商品，赶紧选购吧！</li>');Cart.countArea.addClass("none");Cart.Dom.removeClass("cart-full");return;}Cart.number.html(a);Cart.countNum.html(a);Cart.sum.html("&yen;"+Number(b.sum||0).toFixed(2));Cart.Dom.addClass("cart-full");Cart.countArea.removeClass("none");Cart.setCartNum(a);var c=Cart.Dom.find(".cart-item").length;Cart.Dom.addClass("cart-full"+(c>2?3:c));if(c==0){Cart.Dom[0].className="cart-list";}};function exprCallBackNum(json){if(json&&json.html_content){try{eval("json.html_content="+json.html_content);}catch(e){jQuery("#JS_head_scoll_phone_527").siblings("span.blank").remove();return;}if(!json){return;}var o1=$("#JS_mll_head_menu_expr");var o3=$("#JS_Header_Home_Link");var o4=$("#JS_Header_Logo_link_home");if(json.html_content&&json.html_content.expr_count>0&&json.html_content.pinyin){o1.attr("href","/"+json.html_content.pinyin+"/expr.html").html(json.html_content.city+'体验馆<img src="'+$.__IMG+'/images/hot2015.gif" style="position:absolute;background:none;right:0px;top:-5px;" />');o3.attr("href","/"+json.html_content.pinyin+"/");o4.attr("href","/"+json.html_content.pinyin+"/");}else{jQuery("#JS_head_scoll_phone_527").siblings("span.blank").remove();}var len=exprCallBackNum.callFnArr.length;for(var i=0;i<len;i++){exprCallBackNum.callFnArr[i]&&exprCallBackNum.callFnArr[i](json);}}else{jQuery("#JS_head_scoll_phone_527").siblings("span.blank").remove();}}exprCallBackNum.callFnArr=[];window._headPhoneScroll527Now=0;function Head_scroll_phone_527_fn(){if(window._headPhoneScroll527Lock){return;}var c=window._headPhoneScroll527Dom;var a=window._headPhoneScroll527Length;var b=window._headPhoneScroll527Now;if(c&&a){jQuery(c).animate({marginTop:(b+1)*-22+"px"},300,"linear",function(){window._headPhoneScroll527Now++;if(window._headPhoneScroll527Now>=window._headPhoneScroll527Length/2){window._headPhoneScroll527Dom.css("margin-top","0px");window._headPhoneScroll527Now=0;}});}}var isIE=!-[1,];window._gaq=window._gaq||[];$("#JS_quick_memu").on("mouseenter",".sncq-item",function(){if($(this).hasClass("keep")||$(this).hasClass("terminal")){_gaq.push(["_trackEvent","首页导航二维码",'移入"'+$(this).find(".link-text").text()+'"']);}jQuery(this).addClass("hover");if(isIE){jQuery(this).find(".snc-arrow").addClass("snc-arrow-ie");}}).on("mouseleave",".sncq-item",function(){var a=!-[1,];$(this).removeClass("hover");if(a){jQuery(this).find(".snc-arrow").removeClass("snc-arrow-ie");}}).on("click",".JS_header_ga",function(){_gaq.push(["_trackEvent","首页导航二维码","点击“”"]);}).on("click",".JS_header_gaerCode",function(){_gaq.push(["_trackEvent","首页导航二维码","点击“二维码”"]);}).on("click",".JS_header_gaMoberCode",function(){_gaq.push(["_trackEvent","首页导航二维码","点击“移动客户端二维码”"]);}).on("click",".JS_header_gaMob",function(){_gaq.push(["_trackEvent","首页导航二维码","点击“移动客户端文案”"]);});$("#JS_cart").hover(Cart.show,Cart.hide);Cart.init();(function(a){a.fn.menu=function(c){this.each(function(){b.call(this,c);});return this;};function b(o){var h=a(this),k=null,f=[],j=null,i=null,r=null,e=a.extend({rowSelector:"> li",submenuSelector:"*",submenuDirection:"right",tolerance:75,enter:a.noop,exit:a.noop,activate:a.noop,deactivate:a.noop,exitMenu:a.noop,firstDelay:0},o);var c=3,m=300,l=0;var g=function(w){f.push({x:w.pageX,y:w.pageY});if(f.length>c){f.shift();}};var n=function(){clearTimeout(r);if(i){clearTimeout(i);}if(e.exitMenu(this)){if(k){e.deactivate(k);}}k=null;};var q=function(){(!k)&&clearTimeout(r);};var t=function(w){if(i){clearTimeout(i);}e.enter(this);s(this);},p=function(w){e.exit(this);};var u=function(w){d(this);w.stopPropagation();};var d=function(x){clearTimeout(r);if(k){e.deactivate(k);}if(!k&&e.firstDelay){r=setTimeout(function(){w(x);},e.firstDelay);}else{w(x);}function w(y){e.activate(y);k=y;}};var s=function(x){var w=v();if(w){i=setTimeout(function(){s(x);},w);}else{d(x);}};var v=function(){if(!k||!a(k).is(e.submenuSelector)){return 0;}var A=h.offset(),w={x:A.left,y:A.top-e.tolerance},H={x:A.left+h.outerWidth(),y:w.y},J={x:A.left,y:A.top+h.outerHeight()+e.tolerance},B={x:A.left+h.outerWidth(),y:J.y},C=f[f.length-1],G=f[0];if(!C){return 0;}if(!G){G=C;}if(G.x<A.left||G.x>B.x||G.y<A.top||G.y>B.y){return 0;}if(j&&C.x==j.x&&C.y==j.y){return 0;}function D(L,K){return(K.y-L.y)/(K.x-L.x);}var F=H,x=B;if(e.submenuDirection=="left"){F=J;x=w;}else{if(e.submenuDirection=="below"){F=B;x=J;}else{if(e.submenuDirection=="above"){F=w;x=H;}}}var y=D(C,F),E=D(C,x),I=D(G,F),z=D(G,x);if(y<I&&E>z){j=C;return m;}j=null;return 0;};h.on("mouseleave",n).on("enter",q).find(e.rowSelector).on("mouseenter",t).on("mouseleave",p).on("click",u);a(document).mousemove(g);}})(jQuery);var globalMenu=$("#JS_mll_menu_map");globalMenu.menu({activate:function(b){var d=$(b);if(!d.data("imgLoaded")){var a=d.find(".sub img");a.prop("src",a.attr("menu-lazy-src"));d.data("imgLoaded",1);}d.addClass("hover").find("em").stop().animate({"margin-left":"19px"},200);var c=globalMenu.find("#JS_sub_recommend");if(d.hasClass("recommend")){d.hasClass("recommend")&&c.animate({"padding-left":"11px"},200).show();}else{d.find(".sub").stop().animate({opacity:"1","padding-left":"27px"},200).show();c.css("display")!="none"&&c.animate({"padding-left":"5px"},200).hide();}},deactivate:function(a){var b=$(a);b.removeClass("hover").find("em").stop().animate({"margin-left":"14px"},200);b.find(".sub").stop().animate({opacity:"0.8","padding-left":"17px"},200).hide();},rowSelector:"li.top-item",exitMenu:function(c){var c=$(c);var b=c.find(".hover");var a=b.find(".sub");b.find("em").stop().animate({"margin-left":"14px"},100);a.animate({opacity:"0.8","padding-left":"17px"},100,function(){a.hide();});var d=globalMenu.find("#JS_sub_recommend");d.data("show")?d.stop().animate({"padding-left":"11px"},100).show():d.stop().animate({"padding-left":"5px"},100,function(){d.hide();});b.removeClass("hover");},firstDelay:window._isIndexPage?200:100});(function(b,c){var a=c("#JS_mll_header_menu_panel");if(a.hasClass("forbid")){return;}a.hover(function(){a.addClass("hover").find(".top").show();},function(){a.removeClass("hover").find(".top").hide();});})(window,$);
-/*sheqiulin:2015-11-19 16:21:27*/</script>
-
-<style>
-.back_to_top .in_box.back_to_top_bonus{background:url(<s:url value='/images/1418433378115509116.gif'/>) -44px 0;}
-.back_to_top_hover .in_box.back_to_top_bonus{background-position:0 0;}
-</style>
+						<!---->
+						<dt><a href="/n/201612/196994.html" target="_blank">花豹调戏蟒蛇：接下来一幕让人意想不到</a></dt>
 
 
-<script language="javascript">
-//清空区域下面的class，然后给当前选项加上class   控制内容的显示
+						<dd>
+							<a href="/n/201612/196994.html" class="dlimg" target="_blank"><img src="/skin/images/53c8636769d34e2e68f36d352bfb8b0f.jpg" width="146" height="100"></a>
+							<a href="/n/201612/196994.html" class="dlintro" target="_blank">这天花豹子没事在树林里溜达转圈，看到那边有动静就偷偷的溜上去了，仔细一看原来是...[详细]</a>
+						</dd>
+						<!---->
 
-$('.patent_type a').bind('click', function(){
+					</dl>
+					<ul class="list_com">
+						<!---->
+						<li><a href="/n/201612/196997.html" target="_blank">海豚被螺旋桨重伤：1年后竟奇迹般自愈了</a></li>
+						<!---->
+						<li><a href="/n/201612/196833.html" target="_blank">男子活捉鳄鱼：之后发生一幕让人尖叫不已</a></li>
+						<!---->
+						<li><a href="/n/201612/196718.html" target="_blank">疣猪欲偷袭猩猩：结果被母猩猩一举动吓跑</a></li>
+						<li><a href="/n/201612/196718.html" target="_blank">疣猪欲偷袭猩猩：结果被母猩猩一举动吓跑</a></li>
+						<!---->
+					</ul>
+				</div>
+			
+			</div>
+			<div class="right">
+				<div class="hq_hqqq">
+					<!--环球趣闻-->
+					<h2 class="com_titlebg shenghuo"><a href="/hqqw/" target="_blank">更多</a></h2>
+					<div class="pdlf8">
+						<!---->
+						<div class="cc clearfix">
+							<span class="r"><a href="/n/201612/197027.html" target="_blank"><img src="/skin/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg" width="86" height="82"></a></span>
+							<span class="l"><a href="/n/201612/197027.html" target="_blank">女子鱼肚取出异物 细看后惊呆</a></span>
+						</div>
+						<div class="intro com_a_color">女子和丈夫外出到河边捕了几条鱼，而当他们回家清理的时候，却注意到其中一条鱼的肚..<a href="#">[详细]</a></div>
+						<!---->
+						<ul class="list_com_4">
+							<!---->
+							<li><a href="/n/201612/197025.html" target="_blank">男子捡奇怪钱包：打开一看脸色瞬间变了</a></li>
+							<!---->
+							<li><a href="/n/201612/197022.html" target="_blank">她将喵星人"变身"星空：竟如此震撼</a></li>
+							<!---->
 
-    $(this).addClass('s-hover').siblings().removeClass('s-hover');
-
-	var box_id="box_"+$(this).attr("data");
-	//alert(box_id);
-	$("."+box_id).show().siblings().hide();
-});
-$('.patent_type li').bind('click', function(){
-
-    $(this).addClass('on').siblings().removeClass('on');
-});
+						</ul>
 
 
-</script>
+
+					</div>
+
+
+				</div>			
+			
+				<div class="hq_ylbg">
+					<h2 class="paihang com_titlebg"></h2>
+
+					<ul class="rank_list">
+					<li>
+					<span class="r_num num_1">01</span><a href="http://news.91.com/apple/21879328.html" target="_blank">10大iPhone 6s功能及50个iOS 9技巧</a>
+					</li>
+					<li>
+					<span class="r_num num_2">02</span><a href="http://news.91.com/it/s5774c1f0187a.html" target="_blank">MWC2016：百视通携手风行电视登录上海站</a>
+					</li>
+					<li>
+					<span class="r_num num_3">03</span><a href="http://news.91.com/apple/21927526.html" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					</li>
+					<li>
+					<span class="r_num num_4">04</span><a href="http://news.91.com/android/21942455.html" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					</li>
+					<li>
+					<span class="r_num num_5">05</span><a href="http://news.91.com/apple/21912850.html" target="_blank">惊呆了！iPhone 5SE配置/售价完全曝光</a>
+					</li>
+					<li>
+					<span class="r_num num_3">06</span><a href="http://news.91.com/apple/21927526.html" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					</li>
+					<li>
+					<span class="r_num num_4">07</span><a href="http://news.91.com/android/21942455.html" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					</li>
+				
+					</ul>
+
+				</div>			
+			
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+<!---->
+	<div class="main_1 mt25 clearfix">
+	
+		<div class="title">
+			<a href="/a/yule" title="男人娱乐" target="_blank"><img src="/skin/images/t_2.jpg" alt="创意"></a>
+			<strong>
+			<a href="/a/yingshi/" target="_blank">创业者说</a>|
+			<a href="/a/yule/yinle/" target="_blank">创业新闻</a>|
+			<a href="/a/yule/youxi/" target="_blank">创业政策</a>
+			</strong>
+		</div>	
+		<div class="c_box4 clearfix">
+			<div class="left">
+				<div class="c4_datu">
+					<!---->
+					<a href="/n/201612/197015.html" target="_blank">
+						<img src="/skin/images/ba9568233ff211cdde3acf281664aecf.jpg" width="360" height="260">
+						<b></b>
+						<span>哪位开国元帅是林彪伯乐：发现其军事才能</span>
+					</a>
+					<!---->
+				</div>
+				
+				<div class="c4_zgjq">
+					<h4 class="com_ltred">创意设计</h4>
+					<ul class="list_com_tw">
+						<!---->
+						<li>
+							<span class="p"><a href="/n/201612/197020.html" target="_blank"><img src="/skin/images/da35f6928bcaf2f74afd92ac3d1d2f0c.jpg" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="/n/201612/197020.html" target="_blank">开国大将罗瑞卿为何死在德国</a></h5>
+								<p><a href="/n/201612/197020.html" target="_blank">罗瑞卿，这位深受毛泽东信任的开国大将，曾担任第一任公，..[详细]</a></p>
+						  </span>
+						</li>
+						<!---->
+						<li>
+							<span class="p"><a href="/n/201612/196850.html" target="_blank"><img src="/skin/images/1608d08bd8997f2e1ea45d969f997fb8.jpg" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="/n/201612/196850.html" target="_blank">哪件突发事件让邓小平想退休</a></h5>
+								<p><a href="/n/201612/196850.html" target="_blank">小平同志是举世瞩目的伟人，常常会有一些境外新闻媒体谎，..[详细]</a></p>
+						  </span>
+						</li>
+						<!---->
+						<li>
+							<span class="p"><a href="/n/201612/196747.html" target="_blank"><img src="/skin/images/b1215b98777670aa30f1fff2861921a9.jpg" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="/n/201612/196747.html" target="_blank">刘伯承临终前重托华国锋何事</a></h5>
+								<p><a href="/n/201612/196747.html" target="_blank">在抗日战争和解放战争长达10多年间，刘伯承和邓小平曾并，..[详细]</a></p>
+						  </span>
+						</li>
+						<!---->
+
+
+					</ul>
+				</div>				
+			</div>
+			<div class="mid">
+				<div class="m4_first">
+					<!---->
+					<h2><a href="/n/201612/196961.html" target="_blank">美女街头假醉测试男人:结果令人愤怒</a></h2>
+					<p>10月28日报道，Europeo Neurosalus进行了一项实验。学...<a href="/n/201612/196961.html" target="_blank">[详细]</a></p>
+					<!---->
+					<ul class="list_com">
+						<!---->
+						<li><a href="/n/201612/197012.html" target="_blank">码头捡怪鱼：外形四方长相呆萌能毒死自己</a></li>
+						<!---->
+						<li><a href="/n/201612/197009.html" target="_blank">小夫妻住诡异出租房：入住后不停掉头发</a></li>
+						<!---->
+						<li><a href="/n/201612/197007.html" target="_blank">女子到破房子去冒险：却意外看到了这个</a></li>
+						<!---->
+						<li><a href="/n/201612/197002.html" target="_blank">男子发现一巨碟状"石头"：近看后乐疯了</a></li>
+						<!---->
+						<li><a href="/n/201612/196996.html" target="_blank">建筑工地施工：挖地时竟挖出了个大怪物</a></li>
+						<!---->
+						<li><a href="/n/201612/196993.html" target="_blank">水牛目睹雄狮羞羞画面：反应让人看傻眼</a></li>
+						<!---->
+					</ul>
+				</div>
+				<div class="m4_bx2">
+					<h4 class="com_ltred">创意产品</h4>
+					<dl class="list_com_3">
+
+						<!---->
+						<dt><a href="/n/201612/196994.html" target="_blank">花豹调戏蟒蛇：接下来一幕让人意想不到</a></dt>
+
+
+						<dd>
+							<a href="/n/201612/196994.html" class="dlimg" target="_blank"><img src="/skin/images/53c8636769d34e2e68f36d352bfb8b0f.jpg" width="146" height="100"></a>
+							<a href="/n/201612/196994.html" class="dlintro" target="_blank">这天花豹子没事在树林里溜达转圈，看到那边有动静就偷偷的溜上去了，仔细一看原来是...[详细]</a>
+						</dd>
+						<!---->
+
+					</dl>
+					<ul class="list_com">
+						<!---->
+						<li><a href="/n/201612/196997.html" target="_blank">海豚被螺旋桨重伤：1年后竟奇迹般自愈了</a></li>
+						<!---->
+						<li><a href="/n/201612/196833.html" target="_blank">男子活捉鳄鱼：之后发生一幕让人尖叫不已</a></li>
+						<!---->
+						<li><a href="/n/201612/196718.html" target="_blank">疣猪欲偷袭猩猩：结果被母猩猩一举动吓跑</a></li>
+						<li><a href="/n/201612/196718.html" target="_blank">疣猪欲偷袭猩猩：结果被母猩猩一举动吓跑</a></li>
+						<!---->
+					</ul>
+				</div>
+			
+			</div>
+			<div class="right">
+				<div class="hq_hqqq">
+					<!--环球趣闻-->
+					<h2 class="com_titlebg zhengce"><a href="/hqqw/" target="_blank">更多</a></h2>
+					<div class="pdlf8">
+						<!---->
+						<div class="cc clearfix">
+							<span class="r"><a href="/n/201612/197027.html" target="_blank"><img src="/skin/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg" width="86" height="82"></a></span>
+							<span class="l"><a href="/n/201612/197027.html" target="_blank">女子鱼肚取出异物 细看后惊呆</a></span>
+						</div>
+						<div class="intro com_a_color">女子和丈夫外出到河边捕了几条鱼，而当他们回家清理的时候，却注意到其中一条鱼的肚..<a href="#">[详细]</a></div>
+						<!---->
+						<ul class="list_com_4">
+							<!---->
+							<li><a href="/n/201612/197025.html" target="_blank">男子捡奇怪钱包：打开一看脸色瞬间变了</a></li>
+							<!---->
+							<li><a href="/n/201612/197022.html" target="_blank">她将喵星人"变身"星空：竟如此震撼</a></li>
+							<!---->
+
+						</ul>
+
+
+
+					</div>
+
+
+				</div>			
+			
+				<div class="hq_ylbg">
+					<h2 class="com_titlebg cy_paihang"></h2>
+
+					<ul class="rank_list">
+					<li>
+					<span class="r_num num_1">01</span><a href="http://news.91.com/apple/21879328.html" target="_blank">10大iPhone 6s功能及50个iOS 9技巧</a>
+					</li>
+					<li>
+					<span class="r_num num_2">02</span><a href="http://news.91.com/it/s5774c1f0187a.html" target="_blank">MWC2016：百视通携手风行电视登录上海站</a>
+					</li>
+					<li>
+					<span class="r_num num_3">03</span><a href="http://news.91.com/apple/21927526.html" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					</li>
+					<li>
+					<span class="r_num num_4">04</span><a href="http://news.91.com/android/21942455.html" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					</li>
+					<li>
+					<span class="r_num num_5">05</span><a href="http://news.91.com/apple/21912850.html" target="_blank">惊呆了！iPhone 5SE配置/售价完全曝光</a>
+					</li>
+					<li>
+					<span class="r_num num_3">06</span><a href="http://news.91.com/apple/21927526.html" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					</li>
+					<li>
+					<span class="r_num num_4">07</span><a href="http://news.91.com/android/21942455.html" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					</li>
+				
+					</ul>
+
+				</div>			
+			
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>	
+	
+	<div class="main_1 mt25 clearfix">
+	
+		<div class="title">
+			<a href="/a/yule" title="专利商标" target="_blank"><img src="/skin/images/t_3.jpg" alt="专利商标"></a>
+			<strong>
+			<a href="/a/yingshi/" target="_blank">专利新闻</a>|
+			<a href="/a/yule/yinle/" target="_blank">专利学习</a>|
+			<a href="/a/yule/youxi/" target="_blank">商标资讯</a>|
+			<a href="/a/yule/youxi/" target="_blank">商标学习</a>
+			</strong>
+		</div>	
+		<div class="c_box4 clearfix">
+			<div class="left">
+				<div class="c4_datu">
+					<!---->
+					<a href="/n/201612/197015.html" target="_blank">
+						<img src="/skin/images/ba9568233ff211cdde3acf281664aecf.jpg" width="360" height="260">
+						<b></b>
+						<span>哪位开国元帅是林彪伯乐：发现其军事才能</span>
+					</a>
+					<!---->
+				</div>
+				
+				<div class="c4_zgjq">
+					<h4 class="com_ltred">创意设计</h4>
+					<ul class="list_com_tw">
+						<!---->
+						<li>
+							<span class="p"><a href="/n/201612/197020.html" target="_blank"><img src="/skin/images/da35f6928bcaf2f74afd92ac3d1d2f0c.jpg" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="/n/201612/197020.html" target="_blank">开国大将罗瑞卿为何死在德国</a></h5>
+								<p><a href="/n/201612/197020.html" target="_blank">罗瑞卿，这位深受毛泽东信任的开国大将，曾担任第一任公，..[详细]</a></p>
+						  </span>
+						</li>
+						<!---->
+						<li>
+							<span class="p"><a href="/n/201612/196850.html" target="_blank"><img src="/skin/images/1608d08bd8997f2e1ea45d969f997fb8.jpg" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="/n/201612/196850.html" target="_blank">哪件突发事件让邓小平想退休</a></h5>
+								<p><a href="/n/201612/196850.html" target="_blank">小平同志是举世瞩目的伟人，常常会有一些境外新闻媒体谎，..[详细]</a></p>
+						  </span>
+						</li>
+						<!---->
+						<li>
+							<span class="p"><a href="/n/201612/196747.html" target="_blank"><img src="/skin/images/b1215b98777670aa30f1fff2861921a9.jpg" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="/n/201612/196747.html" target="_blank">刘伯承临终前重托华国锋何事</a></h5>
+								<p><a href="/n/201612/196747.html" target="_blank">在抗日战争和解放战争长达10多年间，刘伯承和邓小平曾并，..[详细]</a></p>
+						  </span>
+						</li>
+						<!---->
+
+
+					</ul>
+				</div>				
+			</div>
+			<div class="mid">
+				<div class="m4_first">
+					<!---->
+					<h2><a href="/n/201612/196961.html" target="_blank">美女街头假醉测试男人:结果令人愤怒</a></h2>
+					<p>10月28日报道，Europeo Neurosalus进行了一项实验。学...<a href="/n/201612/196961.html" target="_blank">[详细]</a></p>
+					<!---->
+					<ul class="list_com">
+						<!---->
+						<li><a href="/n/201612/197012.html" target="_blank">码头捡怪鱼：外形四方长相呆萌能毒死自己</a></li>
+						<!---->
+						<li><a href="/n/201612/197009.html" target="_blank">小夫妻住诡异出租房：入住后不停掉头发</a></li>
+						<!---->
+						<li><a href="/n/201612/197007.html" target="_blank">女子到破房子去冒险：却意外看到了这个</a></li>
+						<!---->
+						<li><a href="/n/201612/197002.html" target="_blank">男子发现一巨碟状"石头"：近看后乐疯了</a></li>
+						<!---->
+						<li><a href="/n/201612/196996.html" target="_blank">建筑工地施工：挖地时竟挖出了个大怪物</a></li>
+						<!---->
+						<li><a href="/n/201612/196993.html" target="_blank">水牛目睹雄狮羞羞画面：反应让人看傻眼</a></li>
+						<!---->
+					</ul>
+				</div>
+				<div class="m4_bx2">
+					<h4 class="com_ltred">创意产品</h4>
+					<dl class="list_com_3">
+
+						<!---->
+						<dt><a href="/n/201612/196994.html" target="_blank">花豹调戏蟒蛇：接下来一幕让人意想不到</a></dt>
+
+
+						<dd>
+							<a href="/n/201612/196994.html" class="dlimg" target="_blank"><img src="/skin/images/53c8636769d34e2e68f36d352bfb8b0f.jpg" width="146" height="100"></a>
+							<a href="/n/201612/196994.html" class="dlintro" target="_blank">这天花豹子没事在树林里溜达转圈，看到那边有动静就偷偷的溜上去了，仔细一看原来是...[详细]</a>
+						</dd>
+						<!---->
+
+					</dl>
+					<ul class="list_com">
+						<!---->
+						<li><a href="/n/201612/196997.html" target="_blank">海豚被螺旋桨重伤：1年后竟奇迹般自愈了</a></li>
+						<!---->
+						<li><a href="/n/201612/196833.html" target="_blank">男子活捉鳄鱼：之后发生一幕让人尖叫不已</a></li>
+						<!---->
+						<li><a href="/n/201612/196718.html" target="_blank">疣猪欲偷袭猩猩：结果被母猩猩一举动吓跑</a></li>
+						<li><a href="/n/201612/196718.html" target="_blank">疣猪欲偷袭猩猩：结果被母猩猩一举动吓跑</a></li>
+						<!---->
+					</ul>
+				</div>
+			
+			</div>
+			<div class="right">
+				<div class="hq_hqqq">
+					<!--环球趣闻-->
+					<h2 class="com_titlebg zhengce"><a href="/hqqw/" target="_blank">更多</a></h2>
+					<div class="pdlf8">
+						<!---->
+						<div class="cc clearfix">
+							<span class="r"><a href="/n/201612/197027.html" target="_blank"><img src="/skin/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg" width="86" height="82"></a></span>
+							<span class="l"><a href="/n/201612/197027.html" target="_blank">女子鱼肚取出异物 细看后惊呆</a></span>
+						</div>
+						<div class="intro com_a_color">女子和丈夫外出到河边捕了几条鱼，而当他们回家清理的时候，却注意到其中一条鱼的肚..<a href="#">[详细]</a></div>
+						<!---->
+						<ul class="list_com_4">
+							<!---->
+							<li><a href="/n/201612/197025.html" target="_blank">男子捡奇怪钱包：打开一看脸色瞬间变了</a></li>
+							<!---->
+							<li><a href="/n/201612/197022.html" target="_blank">她将喵星人"变身"星空：竟如此震撼</a></li>
+							<!---->
+
+						</ul>
+
+
+
+					</div>
+
+
+				</div>			
+			
+				<div class="hq_ylbg">
+					<h2 class="com_titlebg cy_paihang"></h2>
+
+					<ul class="rank_list">
+					<li>
+					<span class="r_num num_1">01</span><a href="http://news.91.com/apple/21879328.html" target="_blank">10大iPhone 6s功能及50个iOS 9技巧</a>
+					</li>
+					<li>
+					<span class="r_num num_2">02</span><a href="http://news.91.com/it/s5774c1f0187a.html" target="_blank">MWC2016：百视通携手风行电视登录上海站</a>
+					</li>
+					<li>
+					<span class="r_num num_3">03</span><a href="http://news.91.com/apple/21927526.html" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					</li>
+					<li>
+					<span class="r_num num_4">04</span><a href="http://news.91.com/android/21942455.html" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					</li>
+					<li>
+					<span class="r_num num_5">05</span><a href="http://news.91.com/apple/21912850.html" target="_blank">惊呆了！iPhone 5SE配置/售价完全曝光</a>
+					</li>
+					<li>
+					<span class="r_num num_3">06</span><a href="http://news.91.com/apple/21927526.html" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					</li>
+					<li>
+					<span class="r_num num_4">07</span><a href="http://news.91.com/android/21942455.html" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					</li>
+				
+					</ul>
+
+				</div>			
+			
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>	
+	
+		
+	
+	<div class="main_2" style="height:400px;">123</div>
+</div>
+
 
 </body>
 </html>
