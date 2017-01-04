@@ -144,11 +144,11 @@
 	<!-- 从这里开始  新的网站www.lotut.com-->
 		
 		<select id="getHomepageByType" resultMap="NewsResultMap">
-			(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM news n  WHERE DATE(publish_time) = CURDATE() 
+			(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time,content FROM news n  WHERE DATE(publish_time) = CURDATE() 
 			AND n.check_status=1 AND news_type=#{type}
 			ORDER BY publish_time DESC) AS n1 )
 			UNION ALL
-			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time
+			(SELECT * FROM (SELECT e.id,e.title,e.small_img_url,e.keywords,e.publish_time,e.content
 			FROM news  e  LEFT JOIN news_comments c  ON c.news_id = e.id   
 			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 AND news_type =#{type}
 			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2) LIMIT 0,#{size}
