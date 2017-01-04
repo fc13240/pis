@@ -141,7 +141,7 @@
 		where  check_status=1 ORDER BY RAND() limit 10
 	</select>
 	
-	<!-- 从这里开始  -->
+	<!-- 从这里开始  新的网站www.lotut.com-->
 		
 		<select id="getHomepageByType" resultMap="NewsResultMap">
 			(SELECT * FROM (SELECT id,title,small_img_url,keywords,publish_time FROM news n  WHERE DATE(publish_time) = CURDATE() 
