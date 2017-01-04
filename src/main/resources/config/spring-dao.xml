@@ -18,9 +18,9 @@
 		<constructor-arg type="int" value="${mongo.port}"/>
 	</bean>
 	
-	<bean id="elasticsearchClient" class="ideaStreer.es.ElasticsearchClient" factory-method="getClient" destroy-method="close"/>
+	<bean id="elasticsearchClient" class="ideaStreet.es.ElasticsearchClient" factory-method="getClient" destroy-method="close"/>
 	
-	<bean id="patentSearchDao" class="ideaStreer.dao.imp.PatentSearchDaoImpl">
+	<bean id="patentSearchDao" class="ideaStreet.dao.imp.PatentSearchDaoImpl">
 		<constructor-arg name="mongoClient" ref="mongoClient" />
 		<!-- <constructor-arg name="esClient" ref="elasticsearchClient"/> -->
 	</bean>

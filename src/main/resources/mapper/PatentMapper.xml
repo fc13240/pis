@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="ideaStreer.dao.mapper.PatentMapper">
+<mapper namespace="ideaStreet.dao.mapper.PatentMapper">
 	
 	<select id="getSecoundColumnPage"  resultType="Patent" parameterType="Page" >
 		select s.price ,s.transaction_type,p.patent_name,s.patent_id,ss.patent_first_column_id,pt.patent_type_desc as patent_type_name

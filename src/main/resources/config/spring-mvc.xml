@@ -16,7 +16,7 @@
 		<property name="suffix" value=".jsp" />      
 	</bean> 	
 	
-	<context:component-scan base-package="ideaStreer.controller" /> 	
+	<context:component-scan base-package="ideaStreet.controller" /> 	
 	<mvc:annotation-driven />
 	
 	

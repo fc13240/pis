@@ -8,39 +8,39 @@
 						http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 	
 
-	<bean name="patentService" class="ideaStreer.service.impl.PatentServiceImpl">
+	<bean name="patentService" class="ideaStreet.service.impl.PatentServiceImpl">
 		<constructor-arg ref="patentDao"/>
 	</bean>
 	
-	<bean id="newsService" class="ideaStreer.service.impl.NewsServiceImpl">
+	<bean id="newsService" class="ideaStreet.service.impl.NewsServiceImpl">
 		<constructor-arg ref="newsDao"/>
 	</bean>	
 	
-	<bean id="patentSearchService" class="ideaStreer.service.impl.PatentSearchServiceImpl">
+	<bean id="patentSearchService" class="ideaStreet.service.impl.PatentSearchServiceImpl">
 		<constructor-arg ref="patentSearchDao"/>
 	</bean>
 	
-	<bean id="articleService" class="ideaStreer.service.impl.ArticleServiceImpl">
+	<bean id="articleService" class="ideaStreet.service.impl.ArticleServiceImpl">
 		<constructor-arg ref="articleDao"/>
 	</bean>	
 	
-	<bean id="userService" class="ideaStreer.service.impl.UserServiceImpl">
+	<bean id="userService" class="ideaStreet.service.impl.UserServiceImpl">
 		<constructor-arg ref="userDao"/>
 	</bean>
 	
-	<bean name="patentMobileService" class="ideaStreer.service.impl.PatentMobileServiceImpl">
+	<bean name="patentMobileService" class="ideaStreet.service.impl.PatentMobileServiceImpl">
 		<constructor-arg ref="patentMobileDao"/>
 	</bean>	
 	
-		<bean name="articleMobileService" class="ideaStreer.service.impl.ArticleMobileServiceImpl">
+		<bean name="articleMobileService" class="ideaStreet.service.impl.ArticleMobileServiceImpl">
 		<constructor-arg ref="articleMobileDao"/>
 	</bean>	
 	
-	<bean name="newsMobileService" class="ideaStreer.service.impl.NewsMobileServiceImpl">
+	<bean name="newsMobileService" class="ideaStreet.service.impl.NewsMobileServiceImpl">
 		<constructor-arg ref="newsMobileDao"/>
 	</bean>	
 	
-	<bean name="weChatOrderService" class="ideaStreer.service.impl.WeChatOrderServiceImpl">
+	<bean name="weChatOrderService" class="ideaStreet.service.impl.WeChatOrderServiceImpl">
 		<constructor-arg ref="weChatOrderDao"/>
 	</bean>
 </beans>

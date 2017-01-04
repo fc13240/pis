@@ -21,11 +21,11 @@
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
 	<bean id="patentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="ideaStreer.dao.mapper.PatentMapper" />
+		<property name="mapperInterface" value="ideaStreet.dao.mapper.PatentMapper" />
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>	
 	
-	<bean name="patentDao" class="ideaStreer.dao.mybatis.PatentMybatisDao">
+	<bean name="patentDao" class="ideaStreet.dao.mybatis.PatentMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="patentMapper" ref="patentMapper" />
 	</bean>
@@ -46,77 +46,77 @@
 		
 	
 	<bean id="newsMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="ideaStreer.dao.mapper.NewsMapper"/>
+		<property name="mapperInterface" value="ideaStreet.dao.mapper.NewsMapper"/>
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
 	
-	<bean name="newsDao" class="ideaStreer.dao.mybatis.NewsMybatisDao">
+	<bean name="newsDao" class="ideaStreet.dao.mybatis.NewsMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="newsMapper" ref="newsMapper" />
 	</bean>	
 	
-	<bean name="databaseAuthDao" class="ideaStreer.dao.DatabaseAuthProvider">
+	<bean name="databaseAuthDao" class="ideaStreet.dao.DatabaseAuthProvider">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
 	
 	<bean id="articleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="ideaStreer.dao.mapper.ArticleMapper"/>
+		<property name="mapperInterface" value="ideaStreet.dao.mapper.ArticleMapper"/>
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
 	
-	<bean name="articleDao" class="ideaStreer.dao.mybatis.ArticleMybatisDao">
+	<bean name="articleDao" class="ideaStreet.dao.mybatis.ArticleMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="articleMapper" ref="articleMapper" />
 	</bean>
 	
 	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="ideaStreer.dao.mapper.UserMapper"/>
+		<property name="mapperInterface" value="ideaStreet.dao.mapper.UserMapper"/>
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
 	
-	<bean name="userDao" class="ideaStreer.dao.mybatis.UserMybatisDao">
+	<bean name="userDao" class="ideaStreet.dao.mybatis.UserMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="userMapper" ref="userMapper" />
 	</bean>
 	
 	<bean id="patentMobileMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="ideaStreer.dao.mapper.PatentMobileMapper"/>
+		<property name="mapperInterface" value="ideaStreet.dao.mapper.PatentMobileMapper"/>
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
 	
-	<bean name="patentMobileDao" class="ideaStreer.dao.mybatis.PatentMobileMybatisDao">
+	<bean name="patentMobileDao" class="ideaStreet.dao.mybatis.PatentMobileMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="patentMobileMapper" ref="patentMobileMapper" />
 	</bean>
 	
 	<bean id="articleMobileMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="ideaStreer.dao.mapper.ArticleMobileMapper"/>
+		<property name="mapperInterface" value="ideaStreet.dao.mapper.ArticleMobileMapper"/>
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
 	
-	<bean name="articleMobileDao" class="ideaStreer.dao.mybatis.ArticleMobileMybatisDao">
+	<bean name="articleMobileDao" class="ideaStreet.dao.mybatis.ArticleMobileMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="articleMobileMapper" ref="articleMobileMapper" />
 	</bean>
 	
 	<bean id="newsMobileMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="ideaStreer.dao.mapper.NewsMobileMapper"/>
+		<property name="mapperInterface" value="ideaStreet.dao.mapper.NewsMobileMapper"/>
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
 	
-	<bean name="newsMobileDao" class="ideaStreer.dao.mybatis.NewsMobileMybatisDao">
+	<bean name="newsMobileDao" class="ideaStreet.dao.mybatis.NewsMobileMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 		<property name="newsMobileMapper" ref="newsMobileMapper" />
 	</bean>
 	
 	
 	<bean id="weChatOrderMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="ideaStreer.dao.mapper.WeChatOrderMapper"/>
+		<property name="mapperInterface" value="ideaStreet.dao.mapper.WeChatOrderMapper"/>
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
 	</bean>
 	
-	<bean name="weChatOrderDao" class="ideaStreer.dao.mybatis.WeChatOrderMybatisDao">
+	<bean name="weChatOrderDao" class="ideaStreet.dao.mybatis.WeChatOrderMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>
 </beans>							

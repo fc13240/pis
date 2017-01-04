@@ -9,29 +9,29 @@
 	</settings>
 	
 		<typeAliases>
-			<typeAlias alias="Patent" type="ideaStreer.domain.Patent"/>
-			<typeAlias alias="FirstColumn" type="ideaStreer.domain.FirstColumn"/>
-			<typeAlias alias="SecondColumn" type="ideaStreer.domain.SecondColumn"/>
-			<typeAlias alias="Page" type="ideaStreer.domain.Page"/>
-			<typeAlias alias="PatentSearchCondition" type="ideaStreer.domain.PatentSearchCondition"/>
-			<typeAlias alias="ColumnCount" type="ideaStreer.domain.ColumnCount"/>	
-			<typeAlias alias="Notice" type="ideaStreer.domain.Notice"/>
-			<typeAlias alias="News" type="ideaStreer.domain.News"/>
-			<typeAlias alias="NewsType" type="ideaStreer.domain.NewsType"/>
-			<typeAlias alias="NewsImg" type="ideaStreer.domain.NewsImg"/>
-			<typeAlias alias="NewsSearchCondition" type="ideaStreer.domain.NewsSearchCondition"/>
-			<typeAlias alias="User" type="ideaStreer.domain.User"/>
-			<typeAlias alias="Article" type="ideaStreer.domain.Article"/>
-			<typeAlias alias="ArticleImg" type="ideaStreer.domain.ArticleImg"/>
-			<typeAlias alias="ArticleType" type="ideaStreer.domain.ArticleType"/>
-			<typeAlias alias="Vote" type="ideaStreer.domain.Vote"/>
-			<typeAlias alias="ArticleComment" type="ideaStreer.domain.ArticleComment"/>
-			<typeAlias alias="NewsComment" type="ideaStreer.domain.NewsComment"/>		
-			<typeAlias alias="PatentStatus" type="ideaStreer.domain.PatentStatus"/>		
-			<typeAlias alias="PatentRemark" type="ideaStreer.domain.PatentRemark"/>		
-			<typeAlias alias="PatentType" type="ideaStreer.domain.PatentType"/>		
-			<typeAlias alias="MobilePatent" type="ideaStreer.domain.MobilePatent"/>
-			<typeAlias alias="WeChatOrder" type="ideaStreer.domain.WeChatOrder"/>		
+			<typeAlias alias="Patent" type="ideaStreet.domain.Patent"/>
+			<typeAlias alias="FirstColumn" type="ideaStreet.domain.FirstColumn"/>
+			<typeAlias alias="SecondColumn" type="ideaStreet.domain.SecondColumn"/>
+			<typeAlias alias="Page" type="ideaStreet.domain.Page"/>
+			<typeAlias alias="PatentSearchCondition" type="ideaStreet.domain.PatentSearchCondition"/>
+			<typeAlias alias="ColumnCount" type="ideaStreet.domain.ColumnCount"/>	
+			<typeAlias alias="Notice" type="ideaStreet.domain.Notice"/>
+			<typeAlias alias="News" type="ideaStreet.domain.News"/>
+			<typeAlias alias="NewsType" type="ideaStreet.domain.NewsType"/>
+			<typeAlias alias="NewsImg" type="ideaStreet.domain.NewsImg"/>
+			<typeAlias alias="NewsSearchCondition" type="ideaStreet.domain.NewsSearchCondition"/>
+			<typeAlias alias="User" type="ideaStreet.domain.User"/>
+			<typeAlias alias="Article" type="ideaStreet.domain.Article"/>
+			<typeAlias alias="ArticleImg" type="ideaStreet.domain.ArticleImg"/>
+			<typeAlias alias="ArticleType" type="ideaStreet.domain.ArticleType"/>
+			<typeAlias alias="Vote" type="ideaStreet.domain.Vote"/>
+			<typeAlias alias="ArticleComment" type="ideaStreet.domain.ArticleComment"/>
+			<typeAlias alias="NewsComment" type="ideaStreet.domain.NewsComment"/>		
+			<typeAlias alias="PatentStatus" type="ideaStreet.domain.PatentStatus"/>		
+			<typeAlias alias="PatentRemark" type="ideaStreet.domain.PatentRemark"/>		
+			<typeAlias alias="PatentType" type="ideaStreet.domain.PatentType"/>		
+			<typeAlias alias="MobilePatent" type="ideaStreet.domain.MobilePatent"/>
+			<typeAlias alias="WeChatOrder" type="ideaStreet.domain.WeChatOrder"/>		
 		</typeAliases>
 		
 
