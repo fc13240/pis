@@ -77,4 +77,9 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.getNewsByRand();
 	}
 
+	@Override
+	public List<News> getHomepageByType(int type, int size) {
+		return newsDao.getHomepageByType(type, size);
+	}
+
 }

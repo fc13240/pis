@@ -77,6 +77,11 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 		return newsMapper.getNewsByRand();
 	}
 
+	@Override
+	public List<News> getHomepageByType(int type, int size) {
+		return newsMapper.getHomepageByType(type, size);
+	}
+
 
 
 

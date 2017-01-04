@@ -37,4 +37,6 @@ public interface NewsMapper {
 
 	List<News> getNewsByRand();
 	
+	
+	List<News> getHomepageByType(@Param("type")int type,@Param("size")int size);
 }
