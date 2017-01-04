@@ -58,7 +58,8 @@ public class IndexController {
 	@RequestMapping(path="/index")
 	public String getPatents(HttpServletRequest req, HttpServletResponse resp,Model model) {
 
-		List<News> result=newsService.getHomepageByType(2,10);
+		List<News> hotNews=newsService.getHomepageByType(2,10);
+		model.addAttribute("hotNews", hotNews);
 		return "index";
 	}
 	
@@ -67,26 +68,26 @@ public class IndexController {
 		PrintWriter pw = null;
 		try{
 			 pw = resp.getWriter();
-			System.out.println("请求到来");
+			System.out.println("璇锋眰鍒版潵");
 		       resp.setCharacterEncoding("GBK");
-		       // 微信加密签名 
+		       // 寰俊鍔犲瘑绛惧悕 
 		        String signature = req.getParameter("signature"); 
 		        System.out.println(signature);
-		        // 时间戳 
+		        // 鏃堕棿鎴� 
 		        String timestamp = req.getParameter("timestamp");
 		        System.out.println(timestamp);
-		        // 随机数 
+		        // 闅忔満鏁� 
 		        String nonce = req.getParameter("nonce"); 
 		        System.out.println(nonce);
-		        // 随机字符串  
+		        // 闅忔満瀛楃涓�  
 		        String echostr = req.getParameter("echostr");
 		        WeixinMessageDigest wxDigest = WeixinMessageDigest.getInstance();  
 		        boolean bValid = wxDigest.validate(signature, timestamp, nonce);
 		       
 		        if(bValid){
-		 	        pw.write(echostr);  //这里 echostr 的值必须返回，否则微信认为请求失败
+		 	        pw.write(echostr);  //杩欓噷 echostr 鐨勫�煎繀椤昏繑鍥烇紝鍚﹀垯寰俊璁や负璇锋眰澶辫触
 		        }else{
-		        	 pw.write("token 验证失败!");
+		        	 pw.write("token 楠岃瘉澶辫触!");
 		        }
 		       
 		}catch(IOException e){
@@ -115,7 +116,7 @@ public class IndexController {
 	
 	            if (accessTokenObj.getAccessToken().equals("")) {
 	            	
-	                System.out.print("没有获取到响应参数");
+	                System.out.print("娌℃湁鑾峰彇鍒板搷搴斿弬鏁�");
 	            } else {
 	                accessToken = accessTokenObj.getAccessToken();
 	                tokenExpireIn = accessTokenObj.getExpireIn();
@@ -142,7 +143,7 @@ public class IndexController {
 	             					new UsernamePasswordAuthenticationToken(userInDB, qqUser.getPassword(), qqUser.getAuthorities());
 	             		SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 	                } else {
-	                	System.out.println("很抱歉，我们没能正确获取到您的信息，原因是： " + userInfoBean.getMsg());
+	                	System.out.println("寰堟姳姝夛紝鎴戜滑娌¤兘姝ｇ‘鑾峰彇鍒版偍鐨勪俊鎭紝鍘熷洜鏄細 " + userInfoBean.getMsg());
 	                }
 	            }
 	        } catch (QQConnectException e) {

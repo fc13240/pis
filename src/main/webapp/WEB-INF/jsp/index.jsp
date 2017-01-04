@@ -166,22 +166,32 @@
 			</div>
 			<div class="col_con mt10">
 				<div class="news_mod">
-												<div class="news_tit">
-						<a class="tp_block tb_1	" href="" target="_blank">苹果</a><a href="" target="_blank">iOS 10.1.1越狱工具或将在不久后发布</a>
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="0" end="0">
+					<div class="news_tit">
+						<a class="tp_block tb_1	" href="" target="_blank">头条</a><a href="" target="_blank">${hotNews.title}</a>
 					</div>
-					<p class="news_dis">谷歌Project Zero项目中安全研究者Ian Beer选择公开了iOS 10.1.1的内核和root漏洞，...</p>
-											</div>
+					<p class="news_dis">${hotNews.newsAbstract}...</p>
+						
+					</c:forEach>				
+
+				</div>
 				<div class="news_mod mt20">
-												<div class="news_tit">
-						<a class="tp_block tb_4	" href="" target="_blank">安卓</a><a href="" target="_blank">三星移动总裁：严禁泄密Galaxy S8</a>
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="1" end="1">
+					<div class="news_tit">
+						<a class="tp_block tb_4	" href="" target="_blank">热点</a><a href="" target="_blank">${hotNews.title}</a>
 					</div>
-					<p class="news_dis">据韩国媒体报道，三星移动总裁高东真已经下达“封杀令”，严禁三星员工...</p>
-											</div>
+					<p class="news_dis">${hotNews.newsAbstract}...</p>
+						
+					</c:forEach>
+
+				</div>
 				<ul class="t_n_list mt15">
-												<li><a href="" target="_blank">谷歌发布2016年全球热搜排行榜</a></li>
-												<li><a href="" target="_blank">百度手机助手城市联盟厦门站直播回顾</a></li>
-												<li><a href="" target="_blank">春运火车票今起开售 四大攻略看这里</a></li>
-											</ul>
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="2" end="4">
+					<li><a href="" target="_blank">${hotNews.title}</a></li>
+						
+					</c:forEach>				
+
+				</ul>
 			</div>
 		</div>
 		<div class="fr col_mod w280">
