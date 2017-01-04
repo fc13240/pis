@@ -35,7 +35,7 @@
 
 <div class="fx_logo clearfix">
 	<div class="logo">
-    	<a href=""><img src="/skin/images/logo.png" alt="创意街"></a>
+    	<a href=""><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
     </div>
 </div>
 
@@ -222,7 +222,7 @@
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="title">
-			<a href="" title="男人娱乐" target="_blank"><img src="/skin/images/t_1.jpg" alt="创意"></a>
+			<a href="" title="男人娱乐" target="_blank"><img src="<s:url value='/images/t_1.jpg'/>" alt="创意"></a>
 			<strong>
 			<a href="/a/yingshi/" target="_blank">创意生活</a>|
 			<a href="/a/yule/yinle/" target="_blank">创意产品</a>|
@@ -233,25 +233,25 @@
 		<div class="images_box">
 			<div class="z_box">
 				 <a href="" target="_blank">
-				<img alt="漫画西游之唐三藏" src="/skin/images/xiyou_01.jpg" width="280" height="280">
+				<img alt="漫画西游之唐三藏" src="<s:url value='/images/xiyou_01.jpg'/>" width="280" height="280">
 				<h4>漫画西游之唐三藏</h4>
 				</a>
 			</div>
 			<div class="z_box">
 				 <a href="" target="_blank">
-				<img alt="漫画西游之白龙马" src="/skin/images/xiyou_02.jpg" width="280" height="280">
+				<img alt="漫画西游之白龙马" src="<s:url value='/images/xiyou_02.jpg'/>" width="280" height="280">
 				<h4>漫画西游之白龙马</h4>
 				</a>
 			</div>			
 			<div class="z_box">
 				 <a href="" target="_blank">
-				<img alt="漫画西游之白龙马" src="/skin/images/xiyou_03.jpg" width="280" height="280">
+				<img alt="漫画西游之白龙马" src="<s:url value='/images/xiyou_03.jpg'/>" width="280" height="280">
 				<h4>漫画西游之白龙马</h4>
 				</a>
 			</div>			
 			<div class="z_box">
 				 <a href="" target="_blank">
-				<img alt="漫画西游之白龙马" src="/skin/images/xiyou_04.jpg" width="280" height="280">
+				<img alt="漫画西游之白龙马" src="<s:url value='/images/xiyou_04.jpg'/>" width="280" height="280">
 				<h4>漫画西游之白龙马</h4>
 				</a>
 			</div>	
@@ -263,7 +263,7 @@
 				<div class="c4_datu">
 					<!---->
 					<a href="/n/201612/197015.html" target="_blank">
-						<img src="/skin/images/ba9568233ff211cdde3acf281664aecf.jpg" width="360" height="260">
+						<img src="<s:url value='/images/ba9568233ff211cdde3acf281664aecf.jpg'/>" width="360" height="260">
 						<b></b>
 						<span>哪位开国元帅是林彪伯乐：发现其军事才能</span>
 					</a>
@@ -283,7 +283,7 @@
 						</li>
 						<!---->
 						<li>
-							<span class="p"><a href="/n/201612/196850.html" target="_blank"><img src="/skin/images/1608d08bd8997f2e1ea45d969f997fb8.jpg" width="118" height="82"></a></span>
+							<span class="p"><a href="/n/201612/196850.html" target="_blank"><img src="<s:url value='/images/1608d08bd8997f2e1ea45d969f997fb8.jpg'/>" width="118" height="82"></a></span>
 						  <span class="c">
 								<h5><a href="/n/201612/196850.html" target="_blank">哪件突发事件让邓小平想退休</a></h5>
 								<p><a href="/n/201612/196850.html" target="_blank">小平同志是举世瞩目的伟人，常常会有一些境外新闻媒体谎，..[详细]</a></p>
