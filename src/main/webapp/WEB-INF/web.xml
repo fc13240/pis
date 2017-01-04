@@ -7,7 +7,7 @@
   version="3.1"
   metadata-complete="true">
   
-  <display-name>Patent Management System</display-name>
+  <display-name>Patent Idea Street</display-name>
   
 	<jsp-config>
 	    <taglib>
