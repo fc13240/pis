@@ -58,26 +58,7 @@ public class IndexController {
 	@RequestMapping(path="/index")
 	public String getPatents(HttpServletRequest req, HttpServletResponse resp,Model model) {
 
-		List<FirstColumn>  AllColumns=patentService.selectAllColumns();
-		List<Patent> patent_list=patentService.getPatents();
-		List<News> news=newsService.getNewsShow();
-		List<News> newShows=newsService.newsShow();
-		//List<Article> article=articleService.getArticleShow();
-		List<Article> articleShows=articleService.articleShow();		
-		List<Patent> InventionPatentGrant=patentSearchService.searchByInventionPatentGrant();
-		List<Patent> abstractsPatent=patentSearchService.searchByAbstractsPatent();
-		List<Patent> utilityModelPatent=patentSearchService.searchByUtilityModelPatent();
-		List<Patent> appearanceDesignPatent=patentSearchService.searchByAppearanceDesignPatent();
-		model.addAttribute("patent_list", patent_list);
-		model.addAttribute("AllColumns", AllColumns);
-		model.addAttribute("news", news);
-		model.addAttribute("newShows", newShows);
-		//model.addAttribute("article", article);
-		model.addAttribute("articleShows", articleShows);		
-		model.addAttribute("IPG", InventionPatentGrant);
-		model.addAttribute("AP", abstractsPatent);
-		model.addAttribute("UMP", utilityModelPatent);
-		model.addAttribute("ADP", appearanceDesignPatent);
+		List<News> result=newsService.getHomepageByType(2,10);
 		return "index";
 	}
 	
