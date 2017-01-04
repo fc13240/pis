@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>lotut</groupId>
-  <artifactId>pts</artifactId>
+  <artifactId>pis</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>Patent Trade System</name>
@@ -343,7 +343,7 @@
 	
 	
 	<build>
-	   <finalName>pts</finalName>
+	   <finalName>pis</finalName>
 	   <plugins>
 	   	<plugin>
 	   		<groupId>org.apache.maven.plugins</groupId>
@@ -370,7 +370,7 @@
 			<configuration>
 				<url>http://localhost:8080/manager/text</url>
 				<server>apache-tomcat</server>
-				<path>/pts</path>
+				<path>/pis</path>
 			</configuration>
 		</plugin>	   	
   
