@@ -139,5 +139,9 @@
 		SELECT id,title
 		FROM news 
 		where  check_status=1 ORDER BY RAND() limit 10
-	</select>	
+	</select>
+	
+	<!-- 从这里开始  -->
+	
+		
 </mapper>
