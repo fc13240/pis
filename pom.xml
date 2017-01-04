@@ -5,7 +5,7 @@
   <artifactId>pis</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Patent Trade System</name>
+  <name>Patent Idea Street</name>
   <url>http://maven.apache.org</url>
   
  	<!-- ################## Properties ################## -->		 
