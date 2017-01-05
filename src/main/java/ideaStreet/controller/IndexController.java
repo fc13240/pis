@@ -58,8 +58,31 @@ public class IndexController {
 	@RequestMapping(path="/index")
 	public String getPatents(HttpServletRequest req, HttpServletResponse resp,Model model) {
 
-		List<News> hotNews=newsService.getHomepageByType(2,10);
+		List<News> hotNews=newsService.getHomepageByType(1,5);
+		List<News> technologyNews=newsService.getHomepageByType(2,8);
+		List<News> cartoonNews=newsService.getHomepageByType(3,2);
+		List<News> laughNews=newsService.getHomepageByType(4,2);
+		List<News> creativeLifeNews=newsService.getHomepageByType(5,10);
+		List<News> creativePrductNews=newsService.getHomepageByType(6,10);
+		List<News> creativeDesignNews=newsService.getHomepageByType(7,10);
+		
+		List<News> businessSay=newsService.getHomepageByType(7,10);
+		List<News> businessNews=newsService.getHomepageByType(7,10);
+		List<News> businessPolicy=newsService.getHomepageByType(7,10);
+		
 		model.addAttribute("hotNews", hotNews);
+		model.addAttribute("technologyNews", technologyNews);
+		model.addAttribute("cartoonNews", cartoonNews);
+		model.addAttribute("laughNews", laughNews);
+		model.addAttribute("creativeLifeNews", creativeLifeNews);
+		model.addAttribute("creativePrductNews", creativePrductNews);
+		model.addAttribute("creativeDesignNews", creativeDesignNews);
+		
+		model.addAttribute("businessSay", businessSay);
+		model.addAttribute("businessNews", businessNews);
+		model.addAttribute("businessPolicy", businessPolicy);
+		
+		
 		return "index";
 	}
 	

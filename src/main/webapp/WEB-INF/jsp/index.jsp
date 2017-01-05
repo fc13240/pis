@@ -200,31 +200,18 @@
 			</div>
 			<div class="col_con">
 				<div class="n_p_mod_0 clearfix">
-												<a class="n_pic fl" href="" target="_blank"><img src="http://img.qt.baidu.com/91/news/201612/16/focus_58535664ccba9.jpg"  width="125" height="94" alt=""></a>
-												<a class="n_tit" href="" target="_blank">三星招聘S8相机生产线员工：一万五月薪</a>                         </div>
+			    	<c:forEach items="${technologyNews}" var="technologyNews" begin="0" end="0">
+					<a class="n_pic fl" href="" target="_blank"><img src="<s:url value='${technologyNews.smallImgUrl}'/>"  width="125" height="94" alt=""></a>
+					<a class="n_tit" href="" target="_blank">${technologyNews.title}</a>	
+					</c:forEach>					
+                </div>
 				<ul class="news_list_dot mt25 clearfix">
-												<li>
-						<a href="" target="_blank">3万！华为Mate 9保时捷款国内首销飙涨</a>
-					</li>
-												<li>
-						<a href="" target="_blank">三星今年真不好过 Galaxy S7 Edge也爆炸了 </a>
-					</li>
-												<li>
-						<a href="" target="_blank">iOS 10.1.1越狱工具或将在不久后发布</a>
-					</li>
-												<li>
-						<a href="" target="_blank">任天堂Super Mario Run初步上手体验</a>
-					</li>
-												<li>
-						<a href="" target="_blank">三星移动总裁：严禁泄密Galaxy S8</a>
-					</li>
-												<li>
-						<a href="" target="_blank">美国Verizon同意推送 三星Note 7死亡固件</a>
-					</li>
-												<li>
-						<a href="" target="_blank">TCL获黑莓全球授权：首款手机是这样的</a>
-					</li>
-											</ul>
+			    	<c:forEach items="${technologyNews}" var="technologyNews" begin="1" end="7">
+					<li>
+						<a href="" target="_blank">${technologyNews.title}</a>
+					</li>					
+					</c:forEach>							
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -232,7 +219,7 @@
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="title">
-			<a href="" title="男人娱乐" target="_blank"><img src="<s:url value='/images/t_1.jpg'/>" alt="创意"></a>
+			<a href="" title="创意" target="_blank"><img src="<s:url value='/images/t_1.jpg'/>" alt="创意"></a>
 			<strong>
 			<a href="/a/yingshi/" target="_blank">创意生活</a>|
 			<a href="/a/yule/yinle/" target="_blank">创意产品</a>|
@@ -241,30 +228,26 @@
 		</div>	
 		
 		<div class="images_box">
+
+	    	<c:forEach items="${cartoonNews}" var="cartoonNews">
+
 			<div class="z_box">
 				 <a href="" target="_blank">
-				<img alt="漫画西游之唐三藏" src="<s:url value='/images/xiyou_01.jpg'/>" width="280" height="280">
-				<h4>漫画西游之唐三藏</h4>
+				<img alt="${cartoonNews.title}" src="<s:url value='${cartoonNews.smallImgUrl}'/>" width="280" height="280">
+				<h4>${cartoonNews.title}</h4>
 				</a>
-			</div>
+			</div>					
+			</c:forEach>	
+					
+	    	<c:forEach items="${laughNews}" var="laughNews">
+
 			<div class="z_box">
 				 <a href="" target="_blank">
-				<img alt="漫画西游之白龙马" src="<s:url value='/images/xiyou_02.jpg'/>" width="280" height="280">
-				<h4>漫画西游之白龙马</h4>
+				<img alt="${laughNews.title}" src="<s:url value='${laughNews.smallImgUrl}'/>" width="280" height="280">
+				<h4>${laughNews.title}</h4>
 				</a>
-			</div>			
-			<div class="z_box">
-				 <a href="" target="_blank">
-				<img alt="漫画西游之白龙马" src="<s:url value='/images/xiyou_03.jpg'/>" width="280" height="280">
-				<h4>漫画西游之白龙马</h4>
-				</a>
-			</div>			
-			<div class="z_box">
-				 <a href="" target="_blank">
-				<img alt="漫画西游之白龙马" src="<s:url value='/images/xiyou_04.jpg'/>" width="280" height="280">
-				<h4>漫画西游之白龙马</h4>
-				</a>
-			</div>	
+			</div>					
+			</c:forEach>
 			<div style="clear:both;"></div>		
 		</div>
 		
@@ -272,11 +255,15 @@
 			<div class="left">
 				<div class="c4_datu">
 					<!---->
-					<a href="/n/201612/197015.html" target="_blank">
-						<img src="<s:url value='/images/ba9568233ff211cdde3acf281664aecf.jpg'/>" width="360" height="260">
+
+			    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="0" end="0">
+					<a href="" target="_blank">
+						<img src="<s:url value='${creativeDesignNews.smallImgUrl}'/>" width="360" height="260">
 						<b></b>
-						<span>哪位开国元帅是林彪伯乐：发现其军事才能</span>
-					</a>
+						<span>${creativeDesignNews.title}</span>
+					</a>					
+
+					</c:forEach>					
 					<!---->
 				</div>
 				
@@ -284,55 +271,35 @@
 					<h4 class="com_ltred">创意设计</h4>
 					<ul class="list_com_tw">
 						<!---->
-						<li>
-							<span class="p"><a href="/n/201612/197020.html" target="_blank"><img src="/skin/images/da35f6928bcaf2f74afd92ac3d1d2f0c.jpg" width="118" height="82"></a></span>
-						  <span class="c">
-								<h5><a href="/n/201612/197020.html" target="_blank">开国大将罗瑞卿为何死在德国</a></h5>
-								<p><a href="/n/201612/197020.html" target="_blank">罗瑞卿，这位深受毛泽东信任的开国大将，曾担任第一任公，..[详细]</a></p>
-						  </span>
-						</li>
-						<!---->
-						<li>
-							<span class="p"><a href="/n/201612/196850.html" target="_blank"><img src="<s:url value='/images/1608d08bd8997f2e1ea45d969f997fb8.jpg'/>" width="118" height="82"></a></span>
-						  <span class="c">
-								<h5><a href="/n/201612/196850.html" target="_blank">哪件突发事件让邓小平想退休</a></h5>
-								<p><a href="/n/201612/196850.html" target="_blank">小平同志是举世瞩目的伟人，常常会有一些境外新闻媒体谎，..[详细]</a></p>
-						  </span>
-						</li>
-						<!---->
-						<li>
-							<span class="p"><a href="/n/201612/196747.html" target="_blank"><img src="/skin/images/b1215b98777670aa30f1fff2861921a9.jpg" width="118" height="82"></a></span>
-						  <span class="c">
-								<h5><a href="/n/201612/196747.html" target="_blank">刘伯承临终前重托华国锋何事</a></h5>
-								<p><a href="/n/201612/196747.html" target="_blank">在抗日战争和解放战争长达10多年间，刘伯承和邓小平曾并，..[详细]</a></p>
-						  </span>
-						</li>
-						<!---->
 
-
+			    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="1" end="3">
+						<li>
+							<span class="p"><a href="" target="_blank"><img src="<s:url value='${creativeDesignNews.smallImgUrl}'/>" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="" target="_blank">${creativeDesignNews.title}</a></h5>
+								<p><a href="" target="_blank">${creativeDesignNews.newsAbstract}[详细]</a></p>
+						  </span>
+						</li>					
+					</c:forEach>						
+						
 					</ul>
 				</div>				
 			</div>
 			<div class="mid">
 				<div class="m4_first">
 					<!---->
-					<h2><a href="/n/201612/196961.html" target="_blank">美女街头假醉测试男人:结果令人愤怒</a></h2>
-					<p>10月28日报道，Europeo Neurosalus进行了一项实验。学...<a href="/n/201612/196961.html" target="_blank">[详细]</a></p>
+			    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="0" end="0">	
+					<h2><a href="" target="_blank">${creativeLifeNews.title}</a></h2>
+					<p><a href="" target="_blank">${creativeLifeNews.newsAbstract}...[详细]</a></p>										
+					</c:forEach>	
+
 					<!---->
 					<ul class="list_com">
 						<!---->
-						<li><a href="/n/201612/197012.html" target="_blank">码头捡怪鱼：外形四方长相呆萌能毒死自己</a></li>
-						<!---->
-						<li><a href="/n/201612/197009.html" target="_blank">小夫妻住诡异出租房：入住后不停掉头发</a></li>
-						<!---->
-						<li><a href="/n/201612/197007.html" target="_blank">女子到破房子去冒险：却意外看到了这个</a></li>
-						<!---->
-						<li><a href="/n/201612/197002.html" target="_blank">男子发现一巨碟状"石头"：近看后乐疯了</a></li>
-						<!---->
-						<li><a href="/n/201612/196996.html" target="_blank">建筑工地施工：挖地时竟挖出了个大怪物</a></li>
-						<!---->
-						<li><a href="/n/201612/196993.html" target="_blank">水牛目睹雄狮羞羞画面：反应让人看傻眼</a></li>
-						<!---->
+				    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="1" end="5">	
+						<li><a href="" target="_blank">${creativeLifeNews.title}</a></li>									
+						</c:forEach>						
+
 					</ul>
 				</div>
 				<div class="m4_bx2">
@@ -340,55 +307,49 @@
 					<dl class="list_com_3">
 
 						<!---->
-						<dt><a href="/n/201612/196994.html" target="_blank">花豹调戏蟒蛇：接下来一幕让人意想不到</a></dt>
-
-
+						
+			    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="0" end="0">		
+						<dt><a href="" target="_blank">${creativePrductNews.title}</a></dt>
 						<dd>
-							<a href="/n/201612/196994.html" class="dlimg" target="_blank"><img src="/skin/images/53c8636769d34e2e68f36d352bfb8b0f.jpg" width="146" height="100"></a>
-							<a href="/n/201612/196994.html" class="dlintro" target="_blank">这天花豹子没事在树林里溜达转圈，看到那边有动静就偷偷的溜上去了，仔细一看原来是...[详细]</a>
-						</dd>
+							<a href="" class="dlimg" target="_blank"><img src="<s:url value='${creativePrductNews.smallImgUrl}'/>" width="146" height="100"></a>
+							<a href="" class="dlintro" target="_blank">${creativePrductNews.newsAbstract}...[详细]</a>
+						</dd>										
+					</c:forEach>
+
+
 						<!---->
 
 					</dl>
 					<ul class="list_com">
-						<!---->
-						<li><a href="/n/201612/196997.html" target="_blank">海豚被螺旋桨重伤：1年后竟奇迹般自愈了</a></li>
-						<!---->
-						<li><a href="/n/201612/196833.html" target="_blank">男子活捉鳄鱼：之后发生一幕让人尖叫不已</a></li>
-						<!---->
-						<li><a href="/n/201612/196718.html" target="_blank">疣猪欲偷袭猩猩：结果被母猩猩一举动吓跑</a></li>
-						<li><a href="/n/201612/196718.html" target="_blank">疣猪欲偷袭猩猩：结果被母猩猩一举动吓跑</a></li>
-						<!---->
+
+			    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="1" end="4">		
+						<li><a href="" target="_blank">${creativePrductNews.title}</a></li>										
+					</c:forEach>						
 					</ul>
 				</div>
 			
 			</div>
 			<div class="right">
 				<div class="hq_hqqq">
-					<!--环球趣闻-->
-					<h2 class="com_titlebg shenghuo"><a href="/hqqw/" target="_blank">更多</a></h2>
+					<!--环-->
+					<h2 class="com_titlebg shenghuo"><a href="" target="_blank">更多</a></h2>
 					<div class="pdlf8">
 						<!---->
+						<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="6" end="6">	
 						<div class="cc clearfix">
-							<span class="r"><a href="/n/201612/197027.html" target="_blank"><img src="/skin/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg" width="86" height="82"></a></span>
-							<span class="l"><a href="/n/201612/197027.html" target="_blank">女子鱼肚取出异物 细看后惊呆</a></span>
+							<span class="r"><a href="" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
+							<span class="l"><a href="" target="_blank">${creativeLifeNews.title}</a></span>									
 						</div>
-						<div class="intro com_a_color">女子和丈夫外出到河边捕了几条鱼，而当他们回家清理的时候，却注意到其中一条鱼的肚..<a href="#">[详细]</a></div>
+						<div class="intro com_a_color">${creativeLifeNews.newsAbstract}..<a href="#">[详细]</a></div>
+						</c:forEach>
 						<!---->
 						<ul class="list_com_4">
 							<!---->
-							<li><a href="/n/201612/197025.html" target="_blank">男子捡奇怪钱包：打开一看脸色瞬间变了</a></li>
-							<!---->
-							<li><a href="/n/201612/197022.html" target="_blank">她将喵星人"变身"星空：竟如此震撼</a></li>
-							<!---->
-
+							<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="7" end="8">
+							<li><a href="" target="_blank">${creativeLifeNews.title}</a></li>
+							</c:forEach>
 						</ul>
-
-
-
 					</div>
-
-
 				</div>			
 			
 				<div class="hq_ylbg">
@@ -396,25 +357,25 @@
 
 					<ul class="rank_list">
 					<li>
-					<span class="r_num num_1">01</span><a href="http://news.91.com/apple/21879328.html" target="_blank">10大iPhone 6s功能及50个iOS 9技巧</a>
+					<span class="r_num num_1">01</span><a href="" target="_blank">10大iPhone 6s功能及50个iOS 9技巧</a>
 					</li>
 					<li>
-					<span class="r_num num_2">02</span><a href="http://news.91.com/it/s5774c1f0187a.html" target="_blank">MWC2016：百视通携手风行电视登录上海站</a>
+					<span class="r_num num_2">02</span><a href="" target="_blank">MWC2016：百视通携手风行电视登录上海站</a>
 					</li>
 					<li>
-					<span class="r_num num_3">03</span><a href="http://news.91.com/apple/21927526.html" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					<span class="r_num num_3">03</span><a href="" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
 					</li>
 					<li>
-					<span class="r_num num_4">04</span><a href="http://news.91.com/android/21942455.html" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					<span class="r_num num_4">04</span><a href="" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
 					</li>
 					<li>
-					<span class="r_num num_5">05</span><a href="http://news.91.com/apple/21912850.html" target="_blank">惊呆了！iPhone 5SE配置/售价完全曝光</a>
+					<span class="r_num num_5">05</span><a href="" target="_blank">惊呆了！iPhone 5SE配置/售价完全曝光</a>
 					</li>
 					<li>
-					<span class="r_num num_3">06</span><a href="http://news.91.com/apple/21927526.html" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					<span class="r_num num_5">06</span><a href="" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
 					</li>
 					<li>
-					<span class="r_num num_4">07</span><a href="http://news.91.com/android/21942455.html" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					<span class="r_num num_4">07</span><a href="" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
 					</li>
 				
 					</ul>
@@ -429,7 +390,154 @@
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="title">
-			<a href="/a/yule" title="男人娱乐" target="_blank"><img src="/skin/images/t_2.jpg" alt="创意"></a>
+			<a href="" title="创业" target="_blank"><img src="<s:url value='/images/t_2.jpg'/>" alt="创业"></a>
+			<strong>
+			<a href="" target="_blank">创业者说</a>|
+			<a href="" target="_blank">创业新闻</a>|
+			<a href="" target="_blank">创业政策</a>
+			</strong>
+		</div>	
+	
+		<div class="c_box4 clearfix mt25">
+			<div class="left">
+				<div class="c4_datu">
+					<!---->
+
+			    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="0">
+					<a href="" target="_blank">
+						<img src="<s:url value='${businessSay.smallImgUrl}'/>" width="360" height="260">
+						<b></b>
+						<span>${businessSay.title}</span>
+					</a>					
+
+					</c:forEach>					
+					<!---->
+				</div>
+				
+				<div class="c4_zgjq">
+					<h4 class="com_ltred">创业者说</h4>
+					<ul class="list_com_tw">
+						<!---->
+
+			    	<c:forEach items="${businessSay}" var="businessSay" begin="1" end="3">
+						<li>
+							<span class="p"><a href="" target="_blank"><img src="<s:url value='${businessSay.smallImgUrl}'/>" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="" target="_blank">${businessSay.title}</a></h5>
+								<p><a href="" target="_blank">${businessSay.newsAbstract}[详细]</a></p>
+						  </span>
+						</li>					
+					</c:forEach>						
+						
+					</ul>
+				</div>				
+			</div>
+			<div class="mid">
+				<div class="m4_first">
+					<!---->
+			    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="0">	
+					<h2><a href="" target="_blank">${businessNews.title}</a></h2>
+					<p><a href="" target="_blank">${businessNews.newsAbstract}...[详细]</a></p>										
+					</c:forEach>	
+
+					<!---->
+					<ul class="list_com">
+						<!---->
+				    	<c:forEach items="${businessNews}" var="businessNews" begin="1" end="5">	
+						<li><a href="" target="_blank">${businessNews.title}</a></li>									
+						</c:forEach>						
+
+					</ul>
+				</div>
+				<div class="m4_bx2">
+					<h4 class="com_ltred">创业新闻</h4>
+					<dl class="list_com_3">
+
+						<!---->
+						
+			    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="0">		
+						<dt><a href="" target="_blank">${businessNews.title}</a></dt>
+						<dd>
+							<a href="" class="dlimg" target="_blank"><img src="<s:url value='${businessNews.smallImgUrl}'/>" width="146" height="100"></a>
+							<a href="" class="dlintro" target="_blank">${businessNews.newsAbstract}...[详细]</a>
+						</dd>										
+					</c:forEach>
+
+
+						<!---->
+
+					</dl>
+					<ul class="list_com">
+
+			    	<c:forEach items="${businessNews}" var="businessNews" begin="1" end="4">		
+						<li><a href="" target="_blank">${businessNews.title}</a></li>										
+					</c:forEach>						
+					</ul>
+				</div>
+			
+			</div>
+			<div class="right">
+				<div class="hq_hqqq">
+					<!--环-->
+					<h2 class="com_titlebg shenghuo"><a href="" target="_blank">更多</a></h2>
+					<div class="pdlf8">
+						<!---->
+						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="6" end="6">	
+						<div class="cc clearfix">
+							<span class="r"><a href="" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
+							<span class="l"><a href="" target="_blank">${businessPolicy.title}</a></span>									
+						</div>
+						<div class="intro com_a_color">${businessPolicy.newsAbstract}..<a href="#">[详细]</a></div>
+						</c:forEach>
+						<!---->
+						<ul class="list_com_4">
+							<!---->
+							<c:forEach items="${businessPolicy}" var="businessPolicy" begin="7" end="8">
+							<li><a href="" target="_blank">${businessPolicy.title}</a></li>
+							</c:forEach>
+						</ul>
+					</div>
+				</div>			
+			
+				<div class="hq_ylbg">
+					<h2 class="paihang com_titlebg"></h2>
+
+					<ul class="rank_list">
+					<li>
+					<span class="r_num num_1">01</span><a href="" target="_blank">10大iPhone 6s功能及50个iOS 9技巧</a>
+					</li>
+					<li>
+					<span class="r_num num_2">02</span><a href="" target="_blank">MWC2016：百视通携手风行电视登录上海站</a>
+					</li>
+					<li>
+					<span class="r_num num_3">03</span><a href="" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					</li>
+					<li>
+					<span class="r_num num_4">04</span><a href="" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					</li>
+					<li>
+					<span class="r_num num_5">05</span><a href="" target="_blank">惊呆了！iPhone 5SE配置/售价完全曝光</a>
+					</li>
+					<li>
+					<span class="r_num num_5">06</span><a href="" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
+					</li>
+					<li>
+					<span class="r_num num_4">07</span><a href="" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
+					</li>
+				
+					</ul>
+
+				</div>			
+			
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+<!---->
+	<div class="main_1 mt25 clearfix">
+	
+		<div class="title">
+			<a href="/a/yule" title="男人娱乐" target="_blank"><img src="<s:url value='/images/t_2.jpg'/>" alt="创业"></a>
 			<strong>
 			<a href="/a/yingshi/" target="_blank">创业者说</a>|
 			<a href="/a/yule/yinle/" target="_blank">创业新闻</a>|
