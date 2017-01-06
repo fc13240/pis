@@ -66,14 +66,20 @@ public class IndexController {
 		List<News> creativePrductNews=newsService.getHomepageByType(6,10);
 		List<News> creativeDesignNews=newsService.getHomepageByType(7,10);
 		
-		List<News> businessSay=newsService.getHomepageByType(7,10);
-		List<News> businessNews=newsService.getHomepageByType(7,10);
-		List<News> businessPolicy=newsService.getHomepageByType(7,10);
+		List<News> businessSay=newsService.getHomepageByType(8,10);
+		List<News> businessNews=newsService.getHomepageByType(9,10);
+		List<News> businessPolicy=newsService.getHomepageByType(10,10);
+		
+		List<News> patentNews=newsService.getHomepageByType(11,4);
+		List<News> patentStudy=newsService.getHomepageByType(12,5);
+		List<News> brandNews=newsService.getHomepageByType(13,10);
+		List<News> brandStudy=newsService.getHomepageByType(14,5);	
 		
 		model.addAttribute("hotNews", hotNews);
 		model.addAttribute("technologyNews", technologyNews);
 		model.addAttribute("cartoonNews", cartoonNews);
 		model.addAttribute("laughNews", laughNews);
+		
 		model.addAttribute("creativeLifeNews", creativeLifeNews);
 		model.addAttribute("creativePrductNews", creativePrductNews);
 		model.addAttribute("creativeDesignNews", creativeDesignNews);
@@ -82,6 +88,10 @@ public class IndexController {
 		model.addAttribute("businessNews", businessNews);
 		model.addAttribute("businessPolicy", businessPolicy);
 		
+		model.addAttribute("patentNews", patentNews);
+		model.addAttribute("patentStudy", patentStudy);
+		model.addAttribute("brandNews", brandNews);
+		model.addAttribute("brandStudy", brandStudy);		
 		
 		return "index";
 	}

@@ -451,9 +451,7 @@ em, b, i, strong {
     font-size: 16px;
     text-align: center;
 }
-.c4_zgjq {
-    margin-top: 35px;
-}
+
 .com_ltred {
     font-size: 16px;
     line-height: 16px;
@@ -491,10 +489,16 @@ em, b, i, strong {
 .list_com_tw li h5 {
     font-size: 16px;
     font-weight: normal;
-    height: 30px;
+    height: 25px;
+    overflow: hidden;
     font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", Arial, "Lucida Grande", Tahoma, sans-serif;
 }
-
+.list_com_tw li span.c p{
+	height:50px;
+	overflow: hidden;
+	
+	
+}
 .list_com_tw li span.c p a, .list_com_tw li span.c p a:visited {
     color: #707070;
     font-size: 12px;
