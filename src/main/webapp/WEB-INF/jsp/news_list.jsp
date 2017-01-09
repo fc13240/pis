@@ -1,180 +1,268 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="spring" prefix="s" %>
+<%@ taglib uri="security" prefix="se" %>
 <%@ taglib uri="c" prefix="c" %>
-<%@ taglib uri="fmt" prefix="fmt" %>
 <!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>新闻列表-龙图腾商标专利交易网 </title>
-<meta name="keywords" content="知识产权,专利交易,商标转让,龙图腾,中外知识产权网" />
-<meta name="description" content="龙图腾网（www.lotut.com）是全球领先的知识产权交易平台。为企业提供专业的商标转让、专利交易等服务。拥有国内知识产权资源，全面覆盖了商标、专利、版权等领域的交易平台，让知识产权在流通中创造财富，引领知识产权的创新。" />
+<title>创意街——龙图腾 </title>
+<meta name="keywords" content="科技门户" />
+<meta name="description" content="科技门户" />
 <meta itemprop="name" content="" />
 <meta http-equiv="cache-control" content="no-transform">
 <link rel="shortcut icon" href="http://www.lotut.com/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="<s:url value='/css/mll.common.min.css?20160311'/>" />
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
+<link rel="stylesheet" href="<s:url value='/css/list.css'/>" />
+<style type="text/css">
 
+</style>
 </head>
 
+
 <body class="">
-<script type="text/javascript">(function(){var screenWidth=window.screen.width;if(screenWidth>=1280){document.body.className=document.body.className+" root_body";;window.LOAD=true;}else{window.LOAD=false;}})()</script>
+<div class="fx_top">
+	<div class="wrap">
+    		<div class="left">
+				<span class="co">科技迷们的网络聚集地 -- 创意街</span>
+            </div>
+
+    </div>
+</div>
 
 
-<div class="header-box">
-	<div class="site-nav">
-	<%@ include file="_site-nav.jsp"%>
-	</div>
+<div class="fx_logo clearfix">
+	<div class="logo">
+    	<a href=""><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
+    </div>
+</div>
+
+<div class="fx_nav">
+   <div class="wrap clearfix">
+   
+ 
+   
+        <div class="lf1">
+          <p>
+            <a href="/" target="_blank"><b>首页</b></a>
+            </p>
+
+        </div>
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
+        </div>	
+        <div class="lf3" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>创意街</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>创业服务</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>漫画西游</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>爆笑西游</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>专利商标</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>商标交易</b></a>
+        </div>			
+		
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>专利管理</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="/" style="margin-left:10px;" target="_blank"><b>专利检索</b></a>
+        </div>			
+				
+		
 	
-	<div class="page-header">
-	<%@ include file="_page-header.jsp"%>
+    </div>
+</div> 
+<div class="container w1200 ma">
+	<div class="nr_cont1 F_Left">
+		<div class="tittle_x">
+            <a href="">首页</a>
+            <em>&gt;</em> <a href="">科技前沿</a>
+         <!--   <em>&gt;</em> <a href="#">列表</a> --> 
+        </div>	
+        <div>
+			<div class="plist1 ">
+				<div class="plist1_img F_Left">
+					<img src="http://upload.ccidnet.com/2016/1206/thumb_200_130_1480986265566.png" width="200" height="130" class="dh" />
+				</div> 
+		        <div class="plist1_p F_Left"> 
+					<h2><a href="" target="_blank" class="t_zi1"  title=""" >人工智能浪潮掀起，机遇与烦恼并存</a></h2> 
+					<p></p> 
+		
+					<div class="t_b"><span>12-06 09:04</span><span class="tags" tags="人工智能 机器学习 智能助手 弱人工智能">人工智能 机器学习 </span></div>
+		
+					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161206-2','text':'人工智能浪潮掀起，机遇与烦恼并存','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
+				
+				</div>
+				<div class="C_Both"></div>
+			</div>
+			<div class="C_Both"></div>
+		 
+		    <div class="plist11">
+				<div class="plist11_p F_Left"> 
+					<h2><a href="" target="_blank" class="t_zi1"  title="" >未来数据中心 康普专栏</a></h2> 
+					<p></p> 
+					<div class="t_b"><span>11-15 13:21</span><span class="tags" tags=""></span></div>
+					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161115-2','text':'未来数据中心 康普专栏','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
+				</div>
+				<div class="C_Both"></div>
+			</div>
+			<div class="C_Both"></div>
+			<div class="plist1 ">
+				<div class="plist1_img F_Left">
+					<img src="http://upload.ccidnet.com/2016/1206/thumb_200_130_1480986265566.png" width="200" height="130" class="dh" />
+				</div> 
+		        <div class="plist1_p F_Left"> 
+					<h2><a href="" target="_blank" class="t_zi1"  title=""" >人工智能浪潮掀起，机遇与烦恼并存</a></h2> 
+					<p></p> 
+		
+					<div class="t_b"><span>12-06 09:04</span><span class="tags" tags="人工智能 机器学习 智能助手 弱人工智能">人工智能 机器学习 </span></div>
+		
+					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161206-2','text':'人工智能浪潮掀起，机遇与烦恼并存','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
+				
+				</div>
+				<div class="C_Both"></div>
+			</div>
+			<div class="C_Both"></div>
+		</div>			
 	</div>
-	
-	<div class="mll-navigator navigator-index">
-
-		<div class="w clearfix">	
-			<ul class="navigator">
-		      <li><a href="<s:url value='/'/>" title="龙图腾专利交易">首页</a></li>
-		      <li><a href="<s:url value='/business/trademark_list.html'/>" title="商标注册">商标注册</a></li>
-		      <li><a  id="JS_mll_head_menu_expr" href="<s:url value='/business/copyright_list.html'/>" title="版权登记">版权登记<img src="<s:url value='/images/hot2015.gif'/>" style="position:absolute;background:none;right:0px;top:-5px;" /></a></li>
-		      <li><a href="<s:url value='/business/patent_list.html?type=1'/>" title="专利申请">专利申请</a></li>
-		      <li><a  href="<s:url value='/business/business_registration.html'/>" title="工商财务">工商财务</a></li>
-		      <li><a target="_blank" href="http://g.lotut.com" title="专利管家">专利管家</a></li>
-			   	   
-			</ul>
-		</div>
+<!-- left end	 -->
+	<div class="nr_cont2 F_Right">
+		<div class="box">
+			<h2><a href="#" class="a1 box_hover">专利推荐</a></h2>
+			<ul class="h_second_list">
+		
+			<li>
+			<span class="h_list_tit" style="font-size:14px;">
+				<a href="/patent/detail.html?patentno=86" target="_blank">[发明]一种改性玻璃尾砂水泥基辅助性胶凝材料及其制备方法 - 2014103664127</a>
+			</span> 
+			</li>			
+		
+			<li>
+			<span class="h_list_tit" style="font-size:14px;">
+				<a href="/patent/detail.html?patentno=88" target="_blank">[发明]一种节能环保锅炉 - 2014104053879</a>
+			</span> 
+			</li>			
+		
+			<li>
+			<span class="h_list_tit" style="font-size:14px;">
+				<a href="/patent/detail.html?patentno=122" target="_blank">[发明]六自由度四轴飞行器 - 2013101209293</a>
+			</span> 
+			</li>			
+		
+			<li>
+			<span class="h_list_tit" style="font-size:14px;">
+				<a href="/patent/detail.html?patentno=128" target="_blank">[发明]磁铁式柱塞泵 - 2014102749185</a>
+			</span> 
+			</li>			
+		
+			<li>
+			<span class="h_list_tit" style="font-size:14px;">
+				<a href="/patent/detail.html?patentno=173" target="_blank">[发明]一种生物质旋风节能环保锅炉 - 2013105498470</a>
+			</span> 
+			</li>			
+		
+			<li>
+			<span class="h_list_tit" style="font-size:14px;">
+				<a href="/patent/detail.html?patentno=174" target="_blank">[发明]一种通风型保养理疗椅 - 2013101257140</a>
+			</span> 
+			</li>			
+		
+			<li>
+			<span class="h_list_tit" style="font-size:14px;">
+				<a href="/patent/detail.html?patentno=842" target="_blank">[发明]一种盐碱地改良方法 - 2010102563629</a>
+			</span> 
+			</li>			
+		
+		
+		
+		</ul>			
+		</div>	
+		
+		<div class="box" style="margin-top:20px;">
+			<h2><a href="#" class="a1 box_hover">商标推荐</a></h2>	
+			<ul class="good-list-item">
+    			<li>
+<img alt="漫画西游系列一" src="/pis/smallImg/2/20170104160906.png.html" width="280" height="280">
+    			</li>	
+		    	<li>
+		      
+				 <dl>
+				   <dd class="pic"> 
+				   		<a href="/brand/getbrandDetail.html?brandId=271" target="_blank">
+							<div style="position: relative;width:192px;height:154px;">   
+							<img onerror="javascript:this.src='http://r.lotut.com/images/brands_img/16_imagemagick_small.jpg'" width="100%" height="100%" no-repeat="" src="/images/brands_img/16_imagemagick_small.jpg">
+							<span style="position: absolute;font-family:Microsoft YaHei;font-size:20px;top: 60px;width:100%;left:0;z-index:1;text-align: center;">THINKCARD</span>
+				   			</div>
+						</a> 
+					</dd>
+				<dt class="name"> 
+					<div style="width:110px;float:left;">
+						<a href="/brand/getbrandDetail.html?brandId=271" target="_blank" title="THINKCARD">THINKCARD</a>
+					</div> 
+					<div class="num" style="float:left;">¥22000</div>
+				 </dt>
+				</dl>
+		      </li>
+    
+    </ul>				
+		</div>			
 	</div>
 </div>
-<div style="height:10px;border-top:1px solid red;">&nbsp;</div>
-<style type="text/css">
-.r_detail_about {
-    padding: 15px 0;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 15px;
-    position: relative;
-}
 
-.r_detail_about span{
-font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
-    color: #333;font-size:16px;
-}
-.r_detail_about a{
-font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
-    color: #333;font-size:16px;
-}
-.article-con {
-    border: 1px solid #ececec;
-    padding: 15px;
-}
-.h_about_mod5 ul.h_second_list {
-    padding: 20px 10px 80px 25px;
-}
-.h_about_mod5 ul.h_second_list li {
-    height: 46px;
-    font-size:16px;
-    font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
-    color: #333;
-    line-height: 46px;
-    border-bottom: 1px solid #cdd5d8;
-    background: url(../images/second_hui.png) no-repeat left;
-    padding-left: 15px;
+<div id="footer">
+
+	<ul class="footer">            
+        <li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">
+        		<span style="color:#7d7d7d;">加入收藏</span>
+        	</a>
+		&nbsp;&nbsp;©&nbsp;&nbsp;2015&nbsp;&nbsp;Lotut&nbsp;&nbsp;使用龙图腾前必读&nbsp;&nbsp;
+		皖ICP备123456789号&nbsp;&nbsp;意见箱：lotuto@163.com&nbsp;&nbsp;
+		<span style="display:inline-block;position:relative;width:auto;">
+		<a href="https://ss.knet.cn/verifyseal.dll?sn=e16072934010064299rolh000000&amp;ct=df&amp;a=1&amp;pa=0.09530572313815355" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display:inline-block;">
+		<img src="http://rr.knet.cn/static/images/logo/cnnic.png" style="border:none;height:25px;" oncontextmenu="return false;" alt="可信网站">
+		</a>
+		</span>
+		</li>            
+     </ul>
+</div>
+<style>
+#footer {
+    width: 100%;
     overflow: hidden;
+    background: #e7e7e7;
+    font-family: SimSun;
 }
-.h_about_mod5 ul.h_second_list li .h_list_deta {
-    font-size:16px;
-    font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
+.footer li {
+    text-align: center;
+    line-height: 45px;
+    height: 45px;
+    color: #7d7d7d;
+    font-family: "微软雅黑";
+}
+.footer a {
+    text-decoration: none;
     color: #333;
-    float: right;
-    padding-right: 10px;
 }
 </style>
-
-<div style="width:1200px;margin:0 auto;">
-	<div class="r_detail_about"> 
-
-		<span>当前位置：</span><a href="http://www.lotut.com/">主页</a> &gt; <a href="<s:url value='/news/newsList.html'/>">新闻中心</a> &gt;  
-	</div>
-	<div class="article-con">
-		<div class="h_about_mod5"> 
-			<div class="mod1_cont" id="mod1_cont" runat="server">
-				<ul class="h_second_list">
-				
-				<c:forEach items="${news}" var="news">
-					<li>
-					<span class="h_list_tit">
-						<a href="<s:url value='/news/newsPreview.html'/>?newsId=<c:out value='${news.id}'/>" target="_blank" title="${news.title}">${news.title}</a>
-					</span> 
-					<span class="h_list_deta"><fmt:formatDate value="${news.publishTime}" pattern="yyyy年MM月dd日 HH:mm"/></span> 
-					</li>			
-				</c:forEach>
-				
-				</ul> 
-				<div class="i_m qs_clear"> 
-		            <li>
-			            <div class="col-lg-12"> 共 ${page.totalPages}页${page.totalRecords}条记录    第${page.currentPage} 页 <a href="?currentPage=1">首页</a>
-			              <c:choose>
-			                <c:when test="${page.currentPage - 1 > 0}"> <a href="?currentPage=${page.currentPage - 1}">上一页</a> </c:when>
-			                <c:when test="${page.currentPage - 1 <= 0}"> <a href="?currentPage=1">上一页</a> </c:when>
-			              </c:choose>
-			              <c:choose>
-			                <c:when test="${page.totalPages==0}"> <a href="?currentPage=${page.currentPage}">下一页</a> </c:when>
-			                <c:when test="${page.currentPage + 1 < page.totalPages}"> <a href="?currentPage=${page.currentPage+1}">下一页</a> </c:when>
-			                <c:when test="${page.currentPage + 1 >= page.totalPages}"> <a href="?currentPage=${page.totalPages}">下一页</a> </c:when>
-			              </c:choose>
-			              <c:choose>
-			                <c:when test="${page.totalPages==0}"> <a href="?currentPage=${page.currentPage}">尾页</a> </c:when>
-			                <c:otherwise> <a href="?currentPage=${page.totalPages}">尾页</a> </c:otherwise>
-			              </c:choose>
-			              <!-- 分页功能 End -->
-			              <input type="text" id="page.pageNo" style="width:50px;height:18px" name="currentPage" onKeyDown="gotoPageForEnter(event)"/>
-			              <a href="javascript:void;" onClick="javascript:gotoPage()">跳转</a> 
-			            </div>
-					</li>
-					<!-- 分页用原来的 -->	
-				</div> 
-			</div> 
-		</div>
-	</div>	
-</div>
-<%@ include file="_footer.jsp"%>
+<!--  fen xiang -->
+<script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-
-function gotoPage() {
-	var pageNo = document.getElementById("page.pageNo").value;
-	
-	if (isNaN(pageNo)) {
-		alert("请输入数值");
-		return;
-	}
-	
-	if(pageNo==""){
-		alert("请输入数值")
-		return;
-	}
-	
-	pageNo = parseInt(pageNo);
-	
-	if (pageNo < 1 || pageNo > parseInt("${page.totalPages}")) {
-		alert("只能输入1-${page.totalPages}之间的数值");
-		return;
-	}
-	
-	var url = "<s:url value='/news/newsList.html'/>?currentPage=" + pageNo;
-	
-	
-	location.href = url
-	
-}
-
-function gotoPageForEnter(event) {
-	var e = event ? event : window.event;
-			
-	if(event.keyCode == 13) {
-		gotoPage();
-	}
-}
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
 </body>
 </html>

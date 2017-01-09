@@ -51,7 +51,7 @@
 
         </div>
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
+            <a href="<s:url value='/news/newsList.html'/>" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
         </div>	
         <div class="lf3" >
             <a href="/" style="margin-left:10px;" target="_blank"><b>创意街</b></a>
@@ -94,64 +94,45 @@
 				<a href="javascript:void(0);" id="next" class="next"></a>
 			</div>
 			<ul class="tFocus-pic zoom" id="tFocus-pic">
-										<li style="opacity: 0; z-index: 0;">
+
+
+				<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="0" end="0">	
+				<li style="z-index: 5; opacity: 1;">
 					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="" target="_blank">摩拜/ofo等共享单车真的可以替代汽车吗？</a>
+						<a class="s_pic_tit" href="" target="_blank">${creativeLifeNews.title}</a>
 					</div>
 					<span class="slide_num"><em></em><b>1</b><i>5</i></span>
 					<p class="s_info">
-						<!--<a class="tp_block tb_5	" href="http://news.91.com/it/" target="_blank">行业</a>-->从接受腾讯、滴滴等巨资“押注”被媒体轮番报道，到北上广深街头的“橙黄大战”，共享单车这一火热的创新项目，已成为“分享经济”和“互联网＋”便利市民生活、服务城市交通“痛点”的鲜活案例。……
+						${creativeLifeNews.newsAbstract}……
 					</p>
-					<a class="s_pic" target="_blank" title="摩拜/ofo等共享单车真的可以替代汽车吗？" href=""><img src="http://img.qt.baidu.com/91/news/201612/16/58535d5cc527b.jpg" data-original="http://img.qt.baidu.com/91/news/201612/16/58535d5cc527b.jpg" width="580" height="267" alt="摩拜/ofo等共享单车真的可以替代汽车吗？"></a>
+					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href=""><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>"  width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
 				</li>
-										<li style="z-index: 0; opacity: 0;">
+									
+				</c:forEach>						
+			
+				<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="1" end="4">	
+				<li style="z-index: 0; opacity: 0;">
 					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="" target="_blank">AirPods 简单开箱：苹果可穿戴设备的未来</a>
+						<a class="s_pic_tit" href="" target="_blank">${creativeLifeNews.title}</a>
 					</div>
-					<span class="slide_num"><em></em><b>2</b><i>5</i></span>
+					<span class="slide_num"><em></em><b>${status.count+1}</b><i>5</i></span>
 					<p class="s_info">
-						<!--<a class="tp_block 	" href="" target="_blank"></a>-->除了 7.9寸 iPad Pro 、iPhone 7 和 iPhone 7 Plus、Apple Watch Series 2 和全新 Touch Bar 版 MacBook Pro 外，苹果 AirPods 同样是一款非常经典的“电脑”，这款可穿戴设备采用高级音频波束成形技术，同时界面的设计也非常简单易用。……
+						${creativeLifeNews.newsAbstract}……
 					</p>
-					<a class="s_pic" target="_blank" title="AirPods 简单开箱：苹果可穿戴设备的未来" href=""><img src="http://img.qt.baidu.com/91/news/201612/15/58520cc89f06b.jpg" data-original="http://img.qt.baidu.com/91/news/201612/15/58520cc89f06b.jpg" width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
+					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href=""><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>" width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
 				</li>
-										<li style="z-index: 5; opacity: 1;">
-					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="" target="_blank">百度手机助手城市联盟厦门站全程直播</a>
-					</div>
-					<span class="slide_num"><em></em><b>3</b><i>5</i></span>
-					<p class="s_info">
-						<!--<a class="tp_block tb_5	" href="http://news.91.com/it/" target="_blank">行业</a>-->2016年12月15日，百度手机助手城市联盟厦门站成功举办。……
-					</p>
-					<a class="s_pic" target="_blank" title="百度手机助手城市联盟厦门站全程直播" href=""><img src="http://img.qt.baidu.com/91/news/201612/15/585206772c7f3.jpg"  width="580" height="267" alt="百度手机助手城市联盟厦门站全程直播"></a>
-				</li>
-										<li style="z-index: 0; opacity: 0;">
-					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="" target="_blank">2017年我们将看到一个什么样的苹果？</a>
-					</div>
-					<span class="slide_num"><em></em><b>4</b><i>5</i></span>
-					<p class="s_info">
-						<!--<a class="tp_block 	" href="" target="_blank"></a>-->对于苹果来说，过去这几年变化的似乎只有时间，而不是这个市场。但是2017年将会是一个万全不一样的故事。如果iPhone 8的传闻是真的，那么2017年将会成为苹果历史上的又一个里程碑。……
-					</p>
-					<a class="s_pic" target="_blank" title="2017年我们将看到一个什么样的苹果？" href="http://news.91.com/apple/s5850ae6b0c0e.html"><img src="http://img.qt.baidu.com/91/news/201612/14/5850bd2db5730.jpg"  width="580" height="267" alt="2017年我们将看到一个什么样的苹果？"></a>
-				</li>
-										<li style="z-index: 0; opacity: 0;">
-					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="" target="_blank">诺基亚现在做手机只能卖1000元？</a>
-					</div>
-					<span class="slide_num"><em></em><b>5</b><i>5</i></span>
-					<p class="s_info">
-						<!--<a class="tp_block 	" href="" target="_blank"></a>-->简单来说，微软从诺基亚手中收购相关业务，并剥离核心资产后决定套现走人，今后10年HMD的手机将贴上诺基亚的品牌。……
-					</p>
-					<a class="s_pic" target="_blank" title="诺基亚现在做手机只能卖1000元？" href=""><img src="http://img.qt.baidu.com/91/news/201612/13/584f68851f492.jpg"  width="580" height="267" alt="诺基亚现在做手机只能卖1000元？"></a>
-				</li>
-									</ul>
+									
+				</c:forEach>
+ 				
+			
+			</ul>
 			<div class="tFocusBtn nodisplay" id="tFocusBtn">
 				<a class="tFocus-leftbtn nodisplay" id="tFocus-leftbtn" href="javascript:void(0);">‹</a>
 				<div class="tFocus-btn clearfix" id="tFocus-btn">
 					<ul>
-						<li class=""></li>
-						<li class=""></li>
 						<li class="active"></li>
+						<li class=""></li>
+						<li class=""></li>
 						<li class=""></li>
 						<li class=""></li>
 					</ul>
@@ -267,7 +248,7 @@
 					<!---->
 				</div>
 				
-				<div class="c4_zgjq">
+				<div class="c4_zgjq" style="margin-top:12px;">
 					<h4 class="com_ltred">创意设计</h4>
 					<ul class="list_com_tw">
 						<!---->
@@ -343,7 +324,7 @@
 						<div class="intro com_a_color">${creativeLifeNews.newsAbstract}..<a href="#">[详细]</a></div>
 						</c:forEach>
 						<!---->
-						<ul class="list_com_4">
+						<ul class="list_com_4" style="margin-top:18px;">
 							<!---->
 							<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="7" end="8">
 							<li><a href="" target="_blank">${creativeLifeNews.title}</a></li>
@@ -356,28 +337,12 @@
 					<h2 class="paihang com_titlebg"></h2>
 
 					<ul class="rank_list">
-					<li>
-					<span class="r_num num_1">01</span><a href="" target="_blank">10大iPhone 6s功能及50个iOS 9技巧</a>
-					</li>
-					<li>
-					<span class="r_num num_2">02</span><a href="" target="_blank">MWC2016：百视通携手风行电视登录上海站</a>
-					</li>
-					<li>
-					<span class="r_num num_3">03</span><a href="" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
-					</li>
-					<li>
-					<span class="r_num num_4">04</span><a href="" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
-					</li>
-					<li>
-					<span class="r_num num_5">05</span><a href="" target="_blank">惊呆了！iPhone 5SE配置/售价完全曝光</a>
-					</li>
-					<li>
-					<span class="r_num num_5">06</span><a href="" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
-					</li>
-					<li>
-					<span class="r_num num_4">07</span><a href="" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
-					</li>
-				
+						<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="0" end="6">	
+						<li>
+						<span class="r_num num_${status.count}">0${status.count}</span><a href="" target="_blank">${creativeLifeNews.title}</a>
+						</li>						
+						</c:forEach>
+
 					</ul>
 
 				</div>			
@@ -414,7 +379,7 @@
 					<!---->
 				</div>
 				
-				<div class="c4_zgjq">
+				<div class="c4_zgjq" style="margin-top:12px;">
 					<h4 class="com_ltred">创业者说</h4>
 					<ul class="list_com_tw">
 						<!---->
@@ -435,16 +400,16 @@
 			<div class="mid">
 				<div class="m4_first">
 					<!---->
-			    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="0">	
-					<h2><a href="" target="_blank">${businessNews.title}</a></h2>
-					<p><a href="" target="_blank">${businessNews.newsAbstract}...[详细]</a></p>										
+			    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="0" end="0">	
+					<h2><a href="" target="_blank">${businessPolicy.title}</a></h2>
+					<p><a href="" target="_blank">${businessPolicy.newsAbstract}...[详细]</a></p>										
 					</c:forEach>	
 
 					<!---->
 					<ul class="list_com">
 						<!---->
-				    	<c:forEach items="${businessNews}" var="businessNews" begin="1" end="5">	
-						<li><a href="" target="_blank">${businessNews.title}</a></li>									
+				    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="5">	
+						<li><a href="" target="_blank">${businessPolicy.title}</a></li>									
 						</c:forEach>						
 
 					</ul>
@@ -479,7 +444,7 @@
 			<div class="right">
 				<div class="hq_hqqq">
 					<!--环-->
-					<h2 class="com_titlebg shenghuo"><a href="" target="_blank">更多</a></h2>
+					<h2 class="com_titlebg zhengce"><a href="" target="_blank">更多</a></h2>
 					<div class="pdlf8">
 						<!---->
 						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="6" end="6">	
@@ -500,30 +465,16 @@
 				</div>			
 			
 				<div class="hq_ylbg">
-					<h2 class="paihang com_titlebg"></h2>
+					<h2 class="cy_paihang com_titlebg"></h2>
 
 					<ul class="rank_list">
-					<li>
-					<span class="r_num num_1">01</span><a href="" target="_blank">10大iPhone 6s功能及50个iOS 9技巧</a>
-					</li>
-					<li>
-					<span class="r_num num_2">02</span><a href="" target="_blank">MWC2016：百视通携手风行电视登录上海站</a>
-					</li>
-					<li>
-					<span class="r_num num_3">03</span><a href="" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
-					</li>
-					<li>
-					<span class="r_num num_4">04</span><a href="" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
-					</li>
-					<li>
-					<span class="r_num num_5">05</span><a href="" target="_blank">惊呆了！iPhone 5SE配置/售价完全曝光</a>
-					</li>
-					<li>
-					<span class="r_num num_5">06</span><a href="" target="_blank">苹果新品发布会盘点 iPhone SE终亮相</a>
-					</li>
-					<li>
-					<span class="r_num num_4">07</span><a href="" target="_blank">荣耀V8首发 百度携手华为惊喜预约</a>
-					</li>
+					
+						<c:forEach items="${businessPolicy}" var="businessPolicy" varStatus="status" begin="0" end="6">	
+						<li>
+						<span class="r_num num_${status.count}">0${status.count}</span><a href="" target="_blank">${businessPolicy.title}</a>
+						</li>						
+						</c:forEach>					
+					
 				
 					</ul>
 
@@ -638,6 +589,48 @@
 
 </div>
 
+<div id="footer">
 
+	<ul class="footer">            
+        <li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">
+        		<span style="color:#7d7d7d;">加入收藏</span>
+        	</a>
+		&nbsp;&nbsp;©&nbsp;&nbsp;2015&nbsp;&nbsp;Lotut&nbsp;&nbsp;使用龙图腾前必读&nbsp;&nbsp;
+		皖ICP备123456789号&nbsp;&nbsp;意见箱：lotuto@163.com&nbsp;&nbsp;
+		<span style="display:inline-block;position:relative;width:auto;">
+		<a href="https://ss.knet.cn/verifyseal.dll?sn=e16072934010064299rolh000000&amp;ct=df&amp;a=1&amp;pa=0.09530572313815355" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display:inline-block;">
+		<img src="http://rr.knet.cn/static/images/logo/cnnic.png" style="border:none;height:25px;" oncontextmenu="return false;" alt="可信网站">
+		</a>
+		</span>
+		</li>            
+     </ul>
+</div>
+<style>
+#footer {
+    width: 100%;
+    overflow: hidden;
+    background: #e7e7e7;
+    font-family: SimSun;
+}
+.footer li {
+    text-align: center;
+    line-height: 45px;
+    height: 45px;
+    color: #7d7d7d;
+    font-family: "微软雅黑";
+}
+.footer a {
+    text-decoration: none;
+    color: #333;
+}
+</style>
+    <script type="text/javascript" src="<s:url value='/js/jquery-1.7.2.min.js'/>"></script>
+    <script type="text/javascript" src="<s:url value='/js/index.js'/>"></script>
+    <script>
+    // slide
+    Focus();
+    // nav
+    navOn(5404);
+    </script>
 </body>
 </html>

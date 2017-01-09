@@ -82,18 +82,18 @@ a:hover, a:active {color:#dd000a;text-decoration:underline;}
 .fx_logo {
     width: 1100px;
     height: 60px;
-    margin: 40px auto 18px auto;
+    margin: 10px auto 18px auto;
 }
 .fx_nav {
-    height: 75px;
+    height: 50px;
     background: #db000a;
 }
 .fx_nav .wrap {
     width: 1200px;
-    padding-top: 14px;
+  /*  padding-top: 14px;*/
     margin: 0px auto;
 	line-height:50px;
-	height: 75px;	
+	height: 50px;	
 }
 .fx_nav .lf1 {
     width: 60px;
@@ -517,6 +517,8 @@ em, b, i, strong {
     color: #707070;
     border-bottom: 1px solid #dbe4e9;
     padding-bottom: 12px;
+        width: 420px;
+    overflow: hidden;
 }
 .m4_first p a {
     color: #707070;
@@ -530,16 +532,20 @@ em, b, i, strong {
 
 .list_com li {
     height: 35px;
+
     background: #666;
     vertical-align: bottom;
     background: url(../images/dian.jpg) no-repeat left 9px;
     padding-left: 10px;
+
 }
 
 
 .list_com li a {
     display: block;
     font-size: 16px;
+    overflow: hidden;
+    height: 30px;
 }
 .m4_bx2 {
     margin-top: 20px;
@@ -671,7 +677,7 @@ em, b, i, strong {
 }
 
 .hq_hqqq .list_com_4 {
-    margin-top: 18px;
+    margin-top: 8px;
 }
 
 .list_com_4 li {

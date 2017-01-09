@@ -95,7 +95,7 @@ public class IndexController {
 		
 		return "index";
 	}
-	
+		
 	@RequestMapping(path="/token")
 	public void weiXin(HttpServletRequest req, HttpServletResponse resp){
 		PrintWriter pw = null;
