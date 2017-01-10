@@ -153,4 +153,15 @@
 			WHERE  DATE(e.publish_time) != CURDATE() AND e.check_status=1 AND news_type =#{type}
 			GROUP BY id ORDER BY COUNT(1) DESC,publish_time DESC) AS n2) LIMIT 0,#{size}
 		</select>	
+
+		<select id="getNewsListByType" resultMap="NewsResultMap">
+			SELECT id,title,small_img_url,keywords,publish_time,abstract FROM news 
+			WHERE check_status=1 and news_type=#{typeId} 
+			ORDER BY publish_time DESC
+			LIMIT #{page.startIndex},#{page.pageSize}
+		</select>
+		
+		<select id="getNewsListByTypeCount" parameterType="int"  resultType="int">
+			SELECT count(*) FROM news WHERE check_status=1 and news_type=#{typeId} 
+		</select>
 </mapper>

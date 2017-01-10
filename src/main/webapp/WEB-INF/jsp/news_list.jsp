@@ -94,100 +94,83 @@
          <!--   <em>&gt;</em> <a href="#">列表</a> --> 
         </div>	
         <div>
+        <c:forEach items="${news}" var="news" varStatus="status">
+        <c:if test="${not empty news.smallImgUrl }">
 			<div class="plist1 ">
 				<div class="plist1_img F_Left">
-					<img src="http://upload.ccidnet.com/2016/1206/thumb_200_130_1480986265566.png" width="200" height="130" class="dh" />
+					<img src="<s:url value='${news.smallImgUrl}'/>" width="200" height="130" class="dh" />
 				</div> 
 		        <div class="plist1_p F_Left"> 
-					<h2><a href="" target="_blank" class="t_zi1"  title=""" >人工智能浪潮掀起，机遇与烦恼并存</a></h2> 
+					<h2><a href="" target="_blank" class="t_zi1"  title=""" >${news.title}</a></h2> 
 					<p></p> 
 		
-					<div class="t_b"><span>12-06 09:04</span><span class="tags" tags="人工智能 机器学习 智能助手 弱人工智能">人工智能 机器学习 </span></div>
+					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span><span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 		
-					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161206-2','text':'人工智能浪潮掀起，机遇与烦恼并存','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
+					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161206-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
 				
 				</div>
 				<div class="C_Both"></div>
 			</div>
 			<div class="C_Both"></div>
-		 
+		</c:if>
+		<c:if test="${empty news.smallImgUrl }">
 		    <div class="plist11">
 				<div class="plist11_p F_Left"> 
-					<h2><a href="" target="_blank" class="t_zi1"  title="" >未来数据中心 康普专栏</a></h2> 
+					<h2><a href="" target="_blank" class="t_zi1"  title="" >${news.title}</a></h2> 
 					<p></p> 
-					<div class="t_b"><span>11-15 13:21</span><span class="tags" tags=""></span></div>
-					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161115-2','text':'未来数据中心 康普专栏','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
+					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span><span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
+					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161115-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
 				</div>
 				<div class="C_Both"></div>
 			</div>
 			<div class="C_Both"></div>
-			<div class="plist1 ">
-				<div class="plist1_img F_Left">
-					<img src="http://upload.ccidnet.com/2016/1206/thumb_200_130_1480986265566.png" width="200" height="130" class="dh" />
-				</div> 
-		        <div class="plist1_p F_Left"> 
-					<h2><a href="" target="_blank" class="t_zi1"  title=""" >人工智能浪潮掀起，机遇与烦恼并存</a></h2> 
-					<p></p> 
-		
-					<div class="t_b"><span>12-06 09:04</span><span class="tags" tags="人工智能 机器学习 智能助手 弱人工智能">人工智能 机器学习 </span></div>
-		
-					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161206-2','text':'人工智能浪潮掀起，机遇与烦恼并存','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
-				
-				</div>
-				<div class="C_Both"></div>
+		</c:if>
+		</c:forEach>
+		</div>
+		<!-- 分页功能 start -->
+		<div id="page"> 
+			<div style="margin-left:20px;height:60px;">
+			 
+			<c:if test="${page.totalPages > 1}"> 
+				<div class="col-lg-12"> 
+					<a>共 ${page.totalPages} 页 </a>
+					<a>第 ${page.currentPage} 页 </a>
+					<a href="?typeId=2&currentPage=1">首页</a>
+				  <c:choose>
+			        <c:when test="${page.currentPage - 1 > 0}"> <a href="?typeId=2&currentPage=${page.currentPage - 1}">上一页</a> </c:when>
+			        <c:when test="${page.currentPage - 1 <= 0}"> <a href="?typeId=2&currentPage=1">上一页</a> </c:when>
+			      </c:choose>
+			      <c:choose>
+			        <c:when test="${page.totalPages==0}"> <a href="?typeId=2&currentPage=${page.currentPage}">下一页</a> </c:when>
+			        <c:when test="${page.currentPage + 1 < page.totalPages}"> <a href="?typeId=2&currentPage=${page.currentPage+1}">下一页</a> </c:when>
+			        <c:when test="${page.currentPage + 1 >= page.totalPages}"> <a href="?typeId=2&currentPage=${page.totalPages}">下一页</a> </c:when>
+			      </c:choose>
+			      <c:choose>
+			        <c:when test="${page.totalPages==0}"> <a href="?typeId=2&currentPage=${page.currentPage}">尾页</a> </c:when>
+			        <c:otherwise> <a href="?typeId=2&currentPage=${page.totalPages}">尾页</a> </c:otherwise>
+			      </c:choose>
+			     
+			      <a><input type="text" id="page.pageNo" style="width:30px;height:14px" name="currentPage" onKeyDown="gotoPageForEnter(event)"/></a>
+			      <a href="javascript:void;" onClick="javascript:gotoPage()">跳转</a> 
+		       </div>
+		    </c:if>
 			</div>
-			<div class="C_Both"></div>
-		</div>			
+			
+		</div>	
+		<!-- 分页功能 End -->	
 	</div>
 <!-- left end	 -->
 	<div class="nr_cont2 F_Right">
 		<div class="box">
 			<h2><a href="#" class="a1 box_hover">专利推荐</a></h2>
 			<ul class="h_second_list">
-		
-			<li>
-			<span class="h_list_tit" style="font-size:14px;">
-				<a href="/patent/detail.html?patentno=86" target="_blank">[发明]一种改性玻璃尾砂水泥基辅助性胶凝材料及其制备方法 - 2014103664127</a>
-			</span> 
-			</li>			
-		
-			<li>
-			<span class="h_list_tit" style="font-size:14px;">
-				<a href="/patent/detail.html?patentno=88" target="_blank">[发明]一种节能环保锅炉 - 2014104053879</a>
-			</span> 
-			</li>			
-		
-			<li>
-			<span class="h_list_tit" style="font-size:14px;">
-				<a href="/patent/detail.html?patentno=122" target="_blank">[发明]六自由度四轴飞行器 - 2013101209293</a>
-			</span> 
-			</li>			
-		
-			<li>
-			<span class="h_list_tit" style="font-size:14px;">
-				<a href="/patent/detail.html?patentno=128" target="_blank">[发明]磁铁式柱塞泵 - 2014102749185</a>
-			</span> 
-			</li>			
-		
-			<li>
-			<span class="h_list_tit" style="font-size:14px;">
-				<a href="/patent/detail.html?patentno=173" target="_blank">[发明]一种生物质旋风节能环保锅炉 - 2013105498470</a>
-			</span> 
-			</li>			
-		
-			<li>
-			<span class="h_list_tit" style="font-size:14px;">
-				<a href="/patent/detail.html?patentno=174" target="_blank">[发明]一种通风型保养理疗椅 - 2013101257140</a>
-			</span> 
-			</li>			
-		
-			<li>
-			<span class="h_list_tit" style="font-size:14px;">
-				<a href="/patent/detail.html?patentno=842" target="_blank">[发明]一种盐碱地改良方法 - 2010102563629</a>
-			</span> 
-			</li>			
-		
-		
+			<c:forEach items="${patents}" var="patent" varStatus="status">
+				<li>
+				<span class="h_list_tit" style="font-size:14px;">
+					<a href="/patent/detail.html?patentId=${patent.patent_id }" target="_blank">[${patent.patent_type_name }]${patent.patent_name } - ${patent.app_no }</a>
+				</span> 
+				</li>
+			</c:forEach>			
 		
 		</ul>			
 		</div>	
@@ -195,28 +178,33 @@
 		<div class="box" style="margin-top:20px;">
 			<h2><a href="#" class="a1 box_hover">商标推荐</a></h2>	
 			<ul class="good-list-item">
-    			<li>
-<img alt="漫画西游系列一" src="/pis/smallImg/2/20170104160906.png.html" width="280" height="280">
-    			</li>	
+    			<c:forEach items="${brands}" var="brand" varStatus="status">
 		    	<li>
-		      
 				 <dl>
-				   <dd class="pic"> 
-				   		<a href="/brand/getbrandDetail.html?brandId=271" target="_blank">
+				    <dd class="pic"> 
+				   		<a href="<s:url value='/brand/getbrandDetail.html?brandId=${brand.id }'/>" target="_blank">
 							<div style="position: relative;width:192px;height:154px;">   
-							<img onerror="javascript:this.src='http://r.lotut.com/images/brands_img/16_imagemagick_small.jpg'" width="100%" height="100%" no-repeat="" src="/images/brands_img/16_imagemagick_small.jpg">
-							<span style="position: absolute;font-family:Microsoft YaHei;font-size:20px;top: 60px;width:100%;left:0;z-index:1;text-align: center;">THINKCARD</span>
+							<c:choose>
+							<c:when test="${not empty brand.imageUrl }">
+								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='${brand.imageUrl }'/>"/>
+							</c:when>
+							<c:otherwise>
+								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg'/>"/>
+							</c:otherwise>
+							</c:choose> 
+							<span style="position: absolute;font-family:Microsoft YaHei;font-size:20px;top: 60px;width:100%;left:0;z-index:1;text-align: center;">${brand.name }</span>
 				   			</div>
 						</a> 
 					</dd>
-				<dt class="name"> 
-					<div style="width:110px;float:left;">
-						<a href="/brand/getbrandDetail.html?brandId=271" target="_blank" title="THINKCARD">THINKCARD</a>
-					</div> 
-					<div class="num" style="float:left;">¥22000</div>
-				 </dt>
+					<dt class="name"> 
+						<div style="width:110px;float:left;">
+							<a href="/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="THINKCARD">${brand.name }</a>
+						</div> 
+						<div class="num" style="float:left;">¥${brand.price }</div>
+				 	</dt>
 				</dl>
 		      </li>
+		      </c:forEach>
     
     </ul>				
 		</div>			
@@ -262,7 +250,44 @@
 <script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+	
+
+	function gotoPage() {
+		var pageNo = document.getElementById("page.pageNo").value;
+		
+		if (isNaN(pageNo)) {
+			alert("请输入数值");
+			return;
+		}
+		
+		if(pageNo==""){
+			alert("请输入数值")
+			return;
+		}
+		
+		pageNo = parseInt(pageNo);
+		
+		if (pageNo < 1 || pageNo > parseInt("${page.totalPages}")) {
+			alert("只能输入1-${page.totalPages}之间的数值");
+			return;
+		}
+		
+		var url = "<s:url value='/news/newsList.html'/>?currentPage=" + pageNo + "&typeId=2";
+		
+		
+		location.href = url
+		
+	}
+
+	function gotoPageForEnter(event) {
+		var e = event ? event : window.event;
+				
+		if(event.keyCode == 13) {
+			gotoPage();
+		}
+	}
 </script>
+
 </body>
 </html>

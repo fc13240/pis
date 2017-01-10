@@ -23,10 +23,12 @@
 	</select>
 	
 	<select id="getPatents" parameterType="int" resultType="Patent">
-	select s.price ,p.patent_name,s.patent_id,ss.patent_first_column_id
-			from sell_patent_goods s join patents p on s.patent_id=p.patent_id
-			join sell_second_column ss on s.patent_second_column=ss.patent_second_column_id
-				where status=1 AND s.recommend_status=1 limit 0,9;
+		SELECT s.price ,p.patent_name,p.app_no,s.patent_id,ss.patent_first_column_id,pt.patent_type_desc as patent_type_name
+		FROM sell_patent_goods s 
+		LEFT JOIN patents p ON s.patent_id=p.patent_id
+		LEFT JOIN patent_types pt ON p.patent_type=pt.patent_type_id
+		LEFT JOIN sell_second_column ss ON s.patent_second_column=ss.patent_second_column_id
+		WHERE STATUS=1 AND s.recommend_status=1 LIMIT 0,9;
 
 	</select>	
 	<select id="getNoticeById" parameterType="int" resultMap="TransactionNotice">

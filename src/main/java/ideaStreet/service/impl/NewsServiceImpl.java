@@ -82,4 +82,14 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.getHomepageByType(type, size);
 	}
 
+	@Override
+	public List<News> getNewsListByType(int typeId, Page page) {
+		return newsDao.getNewsListByType(typeId, page);
+	}
+
+	@Override
+	public int getNewsListByTypeCount(int typeId) {
+		return newsDao.getNewsListByTypeCount(typeId);
+	}
+
 }

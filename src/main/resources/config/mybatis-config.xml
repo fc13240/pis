@@ -31,7 +31,10 @@
 			<typeAlias alias="PatentRemark" type="ideaStreet.domain.PatentRemark"/>		
 			<typeAlias alias="PatentType" type="ideaStreet.domain.PatentType"/>		
 			<typeAlias alias="MobilePatent" type="ideaStreet.domain.MobilePatent"/>
-			<typeAlias alias="WeChatOrder" type="ideaStreet.domain.WeChatOrder"/>		
+			<typeAlias alias="WeChatOrder" type="ideaStreet.domain.WeChatOrder"/>
+			<typeAlias alias="Brand" type="ideaStreet.domain.Brand"/>
+			<typeAlias alias="BrandCategory" type="ideaStreet.domain.BrandCategory"/>
+			<typeAlias alias="BrandSearchCondition" type="ideaStreet.domain.BrandSearchCondition"/>		
 		</typeAliases>
 		
 

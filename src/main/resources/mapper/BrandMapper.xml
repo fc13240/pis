@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ideaStreet.dao.mapper.BrandMapper">
+	<resultMap type="Brand" id="brandMap">
+		<id property="id" column="id"/>
+		<result property="address" column="address"/>
+		<result property="checkStatus" column="check_status"/>
+		<result property="sellStatus" column="sell_status"/>
+		<result property="isRecommend" column="is_recommend"/>
+		<result property="brandNo" column="brand_no"/>
+		<result property="name" column="name"/>
+		<result property="combinationType" column="combination_type"/>
+		<result property="similarNo" column="similar_no"/>
+		<result property="scope" column="scope"/>
+		<result property="transactionMode" column="transaction_mode"/>
+		<result property="price" column="price"/>
+		<result property="appPerson" column="app_person"/>
+		<result property="appDate" column="app_date"/>
+		<result property="publishDate" column="publish_date"/>
+		<result property="startDate" column="start_date"/>
+		<result property="endDate" column="end_date"/>
+		<result property="caseStatus" column="case_status"/>
+		<result property="originality" column="originality"/>
+		<result property="imageUrl" column="image_url"/>
+		<association property="brandCategory"  javaType="BrandCategory">
+			<id property="categoryId" column="category_id"/>
+			<result property="categoryName" column="category_name"/>
+		</association>
+		<association property="user"  javaType="User">
+			<id property="userId" column="user_id"/>
+			<result property="username" column="username"/>
+		</association>
+	</resultMap>
+	
+	<resultMap type="BrandCategory" id="brandCategoryMap">
+		<id property="categoryId" column="category_id"/>
+		<result property="categoryName" column="category_name"/>
+	</resultMap>
+
+
+	<select id="getBrandsCountByCategory" parameterType="int" resultType="int">
+		SELECT count(*) FROM brands b
+		LEFT JOIN brand_category bc ON b.category_id = bc.category_id
+		WHERE check_status=1 AND sell_status=1 AND b.category_id=#{categoryId}
+	</select>
+	
+	<select id="getBrandsByCategory" resultMap="brandMap">
+		SELECT id, NAME, price ,b.category_id,bc.category_name,b.image_url FROM brands b
+		LEFT JOIN brand_category bc ON b.category_id = bc.category_id
+		WHERE check_status=1 AND sell_status=1 AND b.category_id=#{categoryId}
+		LIMIT #{page.startIndex},#{page.pageSize}
+	</select>
+	
+	
+	<select id="getAllBrands" resultMap="brandMap">
+		SELECT id, NAME, price ,b.category_id,bc.category_name,b.image_url FROM brands b
+		LEFT JOIN brand_category bc ON b.category_id = bc.category_id
+		WHERE check_status=1 AND sell_status=1
+		LIMIT 50
+	</select>
+
+	<select id="getbrandDetail" parameterType="int" resultMap="brandMap">
+		SELECT id,address,b.category_id,bc.category_name,brand_no,name,combination_type,similar_no,
+			scope,transaction_mode,price,start_date,end_date,image_url
+ 		from brands b
+		left join brand_category bc on b.category_id = bc.category_id
+		WHERE id=#{brandId}
+	</select>
+	
+	<select id="getBrandCategoryById" parameterType="int" resultMap="brandCategoryMap">
+		SELECT category_id,category_name FROM brand_category WHERE category_id=#{categoryId}
+	</select>
+
+	<select id="getAllBrandsByCategory" parameterType="int" resultMap="brandMap">
+		SELECT b.address,b.case_status,bc.category_id,bc.category_name,b.brand_no,b.name,b.combination_type,b.similar_no,
+			b.scope,b.transaction_mode,b.price,b.app_person,b.app_date,b.publish_date,b.start_date,b.end_date,b.originality,b.image_url
+		FROM brands b
+		LEFT JOIN brand_category bc ON b.category_id = bc.category_id
+		WHERE check_status=1 AND sell_status=1 AND b.category_id=#{categoryId}
+	</select>
+
+	<select id="getRecommendBrands" parameterType="int" resultMap="brandMap">
+		SELECT id, NAME, price ,category_id,image_url FROM brands 
+		WHERE check_status=1 AND sell_status=1 AND id != #{brandId}
+		order by is_recommend desc, rand() limit 3
+		
+	</select>
+
+	<select id="getAllBrandsCount"  resultType="int">
+		SELECT count(*) FROM brands 
+		WHERE check_status=1 AND sell_status=1
+	</select>
+	
+	<select id="getAllBrandsList" parameterType="Page" resultMap="brandMap">
+		SELECT id, NAME, price ,b.category_id,bc.category_name,b.image_url FROM brands b
+		LEFT JOIN brand_category bc ON b.category_id = bc.category_id
+		WHERE check_status=1 AND sell_status=1 
+		ORDER BY b.category_id
+		LIMIT #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="getIndexRecommendBrands" resultMap="brandMap">
+		SELECT * FROM (SELECT * FROM brands WHERE check_status=1 AND sell_status=1 AND category_id = 3 ORDER BY is_recommend DESC LIMIT 5) AS c3
+		UNION 
+		SELECT * FROM (SELECT * FROM brands WHERE check_status=1 AND sell_status=1 AND category_id = 5 ORDER BY is_recommend DESC LIMIT 5) AS c5
+		UNION 
+		SELECT * FROM (SELECT * FROM brands WHERE check_status=1 AND sell_status=1 AND category_id = 9 ORDER BY is_recommend DESC LIMIT 5) AS c9
+		UNION 
+		SELECT * FROM (SELECT * FROM brands WHERE check_status=1 AND sell_status=1 AND category_id = 12 ORDER BY is_recommend DESC LIMIT 5) AS c12
+		UNION 
+		SELECT * FROM (SELECT * FROM brands WHERE check_status=1 AND sell_status=1 AND category_id = 20 ORDER BY is_recommend DESC LIMIT 5) AS c20
+		UNION 
+		SELECT * FROM (SELECT * FROM brands WHERE check_status=1 AND sell_status=1 AND category_id = 21 ORDER BY is_recommend DESC LIMIT 5) AS c21
+		UNION 
+		SELECT * FROM (SELECT * FROM brands WHERE check_status=1 AND sell_status=1 AND category_id = 25 ORDER BY is_recommend DESC LIMIT 5) AS c25
+		UNION 
+		SELECT * FROM (SELECT * FROM brands WHERE check_status=1 AND sell_status=1 AND category_id = 33 ORDER BY is_recommend DESC LIMIT 5) AS c33
+		UNION 
+		SELECT * FROM (SELECT * FROM brands WHERE check_status=1 AND sell_status=1 AND category_id = 43 ORDER BY is_recommend DESC LIMIT 5) AS c43
+
+	</select>
+	
+	<select id="getSearchBrandsList" parameterType="BrandSearchCondition" resultMap="brandMap">
+		<bind name="keyword_pattern" value="'%' + keyword + '%'"/>
+		select b.id, b.name, b.price,b.category_id,bc.category_name,b.image_url from brands b
+		left join brand_category bc on b.category_id = bc.category_id
+		where check_status=1 AND sell_status=1 
+
+		<if test="keyword_pattern!=null">
+			and (b.name like #{keyword_pattern} or b.brand_no like #{keyword_pattern})
+		</if>
+		
+		order by b.category_id
+		limit #{page.startIndex},#{page.pageSize}
+	</select>
+
+	<select id="getSearchBrandsCount"  parameterType="BrandSearchCondition" resultType="int">
+		<bind name="keyword_pattern" value="'%' + keyword + '%'"/>
+		select count(*) FROM brands where check_status=1 and sell_status=1
+		<if test="keyword_pattern!=null">
+			and (name like #{keyword_pattern} or brand_no like #{keyword_pattern})
+		</if>
+
+	</select>
+	
+	<select id="getIndexSlideBrands"  resultMap="brandMap">
+		SELECT id, NAME, price ,category_id,image_url FROM brands 		
+		WHERE check_status=1 AND sell_status=1
+		order by is_recommend desc limit 5
+		
+	</select>
+	
+	<select id="getAlreadySaleBrands" parameterType="Page" resultMap="brandMap">
+		select b.id,b.name,b.price,b.category_id,bc.category_name,b.image_url from brands b left join brand_category 
+			   bc on b.category_id=bc.category_id  where b.sell_status=2 and b.check_status=1
+			   limit #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="getAlreadyBrandsCount" resultType="int">
+		select count(*) from brands where sell_status=2 and check_status=1
+	</select>
+	
+	<select id="getSearchAlreadySaleBrands" parameterType="BrandSearchCondition" resultMap="brandMap">
+		<bind name="keyword_pattern" value="'%' + keyword +'%'"/>
+		select b.id,b.name,b.price,b.category_id,bc.category_name,b.image_url from brands b left join brand_category 
+			   bc on b.category_id=bc.category_id  where b.sell_status=2 and b.check_status=1
+			   <if test="keyword_pattern!=null">
+			   		and (b.name like #{keyword_pattern} or b.brand_no like #{keyword_pattern})
+			   </if>
+			  limit #{page.startIndex},#{page.pageSize}
+	</select>
+	
+	<select id="getSearchAlreadySaleBrandsCount" parameterType="BrandSearchCondition" resultType="int">
+		<bind name="keyword_pattern" value="'%' + keyword +'%'"/>
+		select count(*) from brands where sell_status=2 and check_status=1
+			   <if test="keyword_pattern!=null">
+			   		and (name like #{keyword_pattern} or brand_no like #{keyword_pattern})
+			   </if>
+	</select>
+	
+	<select id="getBrandsCountBetweenRange" parameterType="int" resultType="int">
+		SELECT count(*) FROM brands b
+		WHERE check_status=1 AND sell_status=1 AND (category_id between #{startIndex} and #{startIndex}+4)
+	</select>
+	
+	<select id="getBrandsBetweenRange" resultMap="brandMap">
+		SELECT id, NAME, price ,category_id,image_url FROM brands 
+		WHERE check_status=1 AND sell_status=1 AND (category_id between #{startIndex} and #{startIndex}+4)
+		order by category_id
+		LIMIT #{page.startIndex},#{page.pageSize}
+	</select>
+
+</mapper>
