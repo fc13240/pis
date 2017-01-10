@@ -2,6 +2,7 @@
 <%@ taglib uri="spring" prefix="s" %>
 <%@ taglib uri="security" prefix="se" %>
 <%@ taglib uri="c" prefix="c" %>
+<%@ taglib uri="fmt" prefix="fmt"%>
 <!DOCTYPE HTML>
 <html>
 <head>
