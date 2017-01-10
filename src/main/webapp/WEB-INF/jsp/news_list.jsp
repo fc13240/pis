@@ -28,7 +28,6 @@
     		<div class="left">
 				<span class="co">科技迷们的网络聚集地 -- 创意街</span>
             </div>
-
     </div>
 </div>
 
@@ -46,18 +45,18 @@
    
         <div class="lf1">
           <p>
-            <a href="/" target="_blank"><b>首页</b></a>
+            <a href="<s:url value='/index.html'/>" target="_blank"><b>首页</b></a>
             </p>
 
         </div>
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
+            <a href="<s:url value='/news/newsList.html'/>" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
         </div>	
         <div class="lf3" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>创意街</b></a>
+            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;" target="_blank"><b>创意街</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>创业服务</b></a>
+            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;" target="_blank"><b>创业服务</b></a>
         </div>	
         <div class="lf2" >
             <a href="/" style="margin-left:10px;" target="_blank"><b>漫画西游</b></a>
@@ -66,20 +65,20 @@
             <a href="/" style="margin-left:10px;" target="_blank"><b>爆笑西游</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>专利商标</b></a>
+            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;" target="_blank"><b>专利商标</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>
+            <a href="http://r.lotut.com/patent/index.html" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>商标交易</b></a>
+            <a href="http://r.lotut.com/brand/index.html" style="margin-left:10px;" target="_blank"><b>商标交易</b></a>
         </div>			
 		
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>专利管理</b></a>
+            <a href="http://g.lotut.com" style="margin-left:10px;" target="_blank"><b>专利管理</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>专利检索</b></a>
+            <a href="http://so.lotut.com" style="margin-left:10px;" target="_blank"><b>专利检索</b></a>
         </div>			
 				
 		

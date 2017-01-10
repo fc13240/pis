@@ -1,7 +1,8 @@
+@charset "utf-8";
 body {
     font-size: 14px;
     color: #444;
-    font-family: 'microsoft yahei', "Microsoft YaHei", "Î¢ÈíÑÅºÚ", Arial, "Lucida Grande", Tahoma, sans-serif;
+    font-family: 'microsoft yahei', "Microsoft YaHei", "å¾®è½¯é›…é»‘", Arial, "Lucida Grande", Tahoma, sans-serif;
 }
 
 body {
@@ -162,7 +163,7 @@ strong, b {
 
 
 .main_wrap {
-    height: 370px;
+
     overflow: hidden;
 }
 .tFocus {
@@ -480,7 +481,7 @@ em, b, i, strong {
     float: right;
     width: 253px;
     font-size: 12px;
-    font-family: "ËÎÌå";
+    font-family: "å®‹ä½“";
     line-height: 24px;
     color: #707070;
 }
@@ -491,7 +492,7 @@ em, b, i, strong {
     font-weight: normal;
     height: 25px;
     overflow: hidden;
-    font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", Arial, "Lucida Grande", Tahoma, sans-serif;
+    font-family: "Microsoft YaHei", "å¾®è½¯é›…é»‘", Arial, "Lucida Grande", Tahoma, sans-serif;
 }
 .list_com_tw li span.c p{
 	height:50px;
@@ -513,7 +514,7 @@ em, b, i, strong {
 .m4_first p {
     white-space: nowrap;
     font-size: 12px;
-    font-family: "ËÎÌå";
+    font-family: "å®‹ä½“";
     color: #707070;
     border-bottom: 1px solid #dbe4e9;
     padding-bottom: 12px;
@@ -588,7 +589,7 @@ em, b, i, strong {
     float: left;
     line-height: 24px;
     font-size: 12px;
-    font-family: "ËÎÌå";
+    font-family: "å®‹ä½“";
 }
 .m4_bx2 .list_com_3 dd a.dlintro {
     width: 210px;
@@ -664,7 +665,7 @@ em, b, i, strong {
 }
 
 .hq_hqqq .intro {
-    font: normal 12px "ËÎÌå";
+    font: normal 12px "å®‹ä½“";
     line-height: 24px;
     color: #707070;
     padding-bottom: 10px;
@@ -693,7 +694,7 @@ em, b, i, strong {
 .list_com_4 li a {
     display: block;
     font-size: 14px;
-    font-family: "ËÎÌå";
+    font-family: "å®‹ä½“";
     white-space: nowrap;
 }
 
@@ -775,4 +776,85 @@ em, b, i, strong {
     text-align: center;
 }
 
+.daohang {
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 15px;
+    position: relative;
+}
+.daohang span a {
+    float: left;
+    font: bold 20px "å¾®è½¯é›…é»‘";
 
+    color: #234C73;
+}
+.daohang a {
+    margin: 0 15px;
+    color: #000000;
+}
+.daohang dd {
+    ftext-align: center;
+    font: bold 18px "å¾®è½¯é›…é»‘";
+}
+
+.m_b_bt {
+    font: bold 24px "å¾®è½¯é›…é»‘";
+    color: #222;
+    width: 1200px;
+    position: relative;
+}
+.m_b_bt b {
+    width: 150px;
+    background: #fff;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    height: 40px;
+}
+.m_b_bt span.line {
+    border-top: 1px solid #0d0f25;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 1200px;
+    z-index: 1;
+}
+.mvbk_box {
+    width: 1200px;
+    overflow: hidden;
+}
+.mvbk_box ul {
+    overflow: hidden;
+    width: 110%;
+}
+.mvbk_box li {
+    width: 275px;
+    height: 255px;
+    float: left;
+    position: relative;
+    margin: 26px 26px 0 0;
+    list-style: none;
+}
+.mvbk_box li a {
+    display: block;
+    width: 275px;
+    height: 255px;
+}
+.mvbk_box li span {
+    display: block;
+    height: 35px;
+    background: url(../images/slide_bg.png);
+    width: 275px;
+    font: normal 16px/35px "å¾®è½¯é›…é»‘";
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+fieldset, img {
+    border: 0;
+}
