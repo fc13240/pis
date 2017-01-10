@@ -127,5 +127,6 @@
 	
 	<bean name="brandDao" class="ideaStreet.dao.mybatis.BrandMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+		<property name="brandMapper" ref="brandMapper"/>
 	</bean>
 </beans>							

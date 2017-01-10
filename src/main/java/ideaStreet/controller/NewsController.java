@@ -92,7 +92,10 @@ public class NewsController {
 		model.addAttribute("brandStudy", brandStudy);	
 		return "news_originality_list";
 	}	
+<<<<<<< HEAD
 
+=======
+>>>>>>> a4a458e666276bf8decc274f718a7e7a7fddd03e
 
 	@RequestMapping(path="/newsBusinessList",method=RequestMethod.GET)
 	public String newsBusinessList(Page page,Model model) {
@@ -171,7 +174,11 @@ public class NewsController {
 		model.addAttribute("brandStudy", brandStudy);	
 		return "news_patent_list";
 	}	
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> a4a458e666276bf8decc274f718a7e7a7fddd03e
 	@RequestMapping(path="/newsPreview")
 	public String newsPreview(@RequestParam("newsId") int newsId,Model model) {
 		News news=newsService.getUserNewsById(newsId);
