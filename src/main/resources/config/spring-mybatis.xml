@@ -119,4 +119,13 @@
 	<bean name="weChatOrderDao" class="ideaStreet.dao.mybatis.WeChatOrderMybatisDao">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>
+	
+	<bean id="brandMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="ideaStreet.dao.mapper.BrandMapper"/>
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
+	</bean>
+	
+	<bean name="brandDao" class="ideaStreet.dao.mybatis.BrandMybatisDao">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>
 </beans>							

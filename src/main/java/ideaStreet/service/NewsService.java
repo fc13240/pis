@@ -33,6 +33,9 @@ public interface NewsService {
 
 	List<News> getNewsByRand();
 	
-	
 	List<News> getHomepageByType(int type,int size);
+
+	List<News> getNewsListByType(int typeId, Page page);
+
+	int getNewsListByTypeCount(int typeId);
 }

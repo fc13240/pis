@@ -1,7 +1,6 @@
 package ideaStreet.controller;
 
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,11 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ideaStreet.domain.Article;
+import ideaStreet.domain.Brand;
 import ideaStreet.domain.News;
 import ideaStreet.domain.NewsComment;
 import ideaStreet.domain.Page;
 import ideaStreet.domain.Patent;
+import ideaStreet.service.BrandService;
 import ideaStreet.service.NewsService;
 import ideaStreet.service.PatentService;
 import ideaStreet.util.PrincipalUtils;
@@ -29,22 +29,27 @@ import ideaStreet.util.PrincipalUtils;
 public class NewsController {
 	private NewsService newsService;
 	private PatentService patentService;
+	private BrandService brandService;
 	@Autowired
-	public NewsController(NewsService newsService,PatentService patentService) {
+	public NewsController(NewsService newsService,PatentService patentService, BrandService brandService) {
 		this.newsService = newsService;
 		this.patentService = patentService;
+		this.brandService = brandService;
 	}
 
 	@RequestMapping(path="/newsList",method=RequestMethod.GET)
-	public String newsList(Page page,Model model) {
+	public String newsList(int typeId, Page page, Model model) {
 		if(page.getCurrentPage()<1){
 			page.setCurrentPage(1);
 		}
-		List<News> news=newsService.getAllNews(page);
-		
-		int totalCount=newsService.getAllNewsCount();
+		List<News> news = newsService.getNewsListByType(typeId,page);
+		int totalCount = newsService.getNewsListByTypeCount(typeId);
 		page.setTotalRecords(totalCount);
+		List<Patent> patents = patentService.getPatents();
+		List<Brand> brands = brandService.getIndexSlideBrands();
+		model.addAttribute("patents", patents);
 		model.addAttribute("news", news);
+		model.addAttribute("brands", brands);
 		model.addAttribute("page", page);
 		return "news_list";
 	}
@@ -87,6 +92,7 @@ public class NewsController {
 		model.addAttribute("brandStudy", brandStudy);	
 		return "news_originality_list";
 	}	
+<<<<<<< HEAD
 
 	@RequestMapping(path="/newsBusinessList",method=RequestMethod.GET)
 	public String newsBusinessList(Page page,Model model) {
@@ -165,6 +171,8 @@ public class NewsController {
 		model.addAttribute("brandStudy", brandStudy);	
 		return "news_patent_list";
 	}	
+=======
+>>>>>>> 046b6d195fd46bf26097214861cb604981fe5907
 	
 	@RequestMapping(path="/newsPreview")
 	public String newsPreview(@RequestParam("newsId") int newsId,Model model) {

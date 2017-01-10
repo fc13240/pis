@@ -39,4 +39,8 @@ public interface NewsMapper {
 	
 	
 	List<News> getHomepageByType(@Param("type")int type,@Param("size")int size);
+
+	List<News> getNewsListByType(@Param("typeId") int typeId, @Param("page")Page page);
+
+	int getNewsListByTypeCount(int typeId);
 }
