@@ -51,7 +51,7 @@
 
         </div>
         <div class="lf2" >
-            <a href="<s:url value='/news/newsList.html'/>" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
         </div>	
         <div class="lf3" >
             <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;" target="_blank"><b>创意街</b></a>
@@ -104,7 +104,7 @@
 					<h2><a href="" target="_blank" class="t_zi1"  title=""" >${news.title}</a></h2> 
 					<p></p> 
 		
-					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span><span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
+					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 		
 					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161206-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
 				
@@ -118,7 +118,7 @@
 				<div class="plist11_p F_Left"> 
 					<h2><a href="" target="_blank" class="t_zi1"  title="" >${news.title}</a></h2> 
 					<p></p> 
-					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span><span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
+					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161115-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
 				</div>
 				<div class="C_Both"></div>
