@@ -92,4 +92,9 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.getNewsListByTypeCount(typeId);
 	}
 
+	@Override
+	public NewsType getNewsTypeById(int typeId) {
+		return newsDao.getNewsTypeById(typeId);
+	}
+
 }

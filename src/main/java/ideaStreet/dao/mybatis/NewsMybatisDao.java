@@ -92,6 +92,11 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 		return newsMapper.getNewsListByTypeCount(typeId);
 	}
 
+	@Override
+	public NewsType getNewsTypeById(int typeId) {
+		return newsMapper.getNewsTypeById(typeId);
+	}
+
 
 
 

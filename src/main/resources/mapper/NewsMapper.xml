@@ -164,4 +164,8 @@
 		<select id="getNewsListByTypeCount" parameterType="int"  resultType="int">
 			SELECT count(*) FROM news WHERE check_status=1 and news_type=#{typeId} 
 		</select>
+		
+		<select id="getNewsTypeById" parameterType="int"  resultMap="NewsTypeResultMap">
+			SELECT type_id,type_name FROM news_type WHERE type_id=#{typeId} 
+		</select>
 </mapper>

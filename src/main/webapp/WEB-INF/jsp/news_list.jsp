@@ -2,6 +2,7 @@
 <%@ taglib uri="spring" prefix="s" %>
 <%@ taglib uri="security" prefix="se" %>
 <%@ taglib uri="c" prefix="c" %>
+<%@ taglib uri="fmt" prefix="fmt"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -50,7 +51,11 @@
 
         </div>
         <div class="lf2" >
+<<<<<<< HEAD
             <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;"><b>科技前沿</b></a>
+=======
+            <a href="<s:url value='/news/newsList.html?typeId=${newsType.typeId }'/>" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
+>>>>>>> bd96e03d30aae996ad16ce4becdb2c4347878a69
         </div>	
         <div class="lf3" >
             <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;"><b>创意街</b></a>
@@ -89,7 +94,7 @@
 	<div class="nr_cont1 F_Left">
 		<div class="tittle_x">
             <a href="">首页</a>
-            <em>&gt;</em> <a href="">科技前沿</a>
+            <em>&gt;</em> <a href="<s:url value='/news/newsList.html?typeId=${newsType.typeId }'/>">${newsType.typeName }</a>
          <!--   <em>&gt;</em> <a href="#">列表</a> --> 
         </div>	
         <div>
@@ -103,7 +108,7 @@
 					<h2><a href="" target="_blank" class="t_zi1"  title=""" >${news.title}</a></h2> 
 					<p></p> 
 		
-					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span><span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
+					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 		
 					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161206-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
 				
@@ -117,7 +122,7 @@
 				<div class="plist11_p F_Left"> 
 					<h2><a href="" target="_blank" class="t_zi1"  title="" >${news.title}</a></h2> 
 					<p></p> 
-					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span><span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
+					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161115-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
 				</div>
 				<div class="C_Both"></div>
@@ -134,19 +139,19 @@
 				<div class="col-lg-12"> 
 					<a>共 ${page.totalPages} 页 </a>
 					<a>第 ${page.currentPage} 页 </a>
-					<a href="?typeId=2&currentPage=1">首页</a>
+					<a href="?typeId=${newsType.typeId }&currentPage=1">首页</a>
 				  <c:choose>
-			        <c:when test="${page.currentPage - 1 > 0}"> <a href="?typeId=2&currentPage=${page.currentPage - 1}">上一页</a> </c:when>
-			        <c:when test="${page.currentPage - 1 <= 0}"> <a href="?typeId=2&currentPage=1">上一页</a> </c:when>
+			        <c:when test="${page.currentPage - 1 > 0}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.currentPage - 1}">上一页</a> </c:when>
+			        <c:when test="${page.currentPage - 1 <= 0}"> <a href="?typeId=${newsType.typeId }&currentPage=1">上一页</a> </c:when>
 			      </c:choose>
 			      <c:choose>
-			        <c:when test="${page.totalPages==0}"> <a href="?typeId=2&currentPage=${page.currentPage}">下一页</a> </c:when>
-			        <c:when test="${page.currentPage + 1 < page.totalPages}"> <a href="?typeId=2&currentPage=${page.currentPage+1}">下一页</a> </c:when>
-			        <c:when test="${page.currentPage + 1 >= page.totalPages}"> <a href="?typeId=2&currentPage=${page.totalPages}">下一页</a> </c:when>
+			        <c:when test="${page.totalPages==0}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.currentPage}">下一页</a> </c:when>
+			        <c:when test="${page.currentPage + 1 < page.totalPages}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.currentPage+1}">下一页</a> </c:when>
+			        <c:when test="${page.currentPage + 1 >= page.totalPages}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.totalPages}">下一页</a> </c:when>
 			      </c:choose>
 			      <c:choose>
-			        <c:when test="${page.totalPages==0}"> <a href="?typeId=2&currentPage=${page.currentPage}">尾页</a> </c:when>
-			        <c:otherwise> <a href="?typeId=2&currentPage=${page.totalPages}">尾页</a> </c:otherwise>
+			        <c:when test="${page.totalPages==0}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.currentPage}">尾页</a> </c:when>
+			        <c:otherwise> <a href="?typeId=${newsType.typeId }&currentPage=${page.totalPages}">尾页</a> </c:otherwise>
 			      </c:choose>
 			     
 			      <a><input type="text" id="page.pageNo" style="width:30px;height:14px" name="currentPage" onKeyDown="gotoPageForEnter(event)"/></a>
@@ -272,7 +277,7 @@
 			return;
 		}
 		
-		var url = "<s:url value='/news/newsList.html'/>?currentPage=" + pageNo + "&typeId=2";
+		var url = "<s:url value='/news/newsList.html'/>?currentPage=" + pageNo + "&typeId=" + ${newsType.typeId };
 		
 		
 		location.href = url

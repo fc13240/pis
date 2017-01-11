@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ideaStreet.domain.Brand;
 import ideaStreet.domain.News;
 import ideaStreet.domain.NewsComment;
+import ideaStreet.domain.NewsType;
 import ideaStreet.domain.Page;
 import ideaStreet.domain.Patent;
 import ideaStreet.service.BrandService;
@@ -47,10 +48,12 @@ public class NewsController {
 		page.setTotalRecords(totalCount);
 		List<Patent> patents = patentService.getPatents();
 		List<Brand> brands = brandService.getIndexSlideBrands();
+		NewsType newsType = newsService.getNewsTypeById(typeId);
 		model.addAttribute("patents", patents);
 		model.addAttribute("news", news);
 		model.addAttribute("brands", brands);
 		model.addAttribute("page", page);
+		model.addAttribute("newsType", newsType);
 		return "news_list";
 	}
 	
@@ -78,7 +81,10 @@ public class NewsController {
 
 		return "news_originality_list";
 	}	
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd96e03d30aae996ad16ce4becdb2c4347878a69
 
 	@RequestMapping(path="/newsBusinessList",method=RequestMethod.GET)
 	public String newsBusinessList(Page page,Model model) {

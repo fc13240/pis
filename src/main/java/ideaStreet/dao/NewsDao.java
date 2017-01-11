@@ -2,7 +2,6 @@ package ideaStreet.dao;
 
 import java.util.List;
 
-import ideaStreet.domain.Article;
 import ideaStreet.domain.News;
 import ideaStreet.domain.NewsComment;
 import ideaStreet.domain.NewsType;
@@ -38,5 +37,7 @@ public interface NewsDao {
 	List<News> getNewsListByType(int typeId, Page page);
 
 	int getNewsListByTypeCount(int typeId);
+
+	NewsType getNewsTypeById(int typeId);
 	
 }
