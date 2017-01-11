@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>创意街——龙图腾 </title>
+<title>创业服务——龙图腾 </title>
 <meta name="keywords" content="科技门户" />
 <meta name="description" content="科技门户" />
 <meta itemprop="name" content="" />
@@ -61,26 +61,64 @@ $(function(){
     		<div class="left">
 				<span class="co">科技迷们的网络聚集地 -- 创意街</span>
             </div>
-
     </div>
 </div>
-
-
 <div class="fx_logo clearfix">
 	<div class="logo">
     	<a href=""><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
     </div>
+<!--  -->
+	<div class="mc-field-group" style="float:left;width:600px;margin-left:100px;margin-top:15px">
+       <input type="text" placeholder="关键字" name="q" class="text" id="mce-EMAIL">
+       <input type="hidden" name="type" value="">
+       <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
+    </div>
+    <div style="clear:both;"></div>
+<style>
+#mce-EMAIL {
+    background: #FFFFFF;
+    float: left;
+    border: 2px solid #F16059;
+    box-shadow: none;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    padding: 3;
+    max-width: 400px;
+    min-width: 400px;
+    width: 400px;
+    display: inline-block;
+    outline: 0;
+}
+#mc-embedded-subscribe {
+    background: #db000a;
+    float: left;
+    border: 2px solid #db000a;
+    box-shadow: none;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+    
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 0; 
+}
+</style>        
+    <!--  -->    
 </div>
 
 <div class="fx_nav">
    <div class="wrap clearfix">
-   
- 
-   
+
         <div class="lf1">
           <p>
             <a href="<s:url value='/index.html'/>"><b>首页</b></a>
-            </p>
+          </p>
 
         </div>
         <div class="lf2" >
@@ -137,13 +175,13 @@ $(function(){
 			
 		<div class="fl tFocus clearfix" id="tFocus">
 			<div id="owl-demo" class="owl-carousel">
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/1.jpg'/>" alt=""><b></b><span>巴西训练内马尔受伤 吓坏队友</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/2.jpg'/>" alt=""><b></b><span>搜狐直击德国训练 众星拼抢激烈</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/3.jpg'/>" alt=""><b></b><span>西班牙备战演功夫足球 哈维蝎子摆尾</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/4.jpg'/>" alt=""><b></b><span>印第安美女追捧德国 特色服饰助威抢镜</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/5.jpg'/>" alt=""><b></b><span>锐体育：回望1958年世界杯</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/6.jpg'/>" alt=""><b></b><span>搜狐视频《世界杯特别报道》 发布会众星云集</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/7.jpg'/>" alt=""><b></b><span>梅西vs罗谁能笑傲巴西世界杯</span></a>
+		    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="5">
+				<a class="item" href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">
+					<img src="<s:url value='${businessSay.smallImgUrl}'/>" alt="">
+					<b></b>
+					<span>${businessSay.title}</span>
+				</a>	
+				</c:forEach>
 			</div>
 		</div>
 
@@ -155,7 +193,8 @@ $(function(){
 				<div class="news_mod">
 			    	<c:forEach items="${hotNews}" var="hotNews" begin="0" end="0">
 					<div class="news_tit">
-						<a class="tp_block tb_1	" href="" target="_blank">最新</a><a href="" target="_blank">${hotNews.title}</a>
+						<span class="tp_block tb_1	" >最新</span>
+						<a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a>
 					</div>
 					<p class="news_dis">${hotNews.newsAbstract}...</p>
 						
@@ -165,7 +204,7 @@ $(function(){
 
 				<ul class="t_n_list mt15" style="margin-top:10px;">
 			    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="0" end="5">
-					<li><a href="" target="_blank">${businessPolicy.title}</a></li>
+					<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></li>
 						
 					</c:forEach>				
 
@@ -181,17 +220,14 @@ $(function(){
 				<ul class="rank_list">
 					<c:forEach items="${businessSay}" var="businessSay" varStatus="status" begin="0" end="6">	
 					<li>
-					<span class="r_num num_${status.count}">0${status.count}</span><a href="" target="_blank">${businessSay.title}</a>
+					<span class="r_num num_${status.count}">0${status.count}</span>
+					<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">${businessSay.title}</a>
 					</li>						
 					</c:forEach>
-	
 				</ul>
 			</div>
 		</div>
 	</div>
-	
-
-
 	<div class="main_1 mt25 clearfix">
 		
 		<div class="c_box4 clearfix">
@@ -203,16 +239,17 @@ $(function(){
 						<!---->
 				    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="4">						
 						<li>
-							<span class="p"><a href="" target="_blank"><img src="<s:url value='${businessSay.smallImgUrl}'/>" width="118" height="82"></a></span>
+							<span class="p">
+								<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">
+									<img src="<s:url value='${businessSay.smallImgUrl}'/>" width="118" height="82">
+								</a>
+							</span>
 						  <span class="c">
-								<h5><a href="" target="_blank">${businessSay.title}</a></h5>
-								<p><a href="" target="_blank">${businessSay.newsAbstract}..[详细]</a></p>
+								<h5><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">${businessSay.title}</a></h5>
+								<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">${businessSay.newsAbstract}..[详细]</a></p>
 						  </span>
 						</li>											
 						</c:forEach>						
-
-						
-
 					</ul>
 				</div>
 							
@@ -225,10 +262,13 @@ $(function(){
 						<!---->
 				    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="4">						
 						<li>
-							<span class="p"><a href="" target="_blank"><img src="<s:url value='${businessNews.smallImgUrl}'/>" width="118" height="82"></a></span>
+							<span class="p">
+								<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" target="_blank">
+									<img src="<s:url value='${businessNews.smallImgUrl}'/>" width="118" height="82">
+								</a></span>
 						  <span class="c">
-								<h5><a href="" target="_blank">${businessNews.title}</a></h5>
-								<p><a href="" target="_blank">${businessNews.newsAbstract}..[详细]</a></p>
+								<h5><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" target="_blank">${businessNews.title}</a></h5>
+								<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" target="_blank">${businessNews.newsAbstract}..[详细]</a></p>
 						  </span>
 						</li>											
 						</c:forEach>	
@@ -239,18 +279,14 @@ $(function(){
 			<div class="right">
 				<h4 class="com_ltred">创业政策</h4>
 				<div class="hq_hqqq">
-					<!--环-->
-					<!-- <h2 class="com_titlebg shenghuo"><a href="" target="_blank">更多</a></h2> -->
-				
 					<div class="pdlf8">
 						<!---->
 						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="0" end="0">
-						
 						<div class="n_p_mod_0 clearfix">
-					    	
-							<a class="n_pic fl" href="" target="_blank"><img src="<s:url value='${businessPolicy.smallImgUrl}'/>" width="125" height="94" alt=""></a>
-							<a class="n_tit" href="" target="_blank">${businessPolicy.title}</a>	
-												
+							<a class="n_pic fl" href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">
+								<img src="<s:url value='${businessPolicy.smallImgUrl}'/>" width="125" height="94" alt="">
+							</a>
+							<a class="n_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a>						
 		                </div>						
 						</c:forEach>						
 	
@@ -258,7 +294,7 @@ $(function(){
 						<ul class="list_com_4">
 							<!---->
 							<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="10">
-							<li><a href="" target="_blank">${businessPolicy.title}</a></li>
+							<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></li>
 							</c:forEach>
 						</ul>
 					</div>

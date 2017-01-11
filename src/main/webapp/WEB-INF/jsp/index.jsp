@@ -34,9 +34,52 @@
 
 
 <div class="fx_logo clearfix">
-	<div class="logo">
+	<div class="logo" style="float:left;">
     	<a href="<s:url value='/index.html'/>"><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
     </div>
+<!--  -->
+	<div class="mc-field-group" style="float:left;width:600px;margin-left:100px;margin-top:15px">
+       <input type="text" placeholder="关键字" name="q" class="text" id="mce-EMAIL">
+       <input type="hidden" name="type" value="">
+       <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
+    </div>
+    <div style="clear:both;"></div>
+<style>
+#mce-EMAIL {
+    background: #FFFFFF;
+    float: left;
+    border: 2px solid #F16059;
+    box-shadow: none;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    padding: 3;
+    max-width: 400px;
+    min-width: 400px;
+    width: 400px;
+    display: inline-block;
+    outline: 0;
+}
+#mc-embedded-subscribe {
+    background: #db000a;
+    float: left;
+    border: 2px solid #db000a;
+    box-shadow: none;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+    
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 0; 
+}
+</style>        
+    <!--  -->
 </div>
 
 <div class="fx_nav">
@@ -89,30 +132,30 @@
 				<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="0" end="0">	
 				<li style="z-index: 5; opacity: 1;">
 					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="<s:url value='/news/newsPreview.html?newsId=4'/>" target="_blank">${creativeLifeNews.title}</a>
+						<a class="s_pic_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a>
 					</div>
 					<span class="slide_num"><em></em><b>1</b><i>5</i></span>
 					<p class="s_info">
 						${creativeLifeNews.newsAbstract}……
 					</p>
-					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href=""><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>"  width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
+					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}"><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>"  width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
 				</li>					
 				</c:forEach>									
 				<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="1" end="4">	
 				<li style="z-index: 0; opacity: 0;">
 					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="" target="_blank">${creativeLifeNews.title}</a>
+						<a class="s_pic_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a>
 					</div>
 					<span class="slide_num"><em></em><b>${status.count+1}</b><i>5</i></span>
 					<p class="s_info">
 						${creativeLifeNews.newsAbstract}……
 					</p>
-					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href=""><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>" width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
+					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}"><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>" width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
 				</li>						
 				</c:forEach>
 			</ul>
 			<div class="tFocusBtn nodisplay" id="tFocusBtn">
-				<a class="tFocus-leftbtn nodisplay" id="tFocus-leftbtn" href="javascript:void(0);">‹</a>
+				<a class="tFocus-leftbtn nodisplay" id="tFocus-leftbtn" href="javascript:void(0);"></a>
 				<div class="tFocus-btn clearfix" id="tFocus-btn">
 					<ul>
 						<li class="active"></li>
@@ -134,17 +177,17 @@
 				<div class="news_mod">
 			    	<c:forEach items="${hotNews}" var="hotNews" begin="0" end="0">
 					<div class="news_tit">
-						<a class="tp_block tb_1	" href="" target="_blank">头条</a><a href="" target="_blank">${hotNews.title}</a>
+						<span class="tp_block tb_1	"  target="_blank">头条</span>
+						<a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a>
 					</div>
-					<p class="news_dis">${hotNews.newsAbstract}...</p>
-						
+					<p class="news_dis">${hotNews.newsAbstract}...</p>						
 					</c:forEach>				
-
 				</div>
 				<div class="news_mod mt20">
 			    	<c:forEach items="${hotNews}" var="hotNews" begin="1" end="1">
 					<div class="news_tit">
-						<a class="tp_block tb_4	" href="" target="_blank">热点</a><a href="" target="_blank">${hotNews.title}</a>
+						<span class="tp_block tb_4	"  >热点</span>
+						<a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a>
 					</div>
 					<p class="news_dis">${hotNews.newsAbstract}...</p>
 						
@@ -153,7 +196,7 @@
 				</div>
 				<ul class="t_n_list mt15">
 			    	<c:forEach items="${hotNews}" var="hotNews" begin="2" end="4">
-					<li><a href="" target="_blank">${hotNews.title}</a></li>
+					<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a></li>
 						
 					</c:forEach>				
 
@@ -167,14 +210,14 @@
 			<div class="col_con">
 				<div class="n_p_mod_0 clearfix">
 			    	<c:forEach items="${technologyNews}" var="technologyNews" begin="0" end="0">
-					<a class="n_pic fl" href="" target="_blank"><img src="<s:url value='${technologyNews.smallImgUrl}'/>"  width="125" height="94" alt=""></a>
-					<a class="n_tit" href="" target="_blank">${technologyNews.title}</a>	
+					<a class="n_pic fl" href="<s:url value='/news/newsPreview.html?newsId='/>${technologyNews.id}" target="_blank"><img src="<s:url value='${technologyNews.smallImgUrl}'/>"  width="125" height="94" alt=""></a>
+					<a class="n_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${technologyNews.id}" target="_blank">${technologyNews.title}</a>	
 					</c:forEach>					
                 </div>
 				<ul class="news_list_dot mt25 clearfix">
 			    	<c:forEach items="${technologyNews}" var="technologyNews" begin="1" end="7">
 					<li>
-						<a href="" target="_blank">${technologyNews.title}</a>
+						<a href="<s:url value='/news/newsPreview.html?newsId='/>${technologyNews.id}" target="_blank">${technologyNews.title}</a>
 					</li>					
 					</c:forEach>							
 				</ul>
@@ -198,7 +241,7 @@
 	    	<c:forEach items="${cartoonNews}" var="cartoonNews">
 
 			<div class="z_box">
-				 <a href="" target="_blank">
+				 <a href="<s:url value='/news/newsPreview.html?newsId='/>${cartoonNews.id}" target="_blank">
 				<img alt="${cartoonNews.title}" src="<s:url value='${cartoonNews.smallImgUrl}'/>" width="280" height="280">
 				<h4>${cartoonNews.title}</h4>
 				</a>
@@ -208,7 +251,7 @@
 	    	<c:forEach items="${laughNews}" var="laughNews">
 
 			<div class="z_box">
-				 <a href="" target="_blank">
+				 <a href="<s:url value='/news/newsPreview.html?newsId='/>${laughNews.id}" target="_blank">
 				<img alt="${laughNews.title}" src="<s:url value='${laughNews.smallImgUrl}'/>" width="280" height="280">
 				<h4>${laughNews.title}</h4>
 				</a>
@@ -223,7 +266,7 @@
 					<!---->
 
 			    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="0" end="0">
-					<a href="" target="_blank">
+					<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeDesignNews.id}" target="_blank">
 						<img src="<s:url value='${creativeDesignNews.smallImgUrl}'/>" width="360" height="260">
 						<b></b>
 						<span>${creativeDesignNews.title}</span>
@@ -240,10 +283,10 @@
 
 			    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="1" end="3">
 						<li>
-							<span class="p"><a href="" target="_blank"><img src="<s:url value='${creativeDesignNews.smallImgUrl}'/>" width="118" height="82"></a></span>
+							<span class="p"><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeDesignNews.id}" target="_blank"><img src="<s:url value='${creativeDesignNews.smallImgUrl}'/>" width="118" height="82"></a></span>
 						  <span class="c">
-								<h5><a href="" target="_blank">${creativeDesignNews.title}</a></h5>
-								<p><a href="" target="_blank">${creativeDesignNews.newsAbstract}[详细]</a></p>
+								<h5><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeDesignNews.id}" target="_blank">${creativeDesignNews.title}</a></h5>
+								<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeDesignNews.id}" target="_blank">${creativeDesignNews.newsAbstract}[详细]</a></p>
 						  </span>
 						</li>					
 					</c:forEach>						
@@ -255,15 +298,15 @@
 				<div class="m4_first">
 					<!---->
 			    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="0" end="0">	
-					<h2><a href="" target="_blank">${creativeLifeNews.title}</a></h2>
-					<p><a href="" target="_blank">${creativeLifeNews.newsAbstract}...[详细]</a></p>										
+					<h2><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></h2>
+					<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.newsAbstract}...[详细]</a></p>										
 					</c:forEach>	
 
 					<!---->
 					<ul class="list_com">
 						<!---->
 				    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="1" end="5">	
-						<li><a href="" target="_blank">${creativeLifeNews.title}</a></li>									
+						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></li>									
 						</c:forEach>						
 
 					</ul>
@@ -275,10 +318,10 @@
 						<!---->
 						
 			    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="0" end="0">		
-						<dt><a href="" target="_blank">${creativePrductNews.title}</a></dt>
+						<dt><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativePrductNews.id}" target="_blank">${creativePrductNews.title}</a></dt>
 						<dd>
-							<a href="" class="dlimg" target="_blank"><img src="<s:url value='${creativePrductNews.smallImgUrl}'/>" width="146" height="100"></a>
-							<a href="" class="dlintro" target="_blank">${creativePrductNews.newsAbstract}...[详细]</a>
+							<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativePrductNews.id}" class="dlimg" target="_blank"><img src="<s:url value='${creativePrductNews.smallImgUrl}'/>" width="146" height="100"></a>
+							<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativePrductNews.id}" class="dlintro" target="_blank">${creativePrductNews.newsAbstract}...[详细]</a>
 						</dd>										
 					</c:forEach>
 
@@ -289,7 +332,7 @@
 					<ul class="list_com">
 
 			    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="1" end="4">		
-						<li><a href="" target="_blank">${creativePrductNews.title}</a></li>										
+						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativePrductNews.id}" target="_blank">${creativePrductNews.title}</a></li>										
 					</c:forEach>						
 					</ul>
 				</div>
@@ -303,16 +346,16 @@
 						<!---->
 						<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="6" end="6">	
 						<div class="cc clearfix">
-							<span class="r"><a href="" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
-							<span class="l"><a href="" target="_blank">${creativeLifeNews.title}</a></span>									
+							<span class="r"><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
+							<span class="l"><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></span>									
 						</div>
-						<div class="intro com_a_color">${creativeLifeNews.newsAbstract}..<a href="#">[详细]</a></div>
+						<div class="intro com_a_color">${creativeLifeNews.newsAbstract}..<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}">[详细]</a></div>
 						</c:forEach>
 						<!---->
 						<ul class="list_com_4" style="margin-top:18px;">
 							<!---->
 							<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="7" end="8">
-							<li><a href="" target="_blank">${creativeLifeNews.title}</a></li>
+							<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></li>
 							</c:forEach>
 						</ul>
 					</div>
@@ -324,10 +367,10 @@
 					<ul class="rank_list">
 						<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="0" end="6">	
 						<li>
-						<span class="r_num num_${status.count}">0${status.count}</span><a href="" target="_blank">${creativeLifeNews.title}</a>
+						<span class="r_num num_${status.count}">0${status.count}</span>
+						<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a>
 						</li>						
 						</c:forEach>
-
 					</ul>
 
 				</div>			
@@ -354,7 +397,7 @@
 					<!---->
 
 			    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="0">
-					<a href="" target="_blank">
+					<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">
 						<img src="<s:url value='${businessSay.smallImgUrl}'/>" width="360" height="260">
 						<b></b>
 						<span>${businessSay.title}</span>
@@ -371,10 +414,10 @@
 
 			    	<c:forEach items="${businessSay}" var="businessSay" begin="1" end="3">
 						<li>
-							<span class="p"><a href="" target="_blank"><img src="<s:url value='${businessSay.smallImgUrl}'/>" width="118" height="82"></a></span>
+							<span class="p"><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank"><img src="<s:url value='${businessSay.smallImgUrl}'/>" width="118" height="82"></a></span>
 						  <span class="c">
-								<h5><a href="" target="_blank">${businessSay.title}</a></h5>
-								<p><a href="" target="_blank">${businessSay.newsAbstract}[详细]</a></p>
+								<h5><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">${businessSay.title}</a></h5>
+								<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">${businessSay.newsAbstract}[详细]</a></p>
 						  </span>
 						</li>					
 					</c:forEach>						
@@ -386,15 +429,15 @@
 				<div class="m4_first">
 					<!---->
 			    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="0" end="0">	
-					<h2><a href="" target="_blank">${businessPolicy.title}</a></h2>
-					<p><a href="" target="_blank">${businessPolicy.newsAbstract}...[详细]</a></p>										
+					<h2><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></h2>
+					<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.newsAbstract}...[详细]</a></p>										
 					</c:forEach>	
 
 					<!---->
 					<ul class="list_com">
 						<!---->
 				    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="5">	
-						<li><a href="" target="_blank">${businessPolicy.title}</a></li>									
+						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></li>									
 						</c:forEach>						
 
 					</ul>
@@ -408,10 +451,10 @@
 						<!---->
 						
 			    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="0">		
-						<dt><a href="" target="_blank">${businessNews.title}</a></dt>
+						<dt><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" target="_blank">${businessNews.title}</a></dt>
 						<dd>
-							<a href="" class="dlimg" target="_blank"><img src="<s:url value='${businessNews.smallImgUrl}'/>" width="146" height="100"></a>
-							<a href="" class="dlintro" target="_blank">${businessNews.newsAbstract}...[详细]</a>
+							<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" class="dlimg" target="_blank"><img src="<s:url value='${businessNews.smallImgUrl}'/>" width="146" height="100"></a>
+							<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" class="dlintro" target="_blank">${businessNews.newsAbstract}...[详细]</a>
 						</dd>										
 					</c:forEach>
 
@@ -422,7 +465,7 @@
 					<ul class="list_com">
 
 			    	<c:forEach items="${businessNews}" var="businessNews" begin="1" end="4">		
-						<li><a href="" target="_blank">${businessNews.title}</a></li>										
+						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" target="_blank">${businessNews.title}</a></li>										
 					</c:forEach>						
 					</ul>
 				</div>
@@ -436,16 +479,16 @@
 						<!---->
 						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="6" end="6">	
 						<div class="cc clearfix">
-							<span class="r"><a href="" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
-							<span class="l"><a href="" target="_blank">${businessPolicy.title}</a></span>									
+							<span class="r"><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
+							<span class="l"><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></span>									
 						</div>
-						<div class="intro com_a_color">${businessPolicy.newsAbstract}..<a href="#">[详细]</a></div>
+						<div class="intro com_a_color">${businessPolicy.newsAbstract}..<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}">[详细]</a></div>
 						</c:forEach>
 						<!---->
 						<ul class="list_com_4">
 							<!---->
 							<c:forEach items="${businessPolicy}" var="businessPolicy" begin="7" end="8">
-							<li><a href="" target="_blank">${businessPolicy.title}</a></li>
+							<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></li>
 							</c:forEach>
 						</ul>
 					</div>
@@ -458,7 +501,7 @@
 					
 						<c:forEach items="${businessPolicy}" var="businessPolicy" varStatus="status" begin="0" end="6">	
 						<li>
-						<span class="r_num num_${status.count}">0${status.count}</span><a href="" target="_blank">${businessPolicy.title}</a>
+						<span class="r_num num_${status.count}">0${status.count}</span><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a>
 						</li>						
 						</c:forEach>					
 					
@@ -477,7 +520,9 @@
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="title">
-			<a href="<s:url value='/news/newsPatentList.html'/>" title="专利商标" target="_blank"><img src="<s:url value='/images/t_3.jpg'/>" alt="专利商标"></a>
+			<a href="<s:url value='/news/newsPatentList.html'/>" title="专利商标" target="_blank">
+				<img src="<s:url value='/images/t_3.jpg'/>" alt="专利商标">
+			</a>
 			<strong>
 			<a href="<s:url value='/news/newsList.html?typeId=11'/>" target="_blank">专利新闻</a>|
 			<a href="<s:url value='/news/newsList.html?typeId=12'/>" target="_blank">专利学习</a>|
@@ -491,7 +536,7 @@
 	    	<c:forEach items="${patentNews}" var="patentNews">
 
 			<div class="z_box">
-				 <a href="" target="_blank">
+				 <a href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" target="_blank">
 				<img alt="${patentNews.title}" src="<s:url value='${patentNews.smallImgUrl}'/>" width="280" height="280">
 				<h4>${patentNews.title}</h4>
 				</a>
@@ -512,16 +557,17 @@
 						<!---->
 				    	<c:forEach items="${patentStudy}" var="patentStudy">						
 						<li>
-							<span class="p"><a href="" target="_blank"><img src="<s:url value='${patentStudy.smallImgUrl}'/>" width="118" height="82"></a></span>
+						  <span class="p">
+						  	<a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" target="_blank">
+						  		<img src="<s:url value='${patentStudy.smallImgUrl}'/>" width="118" height="82">
+						  	</a>
+						  </span>
 						  <span class="c">
-								<h5><a href="" target="_blank">${patentStudy.title}</a></h5>
-								<p><a href="" target="_blank">${patentStudy.newsAbstract}..[详细]</a></p>
+							<h5><a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" target="_blank">${patentStudy.title}</a></h5>
+							<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" target="_blank">${patentStudy.newsAbstract}..[详细]</a></p>
 						  </span>
 						</li>											
 						</c:forEach>						
-
-						
-
 					</ul>
 				</div>
 							
@@ -536,10 +582,13 @@
 						<!---->
 				    	<c:forEach items="${brandStudy}" var="brandStudy">						
 						<li>
-							<span class="p"><a href="" target="_blank"><img src="<s:url value='${brandStudy.smallImgUrl}'/>" width="118" height="82"></a></span>
+							<span class="p">
+								<a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" target="_blank">
+								<img src="<s:url value='${brandStudy.smallImgUrl}'/>" width="118" height="82">
+								</a></span>
 						  <span class="c">
-								<h5><a href="" target="_blank">${brandStudy.title}</a></h5>
-								<p><a href="" target="_blank">${brandStudy.newsAbstract}..[详细]</a></p>
+								<h5><a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" target="_blank">${brandStudy.title}</a></h5>
+								<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" target="_blank">${brandStudy.newsAbstract}..[详细]</a></p>
 						  </span>
 						</li>											
 						</c:forEach>	
@@ -550,8 +599,7 @@
 			<div class="right">
 
 				<div class="hq_hqqq">
-					<!--环-->
-					<!-- <h2 class="com_titlebg shenghuo"><a href="" target="_blank">更多</a></h2> -->
+	
 					<a href="<s:url value='/news/newsList.html?typeId=13'/>">
 						<h4 class="com_ltred">商标资讯</h4>
 					</a>					
@@ -559,16 +607,24 @@
 						<!---->
 						<c:forEach items="${brandNews}" var="brandNews" begin="0" end="0">	
 						<div class="cc clearfix">
-							<span class="r"><a href="" target="_blank"><img src="<s:url value='${brandNews.smallImgUrl}'/>" width="86" height="82"></a></span>
-							<span class="l"><a href="" target="_blank">${brandNews.title}</a></span>									
+							<span class="r">
+								<a href="<s:url value='/news/newsPreview.html?newsId='/>${brandNews.id}" target="_blank">
+								<img src="<s:url value='${brandNews.smallImgUrl}'/>" width="86" height="82">
+								</a>
+							</span>
+							<span class="l">
+								<a href="<s:url value='/news/newsPreview.html?newsId='/>${brandNews.id}" target="_blank">${brandNews.title}</a>
+							</span>									
 						</div>
-						<div class="intro com_a_color">${brandNews.newsAbstract}..<a href="#">[详细]</a></div>
+						<div class="intro com_a_color">${brandNews.newsAbstract}..
+							<a href="<s:url value='/news/newsPreview.html?newsId='/>${brandNews.id}">[详细]</a>
+						</div>
 						</c:forEach>
 						<!---->
 						<ul class="list_com_4">
 							<!---->
 							<c:forEach items="${brandNews}" var="brandNews" begin="1" end="10">
-							<li><a href="" target="_blank">${brandNews.title}</a></li>
+							<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${brandNews.id}" target="_blank">${brandNews.title}</a></li>
 							</c:forEach>
 						</ul>
 					</div>
@@ -620,6 +676,11 @@
 </style>
     <script type="text/javascript" src="<s:url value='/js/jquery-1.7.2.min.js'/>"></script>
     <script type="text/javascript" src="<s:url value='/js/index.js'/>"></script>
-
+    <script>
+    // slide
+    Focus();
+    // nav
+    navOn(5404);
+    </script>
 </body>
 </html>

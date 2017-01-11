@@ -100,7 +100,7 @@
 <!--  -->
 			<div class="mod1_cont" id="mod1_cont" runat="server">
 					
-				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 24px;text-indent: 28px;text-align: center;">${article.title}</h2>
+				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 24px;text-indent: 28px;text-align: center;">${news.title}</h2>
 				<br/>
 				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
@@ -136,7 +136,7 @@
 				<br/>
 				<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
 					<p>
-						${article.content}					
+						${news.content}					
 					</p>
 				</div>
 				<br/>

@@ -37,6 +37,49 @@
 	<div class="logo">
     	<a href=""><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
     </div>
+<!--  -->
+	<div class="mc-field-group" style="float:left;width:600px;margin-left:100px;margin-top:15px">
+       <input type="text" placeholder="关键字" name="q" class="text" id="mce-EMAIL">
+       <input type="hidden" name="type" value="">
+       <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
+    </div>
+    <div style="clear:both;"></div>
+<style>
+#mce-EMAIL {
+    background: #FFFFFF;
+    float: left;
+    border: 2px solid #F16059;
+    box-shadow: none;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    padding: 3;
+    max-width: 400px;
+    min-width: 400px;
+    width: 400px;
+    display: inline-block;
+    outline: 0;
+}
+#mc-embedded-subscribe {
+    background: #db000a;
+    float: left;
+    border: 2px solid #db000a;
+    box-shadow: none;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+    
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 0; 
+}
+</style>        
+    <!--  -->    
 </div>
 
 <div class="fx_nav">

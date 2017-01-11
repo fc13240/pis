@@ -63,9 +63,9 @@ public class NewsController {
 		List<News> technologyNews=newsService.getHomepageByType(2,8);
 		List<News> cartoonNews=newsService.getHomepageByType(3,4);
 		List<News> laughNews=newsService.getHomepageByType(4,4);
-		List<News> creativeLifeNews=newsService.getHomepageByType(5,10);
-		List<News> creativePrductNews=newsService.getHomepageByType(6,10);
-		List<News> creativeDesignNews=newsService.getHomepageByType(7,10);
+		List<News> creativeLifeNews=newsService.getHomepageByType(5,12);
+		List<News> creativePrductNews=newsService.getHomepageByType(6,12);
+		List<News> creativeDesignNews=newsService.getHomepageByType(7,12);
 
 		
 		model.addAttribute("hotNews", hotNews);

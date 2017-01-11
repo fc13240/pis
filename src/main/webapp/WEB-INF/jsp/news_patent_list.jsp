@@ -70,6 +70,49 @@ $(function(){
 	<div class="logo">
     	<a href=""><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
     </div>
+<!--  -->
+	<div class="mc-field-group" style="float:left;width:600px;margin-left:100px;margin-top:15px">
+       <input type="text" placeholder="关键字" name="q" class="text" id="mce-EMAIL">
+       <input type="hidden" name="type" value="">
+       <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
+    </div>
+    <div style="clear:both;"></div>
+<style>
+#mce-EMAIL {
+    background: #FFFFFF;
+    float: left;
+    border: 2px solid #F16059;
+    box-shadow: none;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    padding: 3;
+    max-width: 400px;
+    min-width: 400px;
+    width: 400px;
+    display: inline-block;
+    outline: 0;
+}
+#mc-embedded-subscribe {
+    background: #db000a;
+    float: left;
+    border: 2px solid #db000a;
+    box-shadow: none;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+    
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 0; 
+}
+</style>        
+    <!--  -->    
 </div>
 
 <div class="fx_nav">
@@ -139,16 +182,15 @@ $(function(){
 			
 		<div class="fl tFocus clearfix" id="tFocus">
 			<div id="owl-demo" class="owl-carousel">
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/1.jpg'/>" alt=""><b></b><span>巴西训练内马尔受伤 吓坏队友</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/2.jpg'/>" alt=""><b></b><span>搜狐直击德国训练 众星拼抢激烈</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/3.jpg'/>" alt=""><b></b><span>西班牙备战演功夫足球 哈维蝎子摆尾</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/4.jpg'/>" alt=""><b></b><span>印第安美女追捧德国 特色服饰助威抢镜</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/5.jpg'/>" alt=""><b></b><span>锐体育：回望1958年世界杯</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/6.jpg'/>" alt=""><b></b><span>搜狐视频《世界杯特别报道》 发布会众星云集</span></a>
-				<a class="item" href="" target="_blank"><img src="<s:url value='/img/7.jpg'/>" alt=""><b></b><span>梅西vs罗谁能笑傲巴西世界杯</span></a>
+		    	<c:forEach items="${patentNews}" var="patentNews" begin="0" end="5">
+				<a class="item" href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" target="_blank">
+					<img src="<s:url value='${patentNews.smallImgUrl}'/>" alt="">
+					<b></b>
+					<span>${patentNews.title}</span>
+				</a>	
+				</c:forEach>
 			</div>
 		</div>
-
 		<div class="fl col_mod_0 ml30 w280">
 			<div class="col_tit_wrap">
 				<h3 class="col_tit">最新资讯</h3>
@@ -157,7 +199,8 @@ $(function(){
 				<div class="news_mod">
 			    	<c:forEach items="${patentNews}" var="patentNews" begin="0" end="0">
 					<div class="news_tit">
-						最新<a href="" target="_blank">${patentNews.title}</a>
+						<span class="tp_block tb_1	" >最新</span>
+						<a href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" target="_blank">${patentNews.title}</a>
 					</div>
 					<p class="news_dis">${patentNews.newsAbstract}...</p>
 						
@@ -167,7 +210,7 @@ $(function(){
 
 				<ul class="t_n_list mt15" style="margin-top:10px;">
 			    	<c:forEach items="${patentNews}" var="patentNews" begin="0" end="5">
-					<li><a href="" target="_blank">${patentNews.title}</a></li>
+					<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" target="_blank">${patentNews.title}</a></li>
 						
 					</c:forEach>				
 
@@ -183,7 +226,8 @@ $(function(){
 				<ul class="rank_list">
 					<c:forEach items="${patentNews}" var="patentNews" varStatus="status" begin="0" end="6">	
 					<li>
-					<span class="r_num num_${status.count}">0${status.count}</span><a href="" target="_blank">${patentNews.title}</a>
+					<span class="r_num num_${status.count}">0${status.count}</span>
+					<a href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" target="_blank">${patentNews.title}</a>
 					</li>						
 					</c:forEach>
 	
@@ -195,14 +239,14 @@ $(function(){
 	<div class="main_1 mt25 clearfix">
 		
 		<div class="m_b_bt">
-			<b><a href="" target="_blank">专利新闻</a></b>
+			<b><a href="<s:url value='/news/newsList.html?typeId=11'/>" target="_blank">专利新闻</a></b>
 			<span class="line"></span>
 		</div>
 		<div class="mvbk_box">
 			<ul>
 	    	<c:forEach items="${patentNews}" var="patentNews" begin="0" end="3">
 				<li>
-				<a href="" title="${patentNews.title}" target="_blank"><img alt="${patentNews.title}" src="<s:url value='${patentNews.smallImgUrl}'/>" width="275" height="320"></a>
+				<a href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" title="${patentNews.title}" target="_blank"><img alt="${patentNews.title}" src="<s:url value='${patentNews.smallImgUrl}'/>" width="275" height="320"></a>
 					<span>${patentNews.title}</span>
 				</li>							
 			</c:forEach>			
@@ -218,7 +262,7 @@ $(function(){
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="m_b_bt">
-			<b><a href="" target="_blank">专利学习</a></b>
+			<b><a href="<s:url value='/news/newsList.html?typeId=12'/>" target="_blank">专利学习</a></b>
 			<span class="line"></span>
 		</div>
 		
@@ -228,12 +272,13 @@ $(function(){
 					<!---->
 
 			    	<c:forEach items="${patentStudy}" var="patentStudy" begin="0" end="0">
-					<a href="" target="_blank">
+					<a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" target="_blank">
 						<img src="<s:url value='${patentStudy.smallImgUrl}'/>" width="360" height="260">
 						<b></b>
-						<span>${patentStudy.title}</span>
+						<a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}">
+							<span>${patentStudy.title}</span>
+						</a>
 					</a>					
-
 					</c:forEach>					
 					<!---->
 				</div>
@@ -243,15 +288,15 @@ $(function(){
 				<div class="m4_first">
 					<!---->
 			    	<c:forEach items="${patentStudy}" var="patentStudy" begin="1" end="1">	
-					<h2><a href="" target="_blank">${patentStudy.title}</a></h2>
-					<p><a href="" target="_blank">${patentStudy.newsAbstract}...[详细]</a></p>										
+					<h2><a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" target="_blank">${patentStudy.title}</a></h2>
+					<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" target="_blank">${patentStudy.newsAbstract}...[详细]</a></p>										
 					</c:forEach>	
 
 					<!---->
 					<ul class="list_com">
 						<!---->
 				    	<c:forEach items="${patentStudy}" var="patentStudy" begin="2" end="6">	
-						<li><a href="" target="_blank">${patentStudy.title}</a></li>									
+						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" target="_blank">${patentStudy.title}</a></li>									
 						</c:forEach>						
 
 					</ul>
@@ -267,10 +312,10 @@ $(function(){
 						<!---->
 						
 			    	<c:forEach items="${patentStudy}" var="patentStudy" begin="7" end="7">		
-						<dt><a href="" target="_blank">${patentStudy.title}</a></dt>
+						<dt><a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" target="_blank">${patentStudy.title}</a></dt>
 						<dd>
-							<a href="" class="dlimg" target="_blank"><img src="<s:url value='${patentStudy.smallImgUrl}'/>" width="146" height="100"></a>
-							<a href="" class="dlintro" target="_blank">${patentStudy.newsAbstract}...[详细]</a>
+							<a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" class="dlimg" target="_blank"><img src="<s:url value='${patentStudy.smallImgUrl}'/>" width="146" height="100"></a>
+							<a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" class="dlintro" target="_blank">${patentStudy.newsAbstract}...[详细]</a>
 						</dd>										
 					</c:forEach>
 
@@ -281,13 +326,10 @@ $(function(){
 					<ul class="list_com">
 
 			    	<c:forEach items="${patentStudy}" var="patentStudy" begin="8" end="10">		
-						<li><a href="" target="_blank">${patentStudy.title}</a></li>										
+						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${patentStudy.id}" target="_blank">${patentStudy.title}</a></li>										
 					</c:forEach>						
 					</ul>
 				</div>			
-			
-				
-			
 			</div>
 			<div style="clear:both;"></div>
 		</div>
@@ -296,20 +338,19 @@ $(function(){
 	<div class="main_1 mt25 clearfix">
 		
 		<div class="m_b_bt">
-			<b><a href="" target="_blank">商标资讯</a></b>
+			<b><a href="<s:url value='/news/newsList.html?typeId=13'/>" target="_blank">商标资讯</a></b>
 			<span class="line"></span>
 		</div>
 		<div class="mvbk_box">
 			<ul>
-		
-	
 	    	<c:forEach items="${brandNews}" var="brandNews" begin="0" end="3">
 				<li>
-				<a href="" title="${brandNews.title}" target="_blank"><img alt="${brandNews.title}" src="<s:url value='${brandNews.smallImgUrl}'/>" width="275" height="320"></a>
-					<span>${brandNews.title}</span>
+				<a href="<s:url value='/news/newsPreview.html?newsId='/>${brandNews.id}" title="${brandNews.title}" target="_blank">
+					<img alt="${brandNews.title}" src="<s:url value='${brandNews.smallImgUrl}'/>" width="275" height="320">
+				</a>
+					<a href="<s:url value='/news/newsPreview.html?newsId='/>${brandNews.id}"><span>${brandNews.title}</span></a>
 				</li>							
 			</c:forEach>
-			
 			</ul>
 		</div>	
 				
@@ -319,7 +360,7 @@ $(function(){
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="m_b_bt">
-			<b><a href="" target="_blank">商标学习</a></b>
+			<b><a href="<s:url value='/news/newsList.html?typeId=14'/>" target="_blank">商标学习</a></b>
 			<span class="line"></span>
 		</div>
 		
@@ -327,73 +368,58 @@ $(function(){
 			<div class="left">
 				<div class="c4_datu">
 					<!---->
-
 			    	<c:forEach items="${brandStudy}" var="brandStudy" begin="0" end="0">
-					<a href="" target="_blank">
+					<a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" target="_blank">
 						<img src="<s:url value='${brandStudy.smallImgUrl}'/>" width="360" height="260">
 						<b></b>
 						<span>${brandStudy.title}</span>
 					</a>					
-
 					</c:forEach>					
 					<!---->
-				</div>
-								
+				</div>				
 			</div>
 			<div class="mid">
 				<div class="m4_first">
 					<!---->
 			    	<c:forEach items="${brandStudy}" var="brandStudy" begin="1" end="1">	
-					<h2><a href="" target="_blank">${brandStudy.title}</a></h2>
-					<p><a href="" target="_blank">${brandStudy.newsAbstract}...[详细]</a></p>										
+					<h2><a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" target="_blank">${brandStudy.title}</a></h2>
+					<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" target="_blank">${brandStudy.newsAbstract}...[详细]</a></p>										
 					</c:forEach>	
 
 					<!---->
 					<ul class="list_com">
 						<!---->
 				    	<c:forEach items="${brandStudy}" var="brandStudy" begin="2" end="6">	
-						<li><a href="" target="_blank">${brandStudy.title}</a></li>									
+						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" target="_blank">${brandStudy.title}</a></li>									
 						</c:forEach>						
-
 					</ul>
 				</div>
-				
-			
 			</div>
 			<div class="right">
 				<div class="hq_hqqq">
 					<!--环-->
 					<dl class="list_com_3">
-
 						<!---->
-						
 			    	<c:forEach items="${brandStudy}" var="brandStudy" begin="7" end="7">		
-						<dt><a href="" target="_blank">${brandStudy.title}</a></dt>
+						<dt><a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" target="_blank">${brandStudy.title}</a></dt>
 						<dd>
-							<a href="" class="dlimg" target="_blank"><img src="<s:url value='${brandStudy.smallImgUrl}'/>" width="146" height="100"></a>
-							<a href="" class="dlintro" target="_blank">${brandStudy.newsAbstract}...[详细]</a>
+							<a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" class="dlimg" target="_blank"><img src="<s:url value='${brandStudy.smallImgUrl}'/>" width="146" height="100"></a>
+							<a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" class="dlintro" target="_blank">${brandStudy.newsAbstract}...[详细]</a>
 						</dd>										
 					</c:forEach>
-
-
 						<!---->
-
 					</dl>
 					<ul class="list_com">
 
 			    	<c:forEach items="${brandStudy}" var="brandStudy" begin="8" end="10">		
-						<li><a href="" target="_blank">${brandStudy.title}</a></li>										
+						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${brandStudy.id}" target="_blank">${brandStudy.title}</a></li>										
 					</c:forEach>						
 					</ul>
 				</div>			
-			
-				
-			
 			</div>
 			<div style="clear:both;"></div>
 		</div>
 	</div>
-
 </div>
 
 <div id="footer">
