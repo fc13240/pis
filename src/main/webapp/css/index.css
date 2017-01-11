@@ -510,6 +510,8 @@ em, b, i, strong {
     white-space: nowrap;
     height: 30px;
     line-height: 20px;
+	width: 400px;
+    overflow: hidden;    
 }
 .m4_first p {
     white-space: nowrap;

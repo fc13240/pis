@@ -35,38 +35,34 @@
 
 <div class="fx_logo clearfix">
 	<div class="logo">
-    	<a href=""><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
+    	<a href="<s:url value='/index.html'/>"><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
     </div>
 </div>
 
 <div class="fx_nav">
    <div class="wrap clearfix">
-   
- 
-   
         <div class="lf1">
           <p>
-            <a href="<s:url value='/index.html'/>" target="_blank"><b>首页</b></a>
-            </p>
-
+            <a href="<s:url value='/index.html'/>"><b>首页</b></a>
+          </p>
         </div>
         <div class="lf2" >
-            <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;"><b>科技前沿</b></a>
         </div>	
         <div class="lf3" >
-            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;" target="_blank"><b>创意街</b></a>
+            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;"><b>创意街</b></a>
         </div>	
         <div class="lf2" >
-            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;" target="_blank"><b>创业服务</b></a>
+            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;"><b>创业服务</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>漫画西游</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=3'/>" style="margin-left:10px;"><b>漫画西游</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>爆笑西游</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=4'/>" style="margin-left:10px;"><b>爆笑西游</b></a>
         </div>	
         <div class="lf2" >
-            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;" target="_blank"><b>专利商标</b></a>
+            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;"><b>专利商标</b></a>
         </div>	
         <div class="lf2" >
             <a href="http://r.lotut.com/patent/index.html" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>
@@ -74,16 +70,12 @@
         <div class="lf2" >
             <a href="http://r.lotut.com/brand/index.html" style="margin-left:10px;" target="_blank"><b>商标交易</b></a>
         </div>			
-		
         <div class="lf2" >
             <a href="http://g.lotut.com" style="margin-left:10px;" target="_blank"><b>专利管理</b></a>
         </div>	
         <div class="lf2" >
             <a href="http://so.lotut.com" style="margin-left:10px;" target="_blank"><b>专利检索</b></a>
         </div>			
-				
-		
-	
     </div>
 </div> 
 <div class="container w1200 ma">
@@ -94,8 +86,6 @@
 				<a href="javascript:void(0);" id="next" class="next"></a>
 			</div>
 			<ul class="tFocus-pic zoom" id="tFocus-pic">
-
-
 				<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="0" end="0">	
 				<li style="z-index: 5; opacity: 1;">
 					<div class="s_tit_wrap">
@@ -106,10 +96,8 @@
 						${creativeLifeNews.newsAbstract}……
 					</p>
 					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href=""><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>"  width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
-				</li>
-									
-				</c:forEach>						
-			
+				</li>					
+				</c:forEach>									
 				<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="1" end="4">	
 				<li style="z-index: 0; opacity: 0;">
 					<div class="s_tit_wrap">
@@ -120,11 +108,8 @@
 						${creativeLifeNews.newsAbstract}……
 					</p>
 					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href=""><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>" width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
-				</li>
-									
+				</li>						
 				</c:forEach>
- 				
-			
 			</ul>
 			<div class="tFocusBtn nodisplay" id="tFocusBtn">
 				<a class="tFocus-leftbtn nodisplay" id="tFocus-leftbtn" href="javascript:void(0);">‹</a>
@@ -177,7 +162,7 @@
 		</div>
 		<div class="fr col_mod w280">
 			<div class="col_tit_wrap clearfix">
-				<h3 class="fl col_tit"><a href="" target="_blank">科技前沿</a></h3>
+				<h3 class="fl col_tit"><a href="<s:url value='/news/newsList.html?typeId=2'/>" target="_blank">科技前沿</a></h3>
 			</div>
 			<div class="col_con">
 				<div class="n_p_mod_0 clearfix">
@@ -200,11 +185,11 @@
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="title">
-			<a href="" title="创意" target="_blank"><img src="<s:url value='/images/t_1.jpg'/>" alt="创意"></a>
+			<a href="<s:url value='/news/newsOriginalityList.html'/>" title="创意" target="_blank"><img src="<s:url value='/images/t_1.jpg'/>" alt="创意"></a>
 			<strong>
-			<a href="/a/yingshi/" target="_blank">创意生活</a>|
-			<a href="/a/yule/yinle/" target="_blank">创意产品</a>|
-			<a href="/a/yule/youxi/" target="_blank">创意设计</a>
+			<a href="<s:url value='/news/newsList.html?typeId=5'/>" >创意生活</a>|
+			<a href="<s:url value='/news/newsList.html?typeId=6'/>" >创意产品</a>|
+			<a href="<s:url value='/news/newsList.html?typeId=7'/>" >创意设计</a>
 			</strong>
 		</div>	
 		
@@ -249,7 +234,7 @@
 				</div>
 				
 				<div class="c4_zgjq" style="margin-top:12px;">
-					<h4 class="com_ltred">创意设计</h4>
+					<a href="<s:url value='/news/newsList.html?typeId=7'/>"><h4 class="com_ltred">创意设计</h4></a>
 					<ul class="list_com_tw">
 						<!---->
 
@@ -284,7 +269,7 @@
 					</ul>
 				</div>
 				<div class="m4_bx2">
-					<h4 class="com_ltred">创意产品</h4>
+					<a href="<s:url value='/news/newsList.html?typeId=6'/>"><h4 class="com_ltred">创意产品</h4></a>
 					<dl class="list_com_3">
 
 						<!---->
@@ -313,7 +298,7 @@
 			<div class="right">
 				<div class="hq_hqqq">
 					<!--环-->
-					<h2 class="com_titlebg shenghuo"><a href="" target="_blank">更多</a></h2>
+					<h2 class="com_titlebg shenghuo"><a href="<s:url value='/news/newsList.html?typeId=5'/>" target="_blank">更多</a></h2>
 					<div class="pdlf8">
 						<!---->
 						<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="6" end="6">	
@@ -355,11 +340,11 @@
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="title">
-			<a href="" title="创业" target="_blank"><img src="<s:url value='/images/t_2.jpg'/>" alt="创业"></a>
+			<a href="<s:url value='/news/newsBusinessList.html'/>" title="创业" target="_blank"><img src="<s:url value='/images/t_2.jpg'/>" alt="创业"></a>
 			<strong>
-			<a href="" target="_blank">创业者说</a>|
-			<a href="" target="_blank">创业新闻</a>|
-			<a href="" target="_blank">创业政策</a>
+			<a href="<s:url value='/news/newsList.html?typeId=8'/>" target="_blank">创业者说</a>|
+			<a href="<s:url value='/news/newsList.html?typeId=9'/>" target="_blank">创业新闻</a>|
+			<a href="<s:url value='/news/newsList.html?typeId=10'/>" target="_blank">创业政策</a>
 			</strong>
 		</div>	
 	
@@ -380,7 +365,7 @@
 				</div>
 				
 				<div class="c4_zgjq" style="margin-top:12px;">
-					<h4 class="com_ltred">创业者说</h4>
+					<a href="<s:url value='/news/newsList.html?typeId=8'/>"><h4 class="com_ltred">创业者说</h4></a>
 					<ul class="list_com_tw">
 						<!---->
 
@@ -415,7 +400,9 @@
 					</ul>
 				</div>
 				<div class="m4_bx2">
-					<h4 class="com_ltred">创业新闻</h4>
+					<a href="<s:url value='/news/newsList.html?typeId=8'/>">
+						<h4 class="com_ltred">创业新闻</h4>
+					</a>	
 					<dl class="list_com_3">
 
 						<!---->
@@ -444,7 +431,7 @@
 			<div class="right">
 				<div class="hq_hqqq">
 					<!--环-->
-					<h2 class="com_titlebg zhengce"><a href="" target="_blank">更多</a></h2>
+					<h2 class="com_titlebg zhengce"><a href="<s:url value='/news/newsList.html?typeId=10'/>" target="_blank">更多</a></h2>
 					<div class="pdlf8">
 						<!---->
 						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="6" end="6">	
@@ -490,12 +477,12 @@
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="title">
-			<a href="" title="专利商标" target="_blank"><img src="<s:url value='/images/t_3.jpg'/>" alt="专利商标"></a>
+			<a href="<s:url value='/news/newsPatentList.html'/>" title="专利商标" target="_blank"><img src="<s:url value='/images/t_3.jpg'/>" alt="专利商标"></a>
 			<strong>
-			<a href="" target="_blank">专利新闻</a>|
-			<a href="" target="_blank">专利学习</a>|
-			<a href="" target="_blank">商标资讯</a>|
-			<a href="" target="_blank">商标学习</a>
+			<a href="<s:url value='/news/newsList.html?typeId=11'/>" target="_blank">专利新闻</a>|
+			<a href="<s:url value='/news/newsList.html?typeId=12'/>" target="_blank">专利学习</a>|
+			<a href="<s:url value='/news/newsList.html?typeId=13'/>" target="_blank">商标资讯</a>|
+			<a href="<s:url value='/news/newsList.html?typeId=14'/>" target="_blank">商标学习</a>
 			</strong>
 		</div>	
 		
@@ -518,7 +505,9 @@
 			<div class="left">
 
 				<div class="c4_zgjq">
-					<h4 class="com_ltred">专利学习</h4>
+					<a href="<s:url value='/news/newsList.html?typeId=12'/>">
+						<h4 class="com_ltred">专利学习</h4>
+					</a>
 					<ul class="list_com_tw">
 						<!---->
 				    	<c:forEach items="${patentStudy}" var="patentStudy">						
@@ -540,7 +529,9 @@
 			<div class="mid">
 
 				<div class="c4_zgjq">
-					<h4 class="com_ltred">商标学习</h4>
+					<a href="<s:url value='/news/newsList.html?typeId=14'/>">
+						<h4 class="com_ltred">商标学习</h4>
+					</a>
 					<ul class="list_com_tw">
 						<!---->
 				    	<c:forEach items="${brandStudy}" var="brandStudy">						
@@ -560,12 +551,15 @@
 
 				<div class="hq_hqqq">
 					<!--环-->
-					<h2 class="com_titlebg shenghuo"><a href="" target="_blank">更多</a></h2>
+					<!-- <h2 class="com_titlebg shenghuo"><a href="" target="_blank">更多</a></h2> -->
+					<a href="<s:url value='/news/newsList.html?typeId=13'/>">
+						<h4 class="com_ltred">商标资讯</h4>
+					</a>					
 					<div class="pdlf8">
 						<!---->
 						<c:forEach items="${brandNews}" var="brandNews" begin="0" end="0">	
 						<div class="cc clearfix">
-							<span class="r"><a href="" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
+							<span class="r"><a href="" target="_blank"><img src="<s:url value='${brandNews.smallImgUrl}'/>" width="86" height="82"></a></span>
 							<span class="l"><a href="" target="_blank">${brandNews.title}</a></span>									
 						</div>
 						<div class="intro com_a_color">${brandNews.newsAbstract}..<a href="#">[详细]</a></div>
@@ -626,11 +620,6 @@
 </style>
     <script type="text/javascript" src="<s:url value='/js/jquery-1.7.2.min.js'/>"></script>
     <script type="text/javascript" src="<s:url value='/js/index.js'/>"></script>
-    <script>
-    // slide
-    Focus();
-    // nav
-    navOn(5404);
-    </script>
+
 </body>
 </html>

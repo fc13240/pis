@@ -79,27 +79,27 @@ $(function(){
    
         <div class="lf1">
           <p>
-            <a href="<s:url value='/index.html'/>" target="_blank"><b>首页</b></a>
+            <a href="<s:url value='/index.html'/>"><b>首页</b></a>
             </p>
 
         </div>
         <div class="lf2" >
-            <a href="<s:url value='/news/newsList.html'/>" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;"><b>科技前沿</b></a>
         </div>	
         <div class="lf3" >
-            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;" target="_blank"><b>创意街</b></a>
+            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;"><b>创意街</b></a>
         </div>	
         <div class="lf2" >
-            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;" target="_blank"><b>创业服务</b></a>
+            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;"><b>创业服务</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>漫画西游</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=3'/>" style="margin-left:10px;"><b>漫画西游</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>爆笑西游</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=4'/>" style="margin-left:10px;"><b>爆笑西游</b></a>
         </div>	
         <div class="lf2" >
-            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;" target="_blank"><b>专利商标</b></a>
+            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;"><b>专利商标</b></a>
         </div>	
         <div class="lf2" >
             <a href="http://r.lotut.com/patent/index.html" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>
@@ -122,11 +122,14 @@ $(function(){
 
 <div class="container w1200 ma">
 	<dl class="daohang">
-	<dd> <span><a href="" style="margin-left:0px;">创业服务</a> &gt;&gt; </span> <a href="" target="_blank">漫画西游</a>| <a href="" target="_blank">爆笑西游</a>| <a href="" target="_blank">创意产品</a> | <a href="" target="_blank">创意产品</a> | <a href="" target="_blank">创意设计</a> | </dd>
+	<dd> 
+		<span><a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:0px;">创业服务</a> &gt;&gt; </span> 
+		<a href="<s:url value='/news/newsList.html?typeId=8'/>" target="_blank">创业者说</a>| 
+		<a href="<s:url value='/news/newsList.html?typeId=9'/>" target="_blank">创业新闻</a>|
+		<a href="<s:url value='/news/newsList.html?typeId=10'/>" target="_blank">创业政策</a>| 
+	</dd>
 	</dl>
 </div>
-
- 
  
 <div class="container w1200 ma">
 	<div class="main_wrap mt40 clearfix" style="margin-top:30px;">
@@ -176,9 +179,9 @@ $(function(){
 			<div class="col_con">
 
 				<ul class="rank_list">
-					<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="0" end="6">	
+					<c:forEach items="${businessSay}" var="businessSay" varStatus="status" begin="0" end="6">	
 					<li>
-					<span class="r_num num_${status.count}">0${status.count}</span><a href="" target="_blank">${creativeLifeNews.title}</a>
+					<span class="r_num num_${status.count}">0${status.count}</span><a href="" target="_blank">${businessSay.title}</a>
 					</li>						
 					</c:forEach>
 	
@@ -191,283 +194,84 @@ $(function(){
 
 	<div class="main_1 mt25 clearfix">
 		
-		<div class="m_b_bt">
-			<b><a href="" target="_blank">漫画西游</a></b>
-			<span class="line"></span>
-		</div>
-		<div class="mvbk_box">
-			<ul>
-	    	<c:forEach items="${cartoonNews}" var="cartoonNews">
-				<li>
-				<a href="" title="${cartoonNews.title}" target="_blank"><img alt="“${cartoonNews.title}" src="<s:url value='${cartoonNews.smallImgUrl}'/>" width="275" height="320"></a>
-					<span>${cartoonNews.title}</span>
-				</li>							
-			</c:forEach>			
-
-			
-			</ul>
-		</div>	
-			
-			
-			
-	</div>
-	<!---->
-	<div class="main_1 mt25 clearfix">
-		
-		<div class="m_b_bt">
-			<b><a href="" target="_blank">爆笑西游</a></b>
-			<span class="line"></span>
-		</div>
-		<div class="mvbk_box">
-			<ul>
-		
-	
-	    	<c:forEach items="${laughNews}" var="laughNews">
-				<li>
-				<a href="" title="${laughNews.title}" target="_blank"><img alt="${laughNews.title}" src="<s:url value='${laughNews.smallImgUrl}'/>" width="275" height="320"></a>
-					<span>${laughNews.title}</span>
-				</li>							
-			</c:forEach>
-			
-			</ul>
-		</div>	
-				
-	</div>
-<!--  -->
-	<div class="main_1 mt25 clearfix">
-	
-		<div class="m_b_bt">
-			<b><a href="" target="_blank">创意生活</a></b>
-			<span class="line"></span>
-		</div>
-		
-		<div class="c_box4 clearfix mt25">
+		<div class="c_box4 clearfix">
 			<div class="left">
-				<div class="c4_datu">
-					<!---->
 
-			    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="0">
-					<a href="" target="_blank">
-						<img src="<s:url value='${businessSay.smallImgUrl}'/>" width="360" height="260">
-						<b></b>
-						<span>${businessSay.title}</span>
-					</a>					
-
-					</c:forEach>					
-					<!---->
-				</div>
-								
-			</div>
-			<div class="mid">
-				<div class="m4_first">
-					<!---->
-			    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="0" end="0">	
-					<h2><a href="" target="_blank">${businessPolicy.title}</a></h2>
-					<p><a href="" target="_blank">${businessPolicy.newsAbstract}...[详细]</a></p>										
-					</c:forEach>	
-
-					<!---->
-					<ul class="list_com">
+				<div class="c4_zgjq">
+					<h4 class="com_ltred">创业者说</h4>
+					<ul class="list_com_tw">
 						<!---->
-				    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="5">	
-						<li><a href="" target="_blank">${businessPolicy.title}</a></li>									
+				    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="4">						
+						<li>
+							<span class="p"><a href="" target="_blank"><img src="<s:url value='${businessSay.smallImgUrl}'/>" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="" target="_blank">${businessSay.title}</a></h5>
+								<p><a href="" target="_blank">${businessSay.newsAbstract}..[详细]</a></p>
+						  </span>
+						</li>											
 						</c:forEach>						
+
+						
 
 					</ul>
 				</div>
-				
+							
+			</div>
+			<div class="mid">
+
+				<div class="c4_zgjq">
+					<h4 class="com_ltred">创业新闻</h4>
+					<ul class="list_com_tw">
+						<!---->
+				    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="4">						
+						<li>
+							<span class="p"><a href="" target="_blank"><img src="<s:url value='${businessNews.smallImgUrl}'/>" width="118" height="82"></a></span>
+						  <span class="c">
+								<h5><a href="" target="_blank">${businessNews.title}</a></h5>
+								<p><a href="" target="_blank">${businessNews.newsAbstract}..[详细]</a></p>
+						  </span>
+						</li>											
+						</c:forEach>	
+					</ul>
+				</div>
 			
 			</div>
 			<div class="right">
+				<h4 class="com_ltred">创业政策</h4>
 				<div class="hq_hqqq">
 					<!--环-->
-					<dl class="list_com_3">
-
-						<!---->
-						
-			    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="0">		
-						<dt><a href="" target="_blank">${businessNews.title}</a></dt>
-						<dd>
-							<a href="" class="dlimg" target="_blank"><img src="<s:url value='${businessNews.smallImgUrl}'/>" width="146" height="100"></a>
-							<a href="" class="dlintro" target="_blank">${businessNews.newsAbstract}...[详细]</a>
-						</dd>										
-					</c:forEach>
-
-
-						<!---->
-
-					</dl>
-					<ul class="list_com">
-
-			    	<c:forEach items="${businessNews}" var="businessNews" begin="1" end="3">		
-						<li><a href="" target="_blank">${businessNews.title}</a></li>										
-					</c:forEach>						
-					</ul>
-				</div>			
-			
+					<!-- <h2 class="com_titlebg shenghuo"><a href="" target="_blank">更多</a></h2> -->
 				
+					<div class="pdlf8">
+						<!---->
+						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="10">
+						
+						<div class="n_p_mod_0 clearfix">
+					    	
+							<a class="n_pic fl" href="" target="_blank"><img src="${businessPolicy.smallImgUrl}" width="125" height="94" alt=""></a>
+							<a class="n_tit" href="" target="_blank">${businessPolicy.title}</a>	
+												
+		                </div>						
+						</c:forEach>						
+	
+						<!---->
+						<ul class="list_com_4">
+							<!---->
+							<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="10">
+							<li><a href="" target="_blank">${businessPolicy.title}</a></li>
+							</c:forEach>
+						</ul>
+					</div>
+				</div>		
 			
 			</div>
 			<div style="clear:both;"></div>
 		</div>
+			
+			
+			
 	</div>
-<!---->
-	<div class="main_1 mt25 clearfix">
-	
-		<div class="m_b_bt">
-			<b><a href="" target="_blank">创意产品</a></b>
-			<span class="line"></span>
-		</div>
-		
-		<div class="c_box4 clearfix mt25">
-			<div class="left">
-				<div class="c4_datu">
-					<!---->
 
-			    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="0">
-					<a href="" target="_blank">
-						<img src="<s:url value='${businessSay.smallImgUrl}'/>" width="360" height="260">
-						<b></b>
-						<span>${businessSay.title}</span>
-					</a>					
-
-					</c:forEach>					
-					<!---->
-				</div>
-								
-			</div>
-			<div class="mid">
-				<div class="m4_first">
-					<!---->
-			    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="0" end="0">	
-					<h2><a href="" target="_blank">${businessPolicy.title}</a></h2>
-					<p><a href="" target="_blank">${businessPolicy.newsAbstract}...[详细]</a></p>										
-					</c:forEach>	
-
-					<!---->
-					<ul class="list_com">
-						<!---->
-				    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="5">	
-						<li><a href="" target="_blank">${businessPolicy.title}</a></li>									
-						</c:forEach>						
-
-					</ul>
-				</div>
-				
-			
-			</div>
-			<div class="right">
-				<div class="hq_hqqq">
-					<!--环-->
-					<dl class="list_com_3">
-
-						<!---->
-						
-			    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="0">		
-						<dt><a href="" target="_blank">${businessNews.title}</a></dt>
-						<dd>
-							<a href="" class="dlimg" target="_blank"><img src="<s:url value='${businessNews.smallImgUrl}'/>" width="146" height="100"></a>
-							<a href="" class="dlintro" target="_blank">${businessNews.newsAbstract}...[详细]</a>
-						</dd>										
-					</c:forEach>
-
-
-						<!---->
-
-					</dl>
-					<ul class="list_com">
-
-			    	<c:forEach items="${businessNews}" var="businessNews" begin="1" end="3">		
-						<li><a href="" target="_blank">${businessNews.title}</a></li>										
-					</c:forEach>						
-					</ul>
-				</div>			
-			
-				
-			
-			</div>
-			<div style="clear:both;"></div>
-		</div>
-	</div>
-<!--  -->
-	<div class="main_1 mt25 clearfix">
-	
-		<div class="m_b_bt">
-			<b><a href="" target="_blank">创意设计</a></b>
-			<span class="line"></span>
-		</div>
-		
-		<div class="c_box4 clearfix mt25">
-			<div class="left">
-				<div class="c4_datu">
-					<!---->
-
-			    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="0">
-					<a href="" target="_blank">
-						<img src="<s:url value='${businessSay.smallImgUrl}'/>" width="360" height="260">
-						<b></b>
-						<span>${businessSay.title}</span>
-					</a>					
-
-					</c:forEach>					
-					<!---->
-				</div>
-								
-			</div>
-			<div class="mid">
-				<div class="m4_first">
-					<!---->
-			    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="0" end="0">	
-					<h2><a href="" target="_blank">${businessPolicy.title}</a></h2>
-					<p><a href="" target="_blank">${businessPolicy.newsAbstract}...[详细]</a></p>										
-					</c:forEach>	
-
-					<!---->
-					<ul class="list_com">
-						<!---->
-				    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="5">	
-						<li><a href="" target="_blank">${businessPolicy.title}</a></li>									
-						</c:forEach>						
-
-					</ul>
-				</div>
-				
-			
-			</div>
-			<div class="right">
-				<div class="hq_hqqq">
-					<!--环-->
-					<dl class="list_com_3">
-
-						<!---->
-						
-			    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="0">		
-						<dt><a href="" target="_blank">${businessNews.title}</a></dt>
-						<dd>
-							<a href="" class="dlimg" target="_blank"><img src="<s:url value='${businessNews.smallImgUrl}'/>" width="146" height="100"></a>
-							<a href="" class="dlintro" target="_blank">${businessNews.newsAbstract}...[详细]</a>
-						</dd>										
-					</c:forEach>
-
-
-						<!---->
-
-					</dl>
-					<ul class="list_com">
-
-			    	<c:forEach items="${businessNews}" var="businessNews" begin="1" end="3">		
-						<li><a href="" target="_blank">${businessNews.title}</a></li>										
-					</c:forEach>						
-					</ul>
-				</div>			
-			
-				
-			
-			</div>
-			<div style="clear:both;"></div>
-		</div>
-	</div>
-<!--  -->	
 
 </div>
 
@@ -507,10 +311,5 @@ $(function(){
 }
 </style>
 
-    // slide
-    Focus();
-    // nav
-    navOn(5404);
-    </script>
 </body>
 </html>

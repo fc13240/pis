@@ -45,27 +45,27 @@
    
         <div class="lf1">
           <p>
-            <a href="<s:url value='/index.html'/>" target="_blank"><b>首页</b></a>
+            <a href="<s:url value='/index.html'/>"><b>首页</b></a>
             </p>
 
         </div>
         <div class="lf2" >
-            <a href="<s:url value='/news/newsList.html'/>" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;"><b>科技前沿</b></a>
         </div>	
         <div class="lf3" >
-            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;" target="_blank"><b>创意街</b></a>
+            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;"><b>创意街</b></a>
         </div>	
         <div class="lf2" >
-            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;" target="_blank"><b>创业服务</b></a>
+            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;"><b>创业服务</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>漫画西游</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=3'/>" style="margin-left:10px;"><b>漫画西游</b></a>
         </div>	
         <div class="lf2" >
-            <a href="/" style="margin-left:10px;" target="_blank"><b>爆笑西游</b></a>
+            <a href="<s:url value='/news/newsList.html?typeId=4'/>" style="margin-left:10px;"><b>爆笑西游</b></a>
         </div>	
         <div class="lf2" >
-            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;" target="_blank"><b>专利商标</b></a>
+            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;"><b>专利商标</b></a>
         </div>	
         <div class="lf2" >
             <a href="http://r.lotut.com/patent/index.html" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>

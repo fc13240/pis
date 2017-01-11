@@ -63,15 +63,7 @@ public class NewsController {
 		List<News> creativeLifeNews=newsService.getHomepageByType(5,10);
 		List<News> creativePrductNews=newsService.getHomepageByType(6,10);
 		List<News> creativeDesignNews=newsService.getHomepageByType(7,10);
-		
-		List<News> businessSay=newsService.getHomepageByType(8,10);
-		List<News> businessNews=newsService.getHomepageByType(9,10);
-		List<News> businessPolicy=newsService.getHomepageByType(10,10);
-		
-		List<News> patentNews=newsService.getHomepageByType(11,4);
-		List<News> patentStudy=newsService.getHomepageByType(12,5);
-		List<News> brandNews=newsService.getHomepageByType(13,10);
-		List<News> brandStudy=newsService.getHomepageByType(14,5);	
+
 		
 		model.addAttribute("hotNews", hotNews);
 		model.addAttribute("technologyNews", technologyNews);
@@ -82,20 +74,11 @@ public class NewsController {
 		model.addAttribute("creativePrductNews", creativePrductNews);
 		model.addAttribute("creativeDesignNews", creativeDesignNews);
 		
-		model.addAttribute("businessSay", businessSay);
-		model.addAttribute("businessNews", businessNews);
-		model.addAttribute("businessPolicy", businessPolicy);
-		
-		model.addAttribute("patentNews", patentNews);
-		model.addAttribute("patentStudy", patentStudy);
-		model.addAttribute("brandNews", brandNews);
-		model.addAttribute("brandStudy", brandStudy);	
+
+
 		return "news_originality_list";
 	}	
-<<<<<<< HEAD
 
-=======
->>>>>>> a4a458e666276bf8decc274f718a7e7a7fddd03e
 
 	@RequestMapping(path="/newsBusinessList",method=RequestMethod.GET)
 	public String newsBusinessList(Page page,Model model) {
@@ -103,82 +86,45 @@ public class NewsController {
 		List<News> technologyNews=newsService.getHomepageByType(2,8);
 		List<News> cartoonNews=newsService.getHomepageByType(3,4);
 		List<News> laughNews=newsService.getHomepageByType(4,4);
-		List<News> creativeLifeNews=newsService.getHomepageByType(5,10);
-		List<News> creativePrductNews=newsService.getHomepageByType(6,10);
-		List<News> creativeDesignNews=newsService.getHomepageByType(7,10);
+
 		
 		List<News> businessSay=newsService.getHomepageByType(8,10);
 		List<News> businessNews=newsService.getHomepageByType(9,10);
 		List<News> businessPolicy=newsService.getHomepageByType(10,10);
 		
-		List<News> patentNews=newsService.getHomepageByType(11,4);
-		List<News> patentStudy=newsService.getHomepageByType(12,5);
-		List<News> brandNews=newsService.getHomepageByType(13,10);
-		List<News> brandStudy=newsService.getHomepageByType(14,5);	
+
 		
 		model.addAttribute("hotNews", hotNews);
 		model.addAttribute("technologyNews", technologyNews);
 		model.addAttribute("cartoonNews", cartoonNews);
 		model.addAttribute("laughNews", laughNews);
 		
-		model.addAttribute("creativeLifeNews", creativeLifeNews);
-		model.addAttribute("creativePrductNews", creativePrductNews);
-		model.addAttribute("creativeDesignNews", creativeDesignNews);
+
 		
 		model.addAttribute("businessSay", businessSay);
 		model.addAttribute("businessNews", businessNews);
 		model.addAttribute("businessPolicy", businessPolicy);
 		
-		model.addAttribute("patentNews", patentNews);
-		model.addAttribute("patentStudy", patentStudy);
-		model.addAttribute("brandNews", brandNews);
-		model.addAttribute("brandStudy", brandStudy);	
+	
 		return "news_business_list";
 	}	
 
 	@RequestMapping(path="/newsPatentList",method=RequestMethod.GET)
 	public String newsPatentList(Page page,Model model) {
-		List<News> hotNews=newsService.getHomepageByType(1,5);
-		List<News> technologyNews=newsService.getHomepageByType(2,8);
-		List<News> cartoonNews=newsService.getHomepageByType(3,4);
-		List<News> laughNews=newsService.getHomepageByType(4,4);
-		List<News> creativeLifeNews=newsService.getHomepageByType(5,10);
-		List<News> creativePrductNews=newsService.getHomepageByType(6,10);
-		List<News> creativeDesignNews=newsService.getHomepageByType(7,10);
-		
-		List<News> businessSay=newsService.getHomepageByType(8,10);
-		List<News> businessNews=newsService.getHomepageByType(9,10);
-		List<News> businessPolicy=newsService.getHomepageByType(10,10);
-		
+
+
 		List<News> patentNews=newsService.getHomepageByType(11,4);
 		List<News> patentStudy=newsService.getHomepageByType(12,5);
 		List<News> brandNews=newsService.getHomepageByType(13,10);
 		List<News> brandStudy=newsService.getHomepageByType(14,5);	
-		
-		model.addAttribute("hotNews", hotNews);
-		model.addAttribute("technologyNews", technologyNews);
-		model.addAttribute("cartoonNews", cartoonNews);
-		model.addAttribute("laughNews", laughNews);
-		
-		model.addAttribute("creativeLifeNews", creativeLifeNews);
-		model.addAttribute("creativePrductNews", creativePrductNews);
-		model.addAttribute("creativeDesignNews", creativeDesignNews);
-		
-		model.addAttribute("businessSay", businessSay);
-		model.addAttribute("businessNews", businessNews);
-		model.addAttribute("businessPolicy", businessPolicy);
-		
+
 		model.addAttribute("patentNews", patentNews);
 		model.addAttribute("patentStudy", patentStudy);
 		model.addAttribute("brandNews", brandNews);
 		model.addAttribute("brandStudy", brandStudy);	
 		return "news_patent_list";
 	}	
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> a4a458e666276bf8decc274f718a7e7a7fddd03e
 	@RequestMapping(path="/newsPreview")
 	public String newsPreview(@RequestParam("newsId") int newsId,Model model) {
 		News news=newsService.getUserNewsById(newsId);
