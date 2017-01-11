@@ -81,10 +81,7 @@ public class NewsController {
 
 		return "news_originality_list";
 	}	
-<<<<<<< HEAD
 
-=======
->>>>>>> bd96e03d30aae996ad16ce4becdb2c4347878a69
 
 	@RequestMapping(path="/newsBusinessList",method=RequestMethod.GET)
 	public String newsBusinessList(Page page,Model model) {
