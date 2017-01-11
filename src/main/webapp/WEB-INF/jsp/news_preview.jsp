@@ -8,353 +8,116 @@
 <head>
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
-<meta http-equiv="X-UA-Compatible" content="IE=8" />
-<title>新闻详情-龙图腾商标专利交易网 </title>
-<meta name="keywords" content="知识产权,专利交易,商标转让,龙图腾,中外知识产权网" />
-<meta name="description" content="龙图腾网（www.lotut.com）是全球领先的知识产权交易平台。为企业提供专业的商标转让、专利交易等服务。拥有国内知识产权资源，全面覆盖了商标、专利、版权等领域的交易平台，让知识产权在流通中创造财富，引领知识产权的创新。" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>创意街——龙图腾 </title>
+<meta name="keywords" content="科技门户" />
+<meta name="description" content="科技门户" />
 <meta itemprop="name" content="" />
 <meta http-equiv="cache-control" content="no-transform">
-<script type="text/javascript" src="<s:url value='/js/jquery_from.js'/>"></script>
-<script src="<s:url value='/js/jquery.min.js'/>"></script>
-<script src="<s:url value='/js/jquery-ui.min.js'/>" type="text/javascript"></script>
 <link rel="shortcut icon" href="http://www.lotut.com/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="<s:url value='/css/mll.common.min.css?20160311'/>" />
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
-<link rel="stylesheet" href="<s:url value='/css/praise.css'/>">
-<link rel="stylesheet" href="<s:url value='/css/slander.css'/>">
+<link rel="stylesheet" href="<s:url value='/css/list.css'/>" />
+<link rel="stylesheet" href="<s:url value='/css/article.css'/>" />
+<style type="text/css">
 
+</style>
 </head>
 
+
 <body class="">
-<script type="text/javascript">(function(){var screenWidth=window.screen.width;if(screenWidth>=1280){document.body.className=document.body.className+" root_body";;window.LOAD=true;}else{window.LOAD=false;}})()</script>
-
-
-<div class="header-box">
-	<div class="site-nav">
-	<%@ include file="_site-nav.jsp"%>
-	</div>
-	
-	<div class="page-header" style="margin-top: 12px">
-	<%@ include file="_page-header.jsp"%>
-	</div>
-	
-	<div class="mll-navigator navigator-index">
-
-		<div class="w clearfix">	
-			<ul class="navigator">
-      <li><a href="<s:url value='/'/>" title="龙图腾专利交易">首页</a></li>
-      <li><a href="<s:url value='/business/patent_article.html?shopType=1'/>" title="农业/食品/医疗">农业/食品/医疗</a></li>
-      <li><a  id="JS_mll_head_menu_expr" href="<s:url value='/business/patent_article.html?shopType=2'/>" title="化工/冶金/生物">化工/冶金/生物</a></li>
-      <li><a href="<s:url value='/business/patent_article.html?shopType=3'/>" title="专利申请">交通/包装/建筑</a></li>
-      <li><a  href="<s:url value='/business/patent_article.html?shopType=4'/>" title="工商财务">电力/环保/通讯</a></li>
-      <li><a target="_blank" href="http://g.lotut.com" title="专利管家">专利管家</a></li>	   
-			</ul>
-		</div>
-	</div>
+<div class="fx_top">
+	<div class="wrap">
+    		<div class="left">
+				<span class="co">科技迷们的网络聚集地 -- 创意街</span>
+            </div>
+    </div>
 </div>
-<div style="height:10px;border-top:1px solid red;">&nbsp;</div>
-<style type="text/css">
-.r_detail_about {
-    padding: 15px 0;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.r_detail_about span{
-font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
-    color: #333;font-size:16px;
-}
-.r_detail_about a{
-font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
-    color: #333;font-size:16px;
-}
-.article-con {
-    padding: 15px;
-}
-.h_about_mod5 ul.h_second_list {
-    padding: 20px 10px 80px 25px;
-}
-.h_about_mod5 ul.h_second_list li {
-    height: 46px;
-    font-size:16px;
-    font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
-    color: #333;
-    line-height: 46px;
-    border-bottom: 1px solid #cdd5d8;
-    background: url(../images/second_hui.png) no-repeat left;
-    padding-left: 15px;
-    overflow: hidden;
-}
-.h_about_mod5 ul.h_second_list li .h_list_deta {
-    font-size:16px;
-    font-family: "微软雅黑", Microsoft YaHei, arial, verdana, sans-serif;
-    color: #333;
-    float: right;
-    padding-right: 10px;
-}
-
-p{text-indent:2em}
 
 
-/*评论代码start*/
-.comment-div {
-	position: relative;
-	margin:60px auto;
-	width:95%;
-}
-.textarea-div {
-	position: relative;
-	transition: height 0.3s;
-	height: 158px;
-	border: solid 1px #ccc;
-	border-radius: 5px;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	font: 12px/1.5 "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "Helvetica Neue", Helvetica, tahoma, Arial;
-	color: #404040;
-	text-align: left;
-	font-family: "\5B8B\4F53", sans-serif;
-}
-.font-article{
-	font: 12px/1.5 "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "Helvetica Neue", Helvetica, tahoma, Arial;
-	color: #404040;
-}
-.textarea {
-	height: 114px;
-	resize: none;
-	border: none;
-	width: 100%;
-	box-sizing: border-box;
-	font-size: 14px;
-	line-height: 24px;
-	padding: 4px 14px;
-}
+<div class="fx_logo clearfix">
+	<div class="logo">
+    	<a href=""><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
+    </div>
+</div>
 
-.submit-row {
-	background-color: #f6f6f6;
-	height: 44px;
-	overflow: hidden;
-}
+<div class="fx_nav">
+   <div class="wrap clearfix">
+   
+ 
+   
+        <div class="lf1">
+          <p>
+            <a href="<s:url value='/index.html'/>"><b>首页</b></a>
+            </p>
 
-.submit-btn {
-	font-size: 16px;
-	font-family: "Microsoft YaHei";
-	color: #fff;
-	background-color: red;
-	width: 130px;
-	height: 44px;
-	float: right;
-	text-align: center;
-}
+        </div>
+        <div class="lf2" >
 
-.new-comment {
-	margin-top:40px;
-	margin-bottom:20px;
-	font-size: 20px;
-	font-family: "Microsoft YaHei";
-	font-weight:700;
-	color:#000;
-}
+            <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;"><b>科技前沿</b></a>
 
-.account-td {
-	font-size: 12px;
-	font-family: "SimSun";
-	color:#999;
-}
-
-.time-td {	
-	font-size: 12px;
-	font-family: "SimSun";
-	color:#999;
-	valign:middle;
-}
-
-.comment-td {
-	font-size: 14px;
-	font-family: "SimSun";
-	color:black;
-	text-indent:2em;
-}
-
-.article-con img {
-    max-width: 800px;
-}
-
-/*评论代码over*/
-
-
-.con-left{
-	width:840px;
-	float:left;
-
-}
-.con-right{
-	width:300px;
-	float:right;
-
-}
-.line01 {
-    border-top: 1px solid #ddd;
-    height: 9px;
-    overflow: hidden;
-    clear: both;
-    width: 100%;
-}
-.titR {
-    height: 34px;
-    border-bottom: 1px solid #ddd;
-    border-top: 3px solid #444;
-    position: relative;
-}
-.pad_btm {
-    padding-bottom: 15px;
-}
-.pad_top5 {
-    padding-top: 5px;
-}
-.listR li {
-    line-height: 24px;
-    color: #004276;
-    padding-left: 7px;
-    background: url(http://y0.ifengimg.com/commonpage/1129/v1/all.png) no-repeat 0 -1006px;
-}
-.adListNew {
-    border: 1px solid #ddd;
-    border-top: 5px solid #ddd;
-    background: #fff;
-    padding: 0 14px 10px;
-    width: 270px;
-    overflow: hidden;
-    color: #416571;
-    width: 270px;
-}
-.adListNew h3 {
-    padding: 8px 0 4px 0;
-    font: normal 14px/22px simsun;
-    color: #666;
-    border-bottom: 1px solid #ddd;
-}
-.adContent2 {
-    width: 300px;
-    padding-bottom: 10px;
-}
-.adContent2 li {
-    float: left;
-    width: 130px;
-    padding-right: 10px;
-    padding-top: 10px;
-    line-height: 24px;
-    text-align: center;
-}
-.adContent2 li a {
-    color: #666;
-}
-.txt_share_box {
-    position: relative;
-    width: 700px;
-    margin:0 auto;
-}
-.txt_share {
-    margin-top: 20px;
-    padding-left: 16px;
-    width: 632px;
-}
-.share_bar_pop_wx {
-    left: 75px;
-}
-.share_bar_pop_wxq {
-    left: 233px;
-}
-.yc_sina {
-    border: 1px solid #f56467;
-}
-.yc_wx {
-    border: 1px solid #8dc81b;
-}
-.yc_wxq {
-    border: 1px solid #71c8d6;
-}
-.yc_qzone {
-    border: 1px solid #f5be3f;
-}
-.share_bar_popin {
-    position: relative;
-    padding: 10px 20px 22px 10px;
-}
-.share_bar_popin img {
-    display: block;
-    float: left;
-}
-.share_bar_popin p {
-    color: #666;
-    line-height: 24px;
-    margin-top: 15px;
-    float: right;
-}
-.share_bar_popin .share_bar_close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-.share_bar_popin {
-    position: relative;
-    padding: 10px 20px 22px 10px;
-}
-.share_bar_popin img {
-    display: block;
-    float: left;
-}
-.txt_share a {
-    width: 140px;
-    height: 40px;
-    display: block;
-    background-repeat: no-repeat;
-    background-position: 26px center;
-    font: 14px/40px Microsoft YaHei;
-    color: #222;
-    float: left;
-    margin: 0 8px;
-    text-indent: 64px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline;
-}
-</style>
-<div style="width:1200px;margin:0 auto;">
-	<div class="r_detail_about"> 
-		<span>当前位置：</span><a href="http://www.lotut.com.top/">主页</a> &gt; <a href="<s:url value='/news/newsList.html'/>">新闻列表</a> &gt;  
-	</div>
-
-	<div class="article-con">
-		<div class="con-left"> 
+        </div>	
+        <div class="lf3" >
+            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;"><b>创意街</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;"><b>创业服务</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="<s:url value='/news/newsList.html?typeId=3'/>" style="margin-left:10px;"><b>漫画西游</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="<s:url value='/news/newsList.html?typeId=4'/>" style="margin-left:10px;"><b>爆笑西游</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;"><b>专利商标</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="http://r.lotut.com/patent/index.html" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="http://r.lotut.com/brand/index.html" style="margin-left:10px;" target="_blank"><b>商标交易</b></a>
+        </div>			
+		
+        <div class="lf2" >
+            <a href="http://g.lotut.com" style="margin-left:10px;" target="_blank"><b>专利管理</b></a>
+        </div>	
+        <div class="lf2" >
+            <a href="http://so.lotut.com" style="margin-left:10px;" target="_blank"><b>专利检索</b></a>
+        </div>			
+				
+		
+	
+    </div>
+</div> 
+<div class="container w1200 ma">
+	<div class="nr_cont1 F_Left">
+		<div class="tittle_x">
+            <a href="">首页</a>
+            <em>&gt;</em> <a href="<s:url value='/news/newsList.html?typeId=${newsType.typeId }'/>">${newsType.typeName }</a>
+         <!--   <em>&gt;</em> <a href="#">列表</a> --> 
+        </div>	
+        <div>
+<!--  -->
 			<div class="mod1_cont" id="mod1_cont" runat="server">
 					
-				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 24px;text-indent: 28px;text-align: center;">${news.title}</h2>
+				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 24px;text-indent: 28px;text-align: center;">${article.title}</h2>
 				<br/>
 				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
-					发表时间：<fmt:formatDate  value="${news.createTime}" pattern="yyyy年MM月dd日" />
+					发表时间：<fmt:formatDate  value="${news.publishTime}" pattern="yyyy年MM月dd日" />
 					</span>
 					<span class="font-article" style="margin-left:50px;">
-					<c:choose>
-						<c:when test="${not empty news.source}">
-							来源：${news.source}
-						</c:when>
-						<c:when test="${not empty news.author}">
-							作者：${news.author}
-						</c:when>
-						<c:otherwise>
-							来源：互联网
-						</c:otherwise>
-					</c:choose>
+						<c:choose>
+							<c:when test="${not empty news.source}">
+								来源：${news.source}
+							</c:when>
+							<c:when test="${not empty news.author}">
+								作者：${news.author}
+							</c:when>
+							<c:otherwise>
+								来源：互联网
+							</c:otherwise>
+						</c:choose>					
 					</span>
 
 				</div>
@@ -373,7 +136,7 @@ p{text-indent:2em}
 				<br/>
 				<div class="content" style="line-height: 22px;font-size: 14px;text-indent: 28px;font-family: simsun;">
 					<p>
-						${news.content}					
+						${article.content}					
 					</p>
 				</div>
 				<br/>
@@ -398,28 +161,30 @@ p{text-indent:2em}
                 </div>
 
 
-				<%-- <div class="praise">
-					<span id="praise${news.id}" onclick="praise('${news.id}',${news.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
-					<span id="praise-txt">${news.upVote}</span>
+
+
+			<%-- 	<div class="praise">
+					<span id="praise${article.id}" onclick="praise('${article.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
+					<span id="praise-txt">${article.upVote}</span>
 					<span id="add-num"><em>+1</em></span>
 				</div> 
 				
 				<div class="slander">
-					<span id="slander${news.id}" onclick="slander('${news.id}',${news.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
-					<span id="slander-txt">${news.downVote}</span>
+					<span id="slander${article.id}" onclick="slander('${article.id}',${article.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
+					<span id="slander-txt">${article.downVote}</span>
 					<span id="del-num"><em>+1</em></span>
 				</div>  --%>
 				
 				<!-- 评论代码start-->
 				<div style="" class="comment-div">
 					<div class="textarea-div" >
-						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/news/comment/addNewsComment.html'/>" onsubmit="return validateComment();">
+						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/article/comment/addArticleComment.html'/>" onsubmit="return validateComment();">
 							<textarea id="contentArea" class="textarea" name="content"
 								placeholder="我来说两句...">
 							
 							</textarea>
 							<div class="submit-row" style="position: relative;">
-								<input id="newsId" type="hidden" name="newsId" value="${news.id}"/>            		 
+								<input id="articleId" type="hidden" name="articleId" value="${article.id}"/>            		 
                                	<se:authorize access="isAuthenticated()">            		 
                                	<button class="submit-btn" type="submit">发表评论</button>
                                	</se:authorize >
@@ -463,152 +228,102 @@ p{text-indent:2em}
 				</div>  
             <!-- 评论代码over-->
 				
-			</div> 			
-		</div>		
-		<div class="con-right">
+			</div> 	
+<!--  -->
+		</div>
 		
-			<div class="adListNew" >
-			
-				<div id="padhide_2086">
-					<h3>相关推荐</h3>
-			
-				</div>
-			
-				<div id="padhide_1720">
-					<ul class="ul_list01">
-					<c:forEach items="${newsRand}" var="newsRand">
-						<li class="right_list">
-						<a href="<s:url value='/news/newsPreview.html?newsId=${newsRand.id}'/>" target="_blank">${newsRand.title}</a>
-						</li>			
-					</c:forEach>					
-					</ul>
-				</div>
-			</div>		
+	</div>
+<!-- left end	 -->
+	<div class="nr_cont2 F_Right">
+		<div class="box">
+			<h2><a href="#" class="a1 box_hover">专利推荐</a></h2>
+			<ul class="h_second_list">
+			<c:forEach items="${patents}" var="patent" varStatus="status">
+				<li>
+				<span class="h_list_tit" style="font-size:14px;">
+					<a href="/patent/detail.html?patentId=${patent.patent_id }" target="_blank">[${patent.patent_type_name }]${patent.patent_name } - ${patent.app_no }</a>
+				</span> 
+				</li>
+			</c:forEach>			
 		
-			<div class="adListNew" style="margin-top:20px;">
-			
-				<div id="padhide_2086">
-				<style type="text/css">
-				.right_list{
-　　					display:block;overflow:hidden;word-break:keep-all;white-space:nowrap;text-overflow:ellipsis;
-　　				} 
-				.adContent2{width:300px; padding-bottom:10px;}
-				.adContent2 li{float:left;width:130px; padding-right:10px;padding-top:10px; line-height: 24px; text-align: center;}
-				.adContent2 li span{ display:block; text-align: center; line-height:22px;}
-				.adContent2 li a{color:#666;}
-				.adContent2 li a:hover{color:#666;}
-				.adContent3{ padding-bottom:10px; width:670px;}
-				.adContent3 li{float:left;width:185px; padding-right:32px;padding-top:10px; text-align:center;}
-				.adContent3 li span{ display:block; text-align: center; line-height:22px;}
-				.adContent3 li a{color:#666;}
-				.adContent3 li a:hover{color:#666;}
-				.ul_list01 li{ line-height:24px; background:url(http://172.30.23.50/Origin/project/commonpage/images/sq02.gif) no-repeat 0 11px; padding-left:7px;}
-				.ul_list01 li a:link,.ul_list01 li a:hover,.ul_list01 li a:visited{ color:#666;}
-				</style>
-					<h3>专利推荐</h3>
-			
-				</div>
-			
-				<div id="padhide_1720">
-					<ul class="ul_list01">
-					<c:forEach items="${patents}" var="patent">
-						<li>
-						<a href="<s:url value='/patent/detail.html?patentno=${patent.patent_id}'/>" target="_blank">${patent.patent_name}</a>
-						</li>			
-					</c:forEach>					
-					</ul>
-				</div>
-			</div>
-			
-			
-			
-			
-			<div class="adListNew" style="margin-top:20px;">
-			
-				<div id="padhide_2086">
-
-					<h3>商标推荐</h3>
-			
-				</div>
-			
-				<div id="padhide_1720">
-						<div  style="width:240px;height:1050px;margin-left:10px; overflow:hidden;position:relative;">
-						<iframe width="300" height="1585" frameborder="0" style="position:relative; top:-740px; float:left; left:-10px;" scrolling="no" src="http://r.lotut.com">
-						
-						</iframe>
-						</div>
-				</div>
-			</div>				
-			
-	</div>	
-	
+		</ul>			
+		</div>	
+		
+		<div class="box" style="margin-top:20px;">
+			<h2><a href="#" class="a1 box_hover">商标推荐</a></h2>	
+			<ul class="good-list-item">
+    			<c:forEach items="${brands}" var="brand" varStatus="status">
+		    	<li>
+				 <dl>
+				    <dd class="pic"> 
+				   		<a href="<s:url value='/brand/getbrandDetail.html?brandId=${brand.id }'/>" target="_blank">
+							<div style="position: relative;width:192px;height:154px;">   
+							<c:choose>
+							<c:when test="${not empty brand.imageUrl }">
+								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='${brand.imageUrl }'/>"/>
+							</c:when>
+							<c:otherwise>
+								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg'/>"/>
+							</c:otherwise>
+							</c:choose> 
+							<span style="position: absolute;font-family:Microsoft YaHei;font-size:20px;top: 60px;width:100%;left:0;z-index:1;text-align: center;">${brand.name }</span>
+				   			</div>
+						</a> 
+					</dd>
+					<dt class="name"> 
+						<div style="width:110px;float:left;">
+							<a href="/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="THINKCARD">${brand.name }</a>
+						</div> 
+						<div class="num" style="float:left;">¥${brand.price }</div>
+				 	</dt>
+				</dl>
+		      </li>
+		      </c:forEach>
+    
+    </ul>				
+		</div>			
+	</div>
 </div>
 
+<div id="footer">
 
-<%@ include file="_footer.jsp"%>
+	<ul class="footer">            
+        <li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">
+        		<span style="color:#7d7d7d;">加入收藏</span>
+        	</a>
+		&nbsp;&nbsp;©&nbsp;&nbsp;2015&nbsp;&nbsp;Lotut&nbsp;&nbsp;使用龙图腾前必读&nbsp;&nbsp;
+		皖ICP备123456789号&nbsp;&nbsp;意见箱：lotuto@163.com&nbsp;&nbsp;
+		<span style="display:inline-block;position:relative;width:auto;">
+		<a href="https://ss.knet.cn/verifyseal.dll?sn=e16072934010064299rolh000000&amp;ct=df&amp;a=1&amp;pa=0.09530572313815355" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display:inline-block;">
+		<img src="http://rr.knet.cn/static/images/logo/cnnic.png" style="border:none;height:25px;" oncontextmenu="return false;" alt="可信网站">
+		</a>
+		</span>
+		</li>            
+     </ul>
+</div>
+<style>
+#footer {
+    width: 100%;
+    overflow: hidden;
+    background: #e7e7e7;
+    font-family: SimSun;
+}
+.footer li {
+    text-align: center;
+    line-height: 45px;
+    height: 45px;
+    color: #7d7d7d;
+    font-family: "微软雅黑";
+}
+.footer a {
+    text-decoration: none;
+    color: #333;
+}
+</style>
+<!--  fen xiang -->
+<script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
 
-<script>
-	function praise(id,number){
-		var praise_img = $("#praise-img");
-		var text_box = $("#add-num");
-		var praise_txt = $("#praise-txt");
-		var num=parseInt(praise_txt.text());
-		$.ajax({
-			type:"get",
-			url: "<s:url value='/news/praise.html'/>?upVote="+number+"&id="+id, 
-		    success: function () {
-		    	$("#praise"+id).html("<img src='<s:url value='/images/zan.png'/>' width='20px;' height='20px;' id='praise-img' class='animation' />");
-				praise_txt.addClass("hover");
-				text_box.show().html("<em class='add-animation'>+1</em>");
-				$(".add-animation").addClass("hover");
-				num +=1;
-				praise_txt.text(num);
-				$("#praise"+id).attr("onclick", "null");
-		    }
-			
-		})
-	}
-	
-	function slander(id,number){
-		var praise_img = $("#slander-img");
-		var text_box = $("#del-num");
-		var praise_txt = $("#slander-txt");
-		var num=parseInt(praise_txt.text());
-		$.ajax({
-			type:"get",
-			url: "<s:url value='/news/slander.html'/>?downVote="+number+"&id="+id, 
-		    success: function () {
-		    	$("#slander"+id).html("<img src='<s:url value='/images/cai.png'/>' width='20px;' height='20px;' id='slander-img' class='animation' style='margin-top:-90px;'/>");
-				praise_txt.addClass("hover");
-				text_box.show().html("<em class='del-animation'>+1</em>");
-				$(".del-animation").addClass("hover");
-				num +=1;
-				praise_txt.text(num);
-				$("#slander"+id).attr("onclick", "null");
-		    }
-			
-		})
-	}
-	
-	
-	$(function() {
-		$("#contentArea").val('');
-	
-	});
-	
-	function validateComment() {
-		if($("#contentArea").val()==""){
-			alert("评论不能为空。");
-			return false;
-		} else {
-			return true;
-		}
-	}
-	
-
-	
-	
-	
 </script>
 
 </body>

@@ -244,11 +244,11 @@ $(function(){
 				
 					<div class="pdlf8">
 						<!---->
-						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="10">
+						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="0" end="0">
 						
 						<div class="n_p_mod_0 clearfix">
 					    	
-							<a class="n_pic fl" href="" target="_blank"><img src="${businessPolicy.smallImgUrl}" width="125" height="94" alt=""></a>
+							<a class="n_pic fl" href="" target="_blank"><img src="<s:url value='${businessPolicy.smallImgUrl}'/>" width="125" height="94" alt=""></a>
 							<a class="n_tit" href="" target="_blank">${businessPolicy.title}</a>	
 												
 		                </div>						

@@ -51,11 +51,9 @@
 
         </div>
         <div class="lf2" >
-<<<<<<< HEAD
+
             <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;"><b>科技前沿</b></a>
-=======
-            <a href="<s:url value='/news/newsList.html?typeId=${newsType.typeId }'/>" style="margin-left:10px;" target="_blank"><b>科技前沿</b></a>
->>>>>>> bd96e03d30aae996ad16ce4becdb2c4347878a69
+
         </div>	
         <div class="lf3" >
             <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;"><b>创意街</b></a>
