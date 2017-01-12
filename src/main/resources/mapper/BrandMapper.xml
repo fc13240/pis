@@ -148,7 +148,7 @@
 	<select id="getIndexSlideBrands"  resultMap="brandMap">
 		SELECT id, NAME, price ,category_id,image_url FROM brands 		
 		WHERE check_status=1 AND sell_status=1
-		order by is_recommend desc limit 5
+		order by is_recommend desc limit 10
 		
 	</select>
 	
