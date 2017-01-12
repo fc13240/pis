@@ -155,7 +155,7 @@
 		</select>	
 
 		<select id="getNewsListByType" resultMap="NewsResultMap">
-			SELECT id,title,small_img_url,keywords,publish_time,abstract FROM news 
+			SELECT id,title,small_img_url,keywords,publish_time,abstract,content FROM news 
 			WHERE check_status=1 and news_type=#{typeId} 
 			ORDER BY publish_time DESC
 			LIMIT #{page.startIndex},#{page.pageSize}

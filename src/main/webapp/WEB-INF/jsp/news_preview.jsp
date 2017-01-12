@@ -90,12 +90,21 @@
     </div>
 </div> 
 <div class="container w1200 ma">
+<<<<<<< HEAD
 		<div class="r_detail_about"> 
 		<span>当前位置：</span>
 		<a href="<s:url value='/index.html'/>">主页</a> &gt; 
 		<a href="<s:url value='/news/newsList.html?typeId=${newsType.typeId }'/>">${newsType.typeName }</a> &gt;  
 		</div> 
 	<div class="nr_cont1 F_Left">     
+=======
+	<div class="nr_cont1 F_Left">
+		<div class="tittle_x">
+            <a href="">首页</a>
+            <em>&gt;</em> <a href="<s:url value='/news/newsList.html?typeId=${news.newsType.typeId }'/>">${news.newsType.typeName }</a>
+         <!--   <em>&gt;</em> <a href="#">列表</a> --> 
+        </div>	
+>>>>>>> 4186b1ae9a9d02d4de7859acae621ae29293c0e4
         <div>
 <!--  -->
 			<div class="mod1_cont" id="mod1_cont" runat="server">
