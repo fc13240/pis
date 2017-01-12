@@ -137,11 +137,12 @@ public class NewsController {
 		List<NewsComment> comments = newsService.getNewsCommentsById(newsId);
 		
 		List<Patent> patents=patentService.getPatents();
-		
+		List<Brand> brands = brandService.getIndexSlideBrands();
 		List<News> newsRand=newsService.getNewsByRand();
 		model.addAttribute("patents", patents);
 		model.addAttribute("comments", comments);
 		model.addAttribute("news", news);
+		model.addAttribute("brands", brands);
 		model.addAttribute("newsRand", newsRand);
 		return "news_preview";
 	}		
@@ -164,10 +165,10 @@ public class NewsController {
 		
 	}
 	
-	@RequestMapping(path="/comment/addNewsComment", method=RequestMethod.GET)
+	@RequestMapping(path="/comment/addNewsComment")
 	public String addNewsComment(String content,int newsId,HttpSession session){
-		int userId = PrincipalUtils.getCurrentUserId();
-		newsService.addNewsComment(content,newsId,userId);
+		//int userId = PrincipalUtils.getCurrentUserId();
+		newsService.addNewsComment(content,newsId,2);
 		return "redirect:/news/newsPreview.html?newsId="+newsId;
 	}
 	
@@ -185,11 +186,8 @@ public class NewsController {
 		model.addAttribute("news", news);
 		model.addAttribute("page", page);
 		model.addAttribute("allNewsType", allNewsType);
-<<<<<<< HEAD
 		return "news_search_list";
-=======
-		return "news_list";//需要页面
->>>>>>> 15fbbe5662457c9cc576e3ccdbe910a8c92227ee
+
 	}
 	
 }
