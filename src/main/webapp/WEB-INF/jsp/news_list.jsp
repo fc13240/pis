@@ -141,15 +141,15 @@
         <div>
         <c:forEach items="${news}" var="news" varStatus="status">
         <c:if test="${not empty news.smallImgUrl }">
-			<div class="plist1 ">
-				<div class="plist1_img F_Left">
-					<img src="<s:url value='${news.smallImgUrl}'/>" width="200" height="130" class="dh" />
+			<div class="plist1 " style="height:161px;">
+				<div class="plist1_img F_Left" style="height:140px;">
+					<img src="<s:url value='${news.smallImgUrl}'/>" width="200" height="140" class="dh" />
 				</div> 
 		        <div class="plist1_p F_Left"> 
-					<h2><a href="" target="_blank" class="t_zi1"  title=""" >${news.title}</a></h2> 
-					<p style="height: 75px;width: 430px;font-size: 13px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
+					<h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="" target="_blank" class="t_zi1"  title=""" >${news.title}</a></h2> 
+					<p style="height: 70px;width: 490px;font-size: 12px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
 		
-					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
+					<div class="t_b" style="bottom:20px;"><span><fmt:formatDate value="${news.publishTime }" pattern="yyyy-MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 		
 					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161206-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
 				
@@ -159,11 +159,11 @@
 			<div class="C_Both"></div>
 		</c:if>
 		<c:if test="${empty news.smallImgUrl }">
-		    <div class="plist11">
-				<div class="plist11_p F_Left"> 
-					<h2><a href="" target="_blank" class="t_zi1"  title="" >${news.title}</a></h2> 
-					<p style="height: 75px;width: 430px;font-size: 13px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
-					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
+		    <div class="plist11" style="height:161px;">
+				<div class="plist11_p F_Left" style="height:140px;"> 
+					<h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="" target="_blank" class="t_zi1"  title="" >${news.title}</a></h2> 
+					<p style="height: 70px;width: 650px;font-size: 12px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
+					<div class="t_b" style="bottom:20px;"><span><fmt:formatDate value="${news.publishTime }" pattern="yyyy-MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161115-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
 				</div>
 				<div class="C_Both"></div>
