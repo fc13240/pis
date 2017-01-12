@@ -147,7 +147,7 @@
 				</div> 
 		        <div class="plist1_p F_Left"> 
 					<h2><a href="" target="_blank" class="t_zi1"  title=""" >${news.title}</a></h2> 
-					<p></p> 
+					<p style="height: 75px;width: 430px;font-size: 13px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
 		
 					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 		
@@ -162,7 +162,7 @@
 		    <div class="plist11">
 				<div class="plist11_p F_Left"> 
 					<h2><a href="" target="_blank" class="t_zi1"  title="" >${news.title}</a></h2> 
-					<p></p> 
+					<p style="height: 75px;width: 430px;font-size: 13px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
 					<div class="t_b"><span><fmt:formatDate value="${news.publishTime }" pattern="MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161115-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
 				</div>
