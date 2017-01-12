@@ -67,8 +67,8 @@ $(function(){
 
 
 <div class="fx_logo clearfix">
-	<div class="logo">
-    	<a href=""><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
+	<div class="logo" style="float:left;">
+    	<a href="<s:url value='/index.html'/>"><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
     </div>
 <!--  -->
 	<div class="mc-field-group" style="float:left;width:600px;margin-left:100px;margin-top:15px">
@@ -112,7 +112,7 @@ $(function(){
     outline: 0; 
 }
 </style>        
-    <!--  -->    
+    <!--  -->
 </div>
 
 <div class="fx_nav">
