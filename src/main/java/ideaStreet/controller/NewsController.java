@@ -185,7 +185,11 @@ public class NewsController {
 		model.addAttribute("news", news);
 		model.addAttribute("page", page);
 		model.addAttribute("allNewsType", allNewsType);
+<<<<<<< HEAD
 		return "news_search_list";
+=======
+		return "news_list";//需要页面
+>>>>>>> 15fbbe5662457c9cc576e3ccdbe910a8c92227ee
 	}
 	
 }

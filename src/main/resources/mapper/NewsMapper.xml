@@ -176,7 +176,8 @@
 			</if>
 			SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
 			nt.type_id ,nt.type_name,u.user_id,u.username,n.check_status
-			FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+			FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id
+			where n.check_status=1
 			<if test="keyword != null and keyword !=''">
 						and ( n.keywords like #{keyword_pattern} or n.author like #{keyword_pattern} or n.title like #{keyword_pattern})
 			</if>
@@ -191,6 +192,7 @@
 			</if>
 			SELECT count(*)
 			FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+			where n.check_status=1
 			<if test="keyword != null and keyword !=''">
 						and ( n.keywords like #{keyword_pattern} or n.author like #{keyword_pattern} or n.title like #{keyword_pattern})
 			</if>
