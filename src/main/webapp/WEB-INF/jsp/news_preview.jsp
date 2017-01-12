@@ -93,7 +93,7 @@
 	<div class="nr_cont1 F_Left">
 		<div class="tittle_x">
             <a href="">首页</a>
-            <em>&gt;</em> <a href="<s:url value='/news/newsList.html?typeId=${newsType.typeId }'/>">${newsType.typeName }</a>
+            <em>&gt;</em> <a href="<s:url value='/news/newsList.html?typeId=${news.newsType.typeId }'/>">${news.newsType.typeName }</a>
          <!--   <em>&gt;</em> <a href="#">列表</a> --> 
         </div>	
         <div>
