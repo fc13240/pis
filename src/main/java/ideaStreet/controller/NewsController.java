@@ -178,7 +178,6 @@ public class NewsController {
 		if (page.getCurrentPage() <= 0) {
 			page.setCurrentPage(1);
 		}
-		searchCondition.setUserId(PrincipalUtils.getCurrentUserId());
 		List<News> news=newsService.searchNewsByPage(searchCondition);
 		int totalCount=newsService.searchNewsByCount(searchCondition);
 		page.setTotalRecords(totalCount);
