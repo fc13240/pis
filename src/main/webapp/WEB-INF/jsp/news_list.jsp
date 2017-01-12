@@ -24,113 +24,7 @@
 
 
 <body class="">
-<div class="fx_top">
-	<div class="wrap">
-    		<div class="left">
-				<span class="co">科技迷们的网络聚集地 -- 创意街</span>
-            </div>
-    </div>
-</div>
-
-
-<div class="fx_logo clearfix">
-	<div class="logo" style="float:left;">
-    	<a href="<s:url value='/index.html'/>"><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
-    </div>
-<!--  -->
-	<div class="mc-field-group" style="float:left;width:600px;margin-left:100px;margin-top:15px">
-       <input type="text" placeholder="关键字" name="q" class="text" id="mce-EMAIL">
-       <input type="hidden" name="type" value="">
-       <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
-    </div>
-    <div style="clear:both;"></div>
-<style>
-#mce-EMAIL {
-    background: #FFFFFF;
-    float: left;
-    border: 2px solid #F16059;
-    box-shadow: none;
-    font-size: 16px;
-    height: 40px;
-    line-height: 40px;
-    margin: 0;
-    padding: 3;
-    max-width: 400px;
-    min-width: 400px;
-    width: 400px;
-    display: inline-block;
-    outline: 0;
-}
-#mc-embedded-subscribe {
-    background: #db000a;
-    float: left;
-    border: 2px solid #db000a;
-    box-shadow: none;
-    font-size: 16px;
-    height: 44px;
-    line-height: 44px;
-    
-    font-weight: 700;
-    color: white;
-    margin: 0;
-    width: 100px;
-    display: inline-block;
-    vertical-align: middle;
-    outline: 0; 
-}
-</style>        
-    <!--  -->
-</div>
-
-<div class="fx_nav">
-   <div class="wrap clearfix">
-   
- 
-   
-        <div class="lf1">
-          <p>
-            <a href="<s:url value='/index.html'/>"><b>首页</b></a>
-            </p>
-
-        </div>
-        <div class="lf2" >
-
-            <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;"><b>科技前沿</b></a>
-
-        </div>	
-        <div class="lf3" >
-            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;"><b>创意街</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;"><b>创业服务</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="<s:url value='/news/newsList.html?typeId=3'/>" style="margin-left:10px;"><b>漫画西游</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="<s:url value='/news/newsList.html?typeId=4'/>" style="margin-left:10px;"><b>爆笑西游</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;"><b>专利商标</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="http://r.lotut.com/patent/index.html" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="http://r.lotut.com/brand/index.html" style="margin-left:10px;" target="_blank"><b>商标交易</b></a>
-        </div>			
-		
-        <div class="lf2" >
-            <a href="http://g.lotut.com" style="margin-left:10px;" target="_blank"><b>专利管理</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="http://so.lotut.com" style="margin-left:10px;" target="_blank"><b>专利检索</b></a>
-        </div>			
-				
-		
-	
-    </div>
-</div> 
+<%@ include file="_top_nav.jsp"%>
 <div class="container w1200 ma">
 	<div class="nr_cont1 F_Left">
 		<div class="tittle_x">
@@ -143,10 +37,10 @@
         <c:if test="${not empty news.smallImgUrl }">
 			<div class="plist1 " style="height:161px;">
 				<div class="plist1_img F_Left" style="height:140px;">
-					<img src="<s:url value='${news.smallImgUrl}'/>" width="200" height="140" class="dh" />
+					<a target="_blank" href="<s:url value='/news/newsPreview.html?newsId=${news.id }'/>"><img src="<s:url value='${news.smallImgUrl}'/>" width="200" height="140" class="dh" /></a>
 				</div> 
 		        <div class="plist1_p F_Left"> 
-					<h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="" target="_blank" class="t_zi1"  title=""" >${news.title}</a></h2> 
+					<a href="<s:url value='/news/newsPreview.html?newsId=${news.id }'/>" target="_blank" class="t_zi1"  title="${news.title}" ><h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">${news.title}</a></h2> 
 					<p style="height: 70px;width: 490px;font-size: 12px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
 		
 					<div class="t_b" style="bottom:20px;"><span><fmt:formatDate value="${news.publishTime }" pattern="yyyy-MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
@@ -161,7 +55,7 @@
 		<c:if test="${empty news.smallImgUrl }">
 		    <div class="plist11" style="height:161px;">
 				<div class="plist11_p F_Left" style="height:140px;"> 
-					<h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="" target="_blank" class="t_zi1"  title="" >${news.title}</a></h2> 
+					<h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="<s:url value='/news/newsPreview.html?newsId=${news.id }'/>" target="_blank" class="t_zi1"  title="${news.title}" >${news.title}</a></h2> 
 					<p style="height: 70px;width: 650px;font-size: 12px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
 					<div class="t_b" style="bottom:20px;"><span><fmt:formatDate value="${news.publishTime }" pattern="yyyy-MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161115-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
@@ -212,7 +106,7 @@
 			<c:forEach items="${patents}" var="patent" varStatus="status">
 				<li>
 				<span class="h_list_tit" style="font-size:14px;">
-					<a href="/patent/detail.html?patentId=${patent.patent_id }" target="_blank">[${patent.patent_type_name }]${patent.patent_name } - ${patent.app_no }</a>
+					<a href="http://r.lotut.com/patent/getPatentDetail.html?patentId=${patent.patent_id }" target="_blank">[${patent.patent_type_name }]${patent.patent_name } - ${patent.app_no }</a>
 				</span> 
 				</li>
 			</c:forEach>			
@@ -227,7 +121,7 @@
 		    	<li>
 				 <dl>
 				    <dd class="pic"> 
-				   		<a href="<s:url value='/brand/getbrandDetail.html?brandId=${brand.id }'/>" target="_blank">
+				   		<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank">
 							<div style="position: relative;width:192px;height:154px;">   
 							<c:choose>
 							<c:when test="${not empty brand.imageUrl }">
@@ -243,7 +137,7 @@
 					</dd>
 					<dt class="name"> 
 						<div style="width:110px;float:left;">
-							<a href="/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="THINKCARD">${brand.name }</a>
+							<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="${brand.name }">${brand.name }</a>
 						</div> 
 						<div class="num" style="float:left;">¥${brand.price }</div>
 				 	</dt>

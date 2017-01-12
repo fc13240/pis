@@ -23,69 +23,8 @@
 </style>
 </head>
 
-
 <body class="">
-<div class="fx_top">
-	<div class="wrap">
-    		<div class="left">
-				<span class="co">科技迷们的网络聚集地 -- 创意街</span>
-            </div>
-    </div>
-</div>
-
-
-<div class="fx_logo clearfix">
-	<div class="logo">
-    	<a href=""><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
-    </div>
-</div>
-
-<div class="fx_nav">
-   <div class="wrap clearfix">
-   
- 
-   
-        <div class="lf1">
-          <p>
-            <a href="<s:url value='/index.html'/>"><b>首页</b></a>
-            </p>
-
-        </div>
-        <div class="lf2" >
-
-            <a href="<s:url value='/news/newsList.html?typeId=2'/>" style="margin-left:10px;"><b>科技前沿</b></a>
-
-        </div>	
-        <div class="lf3" >
-            <a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:10px;"><b>创意街</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="<s:url value='/news/newsBusinessList.html'/>" style="margin-left:10px;"><b>创业服务</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="<s:url value='/news/newsList.html?typeId=3'/>" style="margin-left:10px;"><b>漫画西游</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="<s:url value='/news/newsList.html?typeId=4'/>" style="margin-left:10px;"><b>爆笑西游</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="<s:url value='/news/newsPatentList.html'/>" style="margin-left:10px;"><b>专利商标</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="http://r.lotut.com/patent/index.html" style="margin-left:10px;" target="_blank"><b>专利交易</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="http://r.lotut.com/brand/index.html" style="margin-left:10px;" target="_blank"><b>商标交易</b></a>
-        </div>			
-		
-        <div class="lf2" >
-            <a href="http://g.lotut.com" style="margin-left:10px;" target="_blank"><b>专利管理</b></a>
-        </div>	
-        <div class="lf2" >
-            <a href="http://so.lotut.com" style="margin-left:10px;" target="_blank"><b>专利检索</b></a>
-        </div>			
-    </div>
-</div> 
+<%@ include file="_top_nav.jsp"%>
 <div class="container w1200 ma">
 		<div class="r_detail_about"> 
 		<span>当前位置：</span>
