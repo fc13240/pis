@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>创意街——龙图腾 </title>
+<title>${news.title}——龙图腾 </title>
 <meta name="keywords" content="科技门户" />
 <meta name="description" content="科技门户" />
 <meta itemprop="name" content="" />
@@ -90,18 +90,18 @@
     </div>
 </div> 
 <div class="container w1200 ma">
-	<div class="nr_cont1 F_Left">
-		<div class="tittle_x">
-            <a href="">首页</a>
-            <em>&gt;</em> <a href="<s:url value='/news/newsList.html?typeId=${newsType.typeId }'/>">${newsType.typeName }</a>
-         <!--   <em>&gt;</em> <a href="#">列表</a> --> 
-        </div>	
+		<div class="r_detail_about"> 
+		<span>当前位置：</span>
+		<a href="<s:url value='/index.html'/>">主页</a> &gt; 
+		<a href="<s:url value='/news/newsList.html?typeId=${newsType.typeId }'/>">${newsType.typeName }</a> &gt;  
+		</div> 
+	<div class="nr_cont1 F_Left">     
         <div>
 <!--  -->
 			<div class="mod1_cont" id="mod1_cont" runat="server">
 					
 				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 24px;text-indent: 28px;text-align: center;">${news.title}</h2>
-				<br/>
+				
 				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
 					发表时间：<fmt:formatDate  value="${news.publishTime}" pattern="yyyy年MM月dd日" />
@@ -179,10 +179,7 @@
 				<div style="" class="comment-div">
 					<div class="textarea-div" >
 						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/article/comment/addArticleComment.html'/>" onsubmit="return validateComment();">
-							<textarea id="contentArea" class="textarea" name="content"
-								placeholder="我来说两句...">
-							
-							</textarea>
+							<textarea id="contentArea" class="textarea" name="content" placeholder="我来说两句..."></textarea>
 							<div class="submit-row" style="position: relative;">
 								<input id="articleId" type="hidden" name="articleId" value="${article.id}"/>            		 
                                	<se:authorize access="isAuthenticated()">            		 

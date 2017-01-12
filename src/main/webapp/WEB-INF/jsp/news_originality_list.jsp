@@ -337,8 +337,6 @@ $(function(){
 					</ul>
 				</div>			
 			
-				
-			
 			</div>
 			<div style="clear:both;"></div>
 		</div>
