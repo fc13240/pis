@@ -4,6 +4,7 @@ import java.util.List;
 
 import ideaStreet.domain.News;
 import ideaStreet.domain.NewsComment;
+import ideaStreet.domain.NewsSearchCondition;
 import ideaStreet.domain.NewsType;
 import ideaStreet.domain.Page;
 
@@ -39,5 +40,9 @@ public interface NewsDao {
 	int getNewsListByTypeCount(int typeId);
 
 	NewsType getNewsTypeById(int typeId);
+	
+	List<News> searchNewsByPage(NewsSearchCondition searchCondition);
+	
+	int searchNewsByCount (NewsSearchCondition searchCondition);
 	
 }

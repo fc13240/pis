@@ -37,12 +37,14 @@
 	<div class="logo" style="float:left;">
     	<a href="<s:url value='/index.html'/>"><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>
     </div>
-<!--  -->
-	<div class="mc-field-group" style="float:left;width:600px;margin-left:100px;margin-top:15px">
-       <input type="text" placeholder="关键字" name="q" class="text" id="mce-EMAIL">
-       <input type="hidden" name="type" value="">
-       <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
-    </div>
+<!-- 新闻搜索部分 -->
+	<form class="form-inline" action="<s:url value='/news/searchNews.html'/>" method="get" target="_blank">
+		<input type="hidden" id="default.page.nextPage" name="page.currentPage" value="1"/>
+		<div class="mc-field-group" style="float:left;width:600px;margin-left:100px;margin-top:15px">
+	       <input type="text" placeholder="关键字" name="keyword" class="text" id="mce-EMAIL">
+	       <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
+	    </div>
+    </form>
     <div style="clear:both;"></div>
 <style>
 #mce-EMAIL {

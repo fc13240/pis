@@ -168,4 +168,31 @@
 		<select id="getNewsTypeById" parameterType="int"  resultMap="NewsTypeResultMap">
 			SELECT type_id,type_name FROM news_type WHERE type_id=#{typeId} 
 		</select>
+		
+		
+		<select id="searchNewsByPage" parameterType="NewsSearchCondition" resultMap="NewsResultMap" >
+			<if test="keyword != null">
+				<bind name="keyword_pattern" value="'%' + keyword + '%'" />
+			</if>
+			SELECT n.id,n.keywords,n.author,n.title,n.source,n.abstract,n.content,n.create_time,n.publish_time,n.update_time,
+			nt.type_id ,nt.type_name,u.user_id,u.username,n.check_status
+			FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+			<if test="keyword != null and keyword !=''">
+						and ( n.keywords like #{keyword_pattern} or n.author like #{keyword_pattern} or n.title like #{keyword_pattern})
+			</if>
+			order by n.check_status asc,n.update_time desc,n.create_time desc,n.publish_time desc
+			limit #{page.startIndex}, #{page.pageSize}
+		</select>
+		
+		
+		<select id="searchNewsByCount" parameterType="NewsSearchCondition" resultType="int" >
+			<if test="keyword != null">
+				<bind name="keyword_pattern" value="'%' + keyword + '%'" />
+			</if>
+			SELECT count(*)
+			FROM news n LEFT JOIN news_type nt ON  n.news_type=nt.type_id LEFT JOIN users u ON n.user_id=u.user_id 
+			<if test="keyword != null and keyword !=''">
+						and ( n.keywords like #{keyword_pattern} or n.author like #{keyword_pattern} or n.title like #{keyword_pattern})
+			</if>
+		</select>
 </mapper>

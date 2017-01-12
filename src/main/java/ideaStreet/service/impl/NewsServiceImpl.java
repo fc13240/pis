@@ -6,6 +6,7 @@ import ideaStreet.dao.NewsDao;
 import ideaStreet.domain.Article;
 import ideaStreet.domain.News;
 import ideaStreet.domain.NewsComment;
+import ideaStreet.domain.NewsSearchCondition;
 import ideaStreet.domain.NewsType;
 import ideaStreet.domain.Page;
 import ideaStreet.service.NewsService;
@@ -95,6 +96,16 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public NewsType getNewsTypeById(int typeId) {
 		return newsDao.getNewsTypeById(typeId);
+	}
+
+	@Override
+	public List<News> searchNewsByPage(NewsSearchCondition searchCondition) {
+		return newsDao.searchNewsByPage(searchCondition);
+	}
+
+	@Override
+	public int searchNewsByCount(NewsSearchCondition searchCondition) {
+		return newsDao.searchNewsByCount(searchCondition);
 	}
 
 }

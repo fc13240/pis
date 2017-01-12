@@ -5,6 +5,19 @@ public class NewsSearchCondition {
 	private String keyword;
 	private Integer newsType;
 	private Page page;
+	
+	
+	
+	public NewsSearchCondition() {
+	}
+	
+	
+	public NewsSearchCondition(int userId, String keyword, Integer newsType, Page page) {
+		this.userId = userId;
+		this.keyword = keyword;
+		this.newsType = newsType;
+		this.page = page;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -35,7 +48,7 @@ public class NewsSearchCondition {
 	
 	@Override
 	public String toString() {
-		String keywordStr = keyword == null ? "" : keyword;
+		String keywordStr = keyword == null ? "" : keyword.trim();
 		String newsTypeStr = newsType == null ? "" : newsType.toString();
 		return "keyword=" + keywordStr+ "&newsType=" + newsTypeStr;
 	}

@@ -10,6 +10,7 @@ import ideaStreet.dao.mapper.NewsMapper;
 import ideaStreet.domain.Article;
 import ideaStreet.domain.News;
 import ideaStreet.domain.NewsComment;
+import ideaStreet.domain.NewsSearchCondition;
 import ideaStreet.domain.NewsType;
 import ideaStreet.domain.Page;
 
@@ -95,6 +96,16 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 	@Override
 	public NewsType getNewsTypeById(int typeId) {
 		return newsMapper.getNewsTypeById(typeId);
+	}
+
+	@Override
+	public List<News> searchNewsByPage(NewsSearchCondition searchCondition) {
+		return newsMapper.searchNewsByPage(searchCondition);
+	}
+
+	@Override
+	public int searchNewsByCount(NewsSearchCondition searchCondition) {
+		return newsMapper.searchNewsByCount(searchCondition);
 	}
 
 

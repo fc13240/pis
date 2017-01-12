@@ -45,4 +45,8 @@ public interface NewsMapper {
 	int getNewsListByTypeCount(int typeId);
 
 	NewsType getNewsTypeById(int typeId);
+	
+	List<News> searchNewsByPage(NewsSearchCondition searchCondition);
+	
+	int searchNewsByCount (NewsSearchCondition searchCondition);
 }

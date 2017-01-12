@@ -8,13 +8,16 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import ideaStreet.domain.Brand;
 import ideaStreet.domain.News;
 import ideaStreet.domain.NewsComment;
+import ideaStreet.domain.NewsSearchCondition;
 import ideaStreet.domain.NewsType;
 import ideaStreet.domain.Page;
 import ideaStreet.domain.Patent;
@@ -168,5 +171,22 @@ public class NewsController {
 		return "redirect:/news/newsPreview.html?newsId="+newsId;
 	}
 	
+	
+	@RequestMapping(path="/searchNews", method=RequestMethod.GET)
+	public String searchUserNews(@ModelAttribute("searchCondition") NewsSearchCondition searchCondition, Model model,HttpSession session) {
+		Page page=searchCondition.getPage();
+		if (page.getCurrentPage() <= 0) {
+			page.setCurrentPage(1);
+		}
+		searchCondition.setUserId(PrincipalUtils.getCurrentUserId());
+		List<News> news=newsService.searchNewsByPage(searchCondition);
+		int totalCount=newsService.searchNewsByCount(searchCondition);
+		page.setTotalRecords(totalCount);
+		List<NewsType> allNewsType=newsService.getAllNewsTypes();
+		model.addAttribute("news", news);
+		model.addAttribute("page", page);
+		model.addAttribute("allNewsType", allNewsType);
+		return "news_list";
+	}
 	
 }
