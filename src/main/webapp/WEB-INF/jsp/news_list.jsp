@@ -143,10 +143,10 @@
         <c:if test="${not empty news.smallImgUrl }">
 			<div class="plist1 " style="height:161px;">
 				<div class="plist1_img F_Left" style="height:140px;">
-					<img src="<s:url value='${news.smallImgUrl}'/>" width="200" height="140" class="dh" />
+					<a target="_blank" href="<s:url value='/news/newsPreview.html?newsId=${news.id }'/>"><img src="<s:url value='${news.smallImgUrl}'/>" width="200" height="140" class="dh" /></a>
 				</div> 
 		        <div class="plist1_p F_Left"> 
-					<h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="" target="_blank" class="t_zi1"  title=""" >${news.title}</a></h2> 
+					<a href="<s:url value='/news/newsPreview.html?newsId=${news.id }'/>" target="_blank" class="t_zi1"  title="${news.title}" ><h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">${news.title}</a></h2> 
 					<p style="height: 70px;width: 490px;font-size: 12px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
 		
 					<div class="t_b" style="bottom:20px;"><span><fmt:formatDate value="${news.publishTime }" pattern="yyyy-MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
@@ -161,7 +161,7 @@
 		<c:if test="${empty news.smallImgUrl }">
 		    <div class="plist11" style="height:161px;">
 				<div class="plist11_p F_Left" style="height:140px;"> 
-					<h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="" target="_blank" class="t_zi1"  title="" >${news.title}</a></h2> 
+					<h2 style="width:490px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="<s:url value='/news/newsPreview.html?newsId=${news.id }'/>" target="_blank" class="t_zi1"  title="${news.title}" >${news.title}</a></h2> 
 					<p style="height: 70px;width: 650px;font-size: 12px;color: #989898;overflow: hidden; text-indent:2em;">${news.newsAbstract}</p>
 					<div class="t_b" style="bottom:20px;"><span><fmt:formatDate value="${news.publishTime }" pattern="yyyy-MM-dd HH:mm"/></span>&nbsp;&nbsp;<span class="tags" tags="${news.keywords }">${news.keywords } </span></div>
 					<div class="t_i_o2"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'url':'http://special.ccidnet.com/161115-2','text':'${news.title}','desc':''}"><span class="bds_more" style="background:none !important;"></span></div></div> 
@@ -212,7 +212,7 @@
 			<c:forEach items="${patents}" var="patent" varStatus="status">
 				<li>
 				<span class="h_list_tit" style="font-size:14px;">
-					<a href="/patent/detail.html?patentId=${patent.patent_id }" target="_blank">[${patent.patent_type_name }]${patent.patent_name } - ${patent.app_no }</a>
+					<a href="http://r.lotut.com/patent/getPatentDetail.html?patentId=${patent.patent_id }" target="_blank">[${patent.patent_type_name }]${patent.patent_name } - ${patent.app_no }</a>
 				</span> 
 				</li>
 			</c:forEach>			
@@ -227,7 +227,7 @@
 		    	<li>
 				 <dl>
 				    <dd class="pic"> 
-				   		<a href="<s:url value='/brand/getbrandDetail.html?brandId=${brand.id }'/>" target="_blank">
+				   		<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank">
 							<div style="position: relative;width:192px;height:154px;">   
 							<c:choose>
 							<c:when test="${not empty brand.imageUrl }">
@@ -243,7 +243,7 @@
 					</dd>
 					<dt class="name"> 
 						<div style="width:110px;float:left;">
-							<a href="/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="THINKCARD">${brand.name }</a>
+							<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="${brand.name }">${brand.name }</a>
 						</div> 
 						<div class="num" style="float:left;">¥${brand.price }</div>
 				 	</dt>
