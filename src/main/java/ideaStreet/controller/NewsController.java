@@ -185,7 +185,7 @@ public class NewsController {
 		model.addAttribute("news", news);
 		model.addAttribute("page", page);
 		model.addAttribute("allNewsType", allNewsType);
-		return "news_list";
+		return "news_search_list";
 	}
 	
 }

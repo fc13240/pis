@@ -94,20 +94,6 @@
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"24"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
                 </div>
 
-
-
-
-			<%-- 	<div class="praise">
-					<span id="praise${article.id}" onclick="praise('${article.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
-					<span id="praise-txt">${article.upVote}</span>
-					<span id="add-num"><em>+1</em></span>
-				</div> 
-				
-				<div class="slander">
-					<span id="slander${article.id}" onclick="slander('${article.id}',${article.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
-					<span id="slander-txt">${article.downVote}</span>
-					<span id="del-num"><em>+1</em></span>
-				</div>  --%>
 				
 				<!-- 评论代码start-->
 				<div style="" class="comment-div">
@@ -216,41 +202,7 @@
 	</div>
 </div>
 
-<div id="footer">
-
-	<ul class="footer">            
-        <li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">
-        		<span style="color:#7d7d7d;">加入收藏</span>
-        	</a>
-		&nbsp;&nbsp;©&nbsp;&nbsp;2015&nbsp;&nbsp;Lotut&nbsp;&nbsp;使用龙图腾前必读&nbsp;&nbsp;
-		皖ICP备123456789号&nbsp;&nbsp;意见箱：lotuto@163.com&nbsp;&nbsp;
-		<span style="display:inline-block;position:relative;width:auto;">
-		<a href="https://ss.knet.cn/verifyseal.dll?sn=e16072934010064299rolh000000&amp;ct=df&amp;a=1&amp;pa=0.09530572313815355" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display:inline-block;">
-		<img src="http://rr.knet.cn/static/images/logo/cnnic.png" style="border:none;height:25px;" oncontextmenu="return false;" alt="可信网站">
-		</a>
-		</span>
-		</li>            
-     </ul>
-</div>
-<style>
-#footer {
-    width: 100%;
-    overflow: hidden;
-    background: #e7e7e7;
-    font-family: SimSun;
-}
-.footer li {
-    text-align: center;
-    line-height: 45px;
-    height: 45px;
-    color: #7d7d7d;
-    font-family: "微软雅黑";
-}
-.footer a {
-    text-decoration: none;
-    color: #333;
-}
-</style>
+<%@ include file="_footer.jsp"%> 
 <!--  fen xiang -->
 <script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
