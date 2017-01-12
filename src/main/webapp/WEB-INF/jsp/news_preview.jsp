@@ -84,33 +84,19 @@
         <div class="lf2" >
             <a href="http://so.lotut.com" style="margin-left:10px;" target="_blank"><b>专利检索</b></a>
         </div>			
-				
-		
-	
     </div>
 </div> 
 <div class="container w1200 ma">
-<<<<<<< HEAD
 		<div class="r_detail_about"> 
 		<span>当前位置：</span>
 		<a href="<s:url value='/index.html'/>">主页</a> &gt; 
-		<a href="<s:url value='/news/newsList.html?typeId=${newsType.typeId }'/>">${newsType.typeName }</a> &gt;  
+		<a href="<s:url value='/news/newsList.html?typeId=${news.newsType.typeId }'/>">${news.newsType.typeName }</a> &gt;  
 		</div> 
 	<div class="nr_cont1 F_Left">     
-=======
-	<div class="nr_cont1 F_Left">
-		<div class="tittle_x">
-            <a href="">首页</a>
-            <em>&gt;</em> <a href="<s:url value='/news/newsList.html?typeId=${news.newsType.typeId }'/>">${news.newsType.typeName }</a>
-         <!--   <em>&gt;</em> <a href="#">列表</a> --> 
-        </div>	
->>>>>>> 4186b1ae9a9d02d4de7859acae621ae29293c0e4
         <div>
 <!--  -->
-			<div class="mod1_cont" id="mod1_cont" runat="server">
-					
+			<div class="mod1_cont" id="mod1_cont" runat="server">					
 				<h2 style="margin: 0px 0px 20px;padding: 0px;line-height: 22px;font-size: 24px;text-indent: 28px;text-align: center;">${news.title}</h2>
-				
 				<div style="width:400px;float:left;">
 					<span class="font-article" style="">
 					发表时间：<fmt:formatDate  value="${news.publishTime}" pattern="yyyy年MM月dd日" />
@@ -239,7 +225,7 @@
 		</div>
 		
 	</div>
-<!-- left end	 -->
+<!-- left end -->
 	<div class="nr_cont2 F_Right">
 		<div class="box">
 			<h2><a href="#" class="a1 box_hover">专利推荐</a></h2>
