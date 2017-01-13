@@ -198,7 +198,7 @@ $(function(){
 					<!---->
 					<ul class="list_com">
 						<!---->
-				    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="2" end="6">	
+				    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="2" end="7">	
 						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></li>									
 						</c:forEach>						
 
@@ -212,7 +212,7 @@ $(function(){
 
 						<!---->
 						
-			    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="7" end="7">		
+			    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="8" end="8">		
 						<dt><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></dt>
 						<dd>
 							<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" class="dlimg" target="_blank">
@@ -228,8 +228,8 @@ $(function(){
 					</dl>
 					<ul class="list_com">
 
-			    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="8" end="10">		
-						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></li>										
+			    	<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="9" end="12">		
+						<li style="height:30px;"><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></li>										
 					</c:forEach>						
 					</ul>
 				</div>			
@@ -274,7 +274,7 @@ $(function(){
 					<!---->
 					<ul class="list_com">
 						<!---->
-				    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="2" end="6">	
+				    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="2" end="7">	
 						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativePrductNews.id}" target="_blank">${creativePrductNews.title}</a></li>									
 						</c:forEach>						
 
@@ -288,7 +288,7 @@ $(function(){
 
 						<!---->
 						
-			    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="7" end="7">		
+			    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="8" end="8">		
 						<dt><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativePrductNews.id}" target="_blank">${creativePrductNews.title}</a></dt>
 						<dd>
 							<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativePrductNews.id}" class="dlimg" target="_blank"><img src="<s:url value='${creativePrductNews.smallImgUrl}'/>" width="146" height="100"></a>
@@ -302,8 +302,8 @@ $(function(){
 					</dl>
 					<ul class="list_com">
 
-			    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="8" end="10">		
-						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativePrductNews.id}" target="_blank">${creativePrductNews.title}</a></li>										
+			    	<c:forEach items="${creativePrductNews}" var="creativePrductNews" begin="9" end="12">		
+						<li style="height:30px;"><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativePrductNews.id}" target="_blank">${creativePrductNews.title}</a></li>										
 					</c:forEach>						
 					</ul>
 				</div>			
@@ -347,7 +347,7 @@ $(function(){
 					<!---->
 					<ul class="list_com">
 						<!---->
-				    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="2" end="6">	
+				    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="2" end="7">	
 						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeDesignNews.id}" target="_blank">${creativeDesignNews.title}</a></li>									
 						</c:forEach>						
 					</ul>
@@ -360,7 +360,7 @@ $(function(){
 
 						<!---->
 						
-			    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="7" end="7">		
+			    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="8" end="8">		
 						<dt><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeDesignNews.id}" target="_blank">${creativeDesignNews.title}</a></dt>
 						<dd>
 							<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeDesignNews.id}" class="dlimg" target="_blank"><img src="<s:url value='${creativeDesignNews.smallImgUrl}'/>" width="146" height="100"></a>
@@ -372,10 +372,10 @@ $(function(){
 						<!---->
 
 					</dl>
-					<ul class="list_com">
+					<ul class="list_com" >
 
-			    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="8" end="10">		
-						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeDesignNews.id}" target="_blank">${creativeDesignNews.title}</a></li>										
+			    	<c:forEach items="${creativeDesignNews}" var="creativeDesignNews" begin="9" end="12">		
+						<li style="height:30px;"><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeDesignNews.id}" target="_blank">${creativeDesignNews.title}</a></li>										
 					</c:forEach>						
 					</ul>
 				</div>			

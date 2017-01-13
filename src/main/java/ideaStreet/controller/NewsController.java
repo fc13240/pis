@@ -66,9 +66,9 @@ public class NewsController {
 		List<News> technologyNews=newsService.getHomepageByType(2,8);
 		List<News> cartoonNews=newsService.getHomepageByType(3,4);
 		List<News> laughNews=newsService.getHomepageByType(4,4);
-		List<News> creativeLifeNews=newsService.getHomepageByType(5,12);
-		List<News> creativePrductNews=newsService.getHomepageByType(6,12);
-		List<News> creativeDesignNews=newsService.getHomepageByType(7,12);
+		List<News> creativeLifeNews=newsService.getHomepageByType(5,20);
+		List<News> creativePrductNews=newsService.getHomepageByType(6,20);
+		List<News> creativeDesignNews=newsService.getHomepageByType(7,20);
 
 		
 		model.addAttribute("hotNews", hotNews);
@@ -94,9 +94,9 @@ public class NewsController {
 		List<News> laughNews=newsService.getHomepageByType(4,4);
 
 		
-		List<News> businessSay=newsService.getHomepageByType(8,10);
-		List<News> businessNews=newsService.getHomepageByType(9,10);
-		List<News> businessPolicy=newsService.getHomepageByType(10,10);
+		List<News> businessSay=newsService.getHomepageByType(8,20);
+		List<News> businessNews=newsService.getHomepageByType(9,20);
+		List<News> businessPolicy=newsService.getHomepageByType(10,20);
 		
 
 		
@@ -119,10 +119,10 @@ public class NewsController {
 	public String newsPatentList(Page page,Model model) {
 
 
-		List<News> patentNews=newsService.getHomepageByType(11,4);
-		List<News> patentStudy=newsService.getHomepageByType(12,5);
-		List<News> brandNews=newsService.getHomepageByType(13,10);
-		List<News> brandStudy=newsService.getHomepageByType(14,5);	
+		List<News> patentNews=newsService.getHomepageByType(11,20);
+		List<News> patentStudy=newsService.getHomepageByType(12,20);
+		List<News> brandNews=newsService.getHomepageByType(13,20);
+		List<News> brandStudy=newsService.getHomepageByType(14,20);	
 
 		model.addAttribute("patentNews", patentNews);
 		model.addAttribute("patentStudy", patentStudy);
@@ -184,12 +184,11 @@ public class NewsController {
 		List<NewsType> allNewsType=newsService.getAllNewsTypes();
 		model.addAttribute("news", news);
 		model.addAttribute("page", page);
+		model.addAttribute("keyword", searchCondition.getKeyword());
 		model.addAttribute("allNewsType", allNewsType);
-<<<<<<< HEAD
+
 		return "news_search_list";
-=======
-		return "news_list";//需要页面
->>>>>>> 15fbbe5662457c9cc576e3ccdbe910a8c92227ee
+
 	}
 	
 }

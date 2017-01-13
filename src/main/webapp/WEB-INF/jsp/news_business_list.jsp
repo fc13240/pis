@@ -193,7 +193,7 @@ $(function(){
 						<!---->
 						<ul class="list_com_4">
 							<!---->
-							<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="10">
+							<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="11">
 							<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></li>
 							</c:forEach>
 						</ul>
