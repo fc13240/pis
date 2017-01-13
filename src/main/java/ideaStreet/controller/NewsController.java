@@ -143,12 +143,21 @@ public class NewsController {
 		list.add(14);
 		List<News> hotNews=newsService.getNewsByTypeList(list);	
 		
+		//获取点击率前十新闻		
+		List<Integer> listClick=new ArrayList<>();
+		listClick.add(11);
+		listClick.add(12);
+		listClick.add(13);
+		listClick.add(14);
+		List<News> clickNews=newsService.getNewsOrderByClick(listClick);			
+		
 		List<News> patentNews=newsService.getHomepageByType(11,20);
 		List<News> patentStudy=newsService.getHomepageByType(12,20);
 		List<News> brandNews=newsService.getHomepageByType(13,20);
 		List<News> brandStudy=newsService.getHomepageByType(14,20);	
 
 		model.addAttribute("hotNews", hotNews);
+		model.addAttribute("clickNews", clickNews);		
 		model.addAttribute("patentNews", patentNews);
 		model.addAttribute("patentStudy", patentStudy);
 		model.addAttribute("brandNews", brandNews);
