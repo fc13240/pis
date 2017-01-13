@@ -12,14 +12,6 @@ body {
     font: normal 14px/180% "microsoft yahei",simhei;
     background-color: #fff;
 }
-body {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    color: #777;
-    font: normal 14px/180% "microsoft yahei",simhei;
-    background-color: #fff;
-}
 
 html, body, div, table, td, tr, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, p, span, b, i, em, a, input {
     margin: 0;
@@ -569,7 +561,7 @@ color:#0a5d9f; text-decoration:none
 .box h2{height:38px; border-top:3px #e4e8eb solid; border-bottom:3px #e4e8eb solid; text-align:left; font-size:18px; color:#1a1a1a; line-height:38px; font-weight:bold; position:relative;}
 .box h2 a{ font-size:16px; color:#333333;width:85px;  text-align:center; line-height:38px;}
 .box h2 a:hover{border-top:2px #2e79ba solid;top:-2px; color:#3178b8}
-.box_hover{border-top:2px #2e79ba solid !important;top:-2px !important; color:#3178b8 !important}
+.box_hover{border-top:2px #ed0005 solid !important;top:-2px !important; color:#222 !important}
 .box h2 .a1{position:absolute;left:0; display:block;}
 .box h2 .a2{position:absolute;left:85px; display:block;}
 
@@ -577,3 +569,19 @@ color:#0a5d9f; text-decoration:none
 .h_second_list li{ text-align: left;list-style: none;height: 30px;overflow: hidden;}
 .box li a{ background:url(../img/content/icon1.jpg) 0 7px no-repeat; font-size:14px; color:#4a4a4a; line-height:30px;padding-left:12px;}
 .box li{ text-align: left;list-style: none;}
+
+.r_detail_about {
+    padding: 8px 0;
+    border-bottom: 1px solid #ed0005;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.r_detail_about span{
+font-family: "Î¢ÈíÑÅºÚ", Microsoft YaHei, arial, verdana, sans-serif;
+    color: #333;font-size:16px;
+}
+.r_detail_about a{
+font-family: "Î¢ÈíÑÅºÚ", Microsoft YaHei, arial, verdana, sans-serif;
+    color: #333;font-size:16px;
+}

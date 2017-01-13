@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
 <link rel="stylesheet" href="<s:url value='/css/list.css'/>" />
 <link rel="stylesheet" href="<s:url value='/css/article.css'/>" />
+<script src="<s:url value='/js/jquery.min.js'/>"></script>
 <style type="text/css">
 
 </style>
@@ -94,35 +95,22 @@
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"24"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
                 </div>
 
-
-
-
-			<%-- 	<div class="praise">
-					<span id="praise${article.id}" onclick="praise('${article.id}',${article.upVote})"><img src="<s:url value='/images/zan.png'/>" id="praise-img" class="animation" width="20px;" height="20px;"></span>
-					<span id="praise-txt">${article.upVote}</span>
-					<span id="add-num"><em>+1</em></span>
-				</div> 
-				
-				<div class="slander">
-					<span id="slander${article.id}" onclick="slander('${article.id}',${article.downVote})"><img src="<s:url value='/images/cai.png'/>" id="slander-img" class="animation" width="20px;" height="20px;" style="margin-top:-90px;"></span>
-					<span id="slander-txt">${article.downVote}</span>
-					<span id="del-num"><em>+1</em></span>
-				</div>  --%>
 				
 				<!-- 评论代码start-->
 				<div style="" class="comment-div">
 					<div class="textarea-div" >
-						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/article/comment/addArticleComment.html'/>" onsubmit="return validateComment();">
+						<form style="height:114px;margin:0;padding:0;" action="<s:url value='/news/comment/addNewsComment.html'/>" onsubmit="return validateComment();">
 							<textarea id="contentArea" class="textarea" name="content" placeholder="我来说两句..."></textarea>
 							<div class="submit-row" style="position: relative;">
-								<input id="articleId" type="hidden" name="articleId" value="${article.id}"/>            		 
-                               	<se:authorize access="isAuthenticated()">            		 
+								<input id="newsId" type="hidden" name="newsId" value="${news.id}"/>            		 
+                               	<button class="submit-btn" type="submit">发表评论</button>
+                               	<%-- <se:authorize access="isAuthenticated()">            		 
                                	<button class="submit-btn" type="submit">发表评论</button>
                                	</se:authorize >
                                	<se:authorize access="isAnonymous()">
 								<button type="button" class="submit-btn" data-toggle = "modal" data-target = "#commentLoginModal">
                                		 发表评论</button>
-                               	</se:authorize>
+                               	</se:authorize> --%>
 							</div>
 						</form>
 						
@@ -138,9 +126,9 @@
 								<tr>
 									<td style="border-bottom:1px dashed #ccc;"></td>
 								</tr>
-								<tr style="height:40px;">
+								<%-- <tr style="height:40px;">
 									<td class="account-td">${comment.user.username}</td>									
-								</tr>
+								</tr> --%>
 								<tr>
 									<td colspan="2" class="comment-td">${comment.content}</td>
 								</tr>
@@ -184,11 +172,12 @@
 			<h2><a href="#" class="a1 box_hover">商标推荐</a></h2>	
 			<ul class="good-list-item">
     			<c:forEach items="${brands}" var="brand" varStatus="status">
+    			<c:if test="${status.count%2 == 1 }">
 		    	<li>
-				 <dl>
+				 <div style="position:absolute;">
 				    <dd class="pic"> 
-				   		<a href="<s:url value='/brand/getbrandDetail.html?brandId=${brand.id }'/>" target="_blank">
-							<div style="position: relative;width:192px;height:154px;">   
+				   		<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank">
+							<div style="position: relative;width:165px;height:145px;">   
 							<c:choose>
 							<c:when test="${not empty brand.imageUrl }">
 								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='${brand.imageUrl }'/>"/>
@@ -203,58 +192,66 @@
 					</dd>
 					<dt class="name"> 
 						<div style="width:110px;float:left;">
-							<a href="/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="THINKCARD">${brand.name }</a>
+							<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="${brand.name }">${brand.name }</a>
 						</div> 
 						<div class="num" style="float:left;">¥${brand.price }</div>
 				 	</dt>
-				</dl>
-		      </li>
+				</div>
+				</li>
+				</c:if>
+				<c:if test="${status.count%2 == 0 }">
+				<li>
+				 <div style="position:relative;left:170px;">
+				    <dd class="pic"> 
+				   		<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank">
+							<div style="position: relative;width:165px;height:145px;">   
+							<c:choose>
+							<c:when test="${not empty brand.imageUrl }">
+								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='${brand.imageUrl }'/>"/>
+							</c:when>
+							<c:otherwise>
+								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg'/>"/>
+							</c:otherwise>
+							</c:choose> 
+							<span style="position: absolute;font-family:Microsoft YaHei;font-size:20px;top: 60px;width:100%;left:0;z-index:1;text-align: center;">${brand.name }</span>
+				   			</div>
+						</a> 
+					</dd>
+					<dt class="name"> 
+						<div style="width:110px;float:left;">
+							<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="${brand.name }">${brand.name }</a>
+						</div> 
+						<div class="num" style="float:left;">¥${brand.price }</div>
+				 	</dt>
+				</div>
+				</li>
+				</c:if>
+
 		      </c:forEach>
     
-    </ul>				
+    		</ul>				
 		</div>			
 	</div>
 </div>
 
-<div id="footer">
-
-	<ul class="footer">            
-        <li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">
-        		<span style="color:#7d7d7d;">加入收藏</span>
-        	</a>
-		&nbsp;&nbsp;©&nbsp;&nbsp;2015&nbsp;&nbsp;Lotut&nbsp;&nbsp;使用龙图腾前必读&nbsp;&nbsp;
-		皖ICP备123456789号&nbsp;&nbsp;意见箱：lotuto@163.com&nbsp;&nbsp;
-		<span style="display:inline-block;position:relative;width:auto;">
-		<a href="https://ss.knet.cn/verifyseal.dll?sn=e16072934010064299rolh000000&amp;ct=df&amp;a=1&amp;pa=0.09530572313815355" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display:inline-block;">
-		<img src="http://rr.knet.cn/static/images/logo/cnnic.png" style="border:none;height:25px;" oncontextmenu="return false;" alt="可信网站">
-		</a>
-		</span>
-		</li>            
-     </ul>
-</div>
-<style>
-#footer {
-    width: 100%;
-    overflow: hidden;
-    background: #e7e7e7;
-    font-family: SimSun;
-}
-.footer li {
-    text-align: center;
-    line-height: 45px;
-    height: 45px;
-    color: #7d7d7d;
-    font-family: "微软雅黑";
-}
-.footer a {
-    text-decoration: none;
-    color: #333;
-}
-</style>
+<%@ include file="_footer.jsp"%> 
 <!--  fen xiang -->
 <script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
-
+<script type="text/javascript">
+	$(function() {
+			$("#contentArea").val('');
+		
+	});
+		
+	function validateComment() {
+		if($("#contentArea").val()==""){
+			alert("评论不能为空。");
+			return false;
+		} else {
+			return true;
+		}
+	}
 </script>
 
 </body>

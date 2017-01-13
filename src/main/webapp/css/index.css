@@ -519,8 +519,7 @@ em, b, i, strong {
     font-family: "宋体";
     color: #707070;
     border-bottom: 1px solid #dbe4e9;
-    padding-bottom: 12px;
-        width: 420px;
+    width: 404px;
     overflow: hidden;
 }
 .m4_first p a {
@@ -571,11 +570,11 @@ em, b, i, strong {
     vertical-align: bottom;
     font-size: 16px;
     white-space: nowrap;
+    line-height: 16px;
 }
 
 .list_com_3 dd {
     overflow: hidden;
-    margin-bottom: 16px;
 }
 .m4_bx2 .list_com_3 dd a.dlimg {
     width: 146px;
@@ -609,6 +608,8 @@ em, b, i, strong {
     float: right;
     color: #707070;
     font-size: 12px;
+    height: 75px;
+    overflow:hidden;
 }
 .c_box4 .right {
     width: 350px;

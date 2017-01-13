@@ -66,9 +66,9 @@ public class NewsController {
 		List<News> technologyNews=newsService.getHomepageByType(2,8);
 		List<News> cartoonNews=newsService.getHomepageByType(3,4);
 		List<News> laughNews=newsService.getHomepageByType(4,4);
-		List<News> creativeLifeNews=newsService.getHomepageByType(5,12);
-		List<News> creativePrductNews=newsService.getHomepageByType(6,12);
-		List<News> creativeDesignNews=newsService.getHomepageByType(7,12);
+		List<News> creativeLifeNews=newsService.getHomepageByType(5,20);
+		List<News> creativePrductNews=newsService.getHomepageByType(6,20);
+		List<News> creativeDesignNews=newsService.getHomepageByType(7,20);
 
 		
 		model.addAttribute("hotNews", hotNews);
@@ -94,9 +94,9 @@ public class NewsController {
 		List<News> laughNews=newsService.getHomepageByType(4,4);
 
 		
-		List<News> businessSay=newsService.getHomepageByType(8,10);
-		List<News> businessNews=newsService.getHomepageByType(9,10);
-		List<News> businessPolicy=newsService.getHomepageByType(10,10);
+		List<News> businessSay=newsService.getHomepageByType(8,20);
+		List<News> businessNews=newsService.getHomepageByType(9,20);
+		List<News> businessPolicy=newsService.getHomepageByType(10,20);
 		
 
 		
@@ -119,10 +119,10 @@ public class NewsController {
 	public String newsPatentList(Page page,Model model) {
 
 
-		List<News> patentNews=newsService.getHomepageByType(11,4);
-		List<News> patentStudy=newsService.getHomepageByType(12,5);
-		List<News> brandNews=newsService.getHomepageByType(13,10);
-		List<News> brandStudy=newsService.getHomepageByType(14,5);	
+		List<News> patentNews=newsService.getHomepageByType(11,20);
+		List<News> patentStudy=newsService.getHomepageByType(12,20);
+		List<News> brandNews=newsService.getHomepageByType(13,20);
+		List<News> brandStudy=newsService.getHomepageByType(14,20);	
 
 		model.addAttribute("patentNews", patentNews);
 		model.addAttribute("patentStudy", patentStudy);
@@ -138,10 +138,12 @@ public class NewsController {
 		List<NewsComment> comments = newsService.getNewsCommentsById(newsId);
 		
 		List<Patent> patents=patentService.getPatents();
+		List<Brand> brands = brandService.getIndexSlideBrands();
 		List<News> newsRand=newsService.getNewsByRand();
 		model.addAttribute("patents", patents);
 		model.addAttribute("comments", comments);
 		model.addAttribute("news", news);
+		model.addAttribute("brands", brands);
 		model.addAttribute("newsRand", newsRand);
 		return "news_preview";
 	}		
@@ -164,10 +166,10 @@ public class NewsController {
 		
 	}
 	
-	@RequestMapping(path="/comment/addNewsComment", method=RequestMethod.GET)
+	@RequestMapping(path="/comment/addNewsComment")
 	public String addNewsComment(String content,int newsId,HttpSession session){
-		int userId = PrincipalUtils.getCurrentUserId();
-		newsService.addNewsComment(content,newsId,userId);
+		//int userId = PrincipalUtils.getCurrentUserId();
+		newsService.addNewsComment(content,newsId,2);
 		return "redirect:/news/newsPreview.html?newsId="+newsId;
 	}
 	
@@ -184,9 +186,11 @@ public class NewsController {
 		List<NewsType> allNewsType=newsService.getAllNewsTypes();
 		model.addAttribute("news", news);
 		model.addAttribute("page", page);
+		model.addAttribute("keyword", searchCondition.getKeyword());
 		model.addAttribute("allNewsType", allNewsType);
-		return "news_list";//需要页面
-		
+
+		return "news_search_list";
+
 	}
 	
 }
