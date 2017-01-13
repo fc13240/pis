@@ -108,10 +108,7 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 		return newsMapper.searchNewsByCount(searchCondition);
 	}
 
-	@Override
-	public List<News> getNewsOrderByClick(int type) {
-		return newsMapper.getNewsOrderByClick(type);
-	}
+	
 
 	@Override
 	public void updateNewsClick(int id) {
@@ -121,6 +118,11 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 	@Override
 	public List<News> getNewsByTypeList(List<Integer> list) {
 		return newsMapper.getNewsByTypeList(list);
+	}
+
+	@Override
+	public List<News> getNewsOrderByClick(List<Integer> list) {
+		return newsMapper.getNewsOrderByClick(list);
 	}
 
 

@@ -50,7 +50,7 @@ public interface NewsMapper {
 	
 	int searchNewsByCount (NewsSearchCondition searchCondition);
 	
-	List<News> getNewsOrderByClick(int type);
+	List<News> getNewsOrderByClick(List<Integer> list);
 	
 	void updateNewsClick(@Param("newsId")int id);
 	

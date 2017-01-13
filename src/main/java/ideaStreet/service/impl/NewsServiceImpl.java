@@ -108,10 +108,6 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.searchNewsByCount(searchCondition);
 	}
 
-	@Override
-	public List<News> getNewsOrderByClick(int type) {
-		return newsDao.getNewsOrderByClick(type);
-	}
 
 	@Override
 	public void updateNewsClick(int id) {
@@ -121,6 +117,11 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public List<News> getNewsByTypeList(List<Integer> list) {
 		return newsDao.getNewsByTypeList(list);
+	}
+
+	@Override
+	public List<News> getNewsOrderByClick(List<Integer> list) {
+		return newsDao.getNewsOrderByClick(list);
 	}
 
 }

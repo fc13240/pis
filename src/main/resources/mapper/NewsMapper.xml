@@ -199,9 +199,12 @@
 			</if>
 		</select>
 		
-		<select id="getNewsOrderByClick" parameterType="int" resultMap="NewsResultMap">
+		<select id="getNewsOrderByClick"  resultMap="NewsResultMap">
 			SELECT n.id,n.title,n.small_img_url,n.keywords,n.publish_time,n.abstract,n.click FROM news n
-			WHERE n.check_status=1 AND news_type=#{type}
+			WHERE n.check_status=1 AND news_type in 
+			<foreach item="item" collection="list" open="(" separator="," close=")">
+				#{item}
+ 			</foreach>
 			ORDER BY click DESC LIMIT 0,10
 		</select>
 		
