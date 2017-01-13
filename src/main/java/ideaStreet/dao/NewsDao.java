@@ -45,4 +45,7 @@ public interface NewsDao {
 	
 	int searchNewsByCount (NewsSearchCondition searchCondition);
 	
+	List<News> getNewsOrderByClick(int type);//获取点击率前十新闻
+	
+	void updateNewsClick(int id); //更新点击率
 }

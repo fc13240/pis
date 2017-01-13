@@ -108,6 +108,16 @@ public class NewsMybatisDao extends SqlSessionDaoSupport implements NewsDao{
 		return newsMapper.searchNewsByCount(searchCondition);
 	}
 
+	@Override
+	public List<News> getNewsOrderByClick(int type) {
+		return newsMapper.getNewsOrderByClick(type);
+	}
+
+	@Override
+	public void updateNewsClick(int id) {
+		newsMapper.updateNewsClick(id);
+	}
+
 
 
 

@@ -133,11 +133,11 @@ public class NewsController {
 
 	@RequestMapping(path="/newsPreview")
 	public String newsPreview(@RequestParam("newsId") int newsId,Model model) {
+		newsService.updateNewsClick(newsId);
 		News news=newsService.getUserNewsById(newsId);
 		List<NewsComment> comments = newsService.getNewsCommentsById(newsId);
 		
 		List<Patent> patents=patentService.getPatents();
-		
 		List<News> newsRand=newsService.getNewsByRand();
 		model.addAttribute("patents", patents);
 		model.addAttribute("comments", comments);
@@ -172,7 +172,7 @@ public class NewsController {
 	}
 	
 	
-	@RequestMapping(path="/searchNews", method=RequestMethod.GET)
+	@RequestMapping(path="/searchNews", method=RequestMethod.GET)//搜索新闻方法，加页面
 	public String searchUserNews(@ModelAttribute("searchCondition") NewsSearchCondition searchCondition, Model model,HttpSession session) {
 		Page page=searchCondition.getPage();
 		if (page.getCurrentPage() <= 0) {
@@ -186,6 +186,7 @@ public class NewsController {
 		model.addAttribute("page", page);
 		model.addAttribute("allNewsType", allNewsType);
 		return "news_list";//需要页面
+		
 	}
 	
 }

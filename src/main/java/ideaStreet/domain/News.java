@@ -20,9 +20,16 @@ public class News {
 	private String smallImgUrl;
 	private int upVote;
 	private int downVote;
+	private int click;
 	
 	
 	
+	public int getClick() {
+		return click;
+	}
+	public void setClick(int click) {
+		this.click = click;
+	}
 	public int getUpVote() {
 		return upVote;
 	}

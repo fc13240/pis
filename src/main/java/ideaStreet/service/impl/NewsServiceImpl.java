@@ -108,4 +108,14 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.searchNewsByCount(searchCondition);
 	}
 
+	@Override
+	public List<News> getNewsOrderByClick(int type) {
+		return newsDao.getNewsOrderByClick(type);
+	}
+
+	@Override
+	public void updateNewsClick(int id) {
+		newsDao.updateNewsClick(id);
+	}
+
 }

@@ -49,4 +49,8 @@ public interface NewsMapper {
 	List<News> searchNewsByPage(NewsSearchCondition searchCondition);
 	
 	int searchNewsByCount (NewsSearchCondition searchCondition);
+	
+	List<News> getNewsOrderByClick(int type);
+	
+	void updateNewsClick(int id);
 }
