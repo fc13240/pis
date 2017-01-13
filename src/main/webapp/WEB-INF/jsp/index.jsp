@@ -268,10 +268,10 @@
 					<h2 class="paihang com_titlebg"></h2>
 
 					<ul class="rank_list">
-						<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="0" end="6">	
+						<c:forEach items="${creativeClickNews}" var="creativeClickNews" varStatus="status" begin="0" end="6">	
 						<li>
 						<span class="r_num num_${status.count}">0${status.count}</span>
-						<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a>
+						<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeClickNews.id}" target="_blank">${creativeClickNews.title}</a>
 						</li>						
 						</c:forEach>
 					</ul>
@@ -399,16 +399,12 @@
 			
 				<div class="hq_ylbg">
 					<h2 class="cy_paihang com_titlebg"></h2>
-
 					<ul class="rank_list">
-					
-						<c:forEach items="${businessPolicy}" var="businessPolicy" varStatus="status" begin="0" end="6">	
+						<c:forEach items="${businessClickNews}" var="businessClickNews" varStatus="status" begin="0" end="6">	
 						<li>
-						<span class="r_num num_${status.count}">0${status.count}</span><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a>
+						<span class="r_num num_${status.count}">0${status.count}</span><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessClickNews.id}" target="_blank">${businessClickNews.title}</a>
 						</li>						
 						</c:forEach>					
-					
-				
 					</ul>
 
 				</div>			

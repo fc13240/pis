@@ -70,6 +70,15 @@ public class NewsController {
 		list.add(6);
 		list.add(7);	
 		List<News> hotNews=newsService.getNewsByTypeList(list);				
+
+		//获取点击率前十新闻		
+		List<Integer> listClick=new ArrayList<>();
+		listClick.add(5);
+		listClick.add(6);
+		listClick.add(7);
+
+		List<News> clickNews=newsService.getNewsOrderByClick(listClick);			
+		model.addAttribute("clickNews", clickNews);		
 		
 		List<News> technologyNews=newsService.getHomepageByType(2,8);
 		List<News> cartoonNews=newsService.getHomepageByType(3,4);
@@ -105,6 +114,14 @@ public class NewsController {
 		list.add(10);	
 		List<News> hotNews=newsService.getNewsByTypeList(list);			
 		
+		//获取点击率前十新闻		
+		List<Integer> listClick=new ArrayList<>();
+		listClick.add(8);
+		listClick.add(9);
+		listClick.add(10);
+
+		List<News> clickNews=newsService.getNewsOrderByClick(listClick);			
+		model.addAttribute("clickNews", clickNews);			
 		
 		List<News> technologyNews=newsService.getHomepageByType(2,8);
 		List<News> cartoonNews=newsService.getHomepageByType(3,4);
@@ -150,6 +167,7 @@ public class NewsController {
 		listClick.add(13);
 		listClick.add(14);
 		List<News> clickNews=newsService.getNewsOrderByClick(listClick);			
+		model.addAttribute("clickNews", clickNews);	
 		
 		List<News> patentNews=newsService.getHomepageByType(11,20);
 		List<News> patentStudy=newsService.getHomepageByType(12,20);

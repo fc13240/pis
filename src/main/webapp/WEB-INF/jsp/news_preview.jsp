@@ -160,7 +160,7 @@
 			<c:forEach items="${patents}" var="patent" varStatus="status">
 				<li>
 				<span class="h_list_tit" style="font-size:14px;">
-					<a href="/patent/detail.html?patentId=${patent.patent_id }" target="_blank">[${patent.patent_type_name }]${patent.patent_name } - ${patent.app_no }</a>
+					<a href="http://r.lotut.com/patent/getPatentDetail.html?patentId=${patent.patent_id}" target="_blank">[${patent.patent_type_name }]${patent.patent_name } - ${patent.app_no }</a>
 				</span> 
 				</li>
 			</c:forEach>			

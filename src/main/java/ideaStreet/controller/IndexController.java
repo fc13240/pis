@@ -91,6 +91,23 @@ public class IndexController {
 		List<News> hotNews=newsService.getNewsByTypeList(list);
 		
 		model.addAttribute("hotNews", hotNews);
+		
+		//获取点击率前十新闻		
+		List<Integer> listClickCreative=new ArrayList<>();
+		listClickCreative.add(5);
+		listClickCreative.add(6);
+		listClickCreative.add(7);
+		List<News> creativeClickNews=newsService.getNewsOrderByClick(listClickCreative);			
+		model.addAttribute("creativeClickNews", creativeClickNews);				
+		
+		List<Integer> listClickBusiness=new ArrayList<>();
+		listClickBusiness.add(8);
+		listClickBusiness.add(9);
+		listClickBusiness.add(10);
+		List<News> businessClickNews=newsService.getNewsOrderByClick(listClickBusiness);			
+		model.addAttribute("businessClickNews", businessClickNews);	
+		
+		
 		model.addAttribute("technologyNews", technologyNews);
 		model.addAttribute("cartoonNews", cartoonNews);
 		model.addAttribute("laughNews", laughNews);

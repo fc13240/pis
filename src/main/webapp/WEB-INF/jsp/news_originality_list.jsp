@@ -114,10 +114,10 @@ $(function(){
 			</div>
 			<div class="col_con">
 				<ul class="rank_list">
-					<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="0" end="6">	
+					<c:forEach items="${clickNews}" var="clickNews" varStatus="status" begin="0" end="6">	
 					<li>
 					<span class="r_num num_${status.count}">0${status.count}</span>
-					<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a>
+					<a href="<s:url value='/news/newsPreview.html?newsId='/>${clickNews.id}" target="_blank">${clickNews.title}</a>
 					</li>						
 					</c:forEach>
 				</ul>
