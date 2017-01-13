@@ -59,7 +59,7 @@ public class IndexController {
 	@RequestMapping(path="/index")
 	public String getPatents(HttpServletRequest req, HttpServletResponse resp,Model model) {
 
-		List<News> hotNews=newsService.getHomepageByType(1,5);
+	//	List<News> hotNews=newsService.getHomepageByType(1,5);
 		List<News> technologyNews=newsService.getHomepageByType(2,8);
 		List<News> cartoonNews=newsService.getHomepageByType(3,2);
 		List<News> laughNews=newsService.getHomepageByType(4,2);
@@ -77,10 +77,18 @@ public class IndexController {
 		List<News> brandStudy=newsService.getHomepageByType(14,5);	
 		
 		//获取多个类型的方法
-		/*List<Integer> list=new ArrayList<>();
+		List<Integer> list=new ArrayList<>();
 		list.add(1);
 		list.add(2);
-		List<News> newss=newsService.getNewsByTypeList(list);*/
+		list.add(5);
+		list.add(6);
+		list.add(7);
+		list.add(8);
+		list.add(9);
+		list.add(10);
+		list.add(11);
+		list.add(13);	
+		List<News> hotNews=newsService.getNewsByTypeList(list);
 		
 		model.addAttribute("hotNews", hotNews);
 		model.addAttribute("technologyNews", technologyNews);

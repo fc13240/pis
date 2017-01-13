@@ -62,11 +62,11 @@ $(function(){
 		
 		<div class="fl tFocus clearfix" id="tFocus">
 			<div id="owl-demo" class="owl-carousel">
-		    	<c:forEach items="${patentNews}" var="patentNews" begin="0" end="5">
-				<a class="item" href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" target="_blank">
-					<img src="<s:url value='${patentNews.smallImgUrl}'/>" alt="">
+		    	<c:forEach items="${hotNews}" var="hotNews" begin="0" end="5">
+				<a class="item" href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">
+					<img src="<s:url value='${hotNews.smallImgUrl}'/>" alt="">
 					<b></b>
-					<span>${patentNews.title}</span>
+					<span>${hotNews.title}</span>
 				</a>	
 				</c:forEach>
 			</div>
@@ -77,18 +77,18 @@ $(function(){
 			</div>
 			<div class="col_con mt10">
 				<div class="news_mod">
-			    	<c:forEach items="${patentNews}" var="patentNews" begin="0" end="0">
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="6" end="6">
 					<div class="news_tit">
 						<span class="tp_block tb_1	" >最新</span>
-						<a href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" target="_blank">${patentNews.title}</a>
+						<a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a>
 					</div>
-					<p class="news_dis">${patentNews.newsAbstract}...</p>	
+					<p class="news_dis">${hotNews.newsAbstract}...</p>	
 					</c:forEach>				
 				</div>
 
 				<ul class="t_n_list mt15" style="margin-top:10px;">
-			    	<c:forEach items="${patentNews}" var="patentNews" begin="0" end="5">
-					<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" target="_blank">${patentNews.title}</a></li>	
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="7" end="12">
+					<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a></li>	
 					</c:forEach>				
 				</ul>
 			</div>

@@ -32,28 +32,28 @@
 				<a href="javascript:void(0);" id="next" class="next"></a>
 			</div>
 			<ul class="tFocus-pic zoom" id="tFocus-pic">
-				<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="0" end="0">	
+				<c:forEach items="${hotNews}" var="hotNews" varStatus="status" begin="0" end="0">	
 				<li style="z-index: 5; opacity: 1;">
 					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a>
+						<a class="s_pic_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.title}.id}" target="_blank">${hotNews.title}</a>
 					</div>
 					<span class="slide_num"><em></em><b>1</b><i>5</i></span>
 					<p class="s_info">
-						${creativeLifeNews.newsAbstract}……
+						${hotNews.newsAbstract}……
 					</p>
-					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}"><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>"  width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
+					<a class="s_pic" target="_blank" title="${hotNews.title}" href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}"><img src="<s:url value='${hotNews.smallImgUrl}'/>"  width="580" height="267" alt="${hotNews.title}"></a>
 				</li>					
 				</c:forEach>									
-				<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" varStatus="status" begin="1" end="4">	
+				<c:forEach items="${hotNews}" var="hotNews" varStatus="status" begin="1" end="4">	
 				<li style="z-index: 0; opacity: 0;">
 					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a>
+						<a class="s_pic_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a>
 					</div>
 					<span class="slide_num"><em></em><b>${status.count+1}</b><i>5</i></span>
 					<p class="s_info">
-						${creativeLifeNews.newsAbstract}……
+						${hotNews.newsAbstract}……
 					</p>
-					<a class="s_pic" target="_blank" title="${creativeLifeNews.title}" href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}"><img src="<s:url value='${creativeLifeNews.smallImgUrl}'/>" width="580" height="267" alt="AirPods 简单开箱：苹果可穿戴设备的未来"></a>
+					<a class="s_pic" target="_blank" title="${hotNews.title}" href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}"><img src="<s:url value='${hotNews.smallImgUrl}'/>" width="580" height="267" alt="${hotNews.title}"></a>
 				</li>						
 				</c:forEach>
 			</ul>
@@ -78,7 +78,7 @@
 			</div>
 			<div class="col_con mt10">
 				<div class="news_mod">
-			    	<c:forEach items="${hotNews}" var="hotNews" begin="0" end="0">
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="5" end="5">
 					<div class="news_tit">
 						<span class="tp_block tb_1	"  target="_blank">头条</span>
 						<a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a>
@@ -87,7 +87,7 @@
 					</c:forEach>				
 				</div>
 				<div class="news_mod mt20">
-			    	<c:forEach items="${hotNews}" var="hotNews" begin="1" end="1">
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="6" end="6">
 					<div class="news_tit">
 						<span class="tp_block tb_4	"  >热点</span>
 						<a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a>
@@ -98,7 +98,7 @@
 
 				</div>
 				<ul class="t_n_list mt15">
-			    	<c:forEach items="${hotNews}" var="hotNews" begin="2" end="4">
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="7" end="9">
 					<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a></li>
 						
 					</c:forEach>				

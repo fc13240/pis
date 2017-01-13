@@ -219,6 +219,6 @@
 			<foreach item="item" collection="list" open="(" separator="," close=")">
 				#{item}
  			</foreach>
-			ORDER BY n.publish_time desc,n.click desc LIMIT 0,10
+			ORDER BY n.publish_time desc,n.click desc LIMIT 0,15
 		</select>
 </mapper>

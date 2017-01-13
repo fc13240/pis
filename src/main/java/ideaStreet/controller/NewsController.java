@@ -1,6 +1,7 @@
 package ideaStreet.controller;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -62,7 +63,14 @@ public class NewsController {
 	
 	@RequestMapping(path="/newsOriginalityList",method=RequestMethod.GET)
 	public String newsOriginalityList(Page page,Model model) {
-		List<News> hotNews=newsService.getHomepageByType(1,5);
+		
+		//获取多个类型的方法
+		List<Integer> list=new ArrayList<>();
+		list.add(5);
+		list.add(6);
+		list.add(7);	
+		List<News> hotNews=newsService.getNewsByTypeList(list);				
+		
 		List<News> technologyNews=newsService.getHomepageByType(2,8);
 		List<News> cartoonNews=newsService.getHomepageByType(3,4);
 		List<News> laughNews=newsService.getHomepageByType(4,4);
@@ -88,7 +96,16 @@ public class NewsController {
 
 	@RequestMapping(path="/newsBusinessList",method=RequestMethod.GET)
 	public String newsBusinessList(Page page,Model model) {
-		List<News> hotNews=newsService.getHomepageByType(1,5);
+		
+		
+		//获取多个类型的方法
+		List<Integer> list=new ArrayList<>();
+		list.add(8);
+		list.add(9);
+		list.add(10);	
+		List<News> hotNews=newsService.getNewsByTypeList(list);			
+		
+		
 		List<News> technologyNews=newsService.getHomepageByType(2,8);
 		List<News> cartoonNews=newsService.getHomepageByType(3,4);
 		List<News> laughNews=newsService.getHomepageByType(4,4);
@@ -118,12 +135,20 @@ public class NewsController {
 	@RequestMapping(path="/newsPatentList",method=RequestMethod.GET)
 	public String newsPatentList(Page page,Model model) {
 
-
+		//获取多个类型的方法
+		List<Integer> list=new ArrayList<>();
+		list.add(11);
+		list.add(12);
+		list.add(13);
+		list.add(14);
+		List<News> hotNews=newsService.getNewsByTypeList(list);	
+		
 		List<News> patentNews=newsService.getHomepageByType(11,20);
 		List<News> patentStudy=newsService.getHomepageByType(12,20);
 		List<News> brandNews=newsService.getHomepageByType(13,20);
 		List<News> brandStudy=newsService.getHomepageByType(14,20);	
 
+		model.addAttribute("hotNews", hotNews);
 		model.addAttribute("patentNews", patentNews);
 		model.addAttribute("patentStudy", patentStudy);
 		model.addAttribute("brandNews", brandNews);
