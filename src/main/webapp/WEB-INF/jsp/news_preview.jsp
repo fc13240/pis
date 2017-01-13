@@ -153,8 +153,8 @@
 		
 	</div>
 <!-- left end -->
-	<div class="nr_cont2 F_Right">
-		<div class="box">
+	<div class="nr_cont2 F_Right" style="margin-top:0px;">
+		<div class="box" style="margin-top:0px;">
 			<h2><a href="#" class="a1 box_hover">专利推荐</a></h2>
 			<ul class="h_second_list">
 			<c:forEach items="${patents}" var="patent" varStatus="status">
