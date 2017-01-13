@@ -52,5 +52,7 @@ public interface NewsMapper {
 	
 	List<News> getNewsOrderByClick(int type);
 	
-	void updateNewsClick(int id);
+	void updateNewsClick(@Param("newsId")int id);
+	
+	List<News> getNewsByTypeList(List<Integer> list);
 }

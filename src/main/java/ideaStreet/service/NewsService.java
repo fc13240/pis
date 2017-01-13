@@ -47,4 +47,6 @@ public interface NewsService {
 	List<News> getNewsOrderByClick(int type);//获取点击率前十新闻
 	
 	void updateNewsClick(int id); //更新点击率
+	
+	List<News> getNewsByTypeList(List<Integer> list);
 }

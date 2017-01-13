@@ -2,6 +2,7 @@ package ideaStreet.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -74,6 +75,12 @@ public class IndexController {
 		List<News> patentStudy=newsService.getHomepageByType(12,5);
 		List<News> brandNews=newsService.getHomepageByType(13,10);
 		List<News> brandStudy=newsService.getHomepageByType(14,5);	
+		
+		//获取多个类型的方法
+		/*List<Integer> list=new ArrayList<>();
+		list.add(1);
+		list.add(2);
+		List<News> newss=newsService.getNewsByTypeList(list);*/
 		
 		model.addAttribute("hotNews", hotNews);
 		model.addAttribute("technologyNews", technologyNews);

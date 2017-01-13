@@ -48,4 +48,6 @@ public interface NewsDao {
 	List<News> getNewsOrderByClick(int type);//获取点击率前十新闻
 	
 	void updateNewsClick(int id); //更新点击率
+	
+	List<News> getNewsByTypeList(List<Integer> list);//输入多个新闻类型，获取点击及发布时间排行前10
 }

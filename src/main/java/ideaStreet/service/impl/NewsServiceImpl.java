@@ -118,4 +118,9 @@ public class NewsServiceImpl implements NewsService {
 		newsDao.updateNewsClick(id);
 	}
 
+	@Override
+	public List<News> getNewsByTypeList(List<Integer> list) {
+		return newsDao.getNewsByTypeList(list);
+	}
+
 }

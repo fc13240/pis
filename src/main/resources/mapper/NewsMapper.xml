@@ -208,4 +208,14 @@
 		<update id="updateNewsClick" parameterType="int">
 			update news set click=click+1 where id=${newsId}
 		</update>
+		
+		
+		<select id="getNewsByTypeList"  resultMap="NewsResultMap">
+			SELECT n.id,n.title,n.small_img_url,n.keywords,n.publish_time,n.abstract,n.click FROM news n
+			WHERE n.check_status=1 AND news_type in
+			<foreach item="item" collection="list" open="(" separator="," close=")">
+				#{item}
+ 			</foreach>
+			ORDER BY n.publish_time desc,n.click desc LIMIT 0,10
+		</select>
 </mapper>

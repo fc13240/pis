@@ -24,6 +24,30 @@ public class News {
 	
 	
 	
+	
+	
+	public News() {
+	}
+	public News(int id, NewsType newsType, User user, String keywords, String author, String title,
+			Timestamp createTime, Date publishTime, Date updateTime, String source, String content, String newsAbstract,
+			String smallImgUrl, int upVote, int downVote, int click) {
+		this.id = id;
+		this.newsType = newsType;
+		this.user = user;
+		this.keywords = keywords;
+		this.author = author;
+		this.title = title;
+		this.createTime = createTime;
+		this.publishTime = publishTime;
+		this.updateTime = updateTime;
+		this.source = source;
+		this.content = content;
+		this.newsAbstract = newsAbstract;
+		this.smallImgUrl = smallImgUrl;
+		this.upVote = upVote;
+		this.downVote = downVote;
+		this.click = click;
+	}
 	public int getClick() {
 		return click;
 	}
