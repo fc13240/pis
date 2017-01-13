@@ -187,10 +187,7 @@ public class NewsController {
 		model.addAttribute("page", page);
 		model.addAttribute("keyword", searchCondition.getKeyword());
 		model.addAttribute("allNewsType", allNewsType);
-<<<<<<< HEAD
 
-=======
->>>>>>> 37aad19b00770ff541a163d3412e300d84a9123a
 		return "news_search_list";
 
 	}
