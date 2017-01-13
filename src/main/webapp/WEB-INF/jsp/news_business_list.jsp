@@ -75,11 +75,11 @@ $(function(){
 			
 		<div class="fl tFocus clearfix" id="tFocus">
 			<div id="owl-demo" class="owl-carousel">
-		    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="5">
-				<a class="item" href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">
-					<img src="<s:url value='${businessSay.smallImgUrl}'/>" alt="">
+		    	<c:forEach items="${hotNews}" var="hotNews" begin="0" end="5">
+				<a class="item" href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">
+					<img src="<s:url value='${hotNews.smallImgUrl}'/>" alt="">
 					<b></b>
-					<span>${businessSay.title}</span>
+					<span>${hotNews.title}</span>
 				</a>	
 				</c:forEach>
 			</div>
@@ -91,23 +91,19 @@ $(function(){
 			</div>
 			<div class="col_con mt10">
 				<div class="news_mod">
-			    	<c:forEach items="${hotNews}" var="hotNews" begin="0" end="0">
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="6" end="6">
 					<div class="news_tit">
 						<span class="tp_block tb_1	" >最新</span>
 						<a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a>
 					</div>
-					<p class="news_dis">${hotNews.newsAbstract}...</p>
-						
+					<p class="news_dis">${hotNews.newsAbstract}...</p>			
 					</c:forEach>				
-
 				</div>
 
 				<ul class="t_n_list mt15" style="margin-top:10px;">
-			    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="0" end="5">
-					<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></li>
-						
+			    	<c:forEach items="${hotNews}" var="hotNews" begin="7" end="12">
+					<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a></li>
 					</c:forEach>				
-
 				</ul>
 			</div>
 		</div>
@@ -116,7 +112,6 @@ $(function(){
 				<h3 class="fl col_tit"><a href="" target="_blank">热门排行</a></h3>
 			</div>
 			<div class="col_con">
-
 				<ul class="rank_list">
 					<c:forEach items="${businessSay}" var="businessSay" varStatus="status" begin="0" end="6">	
 					<li>
