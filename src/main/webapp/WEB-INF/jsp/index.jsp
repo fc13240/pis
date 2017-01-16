@@ -35,7 +35,7 @@
 				<c:forEach items="${hotNews}" var="hotNews" varStatus="status" begin="0" end="0">	
 				<li style="z-index: 5; opacity: 1;">
 					<div class="s_tit_wrap">
-						<a class="s_pic_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.title}.id}" target="_blank">${hotNews.title}</a>
+						<a class="s_pic_tit" href="<s:url value='/news/newsPreview.html?newsId='/>${hotNews.id}" target="_blank">${hotNews.title}</a>
 					</div>
 					<span class="slide_num"><em></em><b>1</b><i>5</i></span>
 					<p class="s_info">

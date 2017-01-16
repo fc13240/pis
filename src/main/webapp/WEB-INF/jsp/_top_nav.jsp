@@ -17,7 +17,7 @@
 	<form class="form-inline" action="<s:url value='/news/searchNews.html'/>" method="get" target="_blank">
 		<input type="hidden" id="default.page.nextPage" name="page.currentPage" value="1"/>
 		<div class="mc-field-group" style="float:left;width:600px;margin-left:100px;margin-top:15px">
-	       <input type="text" placeholder="关键字" name="keyword" class="text" id="mce-EMAIL">
+	       <input type="text" placeholder="关键字" name="keyword" class="text" id="mce-EMAIL" style="padding-left:4px;">
 	       <input type="submit" value="搜索" id="mc-embedded-subscribe" class="button">
 	    </div>
     </form>
