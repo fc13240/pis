@@ -69,28 +69,54 @@
 			<div style="margin-left:20px;height:60px;">
 			 
 			<c:if test="${page.totalPages > 1}"> 
-				<div class="col-lg-12"> 
-					<a>共 ${page.totalPages} 页 </a>
-					<a>第 ${page.currentPage} 页 </a>
-					<a href="?typeId=${newsType.typeId }&currentPage=1">首页</a>
-				  <c:choose>
-			        <c:when test="${page.currentPage - 1 > 0}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.currentPage - 1}">上一页</a> </c:when>
-			        <c:when test="${page.currentPage - 1 <= 0}"> <a href="?typeId=${newsType.typeId }&currentPage=1">上一页</a> </c:when>
-			      </c:choose>
-			      <c:choose>
-			        <c:when test="${page.totalPages==0}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.currentPage}">下一页</a> </c:when>
-			        <c:when test="${page.currentPage + 1 < page.totalPages}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.currentPage+1}">下一页</a> </c:when>
-			        <c:when test="${page.currentPage + 1 >= page.totalPages}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.totalPages}">下一页</a> </c:when>
-			      </c:choose>
-			      <c:choose>
-			        <c:when test="${page.totalPages==0}"> <a href="?typeId=${newsType.typeId }&currentPage=${page.currentPage}">尾页</a> </c:when>
-			        <c:otherwise> <a href="?typeId=${newsType.typeId }&currentPage=${page.totalPages}">尾页</a> </c:otherwise>
-			      </c:choose>
-			     
-			      <a><input type="text" id="page.pageNo" style="width:30px;height:14px" name="currentPage" onKeyDown="gotoPageForEnter(event)"/></a>
-			      <a href="javascript:void;" onClick="javascript:gotoPage()">跳转</a> 
-		       </div>
-		    </c:if>
+		<c:if test="${searchCondition==null }">
+			<div class="col-lg-12"> 
+				<span>共 ${page.totalPages} 页 </span>
+				<span>第 ${page.currentPage} 页 </span>
+				<a href="?currentPage=1">首页</a>
+			  <c:choose>
+		        <c:when test="${page.currentPage - 1 > 0}"> <a href="?currentPage=${page.currentPage - 1}">上一页</a> </c:when>
+		        <c:when test="${page.currentPage - 1 <= 0}"> <a href="?currentPage=1">上一页</a> </c:when>
+		      </c:choose>
+		      <c:choose>
+		        <c:when test="${page.totalPages==0}"> <a href="?currentPage=${page.currentPage}">下一页</a> </c:when>
+		        <c:when test="${page.currentPage + 1 < page.totalPages}"> <a href="?currentPage=${page.currentPage+1}">下一页</a> </c:when>
+		        <c:when test="${page.currentPage + 1 >= page.totalPages}"> <a href="?currentPage=${page.totalPages}">下一页</a> </c:when>
+		      </c:choose>
+		      <c:choose>
+		        <c:when test="${page.totalPages==0}"> <a href="?currentPage=${page.currentPage}">尾页</a> </c:when>
+		        <c:otherwise> <a href="?currentPage=${page.totalPages}">尾页</a> </c:otherwise>
+		      </c:choose>
+		     
+		      <a><input type="text" id="page.pageNo" style="width:30px;height:14px" name="currentPage" onKeyDown="gotoPageForEnter(event)"/></a>
+		      <a href="javascript:void;" onClick="javascript:gotoPage()">跳转</a> 
+	       </div>
+		
+		</c:if>
+		<c:if test="${searchCondition!=null }">
+			<div class="col-lg-12"> 
+				<a>共 ${page.totalPages} 页 </a>
+				<a>第 ${page.currentPage} 页 </a>
+				<a href="?page.currentPage=1&${searchCondition}">首页</a>
+			  <c:choose>
+		        <c:when test="${page.currentPage - 1 > 0}"> <a href="?page.currentPage=${page.currentPage - 1}&${searchCondition}">上一页</a> </c:when>
+		        <c:when test="${page.currentPage - 1 <= 0}"> <a href="?page.currentPage=1">上一页</a> </c:when>
+		      </c:choose>
+		      <c:choose>
+		        <c:when test="${page.totalPages==0}"> <a href="?page.currentPage=${page.currentPage}&${searchCondition}">下一页</a> </c:when>
+		        <c:when test="${page.currentPage + 1 < page.totalPages}"> <a href="?page.currentPage=${page.currentPage+1}&${searchCondition}">下一页</a> </c:when>
+		        <c:when test="${page.currentPage + 1 >= page.totalPages}"> <a href="?page.currentPage=${page.totalPages}&${searchCondition}">下一页</a> </c:when>
+		      </c:choose>
+		      <c:choose>
+		        <c:when test="${page.totalPages==0}"> <a href="?page.currentPage=${page.currentPage}&${searchCondition}">尾页</a> </c:when>
+		        <c:otherwise> <a href="?page.currentPage=${page.totalPages}&${searchCondition}">尾页</a> </c:otherwise>
+		      </c:choose>
+		     
+		      <a><input type="text" id="page.pageNo" style="width:30px;height:14px" name="page.currentPage" onKeyDown="gotoPageForEnter(event)"/></a>
+		      <a href="javascript:void;" onClick="javascript:gotoPage()">跳转</a> 
+	       </div>
+       </c:if>
+    </c:if>
 			</div>
 			
 		</div>	
@@ -116,11 +142,12 @@
 			<h2><a href="#" class="a1 box_hover">商标推荐</a></h2>	
 			<ul class="good-list-item">
     			<c:forEach items="${brands}" var="brand" varStatus="status">
+    			<c:if test="${status.count%2 == 1 }">
 		    	<li>
-				 <dl>
+				 <div style="position:absolute;">
 				    <dd class="pic"> 
 				   		<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank">
-							<div style="position: relative;width:192px;height:154px;">   
+							<div style="position: relative;width:165px;height:145px;">   
 							<c:choose>
 							<c:when test="${not empty brand.imageUrl }">
 								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='${brand.imageUrl }'/>"/>
@@ -139,8 +166,37 @@
 						</div> 
 						<div class="num" style="float:left;">¥${brand.price }</div>
 				 	</dt>
-				</dl>
-		      </li>
+				</div>
+				</li>
+				</c:if>
+				<c:if test="${status.count%2 == 0 }">
+				<li>
+				 <div style="position:relative;left:170px;">
+				    <dd class="pic"> 
+				   		<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank">
+							<div style="position: relative;width:165px;height:145px;">   
+							<c:choose>
+							<c:when test="${not empty brand.imageUrl }">
+								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='${brand.imageUrl }'/>"/>
+							</c:when>
+							<c:otherwise>
+								<img onerror="javascript:this.src='<s:url value="/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg"/>'" width="100%" height="100%" no-repeat src="<s:url value='/images/brands_img/${brand.brandCategory.categoryId}_imagemagick_small.jpg'/>"/>
+							</c:otherwise>
+							</c:choose> 
+							<span style="position: absolute;font-family:Microsoft YaHei;font-size:20px;top: 60px;width:100%;left:0;z-index:1;text-align: center;">${brand.name }</span>
+				   			</div>
+						</a> 
+					</dd>
+					<dt class="name"> 
+						<div style="width:110px;float:left;">
+							<a href="http://r.lotut.com/brand/getbrandDetail.html?brandId=${brand.id }" target="_blank" title="${brand.name }">${brand.name }</a>
+						</div> 
+						<div class="num" style="float:left;">¥${brand.price }</div>
+				 	</dt>
+				</div>
+				</li>
+				</c:if>
+
 		      </c:forEach>
     		</ul>				
 		</div>			
@@ -175,8 +231,12 @@
 			return;
 		}
 		
-		var url = "<s:url value='/news/newsList.html'/>?currentPage=" + pageNo + "&typeId=" + ${newsType.typeId };
+		var url = "<s:url value='/news/searchNews.html'/>?currentPage=" + pageNo;
 		
+		<c:if test="${searchCondition!=null}">
+		
+		url="<s:url value='/news/searchNews.html'/>?page.currentPage=" + pageNo+"&${searchCondition}";
+		</c:if>
 		
 		location.href = url
 		

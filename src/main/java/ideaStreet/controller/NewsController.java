@@ -234,10 +234,15 @@ public class NewsController {
 		int totalCount=newsService.searchNewsByCount(searchCondition);
 		page.setTotalRecords(totalCount);
 		List<NewsType> allNewsType=newsService.getAllNewsTypes();
+		List<Patent> patents = patentService.getPatents();
+		List<Brand> brands = brandService.getIndexSlideBrands();
 		model.addAttribute("news", news);
 		model.addAttribute("page", page);
 		model.addAttribute("keyword", searchCondition.getKeyword());
+		model.addAttribute("searchCondition", searchCondition);
 		model.addAttribute("allNewsType", allNewsType);
+		model.addAttribute("patents", patents);
+		model.addAttribute("brands", brands);
 		return "news_search_list";
 	}
 	
