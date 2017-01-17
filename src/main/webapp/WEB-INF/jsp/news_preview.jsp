@@ -241,7 +241,6 @@
 <script type="text/javascript">
 	$(function() {
 			$("#contentArea").val('');
-		
 	});
 		
 	function validateComment() {

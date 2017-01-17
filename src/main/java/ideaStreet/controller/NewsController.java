@@ -224,8 +224,6 @@ public class NewsController {
 		newsService.addNewsComment(content,newsId,2);
 		return "redirect:/news/newsPreview.html?newsId="+newsId;
 	}
-	
-	
 	@RequestMapping(path="/searchNews", method=RequestMethod.GET)//搜索新闻方法，加页面
 	public String searchUserNews(@ModelAttribute("searchCondition") NewsSearchCondition searchCondition, Model model,HttpSession session) {
 		Page page=searchCondition.getPage();
@@ -240,9 +238,7 @@ public class NewsController {
 		model.addAttribute("page", page);
 		model.addAttribute("keyword", searchCondition.getKeyword());
 		model.addAttribute("allNewsType", allNewsType);
-
 		return "news_search_list";
-
 	}
 	
 }
