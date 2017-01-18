@@ -467,6 +467,7 @@ em, b, i, strong {
     height: 100px;
     overflow: hidden;
     vertical-align: bottom;
+        list-style: none;
 }
 .list_com_tw li span.p {
     width: 118px;
