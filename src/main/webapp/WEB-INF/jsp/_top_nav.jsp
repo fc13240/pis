@@ -8,7 +8,9 @@
     </div>
 </div>
 
-
+<div style="position: fixed;z-index: 99999; left:20px; top:0px; width:100px; height:100px;">
+<img src="<s:url value='/img/logo_long.png'/>" width="80px;">
+</div>
 <div class="fx_logo clearfix">
 	<div class="logo" style="float:left;">
     	<a href="<s:url value='/index.html'/>"><img src="<s:url value='/images/logo.png'/>" alt="创意街"></a>

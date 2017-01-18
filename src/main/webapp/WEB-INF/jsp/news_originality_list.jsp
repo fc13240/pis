@@ -59,8 +59,8 @@ $(function(){
 <div class="container w1200 ma">
 	<dl class="daohang">
 	<dd> <span><a href="<s:url value='/news/newsOriginalityList.html'/>" style="margin-left:0px;">创意街</a> &gt;&gt; </span> 
-		<a href="<s:url value='/news/newsList.html?typeId=3'/>" target="_blank">漫画西游</a>| 
-		<a href="<s:url value='/news/newsList.html?typeId=4'/>" target="_blank">爆笑西游</a>| 
+		<%-- <a href="<s:url value='/news/newsList.html?typeId=3'/>" target="_blank">漫画西游</a>| 
+		<a href="<s:url value='/news/newsList.html?typeId=4'/>" target="_blank">爆笑西游</a>|  --%>
 		<a href="<s:url value='/news/newsList.html?typeId=5'/>" target="_blank">创意生活</a>| 
 		<a href="<s:url value='/news/newsList.html?typeId=6'/>" target="_blank">创意产品</a>| 
 		<a href="<s:url value='/news/newsList.html?typeId=7'/>" target="_blank">创意设计</a>| 
@@ -124,7 +124,7 @@ $(function(){
 			</div>
 		</div>
 	</div>
-	<div class="main_1 mt25 clearfix">
+	<%-- <div class="main_1 mt25 clearfix">
 		
 		<div class="m_b_bt">
 			<b><a href="<s:url value='/news/newsList.html?typeId=3'/>" target="_blank">漫画西游</a></b>
@@ -163,7 +163,7 @@ $(function(){
 			</ul>
 		</div>	
 				
-	</div>
+	</div> --%>
 <!--  -->
 	<div class="main_1 mt25 clearfix">
 		<div class="m_b_bt">
