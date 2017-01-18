@@ -250,9 +250,9 @@
 						<c:forEach items="${creativeLifeNews}" var="creativeLifeNews" begin="6" end="6">	
 						<div class="cc clearfix">
 							<span class="r"><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
-							<span class="l"><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></span>									
+							<span class="l" style="height:60px;overflow: hidden;"><a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}" target="_blank">${creativeLifeNews.title}</a></span>									
 						</div>
-						<div class="intro com_a_color">${creativeLifeNews.newsAbstract}..<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}">[详细]</a></div>
+						<div class="intro com_a_color" style="height:40px;overflow: hidden;">${creativeLifeNews.newsAbstract}..<a href="<s:url value='/news/newsPreview.html?newsId='/>${creativeLifeNews.id}">[详细]</a></div>
 						</c:forEach>
 						<!---->
 						<ul class="list_com_4" style="margin-top:18px;">
@@ -383,9 +383,9 @@
 						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="6" end="6">	
 						<div class="cc clearfix">
 							<span class="r"><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
-							<span class="l"><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></span>									
+							<span class="l" style="height:60px;overflow: hidden;"><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></span>									
 						</div>
-						<div class="intro com_a_color">${businessPolicy.newsAbstract}..<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}">[详细]</a></div>
+						<div class="intro com_a_color" style="height:40px;overflow: hidden;">${businessPolicy.newsAbstract}..<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}">[详细]</a></div>
 						</c:forEach>
 						<!---->
 						<ul class="list_com_4">
