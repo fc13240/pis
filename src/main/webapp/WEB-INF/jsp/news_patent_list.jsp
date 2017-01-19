@@ -8,9 +8,9 @@
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>创业服务——龙图腾 </title>
-<meta name="keywords" content="科技门户" />
-<meta name="description" content="科技门户" />
+<title>专利商标——龙图腾 </title>
+<meta name="keywords" content="专利商标、创意设计、创意街、龙图腾专利商标、科技门户" />
+<meta name="description" content="专利商标、创意设计、创意街、龙图腾专利商标、科技门户" />
 <meta itemprop="name" content="" />
 <meta http-equiv="cache-control" content="no-transform">
 <link rel="shortcut icon" href="http://www.lotut.com/favicon.ico" type="image/x-icon" />
