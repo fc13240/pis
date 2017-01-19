@@ -299,14 +299,12 @@
 			<div class="left">
 				<div class="c4_datu">
 					<!---->
-
 			    	<c:forEach items="${businessSay}" var="businessSay" begin="0" end="0">
 					<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">
 						<img src="<s:url value='${businessSay.smallImgUrl}'/>" width="360" height="260">
 						<b></b>
 						<span>${businessSay.title}</span>
 					</a>					
-
 					</c:forEach>					
 					<!---->
 				</div>
@@ -315,7 +313,6 @@
 					<a href="<s:url value='/news/newsList.html?typeId=8'/>"><h4 class="com_ltred">创业者说</h4></a>
 					<ul class="list_com_tw">
 						<!---->
-
 			    	<c:forEach items="${businessSay}" var="businessSay" begin="1" end="3">
 						<li>
 							<span class="p"><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank"><img src="<s:url value='${businessSay.smallImgUrl}'/>" width="118" height="82"></a></span>
@@ -324,10 +321,10 @@
 								<p><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessSay.id}" target="_blank">${businessSay.newsAbstract}[详细]</a></p>
 						  </span>
 						</li>					
-					</c:forEach>						
-						
+					</c:forEach>							
 					</ul>
-				</div>				
+				</div>	
+							
 			</div>
 			<div class="mid">
 				<div class="m4_first">
@@ -339,11 +336,9 @@
 
 					<!---->
 					<ul class="list_com">
-						<!---->
 				    	<c:forEach items="${businessPolicy}" var="businessPolicy" begin="1" end="5">	
 						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></li>									
 						</c:forEach>						
-
 					</ul>
 				</div>
 				<div class="m4_bx2">
@@ -351,9 +346,7 @@
 						<h4 class="com_ltred">创业新闻</h4>
 					</a>	
 					<dl class="list_com_3">
-
 						<!---->
-						
 			    	<c:forEach items="${businessNews}" var="businessNews" begin="0" end="0">		
 						<dt><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" target="_blank">${businessNews.title}</a></dt>
 						<dd>
@@ -361,26 +354,20 @@
 							<a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" class="dlintro" target="_blank">${businessNews.newsAbstract}...[详细]</a>
 						</dd>										
 					</c:forEach>
-
-
 						<!---->
-
 					</dl>
 					<ul class="list_com">
-
 			    	<c:forEach items="${businessNews}" var="businessNews" begin="1" end="4">		
 						<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessNews.id}" target="_blank">${businessNews.title}</a></li>										
 					</c:forEach>						
 					</ul>
 				</div>
-			
 			</div>
 			<div class="right">
 				<div class="hq_hqqq">
 					<!--环-->
 					<h2 class="com_titlebg zhengce"><a href="<s:url value='/news/newsList.html?typeId=10'/>" target="_blank">更多</a></h2>
 					<div class="pdlf8">
-						<!---->
 						<c:forEach items="${businessPolicy}" var="businessPolicy" begin="6" end="6">	
 						<div class="cc clearfix">
 							<span class="r"><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank"><img src="<s:url value='/images/af3054f5c90e3cbcf000e9e2a7f03dc1.jpg'/>" width="86" height="82"></a></span>
@@ -390,7 +377,6 @@
 						</c:forEach>
 						<!---->
 						<ul class="list_com_4">
-							<!---->
 							<c:forEach items="${businessPolicy}" var="businessPolicy" begin="7" end="8">
 							<li><a href="<s:url value='/news/newsPreview.html?newsId='/>${businessPolicy.id}" target="_blank">${businessPolicy.title}</a></li>
 							</c:forEach>
@@ -407,16 +393,12 @@
 						</li>						
 						</c:forEach>					
 					</ul>
-
 				</div>			
-			
 			</div>
 			<div style="clear:both;"></div>
 		</div>
 	</div>
-<!---->
-
-	
+<!---->	
 	<div class="main_1 mt25 clearfix">
 	
 		<div class="title">
@@ -432,9 +414,7 @@
 		</div>	
 		
 		<div class="images_box">
-
 	    	<c:forEach items="${patentNews}" var="patentNews">
-
 			<div class="z_box">
 				 <a href="<s:url value='/news/newsPreview.html?newsId='/>${patentNews.id}" target="_blank">
 				<img alt="${patentNews.title}" src="<s:url value='${patentNews.smallImgUrl}'/>" width="280" height="280">
@@ -442,13 +422,11 @@
 				</a>
 			</div>					
 			</c:forEach>	
-
 			<div style="clear:both;"></div>		
 		</div>
 				
 		<div class="c_box4 clearfix">
 			<div class="left">
-
 				<div class="c4_zgjq">
 					<a href="<s:url value='/news/newsList.html?typeId=12'/>">
 						<h4 class="com_ltred">专利学习</h4>
@@ -469,8 +447,7 @@
 						</li>											
 						</c:forEach>						
 					</ul>
-				</div>
-							
+				</div>			
 			</div>
 			<div class="mid">
 
@@ -479,7 +456,6 @@
 						<h4 class="com_ltred">商标学习</h4>
 					</a>
 					<ul class="list_com_tw">
-						<!---->
 				    	<c:forEach items="${brandStudy}" var="brandStudy">						
 						<li>
 							<span class="p">
@@ -499,7 +475,6 @@
 			<div class="right">
 
 				<div class="hq_hqqq">
-	
 					<a href="<s:url value='/news/newsList.html?typeId=13'/>">
 						<h4 class="com_ltred">商标资讯</h4>
 					</a>					
@@ -529,18 +504,13 @@
 						</ul>
 					</div>
 				</div>		
-			
 			</div>
 			<div style="clear:both;"></div>
 		</div>
 	</div>	
-	
-		
-
 </div>
 
 <%@ include file="_footer.jsp"%> 
-
     <script type="text/javascript" src="<s:url value='/js/jquery-1.7.2.min.js'/>"></script>
     <script type="text/javascript" src="<s:url value='/js/index.js'/>"></script>
     <script>

@@ -10,8 +10,8 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>${news.title}——龙图腾 </title>
-<meta name="keywords" content="科技门户" />
-<meta name="description" content="科技门户" />
+<meta name="keywords" content="${news.keywords }" />
+<meta name="description" content="${news.newsAbstract}" />
 <meta itemprop="name" content="" />
 <meta http-equiv="cache-control" content="no-transform">
 <link rel="shortcut icon" href="http://www.lotut.com/favicon.ico" type="image/x-icon" />
