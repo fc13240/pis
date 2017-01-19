@@ -5,6 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<meta name="baidu-site-verification" content="J9vVHbIMTr" />
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
