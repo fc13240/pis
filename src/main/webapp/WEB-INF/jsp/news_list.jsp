@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>创意街——龙图腾 </title>
+<title>${newsType.typeName }——龙图腾 </title>
 <meta name="keywords" content="科技门户" />
 <meta name="description" content="科技门户" />
 <meta itemprop="name" content="" />
