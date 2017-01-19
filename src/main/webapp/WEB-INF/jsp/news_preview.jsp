@@ -10,7 +10,7 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>${news.title}——龙图腾 </title>
-<meta name="keywords" content="${news.keywords }" />
+<meta name="keywords" content="${news.keywords } 专利商标、创意设计、创意街 " />
 <meta name="description" content="${news.newsAbstract}" />
 <meta itemprop="name" content="" />
 <meta http-equiv="cache-control" content="no-transform">
