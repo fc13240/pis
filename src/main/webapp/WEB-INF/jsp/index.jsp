@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="renderer" content="webkit">
+<!-- <meta name="renderer" content="webkit"> -->
+<meta name="baidu-site-verification" content="Vq6t0pWr6Z" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>龙图腾——创意门户 </title>
 <meta name="keywords" content="科技门户" />
