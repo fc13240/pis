@@ -30,7 +30,6 @@ import ideaStreet.domain.Patent;
 import ideaStreet.domain.User;
 import ideaStreet.service.ArticleService;
 import ideaStreet.service.NewsService;
-import ideaStreet.service.PatentSearchService;
 import ideaStreet.service.PatentService;
 import ideaStreet.service.UserService;
 import ideaStreet.util.WeixinMessageDigest;
@@ -42,17 +41,15 @@ public class IndexController {
 	private PatentService patentService;
 	private NewsService newsService;
 	private ArticleService articleService;
-	private PatentSearchService patentSearchService;
 	private UserService userService;
 	private DatabaseAuthProvider databaseAuthDao;
 	
 	@Autowired
-	public IndexController(PatentService patentService,NewsService newsService,PatentSearchService patentSearchService,
+	public IndexController(PatentService patentService,NewsService newsService,
 						   ArticleService articleService,UserService userService,DatabaseAuthProvider databaseAuthDao) {
 		this.patentService = patentService;
 		this.newsService=newsService;
 		this.articleService=articleService;
-		this.patentSearchService=patentSearchService;
 		this.userService=userService;
 		this.databaseAuthDao=databaseAuthDao;
 	}

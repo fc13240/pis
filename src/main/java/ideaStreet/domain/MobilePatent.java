@@ -4,13 +4,11 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
-import org.bson.types.ObjectId;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class MobilePatent {
 	private long patentId;
-	private ObjectId objectId;
 	private String appNo;
 	private String name;
 	private String publishNo;
@@ -35,12 +33,7 @@ public class MobilePatent {
 	public void setPatentId(long patentId) {
 		this.patentId = patentId;
 	}
-	public ObjectId getObjectId() {
-		return objectId;
-	}
-	public void setObjectId(ObjectId objectId) {
-		this.objectId = objectId;
-	}
+
 	public String getAppNo() {
 		return appNo;
 	}

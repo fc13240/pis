@@ -2,10 +2,8 @@ package ideaStreet.domain;
 
 import java.util.Date;
 
-import org.bson.types.ObjectId;
 
 public class Patent {
-	private ObjectId id;
 	private int patent_id;
 	private int  price;
 	private String patent_name;
@@ -29,16 +27,6 @@ public class Patent {
 	
 	
 	
-	
-	public ObjectId getId() {
-		return id;
-	}
-
-
-
-	public void setId(ObjectId id) {
-		this.id = id;
-	}
 
 
 
