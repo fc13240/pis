@@ -10,6 +10,8 @@
 	<http pattern="/static/**" security="none" />
 
 	<http use-expressions="true">
+	<intercept-url pattern="/contentImg/**" access="permitAll"/>
+		<intercept-url pattern="/smallImg/**" access="permitAll"/>
 		<intercept-url pattern="/loginForm.html" access="isAnonymous()"/>
 		<intercept-url pattern="/user/registerForm.html" access="isAnonymous()"/>
 		<intercept-url pattern="/user/register.html" access="isAnonymous()"/>

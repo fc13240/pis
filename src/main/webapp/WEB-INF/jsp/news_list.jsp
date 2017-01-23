@@ -10,14 +10,10 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>${newsType.typeName }——龙图腾 </title>
-<<<<<<< HEAD
+
 <meta name="keywords" content="${newsType.typeName }、专利商标、创意设计、创意街、龙图腾专利商标、科技门户" />
 <meta name="description" content="${newsType.typeName }、专利商标、创意设计、创意街、龙图腾专利商标、科技门户" />
-=======
-<meta name="keywords" content="科技门户" />
-<meta name="description" content="科技门户" />
-<meta itemprop="name" content="" />
->>>>>>> 70b30573a7c24bd8986f549c9f1dc43c8eb3ff3a
+
 <meta http-equiv="cache-control" content="no-transform">
 <link rel="shortcut icon" href="http://www.lotut.com/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="<s:url value='/css/index.css'/>" />
