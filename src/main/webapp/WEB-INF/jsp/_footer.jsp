@@ -13,6 +13,7 @@
 				<img src="http://rr.knet.cn/static/images/logo/cnnic.png" style="border:none;height:25px;" oncontextmenu="return false;" alt="可信网站">
 				</a>
 				<a href="http://webscan.360.cn/index/checkwebsite/url/www.lotut.com"><img border="0" style="border:none;height:25px;" src="http://img.webscan.360.cn/status/pai/hash/0819a2d24088757d089ec25913fa2f7f"/></a>
+				<a href="http://webscan.360.cn/index/checkwebsite/url/www.lotut.com" name="0819a2d24088757d089ec25913fa2f7f" >360网站安全检测平台</a>
 			</span>
 		</li>            
     </ul>
