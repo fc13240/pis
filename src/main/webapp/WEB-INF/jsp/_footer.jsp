@@ -12,6 +12,7 @@
 				<a href="https://ss.knet.cn/verifyseal.dll?sn=e16072934010064299rolh000000&amp;ct=df&amp;a=1&amp;pa=0.09530572313815355" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display:inline-block;">
 				<img src="http://rr.knet.cn/static/images/logo/cnnic.png" style="border:none;height:25px;" oncontextmenu="return false;" alt="可信网站">
 				</a>
+				<a href="http://webscan.360.cn/index/checkwebsite/url/www.lotut.com"><img border="0" style="border:none;height:25px;" src="http://img.webscan.360.cn/status/pai/hash/0819a2d24088757d089ec25913fa2f7f"/></a>
 			</span>
 		</li>            
     </ul>
