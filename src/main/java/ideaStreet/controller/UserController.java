@@ -191,6 +191,11 @@ public class UserController {
 			e.printStackTrace();
 		}
 	}
+	
+	@RequestMapping(path="/testShare")
+	public String testShare() {
+		return "test_share";
+	}
 
 }
 
